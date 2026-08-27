@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Developer Sandbox</title>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body>
+    <header>
+      <a class="brand" href="#">
+        <img src="assets/logo-blue.png" alt="" />
+
+        <span>
+          <strong>DEVELOPER SANDBOX</strong>
+          <small>Academy of Mastery</small>
+        </span>
+      </a>
+
+      <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+        <button
+          type="button"
+          aria-current="page"
+          onclick="window.location.href = '/app/sandbox/'"
+        >
+          <span aria-hidden="true">⌂</span>
+          Home
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/app/sandbox/inner.html'"
+        >
+          <span aria-hidden="true">▱</span>
+          Projects
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/app/sandbox/reference-guide.html'"
+        >
+          <span aria-hidden="true">▤</span>
+          Reference Guides
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/app/sandbox/inner.html'"
+        >
+          <span aria-hidden="true">◇</span>
+          Rosetta Stones
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">⊙</span>
+          System Guide
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/app/sandbox/inner.html'"
+        >
+          <span aria-hidden="true">⚗</span>
+          Lab
+        </button>
+      </nav>
+
+      <div class="top-tools">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="help">
+          <button type="button" aria-label="Get help and info"></button>
+
+          <div>
+            <strong>Get help and info</strong>
+            <p>Hover any card or icon to learn more.</p>
+          </div>
+        </div>
+
+        <a href="/work.html">Return to sdelgado</a>
+
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          onclick="window.location.href = '/work.html'"
+        >
+          ×
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="sandbox-notice" role="status">
+        <span aria-hidden="true">⚠</span>
+
+        <div>
+          <strong>Sandbox in Progress</strong>
+          <small
+            >This developer sandbox is actively being built and updated.</small
+          >
+        </div>
+      </div>
+      <section class="glass-panel featured">
+        <h2>Featured Project</h2>
+
+        <div class="featured-content">
+          <button class="arrow" type="button" aria-label="Previous project">
+            ‹
+          </button>
+
+          <div class="card-stack">
+            <span></span>
+            <span></span>
+
+            <article>
+              <div class="project-image">
+                <!-- project image will go here later -->
+              </div>
+
+              <div class="project-info">
+                <small>WEB PROJECT</small>
+
+                <h3>Modern Agenda</h3>
+
+                <p>
+                  Legacy application transformed with modern Angular and
+                  TypeScript.
+                </p>
+
+                <div class="tags">
+                  <span>Angular</span>
+                  <span>TypeScript</span>
+                  <span>Responsive</span>
+                </div>
+
+                <a href="single-project.html">Explore Project ›</a>
+              </div>
+            </article>
+          </div>
+
+          <button class="arrow" type="button" aria-label="Next project">
+            ›
+          </button>
+        </div>
+
+        <div class="dots" aria-hidden="true">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+
+      <section class="glass-panel rosetta">
+        <h2>Rosetta Stones</h2>
+
+        <div class="stones">
+          <button
+            type="button"
+            onclick="window.location.href = '/app/sandbox/single-project.html'"
+          >
+            <span class="stone gold">
+              <span>JS</span>
+            </span>
+            <small>JavaScript</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/app/sandbox/single-project.html'"
+          >
+            <span class="stone blue">
+              <span>TS</span>
+            </span>
+            <small>TypeScript</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/app/sandbox/single-project.html'"
+          >
+            <span class="stone cyan">
+              <span>
+                <img src="assets/python.svg" alt="" />
+              </span>
+            </span>
+            <small>Python</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/app/sandbox/single-project.html'"
+          >
+            <span class="stone purple">
+              <span>DB</span>
+            </span>
+            <small>Database</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/app/sandbox/single-project.html'"
+          >
+            <span class="stone">
+              <span>API</span>
+            </span>
+            <small>API</small>
+          </button>
+        </div>
+
+        <a class="view-all" href="inner.html"
+          >Core Languages &amp; Technologies ›</a
+        >
+      </section>
+
+      <section class="glass-panel library">
+        <h2>Project Library</h2>
+
+        <div class="projects">
+          <a href="single-project.html">
+            <span class="project-icon">RC</span>
+            <strong>Rosetta: Core</strong>
+            <small>WEB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon blue">MA</span>
+            <strong>Modern Agenda</strong>
+            <small>WEB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon cyan">MB</span>
+            <strong>Mini Browser</strong>
+            <small>EXPERIMENT</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon purple">DB</span>
+            <strong>Database Lab</strong>
+            <small>LAB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon gold">CP</span>
+            <strong>Canvas Playground</strong>
+            <small>EXPERIMENT</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon green">API</span>
+            <strong>API Explorer</strong>
+            <small>WEB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon blue">AI</span>
+            <strong>AI Sandbox</strong>
+            <small>EXPERIMENT</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon cyan">PF</span>
+            <strong>Portfolio Engine</strong>
+            <small>WEB</small>
+          </a>
+        </div>
+
+        <a class="view-all" href="inner.html"
+          >View All Projects ›
+          <!-- links to a page with links to all projects in category "core" grouped by type and sidebar types maybe hide show group? --></a
+        >
+      </section>
+
+      <section class="glass-panel guides">
+        <h2>Reference Guides</h2>
+
+        <div class="guide-list">
+          <a href="reference-guide.html">
+            <span class="guide-icon">HTML</span>
+            <small>HTML / CSS</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon gold">JS</span>
+            <small>JavaScript</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon blue">TS</span>
+            <small>TypeScript</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon red">
+              <img src="assets/git.svg" alt="" />
+            </span>
+            <small>Git</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon purple">API</span>
+            <small>API Design</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon cyan">PHP</span>
+            <small>PHP</small>
+          </a>
+        </div>
+
+        <a class="view-all" href="reference-guide.html"
+          >Browse All Guides ›
+          <!-- links to a page with all projects and sidebar all reference guides --></a
+        >
+      </section>
+
+      <section class="glass-panel data">
+        <h2>Data Visualization Project</h2>
+
+        <div class="data-list">
+          <a href="single-project.html">
+            <span class="data-icon blue">JN</span>
+            <small>Jupyter<br />Notebooks Project</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="data-icon cyan">PD</span>
+            <small>Pandas<br />Data Analysis project</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="data-icon purple">SK</span>
+            <small>Scikit-learn<br />ML Model project</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="data-icon blue">
+              <img src="assets/tensorflow.svg" alt="" />
+            </span>
+            <small>TensorFlow<br />Deep Learning project</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="data-icon gold">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 18V11M10 18V6M16 18V9M22 18V3"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+            <small>Data<br />Visualization Project</small>
+          </a>
+        </div>
+
+        <a class="view-all" href="inner.html"
+          >Browse All Topics ›
+          <!-- links to a page with links to all projects and sidebar has all types under this category  maybe hide show group? -->
+        </a>
+      </section>
+      <!-- interface panels -->
+      <div class="logo-stage">
+        <button type="button" aria-label="Developer Sandbox logo">
+          <img src="assets/logo-blue.png" alt="Developer Sandbox logo" />
+        </button>
+      </div>
+    </main>
+    <footer>
+      <nav aria-label="Developer tools">
+        <button type="button">
+          <span aria-hidden="true">⌘</span>
+          Terminal
+          <!-- Not sure this should be terminal unless you are planning to build it in which case make a tool tip coming soon pop up for now -->
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = 'https://github.com/susanndelgado'"
+        >
+          <span aria-hidden="true">⑂</span>
+          Git
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">⬡</span>
+          Docker
+          <!-- not even sure what to do with this link -->
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">◉</span>
+          Database
+
+          <!-- not even sure what to do with this link maybe invent my own database that works on static website and is used for sandbox then this link could lead to a page that explains it? but not actually link to it -->
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">&lt;/&gt;</span>
+          VS Code
+          <!-- I dont know if I want to include this but if we dont create it maybe this can link to a page that explains my set up in vs code and what I use -->
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">↔</span>
+          API Tools
+          <!-- really dont know about this -->
+        </button>
+      </nav>
+    </footer>
+    <script src="assets/script.js"></script>
+  </body>
+</html>

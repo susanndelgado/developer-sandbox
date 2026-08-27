@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Developer Sandbox</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body>
+    <header>
+      <a class="brand" href="/app/sandbox/">
+        <img src="assets/logo-blue.png" alt="" />
+
+        <span>
+          <strong>DEVELOPER SANDBOX</strong>
+          <small>Academy of Mastery</small>
+        </span>
+      </a>
+
+      <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+        <button type="button" onclick="window.location.href = '/app/sandbox/'">
+          <span aria-hidden="true">⌂</span>
+          Home
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/app/sandbox/inner.html'"
+        >
+          <span aria-hidden="true">▱</span>
+          Projects
+        </button>
+
+        <button
+          type="button"
+          aria-current="page"
+          onclick="window.location.href = '/app/sandbox/reference-guide.html'"
+        >
+          <span aria-hidden="true">▤</span>
+          Reference Guides
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/app/sandbox/inner.html'"
+        >
+          <span aria-hidden="true">◇</span>
+          Rosetta Stones
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">⊙</span>
+          System Guide
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/app/sandbox/inner.html'"
+        >
+          <span aria-hidden="true">⚗</span>
+          Lab
+        </button>
+      </nav>
+
+      <div class="top-tools">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="help">
+          <button type="button" aria-label="Get help and info"></button>
+
+          <div>
+            <strong>Get help and info</strong>
+            <p>Hover any card or icon to learn more.</p>
+          </div>
+        </div>
+
+        <a href="#">Return to sdelgado</a>
+
+        <button type="button" class="close" aria-label="Close">×</button>
+      </div>
+    </header>
+
+    <main class="view-all-page">
+      <aside class="type-menu">
+        <header>
+          <h1>Reference Guides</h1>
+
+          <p>
+            Quick-reference documentation for development tools, languages,
+            commands, and workflows.
+          </p>
+        </header>
+
+        <nav class="project-types" aria-label="Project types">
+          <button
+            type="button"
+            data-filter="terminal"
+            aria-current="true"
+            onclick="window.location.href = 'reference-guide.html'"
+          >
+            <span aria-hidden="true">⌘</span>
+
+            <span>
+              <strong>Terminal Commands</strong>
+              <small>
+                Shell navigation, files, processes, permissions, utilities, and
+                common development commands.
+              </small>
+            </span>
+          </button>
+
+          <!-- OTHER SUBJECTS -->
+
+          <button
+            type="button"
+            data-filter="git"
+            onclick="window.location.href = 'reference-guide.html'"
+          >
+            <span aria-hidden="true">⑂</span>
+
+            <span>
+              <strong>Git</strong>
+              <small>
+                Repositories, branches, commits, merging, remotes, and everyday
+                Git workflows.
+              </small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            data-filter="docker"
+            onclick="window.location.href = 'reference-guide.html'"
+          >
+            <span aria-hidden="true">⬡</span>
+
+            <span>
+              <strong>Docker</strong>
+              <small>
+                Containers, images, Compose, volumes, networks, and development
+                environments.
+              </small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            data-filter="database"
+            onclick="window.location.href = 'reference-guide.html'"
+          >
+            <span aria-hidden="true">◉</span>
+
+            <span>
+              <strong>Database Commands</strong>
+              <small>
+                SQL, PostgreSQL, MongoDB, connections, queries, and database
+                utilities.
+              </small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            data-filter="php"
+            onclick="window.location.href = 'reference-guide.html'"
+          >
+            <span aria-hidden="true">PHP</span>
+
+            <span>
+              <strong>PHP &amp; cURL</strong>
+              <small>
+                Requests, responses, cURL, forms, JSON, and server-side
+                operations.
+              </small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            data-filter="api"
+            onclick="window.location.href = 'reference-guide.html'"
+          >
+            <span aria-hidden="true">↔</span>
+
+            <span>
+              <strong>HTTP &amp; API</strong>
+              <small>
+                GET, POST, PUT, DELETE, REST, headers, status codes, and
+                requests.
+              </small>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            data-filter="node"
+            onclick="window.location.href = 'reference-guide.html'"
+          >
+            <span aria-hidden="true">NPM</span>
+
+            <span>
+              <strong>Node &amp; npm</strong>
+              <small>
+                Packages, scripts, dependencies, project setup, and Node
+                tooling.
+              </small>
+            </span>
+          </button>
+        </nav>
+      </aside>
+      <section class="project-content">
+        <header>
+          <div>
+            <small>REFERENCE GUIDE</small>
+            <h2>Terminal Commands</h2>
+          </div>
+
+          <p>
+            Common shell commands for navigating directories, managing files,
+            inspecting processes, and working in development environments.
+          </p>
+        </header>
+
+        <nav class="project-doc-nav" aria-label="Terminal guide sections">
+          <a href="#navigation">Navigation</a>
+          <a href="#files">Files &amp; Directories</a>
+          <a href="#viewing">Viewing &amp; Searching</a>
+          <a href="#processes">Processes</a>
+          <a href="#permissions">Permissions</a>
+          <a href="#utilities">Utilities</a>
+        </nav>
+
+        <article class="project-doc">
+          <!-- =============================================
+         NAVIGATION
+         ============================================= -->
+
+          <section class="project-doc-section" id="navigation">
+            <header>
+              <div>
+                <span>01</span>
+                <h3>Navigation</h3>
+              </div>
+
+              <p>
+                Move through the filesystem and identify your current location.
+              </p>
+            </header>
+
+            <div class="project-command-list">
+              <div class="project-command">
+                <code>pwd</code>
+
+                <div>
+                  <strong>Print working directory</strong>
+                  <p>
+                    Displays the full path of the directory you are currently
+                    in.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>ls</code>
+
+                <div>
+                  <strong>List directory contents</strong>
+                  <p>Shows files and folders in the current directory.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>ls -la</code>
+
+                <div>
+                  <strong>Detailed file listing</strong>
+                  <p>
+                    Includes hidden files, permissions, ownership, size, and
+                    other file information.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>cd folder</code>
+
+                <div>
+                  <strong>Enter a directory</strong>
+                  <p>Changes the current working directory.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>cd ..</code>
+
+                <div>
+                  <strong>Move up one directory</strong>
+                  <p>Moves to the parent directory of the current folder.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>cd ~</code>
+
+                <div>
+                  <strong>Go to home directory</strong>
+                  <p>Returns directly to the current user's home folder.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-example">
+              <small>EXAMPLE</small>
+
+              <pre><code>cd ~/Developer
+pwd
+ls -la</code></pre>
+            </div>
+          </section>
+
+          <!-- =============================================
+         FILES & DIRECTORIES
+         ============================================= -->
+
+          <section class="project-doc-section" id="files">
+            <header>
+              <div>
+                <span>02</span>
+                <h3>Files &amp; Directories</h3>
+              </div>
+
+              <p>
+                Create, copy, move, rename, and remove files and directories.
+              </p>
+            </header>
+
+            <div class="project-command-list">
+              <div class="project-command">
+                <code>mkdir project</code>
+
+                <div>
+                  <strong>Create a directory</strong>
+                  <p>Creates a new folder named <code>project</code>.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>touch index.html</code>
+
+                <div>
+                  <strong>Create a file</strong>
+                  <p>
+                    Creates an empty file, or updates its timestamp if it
+                    already exists.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>cp file.txt copy.txt</code>
+
+                <div>
+                  <strong>Copy a file</strong>
+                  <p>Creates a copy of a file at the specified destination.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>mv old.txt new.txt</code>
+
+                <div>
+                  <strong>Move or rename</strong>
+                  <p>
+                    Moves a file or directory. Changing the destination name
+                    renames it.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>rm file.txt</code>
+
+                <div>
+                  <strong>Remove a file</strong>
+                  <p>Deletes the specified file.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>rm -r folder</code>
+
+                <div>
+                  <strong>Remove a directory</strong>
+                  <p>
+                    Recursively removes a directory and everything inside it.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <aside class="project-note">
+              <strong>Use care with <code>rm</code></strong>
+              <p>
+                Terminal deletion normally bypasses the Trash. Verify the path
+                before running recursive removal commands.
+              </p>
+            </aside>
+          </section>
+
+          <!-- =============================================
+         VIEWING & SEARCHING
+         ============================================= -->
+
+          <section class="project-doc-section" id="viewing">
+            <header>
+              <div>
+                <span>03</span>
+                <h3>Viewing &amp; Searching</h3>
+              </div>
+
+              <p>
+                Inspect file contents and search for text, files, and
+                directories.
+              </p>
+            </header>
+
+            <div class="project-command-list">
+              <div class="project-command">
+                <code>cat file.txt</code>
+
+                <div>
+                  <strong>Display file contents</strong>
+                  <p>Prints the contents of a file directly in the terminal.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>less file.txt</code>
+
+                <div>
+                  <strong>Read long files</strong>
+                  <p>Opens file contents in a scrollable terminal viewer.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>grep "text" file.txt</code>
+
+                <div>
+                  <strong>Search inside a file</strong>
+                  <p>Finds lines containing the specified text.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>find . -name "*.js"</code>
+
+                <div>
+                  <strong>Find files</strong>
+                  <p>
+                    Searches the current directory and its descendants for
+                    JavaScript files.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =============================================
+         PROCESSES
+         ============================================= -->
+
+          <section class="project-doc-section" id="processes">
+            <header>
+              <div>
+                <span>04</span>
+                <h3>Processes</h3>
+              </div>
+
+              <p>
+                Inspect running programs and terminate processes when necessary.
+              </p>
+            </header>
+
+            <div class="project-command-list">
+              <div class="project-command">
+                <code>ps</code>
+
+                <div>
+                  <strong>Show processes</strong>
+                  <p>
+                    Displays processes associated with the current terminal.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>ps aux</code>
+
+                <div>
+                  <strong>Detailed process list</strong>
+                  <p>Displays running processes with additional information.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>kill PID</code>
+
+                <div>
+                  <strong>Stop a process</strong>
+                  <p>
+                    Sends a termination signal to the process matching the
+                    supplied process ID.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>Ctrl + C</code>
+
+                <div>
+                  <strong>Stop the current command</strong>
+                  <p>
+                    Interrupts a command or development server running in the
+                    current terminal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =============================================
+         PERMISSIONS
+         ============================================= -->
+
+          <section class="project-doc-section" id="permissions">
+            <header>
+              <div>
+                <span>05</span>
+                <h3>Permissions</h3>
+              </div>
+
+              <p>
+                Inspect and modify file permissions when working with scripts
+                and development tools.
+              </p>
+            </header>
+
+            <div class="project-command-list">
+              <div class="project-command">
+                <code>chmod +x script.sh</code>
+
+                <div>
+                  <strong>Make a script executable</strong>
+                  <p>Adds execute permission to the specified shell script.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>sudo command</code>
+
+                <div>
+                  <strong>Run with elevated privileges</strong>
+                  <p>
+                    Executes a command with administrative permissions when
+                    required.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =============================================
+         COMMON UTILITIES
+         ============================================= -->
+
+          <section class="project-doc-section" id="utilities">
+            <header>
+              <div>
+                <span>06</span>
+                <h3>Common Utilities</h3>
+              </div>
+
+              <p>
+                Frequently used commands for development and terminal workflows.
+              </p>
+            </header>
+
+            <div class="project-command-list">
+              <div class="project-command">
+                <code>clear</code>
+
+                <div>
+                  <strong>Clear the terminal</strong>
+                  <p>Clears previous terminal output from the current view.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>history</code>
+
+                <div>
+                  <strong>View command history</strong>
+                  <p>Displays commands previously entered in the shell.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>which node</code>
+
+                <div>
+                  <strong>Locate an executable</strong>
+                  <p>Displays the executable path used for a command.</p>
+                </div>
+              </div>
+
+              <div class="project-command">
+                <code>man command</code>
+
+                <div>
+                  <strong>Open command documentation</strong>
+                  <p>
+                    Opens the manual page for commands that provide system
+                    documentation.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Developer tools">
+        <button type="button">
+          <span aria-hidden="true">⌘</span>
+          Terminal
+          <!-- Not sure this should be terminal unless you are planning to build it in which case make a tool tip coming soon pop up for now -->
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = 'https://github.com/susanndelgado'"
+        >
+          <span aria-hidden="true">⑂</span>
+          Git
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">⬡</span>
+          Docker
+          <!-- not even sure what to do with this link -->
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">◉</span>
+          Database
+
+          <!-- not even sure what to do with this link maybe invent my own database that works on static website and is used for sandbox then this link could lead to a page that explains it? but not actually link to it -->
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">&lt;/&gt;</span>
+          VS Code
+          <!-- I dont know if I want to include this but if we dont create it maybe this can link to a page that explains my set up in vs code and what I use -->
+        </button>
+
+        <button type="button">
+          <span aria-hidden="true">↔</span>
+          API Tools
+          <!-- really dont know about this -->
+        </button>
+      </nav>
+    </footer>
+    <script src="assets/script.js"></script>
+  </body>
+</html>

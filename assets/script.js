@@ -1,0 +1,403 @@
+/* ======================
+    NAV
+ ====================== */
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector("#primary-nav");
+
+function closeMenu() {
+  navigation.classList.remove("open");
+
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-label", "Open navigation");
+}
+
+function openMenu() {
+  navigation.classList.add("open");
+
+  menuButton.setAttribute("aria-expanded", "true");
+  menuButton.setAttribute("aria-label", "Close navigation");
+}
+
+menuButton.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+/* close when a navigation item is selected */
+
+navigation.addEventListener("click", (event) => {
+  if (event.target.closest("button")) {
+    closeMenu();
+  }
+});
+
+/* close if user clicks elsewhere */
+
+document.addEventListener("click", (event) => {
+  const clickedMenu = navigation.contains(event.target);
+
+  const clickedButton = menuButton.contains(event.target);
+
+  if (!clickedMenu && !clickedButton) {
+    closeMenu();
+  }
+});
+
+/* close with Escape */
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+
+    menuButton.focus();
+  }
+});
+/* ======================
+   SANDBOX VOICE
+   Shared by Easter eggs
+   ====================== */
+
+const preferredSandboxVoices = [
+  "Victoria",
+  "Samantha",
+  "Karen",
+  "Ava",
+  "Zira",
+  "Moira",
+  "Tessa",
+  "Fiona",
+];
+
+function getSandboxVoice() {
+  const voices = window.speechSynthesis.getVoices();
+
+  for (const name of preferredSandboxVoices) {
+    const voice = voices.find(
+      (voice) => voice.name.includes(name) && voice.lang.startsWith("en"),
+    );
+
+    if (voice) {
+      return voice;
+    }
+  }
+
+  return (
+    voices.find((voice) => voice.lang === "en-US") ||
+    voices.find((voice) => voice.lang.startsWith("en")) ||
+    null
+  );
+}
+
+function createSandboxMessage(text, rate = 0.9, pitch = 0.85, volume = 0.7) {
+  const message = new SpeechSynthesisUtterance(text);
+
+  const voice = getSandboxVoice();
+
+  if (voice) {
+    message.voice = voice;
+  }
+
+  message.rate = rate;
+  message.pitch = pitch;
+  message.volume = volume;
+
+  return message;
+}
+
+function speakSandbox(text) {
+  const message = createSandboxMessage(text);
+
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(message);
+
+  return message;
+}
+
+/*
+  Prompt the browser to load its
+  available speech voices.
+*/
+
+window.speechSynthesis.getVoices();
+
+/* ======================
+   SANDBOX RETURN VISITOR
+   Homepage only
+   ====================== */
+
+const sandboxPath = window.location.pathname
+  .replace(/\/index\.html$/, "/")
+  .replace(/\/+$/, "/");
+
+const isSandboxHome = sandboxPath === "/app/sandbox/";
+
+if (isSandboxHome) {
+  const storageKey = "sandbox-home-visits";
+
+  const MEMORY_DAYS = 7;
+
+  const MEMORY_TIME = MEMORY_DAYS * 24 * 60 * 60 * 1000;
+
+  const now = Date.now();
+
+  let data = {
+    count: 0,
+    expires: now + MEMORY_TIME,
+  };
+
+  /* ---------- READ SAVED VISITS ---------- */
+
+  try {
+    const saved = localStorage.getItem(storageKey);
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+
+      if (parsed.expires > now) {
+        data = parsed;
+      }
+    }
+  } catch (error) {
+    data = {
+      count: 0,
+      expires: now + MEMORY_TIME,
+    };
+  }
+
+  /* ---------- COUNT HOMEPAGE VISIT ---------- */
+
+  data.count++;
+
+  /*
+    After seven visits,
+    begin the cycle again.
+
+    Visit 8 becomes visit 1.
+  */
+
+  if (data.count > 30) {
+    data.count = 1;
+  }
+
+  data.expires = now + MEMORY_TIME;
+
+  localStorage.setItem(storageKey, JSON.stringify(data));
+
+  /* ---------- CHOOSE MESSAGE ---------- */
+
+  let returnMessage = "";
+
+  if (data.count === 1) {
+    returnMessage = "Hello. Welcome to Susan's Developer Sandbox.";
+  }
+  if (data.count === 5) {
+    returnMessage = "Back again? I'm starting to think you like me.";
+  }
+  if (data.count === 9) {
+    returnMessage = "So, should I expect contact soon?";
+  }
+  if (data.count === 25) {
+    returnMessage = "Time to Hire!";
+  }
+
+  /* ---------- QUEUE MESSAGE ---------- */
+
+  if (returnMessage) {
+    let messagePlayed = false;
+
+    function handleReturnVisitor(event) {
+      /*
+        Ignore the brand so this does
+        not interfere with the separate
+        five-click Easter egg.
+      */
+
+      if (event.target.closest(".brand")) {
+        return;
+      }
+
+      if (messagePlayed) {
+        return;
+      }
+
+      messagePlayed = true;
+
+      const control = event.target.closest("a, button");
+
+      /*
+        Temporarily stop navigation
+        while the message speaks.
+      */
+
+      if (control) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+
+      const message = createSandboxMessage(returnMessage);
+
+      let continued = false;
+
+      function continueAction() {
+        if (continued) {
+          return;
+        }
+
+        continued = true;
+
+        document.removeEventListener("click", handleReturnVisitor, true);
+
+        if (control) {
+          control.click();
+        }
+      }
+
+      message.onend = continueAction;
+
+      message.onerror = continueAction;
+
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(message);
+
+      /*
+        Fallback in case the browser
+        does not fire the end event.
+      */
+
+      setTimeout(continueAction, 4000);
+    }
+
+    document.addEventListener("click", handleReturnVisitor, true);
+  }
+}
+
+/* ======================
+   SANDBOX LOGO EASTER EGG
+   Five brand clicks
+   ====================== */
+
+const sandboxLogo = document.querySelector(".brand");
+
+if (sandboxLogo) {
+  let logoClicks = 0;
+  let logoTimer;
+
+  sandboxLogo.addEventListener("click", (event) => {
+    /*
+        Prevent # links from jumping
+        or reloading while counting.
+      */
+
+    const href = sandboxLogo.getAttribute("href");
+
+    if (!href || href === "#") {
+      event.preventDefault();
+    }
+
+    logoClicks++;
+
+    clearTimeout(logoTimer);
+
+    logoTimer = setTimeout(() => {
+      logoClicks = 0;
+    }, 3000);
+
+    /* ---------- FIVE CLICKS ---------- */
+
+    if (logoClicks === 5) {
+      logoClicks = 0;
+
+      clearTimeout(logoTimer);
+
+      speakSandbox(
+        "Hello. Welcome to Susan's Developer Sandbox. Curiosity detected.",
+      );
+    }
+  });
+}
+/* ======================
+   SANDBOX UI SOUND
+   ====================== */
+
+let audioContext;
+
+function enableAudio() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+}
+
+/* ---------- CREATE UI TONE ---------- */
+
+function playInterfaceSound(frequency = 520, duration = 0.035, volume = 0.025) {
+  if (!audioContext) return;
+
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+
+  oscillator.type = "sawtooth";
+  oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+
+  gain.gain.setValueAtTime(volume, audioContext.currentTime);
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.001,
+    audioContext.currentTime + duration,
+  );
+
+  oscillator.connect(gain);
+  gain.connect(audioContext.destination);
+
+  oscillator.start();
+
+  oscillator.stop(audioContext.currentTime + duration);
+}
+
+/* ---------- ENABLE AUDIO AFTER INTERACTION ---------- */
+
+document.addEventListener("pointerdown", enableAudio, {
+  once: true,
+});
+
+document.addEventListener("keydown", enableAudio, {
+  once: true,
+});
+
+/* ---------- HOVER SOUND ---------- */
+
+document.addEventListener("pointerover", (event) => {
+  const control = event.target.closest("a, button, .project-card");
+
+  if (!control) return;
+
+  /*
+   Prevent sound from repeating while moving
+   between children inside the same control.
+  */
+  if (event.relatedTarget && control.contains(event.relatedTarget)) {
+    return;
+  }
+
+  playInterfaceSound(540, 0.035, 0.03);
+});
+
+/* ---------- CLICK SOUND ---------- */
+
+document.addEventListener("click", (event) => {
+  const control = event.target.closest("a, button, .project-card");
+
+  if (!control) return;
+
+  enableAudio();
+
+  playInterfaceSound(760, 0.045, 0.04);
+});

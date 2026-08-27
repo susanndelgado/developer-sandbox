@@ -1,0 +1,1850 @@
+/* ==================================================
+   1. STRUCTURE / GLOBALS
+   ================================================== */
+/* ==================================================
+   SANDBOX IN-PROGRESS NOTICE
+   ================================================== */
+
+.sandbox-notice {
+  position: fixed;
+
+  top: 82px;
+  left: 50%;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: max-content;
+  max-width: calc(100% - 30px);
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(255, 196, 97, 0.75);
+  border-radius: 8px;
+
+  background: rgba(54, 39, 8, 0.96);
+
+  color: #ffd36f;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(255, 196, 97, 0.15);
+
+  transform: translateX(-50%);
+
+  backdrop-filter: blur(10px);
+}
+
+.sandbox-notice > span {
+  color: #ffc461;
+
+  font-size: 18px;
+}
+
+.sandbox-notice > div {
+  display: grid;
+  gap: 2px;
+}
+
+.sandbox-notice strong {
+  color: #ffe0a0;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.sandbox-notice small {
+  color: #d8bd80;
+
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+  .sandbox-notice {
+    top: 62px;
+
+    width: calc(100% - 24px);
+
+    padding: 9px 12px;
+  }
+
+  .sandbox-notice small {
+    font-size: 8px;
+  }
+}
+:root {
+  --blue: #5fc8ff;
+  --blue-dark: #2f8dff;
+  --violet: #8a67ff;
+
+  --text: #edf6ff;
+  --muted: #a8bbcf;
+
+  --background: #030815;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- IMAGES ---------- */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- FORM / BUTTON ELEMENTS ---------- */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- MAIN SANDBOX ---------- */
+
+main {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(rgba(2, 7, 18, 0.04), rgba(2, 7, 18, 0.08)),
+    url("sandbox-background.png") center / cover no-repeat;
+}
+
+/* ==================================================
+   2. TOP HEADER / NAVIGATION
+   ================================================== */
+
+body > header {
+  position: fixed;
+  top: 22px;
+  left: 0;
+  z-index: 50;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  pointer-events: none;
+}
+
+body > header > * {
+  pointer-events: auto;
+}
+
+/* ---------- TOP LEFT BRAND ---------- */
+
+body > header .brand {
+  position: absolute;
+  left: 28px;
+  top: 2px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+}
+
+body > header .brand img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 6px rgba(84, 190, 255, 0.45));
+}
+
+body > header .brand span {
+  display: grid;
+  gap: 2px;
+}
+
+body > header .brand strong {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+body > header .brand small {
+  color: #c8d8ea;
+  font-size: 11px;
+}
+
+/* ---------- CENTER NAV ---------- */
+
+body > header nav {
+  display: flex;
+  overflow: hidden;
+
+  border: 1px solid rgba(117, 188, 255, 0.35);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), transparent 30%),
+    rgba(5, 18, 43, 0.8);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.1),
+    0 0 18px rgba(64, 158, 255, 0.12);
+}
+
+body > header nav button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 60px;
+  padding: 0 20px;
+
+  border: 0;
+  background: transparent;
+
+  color: #cbd9e9;
+
+  cursor: pointer;
+}
+
+body > header nav button + button {
+  border-left: 1px solid rgba(117, 188, 255, 0.1);
+}
+
+body > header nav button span {
+  color: var(--blue);
+  font-size: 17px;
+}
+
+body > header nav button:hover,
+body > header nav button:focus-visible {
+  color: white;
+  background: rgba(47, 141, 255, 0.15);
+}
+
+body > header nav button[aria-current="page"] {
+  color: white;
+
+  background: linear-gradient(
+    rgba(47, 141, 255, 0.25),
+    rgba(47, 141, 255, 0.08)
+  );
+
+  box-shadow: inset 0 -2px var(--blue);
+}
+
+body > header nav button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -3px;
+}
+/* ==================================================
+   MOBILE MENU BUTTON
+   hidden on desktop
+   ================================================== */
+
+.menu-toggle {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(95, 200, 255, 0.35);
+  border-radius: 9px;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.06), transparent),
+    rgba(5, 18, 43, 0.82);
+
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.08),
+    0 0 12px rgba(64, 158, 255, 0.1);
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  margin: 5px 0;
+
+  background: var(--blue);
+
+  box-shadow: 0 0 5px rgba(95, 200, 255, 0.7);
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+/* ---------- TOP RIGHT TOOLS ---------- */
+
+body > header .top-tools {
+  position: absolute;
+  right: 24px;
+  top: 0;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  color: white;
+}
+
+/* ---------- HELP ORB + TOOLTIP ---------- */
+
+body > header .help {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+body > header .help > button {
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(95, 200, 255, 0.45);
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(120, 225, 255, 0.95) 0 10%,
+    rgba(61, 176, 255, 0.35) 14%,
+    rgba(12, 41, 92, 0.92) 35%,
+    rgba(4, 17, 43, 0.95) 100%
+  );
+
+  box-shadow:
+    0 0 10px rgba(76, 181, 255, 0.28),
+    inset 0 0 10px rgba(105, 204, 255, 0.12);
+
+  cursor: pointer;
+}
+
+body > header .help > button::before,
+body > header .help > button::after {
+  content: "";
+
+  position: absolute;
+  inset: 7px;
+
+  border: 1px solid rgba(77, 183, 255, 0.35);
+  border-radius: 50%;
+}
+
+body > header .help > button::after {
+  inset: 12px;
+  border-color: rgba(77, 183, 255, 0.2);
+}
+
+body > header .help > div {
+  position: absolute;
+  top: 50px;
+  left: -8px;
+
+  width: 185px;
+  padding: 14px 14px 12px;
+
+  border: 1px solid rgba(95, 170, 255, 0.28);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), transparent 30%),
+    rgba(7, 20, 46, 0.9);
+
+  box-shadow:
+    0 16px 30px rgba(0, 0, 0, 0.28),
+    0 0 16px rgba(73, 162, 255, 0.08);
+}
+
+body > header .help > div::before {
+  content: "";
+
+  position: absolute;
+  top: -8px;
+  left: 20px;
+
+  width: 14px;
+  height: 14px;
+
+  background: rgba(7, 20, 46, 0.9);
+
+  border-top: 1px solid rgba(95, 170, 255, 0.28);
+  border-left: 1px solid rgba(95, 170, 255, 0.28);
+
+  transform: rotate(45deg);
+}
+
+body > header .help strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+body > header .help p {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ---------- RETURN LINK ---------- */
+
+body > header .top-tools > a {
+  align-self: center;
+
+  color: #dce7f2;
+  font-size: 12px;
+}
+
+body > header .top-tools > a:hover,
+body > header .top-tools > a:focus-visible {
+  color: white;
+}
+
+/* ---------- CLOSE BUTTON ---------- */
+
+body > header .close {
+  width: 52px;
+  height: 52px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+
+  background: rgba(4, 16, 38, 0.72);
+
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+body > header .close:hover,
+body > header .close:focus-visible {
+  background: rgba(47, 141, 255, 0.12);
+}
+/* ==================================================
+   3. CENTER LOGO
+   ================================================== */
+
+.logo-stage {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  z-index: 2;
+
+  width: clamp(240px, 18vw, 440px);
+  aspect-ratio: 1;
+
+  display: grid;
+  place-items: center;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(89, 178, 255, 0.55);
+  border-radius: 50%;
+
+  /*
+    bright node lights +
+    transparent holographic center
+  */
+  background:
+    radial-gradient(
+      circle at 50% 1%,
+      #d8f6ff 0 2px,
+      #4db7ff 3px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 92% 25%,
+      #d8f6ff 0 2px,
+      #4db7ff 3px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 98% 56%,
+      #d8f6ff 0 2px,
+      #4db7ff 3px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 78% 91%,
+      #d8f6ff 0 2px,
+      #4db7ff 3px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 19% 88%,
+      #d8f6ff 0 2px,
+      #4db7ff 3px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 2% 56%,
+      #d8f6ff 0 2px,
+      #4db7ff 3px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 8% 25%,
+      #d8f6ff 0 2px,
+      #4db7ff 3px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle,
+      rgba(40, 122, 255, 0.08),
+      rgba(20, 65, 145, 0.025) 55%,
+      transparent 72%
+    );
+
+  box-shadow:
+    /* neighboring ring */
+    0 0 0 7px rgba(74, 166, 255, 0.12),
+    /* outer ring */ 0 0 0 15px rgba(82, 160, 255, 0.08),
+    /* thin distant ring */ 0 0 0 17px rgba(112, 200, 255, 0.12),
+    /* blue glow */ 0 0 18px rgba(68, 171, 255, 0.35),
+    0 0 40px rgba(58, 121, 255, 0.12),
+    /* subtle interior glow */ inset 0 0 30px rgba(61, 153, 255, 0.06);
+
+  isolation: isolate;
+}
+
+/* ==================================================
+   INNER CONCENTRIC RINGS
+   ================================================== */
+
+.logo-stage::before {
+  content: "";
+
+  position: absolute;
+  inset: 8%;
+
+  border: 1px solid rgba(93, 185, 255, 0.42);
+  border-radius: 50%;
+
+  box-shadow:
+    /* second inside ring */
+    0 0 0 8px rgba(78, 161, 255, 0.1),
+    /* tiny blue glow */ 0 0 12px rgba(66, 168, 255, 0.17),
+    inset 0 0 15px rgba(67, 157, 255, 0.07);
+
+  pointer-events: none;
+}
+/* blue light beam */
+/* hologram light rays rising from platform */
+
+.logo-stage::after {
+  content: "";
+
+  position: absolute;
+
+  /* begins around lower half of hologram */
+  top: 55%;
+  bottom: -20%;
+  left: 29%;
+  right: 29%;
+
+  z-index: -1;
+
+  /* several vertical hologram rays */
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 9%,
+      rgba(105, 205, 255, 0.08) 10%,
+      rgba(135, 225, 255, 0.55) 11%,
+      rgba(105, 205, 255, 0.08) 12%,
+      transparent 13% 20%
+    ),
+    linear-gradient(
+      to top,
+      rgba(80, 185, 255, 0.75),
+      rgba(66, 160, 255, 0.25) 55%,
+      transparent
+    );
+
+  /*
+    wide at top, narrow at platform:
+    rays fan UPWARD
+  */
+  clip-path: polygon(0 0, 100% 0, 58% 100%, 42% 100%);
+
+  filter: drop-shadow(0 0 5px rgba(80, 190, 255, 0.6)) blur(0.4px);
+
+  opacity: 0.2;
+
+  pointer-events: none;
+}
+/* logo */
+
+.logo-stage button {
+  position: relative;
+  z-index: 3;
+
+  width: 58%;
+
+  padding: 0;
+  border: 0;
+  background: none;
+
+  cursor: pointer;
+}
+.logo-stage img {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  opacity: 0.95;
+
+  filter: drop-shadow(0 0 4px rgba(220, 247, 255, 0.5))
+    drop-shadow(0 0 12px rgba(80, 185, 255, 0.7))
+    drop-shadow(0 0 24px rgba(64, 110, 255, 0.4));
+
+  transition:
+    transform 800ms ease,
+    filter 200ms ease;
+}
+/* ==================================================
+   ORBIT LINES BEHIND LOGO
+   ================================================== */
+
+.logo-stage button::before,
+.logo-stage button::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 145%;
+  height: 42%;
+
+  border: 1px solid rgba(69, 167, 255, 0.3);
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  transform: translate(-50%, -50%) rotate(-8deg);
+
+  box-shadow: 0 0 8px rgba(66, 164, 255, 0.08);
+}
+
+.logo-stage button::after {
+  width: 135%;
+  height: 35%;
+
+  border-color: rgba(78, 128, 255, 0.2);
+
+  transform: translate(-50%, -50%) rotate(12deg);
+}
+/* logo spin */
+
+.logo-stage button:hover img,
+.logo-stage button:focus-visible img {
+  transform: rotateY(360deg);
+
+  filter: drop-shadow(0 0 5px white)
+    drop-shadow(0 0 16px rgba(90, 205, 255, 0.9))
+    drop-shadow(0 0 30px rgba(70, 120, 255, 0.6));
+}
+
+.logo-stage button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 8px;
+  border-radius: 50%;
+}
+/* ==================================================
+   4. BOTTOM NAVIGATION
+   ================================================== */
+
+body > footer {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  z-index: 50;
+
+  transform: translateX(-50%);
+}
+
+body > footer nav {
+  display: flex;
+
+  padding: 5px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(117, 188, 255, 0.3);
+  border-radius: 9px;
+
+  background: rgba(5, 18, 43, 0.82);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.08),
+    0 0 18px rgba(64, 158, 255, 0.1);
+}
+
+body > footer button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  min-height: 42px;
+  padding: 0 15px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #bdccdc;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+body > footer button span {
+  color: var(--blue);
+  font-size: 15px;
+}
+
+body > footer button:hover,
+body > footer button:focus-visible {
+  color: white;
+  background: rgba(47, 141, 255, 0.15);
+}
+
+body > footer button:focus-visible {
+  outline: 1px solid var(--blue);
+  outline-offset: -2px;
+}
+/* ==================================================
+   5. GLASS PANELS
+   ================================================== */
+
+.glass-panel {
+  position: absolute;
+  z-index: 10;
+
+  padding: 18px;
+
+  border: 1px solid rgba(120, 190, 255, 0.2);
+  border-radius: 9px;
+
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 25%),
+    rgba(5, 18, 43, 0.75);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.08),
+    0 0 20px rgba(60, 150, 255, 0.08);
+
+  overflow: hidden;
+}
+
+/* luminous border */
+
+.glass-panel::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  padding: 1px;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(190, 235, 255, 0.9),
+    rgba(90, 170, 255, 0.18) 30%,
+    rgba(140, 90, 255, 0.22) 70%,
+    rgba(120, 210, 255, 0.85)
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* brighter corners */
+
+.glass-panel::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 0 0, rgba(210, 245, 255, 0.65), transparent 12%),
+    radial-gradient(
+      circle at 100% 0,
+      rgba(120, 220, 255, 0.75),
+      transparent 12%
+    ),
+    radial-gradient(circle at 0 100%, rgba(100, 120, 255, 0.4), transparent 14%);
+
+  opacity: 0.9;
+}
+
+/* panel heading */
+
+.glass-panel h2 {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 14px;
+
+  color: var(--blue);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* keep panel content above border effects */
+
+.glass-panel > * {
+  position: relative;
+  z-index: 1;
+}
+/* ==================================================
+   6. FEATURED
+   ================================================== */
+
+.featured {
+  top: 14%;
+  left: 4%;
+
+  width: 34%;
+  min-width: 420px;
+}
+
+/* ---------- MAIN FEATURE AREA ---------- */
+
+.featured-content {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ---------- ARROWS ---------- */
+
+.featured .arrow {
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: 1px solid rgba(95, 200, 255, 0.35);
+  border-radius: 50%;
+
+  background: rgba(5, 18, 43, 0.75);
+  color: var(--blue);
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.featured .arrow:hover {
+  background: rgba(47, 141, 255, 0.2);
+}
+
+/* ---------- STACKED CARDS ---------- */
+
+.card-stack {
+  position: relative;
+  min-height: 220px;
+}
+
+.card-stack > span,
+.card-stack article {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+
+  background: rgba(4, 16, 38, 0.65);
+}
+
+.card-stack > span:first-child {
+  transform: translateX(-24px) scale(0.92);
+  opacity: 0.25;
+}
+
+.card-stack > span:nth-child(2) {
+  transform: translateX(-12px) scale(0.96);
+  opacity: 0.45;
+}
+
+/* ---------- ACTIVE CARD ---------- */
+
+.card-stack article {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: 14px;
+
+  padding: 12px;
+}
+
+/* ---------- PROJECT IMAGE ---------- */
+
+.project-image {
+  min-height: 190px;
+
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(95, 200, 255, 0.35),
+      transparent 30%
+    ),
+    #07152f;
+}
+
+/* ---------- PROJECT INFORMATION ---------- */
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info small {
+  color: var(--blue);
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+.project-info h3 {
+  margin: 5px 0 8px;
+
+  font-size: 21px;
+}
+
+.project-info p {
+  font-size: 12px;
+}
+
+/* ---------- TAGS ---------- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  margin: 10px 0;
+}
+
+.tags span {
+  padding: 4px 6px;
+
+  border-radius: 6px;
+
+  background: rgba(47, 141, 255, 0.15);
+
+  color: #acd9f7;
+
+  font-size: 9px;
+}
+
+/* ---------- PROJECT LINK ---------- */
+
+.project-info a {
+  margin-top: auto;
+  padding: 8px 10px;
+
+  border: 1px solid rgba(95, 200, 255, 0.4);
+  border-radius: 8px;
+
+  background: rgba(47, 141, 255, 0.15);
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+.project-info a:hover {
+  background: rgba(47, 141, 255, 0.28);
+}
+
+/* ---------- DOTS ---------- */
+
+.dots {
+  display: flex;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: 12px;
+}
+
+.dots span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #46617d;
+}
+
+.dots .active {
+  background: var(--blue);
+
+  box-shadow: 0 0 7px var(--blue);
+}
+/* ==================================================
+   7. ROSETTA STONES
+   ================================================== */
+
+.rosetta {
+  top: 14%;
+  right: 4%;
+
+  width: 30%;
+  min-width: 420px;
+}
+
+/* ---------- HORIZONTAL SCROLL ---------- */
+
+.stones {
+  display: flex;
+  gap: 14px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 4px 2px 10px;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
+
+  padding: 8px;
+  /* background: rgba(47, 141, 255, 0.15); */
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+}
+
+.stones::-webkit-scrollbar {
+  height: 4px;
+}
+
+.stones::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.stones::-webkit-scrollbar-thumb {
+  background: rgba(95, 200, 255, 0.25);
+  border-radius: 9px;
+}
+
+/* ---------- EACH STONE BUTTON ---------- */
+
+.stones button {
+  flex: 0 0 72px;
+
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+
+  padding: 0;
+
+  border: 0;
+  background: none;
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  padding: 8px;
+  background: rgba(47, 141, 255, 0.15);
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+}
+
+/* ==================================================
+   HEXAGON
+   ================================================== */
+
+.stone {
+  --stone-color: #eaf7ff;
+
+  position: relative;
+
+  width: 64px;
+  height: 64px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--stone-color);
+
+  /*
+     OUTER HEXAGON BORDER
+     intentionally thin + translucent
+  */
+  background: color-mix(in srgb, var(--stone-color) 42%, transparent);
+
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+
+  /*
+     glow around outside of hexagon
+  */
+  filter: drop-shadow(
+      0 0 2px color-mix(in srgb, var(--stone-color) 60%, transparent)
+    )
+    drop-shadow(0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent));
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+/* ==================================================
+   DARK INTERIOR
+   Creates thin outer border
+   ================================================== */
+
+.stone::before {
+  content: "";
+
+  position: absolute;
+  inset: 1.5px;
+
+  background: rgba(5, 15, 35, 0.95);
+
+  clip-path: inherit;
+
+  z-index: 0;
+}
+
+/* ==================================================
+   SECOND INNER BORDER
+   thinner + more transparent
+   ================================================== */
+
+.stone::after {
+  content: "";
+
+  position: absolute;
+  inset: 7px;
+
+  background: color-mix(in srgb, var(--stone-color) 22%, transparent);
+
+  clip-path: inherit;
+
+  filter: drop-shadow(
+    0 0 2px color-mix(in srgb, var(--stone-color) 20%, transparent)
+  );
+
+  z-index: 1;
+}
+
+/* ==================================================
+   CENTER OF HEXAGON
+   text / img / svg / coded icon
+   ================================================== */
+
+.stone > span {
+  position: relative;
+  z-index: 2;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(35, 82, 145, 0.18),
+    rgba(5, 15, 35, 0.97) 72%
+  );
+
+  color: inherit;
+
+  /*
+     sized for 1–3 characters
+  */
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+
+  text-align: center;
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 4px color-mix(in srgb, var(--stone-color) 75%, transparent),
+    0 0 8px color-mix(in srgb, var(--stone-color) 35%, transparent);
+}
+
+/* ==================================================
+   IMAGE / SVG ICONS
+   Automatically scale inside center
+   ================================================== */
+
+.stone img,
+.stone svg {
+  display: block;
+
+  width: 60%;
+  height: 60%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+
+  color: inherit;
+}
+
+.stone img {
+  filter: drop-shadow(
+    0 0 4px color-mix(in srgb, var(--stone-color) 45%, transparent)
+  );
+}
+
+/* ==================================================
+   COLOR CLASSES
+   White is default
+   ================================================== */
+
+.stone.blue {
+  --stone-color: #4b96ff;
+}
+
+.stone.cyan {
+  --stone-color: #41dce9;
+}
+
+.stone.purple {
+  --stone-color: #a768ff;
+}
+
+.stone.gold {
+  --stone-color: #ffc461;
+}
+
+.stone.green {
+  --stone-color: #65e5a0;
+}
+
+.stone.red {
+  --stone-color: #ff6c80;
+}
+
+/* ==================================================
+   STONE LABEL
+   ================================================== */
+
+.stones small {
+  width: 72px;
+
+  color: #d4dfeb;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  text-align: center;
+}
+
+/* ==================================================
+   HOVER / FOCUS
+   ================================================== */
+
+.stones button:hover .stone,
+.stones button:focus-visible .stone {
+  transform: translateY(-2px);
+
+  filter: drop-shadow(0 0 3px var(--stone-color))
+    drop-shadow(
+      0 0 10px color-mix(in srgb, var(--stone-color) 50%, transparent)
+    );
+}
+
+.stones button:focus-visible {
+  outline: 1px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ==================================================
+   VIEW ALL
+   ================================================== */
+
+.rosetta .view-all {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--blue);
+
+  font-size: 11px;
+  text-align: center;
+
+  text-decoration: none;
+}
+
+.rosetta .view-all:hover,
+.rosetta .view-all:focus-visible {
+  color: white;
+}
+/* ==================================================
+   8. PROJECT LIBRARY
+   ================================================== */
+
+.library {
+  top: 49%;
+  left: 4%;
+
+  width: 34%;
+  min-width: 420px;
+}
+
+/* ---------- PROJECT GRID ---------- */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.projects > a {
+  min-width: 0;
+
+  padding: 10px 6px;
+
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+
+  background: rgba(47, 141, 255, 0.08);
+
+  text-align: center;
+}
+
+.projects > a:hover,
+.projects > a:focus-visible {
+  background: rgba(47, 141, 255, 0.16);
+}
+
+/* ---------- PROJECT ICON ---------- */
+
+.project-icon {
+  --icon-color: #eaf7ff;
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid color-mix(in srgb, var(--icon-color) 45%, transparent);
+
+  border-radius: 9px;
+
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--icon-color) 14%, transparent),
+    rgba(5, 15, 35, 0.9) 70%
+  );
+
+  color: var(--icon-color);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-shadow: 0 0 7px var(--icon-color);
+
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, var(--icon-color) 10%, transparent),
+    0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
+}
+
+/* image / svg support */
+
+.project-icon img,
+.project-icon svg {
+  width: 65%;
+  height: 65%;
+
+  object-fit: contain;
+}
+
+/* ---------- ICON COLORS ---------- */
+
+.project-icon.blue {
+  --icon-color: #4b96ff;
+}
+
+.project-icon.cyan {
+  --icon-color: #41dce9;
+}
+
+.project-icon.purple {
+  --icon-color: #a768ff;
+}
+
+.project-icon.gold {
+  --icon-color: #ffc461;
+}
+
+.project-icon.green {
+  --icon-color: #65e5a0;
+}
+
+/* ---------- TEXT ---------- */
+
+.projects strong {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.projects small {
+  color: #7890aa;
+
+  font-size: 8px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- VIEW ALL ---------- */
+
+.library .view-all {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--blue);
+
+  font-size: 11px;
+  text-align: center;
+}
+
+.library .view-all:hover,
+.library .view-all:focus-visible {
+  color: white;
+}
+/* ==================================================
+   9. REFERENCE GUIDES
+   ================================================== */
+
+.guides {
+  top: 38%;
+  right: 4%;
+
+  width: 30%;
+  min-width: 420px;
+}
+
+/* ---------- HORIZONTAL LIST ---------- */
+
+.guide-list {
+  display: flex;
+  gap: 10px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 8px;
+
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
+}
+
+.guide-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.guide-list::-webkit-scrollbar-thumb {
+  background: rgba(95, 200, 255, 0.25);
+  border-radius: 9px;
+}
+
+/* ---------- GUIDE ITEM ---------- */
+
+.guide-list > a {
+  flex: 0 0 76px;
+
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+
+  padding: 8px 5px;
+
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+
+  background: rgba(47, 141, 255, 0.08);
+
+  text-align: center;
+}
+
+.guide-list > a:hover,
+.guide-list > a:focus-visible {
+  background: rgba(47, 141, 255, 0.16);
+}
+
+/* ---------- SQUARE ICON ---------- */
+
+.guide-icon {
+  --icon-color: #eaf7ff;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid color-mix(in srgb, var(--icon-color) 45%, transparent);
+
+  border-radius: 7px;
+
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--icon-color) 18%, transparent),
+    rgba(5, 15, 35, 0.9)
+  );
+
+  color: var(--icon-color);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-shadow: 0 0 6px var(--icon-color);
+
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, var(--icon-color) 10%, transparent),
+    0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
+}
+
+/* ---------- IMG / SVG ---------- */
+
+.guide-icon img,
+.guide-icon svg {
+  width: 60%;
+  height: 60%;
+
+  object-fit: contain;
+}
+
+/* ---------- ICON COLORS ---------- */
+
+.guide-icon.blue {
+  --icon-color: #4b96ff;
+}
+
+.guide-icon.cyan {
+  --icon-color: #41dce9;
+}
+
+.guide-icon.purple {
+  --icon-color: #a768ff;
+}
+
+.guide-icon.gold {
+  --icon-color: #ffc461;
+}
+
+.guide-icon.red {
+  --icon-color: #ff6c80;
+}
+
+.guide-icon.green {
+  --icon-color: #65e5a0;
+}
+
+/* ---------- LABEL ---------- */
+
+.guide-list small {
+  color: #d4dfeb;
+
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+/* ---------- VIEW ALL ---------- */
+
+.guides .view-all {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--blue);
+
+  font-size: 11px;
+  text-align: center;
+}
+
+.guides .view-all:hover,
+.guides .view-all:focus-visible {
+  color: white;
+}
+/* ==================================================
+   10. DATA SCIENCE
+   ================================================== */
+
+.data {
+  top: 62%;
+  right: 4%;
+
+  width: 30%;
+  min-width: 420px;
+}
+
+/* ---------- HORIZONTAL LIST ---------- */
+
+.data-list {
+  display: flex;
+  gap: 10px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 8px;
+
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
+}
+
+.data-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.data-list::-webkit-scrollbar-thumb {
+  background: rgba(95, 200, 255, 0.25);
+  border-radius: 9px;
+}
+
+/* ---------- TOPIC ---------- */
+
+.data-list > a {
+  flex: 0 0 82px;
+
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+
+  padding: 8px 5px;
+
+  border: 1px solid rgba(95, 170, 255, 0.2);
+  border-radius: 9px;
+
+  background: rgba(47, 141, 255, 0.08);
+
+  text-align: center;
+}
+
+.data-list > a:hover,
+.data-list > a:focus-visible {
+  background: rgba(47, 141, 255, 0.16);
+}
+
+/* ---------- ICON ---------- */
+
+.data-icon {
+  --icon-color: #eaf7ff;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid color-mix(in srgb, var(--icon-color) 40%, transparent);
+
+  border-radius: 9px;
+
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--icon-color) 16%, transparent),
+    rgba(5, 15, 35, 0.9) 72%
+  );
+
+  color: var(--icon-color);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-shadow: 0 0 6px var(--icon-color);
+
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, var(--icon-color) 10%, transparent),
+    0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
+}
+
+/* image / svg */
+
+.data-icon img,
+.data-icon svg {
+  width: 60%;
+  height: 60%;
+
+  object-fit: contain;
+
+  color: inherit;
+}
+
+/* ---------- COLORS ---------- */
+
+.data-icon.blue {
+  --icon-color: #4b96ff;
+}
+
+.data-icon.cyan {
+  --icon-color: #41dce9;
+}
+
+.data-icon.purple {
+  --icon-color: #a768ff;
+}
+
+.data-icon.gold {
+  --icon-color: #ffc461;
+}
+
+.data-icon.green {
+  --icon-color: #65e5a0;
+}
+
+.data-icon.red {
+  --icon-color: #ff6c80;
+}
+
+/* ---------- LABEL ---------- */
+
+.data-list small {
+  color: #d4dfeb;
+
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+/* ---------- VIEW ALL ---------- */
+
+.data .view-all {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--blue);
+
+  font-size: 11px;
+  text-align: center;
+}
+
+.data .view-all:hover,
+.data .view-all:focus-visible {
+  color: white;
+}
