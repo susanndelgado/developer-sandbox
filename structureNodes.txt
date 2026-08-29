@@ -1,0 +1,409 @@
+<!-- RECORD / ENTRY HEADER
+Always first. Not reorderable.
+
+Fields:
+- Record ID
+- Record Type
+- Status
+- Title
+- Slug
+- Short Description
+- Categories
+- Tags
+- Page Style
+- Visibility
+- Custom Classes
+- Featured
+
+Generated identity:
+- unique record ID
+- required system class
+- automatic unique class
+- optional user custom classes
+
+Conceptual output: -->
+
+<header
+  id="record-<slug>-<RECORD_ID>"
+  class="<record-type>-entry record-<RECORD_ID> customClass"
+>
+  <div>
+    <small>ID</small>
+    <small>RECORD TYPE</small>
+    <h2>TITLE</h2>
+  </div>
+
+  <p>
+    <small>STATUS</small>
+    SHORT DESCRIPTION
+    <small>SLUG</small>
+  </p>
+</header>
+
+<!-- 
+============================================================
+NODE TYPE: NAV / LINK
+============================================================
+
+Has multiple modes.
+
+MODE: NAVIGATION
+
+Required class:
+project-doc-nav
+
+Output: -->
+
+<nav
+  id="uniqueID"
+  class="project-doc-nav uniqueClass"
+  aria-label="Section navigation"
+>
+  <a href="#section">CHILD</a>
+
+  <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+    <!-- EXTERNAL CHILD -->
+  </a>
+</nav>
+
+MODE: BUTTONS / ACTIONS Required classes: project-actions project-link Output:
+
+<div id="uniqueID" class="project-actions uniqueClass">
+  <a href="#" class="project-link">
+    <!-- View Live Project › -->
+  </a>
+
+  <a href="#" class="project-link">
+    <!-- View Repository › -->
+  </a>
+</div>
+<!-- 
+Children:
+- unlimited
+- label
+- URL
+- custom classes
+
+
+============================================================
+NODE TYPE: DISPLAY / PREVIEW
+============================================================
+
+No children.
+No action links inside the Display node.
+Buttons belong in a separate Nav / Link node.
+
+Required classes:
+project-display
+project-preview
+
+Output: -->
+
+<section id="uniqueID" class="project-display uniqueClass">
+  <div class="project-preview">HTML HERE</div>
+</section>
+<!-- 
+Display HTML:
+- browser-readable HTML
+- fixed display/preview area
+- overflow handled by styling
+
+
+============================================================
+NODE TYPE: STANDARD
+============================================================
+
+Required parent class:
+project-detail
+
+Output: -->
+
+<section id="uniqueID" class="project-detail uniqueClass">
+  <header>
+    <span>OPTIONAL SMALL TITLE</span>
+    <h3>NODE TITLE</h3>
+  </header>
+
+  <div class="project-command-list">
+    <div id="child-uniqueID" class="project-command child-01 uniqueClass">
+      CHILD HTML
+    </div>
+  </div>
+</section>
+<!-- 
+Important later decision:
+
+STANDARD IS SINGLE-COLUMN.
+
+Behavior = None:
+- one full-width child
+- arbitrary HTML
+- no content columns
+
+Behavior = Link or Collapse:
+- full-width content
+- one narrow action column on the right only
+
+Standard does NOT split the first and second HTML elements into columns.
+
+
+============================================================
+NODE TYPE: DOCUMENTATION
+============================================================
+
+Same child behavior as Standard.
+
+Required parent class:
+project-doc-section
+
+Output: -->
+
+<section id="uniqueID" class="project-doc-section uniqueClass">
+  <header>
+    <span>OPTIONAL SMALL TITLE</span>
+    <h3>NODE TITLE</h3>
+  </header>
+
+  <div class="project-command-list">
+    <div id="child-uniqueID" class="project-command child-01 uniqueClass">
+      CHILD HTML
+    </div>
+  </div>
+</section>
+<!-- 
+Important later decision:
+
+DOCUMENTATION IS SINGLE-COLUMN.
+
+Behavior = None:
+- full-width child content
+
+Behavior = Link / Collapse:
+- full-width content
+- narrow action area on right
+
+
+============================================================
+STANDARD / DOCUMENTATION CHILD TYPE
+============================================================
+
+Child Type and Behavior are separate.
+
+CHILD TYPE: STANDARD HTML
+
+Output: -->
+
+<div id="child-<CHILD_ID>" class="project-command child-<CHILD_ID> customClass">
+  HTML
+</div>
+<!-- 
+
+CHILD TYPE: NOTE / ASIDE
+
+Required class:
+project-note
+
+Output: -->
+
+<aside id="child-<CHILD_ID>" class="project-note child-<CHILD_ID> customClass">
+  HTML
+</aside>
+
+<!-- 
+CHILD TYPE: CODE EXAMPLE
+
+Required class:
+project-example
+
+Output: -->
+
+<div id="child-<CHILD_ID>" class="project-example child-<CHILD_ID> customClass">
+  <small>Example</small>
+
+  <pre><code>
+CODE ONLY
+  </code></pre>
+</div>
+<!-- 
+
+============================================================
+STANDARD / DOCUMENTATION CHILD BEHAVIOR
+============================================================
+
+BEHAVIOR: NONE
+
+Full-width content only.
+
+No second column.
+No button.
+No arrow.
+
+
+BEHAVIOR: LINK
+
+Content remains full width except for one narrow action area.
+
+Output concept: -->
+
+<div id="child-<CHILD_ID>" class="project-command child-<CHILD_ID> customClass">
+  <div class="project-command-content">HTML</div>
+
+  <a class="project-command-action" href="URL">
+    <span>›</span>
+  </a>
+</div>
+<!-- 
+Only the button/action area is clickable.
+The whole HTML block is not clickable.
+
+External links:
+target="_blank"
+rel="noopener noreferrer"
+
+
+BEHAVIOR: COLLAPSIBLE
+
+Content + narrow action button on the right.
+
+Output concept: -->
+
+<div
+  id="child-<CHILD_ID>"
+  class="project-command child-<CHILD_ID> is-collapsible"
+>
+  <div class="project-command-summary">VISIBLE HTML</div>
+
+  <button class="project-command-action" type="button">
+    <span>⌄</span>
+  </button>
+
+  <div class="project-command-panel" hidden>EXPANDED HTML</div>
+</div>
+<!-- 
+Again:
+- only the action/button area is interactive
+- the content area stays normal HTML
+
+
+============================================================
+NODE TYPE: GRID / BOXES
+============================================================
+
+This IS a multi-column content structure.
+
+Required parent class:
+project-detail
+
+Required child container:
+project-meta
+
+Output: -->
+
+<section id="uniqueID" class="project-detail uniqueClass">
+  <header>
+    <span>OPTIONAL SMALL TITLE</span>
+    <h3>NODE TITLE</h3>
+  </header>
+
+  <div class="project-meta">
+    <div id="child-<CHILD_ID>" class="child-<CHILD_ID> customClass">HTML</div>
+
+    <div id="child-<CHILD_ID>" class="child-<CHILD_ID> customClass">HTML</div>
+  </div>
+</section>
+<!-- 
+Grid behavior:
+- unlimited children
+- automatically lays boxes across available width
+- wraps when minimum width is reached
+- collapses responsively
+- each child accepts arbitrary HTML
+
+Earlier setting:
+Minimum Child Width
+
+Example:
+180px
+
+
+============================================================
+NODE TYPE: SPLIT / STRUCTURED ROWS
+============================================================
+
+This IS the other multi-column content structure.
+
+Each node can contain multiple children / rows.
+
+Every row in a Split node uses the same selected layout.
+
+Rows stack directly against each other:
+- no required gap
+- no required margin
+- can visually become documentation rows
+- tables
+- comparison charts
+- structured references
+
+
+SPLIT CHILD OUTPUT: -->
+
+<div
+  id="child-<CHILD_ID>"
+  class="project-split-row child-<CHILD_ID> customChildClass"
+>
+  <div class="project-split-child-head">OPTIONAL FULL-WIDTH HTML</div>
+
+  <div class="project-split project-split--MODE">
+    <div class="project-split-cell">COLUMN HTML</div>
+
+    <div class="project-split-cell">COLUMN HTML</div>
+  </div>
+</div>
+
+Full-width area: - optional - accepts arbitrary HTML - not forced into a header
+element - may be used as a heading, divider, description, table heading, etc. -
+may be used by itself with no lower columns SPLIT MODES / LAYOUTS WE SETTLED ON:
+small-left 1/3 + 2/3 equal 1/2 + 1/2 small-right 2/3 + 1/3 three-column 1/4 +
+1/2 + 1/4 Conceptual classes: project-split--small-left project-split--equal
+project-split--small-right project-split--three-column
+============================================================ AUTOMATIC ID /
+CLASS RULES ============================================================ Every
+record: - unique ID - automatic unique class - system class - optional custom
+classes Every node: - unique ID - node position class - automatic unique class -
+required system class - optional custom classes Every child: - unique ID - child
+position class - automatic unique class - optional custom classes Conceptually:
+node-01 node-02 child-01 child-02 uid-<database-id>
+  ============================================================ ORDERING
+  ============================================================ Record Header:
+  always first Top-level nodes: reorderable Children: reorderable within a
+  parent New node: goes to bottom Editing existing node: must preserve current
+  position New child: goes to bottom of current parent Editing child: must
+  preserve its position Explicit ↑ / ↓: changes order
+  ============================================================ NEW HIERARCHY
+  DECISION — PENDING IMPLEMENTATION
+  ============================================================ Every saved
+  node/child should have: Parent Node [ CURRENT PARENT ▼ ] Options: None — Make
+  Top-Level Node Terminal Basics Project Structure Components Templates Signals
+  Routing ... Selecting a parent: parent_id = selected node ID Selecting None:
+  parent_id = NULL If a child becomes top-level: user chooses its Node Type If a
+  top-level node becomes a child: it becomes part of the selected parent
+  structure The editor should warn when the conversion would lose incompatible
+  structural data. ============================================================
+  NEW MODE DECISION — PENDING IMPLEMENTATION
+  ============================================================ Any Node Type
+  with multiple structural forms should expose a Mode / Layout control directly
+  under Node Type. Examples: Node Type: Nav / Links Mode: Navigation Buttons /
+  Actions Node Type: Split Mode: 1/3 + 2/3 1/2 + 1/2 2/3 + 1/3 1/4 + 1/2 + 1/4
+  Grid may expose: Minimum Child Width and any later grid-mode choices we decide
+  to add. ============================================================ NEW PAGE
+  STRUCTURE LIST DECISION — PENDING IMPLEMENTATION
+  ============================================================ The
+  edit/navigation list must clearly show hierarchy. Instead of: 01 Angular CLI
+  02 Install CLI 03 Components 04 Signals it should read visually more like: 01
+  Angular CLI ├─ Install CLI ├─ ng new ├─ ng serve └─ ng build 02 Project
+  Structure ├─ main.ts ├─ app.config.ts └─ angular.json 03 Components ├─ Basic
+  Component ├─ Component Imports └─ Component Selector 04 Signals ├─ signal() ├─
+  computed() └─ effect() Top-level nodes and children need to look visibly
+  different. Clicking either a node or child should open that item for
+  editing.</database-id
+>

@@ -1,0 +1,7 @@
+{
+  "port": 4173,
+  "databasePath": "data/sandbox.db",
+  "projectRoots": {
+    "sandbox": "."
+  }
+}

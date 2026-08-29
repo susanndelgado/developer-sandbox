@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Local Sandbox Editor</title>
+
+    <link rel="stylesheet" href="/local-editor/style.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+         TOP BAR
+         ========================================================= -->
+
+    <header class="topbar">
+      <div>
+        <strong>Local Sandbox Editor</strong>
+        <span>SQLite page builder · localhost only</span>
+      </div>
+
+      <nav class="top-actions" aria-label="Editor views">
+        <button id="show-editor" type="button">Editor</button>
+        <button id="show-database" type="button">Database View</button>
+        <button id="preview-page" type="button">Preview Page</button>
+      </nav>
+
+      <div id="status-message" class="status" aria-live="polite">Ready</div>
+    </header>
+
+    <!-- =========================================================
+         LOCAL SERVER HELP
+         ========================================================= -->
+
+    <section class="stop-help">
+      <strong>Start:</strong>
+      run <code>npm run editor</code> from the project root.
+
+      <strong>Open:</strong>
+      <code>http://localhost:4173</code>
+
+      <strong>Stop:</strong>
+      return to the Terminal window running the server and press
+      <kbd>Control</kbd> + <kbd>C</kbd>.
+
+      <span id="runtime-info" class="runtime-info"></span>
+    </section>
+
+    <!-- =========================================================
+         EDITOR LAYOUT
+         IMPORTANT:
+         Keep #node-editor and #page-outline in this structure.
+         client.ts renders all node forms and Add Child controls
+         inside #node-editor.
+         ========================================================= -->
+
+    <main id="editor-view" class="editor-layout">
+      <!-- =======================================================
+           LEFT SIDEBAR
+           ======================================================= -->
+
+      <aside class="sidebar">
+        <!-- Batch SQL -->
+
+        <details class="sql-panel">
+          <summary>Batch SQL</summary>
+
+          <div class="sql-inner">
+            <p>
+              Paste larger SQL batches here. Validate runs the batch inside a
+              rollback-only savepoint. Run Batch commits only if the full
+              transaction succeeds.
+            </p>
+
+            <textarea
+              id="sql-batch"
+              rows="15"
+              spellcheck="false"
+              placeholder="INSERT INTO ...;"
+            ></textarea>
+
+            <div class="form-actions">
+              <button id="validate-sql" type="button">Validate</button>
+              <button id="run-sql" type="button">Run Batch</button>
+            </div>
+          </div>
+        </details>
+
+        <!-- Database search -->
+
+        <section class="sidebar-section">
+          <div class="section-title-row">
+            <h2>Search Database</h2>
+
+            <button id="new-entry" type="button">New Entry</button>
+          </div>
+
+          <input
+            id="search-input"
+            type="search"
+            placeholder="ID, title, slug, type, status, category, tag…"
+          />
+
+          <div id="search-results" class="search-results"></div>
+        </section>
+      </aside>
+
+      <!-- =======================================================
+           CENTER WORKSPACE
+           ======================================================= -->
+
+      <section class="workspace">
+        <!-- =====================================================
+             FIXED RECORD INFORMATION
+             This always renders first on the generated page.
+             ===================================================== -->
+
+        <details open class="entry-panel">
+          <summary>Required Entry Information</summary>
+
+          <form id="entry-form" class="form-grid">
+            <label>
+              <span>Record Type *</span>
+
+              <select name="type" required>
+                <option value="project">Project</option>
+                <option value="reference-doc">Reference Doc</option>
+                <option value="rosetta-stone">Rosetta Stone</option>
+                <option value="data-visualization">Data Visualization</option>
+                <option value="resource">Resource</option>
+                <option value="experiment">Experiment</option>
+                <option value="custom">Custom</option>
+              </select>
+
+              <small>
+                Displayed in the fixed page header and used as the system entry
+                class. Categories remain separate and may contain more than one
+                value.
+              </small>
+            </label>
+
+            <label>
+              <span>Status</span>
+
+              <select name="status">
+                <option value="planned">Planned</option>
+                <option value="active">Active</option>
+                <option value="paused">Paused</option>
+                <option value="completed">Completed</option>
+                <option value="draft">Draft</option>
+                <option value="archived">Archived</option>
+              </select>
+            </label>
+
+            <label class="wide">
+              <span>Title *</span>
+
+              <input
+                name="title"
+                required
+                placeholder="Example: Modern Agenda"
+              />
+            </label>
+
+            <label>
+              <span>Record ID</span>
+
+              <input
+                name="id"
+                placeholder="Automatic if blank"
+                autocomplete="off"
+              />
+
+              <small>
+                Stable unique database identity. It is also incorporated into
+                the generated DOM ID and automatic unique class.
+              </small>
+            </label>
+
+            <label>
+              <span>Slug</span>
+
+              <input
+                name="slug"
+                placeholder="Automatic from title if blank"
+                autocomplete="off"
+              />
+            </label>
+
+            <label class="wide">
+              <span>Short Description</span>
+
+              <textarea
+                name="description"
+                rows="4"
+                placeholder="Short description shown in the fixed page header."
+              ></textarea>
+
+              <small>
+                Longer project or reference documentation belongs in nodes below
+                the fixed record header.
+              </small>
+            </label>
+
+            <label>
+              <span>Categories</span>
+
+              <input
+                name="categories"
+                placeholder="Web Development, Databases"
+                autocomplete="off"
+              />
+
+              <small>
+                Comma-separated. Records may belong to multiple categories for
+                organization and filtering.
+              </small>
+            </label>
+
+            <label>
+              <span>Tags</span>
+
+              <input
+                name="tags"
+                placeholder="TypeScript, SQLite, CRUD"
+                autocomplete="off"
+              />
+
+              <small> Comma-separated filtering and relationship terms. </small>
+            </label>
+
+            <label>
+              <span>Page Style</span>
+
+              <select name="presentationMode">
+                <option value="single-project">Single Project</option>
+                <option value="reference-guide">Reference Guide</option>
+              </select>
+
+              <small>
+                Controls the page presentation family. Individual nodes still
+                control their own content structure.
+              </small>
+            </label>
+
+            <label>
+              <span>Visibility</span>
+
+              <select name="visibility">
+                <option value="local">Local</option>
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+                <option value="hidden">Hidden</option>
+              </select>
+            </label>
+
+            <label class="wide">
+              <span>Additional Custom Classes</span>
+
+              <input
+                name="customClasses"
+                placeholder="optional classes"
+                autocomplete="off"
+              />
+
+              <small>
+                Required system class + automatic unique class are generated for
+                you. Add only extra classes you want.
+              </small>
+            </label>
+
+            <label class="checkbox">
+              <input name="featured" type="checkbox" />
+              <span>Featured</span>
+            </label>
+
+            <div class="form-actions wide">
+              <button type="submit">Save Entry</button>
+
+              <button id="delete-entry" type="button" class="danger">
+                Remove Entry
+              </button>
+            </div>
+          </form>
+        </details>
+
+        <!-- =====================================================
+             PAGE STRUCTURE
+
+             DO NOT MOVE #node-editor OUT OF THIS SECTION.
+             client.ts replaces its contents with:
+             - Add Node menu
+             - existing-node editor
+             - Node Type selector
+             - Add Child button
+             - child cards
+             - move/reorder/remove controls
+             - Save / Preview controls
+             ===================================================== -->
+
+        <section class="sidebar-section page-structure-section">
+          <div class="section-title-row">
+            <h2>Page Structure</h2>
+
+            <button id="add-node" type="button">+ Add Node</button>
+          </div>
+
+          <p class="sidebar-help">
+            The Record Header is always first. Everything below it can be added,
+            removed, edited, and moved up/down.
+          </p>
+
+          <div class="node-help">
+            <strong>Node types:</strong>
+            Nav / Links, Display / Preview, Standard, Documentation, Grid /
+            Boxes, and Split / Structured Rows. Existing nodes can be changed to
+            another node type from inside the node editor. Standard and
+            Documentation use full-width stacked children. Grid and Split are
+            the multi-column structures.
+          </div>
+
+          <!--
+            REQUIRED JAVASCRIPT MOUNT.
+            The Add Child field/button is generated inside this element.
+          -->
+          <div id="node-editor">
+            <div class="node-empty">
+              Save or open an entry, then choose + Add Node.
+            </div>
+          </div>
+
+          <!--
+            REQUIRED JAVASCRIPT MOUNT.
+            Existing top-level nodes and their ↑ ↓ remove controls are
+            generated here.
+          -->
+          <div id="page-outline"></div>
+        </section>
+
+        <!-- =====================================================
+             NODE / CHILD INSTRUCTIONS ONLY
+             This section is informational.
+             It must NOT replace #node-editor.
+             ===================================================== -->
+
+        <section class="node-workspace">
+          <div class="node-help">
+            <strong>Editing nodes and children.</strong>
+
+            Save the Entry first, then add or select a node. Each node has its
+            own form and can be removed, reordered, or converted to another node
+            type. Children can be added, removed, and reordered. Saved children
+            can also be moved to another compatible parent node.
+
+            <br /><br />
+
+            <strong>Standard / Documentation child types:</strong>
+            Standard HTML, Note / Aside, or Code Example.
+
+            <strong>Behavior:</strong>
+            None, Link, or Collapsible. Behavior None remains one full-width
+            content column. Link and Collapsible add only the narrow action area
+            on the right.
+
+            <br /><br />
+
+            HTML fields include syntax highlighting, tag completion, auto-close,
+            bracket matching, line numbers, and a Format HTML button when the
+            helper libraries are available.
+          </div>
+        </section>
+      </section>
+
+      <!-- =======================================================
+           RIGHT COLUMN PREVIEW
+           ======================================================= -->
+
+      <section class="preview-column">
+        <div class="preview-bar">
+          <strong>Page Preview</strong>
+          <span>Fixed record header + ordered nodes</span>
+        </div>
+
+        <div id="preview" class="preview"></div>
+
+        <details class="generated-panel">
+          <summary>Generated HTML</summary>
+
+          <textarea
+            id="generated-html"
+            readonly
+            rows="18"
+            spellcheck="false"
+          ></textarea>
+
+          <button id="copy-html" type="button">Copy Generated HTML</button>
+        </details>
+      </section>
+    </main>
+
+    <!-- =========================================================
+         DATABASE VIEW
+
+         IMPORTANT:
+         Keep this OUTSIDE #editor-view.
+         That keeps it below the complete editor instead of floating
+         over input fields or becoming another editor grid column.
+         ========================================================= -->
+
+    <main id="database-view" class="database-view" hidden>
+      <aside>
+        <h2>Database Tables</h2>
+
+        <div id="db-tables" class="db-table-list"></div>
+      </aside>
+
+      <section id="db-table" class="db-table-area"></section>
+    </main>
+
+    <!-- =========================================================
+         CLIENT
+         ========================================================= -->
+
+    <script type="module" src="/local-editor/client.js"></script>
+  </body>
+</html>

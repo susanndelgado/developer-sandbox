@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Sandbox Editor — Other Repositories</title>
+  <style>
+    body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      color: #1b2430;
+    }
+    h1, h2 { line-height: 1.2; }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    pre {
+      overflow-x: auto;
+      padding: 1rem;
+      background: #f3f5f7;
+      border: 1px solid #d8dde3;
+      border-radius: 6px;
+    }
+    .note {
+      padding: 1rem;
+      background: #fff8df;
+      border-left: 4px solid #c99a16;
+    }
+  </style>
+</head>
+<body>
+  <h1>Local Sandbox Editor — Using Other Repositories</h1>
+
+  <p>
+    The Local Sandbox Editor can stay inside the <code>developer-sandbox</code> repository
+    while cataloging and previewing projects that live in separate local Git repositories.
+  </p>
+
+  <h2>1. Start the editor</h2>
+  <p>From the root of <code>developer-sandbox</code>:</p>
+  <pre><code>npm run editor</code></pre>
+
+  <p>Open:</p>
+  <pre><code>http://localhost:4173</code></pre>
+
+  <p>Stop the server by returning to Terminal and pressing:</p>
+  <pre><code>Control + C</code></pre>
+
+  <h2>2. Configure another local repository</h2>
+  <p>Edit:</p>
+  <pre><code>local-editor/editor.config.json</code></pre>
+
+  <p>Example:</p>
+  <pre><code>{
+  "port": 4173,
+  "databasePath": "data/sandbox.db",
+  "projectRoots": {
+    "sandbox": ".",
+    "modern-agenda": "../modern-agenda",
+    "hair-day": "../hairDay"
+  }
+}</code></pre>
+
+  <p>
+    Each name under <code>projectRoots</code> is an alias for a local repository.
+    Paths are resolved relative to the <code>developer-sandbox</code> repository.
+  </p>
+
+  <h2>3. Reference files from another repo</h2>
+  <p>
+    A configured repo is available through the local editor server at:
+  </p>
+
+  <pre><code>/project-files/ALIAS/</code></pre>
+
+  <p>Example image:</p>
+
+  <pre><code>&lt;img
+  src="/project-files/modern-agenda/assets/screenshot.jpg"
+  alt="Modern Agenda screenshot"
+&gt;</code></pre>
+
+  <p>Example iframe:</p>
+
+  <pre><code>&lt;iframe
+  src="/project-files/hair-day/index.html"
+&gt;&lt;/iframe&gt;</code></pre>
+
+  <h2>4. Use a different compatible SQLite database</h2>
+  <p>
+    Change <code>databasePath</code> in <code>editor.config.json</code>.
+  </p>
+
+  <pre><code>{
+  "databasePath": "../another-repo/data/projects.db"
+}</code></pre>
+
+  <p>
+    The other database must use the same tables and columns expected by this editor.
+  </p>
+
+  <p>You can also temporarily override the database path when starting the editor:</p>
+
+  <pre><code>EDITOR_DB_PATH=/absolute/path/to/projects.db npm run editor</code></pre>
+
+  <h2>5. Important: local database vs online repositories</h2>
+
+  <div class="note">
+    <strong>The SQLite database works directly with the editor only while the editor is running locally.</strong>
+  </div>
+
+  <p>
+    Putting <code>sandbox.db</code> in GitHub or another online Git repository does not create a live
+    database server. A normal static website cannot open that repository file with Node's
+    <code>node:sqlite</code>, and it cannot write changes back to the Git repository.
+  </p>
+
+  <p>
+    For the public static Sandbox, the recommended workflow is:
+  </p>
+
+  <pre><code>Local Sandbox Editor
+        ↓
+SQLite database
+        ↓
+TypeScript export/build step
+        ↓
+static JSON / generated page data
+        ↓
+commit + deploy static website</code></pre>
+
+  <p>
+    Separate online repositories can consume the exported static data if it is published at a
+    reachable URL. They do not need direct write access to the SQLite file.
+  </p>
+
+  <h2>6. Recommended repository setup</h2>
+
+  <pre><code>Developer/
+├── developer-sandbox/
+│   ├── data/
+│   │   └── sandbox.db
+│   ├── local-editor/
+│   └── ...
+│
+├── modern-agenda/
+│   └── ...
+│
+├── hairDay/
+│   └── ...
+│
+└── another-project/
+    └── ...</code></pre>
+
+  <p>
+    Keep each project in its own Git repository. Use the Sandbox editor as the central local catalog,
+    documentation editor, and preview tool. Export the database content for deployment rather than
+    trying to make the public static site write directly to SQLite.
+  </p>
+</body>
+</html>
