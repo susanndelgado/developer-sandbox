@@ -49,14 +49,12 @@
           Rosetta Stones
         </button>
 
-        <button type="button">
+        <button
+          type="button"
+          onclick="window.location.href = '/system-guide.html'"
+        >
           <span aria-hidden="true">⊙</span>
           System Guide
-        </button>
-
-        <button type="button" onclick="window.location.href = '/inner.html'">
-          <span aria-hidden="true">⚗</span>
-          Lab
         </button>
       </nav>
 
@@ -409,43 +407,49 @@
 
     <footer>
       <nav aria-label="Developer tools">
-        <button type="button">
-          <span aria-hidden="true">⌘</span>
-          Terminal
-          <!-- Not sure this should be terminal unless you are planning to build it in which case make a tool tip coming soon pop up for now -->
+        <button
+          type="button"
+          onclick="
+            window.open(
+              'https://github.com/susanndelgado/developer-sandbox',
+              '_blank',
+              'noopener,noreferrer',
+            )
+          "
+        >
+          <span aria-hidden="true">⑂</span>
+          Sandbox Repo
         </button>
 
         <button
           type="button"
-          onclick="window.location.href = 'https://github.com/susanndelgado'"
+          onclick="
+            window.open(
+              'https://github.com/susanndelgado',
+              '_blank',
+              'noopener,noreferrer',
+            )
+          "
         >
           <span aria-hidden="true">⑂</span>
-          Git
+          GitHub
         </button>
 
-        <button type="button">
-          <span aria-hidden="true">⬡</span>
-          Docker
-          <!-- not even sure what to do with this link -->
+        <button
+          type="button"
+          onclick="window.location.href = 'system-guide.html'"
+        >
+          <span aria-hidden="true">⊙</span>
+          System Guide
         </button>
 
-        <button type="button">
+        <button
+          type="button"
+          aria-current="page"
+          onclick="window.location.href = 'database.html'"
+        >
           <span aria-hidden="true">◉</span>
           Database
-
-          <!-- not even sure what to do with this link maybe invent my own database that works on static website and is used for sandbox then this link could lead to a page that explains it? but not actually link to it -->
-        </button>
-
-        <button type="button">
-          <span aria-hidden="true">&lt;/&gt;</span>
-          VS Code
-          <!-- I dont know if I want to include this but if we dont create it maybe this can link to a page that explains my set up in vs code and what I use -->
-        </button>
-
-        <button type="button">
-          <span aria-hidden="true">↔</span>
-          API Tools
-          <!-- really dont know about this -->
         </button>
       </nav>
     </footer>
