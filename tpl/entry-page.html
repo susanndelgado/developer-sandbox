@@ -14,15 +14,17 @@
   </head>
 
   <body>
-    {{SITE_HEADER}}
+    {{ENTRY_HEADER}}
 
     <main class="view-all-page">
-      <section class="project-content" style="grid-column: 1 / -1">
-        {{ENTRY_HEADER}} {{ENTRY_CONTENT}}
+      {{ENTRY_ASIDE}}
+
+      <section class="project-content">
+        {{ENTRY_IDENTITY}} {{ENTRY_CONTENT}}
       </section>
     </main>
 
-    {{SITE_FOOTER}}
+    {{ENTRY_FOOTER}}
 
     <script src="assets/script.js"></script>
   </body>
