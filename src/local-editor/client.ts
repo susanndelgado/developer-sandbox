@@ -2500,6 +2500,7 @@ ${links}
       parentClasses(parent, nodeIndex, "project-detail"),
     )}">
   ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-meta">
 ${items}
   </div>
@@ -2531,6 +2532,7 @@ ${items}
       parentClasses(parent, nodeIndex, "project-detail"),
     )}">
   ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-command-list">
 ${items}
   </div>
@@ -2545,6 +2547,7 @@ ${items}
     parentClasses(parent, nodeIndex, "project-detail"),
   )}">
   ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-command-list">
 ${items}
   </div>

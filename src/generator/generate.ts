@@ -191,6 +191,66 @@ function classes(...values: Array<string | null | undefined>): string {
     .join(" ");
 }
 
+function positionClass(prefix: "node" | "child", index: number): string {
+  return `${prefix}-${String(index + 1).padStart(2, "0")}`;
+}
+
+function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
+  const subtitle = (node.subtitle ?? "").trim();
+  const title = (node.title ?? "").trim();
+
+  if (!subtitle && !title) {
+    return "";
+  }
+
+  return `
+<header>
+  ${subtitle ? `<span>${subtitle}</span>` : ""}
+  ${title ? `<${heading}>${title}</${heading}>` : ""}
+</header>`;
+}
+
+function parentBody(node: NodeRow): string {
+  const details = node.description ?? "";
+  const content = node.content ?? "";
+
+  return [details, content].filter(Boolean).join("\n");
+}
+
+function parentClasses(
+  node: NodeRow,
+  nodeIndex: number,
+  requiredClass: string,
+): string {
+  return classes(
+    requiredClass,
+    positionClass("node", nodeIndex),
+    `uid-${slugify(node.id)}`,
+    node.class_name,
+  );
+}
+
+function childClasses(
+  child: NodeRow,
+  childIndex: number,
+  requiredClass = "",
+): string {
+  return classes(
+    requiredClass,
+    positionClass("child", childIndex),
+    `uid-${slugify(child.id)}`,
+    child.class_name,
+  );
+}
+
+function uniquePanelId(
+  record: RecordRow,
+  parent: NodeRow,
+  child: NodeRow,
+): string {
+  return `panel-${slugify(record.id)}-${slugify(parent.id)}-${slugify(child.id)}`;
+}
+
 function recordSort(a: RecordRow, b: RecordRow): number {
   const order = Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0);
 
@@ -1889,10 +1949,7 @@ function metaString(node: NodeRow, key: string): string {
 function normalizedNodeType(node: NodeRow): string {
   const type = String(node.type || "standard").toLowerCase();
 
-  /*
-   * Compatibility with older node values.
-   */
-  if (type === "documentation") {
+  if (type === "documentation" || type === "section") {
     return "standard";
   }
 
@@ -1900,7 +1957,15 @@ function normalizedNodeType(node: NodeRow): string {
     return "display";
   }
 
-  return type;
+  if (type === "group") {
+    return "grid";
+  }
+
+  if (["nav", "display", "standard", "split", "grid", "code"].includes(type)) {
+    return type;
+  }
+
+  return "standard";
 }
 
 function nodeMode(node: NodeRow): ParentMode {
@@ -1924,13 +1989,21 @@ function nodeMode(node: NodeRow): ParentMode {
 function topNodes(nodes: NodeRow[]): NodeRow[] {
   return nodes
     .filter((node) => !node.parent_id && !Boolean(node.hidden))
-    .sort((a, b) => Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0));
+    .sort(
+      (a, b) =>
+        Number(a.sort_order ?? 999999) - Number(b.sort_order ?? 999999) ||
+        a.id.localeCompare(b.id),
+    );
 }
 
 function childrenOf(nodes: NodeRow[], parentId: string): NodeRow[] {
   return nodes
     .filter((node) => node.parent_id === parentId && !Boolean(node.hidden))
-    .sort((a, b) => Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0));
+    .sort(
+      (a, b) =>
+        Number(a.sort_order ?? 999999) - Number(b.sort_order ?? 999999) ||
+        a.id.localeCompare(b.id),
+    );
 }
 
 /* =========================================================
@@ -2012,70 +2085,62 @@ function generatedEntryLink(record: RecordRow, url: string): string {
 
 function renderNavChild(
   record: RecordRow,
+  parent: NodeRow,
   child: NodeRow,
+  childIndex: number,
   mode: ParentMode,
 ): string {
   const rawUrl = metaString(child, "url") || "#";
-
   const url = generatedEntryLink(record, rawUrl);
-
-  const text = child.nav_label || child.title || "Open";
-
+  const text = child.nav_label || child.title || "";
   const id = `child-${slugify(child.id)}`;
+  const base = childClasses(
+    child,
+    childIndex,
+    mode === "buttons" ? "project-link" : "",
+  );
 
   if (mode === "buttons") {
-    return `
-<a
+    return `<a
   id="${attr(id)}"
-  class="${attr(classes("project-link", child.class_name))}"
+  class="${attr(base)}"
   href="${attr(url)}"${externalAttributes(url)}
->
-  ${text}
-
-  <span aria-hidden="true">
-    ›
-  </span>
-</a>`;
+>${text}<span aria-hidden="true">›</span></a>`;
   }
 
-  return `
-<a
+  return `<a
   id="${attr(id)}"
-  class="${attr(classes(child.class_name))}"
+  class="${attr(base)}"
   href="${attr(url)}"${externalAttributes(url)}
->
-  ${text}
-</a>`;
+>${text}</a>`;
 }
 
 function renderNav(
   record: RecordRow,
   parent: NodeRow,
   children: NodeRow[],
+  nodeIndex: number,
 ): string {
   const mode = nodeMode(parent);
-
   const links = children
-    .map((child) => renderNavChild(record, child, mode))
+    .map((child, index) => renderNavChild(record, parent, child, index, mode))
     .join("\n");
 
   if (mode === "buttons") {
-    return `
-<div
+    return `<div
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-actions", parent.class_name))}"
+  class="${attr(parentClasses(parent, nodeIndex, "project-actions"))}"
 >
-  ${links}
+${links}
 </div>`;
   }
 
-  return `
-<nav
+  return `<nav
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-doc-nav", parent.class_name))}"
+  class="${attr(parentClasses(parent, nodeIndex, "project-doc-nav"))}"
   aria-label="${attr(parent.nav_label || parent.title || "Page sections")}"
 >
-  ${links}
+${links}
 </nav>`;
 }
 
@@ -2083,34 +2148,21 @@ function renderNav(
    DISPLAY / PREVIEW NODE
    ========================================================= */
 
-function renderDisplay(parent: NodeRow): string {
+function renderDisplay(parent: NodeRow, nodeIndex: number): string {
   const content = parent.content ?? "";
-
   const details = parent.description ?? "";
+  const header = parentHeader(parent, "h2");
 
-  return `
-<div
+  return `<div
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-display", parent.class_name))}"
+  class="${attr(parentClasses(parent, nodeIndex, "project-display"))}"
 >
-  <div class="project-preview">
-    ${content}
-  </div>
-
+  <div class="project-preview">${content}</div>
   ${
-    details || parent.title || parent.subtitle
-      ? `
-  <div class="project-detail">
-    ${projectDetailHeader(parent)}
-
-    ${
-      details
-        ? `
-    <div class="project-display-details">
-      ${details}
-    </div>`
-        : ""
-    }
+    details || header
+      ? `<div class="project-detail">
+    ${header}
+    ${details ? `<div class="project-display-details">${details}</div>` : ""}
   </div>`
       : ""
   }
@@ -2125,84 +2177,50 @@ function renderStandardChild(
   record: RecordRow,
   parent: NodeRow,
   child: NodeRow,
+  childIndex: number,
 ): string {
   const mode = nodeMode(parent);
-
   const id = `child-${slugify(child.id)}`;
-
-  const rawUrl = metaString(child, "url") || "#";
-
-  const url = generatedEntryLink(record, rawUrl);
-
-  const baseClass = classes("project-command", child.class_name);
+  const base = childClasses(child, childIndex, "project-command");
 
   if (mode === "collapse-list") {
-    const panelId = `${id}-panel`;
+    const panelId = uniquePanelId(record, parent, child);
+    const summary = `${childTitle(child)}${child.description ?? ""}`;
 
-    return `
-<div
-  id="${attr(id)}"
-  class="${attr(classes(baseClass, "is-collapsible"))}"
->
-  <div class="project-command-summary">
-    ${childTitle(child)}
-
-    ${child.description ?? ""}
-  </div>
-
+    return `<div id="${attr(id)}" class="${attr(classes(base, "is-collapsible"))}">
+  <div class="project-command-summary">${summary}</div>
   <button
     class="project-command-action collapse-toggle"
     type="button"
     aria-expanded="false"
     aria-controls="${attr(panelId)}"
     aria-label="Expand ${attr(child.title || "item")}"
-  >
-    <span aria-hidden="true">
-      ⌄
-    </span>
-  </button>
-
-  <div
-    id="${attr(panelId)}"
-    class="project-command-panel"
-    hidden
-  >
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="${attr(panelId)}" class="project-command-panel" hidden>
     ${child.content ?? ""}
   </div>
 </div>`;
   }
 
   if (mode === "link-list") {
-    return `
-<div
-  id="${attr(id)}"
-  class="${attr(baseClass)}"
->
+    const rawUrl = metaString(child, "url") || "#";
+    const url = generatedEntryLink(record, rawUrl);
+
+    return `<div id="${attr(id)}" class="${attr(base)}">
   <div class="project-command-content">
     ${childTitle(child)}
-
     ${child.content ?? ""}
   </div>
-
   <a
     class="project-command-action"
     href="${attr(url)}"${externalAttributes(url)}
     aria-label="${attr(child.nav_label || child.title || "Open linked item")}"
-  >
-    <span aria-hidden="true">
-      ›
-    </span>
-  </a>
+  ><span aria-hidden="true">›</span></a>
 </div>`;
   }
 
-  return `
-<div
-  id="${attr(id)}"
-  class="${attr(baseClass)}"
->
+  return `<div id="${attr(id)}" class="${attr(base)}">
   ${childTitle(child)}
-
   ${child.content ?? ""}
 </div>`;
 }
@@ -2211,50 +2229,21 @@ function renderStandard(
   record: RecordRow,
   parent: NodeRow,
   children: NodeRow[],
+  nodeIndex: number,
 ): string {
   const items = children
-    .map((child) => renderStandardChild(record, parent, child))
+    .map((child, index) => renderStandardChild(record, parent, child, index))
     .join("\n");
 
-  if (isReferenceGuide(record)) {
-    return `
-<section
+  return `<section
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-doc-section", parent.class_name))}"
+  class="${attr(parentClasses(parent, nodeIndex, "project-detail"))}"
 >
-  ${documentSectionHeader(parent)}
-
-  ${parent.content ?? ""}
-
-  ${
-    children.length
-      ? `
+  ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-command-list">
-    ${items}
-  </div>`
-      : ""
-  }
-</section>`;
-  }
-
-  return `
-<section
-  id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-detail", parent.class_name))}"
->
-  ${projectDetailHeader(parent)}
-
-  ${parent.description ?? ""}
-  ${parent.content ?? ""}
-
-  ${
-    children.length
-      ? `
-  <div class="project-command-list">
-    ${items}
-  </div>`
-      : ""
-  }
+${items}
+  </div>
 </section>`;
 }
 
@@ -2262,39 +2251,32 @@ function renderStandard(
    GRID / BOXES NODE
    ========================================================= */
 
-function renderGridChild(child: NodeRow): string {
-  return `
-<div
-  id="child-${attr(slugify(child.id))}"
-  class="${attr(classes(child.class_name))}"
->
-  ${
-    child.title
-      ? `
-  <small>
-    ${child.title}
-  </small>`
-      : ""
-  }
+function renderGridChild(child: NodeRow, childIndex: number): string {
+  const id = `child-${slugify(child.id)}`;
 
-  <strong>
-    ${child.content ?? ""}
-  </strong>
+  return `<div id="${attr(id)}" class="${attr(childClasses(child, childIndex))}">
+  ${childTitle(child)}
+  ${child.content ?? ""}
 </div>`;
 }
 
-function renderGrid(parent: NodeRow, children: NodeRow[]): string {
-  const items = children.map(renderGridChild).join("\n");
+function renderGrid(
+  parent: NodeRow,
+  children: NodeRow[],
+  nodeIndex: number,
+): string {
+  const items = children
+    .map((child, index) => renderGridChild(child, index))
+    .join("\n");
 
-  return `
-<section
+  return `<section
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-detail", parent.class_name))}"
+  class="${attr(parentClasses(parent, nodeIndex, "project-detail"))}"
 >
-  ${projectDetailHeader(parent)}
-
+  ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-meta">
-    ${items}
+${items}
   </div>
 </section>`;
 }
@@ -2305,7 +2287,6 @@ function renderGrid(parent: NodeRow, children: NodeRow[]): string {
 
 function parseSplitMode(mode: string): {
   layout: "small-left" | "equal" | "small-right" | "three-column";
-
   behavior: "default" | "collapse" | "link";
 } {
   let layout: "small-left" | "equal" | "small-right" | "three-column" =
@@ -2329,28 +2310,7 @@ function parseSplitMode(mode: string): {
       ? "link"
       : "default";
 
-  return {
-    layout,
-    behavior,
-  };
-}
-
-function splitClass(
-  layout: "small-left" | "equal" | "small-right" | "three-column",
-): string {
-  switch (layout) {
-    case "equal":
-      return "project-split--equal";
-
-    case "small-right":
-      return "project-split--small-right";
-
-    case "three-column":
-      return "project-split--three-column";
-
-    default:
-      return "project-split--small-left";
-  }
+  return { layout, behavior };
 }
 
 function renderSplitCells(
@@ -2371,121 +2331,90 @@ function renderSplitCells(
     .map((value, index) => {
       const isLast = index === count - 1;
 
-      return `
-<div class="project-split-cell">
+      return `<div class="project-split-cell">
   ${value}
-
   ${isLast ? action : ""}
 </div>`;
     })
     .join("\n");
 }
 
+function renderSplitChild(
+  record: RecordRow,
+  parent: NodeRow,
+  child: NodeRow,
+  childIndex: number,
+  mode: ParentMode,
+): string {
+  const { layout, behavior } = parseSplitMode(mode);
+  const id = `child-${slugify(child.id)}`;
+  const base = childClasses(child, childIndex, "project-command");
+  const title = child.title
+    ? `<div class="project-split-child-head">${child.title}</div>`
+    : "";
+
+  if (behavior === "collapse") {
+    const panelId = uniquePanelId(record, parent, child);
+
+    return `<div id="${attr(id)}" class="${attr(classes(base, "is-collapsible"))}">
+  <div class="project-command-summary">${child.title ?? ""}</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="${attr(panelId)}"
+    aria-label="Expand ${attr(child.title || "item")}"
+  ><span aria-hidden="true">⌄</span></button>
+  <div
+    id="${attr(panelId)}"
+    class="project-split project-split--${attr(layout)} project-command-panel"
+    hidden
+  >
+    ${renderSplitCells(child, layout)}
+  </div>
+</div>`;
+  }
+
+  let action = "";
+
+  if (behavior === "link") {
+    const rawUrl = metaString(child, "url") || "#";
+    const url = generatedEntryLink(record, rawUrl);
+
+    action = `<a
+  class="project-command-action"
+  href="${attr(url)}"${externalAttributes(url)}
+  aria-label="${attr(child.nav_label || child.title || "Open linked item")}"
+><span aria-hidden="true">›</span></a>`;
+  }
+
+  return `<div id="${attr(id)}" class="${attr(base)}">
+  ${title}
+  <div class="project-split project-split--${attr(layout)}">
+    ${renderSplitCells(child, layout, action)}
+  </div>
+</div>`;
+}
+
 function renderSplit(
   record: RecordRow,
   parent: NodeRow,
   children: NodeRow[],
+  nodeIndex: number,
 ): string {
   const mode = nodeMode(parent);
-
-  const { layout, behavior } = parseSplitMode(mode);
-
-  const layoutClass = splitClass(layout);
-
-  const rows = children
-    .map((child) => {
-      const rawUrl = metaString(child, "url") || "#";
-
-      const url = generatedEntryLink(record, rawUrl);
-
-      if (behavior === "collapse") {
-        const panelId = `split-${slugify(child.id)}`;
-
-        return `
-<div class="project-command is-collapsible">
-  <div class="project-command-summary">
-    ${child.title ? `<strong>${child.title}</strong>` : ""}
-  </div>
-
-  <button
-    type="button"
-    class="project-command-action collapse-toggle"
-    aria-expanded="false"
-    aria-controls="${attr(panelId)}"
-  >
-    <span aria-hidden="true">
-      ⌄
-    </span>
-  </button>
-
-  <div
-    id="${attr(panelId)}"
-    class="project-command-panel"
-    hidden
-  >
-    <div
-      class="project-split ${attr(layoutClass)}"
-    >
-      ${renderSplitCells(child, layout)}
-    </div>
-  </div>
-</div>`;
-      }
-
-      const action =
-        behavior === "link"
-          ? `
-<a
-  class="project-command-action"
-  href="${attr(url)}"${externalAttributes(url)}
->
-  <span aria-hidden="true">
-    ›
-  </span>
-</a>`
-          : "";
-
-      return `
-<div
-  class="${attr(classes("project-command", child.class_name))}"
->
-  ${
-    child.title
-      ? `
-  <div>
-    <strong>
-      ${child.title}
-    </strong>
-  </div>`
-      : ""
-  }
-
-  <div
-    class="project-split ${attr(layoutClass)}"
-  >
-    ${renderSplitCells(child, layout, action)}
-  </div>
-</div>`;
-    })
+  const items = children
+    .map((child, index) => renderSplitChild(record, parent, child, index, mode))
     .join("\n");
 
-  const sectionClass = isReferenceGuide(record)
-    ? "project-doc-section"
-    : "project-detail";
-
-  const header = isReferenceGuide(record)
-    ? documentSectionHeader(parent)
-    : projectDetailHeader(parent);
-
-  return `
-<section
+  return `<section
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes(sectionClass, parent.class_name))}"
+  class="${attr(parentClasses(parent, nodeIndex, "project-doc-section"))}"
 >
-  ${header}
-
+  ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-command-list">
-    ${rows}
+${items}
   </div>
 </section>`;
 }
@@ -2494,90 +2423,67 @@ function renderSplit(
    CODE / EXAMPLES NODE
    ========================================================= */
 
+function renderCodeExample(child: NodeRow): string {
+  const code = metaString(child, "code");
+
+  return `<div class="project-example">
+  <small>Example</small>
+  <pre><code>${escapeHtml(code)}</code></pre>
+</div>`;
+}
+
 function renderCodeChild(
   record: RecordRow,
   parent: NodeRow,
   child: NodeRow,
+  childIndex: number,
 ): string {
   const mode = nodeMode(parent);
-
-  const code = metaString(child, "code");
-
-  const rawUrl = metaString(child, "url") || "#";
-
-  const url = generatedEntryLink(record, rawUrl);
-
-  const example = `
-<div class="project-example">
-  <small>
-    EXAMPLE
-  </small>
-
-  <pre><code>${escapeHtml(code)}</code></pre>
-</div>`;
+  const id = `child-${slugify(child.id)}`;
+  const base = childClasses(child, childIndex, "project-command");
+  const details = child.description ?? "";
+  const example = renderCodeExample(child);
 
   if (mode === "collapse-list") {
-    const panelId = `code-${slugify(child.id)}`;
+    const panelId = uniquePanelId(record, parent, child);
 
-    return `
-<div class="project-command is-collapsible">
-  <div class="project-command-summary">
-    ${child.title ? `<strong>${child.title}</strong>` : ""}
-  </div>
-
+    return `<div id="${attr(id)}" class="${attr(classes(base, "is-collapsible"))}">
+  <div class="project-command-summary">${child.title ?? ""}</div>
   <button
-    type="button"
     class="project-command-action collapse-toggle"
+    type="button"
     aria-expanded="false"
     aria-controls="${attr(panelId)}"
-  >
-    <span aria-hidden="true">
-      ⌄
-    </span>
-  </button>
-
-  <div
-    id="${attr(panelId)}"
-    class="project-command-panel"
-    hidden
-  >
-    ${child.description ?? ""}
-
+    aria-label="Expand ${attr(child.title || "item")}"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="${attr(panelId)}" class="project-command-panel" hidden>
+    ${details}
     ${example}
   </div>
 </div>`;
   }
 
   if (mode === "link-list") {
-    return `
-<div class="project-command">
-  <div>
-    ${child.title ? `<strong>${child.title}</strong>` : ""}
+    const rawUrl = metaString(child, "url") || "#";
+    const url = generatedEntryLink(record, rawUrl);
 
-    ${child.description ?? ""}
-
+    return `<div id="${attr(id)}" class="${attr(base)}">
+  <div class="project-command-content">
+    ${childTitle(child)}
+    ${details}
     ${example}
   </div>
-
   <a
     class="project-command-action"
     href="${attr(url)}"${externalAttributes(url)}
-  >
-    <span aria-hidden="true">
-      ›
-    </span>
-  </a>
+    aria-label="${attr(child.nav_label || child.title || "Open linked item")}"
+  ><span aria-hidden="true">›</span></a>
 </div>`;
   }
 
-  return `
-<div class="project-command">
-  <div>
-    ${child.title ? `<strong>${child.title}</strong>` : ""}
-
-    ${child.description ?? ""}
-  </div>
-
+  return `<div id="${attr(id)}" class="${attr(base)}">
+  ${childTitle(child)}
+  ${details}
   ${example}
 </div>`;
 }
@@ -2586,28 +2492,20 @@ function renderCode(
   record: RecordRow,
   parent: NodeRow,
   children: NodeRow[],
+  nodeIndex: number,
 ): string {
   const items = children
-    .map((child) => renderCodeChild(record, parent, child))
+    .map((child, index) => renderCodeChild(record, parent, child, index))
     .join("\n");
 
-  const sectionClass = isReferenceGuide(record)
-    ? "project-doc-section"
-    : "project-detail";
-
-  const header = isReferenceGuide(record)
-    ? documentSectionHeader(parent)
-    : projectDetailHeader(parent);
-
-  return `
-<section
+  return `<section
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes(sectionClass, parent.class_name))}"
+  class="${attr(parentClasses(parent, nodeIndex, "project-detail"))}"
 >
-  ${header}
-
+  ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-command-list">
-    ${items}
+${items}
   </div>
 </section>`;
 }
@@ -2620,28 +2518,29 @@ function renderParent(
   record: RecordRow,
   parent: NodeRow,
   nodes: NodeRow[],
+  nodeIndex: number,
 ): string {
   const children = childrenOf(nodes, parent.id);
 
   switch (normalizedNodeType(parent)) {
     case "nav":
-      return renderNav(record, parent, children);
+      return renderNav(record, parent, children, nodeIndex);
 
     case "display":
-      return renderDisplay(parent);
+      return renderDisplay(parent, nodeIndex);
 
     case "grid":
-      return renderGrid(parent, children);
+      return renderGrid(parent, children, nodeIndex);
 
     case "split":
-      return renderSplit(record, parent, children);
+      return renderSplit(record, parent, children, nodeIndex);
 
     case "code":
-      return renderCode(record, parent, children);
+      return renderCode(record, parent, children, nodeIndex);
 
     case "standard":
     default:
-      return renderStandard(record, parent, children);
+      return renderStandard(record, parent, children, nodeIndex);
   }
 }
 
@@ -2674,11 +2573,15 @@ function renderEntryContent(record: RecordRow): string {
     );
 
     const navHtml = navigation
-      .map((parent) => renderParent(record, parent, nodes))
+      .map((parent) =>
+        renderParent(record, parent, nodes, parents.indexOf(parent)),
+      )
       .join("\n");
 
     const bodyHtml = body
-      .map((parent) => renderParent(record, parent, nodes))
+      .map((parent) =>
+        renderParent(record, parent, nodes, parents.indexOf(parent)),
+      )
       .join("\n");
 
     return `
@@ -2690,7 +2593,9 @@ ${navHtml}
   }
 
   return parents
-    .map((parent) => renderParent(record, parent, nodes))
+    .map((parent) =>
+        renderParent(record, parent, nodes, parents.indexOf(parent)),
+      )
     .join("\n");
 }
 
@@ -2722,9 +2627,9 @@ function generateEntry(record: RecordRow, allRecords: RecordRow[]): void {
 
     ENTRY_ASIDE: renderEntryAside(record, allRecords),
 
-    ENTRY_IDENTITY: renderEntryIdentity(record),
+    ENTRY_IDENTITY: `<div id="preview" class="preview">\n${renderEntryIdentity(record)}`,
 
-    ENTRY_CONTENT: renderEntryContent(record),
+    ENTRY_CONTENT: `${renderEntryContent(record)}\n</div>`,
 
     FOOTER: footer,
   });
