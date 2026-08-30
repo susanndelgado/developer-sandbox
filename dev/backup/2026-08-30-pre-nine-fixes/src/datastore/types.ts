@@ -16,15 +16,13 @@ export type RecordStatus =
 
 export type Visibility = "public" | "private" | "local" | "hidden";
 
-export type RecordClassification =
-  | "general-project"
-  | "rosetta-stone"
-  | "lab-exploration"
-  | "reference-guide"
-  | "demo-data"
-  | "none";
-
-export type PresentationMode = "single-project" | "reference-guide";
+export type PresentationMode =
+  | "embedded"
+  | "standard"
+  | "immersive"
+  | "external"
+  | "code-only"
+  | "static-preview";
 
 export type LinkType =
   | "demo"
@@ -55,48 +53,16 @@ export type MediaRole =
   | "other";
 
 export type ContentNodeType =
-  | "nav"
-  | "display"
-  | "standard"
-  | "split"
-  | "grid"
-  | "code";
-
-export type ParentMode =
-  | "navigation"
-  | "buttons"
-  | "default"
-  | "collapse-list"
-  | "link-list"
-  | "small-left-default"
-  | "half-default"
-  | "small-right-default"
-  | "three-column-default"
-  | "small-left-collapse"
-  | "half-collapse"
-  | "small-right-collapse"
-  | "three-column-collapse"
-  | "small-left-link"
-  | "half-link"
-  | "small-right-link"
-  | "three-column-link";
-
-export interface SemanticAssistSettings {
-  details?: boolean;
-  content?: boolean;
-  additional?: boolean;
-  generated?: boolean;
-}
-
-export interface ContentNodeMetadata {
-  mode?: ParentMode;
-  additionalHtml?: string;
-  category?: string;
-  url?: string;
-  code?: string;
-  semanticAssist?: SemanticAssistSettings;
-  [key: string]: unknown;
-}
+  | "section"
+  | "group"
+  | "documentation"
+  | "preview"
+  | "description"
+  | "example"
+  | "resource"
+  | "media"
+  | "data"
+  | "custom";
 
 export type ContentFormat =
   | "html"
@@ -127,9 +93,8 @@ export interface SandboxRecord {
   subtitle?: string;
   description?: string;
 
-  type?: RecordClassification;
-  categories?: string[];
-  tags?: string[];
+  type?: string;
+  categoryId?: string;
 
   status?: RecordStatus;
   visibility?: Visibility;
@@ -150,7 +115,6 @@ export interface SandboxRecord {
   contentRootId?: string;
 
   notes?: string;
-  customClasses?: string;
 }
 
 /* =========================================================
@@ -255,6 +219,7 @@ export interface ContentNode {
   recordId: string;
 
   type?: ContentNodeType;
+  format?: ContentFormat;
 
   parentId?: string;
 
@@ -273,7 +238,7 @@ export interface ContentNode {
 
   className?: string;
 
-  metadata?: ContentNodeMetadata;
+  metadata?: Record<string, string>;
 }
 
 /* =========================================================

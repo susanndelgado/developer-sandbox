@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "editor": "npm run build && node --enable-source-maps dist/local-editor/server.js",
-    "generate": "npm run build && node --enable-source-maps dist/generator/generate.js"
+    "editor": "npm run build && node dist/local-editor/server.js",
+    "generate": "npm run build && node dist/generator/generate.js"
   },
   "keywords": [],
   "author": "",

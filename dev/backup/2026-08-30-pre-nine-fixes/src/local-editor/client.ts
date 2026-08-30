@@ -631,13 +631,7 @@ function generatedCollapseAttributes(
   child: NodeRow,
   panelId: string,
 ): string {
-  /*
-   * data-collapse-target is functional wiring, not accessibility decoration.
-   * It must exist even when semantic assist is disabled.
-   */
-  const functionalTarget = ` data-collapse-target="${attr(panelId)}"`;
-
-  if (!generatedAssistEnabled(parent)) return functionalTarget;
+  if (!generatedAssistEnabled(parent)) return "";
 
   const label =
     stripHtml(child.title ?? "") ||
@@ -645,7 +639,6 @@ function generatedCollapseAttributes(
     "item";
 
   return [
-    functionalTarget,
     ` aria-expanded="false"`,
     ` aria-controls="${attr(panelId)}"`,
     ` aria-label="${attr(`Expand ${label}`)}"`,
@@ -2530,36 +2523,16 @@ function renderPageHtml(record: RecordRow, parents: NodeRow[]): string {
   </p>
 </header>`;
 
-  const visibleParents = parents.filter((node) => !node.hidden);
-
-  const renderParents = (items: NodeRow[]): string =>
-    items
-      .map((parent) =>
-        renderParentNode(
-          parent,
-          childrenOf(parent.id).filter((child) => !child.hidden),
-          visibleParents.indexOf(parent),
-        ),
-      )
-      .join("\n");
-
-  let body = renderParents(visibleParents);
-
-  if (normalizeRecordClassification(record.type) === "reference-guide") {
-    const navigation = visibleParents.filter(
-      (parent) =>
-        normalizedNodeType(parent.type) === "nav" &&
-        parentMode(parent) === "navigation",
-    );
-
-    const documentation = visibleParents.filter(
-      (parent) => !navigation.includes(parent),
-    );
-
-    body = `${renderParents(navigation)}\n<article class="project-doc">\n${renderParents(
-      documentation,
-    )}\n</article>`;
-  }
+  const body = parents
+    .filter((node) => !node.hidden)
+    .map((parent, index) =>
+      renderParentNode(
+        parent,
+        childrenOf(parent.id).filter((child) => !child.hidden),
+        index,
+      ),
+    )
+    .join("\n");
 
   return `<article class="sandbox-entry-preview style-${attr(
     record.presentation_mode ?? "single-project",
@@ -2629,19 +2602,16 @@ function renderParentNode(
     const links = children
       .map((child, index) => renderNavChild(parent, child, index, mode))
       .join("\n");
-    const parentContent = parentBody(parent)
-      ? `<div class="project-nav-content">${parentBody(parent)}</div>\n`
-      : "";
 
     if (mode === "buttons") {
-      return `${parentContent}<div id="${attr(nodeId)}" class="${attr(
+      return `<div id="${attr(nodeId)}" class="${attr(
         parentClasses(parent, nodeIndex, "project-actions"),
       )}">
 ${links}
 </div>`;
     }
 
-    return `${parentContent}<nav id="${attr(nodeId)}" class="${attr(
+    return `<nav id="${attr(nodeId)}" class="${attr(
       parentClasses(parent, nodeIndex, "project-doc-nav"),
     )}"${generatedNavAriaLabel(parent)}>
 ${links}
@@ -2994,30 +2964,23 @@ function executeScripts(container: HTMLElement): void {
     .querySelectorAll<HTMLButtonElement>(".collapse-toggle")
     .forEach((button) => {
       button.addEventListener("click", () => {
-        const panelId =
-          button.dataset.collapseTarget || button.getAttribute("aria-controls");
+        const panelId = button.getAttribute("aria-controls");
         if (!panelId) return;
 
         const panel = document.getElementById(panelId);
         if (!panel) return;
 
-        const expanded = !panel.hidden;
-
-        if (button.hasAttribute("aria-expanded")) {
-          button.setAttribute("aria-expanded", String(!expanded));
-        }
-
-        if (button.hasAttribute("aria-label")) {
-          button.setAttribute(
-            "aria-label",
-            button
-              .getAttribute("aria-label")
-              ?.replace(
-                expanded ? /^Collapse / : /^Expand /,
-                expanded ? "Expand " : "Collapse ",
-              ) ?? "",
-          );
-        }
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.setAttribute(
+          "aria-label",
+          button
+            .getAttribute("aria-label")
+            ?.replace(
+              expanded ? /^Collapse / : /^Expand /,
+              expanded ? "Expand " : "Collapse ",
+            ) ?? "",
+        );
 
         panel.hidden = expanded;
       });

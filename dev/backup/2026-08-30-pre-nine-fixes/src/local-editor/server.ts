@@ -139,37 +139,6 @@ function parseMetadata(value: unknown): JsonObject {
   }
 }
 
-/*
- * Batch SQL is wrapped by the editor in its own transaction/savepoint.
- * User-supplied transaction control would break that safety boundary, so
- * reject it before SQLite sees the batch. Strings and comments are removed
- * before checking so words such as "commit" inside content are allowed.
- */
-function sqlForTransactionCheck(sql: string): string {
-  return sql
-    .replace(/'(?:''|[^'])*'/g, "''")
-    .replace(/"(?:""|[^"])*"/g, '""')
-    .replace(/--[^\r\n]*/g, "")
-    .replace(/\/\*[\s\S]*?\*\//g, "");
-}
-
-function assertSafeBatchSql(sql: string): void {
-  if (!sql.trim()) {
-    throw new Error("SQL batch is empty.");
-  }
-
-  const checked = sqlForTransactionCheck(sql);
-  const transactionControl = checked.match(
-    /\b(BEGIN|COMMIT|END|ROLLBACK|SAVEPOINT|RELEASE)\b/i,
-  );
-
-  if (transactionControl) {
-    throw new Error(
-      `Transaction-control statement "${transactionControl[1]}" is not allowed in Batch SQL. The editor manages the transaction automatically.`,
-    );
-  }
-}
-
 function getCategories(recordId: string): string[] {
   return database
     .prepare(
@@ -1286,7 +1255,6 @@ async function handleApi(
     ) {
       const body = await readJson(req);
       const sql = String(body.sql ?? "");
-      assertSafeBatchSql(sql);
 
       database.exec("SAVEPOINT local_editor_validate;");
       try {
@@ -1312,9 +1280,8 @@ async function handleApi(
     if (req.method === "POST" && parts[1] === "sql" && parts[2] === "run") {
       const body = await readJson(req);
       const sql = String(body.sql ?? "");
-      assertSafeBatchSql(sql);
 
-      database.exec("BEGIN IMMEDIATE;");
+      database.exec("BEGIN;");
       try {
         database.exec(sql);
         database.exec("COMMIT;");
@@ -1451,16 +1418,6 @@ const server = createServer(async (req, res) => {
     return;
   }
 
-  if (pathname === "/local-editor/client.js.map") {
-    await serveFile(res, "dist/local-editor/client.js.map");
-    return;
-  }
-
-  if (pathname === "/src/local-editor/client.ts") {
-    await serveFile(res, "src/local-editor/client.ts");
-    return;
-  }
-
   if (pathname.startsWith("/assets/")) {
     await serveFile(res, pathname.slice(1));
     return;
@@ -1479,7 +1436,7 @@ const server = createServer(async (req, res) => {
   res.end("Not found");
 });
 
-server.listen(PORT, "127.0.0.1", () => {
+server.listen(PORT, () => {
   console.log(`Local Sandbox Editor: http://localhost:${PORT}`);
   console.log(`Database: ${DB_PATH}`);
 

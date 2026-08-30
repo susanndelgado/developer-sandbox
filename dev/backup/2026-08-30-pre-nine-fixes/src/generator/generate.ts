@@ -2055,74 +2055,12 @@ function childTitle(node: NodeRow): string {
    LINKS
    ========================================================= */
 
-function isExternal(url: string): boolean {
-  return /^https?:\/\//i.test(url);
-}
-
-function plainTextLabel(value: string | null | undefined): string {
-  return String(value ?? "")
-    .replace(/<[^>]*>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function generatedAssistEnabled(node: NodeRow): boolean {
-  const raw = nodeMetadata(node).semanticAssist;
-
-  if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
-    return true;
-  }
-
-  return (raw as JsonObject).generated !== false;
-}
-
-function generatedLinkAttributes(
-  node: NodeRow,
-  url: string,
-  accessibleLabel: string,
-  needsAriaLabel = false,
-): string {
-  if (!generatedAssistEnabled(node)) {
+function externalAttributes(url: string): string {
+  if (!/^https?:\/\//i.test(url)) {
     return "";
   }
 
-  const target = isExternal(url) ? "_blank" : null;
-  const ariaLabel = needsAriaLabel
-    ? accessibleLabel.trim() || "Open link"
-    : null;
-
-  return [
-    target ? ` target="${attr(target)}"` : "",
-    target === "_blank" ? ` rel="noopener noreferrer"` : "",
-    ariaLabel ? ` aria-label="${attr(ariaLabel)}"` : "",
-  ].join("");
-}
-
-function generatedNavAriaLabel(node: NodeRow): string {
-  if (!generatedAssistEnabled(node)) return "";
-
-  const label = plainTextLabel(node.title) || "Section navigation";
-  return ` aria-label="${attr(label)}"`;
-}
-
-function generatedCollapseAttributes(
-  parent: NodeRow,
-  child: NodeRow,
-  panelId: string,
-): string {
-  const functionalTarget = ` data-collapse-target="${attr(panelId)}"`;
-
-  if (!generatedAssistEnabled(parent)) return functionalTarget;
-
-  const label =
-    plainTextLabel(child.title) || plainTextLabel(child.description) || "item";
-
-  return [
-    functionalTarget,
-    ` aria-expanded="false"`,
-    ` aria-controls="${attr(panelId)}"`,
-    ` aria-label="${attr(`Expand ${label}`)}"`,
-  ].join("");
+  return ` target="_blank" rel="noopener noreferrer"`;
 }
 
 function generatedEntryLink(record: RecordRow, url: string): string {
@@ -2166,22 +2104,14 @@ function renderNavChild(
     return `<a
   id="${attr(id)}"
   class="${attr(base)}"
-  href="${attr(url)}"${generatedLinkAttributes(
-    child,
-    url,
-    plainTextLabel(text) || "Open link",
-  )}
+  href="${attr(url)}"${externalAttributes(url)}
 >${text}<span aria-hidden="true">›</span></a>`;
   }
 
   return `<a
   id="${attr(id)}"
   class="${attr(base)}"
-  href="${attr(url)}"${generatedLinkAttributes(
-    child,
-    url,
-    plainTextLabel(text) || "Open link",
-  )}
+  href="${attr(url)}"${externalAttributes(url)}
 >${text}</a>`;
 }
 
@@ -2195,12 +2125,9 @@ function renderNav(
   const links = children
     .map((child, index) => renderNavChild(record, parent, child, index, mode))
     .join("\n");
-  const parentContent = parentBody(parent)
-    ? `<div class="project-nav-content">${parentBody(parent)}</div>\n`
-    : "";
 
   if (mode === "buttons") {
-    return `${parentContent}<div
+    return `<div
   id="node-${attr(slugify(parent.id))}"
   class="${attr(parentClasses(parent, nodeIndex, "project-actions"))}"
 >
@@ -2208,9 +2135,10 @@ ${links}
 </div>`;
   }
 
-  return `${parentContent}<nav
+  return `<nav
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(parentClasses(parent, nodeIndex, "project-doc-nav"))}"${generatedNavAriaLabel(parent)}
+  class="${attr(parentClasses(parent, nodeIndex, "project-doc-nav"))}"
+  aria-label="${attr(parent.nav_label || parent.title || "Page sections")}"
 >
 ${links}
 </nav>`;
@@ -2263,7 +2191,10 @@ function renderStandardChild(
   <div class="project-command-summary">${summary}</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"${generatedCollapseAttributes(parent, child, panelId)}
+    type="button"
+    aria-expanded="false"
+    aria-controls="${attr(panelId)}"
+    aria-label="Expand ${attr(child.title || "item")}"
   ><span aria-hidden="true">⌄</span></button>
   <div id="${attr(panelId)}" class="project-command-panel" hidden>
     ${child.content ?? ""}
@@ -2282,12 +2213,8 @@ function renderStandardChild(
   </div>
   <a
     class="project-command-action"
-    href="${attr(url)}"${generatedLinkAttributes(
-      child,
-      url,
-      plainTextLabel(child.nav_label || child.title) || "Open linked item",
-      true,
-    )}
+    href="${attr(url)}"${externalAttributes(url)}
+    aria-label="${attr(child.nav_label || child.title || "Open linked item")}"
   ><span aria-hidden="true">›</span></a>
 </div>`;
   }
@@ -2433,7 +2360,10 @@ function renderSplitChild(
   <div class="project-command-summary">${child.title ?? ""}</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"${generatedCollapseAttributes(parent, child, panelId)}
+    type="button"
+    aria-expanded="false"
+    aria-controls="${attr(panelId)}"
+    aria-label="Expand ${attr(child.title || "item")}"
   ><span aria-hidden="true">⌄</span></button>
   <div
     id="${attr(panelId)}"
@@ -2453,12 +2383,8 @@ function renderSplitChild(
 
     action = `<a
   class="project-command-action"
-  href="${attr(url)}"${generatedLinkAttributes(
-    child,
-    url,
-    plainTextLabel(child.nav_label || child.title) || "Open linked item",
-    true,
-  )}
+  href="${attr(url)}"${externalAttributes(url)}
+  aria-label="${attr(child.nav_label || child.title || "Open linked item")}"
 ><span aria-hidden="true">›</span></a>`;
   }
 
@@ -2525,7 +2451,10 @@ function renderCodeChild(
   <div class="project-command-summary">${child.title ?? ""}</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"${generatedCollapseAttributes(parent, child, panelId)}
+    type="button"
+    aria-expanded="false"
+    aria-controls="${attr(panelId)}"
+    aria-label="Expand ${attr(child.title || "item")}"
   ><span aria-hidden="true">⌄</span></button>
   <div id="${attr(panelId)}" class="project-command-panel" hidden>
     ${details}
@@ -2546,12 +2475,8 @@ function renderCodeChild(
   </div>
   <a
     class="project-command-action"
-    href="${attr(url)}"${generatedLinkAttributes(
-      child,
-      url,
-      plainTextLabel(child.nav_label || child.title) || "Open linked item",
-      true,
-    )}
+    href="${attr(url)}"${externalAttributes(url)}
+    aria-label="${attr(child.nav_label || child.title || "Open linked item")}"
   ><span aria-hidden="true">›</span></a>
 </div>`;
   }
