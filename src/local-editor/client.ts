@@ -2001,20 +2001,29 @@ function updateAssignedNodeFields(): void {
 
   fields.forEach((name) => setNodeFieldAssigned(form, name, false));
 
+  /*
+   * Every node may always have:
+   * - hierarchy
+   * - custom classes
+   * - category
+   * - title
+   */
   setNodeFieldAssigned(form, "parentId", true);
   setNodeFieldAssigned(form, "className", true);
   setNodeFieldAssigned(form, "category", true);
+  setNodeFieldAssigned(form, "title", true);
 
+  /*
+   * Parent nodes are real content containers.
+   * They may have their own heading, details and content
+   * regardless of the child layout they control.
+   */
   if (isParent) {
     setNodeFieldAssigned(form, "nodeType", true);
     setNodeFieldAssigned(form, "mode", true);
-    setNodeFieldAssigned(form, "title", true);
     setNodeFieldAssigned(form, "subtitle", true);
-
-    if (type === "display") {
-      setNodeFieldAssigned(form, "details", true);
-      setNodeFieldAssigned(form, "content", true);
-    }
+    setNodeFieldAssigned(form, "details", true);
+    setNodeFieldAssigned(form, "content", true);
 
     return;
   }
@@ -2025,32 +2034,27 @@ function updateAssignedNodeFields(): void {
   const parentType = normalizedNodeType(parent.type);
   const parentModeValue = parentMode(parent);
 
+  /*
+   * Child title remains editable for every child type.
+   */
+
   if (parentType === "nav") {
-    setNodeFieldAssigned(form, "title", true);
     setNodeFieldAssigned(form, "linkText", true);
     setNodeFieldAssigned(form, "url", true, true);
     return;
   }
 
   if (parentType === "grid") {
-    setNodeFieldAssigned(form, "title", true);
     setNodeFieldAssigned(form, "content", true);
     return;
   }
 
   if (parentType === "standard") {
-    setNodeFieldAssigned(
-      form,
-      "title",
-      true,
-      parentModeValue === "collapse-list",
-    );
+    setNodeFieldAssigned(form, "content", true);
 
     if (parentModeValue === "collapse-list") {
       setNodeFieldAssigned(form, "details", true);
-      setNodeFieldAssigned(form, "content", true);
-    } else {
-      setNodeFieldAssigned(form, "content", true);
+      setNodeFieldAssigned(form, "title", true, true);
     }
 
     if (parentModeValue === "link-list") {
@@ -2064,10 +2068,12 @@ function updateAssignedNodeFields(): void {
   if (parentType === "split") {
     const split = parseSplitMode(parentModeValue);
 
-    setNodeFieldAssigned(form, "title", true, split.behavior === "collapse");
-
     setNodeFieldAssigned(form, "details", true);
     setNodeFieldAssigned(form, "content", true);
+
+    if (split.behavior === "collapse") {
+      setNodeFieldAssigned(form, "title", true, true);
+    }
 
     if (split.layout === "three-column") {
       setNodeFieldAssigned(form, "additional", true);
@@ -2082,14 +2088,12 @@ function updateAssignedNodeFields(): void {
   }
 
   if (parentType === "code") {
-    setNodeFieldAssigned(
-      form,
-      "title",
-      true,
-      parentModeValue === "collapse-list",
-    );
     setNodeFieldAssigned(form, "details", true);
     setNodeFieldAssigned(form, "code", true);
+
+    if (parentModeValue === "collapse-list") {
+      setNodeFieldAssigned(form, "title", true, true);
+    }
 
     if (parentModeValue === "link-list") {
       setNodeFieldAssigned(form, "linkText", true);
@@ -2406,7 +2410,12 @@ function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
   ${title ? `<${heading}>${title}</${heading}>` : ""}
 </header>`;
 }
+function parentBody(node: NodeRow): string {
+  const details = renderedHtml(node, "details", node.description);
+  const content = renderedHtml(node, "content", node.content);
 
+  return [details, content].filter(Boolean).join("\n");
+}
 function parentClasses(
   node: NodeRow,
   nodeIndex: number,
@@ -2497,20 +2506,21 @@ ${items}
 </section>`;
   }
 
-  if (type === "split") {
-    const items = children
-      .map((child, index) => renderSplitChild(parent, child, index, mode))
-      .join("\n");
+ if (type === "split") {
+  const items = children
+    .map((child, index) => renderSplitChild(parent, child, index, mode))
+    .join("\n");
 
-    return `<section id="${attr(nodeId)}" class="${attr(
-      parentClasses(parent, nodeIndex, "project-doc-section"),
-    )}">
+  return `<section id="${attr(nodeId)}" class="${attr(
+    parentClasses(parent, nodeIndex, "project-doc-section"),
+  )}">
   ${parentHeader(parent)}
+  ${parentBody(parent)}
   <div class="project-command-list">
 ${items}
   </div>
 </section>`;
-  }
+}
 
   if (type === "code") {
     const items = children
