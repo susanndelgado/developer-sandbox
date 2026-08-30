@@ -1,0 +1,35 @@
+name: Match Project Fonts To Ref Once
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/match-project-fonts-to-ref-once.yml
+      - scripts/match-project-fonts-to-ref.py
+
+permissions:
+  contents: write
+
+jobs:
+  match-fonts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply typography changes
+        run: python3 scripts/match-project-fonts-to-ref.py
+
+      - name: Commit typography changes
+        run: |
+          rm .github/workflows/match-project-fonts-to-ref-once.yml
+          rm scripts/match-project-fonts-to-ref.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/inner.css .github/workflows/match-project-fonts-to-ref-once.yml scripts/match-project-fonts-to-ref.py
+          git commit -m "Match project typography to reference guide"
+          git push origin HEAD:main
