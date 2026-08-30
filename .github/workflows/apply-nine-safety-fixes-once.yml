@@ -1,0 +1,58 @@
+name: Apply Nine Backed-Up Safety Fixes Once
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/apply-nine-safety-fixes-once.yml
+      - scripts/apply-nine-safety-fixes-once.py
+
+permissions:
+  contents: write
+
+jobs:
+  apply-fixes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Apply fixes after creating backups
+        run: python3 scripts/apply-nine-safety-fixes-once.py
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Type-check TypeScript
+        run: npx tsc --noEmit
+
+      - name: Verify JavaScript syntax
+        run: node --check assets/script.js
+
+      - name: Verify backup copies exist
+        run: |
+          test -f dev/backup/2026-08-30-pre-nine-fixes/package.json
+          test -f dev/backup/2026-08-30-pre-nine-fixes/src/local-editor/server.ts
+          test -f dev/backup/2026-08-30-pre-nine-fixes/src/local-editor/client.ts
+          test -f dev/backup/2026-08-30-pre-nine-fixes/src/generator/generate.ts
+          test -f dev/backup/2026-08-30-pre-nine-fixes/assets/script.js
+          test -f dev/backup/2026-08-30-pre-nine-fixes/src/datastore/types.ts
+
+      - name: Commit fixes and backups
+        run: |
+          rm .github/workflows/apply-nine-safety-fixes-once.yml
+          rm scripts/apply-nine-safety-fixes-once.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json src/local-editor/server.ts src/local-editor/client.ts src/generator/generate.ts assets/script.js src/datastore/types.ts dev/backup/2026-08-30-pre-nine-fixes .github/workflows/apply-nine-safety-fixes-once.yml scripts/apply-nine-safety-fixes-once.py
+          git commit -m "Apply backed-up editor and renderer fixes"
+          git push origin HEAD:main
