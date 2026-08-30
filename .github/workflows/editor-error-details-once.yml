@@ -1,0 +1,46 @@
+name: Editor Error Details Once
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/editor-error-details-once.yml
+      - scripts/editor-error-details-once.py
+
+permissions:
+  contents: write
+
+jobs:
+  add-error-details:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Apply editor error detail patch
+        run: python3 scripts/editor-error-details-once.py
+
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Commit editor error details
+        run: |
+          rm .github/workflows/editor-error-details-once.yml
+          rm scripts/editor-error-details-once.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/local-editor/client.ts src/local-editor/server.ts .github/workflows/editor-error-details-once.yml scripts/editor-error-details-once.py
+          git commit -m "Show full local editor API errors"
+          git push origin HEAD:main
