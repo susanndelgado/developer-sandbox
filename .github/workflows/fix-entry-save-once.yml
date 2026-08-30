@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/fix-entry-save-once.yml
+      - scripts/fix-entry-save-once.py
 
 permissions:
   contents: write
@@ -25,56 +26,8 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Fix entry UPDATE named parameters
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-
-          path = Path("src/local-editor/server.ts")
-          text = path.read_text(encoding="utf8")
-
-          old = '''      WHERE id = $id
-    `,
-      )
-      .run(values);
-  } else {
-    database
-      .prepare(
-        `
-      INSERT INTO records ('''
-
-          new = '''      WHERE id = $id
-    `,
-      )
-      .run({
-        id: values.id,
-        title: values.title,
-        slug: values.slug,
-        description: values.description,
-        type: values.type,
-        status: values.status,
-        visibility: values.visibility,
-        featured: values.featured,
-        sort_order: values.sort_order,
-        updated: values.updated,
-        presentation_mode: values.presentation_mode,
-        nav_label: values.nav_label,
-        nav_group: values.nav_group,
-        notes: values.notes,
-        custom_classes: values.custom_classes,
-      });
-  } else {
-    database
-      .prepare(
-        `
-      INSERT INTO records ('''
-
-          if text.count(old) != 1:
-              raise SystemExit(f"Expected one saveRecord UPDATE match, found {text.count(old)}")
-
-          path.write_text(text.replace(old, new, 1), encoding="utf8")
-          PY
+      - name: Apply entry save fix
+        run: python3 scripts/fix-entry-save-once.py
 
       - name: Install dependencies
         run: npm install --ignore-scripts
@@ -85,8 +38,9 @@ jobs:
       - name: Commit fix
         run: |
           rm .github/workflows/fix-entry-save-once.yml
+          rm scripts/fix-entry-save-once.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/local-editor/server.ts .github/workflows/fix-entry-save-once.yml
+          git add src/local-editor/server.ts .github/workflows/fix-entry-save-once.yml scripts/fix-entry-save-once.py
           git commit -m "Fix entry save named parameters"
           git push origin HEAD:main
