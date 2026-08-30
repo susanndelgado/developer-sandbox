@@ -904,7 +904,7 @@ body > footer button:focus-visible {
   top: 14%;
   left: 4%;
 
-  width: 34%;
+  width: 40%;
   min-width: 420px;
 }
 
@@ -939,7 +939,52 @@ body > footer button:focus-visible {
 .featured .arrow:hover {
   background: rgba(47, 141, 255, 0.2);
 }
+/* ==================================================
+   FEATURED SLIDER BEHAVIOR
+   Does not alter the featured panel wrapper
+   ================================================== */
 
+.featured .card-stack > .featured-slide {
+  display: none;
+}
+
+.featured .card-stack > .featured-slide.active {
+  display: grid;
+}
+
+/* ---------- SLIDER DOTS ---------- */
+
+.featured .dots button {
+  width: 6px;
+  height: 6px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #46617d;
+
+  cursor: pointer;
+}
+
+.featured .dots button.active {
+  background: var(--blue);
+
+  box-shadow: 0 0 7px var(--blue);
+}
+
+.featured .dots button:focus-visible {
+  outline: 1px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ---------- DISABLED ARROWS ---------- */
+
+.featured .arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
 /* ---------- STACKED CARDS ---------- */
 
 .card-stack {

@@ -419,3 +419,91 @@ document.addEventListener("click", (event) => {
 
   playInterfaceSound(760, 0.045, 0.04);
 });
+
+/* ======================
+   FEATURED PROJECT SLIDER
+   ====================== */
+
+const featuredSlider = document.querySelector(".featured");
+
+if (featuredSlider) {
+  const slides = Array.from(
+    featuredSlider.querySelectorAll("[data-featured-slide]"),
+  );
+
+  const dots = Array.from(
+    featuredSlider.querySelectorAll("[data-featured-dot]"),
+  );
+
+  const previousButton = featuredSlider.querySelector("[data-featured-prev]");
+  const nextButton = featuredSlider.querySelector("[data-featured-next]");
+
+  let currentIndex = slides.findIndex((slide) =>
+    slide.classList.contains("active"),
+  );
+
+  if (currentIndex < 0) {
+    currentIndex = 0;
+  }
+
+  function showFeaturedProject(index) {
+    if (!slides.length) {
+      return;
+    }
+
+    currentIndex = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === currentIndex;
+
+      slide.classList.toggle("active", isActive);
+
+      slide.setAttribute(
+        "aria-hidden",
+        isActive ? "false" : "true",
+      );
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === currentIndex;
+
+      dot.classList.toggle("active", isActive);
+
+      if (isActive) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  previousButton?.addEventListener("click", () => {
+    showFeaturedProject(currentIndex - 1);
+  });
+
+  nextButton?.addEventListener("click", () => {
+    showFeaturedProject(currentIndex + 1);
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const index = Number(dot.dataset.featuredDot);
+
+      if (Number.isInteger(index)) {
+        showFeaturedProject(index);
+      }
+    });
+  });
+
+  if (slides.length <= 1) {
+    if (previousButton) {
+      previousButton.disabled = true;
+    }
+
+    if (nextButton) {
+      nextButton.disabled = true;
+    }
+  }
+
+  showFeaturedProject(currentIndex);
+}
