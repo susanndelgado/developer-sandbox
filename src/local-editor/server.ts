@@ -353,7 +353,23 @@ function saveRecord(body: JsonObject, existingId?: string): JsonObject {
       WHERE id = $id
     `,
       )
-      .run(values);
+      .run({
+        id: values.id!,
+        title: values.title!,
+        slug: values.slug!,
+        description: values.description!,
+        type: values.type!,
+        status: values.status!,
+        visibility: values.visibility!,
+        featured: values.featured!,
+        sort_order: values.sort_order!,
+        updated: values.updated!,
+        presentation_mode: values.presentation_mode!,
+        nav_label: values.nav_label!,
+        nav_group: values.nav_group!,
+        notes: values.notes!,
+        custom_classes: values.custom_classes!,
+      });
   } else {
     database
       .prepare(
