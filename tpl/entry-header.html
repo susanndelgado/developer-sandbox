@@ -1,0 +1,83 @@
+<header>
+  <a class="brand" href="index.html">
+    <img src="assets/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button type="button" onclick="window.location.href = 'index.html'">
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      {{PROJECTS_CURRENT}}
+      onclick="window.location.href = 'inner.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      {{REFERENCE_CURRENT}}
+      onclick="window.location.href = 'reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      {{ROSETTA_CURRENT}}
+      onclick="window.location.href = 'inner.html'"
+    >
+      <span aria-hidden="true">◇</span>
+      Rosetta Stones
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+      <button type="button" aria-label="Get help and info"></button>
+
+      <div>
+        <strong>{{RECORD_TITLE}}</strong>
+        <p>{{RECORD_DESCRIPTION}}</p>
+      </div>
+    </div>
+
+    <a href="/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = '/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
