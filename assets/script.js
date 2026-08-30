@@ -76,6 +76,32 @@ document.addEventListener("keydown", (event) => {
   }
 });
 /* ======================
+   PAGE HELP
+   Hover = tooltip
+   Click = speak
+   ====================== */
+
+const pageHelp = document.querySelector(".help");
+
+if (pageHelp) {
+  const helpButton = pageHelp.querySelector("button");
+  const helpTitle = pageHelp.querySelector("strong");
+  const helpDescription = pageHelp.querySelector("p");
+
+  helpButton?.addEventListener("click", () => {
+    const title = helpTitle?.textContent?.trim() ?? "";
+    const description = helpDescription?.textContent?.trim() ?? "";
+
+    const message = [title, description]
+      .filter(Boolean)
+      .join(". ");
+
+    if (message) {
+      speakSandbox(message);
+    }
+  });
+}
+/* ======================
    SANDBOX VOICE
    Shared by Easter eggs
    ====================== */
@@ -419,7 +445,32 @@ document.addEventListener("click", (event) => {
 
   playInterfaceSound(760, 0.045, 0.04);
 });
+/* ======================
+   PAGE HELP
+   Hover = tooltip
+   Click = speak
+   ====================== */
 
+const pageHelp = document.querySelector(".help");
+
+if (pageHelp) {
+  const helpButton = pageHelp.querySelector("button");
+  const helpTitle = pageHelp.querySelector("strong");
+  const helpDescription = pageHelp.querySelector("p");
+
+  helpButton?.addEventListener("click", () => {
+    const title = helpTitle?.textContent?.trim() ?? "";
+    const description = helpDescription?.textContent?.trim() ?? "";
+
+    const message = [title, description]
+      .filter(Boolean)
+      .join(". ");
+
+    if (message) {
+      speakSandbox(message);
+    }
+  });
+}
 /* ======================
    FEATURED PROJECT SLIDER
    ====================== */

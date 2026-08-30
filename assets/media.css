@@ -534,7 +534,8 @@
   }
 
   body > main:not(.view-all-page) .card-stack {
-    min-height: 355px;
+    height: 320px;
+    min-height: 320px;
   }
 
   body > main:not(.view-all-page) .card-stack > span {
@@ -542,27 +543,96 @@
   }
 
   body > main:not(.view-all-page) .card-stack article {
+    width: 100%;
+    height: 320px;
+
     grid-template-columns: 1fr;
+
+    grid-template-rows:
+      130px
+      minmax(0, 1fr);
 
     gap: 10px;
 
     padding: 10px;
+
+    overflow: hidden;
   }
 
-  body > main:not(.view-all-page) .project-image {
-    min-height: 160px;
+  /* ---------- FEATURED IMAGE ---------- */
+
+  body > main:not(.view-all-page) .featured .project-image {
+    width: 100%;
+    height: 130px;
+    min-height: 0;
   }
 
-  body > main:not(.view-all-page) .project-info h3 {
+  body > main:not(.view-all-page) .featured .project-image > * {
+    width: 100%;
+    height: 100%;
+  }
+
+  body > main:not(.view-all-page) .featured .project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  /* ---------- FEATURED INFORMATION ---------- */
+
+  body > main:not(.view-all-page) .featured .project-info {
+    grid-template-rows:
+      auto
+      auto
+      minmax(0, 1fr)
+      auto
+      auto;
+
+    gap: 5px;
+
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  body > main:not(.view-all-page) .featured .project-info h3 {
+    margin: 0;
+
     font-size: 18px;
+
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
   }
 
-  body > main:not(.view-all-page) .project-info p {
+  body > main:not(.view-all-page) .featured .project-info p {
+    min-height: 0;
+
+    overflow: hidden;
+
     font-size: 11px;
+
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 
-  body > main:not(.view-all-page) .project-info a {
-    margin-top: 8px;
+  /* ---------- FEATURED TAGS ---------- */
+
+  body > main:not(.view-all-page) .featured .tags {
+    flex-wrap: nowrap;
+
+    max-height: 23px;
+    margin: 0;
+
+    overflow: hidden;
+  }
+
+  /* ---------- FEATURED LINK ---------- */
+
+  body > main:not(.view-all-page) .featured .project-info a {
+    margin: 0;
+
+    padding: 7px 8px;
   }
 
   /* ---------- HOME PROJECT LIBRARY ---------- */

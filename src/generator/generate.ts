@@ -1128,11 +1128,11 @@ function generateIndex(): void {
   const html = replaceTemplateValues(readTemplate("index.html"), {
     HTML_HEAD: renderHtmlHead("Developer Sandbox"),
 
-    HEADER: renderSharedHeader(
-      "Get help and info",
-      "Hover any card or icon to learn more.",
-    ),
-
+    
+HEADER: renderSharedHeader(
+  "Welcome to the Developer Sandbox",
+  "This is an interactive development workspace built to demonstrate and organize Susan's projects, experiments, reference guides, and technical work. Select a project or page to explore.",
+),
     FOOTER: renderSharedFooter(),
 
     HOME_FEATURED_PROJECTS: renderHomeFeaturedProjects(),

@@ -81,6 +81,7 @@
     font-size: 8px;
   }
 }
+
 :root {
   --blue: #5fc8ff;
   --blue-dark: #2f8dff;
@@ -306,6 +307,7 @@ body > header nav button:focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: -3px;
 }
+
 /* ==================================================
    MOBILE MENU BUTTON
    hidden on desktop
@@ -349,6 +351,7 @@ body > header nav button:focus-visible {
     transform 180ms ease,
     opacity 180ms ease;
 }
+
 /* ---------- TOP RIGHT TOOLS ---------- */
 
 body > header .top-tools {
@@ -428,6 +431,26 @@ body > header .help > div {
   box-shadow:
     0 16px 30px rgba(0, 0, 0, 0.28),
     0 0 16px rgba(73, 162, 255, 0.08);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-4px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 160ms ease;
+}
+
+body > header .help:hover > div,
+body > header .help > button:focus-visible + div {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
 }
 
 body > header .help > div::before {
@@ -498,6 +521,7 @@ body > header .close:hover,
 body > header .close:focus-visible {
   background: rgba(47, 141, 255, 0.12);
 }
+
 /* ==================================================
    3. CENTER LOGO
    ================================================== */
@@ -519,10 +543,6 @@ body > header .close:focus-visible {
   border: 1px solid rgba(89, 178, 255, 0.55);
   border-radius: 50%;
 
-  /*
-    bright node lights +
-    transparent holographic center
-  */
   background:
     radial-gradient(
       circle at 50% 1%,
@@ -574,13 +594,12 @@ body > header .close:focus-visible {
     );
 
   box-shadow:
-    /* neighboring ring */
     0 0 0 7px rgba(74, 166, 255, 0.12),
-    /* outer ring */ 0 0 0 15px rgba(82, 160, 255, 0.08),
-    /* thin distant ring */ 0 0 0 17px rgba(112, 200, 255, 0.12),
-    /* blue glow */ 0 0 18px rgba(68, 171, 255, 0.35),
+    0 0 0 15px rgba(82, 160, 255, 0.08),
+    0 0 0 17px rgba(112, 200, 255, 0.12),
+    0 0 18px rgba(68, 171, 255, 0.35),
     0 0 40px rgba(58, 121, 255, 0.12),
-    /* subtle interior glow */ inset 0 0 30px rgba(61, 153, 255, 0.06);
+    inset 0 0 30px rgba(61, 153, 255, 0.06);
 
   isolation: isolate;
 }
@@ -599,13 +618,13 @@ body > header .close:focus-visible {
   border-radius: 50%;
 
   box-shadow:
-    /* second inside ring */
     0 0 0 8px rgba(78, 161, 255, 0.1),
-    /* tiny blue glow */ 0 0 12px rgba(66, 168, 255, 0.17),
+    0 0 12px rgba(66, 168, 255, 0.17),
     inset 0 0 15px rgba(67, 157, 255, 0.07);
 
   pointer-events: none;
 }
+
 /* blue light beam */
 /* hologram light rays rising from platform */
 
@@ -614,7 +633,6 @@ body > header .close:focus-visible {
 
   position: absolute;
 
-  /* begins around lower half of hologram */
   top: 55%;
   bottom: -20%;
   left: 29%;
@@ -622,7 +640,6 @@ body > header .close:focus-visible {
 
   z-index: -1;
 
-  /* several vertical hologram rays */
   background:
     repeating-linear-gradient(
       90deg,
@@ -639,10 +656,6 @@ body > header .close:focus-visible {
       transparent
     );
 
-  /*
-    wide at top, narrow at platform:
-    rays fan UPWARD
-  */
   clip-path: polygon(0 0, 100% 0, 58% 100%, 42% 100%);
 
   filter: drop-shadow(0 0 5px rgba(80, 190, 255, 0.6)) blur(0.4px);
@@ -651,6 +664,7 @@ body > header .close:focus-visible {
 
   pointer-events: none;
 }
+
 /* logo */
 
 .logo-stage button {
@@ -665,6 +679,7 @@ body > header .close:focus-visible {
 
   cursor: pointer;
 }
+
 .logo-stage img {
   position: relative;
   z-index: 2;
@@ -681,6 +696,7 @@ body > header .close:focus-visible {
     transform 800ms ease,
     filter 200ms ease;
 }
+
 /* ==================================================
    ORBIT LINES BEHIND LOGO
    ================================================== */
@@ -715,6 +731,7 @@ body > header .close:focus-visible {
 
   transform: translate(-50%, -50%) rotate(12deg);
 }
+
 /* logo spin */
 
 .logo-stage button:hover img,
@@ -731,6 +748,7 @@ body > header .close:focus-visible {
   outline-offset: 8px;
   border-radius: 50%;
 }
+
 /* ==================================================
    4. BOTTOM NAVIGATION
    ================================================== */
@@ -796,6 +814,7 @@ body > footer button:focus-visible {
   outline: 1px solid var(--blue);
   outline-offset: -2px;
 }
+
 /* ==================================================
    5. GLASS PANELS
    ================================================== */
@@ -896,6 +915,7 @@ body > footer button:focus-visible {
   position: relative;
   z-index: 1;
 }
+
 /* ==================================================
    6. FEATURED
    ================================================== */
@@ -939,56 +959,18 @@ body > footer button:focus-visible {
 .featured .arrow:hover {
   background: rgba(47, 141, 255, 0.2);
 }
-/* ==================================================
-   FEATURED SLIDER BEHAVIOR
-   Does not alter the featured panel wrapper
-   ================================================== */
-
-.featured .card-stack > .featured-slide {
-  display: none;
-}
-
-.featured .card-stack > .featured-slide.active {
-  display: grid;
-}
-
-/* ---------- SLIDER DOTS ---------- */
-
-.featured .dots button {
-  width: 6px;
-  height: 6px;
-
-  padding: 0;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: #46617d;
-
-  cursor: pointer;
-}
-
-.featured .dots button.active {
-  background: var(--blue);
-
-  box-shadow: 0 0 7px var(--blue);
-}
-
-.featured .dots button:focus-visible {
-  outline: 1px solid var(--blue);
-  outline-offset: 3px;
-}
-
-/* ---------- DISABLED ARROWS ---------- */
 
 .featured .arrow:disabled {
   opacity: 0.35;
   cursor: default;
 }
+
 /* ---------- STACKED CARDS ---------- */
 
 .card-stack {
   position: relative;
+
+  height: 220px;
   min-height: 220px;
 }
 
@@ -1013,23 +995,43 @@ body > footer button:focus-visible {
   opacity: 0.45;
 }
 
+/* ---------- SLIDES ---------- */
+
+.featured .card-stack > .featured-slide {
+  display: none;
+}
+
+.featured .card-stack > .featured-slide.active {
+  display: grid;
+}
+
 /* ---------- ACTIVE CARD ---------- */
 
 .card-stack article {
-  position: relative;
   z-index: 2;
 
-  display: grid;
-  grid-template-columns: 42% 1fr;
+  width: 100%;
+  height: 100%;
+
+  grid-template-columns:
+    42%
+    minmax(0, 1fr);
+
   gap: 14px;
 
   padding: 12px;
+
+  overflow: hidden;
 }
 
 /* ---------- PROJECT IMAGE ---------- */
 
-.project-image {
-  min-height: 190px;
+.featured .project-image {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  overflow: hidden;
 
   border: 1px solid rgba(95, 170, 255, 0.2);
   border-radius: 9px;
@@ -1043,43 +1045,96 @@ body > footer button:focus-visible {
     #07152f;
 }
 
-/* ---------- PROJECT INFORMATION ---------- */
-
-.project-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.featured .project-image > * {
+  width: 100%;
+  height: 100%;
 }
 
-.project-info small {
-  color: var(--blue);
-  font-size: 9px;
+.featured .project-image img {
+  width: 100%;
+  height: 100%;
 
+  object-fit: cover;
+}
+
+/* ---------- PROJECT INFORMATION ---------- */
+
+.featured .project-info {
+  display: grid;
+
+  grid-template-rows:
+    auto
+    auto
+    minmax(0, 1fr)
+    auto
+    auto;
+
+  gap: 6px;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.featured .project-info small {
+  color: var(--blue);
+
+  font-size: 9px;
   letter-spacing: 0.08em;
 }
 
-.project-info h3 {
-  margin: 5px 0 8px;
+/* ---------- PROJECT TITLE ---------- */
+
+.featured .project-info h3 {
+  margin: 0;
+
+  overflow: hidden;
 
   font-size: 21px;
+
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  line-clamp: 2;
 }
 
-.project-info p {
+/* ---------- DESCRIPTION ---------- */
+
+.featured .project-info p {
+  min-height: 0;
+
+  overflow: hidden;
+
   font-size: 12px;
+
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  line-clamp: 3;
 }
 
 /* ---------- TAGS ---------- */
 
-.tags {
+.featured .tags {
   display: flex;
   flex-wrap: wrap;
 
   gap: 5px;
 
-  margin: 10px 0;
+  max-height: 24px;
+  margin: 0;
+
+  overflow: hidden;
 }
 
-.tags span {
+.featured .tags span {
+  flex: 0 0 auto;
+
   padding: 4px 6px;
 
   border-radius: 6px;
@@ -1093,8 +1148,9 @@ body > footer button:focus-visible {
 
 /* ---------- PROJECT LINK ---------- */
 
-.project-info a {
-  margin-top: auto;
+.featured .project-info a {
+  margin: 0;
+
   padding: 8px 10px;
 
   border: 1px solid rgba(95, 200, 255, 0.4);
@@ -1107,7 +1163,7 @@ body > footer button:focus-visible {
   font-size: 11px;
 }
 
-.project-info a:hover {
+.featured .project-info a:hover {
   background: rgba(47, 141, 255, 0.28);
 }
 
@@ -1122,20 +1178,35 @@ body > footer button:focus-visible {
   margin-top: 12px;
 }
 
-.dots span {
+.dots span,
+.featured .dots button {
   width: 6px;
   height: 6px;
 
+  padding: 0;
+
+  border: 0;
   border-radius: 50%;
 
   background: #46617d;
 }
 
-.dots .active {
+.featured .dots button {
+  cursor: pointer;
+}
+
+.dots .active,
+.featured .dots button.active {
   background: var(--blue);
 
   box-shadow: 0 0 7px var(--blue);
 }
+
+.featured .dots button:focus-visible {
+  outline: 1px solid var(--blue);
+  outline-offset: 3px;
+}
+
 /* ==================================================
    7. ROSETTA STONES
    ================================================== */
@@ -1163,7 +1234,7 @@ body > footer button:focus-visible {
   scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
 
   padding: 8px;
-  /* background: rgba(47, 141, 255, 0.15); */
+
   border: 1px solid rgba(95, 170, 255, 0.2);
   border-radius: 9px;
 }
@@ -1222,21 +1293,23 @@ body > footer button:focus-visible {
 
   color: var(--stone-color);
 
-  /*
-     OUTER HEXAGON BORDER
-     intentionally thin + translucent
-  */
   background: color-mix(in srgb, var(--stone-color) 42%, transparent);
 
-  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0 50%
+  );
 
-  /*
-     glow around outside of hexagon
-  */
   filter: drop-shadow(
       0 0 2px color-mix(in srgb, var(--stone-color) 60%, transparent)
     )
-    drop-shadow(0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent));
+    drop-shadow(
+      0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent)
+    );
 
   transition:
     transform 180ms ease,
@@ -1263,7 +1336,6 @@ body > footer button:focus-visible {
 
 /* ==================================================
    SECOND INNER BORDER
-   thinner + more transparent
    ================================================== */
 
 .stone::after {
@@ -1285,7 +1357,6 @@ body > footer button:focus-visible {
 
 /* ==================================================
    CENTER OF HEXAGON
-   text / img / svg / coded icon
    ================================================== */
 
 .stone > span {
@@ -1301,7 +1372,14 @@ body > footer button:focus-visible {
 
   overflow: hidden;
 
-  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0 50%
+  );
 
   background: radial-gradient(
     circle,
@@ -1311,9 +1389,6 @@ body > footer button:focus-visible {
 
   color: inherit;
 
-  /*
-     sized for 1–3 characters
-  */
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
@@ -1328,7 +1403,6 @@ body > footer button:focus-visible {
 
 /* ==================================================
    IMAGE / SVG ICONS
-   Automatically scale inside center
    ================================================== */
 
 .stone img,
@@ -1354,7 +1428,6 @@ body > footer button:focus-visible {
 
 /* ==================================================
    COLOR CLASSES
-   White is default
    ================================================== */
 
 .stone.blue {
@@ -1436,6 +1509,7 @@ body > footer button:focus-visible {
 .rosetta .view-all:focus-visible {
   color: white;
 }
+
 /* ==================================================
    8. PROJECT LIBRARY
    ================================================== */
@@ -1511,8 +1585,6 @@ body > footer button:focus-visible {
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
 
-/* image / svg support */
-
 .project-icon img,
 .project-icon svg {
   width: 65%;
@@ -1575,6 +1647,7 @@ body > footer button:focus-visible {
 .library .view-all:focus-visible {
   color: white;
 }
+
 /* ==================================================
    9. REFERENCE GUIDES
    ================================================== */
@@ -1733,6 +1806,7 @@ body > footer button:focus-visible {
 .guides .view-all:focus-visible {
   color: white;
 }
+
 /* ==================================================
    10. DATA SCIENCE
    ================================================== */

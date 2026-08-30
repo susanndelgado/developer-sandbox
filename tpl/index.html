@@ -18,55 +18,40 @@
           >
         </div>
       </div>
-      <section class="glass-panel featured">
-        <h2>Featured Project</h2>
+       <section class="glass-panel featured">
+  <h2>Featured Project</h2>
 
-        <div class="featured-content">
-          <button class="arrow" type="button" aria-label="Previous project">
-            ‹
-          </button>
+  <div class="featured-content">
+    <button
+      class="arrow"
+      type="button"
+      data-featured-prev
+      aria-label="Previous project"
+    >
+      ‹
+    </button>
 
-          <div class="card-stack">
-            <span></span>
-            <span></span>
+    <div class="card-stack">
+      <span></span>
+      <span></span>
 
-            <article>
-              <div class="project-image">
-                <!-- project image will go here later -->
-              </div>
+      {{HOME_FEATURED_PROJECTS}}
+    </div>
 
-              <div class="project-info">
-                <small>WEB PROJECT</small>
+    <button
+      class="arrow"
+      type="button"
+      data-featured-next
+      aria-label="Next project"
+    >
+      ›
+    </button>
+  </div>
 
-                <h3>Modern Agenda</h3>
-
-                <p>
-                  Legacy application transformed with modern Angular and
-                  TypeScript.
-                </p>
-
-                <div class="tags">
-                  <span>Angular</span>
-                  <span>TypeScript</span>
-                  <span>Responsive</span>
-                </div>
-
-                <a href="single-project.html">Explore Project ›</a>
-              </div>
-            </article>
-          </div>
-
-          <button class="arrow" type="button" aria-label="Next project">
-            ›
-          </button>
-        </div>
-
-        <div class="dots" aria-hidden="true">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
-        </div>
-      </section>
+  <div class="dots">
+    {{HOME_FEATURED_DOTS}}
+  </div>
+</section>
 
       <section class="glass-panel rosetta">
         <h2>Rosetta Stones</h2>
