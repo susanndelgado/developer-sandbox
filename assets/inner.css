@@ -1190,7 +1190,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.55;
 }
 
@@ -1233,7 +1233,7 @@ details:not([open]) summary {
 .preview .project-documents > a strong {
   color: #e9f5ff;
 
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
 }
 
@@ -1322,7 +1322,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-blue);
 
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 
   letter-spacing: 0.12em;
@@ -1342,7 +1342,7 @@ details:not([open]) summary {
 .preview .project-doc-section > header > div > span {
   color: var(--sandbox-blue);
 
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 
   letter-spacing: 0.12em;
@@ -1375,7 +1375,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
-  font-size: 9.5px;
+  font-size: 10px;
   line-height: 1.5;
 
   text-align: right;
@@ -1435,7 +1435,7 @@ details:not([open]) summary {
 
   color: #eaf6ff;
 
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -1447,7 +1447,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
-  font-size: 9.5px;
+  font-size: 11px;
   line-height: 1.55;
 
   overflow-wrap: break-word;
@@ -1507,7 +1507,7 @@ details:not([open]) summary {
 
   color: #eaf6ff;
 
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -1556,7 +1556,7 @@ details:not([open]) summary {
 
   background: rgba(2, 11, 25, 0.36);
 
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.6;
 }
 
@@ -1616,7 +1616,7 @@ details:not([open]) summary {
   color: #cdeaff;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.55;
 }
 
@@ -1636,7 +1636,7 @@ details:not([open]) summary {
   color: var(--sandbox-muted);
   background: var(--sandbox-note);
 
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.55;
 }
 
@@ -1706,7 +1706,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.55;
 }
 
@@ -1757,7 +1757,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-text);
 
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .preview .sandbox-entry-preview th,
@@ -3041,7 +3041,7 @@ details:not([open]) summary {
 .preview .project-display-details {
   padding: 12px 14px;
   color: var(--sandbox-muted);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.6;
 }
 
