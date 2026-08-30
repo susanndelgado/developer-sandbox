@@ -132,22 +132,20 @@
 
           <form id="entry-form" class="form-grid" hidden>
             <label>
-              <span>Record Type *</span>
+              <span>Classification *</span>
 
               <select name="type" required>
-                <option value="project">Project</option>
-                <option value="reference-doc">Reference Doc</option>
+                <option value="general-project">General Project</option>
                 <option value="rosetta-stone">Rosetta Stone</option>
-                <option value="data-visualization">Data Visualization</option>
-                <option value="resource">Resource</option>
-                <option value="experiment">Experiment</option>
-                <option value="custom">Custom</option>
+                <option value="lab-exploration">Lab / Exploration</option>
+                <option value="reference-guide">Reference Guide</option>
+                <option value="demo-data">Demo Data</option>
+                <option value="none">None</option>
               </select>
 
               <small>
-                Displayed in the fixed page header and used as the system entry
-                class. Categories remain separate and may contain more than one
-                value.
+                Defines what kind of Sandbox entry this is. Classification is
+                separate from Categories, Technologies, Tags, and Page Style.
               </small>
             </label>
 

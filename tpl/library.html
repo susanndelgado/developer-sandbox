@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{PAGE_TITLE}}</title>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body>
+    {{LIBRARY_HEADER}}
+
+    <main class="view-all-page">
+      {{LIBRARY_ASIDE}}
+
+      <section class="project-content">
+        <header>
+          <div>
+            <small>{{LIBRARY_LABEL}}</small>
+            <h2>{{LIBRARY_TITLE}}</h2>
+          </div>
+
+          <p>{{LIBRARY_DESCRIPTION}}</p>
+        </header>
+
+        {{LIBRARY_CONTENT}}
+      </section>
+    </main>
+
+    {{LIBRARY_FOOTER}}
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

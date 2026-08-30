@@ -8,9 +8,9 @@
 
     <title>Developer Sandbox — Developer Sandbox</title>
 
-    <link rel="stylesheet" href="/assets/styles.css" />
-    <link rel="stylesheet" href="/assets/inner.css" />
-    <link rel="stylesheet" href="/assets/media.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
   </head>
 
   <body>
@@ -100,13 +100,67 @@
 
 
     <main class="view-all-page">
-      <section class="project-content" style="grid-column: 1 / -1">
-        
-<header>
-  <div>
-    <small>PROJECT</small>
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Project Library
+    </h1>
 
-    <h2>Developer Sandbox</h2>
+    <p>
+      Development projects, applications,
+      components, experiments, and technical work.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Project Library"
+  >
+    <button
+      type="button"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Projects
+        </strong>
+      </span>
+    </button>
+
+    
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'library.html#group-developer-tooling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Developer Tooling
+    </strong>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        
+<header class="project-detail-header">
+  <div>
+    <small>
+      PROJECT
+    </small>
+
+    <h2>
+      Developer Sandbox
+    </h2>
   </div>
 
   <p>
@@ -114,6 +168,7 @@
     <strong>
       Personal Development Environment, Project Catalog, and Technical Knowledge System
     </strong>
+
     <br />
 
     The Developer Sandbox is a personal interface used to organize and display projects created through ongoing development learning and experimentation. It also serves as a technical reference system, project catalog, and experimental workspace.
@@ -134,14 +189,17 @@
   id="node-node-sandbox-actions"
   class="project-actions"
 >
-
+  
 <a
   id="child-node-sandbox-action-repository"
   class="project-link"
   href="https://github.com/susanndelgado/developer-sandbox" target="_blank" rel="noopener noreferrer"
 >
   View Repository
-  <span aria-hidden="true">›</span>
+
+  <span aria-hidden="true">
+    ›
+  </span>
 </a>
 
 <a
@@ -150,7 +208,10 @@
   href="system-guide.html"
 >
   System Guide
-  <span aria-hidden="true">›</span>
+
+  <span aria-hidden="true">
+    ›
+  </span>
 </a>
 
 <a
@@ -159,7 +220,10 @@
   href="database.html"
 >
   Database
-  <span aria-hidden="true">›</span>
+
+  <span aria-hidden="true">
+    ›
+  </span>
 </a>
 </div>
 
@@ -170,16 +234,22 @@
   
 <header>
   <span>01</span>
+
   <h3>Project Overview</h3>
 </header>
 
-  <div class="project-command-list">
+  
+  
 
+  
+  <div class="project-command-list">
+    
 <div
   id="child-node-sandbox-overview-content"
   class="project-command"
 >
   
+
   <p>The Developer Sandbox is a personal development environment, technical reference system, project catalog, and experimental workspace. It is also a personal interface used to display projects created as part of ongoing learning and development work. It was built to bring different forms of development work into one organized system rather than maintaining a collection of unrelated project pages and reference files.</p>
 
 <p>The Sandbox is designed to hold complete projects, development experiments, Rosetta Stone language comparisons, reference guides, data work, technical documentation, and other material that may need different presentation structures while still belonging to the same overall system.</p>
@@ -191,23 +261,25 @@
 
 <section
   id="node-node-sandbox-purpose-learning"
-  class="project-doc-section"
+  class="project-detail"
 >
   
 <header>
   <span>02</span>
+
   <h3>Purpose & Learning Objectives</h3>
 </header>
 
   <div class="project-command-list">
-
+    
 <div
-  id="child-node-sandbox-purpose-learning-content"
   class="project-command"
 >
   
 
-  <div class="project-split project-split--small-left">
+  <div
+    class="project-split project-split--small-left"
+  >
     
 <div class="project-split-cell">
   <p><strong>Purpose</strong></p>
@@ -215,6 +287,7 @@
 <p>The purpose of the Developer Sandbox is to provide one organized environment for building, documenting, reviewing, and displaying development work created during continued technical learning.</p>
 
 <p>Rather than maintaining unrelated project pages, reference files, and experiments separately, the Sandbox provides a common system where different types of development work can be cataloged and presented while still allowing each item to use its own content structure.</p>
+
   
 </div>
 
@@ -232,6 +305,7 @@
   <li>Create reusable Parent and Child content structures for different page layouts.</li>
   <li>Use Git and GitHub to maintain and present the project source.</li>
 </ul>
+
   
 </div>
   </div>
@@ -246,17 +320,20 @@
   
 <header>
   <span>03</span>
+
   <h3>Technologies</h3>
 </header>
 
   <div class="project-meta">
-
+    
 <div
   id="child-node-sandbox-tech-frontend"
   class=""
 >
   
-  <small>Frontend</small>
+  <small>
+    Frontend
+  </small>
 
   <strong>
     <p>HTML<br />CSS<br />JavaScript</p>
@@ -268,7 +345,9 @@
   class=""
 >
   
-  <small>Application</small>
+  <small>
+    Application
+  </small>
 
   <strong>
     <p>TypeScript<br />Node.js</p>
@@ -280,7 +359,9 @@
   class=""
 >
   
-  <small>Database</small>
+  <small>
+    Database
+  </small>
 
   <strong>
     <p>SQLite<br />SQL</p>
@@ -292,7 +373,9 @@
   class=""
 >
   
-  <small>Tooling</small>
+  <small>
+    Tooling
+  </small>
 
   <strong>
     <p>npm<br />Git<br />GitHub</p>
@@ -308,16 +391,22 @@
   
 <header>
   <span>04</span>
+
   <h3>Project Details</h3>
 </header>
 
-  <div class="project-command-list">
+  
+  
 
+  
+  <div class="project-command-list">
+    
 <div
   id="child-node-sandbox-project-details-content"
   class="project-command"
 >
   
+
   <p><strong>Public Interface.</strong> A static HTML, CSS, and JavaScript interface is used to browse and display projects, reference guides, experiments, and other development work.</p>
 
 <p><strong>Local Editor.</strong> A browser-based TypeScript editor provides the authoring interface used to create, update, organize, preview, and manage Sandbox content.</p>
@@ -374,6 +463,6 @@
 </footer>
 
 
-    <script src="/assets/script.js"></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>

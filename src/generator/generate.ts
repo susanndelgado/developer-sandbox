@@ -5,6 +5,7 @@ import {
   unlinkSync,
   writeFileSync,
 } from "node:fs";
+
 import { join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 
@@ -14,13 +15,37 @@ import { DatabaseSync } from "node:sqlite";
 
 type JsonObject = Record<string, unknown>;
 
+type Classification =
+  | "general-project"
+  | "rosetta-stone"
+  | "lab-exploration"
+  | "reference-guide"
+  | "demo-data"
+  | "none";
+
+type SiteSection = "projects" | "reference" | "rosetta" | "labs" | "none";
+
 type RecordRow = {
   id: string;
   title: string;
   slug?: string | null;
   subtitle?: string | null;
   description?: string | null;
+
+  /*
+   * records.type is the entry CLASSIFICATION.
+   *
+   * Supported classifications:
+   *
+   * General Project
+   * Rosetta Stone
+   * Lab / Exploration
+   * Reference Guide
+   * Demo Data
+   * None
+   */
   type?: string | null;
+
   status?: string | null;
   visibility?: string | null;
   featured?: number | null;
@@ -34,6 +59,26 @@ type RecordRow = {
   content_root_id?: string | null;
   notes?: string | null;
   custom_classes?: string | null;
+};
+
+type CategoryRow = {
+  id: string;
+  name: string;
+  slug?: string | null;
+  description?: string | null;
+  parent_id?: string | null;
+  sort_order?: number | null;
+  featured?: number | null;
+};
+
+type TechnologyRow = {
+  id: string;
+  name: string;
+  type?: string | null;
+  slug?: string | null;
+  description?: string | null;
+  official_url?: string | null;
+  category_id?: string | null;
 };
 
 type NodeRow = {
@@ -72,26 +117,28 @@ type ParentMode =
   | "small-right-link"
   | "three-column-link";
 
+type CollectionGroup = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  sortOrder: number;
+  records: RecordRow[];
+};
+
 /* =========================================================
    PATHS
    ========================================================= */
 
 const DATABASE_PATH = "data/sandbox.db";
-
-/*
- * Generated entry templates live here.
- *
- * tpl/
- * ├── entry-header.html
- * ├── entry-footer.html
- * └── entry-page.html
- */
 const TEMPLATE_PATH = "tpl";
 
-/*
- * Generated pages are written here.
- */
-const OUTPUT_PATH = "pg";
+const INDEX_OUTPUT_PATH = "index.html";
+const LIBRARY_OUTPUT_PATH = "library.html";
+const ROSETTA_OUTPUT_PATH = "rosetta-stones.html";
+const LABS_OUTPUT_PATH = "labs.html";
+
+const ENTRY_OUTPUT_PATH = "pg";
 
 /* =========================================================
    DATABASE
@@ -135,6 +182,1624 @@ function classes(...values: Array<string | null | undefined>): string {
     .join(" ");
 }
 
+function recordSort(a: RecordRow, b: RecordRow): number {
+  const order = Number(a.sort_order ?? 0) - Number(b.sort_order ?? 0);
+
+  if (order !== 0) {
+    return order;
+  }
+
+  return a.title.localeCompare(b.title);
+}
+
+function entrySlug(record: RecordRow): string {
+  return slugify(record.slug) || slugify(record.title) || slugify(record.id);
+}
+
+function entryUrl(record: RecordRow): string {
+  return `pg/${entrySlug(record)}.html`;
+}
+
+/* =========================================================
+   TEMPLATE HELPERS
+   ========================================================= */
+
+function readTemplate(name: string): string {
+  return readFileSync(join(TEMPLATE_PATH, name), "utf8");
+}
+
+function replaceTemplateValues(
+  template: string,
+  values: Record<string, string>,
+): string {
+  let output = template;
+
+  for (const [key, value] of Object.entries(values)) {
+    output = output.replaceAll(`{{${key}}}`, value);
+  }
+
+  return output;
+}
+
+/* =========================================================
+   CLASSIFICATION
+
+   records.type is now used strictly as classification.
+
+   Human-readable or slug-style values both work.
+
+   Examples:
+
+   General Project
+   general-project
+   project
+
+   Lab / Exploration
+   lab-exploration
+   ========================================================= */
+
+function classificationOf(record: RecordRow): Classification {
+  const value = slugify(record.type);
+
+  switch (value) {
+    /*
+     * Current + compatibility value.
+     */
+    case "project":
+    case "general-project":
+      return "general-project";
+
+    case "rosetta":
+    case "rosetta-stone":
+    case "rosetta-stones":
+      return "rosetta-stone";
+
+    /*
+     * Compatibility with older values while
+     * the database/editor is being cleaned up.
+     */
+    case "lab":
+    case "labs":
+    case "lab-exploration":
+    case "labs-exploration":
+    case "labs-explorations":
+    case "experiment":
+    case "exploration":
+    case "data-visualization":
+      return "lab-exploration";
+
+    case "reference-doc":
+    case "reference-guide":
+      return "reference-guide";
+
+    case "demo-data":
+      return "demo-data";
+
+    case "":
+    case "none":
+      return "none";
+
+    default:
+      return "none";
+  }
+}
+
+function classificationLabel(record: RecordRow): string {
+  switch (classificationOf(record)) {
+    case "general-project":
+      return "GENERAL PROJECT";
+
+    case "rosetta-stone":
+      return "ROSETTA STONE";
+
+    case "lab-exploration":
+      return "LAB / EXPLORATION";
+
+    case "reference-guide":
+      return "REFERENCE GUIDE";
+
+    case "demo-data":
+      return "DEMO DATA";
+
+    default:
+      return "NONE";
+  }
+}
+
+/* =========================================================
+   CLASSIFICATION RULES
+   ========================================================= */
+
+function isGeneralProject(record: RecordRow): boolean {
+  return classificationOf(record) === "general-project";
+}
+
+function isRosettaStone(record: RecordRow): boolean {
+  return classificationOf(record) === "rosetta-stone";
+}
+
+function isLabExploration(record: RecordRow): boolean {
+  return classificationOf(record) === "lab-exploration";
+}
+
+function isReferenceGuide(record: RecordRow): boolean {
+  return classificationOf(record) === "reference-guide";
+}
+
+function isDemoData(record: RecordRow): boolean {
+  return classificationOf(record) === "demo-data";
+}
+
+function isNoneClassification(record: RecordRow): boolean {
+  return classificationOf(record) === "none";
+}
+
+/*
+ * PROJECT LIBRARY RULE
+ *
+ * INCLUDE:
+ * General Project
+ * Rosetta Stone
+ * Lab / Exploration
+ *
+ * EXCLUDE:
+ * Reference Guide
+ * Demo Data
+ * None
+ */
+function belongsInProjectLibrary(record: RecordRow): boolean {
+  const classification = classificationOf(record);
+
+  return (
+    classification === "general-project" ||
+    classification === "rosetta-stone" ||
+    classification === "lab-exploration"
+  );
+}
+
+/*
+ * Records that may generate a public pg/<slug>.html page.
+ *
+ * Demo Data and None do NOT generate public pages.
+ */
+function isDisplayableEntry(record: RecordRow): boolean {
+  return belongsInProjectLibrary(record) || isReferenceGuide(record);
+}
+
+/*
+ * Featured can contain any project classification.
+ *
+ * It cannot contain:
+ * Reference Guide
+ * Demo Data
+ * None
+ */
+function isFeaturedProject(record: RecordRow): boolean {
+  return belongsInProjectLibrary(record) && Boolean(record.featured);
+}
+
+/* =========================================================
+   DATABASE READS
+   ========================================================= */
+
+function getPublicRecords(): RecordRow[] {
+  return database
+    .prepare(
+      `
+        SELECT *
+        FROM records
+        WHERE visibility = 'public'
+        ORDER BY
+          sort_order,
+          title
+      `,
+    )
+    .all() as RecordRow[];
+}
+
+function getRecord(idOrSlug: string): RecordRow | undefined {
+  return database
+    .prepare(
+      `
+        SELECT *
+        FROM records
+        WHERE id = ?
+           OR slug = ?
+        LIMIT 1
+      `,
+    )
+    .get(idOrSlug, idOrSlug) as RecordRow | undefined;
+}
+
+function getCategoriesForRecord(recordId: string): CategoryRow[] {
+  return database
+    .prepare(
+      `
+        SELECT
+          categories.*
+
+        FROM categories
+
+        JOIN record_categories
+          ON record_categories.category_id =
+             categories.id
+
+        WHERE
+          record_categories.record_id = ?
+
+        ORDER BY
+          categories.sort_order,
+          categories.name
+      `,
+    )
+    .all(recordId) as CategoryRow[];
+}
+
+function getTechnologiesForRecord(recordId: string): TechnologyRow[] {
+  return database
+    .prepare(
+      `
+        SELECT
+          technologies.*
+
+        FROM technologies
+
+        JOIN record_technologies
+          ON record_technologies.technology_id =
+             technologies.id
+
+        WHERE
+          record_technologies.record_id = ?
+
+        ORDER BY
+          record_technologies.sort_order,
+          technologies.name
+      `,
+    )
+    .all(recordId) as TechnologyRow[];
+}
+
+function getNodes(recordId: string): NodeRow[] {
+  return database
+    .prepare(
+      `
+        SELECT *
+        FROM content_nodes
+        WHERE record_id = ?
+        ORDER BY
+          sort_order,
+          id
+      `,
+    )
+    .all(recordId) as NodeRow[];
+}
+
+/* =========================================================
+   RECORD SETS
+   ========================================================= */
+
+function getPublicProjectLibraryRecords(): RecordRow[] {
+  return getPublicRecords().filter(belongsInProjectLibrary).sort(recordSort);
+}
+
+function getPublicGeneralProjects(): RecordRow[] {
+  return getPublicRecords().filter(isGeneralProject).sort(recordSort);
+}
+
+function getPublicRosettaStones(): RecordRow[] {
+  return getPublicRecords().filter(isRosettaStone).sort(recordSort);
+}
+
+function getPublicLabs(): RecordRow[] {
+  return getPublicRecords().filter(isLabExploration).sort(recordSort);
+}
+
+function getPublicReferenceGuides(): RecordRow[] {
+  return getPublicRecords().filter(isReferenceGuide).sort(recordSort);
+}
+
+function getPublicFeaturedProjects(): RecordRow[] {
+  return getPublicRecords().filter(isFeaturedProject).sort(recordSort);
+}
+
+function getRenderablePublicRecords(): RecordRow[] {
+  return getPublicRecords().filter(isDisplayableEntry).sort(recordSort);
+}
+
+/* =========================================================
+   CATEGORY CACHE
+
+   Categories are ONLY categories.
+
+   They do not determine:
+   - General Project
+   - Rosetta Stone
+   - Lab / Exploration
+   - Reference Guide
+   - Demo Data
+   - None
+
+   That job belongs to records.type.
+   ========================================================= */
+
+const recordCategoryCache = new Map<string, CategoryRow[]>();
+
+function recordCategories(record: RecordRow): CategoryRow[] {
+  const cached = recordCategoryCache.get(record.id);
+
+  if (cached) {
+    return cached;
+  }
+
+  const categories = getCategoriesForRecord(record.id);
+
+  recordCategoryCache.set(record.id, categories);
+
+  return categories;
+}
+
+/* =========================================================
+   PRIMARY LIBRARY CATEGORY
+
+   A project is displayed ONCE in a collection.
+
+   If multiple categories are attached to a record,
+   the first category according to category.sort_order
+   and category.name is used as its primary visual group.
+
+   Technologies remain separate and may be many-to-many.
+
+   If there is no category, the project goes into
+   Miscellaneous.
+   ========================================================= */
+
+function primaryCategoryForRecord(record: RecordRow): CategoryRow | null {
+  const categories = recordCategories(record);
+
+  return categories[0] ?? null;
+}
+
+/* =========================================================
+   COLLECTION GROUPING
+   ========================================================= */
+
+function groupRecordsByCategory(records: RecordRow[]): CollectionGroup[] {
+  const groups = new Map<string, CollectionGroup>();
+
+  for (const record of records) {
+    const category = primaryCategoryForRecord(record);
+
+    if (!category) {
+      const id = "category-miscellaneous";
+
+      let group = groups.get(id);
+
+      if (!group) {
+        group = {
+          id,
+          name: "Miscellaneous",
+          slug: "miscellaneous",
+
+          description:
+            "Projects that do not fit one of the current primary Library categories.",
+
+          sortOrder: 9999,
+          records: [],
+        };
+
+        groups.set(id, group);
+      }
+
+      group.records.push(record);
+
+      continue;
+    }
+
+    let group = groups.get(category.id);
+
+    if (!group) {
+      group = {
+        id: category.id,
+
+        name: category.name,
+
+        slug: slugify(category.slug || category.name),
+
+        description: category.description ?? "",
+
+        sortOrder: Number(category.sort_order ?? 0),
+
+        records: [],
+      };
+
+      groups.set(category.id, group);
+    }
+
+    group.records.push(record);
+  }
+
+  return Array.from(groups.values())
+    .map((group) => ({
+      ...group,
+
+      records: group.records.sort(recordSort),
+    }))
+    .sort((a, b) => {
+      const order = a.sortOrder - b.sortOrder;
+
+      if (order !== 0) {
+        return order;
+      }
+
+      return a.name.localeCompare(b.name);
+    });
+}
+
+/* =========================================================
+   SITE SECTION
+   ========================================================= */
+
+function currentSection(record: RecordRow): SiteSection {
+  switch (classificationOf(record)) {
+    case "general-project":
+      return "projects";
+
+    case "rosetta-stone":
+      return "rosetta";
+
+    case "lab-exploration":
+      return "labs";
+
+    case "reference-guide":
+      return "reference";
+
+    default:
+      return "none";
+  }
+}
+
+/* =========================================================
+   SHARED HEADER
+   ========================================================= */
+
+function renderSharedHeader(
+  current: SiteSection,
+  title: string,
+  description: string,
+): string {
+  return replaceTemplateValues(readTemplate("entry-header.html"), {
+    RECORD_TITLE: escapeHtml(title),
+
+    RECORD_DESCRIPTION: escapeHtml(description),
+
+    PROJECTS_CURRENT: current === "projects" ? 'aria-current="page"' : "",
+
+    REFERENCE_CURRENT: current === "reference" ? 'aria-current="page"' : "",
+
+    ROSETTA_CURRENT: current === "rosetta" ? 'aria-current="page"' : "",
+
+    LABS_CURRENT: current === "labs" ? 'aria-current="page"' : "",
+  });
+}
+
+/* =========================================================
+   VISUAL HELPERS
+   ========================================================= */
+
+function recordInitials(record: RecordRow): string {
+  const words = record.title.trim().split(/\s+/).filter(Boolean);
+
+  if (words.length === 0) {
+    return "DS";
+  }
+
+  if (words.length === 1) {
+    return words[0]!.slice(0, 3).toUpperCase();
+  }
+
+  return (words[0]!.charAt(0) + words[1]!.charAt(0)).toUpperCase();
+}
+
+function homeShortLabel(record: RecordRow): string {
+  const value = `${record.title} ${record.slug ?? ""}`.toLowerCase();
+
+  if (value.includes("javascript")) {
+    return "JS";
+  }
+
+  if (value.includes("typescript")) {
+    return "TS";
+  }
+
+  if (value.includes("python")) {
+    return "PY";
+  }
+
+  if (value.includes("database") || value.includes("sql")) {
+    return "DB";
+  }
+
+  if (value.includes("api")) {
+    return "API";
+  }
+
+  if (value.includes("html")) {
+    return "HTML";
+  }
+
+  if (value.includes("css")) {
+    return "CSS";
+  }
+
+  if (value.includes("php")) {
+    return "PHP";
+  }
+
+  if (value.includes("git")) {
+    return "GIT";
+  }
+
+  if (value.includes("react")) {
+    return "RE";
+  }
+
+  if (value.includes("angular")) {
+    return "NG";
+  }
+
+  if (value.includes("node")) {
+    return "NODE";
+  }
+
+  if (value.includes("jupyter")) {
+    return "JN";
+  }
+
+  if (value.includes("pandas")) {
+    return "PD";
+  }
+
+  if (value.includes("scikit") || value.includes("sklearn")) {
+    return "SK";
+  }
+
+  if (value.includes("tensorflow")) {
+    return "TF";
+  }
+
+  return recordInitials(record);
+}
+
+function homeColorClass(record: RecordRow): string {
+  const value = `${record.title} ${record.slug ?? ""}`.toLowerCase();
+
+  if (value.includes("javascript")) {
+    return "gold";
+  }
+
+  if (
+    value.includes("typescript") ||
+    value.includes("jupyter") ||
+    value.includes("tensorflow")
+  ) {
+    return "blue";
+  }
+
+  if (
+    value.includes("python") ||
+    value.includes("php") ||
+    value.includes("pandas")
+  ) {
+    return "cyan";
+  }
+
+  if (
+    value.includes("database") ||
+    value.includes("sql") ||
+    value.includes("api") ||
+    value.includes("scikit")
+  ) {
+    return "purple";
+  }
+
+  if (value.includes("git")) {
+    return "red";
+  }
+
+  if (
+    value.includes("visual") ||
+    value.includes("chart") ||
+    value.includes("game")
+  ) {
+    return "gold";
+  }
+
+  return "";
+}
+
+function recordIconClass(record: RecordRow): string {
+  const inferred = homeColorClass(record);
+
+  if (inferred) {
+    return inferred;
+  }
+
+  switch (classificationOf(record)) {
+    case "rosetta-stone":
+      return "purple";
+
+    case "lab-exploration":
+      return "cyan";
+
+    case "reference-guide":
+      return "cyan";
+
+    default:
+      return "blue";
+  }
+}
+
+function projectCardDetail(record: RecordRow): string {
+  const technologies = getTechnologiesForRecord(record.id);
+
+  if (technologies.length) {
+    return technologies.map((technology) => technology.name).join(" / ");
+  }
+
+  if (record.subtitle) {
+    return record.subtitle;
+  }
+
+  return classificationLabel(record);
+}
+
+function homeRecordType(record: RecordRow): string {
+  const category = primaryCategoryForRecord(record);
+
+  if (category) {
+    return category.name.toUpperCase();
+  }
+
+  return classificationLabel(record);
+}
+
+/* =========================================================
+   HOME — ROSETTA STONES
+
+   Classification:
+   Rosetta Stone
+   ========================================================= */
+
+function renderHomeRosettaStones(): string {
+  return getPublicRosettaStones()
+    .slice(0, 5)
+    .map((record) => {
+      const color = homeColorClass(record);
+
+      return `
+<button
+  type="button"
+  onclick="window.location.href = '${attr(entryUrl(record))}'"
+>
+  <span
+    class="${attr(classes("stone", color))}"
+  >
+    <span>
+      ${escapeHtml(homeShortLabel(record))}
+    </span>
+  </span>
+
+  <small>
+    ${escapeHtml(record.nav_label || record.title)}
+  </small>
+</button>`;
+    })
+    .join("\n");
+}
+
+/* =========================================================
+   HOME — PROJECTS
+
+   Classification:
+   General Project only
+   ========================================================= */
+
+function renderHomeProjects(): string {
+  return getPublicGeneralProjects()
+    .slice(0, 8)
+    .map(
+      (record) => `
+<a
+  href="${attr(entryUrl(record))}"
+>
+  <span
+    class="${attr(classes("project-icon", homeColorClass(record)))}"
+  >
+    ${escapeHtml(recordInitials(record))}
+  </span>
+
+  <strong>
+    ${escapeHtml(record.title)}
+  </strong>
+
+  <small>
+    ${escapeHtml(homeRecordType(record))}
+  </small>
+</a>`,
+    )
+    .join("\n");
+}
+
+/* =========================================================
+   HOME — REFERENCE GUIDES
+
+   Classification:
+   Reference Guide
+   ========================================================= */
+
+function renderHomeReferenceGuides(): string {
+  return getPublicReferenceGuides()
+    .slice(0, 6)
+    .map(
+      (record) => `
+<a
+  href="${attr(entryUrl(record))}"
+>
+  <span
+    class="${attr(classes("guide-icon", homeColorClass(record)))}"
+  >
+    ${escapeHtml(homeShortLabel(record))}
+  </span>
+
+  <small>
+    ${escapeHtml(record.nav_label || record.title)}
+  </small>
+</a>`,
+    )
+    .join("\n");
+}
+
+/* =========================================================
+   HOME — LABS & EXPLORATIONS
+
+   Classification:
+   Lab / Exploration
+   ========================================================= */
+
+function renderHomeLabs(): string {
+  return getPublicLabs()
+    .slice(0, 5)
+    .map(
+      (record) => `
+<a
+  href="${attr(entryUrl(record))}"
+>
+  <!--
+    data-icon remains for compatibility
+    with the current homepage CSS.
+  -->
+  <span
+    class="${attr(classes("data-icon", homeColorClass(record)))}"
+  >
+    ${escapeHtml(homeShortLabel(record))}
+  </span>
+
+  <small>
+    ${escapeHtml(record.nav_label || record.title)}
+  </small>
+</a>`,
+    )
+    .join("\n");
+}
+
+/* =========================================================
+   HOME — FEATURED
+
+   INCLUDE:
+   General Project
+   Rosetta Stone
+   Lab / Exploration
+
+   EXCLUDE:
+   Reference Guide
+   Demo Data
+   None
+   ========================================================= */
+
+function getPreviewForRecord(recordId: string): string {
+  const row = database
+    .prepare(
+      `
+          SELECT content
+          FROM content_nodes
+          WHERE record_id = ?
+            AND hidden = 0
+            AND LOWER(
+              COALESCE(
+                type,
+                ''
+              )
+            ) IN (
+              'display',
+              'preview'
+            )
+          ORDER BY
+            sort_order,
+            id
+          LIMIT 1
+        `,
+    )
+    .get(recordId) as
+    | {
+        content?: string | null;
+      }
+    | undefined;
+
+  return row?.content ?? "";
+}
+
+function renderFeaturedTags(record: RecordRow): string {
+  return getTechnologiesForRecord(record.id)
+    .slice(0, 4)
+    .map(
+      (technology) => `
+<span>
+  ${escapeHtml(technology.name)}
+</span>`,
+    )
+    .join("\n");
+}
+
+function renderHomeFeaturedProjects(): string {
+  return getPublicFeaturedProjects()
+    .map(
+      (record, index) => `
+<article
+  class="featured-slide${index === 0 ? " active" : ""}"
+  data-featured-slide
+  data-featured-index="${index}"
+  aria-hidden="${index === 0 ? "false" : "true"}"
+>
+  <div class="project-image">
+    ${getPreviewForRecord(record.id)}
+  </div>
+
+  <div class="project-info">
+    <small>
+      ${escapeHtml(classificationLabel(record))}
+    </small>
+
+    <h3>
+      ${escapeHtml(record.title)}
+    </h3>
+
+    <p>
+      ${escapeHtml(record.description ?? record.subtitle ?? "")}
+    </p>
+
+    <div class="tags">
+      ${renderFeaturedTags(record)}
+    </div>
+
+    <a
+      href="${attr(entryUrl(record))}"
+    >
+      Explore Project ›
+    </a>
+  </div>
+</article>`,
+    )
+    .join("\n");
+}
+
+function renderHomeFeaturedDots(): string {
+  return getPublicFeaturedProjects()
+    .map(
+      (record, index) => `
+<button
+  type="button"
+  data-featured-dot="${index}"
+  class="${index === 0 ? "active" : ""}"
+  aria-label="Show ${attr(record.title)}"
+></button>`,
+    )
+    .join("\n");
+}
+
+/* =========================================================
+   GENERATE HOME
+   ========================================================= */
+
+function generateIndex(): void {
+  const labs = renderHomeLabs();
+
+  const html = replaceTemplateValues(readTemplate("index.html"), {
+    HOME_FEATURED_PROJECTS: renderHomeFeaturedProjects(),
+
+    HOME_FEATURED_DOTS: renderHomeFeaturedDots(),
+
+    HOME_ROSETTA_STONES: renderHomeRosettaStones(),
+
+    HOME_PROJECTS: renderHomeProjects(),
+
+    HOME_REFERENCE_GUIDES: renderHomeReferenceGuides(),
+
+    HOME_LABS: labs,
+
+    /*
+     * Temporary compatibility with the older
+     * homepage placeholder.
+     */
+    HOME_DATA_PROJECTS: labs,
+  });
+
+  writeFileSync(INDEX_OUTPUT_PATH, html, "utf8");
+
+  console.log(`Generated: ${INDEX_OUTPUT_PATH}`);
+}
+
+/* =========================================================
+   COLLECTION CARD
+   ========================================================= */
+
+function renderCollectionCard(record: RecordRow): string {
+  return `
+<a
+  href="${attr(entryUrl(record))}"
+>
+  <span
+    class="${attr(classes("project-icon", recordIconClass(record)))}"
+  >
+    ${escapeHtml(recordInitials(record))}
+  </span>
+
+  <div>
+    <strong>
+      ${escapeHtml(record.title)}
+    </strong>
+
+    <small>
+      ${escapeHtml(projectCardDetail(record))}
+    </small>
+  </div>
+</a>`;
+}
+
+/* =========================================================
+   COLLECTION ASIDE
+   ========================================================= */
+
+function renderCollectionAside(
+  title: string,
+  description: string,
+  allLabel: string,
+  allDescription: string,
+  currentPage: string,
+  groups: CollectionGroup[],
+): string {
+  const buttons = groups
+    .map(
+      (group) => `
+<button
+  type="button"
+  data-filter="${attr(group.slug)}"
+  onclick="window.location.href = '#group-${attr(group.slug)}'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      ${escapeHtml(group.name)}
+    </strong>
+
+    ${
+      group.description
+        ? `
+    <small>
+      ${escapeHtml(group.description)}
+    </small>`
+        : ""
+    }
+  </span>
+</button>`,
+    )
+    .join("\n");
+
+  return `
+<aside class="type-menu">
+  <header>
+    <h1>
+      ${escapeHtml(title)}
+    </h1>
+
+    <p>
+      ${escapeHtml(description)}
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="${attr(title)}"
+  >
+    <button
+      type="button"
+      data-filter="all"
+      aria-current="true"
+      onclick="window.location.href = '${attr(currentPage)}'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          ${escapeHtml(allLabel)}
+        </strong>
+
+        <small>
+          ${escapeHtml(allDescription)}
+        </small>
+      </span>
+    </button>
+
+    ${buttons}
+  </nav>
+</aside>`;
+}
+
+/* =========================================================
+   COLLECTION CONTENT
+   ========================================================= */
+
+function renderCollectionGroup(group: CollectionGroup): string {
+  const cards = group.records.map(renderCollectionCard).join("\n");
+
+  return `
+<section
+  class="project-group"
+  id="group-${attr(group.slug)}"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        ${escapeHtml(group.name)}
+      </h3>
+
+      ${
+        group.description
+          ? `
+      <small>
+        ${escapeHtml(group.description)}
+      </small>`
+          : ""
+      }
+    </div>
+  </header>
+
+  <div class="project-grid">
+    ${cards}
+  </div>
+</section>`;
+}
+
+function renderCollectionContent(groups: CollectionGroup[]): string {
+  return groups.map(renderCollectionGroup).join("\n");
+}
+
+/* =========================================================
+   PROJECT LIBRARY
+
+   INCLUDE:
+   General Project
+   Rosetta Stone
+   Lab / Exploration
+
+   EXCLUDE:
+   Reference Guide
+   Demo Data
+   None
+
+   Grouping is controlled ONLY by categories.
+   ========================================================= */
+
+function generateLibrary(): void {
+  const records = getPublicProjectLibraryRecords();
+
+  const groups = groupRecordsByCategory(records);
+
+  const description =
+    "Explore development projects, applications, tools, experiments, and technical work by category.";
+
+  const header = renderSharedHeader("projects", "Project Library", description);
+
+  const footer = readTemplate("entry-footer.html");
+
+  const html = replaceTemplateValues(readTemplate("library.html"), {
+    PAGE_TITLE: "Project Library — Developer Sandbox",
+
+    LIBRARY_HEADER: header,
+
+    LIBRARY_ASIDE: renderCollectionAside(
+      "Project Library",
+      description,
+      "All Projects",
+      "View the complete project library.",
+      "library.html",
+      groups,
+    ),
+
+    LIBRARY_LABEL: "PROJECT LIBRARY",
+
+    LIBRARY_TITLE: "All Projects",
+
+    LIBRARY_DESCRIPTION: description,
+
+    LIBRARY_CONTENT: renderCollectionContent(groups),
+
+    LIBRARY_FOOTER: footer,
+  });
+
+  writeFileSync(LIBRARY_OUTPUT_PATH, html, "utf8");
+
+  console.log(`Generated: ${LIBRARY_OUTPUT_PATH}`);
+}
+
+/* =========================================================
+   ROSETTA STONES
+
+   Only classification = Rosetta Stone.
+   Categories may still organize the dedicated page,
+   but they do not determine classification.
+   ========================================================= */
+
+function generateRosettaStones(): void {
+  const records = getPublicRosettaStones();
+
+  const groups = groupRecordsByCategory(records);
+
+  const description =
+    "Compare common programming concepts, patterns, and tasks across languages and technologies.";
+
+  const header = renderSharedHeader("rosetta", "Rosetta Stones", description);
+
+  const footer = readTemplate("entry-footer.html");
+
+  const aside = renderCollectionAside(
+    "Rosetta Stones",
+    description,
+    "All Rosetta Stones",
+    "View every Rosetta Stone project.",
+    "rosetta-stones.html",
+    groups,
+  );
+
+  const content = renderCollectionContent(groups);
+
+  const html = replaceTemplateValues(readTemplate("rosetta-stones.html"), {
+    PAGE_TITLE: "Rosetta Stones — Developer Sandbox",
+
+    ROSETTA_HEADER: header,
+
+    ROSETTA_ASIDE: aside,
+
+    ROSETTA_CONTENT: content,
+
+    ROSETTA_FOOTER: footer,
+
+    COLLECTION_HEADER: header,
+
+    COLLECTION_ASIDE: aside,
+
+    COLLECTION_CONTENT: content,
+
+    COLLECTION_FOOTER: footer,
+  });
+
+  writeFileSync(ROSETTA_OUTPUT_PATH, html, "utf8");
+
+  console.log(`Generated: ${ROSETTA_OUTPUT_PATH}`);
+}
+
+/* =========================================================
+   LABS & EXPLORATIONS
+
+   Only classification = Lab / Exploration.
+   Categories may organize the dedicated page.
+   ========================================================= */
+
+function generateLabs(): void {
+  const records = getPublicLabs();
+
+  const groups = groupRecordsByCategory(records);
+
+  const description =
+    "Experimental projects exploring interaction, games, data science, visualization, creative coding, and emerging areas of study.";
+
+  const header = renderSharedHeader("labs", "Labs & Explorations", description);
+
+  const footer = readTemplate("entry-footer.html");
+
+  const aside = renderCollectionAside(
+    "Labs & Explorations",
+    description,
+    "All Labs & Explorations",
+    "View all experimental and exploratory projects.",
+    "labs.html",
+    groups,
+  );
+
+  const content = renderCollectionContent(groups);
+
+  const html = replaceTemplateValues(readTemplate("labs.html"), {
+    PAGE_TITLE: "Labs & Explorations — Developer Sandbox",
+
+    LABS_HEADER: header,
+
+    LABS_ASIDE: aside,
+
+    LABS_CONTENT: content,
+
+    LABS_FOOTER: footer,
+
+    COLLECTION_HEADER: header,
+
+    COLLECTION_ASIDE: aside,
+
+    COLLECTION_CONTENT: content,
+
+    COLLECTION_FOOTER: footer,
+  });
+
+  writeFileSync(LABS_OUTPUT_PATH, html, "utf8");
+
+  console.log(`Generated: ${LABS_OUTPUT_PATH}`);
+}
+
+/* =========================================================
+   PROJECT LIBRARY ENTRY ASIDE
+   ========================================================= */
+
+function renderProjectEntryAside(record: RecordRow): string {
+  const groups = groupRecordsByCategory(getPublicProjectLibraryRecords());
+
+  const currentCategory = primaryCategoryForRecord(record);
+
+  const buttons = groups
+    .map((group) => {
+      const current =
+        currentCategory && group.id === currentCategory.id
+          ? ' aria-current="true"'
+          : "";
+
+      return `
+<button
+  type="button"${current}
+  onclick="window.location.href = 'library.html#group-${attr(group.slug)}'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      ${escapeHtml(group.name)}
+    </strong>
+  </span>
+</button>`;
+    })
+    .join("\n");
+
+  return `
+<aside class="type-menu">
+  <header>
+    <h1>
+      Project Library
+    </h1>
+
+    <p>
+      Development projects, applications,
+      tools, experiments, and technical work.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Project Library"
+  >
+    <button
+      type="button"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Projects
+        </strong>
+      </span>
+    </button>
+
+    ${buttons}
+  </nav>
+</aside>`;
+}
+
+/* =========================================================
+   ROSETTA ENTRY ASIDE
+   ========================================================= */
+
+function renderRosettaEntryAside(record: RecordRow): string {
+  const groups = groupRecordsByCategory(getPublicRosettaStones());
+
+  const currentCategory = primaryCategoryForRecord(record);
+
+  const buttons = groups
+    .map((group) => {
+      const current =
+        currentCategory && group.id === currentCategory.id
+          ? ' aria-current="true"'
+          : "";
+
+      return `
+<button
+  type="button"${current}
+  onclick="window.location.href = 'rosetta-stones.html#group-${attr(
+    group.slug,
+  )}'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      ${escapeHtml(group.name)}
+    </strong>
+  </span>
+</button>`;
+    })
+    .join("\n");
+
+  return `
+<aside class="type-menu">
+  <header>
+    <h1>
+      Rosetta Stones
+    </h1>
+
+    <p>
+      Compare development concepts across
+      languages and technologies.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Rosetta Stones"
+  >
+    <button
+      type="button"
+      onclick="window.location.href = 'rosetta-stones.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Rosetta Stones
+        </strong>
+      </span>
+    </button>
+
+    ${buttons}
+  </nav>
+</aside>`;
+}
+
+/* =========================================================
+   LAB ENTRY ASIDE
+   ========================================================= */
+
+function renderLabsEntryAside(record: RecordRow): string {
+  const groups = groupRecordsByCategory(getPublicLabs());
+
+  const currentCategory = primaryCategoryForRecord(record);
+
+  const buttons = groups
+    .map((group) => {
+      const current =
+        currentCategory && group.id === currentCategory.id
+          ? ' aria-current="true"'
+          : "";
+
+      return `
+<button
+  type="button"${current}
+  onclick="window.location.href = 'labs.html#group-${attr(group.slug)}'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      ${escapeHtml(group.name)}
+    </strong>
+  </span>
+</button>`;
+    })
+    .join("\n");
+
+  return `
+<aside class="type-menu">
+  <header>
+    <h1>
+      Labs &amp; Explorations
+    </h1>
+
+    <p>
+      Experimental, interactive, and
+      subject-focused development projects.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Labs and Explorations"
+  >
+    <button
+      type="button"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Labs &amp; Explorations
+        </strong>
+      </span>
+    </button>
+
+    ${buttons}
+  </nav>
+</aside>`;
+}
+
+/* =========================================================
+   REFERENCE ENTRY ASIDE
+   ========================================================= */
+
+function renderReferenceAside(
+  record: RecordRow,
+  allRecords: RecordRow[],
+): string {
+  const references = allRecords.filter(isReferenceGuide).sort(recordSort);
+
+  const buttons = references
+    .map((item) => {
+      const current = item.id === record.id ? ' aria-current="true"' : "";
+
+      return `
+<button
+  type="button"${current}
+  onclick="window.location.href = '${attr(entryUrl(item))}'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      ${escapeHtml(item.nav_label || item.title)}
+    </strong>
+
+    ${
+      item.subtitle
+        ? `
+    <small>
+      ${escapeHtml(item.subtitle)}
+    </small>`
+        : ""
+    }
+  </span>
+</button>`;
+    })
+    .join("\n");
+
+  return `
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    ${buttons}
+  </nav>
+</aside>`;
+}
+
+/* =========================================================
+   ENTRY ASIDE DISPATCH
+   ========================================================= */
+
+function renderEntryAside(record: RecordRow, allRecords: RecordRow[]): string {
+  switch (classificationOf(record)) {
+    case "general-project":
+      return renderProjectEntryAside(record);
+
+    case "rosetta-stone":
+      return renderRosettaEntryAside(record);
+
+    case "lab-exploration":
+      return renderLabsEntryAside(record);
+
+    case "reference-guide":
+      return renderReferenceAside(record, allRecords);
+
+    default:
+      return "";
+  }
+}
+
+/* =========================================================
+   ENTRY IDENTITY
+   ========================================================= */
+
+function renderEntryIdentity(record: RecordRow): string {
+  const headerClass = isReferenceGuide(record)
+    ? ""
+    : ' class="project-detail-header"';
+
+  return `
+<header${headerClass}>
+  <div>
+    <small>
+      ${escapeHtml(classificationLabel(record))}
+    </small>
+
+    <h2>
+      ${escapeHtml(record.title)}
+    </h2>
+  </div>
+
+  <p>
+    ${
+      record.subtitle
+        ? `
+    <strong>
+      ${escapeHtml(record.subtitle)}
+    </strong>
+
+    <br />`
+        : ""
+    }
+
+    ${escapeHtml(record.description ?? "")}
+  </p>
+</header>`;
+}
+
 /* =========================================================
    NODE METADATA
    ========================================================= */
@@ -164,14 +1829,14 @@ function metaString(node: NodeRow, key: string): string {
 }
 
 /* =========================================================
-   NODE TYPE / MODE
+   NODE TYPES / MODES
    ========================================================= */
 
 function normalizedNodeType(node: NodeRow): string {
-  const type = String(node.type ?? "standard").toLowerCase();
+  const type = String(node.type || "standard").toLowerCase();
 
   /*
-   * Small compatibility layer for older database values.
+   * Compatibility with older node values.
    */
   if (type === "documentation") {
     return "standard";
@@ -199,57 +1864,6 @@ function nodeMode(node: NodeRow): ParentMode {
 }
 
 /* =========================================================
-   DATABASE READS
-   ========================================================= */
-
-function getRecords(idOrSlug?: string): RecordRow[] {
-  /*
-   * When an ID or slug is supplied, generate only
-   * that record.
-   */
-  if (idOrSlug) {
-    return database
-      .prepare(
-        `
-          SELECT *
-          FROM records
-          WHERE id = ?
-             OR slug = ?
-          ORDER BY sort_order, title
-        `,
-      )
-      .all(idOrSlug, idOrSlug) as RecordRow[];
-  }
-
-  /*
-   * Without an argument, generate all public entries.
-   */
-  return database
-    .prepare(
-      `
-        SELECT *
-        FROM records
-        WHERE visibility = 'public'
-        ORDER BY sort_order, title
-      `,
-    )
-    .all() as RecordRow[];
-}
-
-function getNodes(recordId: string): NodeRow[] {
-  return database
-    .prepare(
-      `
-        SELECT *
-        FROM content_nodes
-        WHERE record_id = ?
-        ORDER BY sort_order, id
-      `,
-    )
-    .all(recordId) as NodeRow[];
-}
-
-/* =========================================================
    NODE HIERARCHY
    ========================================================= */
 
@@ -266,22 +1880,36 @@ function childrenOf(nodes: NodeRow[], parentId: string): NodeRow[] {
 }
 
 /* =========================================================
-   SHARED RENDER HELPERS
+   NODE HEADER HELPERS
    ========================================================= */
 
-function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
-  const subtitle = node.subtitle?.trim() ?? "";
-
-  const title = node.title?.trim() ?? "";
-
-  if (!subtitle && !title) {
+function projectDetailHeader(node: NodeRow): string {
+  if (!node.title && !node.subtitle) {
     return "";
   }
 
   return `
 <header>
-  ${subtitle ? `<span>${subtitle}</span>` : ""}
-  ${title ? `<${heading}>${title}</${heading}>` : ""}
+  ${node.subtitle ? `<span>${node.subtitle}</span>` : ""}
+
+  ${node.title ? `<h3>${node.title}</h3>` : ""}
+</header>`;
+}
+
+function documentSectionHeader(node: NodeRow): string {
+  if (!node.title && !node.subtitle && !node.description) {
+    return "";
+  }
+
+  return `
+<header>
+  <div>
+    ${node.subtitle ? `<span>${node.subtitle}</span>` : ""}
+
+    ${node.title ? `<h3>${node.title}</h3>` : ""}
+  </div>
+
+  ${node.description ? `<p>${node.description}</p>` : ""}
 </header>`;
 }
 
@@ -296,6 +1924,10 @@ function childTitle(node: NodeRow): string {
 </div>`;
 }
 
+/* =========================================================
+   LINKS
+   ========================================================= */
+
 function externalAttributes(url: string): string {
   if (!/^https?:\/\//i.test(url)) {
     return "";
@@ -304,12 +1936,34 @@ function externalAttributes(url: string): string {
   return ` target="_blank" rel="noopener noreferrer"`;
 }
 
+function generatedEntryLink(record: RecordRow, url: string): string {
+  /*
+   * Generated pg pages use:
+   *
+   * <base href="../" />
+   *
+   * A bare #hash would otherwise resolve
+   * against the site root.
+   */
+  if (url.startsWith("#")) {
+    return `${entryUrl(record)}${url}`;
+  }
+
+  return url;
+}
+
 /* =========================================================
-   NAV / LINK
+   NAV / LINK NODE
    ========================================================= */
 
-function renderNavChild(child: NodeRow, mode: ParentMode): string {
-  const url = metaString(child, "url") || "#";
+function renderNavChild(
+  record: RecordRow,
+  child: NodeRow,
+  mode: ParentMode,
+): string {
+  const rawUrl = metaString(child, "url") || "#";
+
+  const url = generatedEntryLink(record, rawUrl);
 
   const text = child.nav_label || child.title || "Open";
 
@@ -323,7 +1977,10 @@ function renderNavChild(child: NodeRow, mode: ParentMode): string {
   href="${attr(url)}"${externalAttributes(url)}
 >
   ${text}
-  <span aria-hidden="true">›</span>
+
+  <span aria-hidden="true">
+    ›
+  </span>
 </a>`;
   }
 
@@ -337,10 +1994,16 @@ function renderNavChild(child: NodeRow, mode: ParentMode): string {
 </a>`;
 }
 
-function renderNav(parent: NodeRow, children: NodeRow[]): string {
+function renderNav(
+  record: RecordRow,
+  parent: NodeRow,
+  children: NodeRow[],
+): string {
   const mode = nodeMode(parent);
 
-  const links = children.map((child) => renderNavChild(child, mode)).join("\n");
+  const links = children
+    .map((child) => renderNavChild(record, child, mode))
+    .join("\n");
 
   if (mode === "buttons") {
     return `
@@ -348,7 +2011,7 @@ function renderNav(parent: NodeRow, children: NodeRow[]): string {
   id="node-${attr(slugify(parent.id))}"
   class="${attr(classes("project-actions", parent.class_name))}"
 >
-${links}
+  ${links}
 </div>`;
   }
 
@@ -358,20 +2021,18 @@ ${links}
   class="${attr(classes("project-doc-nav", parent.class_name))}"
   aria-label="${attr(parent.nav_label || parent.title || "Page sections")}"
 >
-${links}
+  ${links}
 </nav>`;
 }
 
 /* =========================================================
-   DISPLAY / PREVIEW
+   DISPLAY / PREVIEW NODE
    ========================================================= */
 
 function renderDisplay(parent: NodeRow): string {
   const content = parent.content ?? "";
 
   const details = parent.description ?? "";
-
-  const header = parentHeader(parent, "h2");
 
   return `
 <div
@@ -383,10 +2044,10 @@ function renderDisplay(parent: NodeRow): string {
   </div>
 
   ${
-    details || header
+    details || parent.title || parent.subtitle
       ? `
   <div class="project-detail">
-    ${header}
+    ${projectDetailHeader(parent)}
 
     ${
       details
@@ -403,21 +2064,24 @@ function renderDisplay(parent: NodeRow): string {
 }
 
 /* =========================================================
-   STANDARD
+   STANDARD NODE
    ========================================================= */
 
-function renderStandardChild(parent: NodeRow, child: NodeRow): string {
+function renderStandardChild(
+  record: RecordRow,
+  parent: NodeRow,
+  child: NodeRow,
+): string {
   const mode = nodeMode(parent);
 
   const id = `child-${slugify(child.id)}`;
 
-  const url = metaString(child, "url") || "#";
+  const rawUrl = metaString(child, "url") || "#";
+
+  const url = generatedEntryLink(record, rawUrl);
 
   const baseClass = classes("project-command", child.class_name);
 
-  /*
-   * COLLAPSING LIST
-   */
   if (mode === "collapse-list") {
     const panelId = `${id}-panel`;
 
@@ -428,6 +2092,7 @@ function renderStandardChild(parent: NodeRow, child: NodeRow): string {
 >
   <div class="project-command-summary">
     ${childTitle(child)}
+
     ${child.description ?? ""}
   </div>
 
@@ -438,7 +2103,9 @@ function renderStandardChild(parent: NodeRow, child: NodeRow): string {
     aria-controls="${attr(panelId)}"
     aria-label="Expand ${attr(child.title || "item")}"
   >
-    <span aria-hidden="true">⌄</span>
+    <span aria-hidden="true">
+      ⌄
+    </span>
   </button>
 
   <div
@@ -451,9 +2118,6 @@ function renderStandardChild(parent: NodeRow, child: NodeRow): string {
 </div>`;
   }
 
-  /*
-   * LINK LIST
-   */
   if (mode === "link-list") {
     return `
 <div
@@ -462,6 +2126,7 @@ function renderStandardChild(parent: NodeRow, child: NodeRow): string {
 >
   <div class="project-command-content">
     ${childTitle(child)}
+
     ${child.content ?? ""}
   </div>
 
@@ -470,44 +2135,77 @@ function renderStandardChild(parent: NodeRow, child: NodeRow): string {
     href="${attr(url)}"${externalAttributes(url)}
     aria-label="${attr(child.nav_label || child.title || "Open linked item")}"
   >
-    <span aria-hidden="true">›</span>
+    <span aria-hidden="true">
+      ›
+    </span>
   </a>
 </div>`;
   }
 
-  /*
-   * DEFAULT
-   */
   return `
 <div
   id="${attr(id)}"
   class="${attr(baseClass)}"
 >
   ${childTitle(child)}
+
   ${child.content ?? ""}
 </div>`;
 }
 
-function renderStandard(parent: NodeRow, children: NodeRow[]): string {
+function renderStandard(
+  record: RecordRow,
+  parent: NodeRow,
+  children: NodeRow[],
+): string {
   const items = children
-    .map((child) => renderStandardChild(parent, child))
+    .map((child) => renderStandardChild(record, parent, child))
     .join("\n");
+
+  if (isReferenceGuide(record)) {
+    return `
+<section
+  id="node-${attr(slugify(parent.id))}"
+  class="${attr(classes("project-doc-section", parent.class_name))}"
+>
+  ${documentSectionHeader(parent)}
+
+  ${parent.content ?? ""}
+
+  ${
+    children.length
+      ? `
+  <div class="project-command-list">
+    ${items}
+  </div>`
+      : ""
+  }
+</section>`;
+  }
 
   return `
 <section
   id="node-${attr(slugify(parent.id))}"
   class="${attr(classes("project-detail", parent.class_name))}"
 >
-  ${parentHeader(parent)}
+  ${projectDetailHeader(parent)}
 
+  ${parent.description ?? ""}
+  ${parent.content ?? ""}
+
+  ${
+    children.length
+      ? `
   <div class="project-command-list">
-${items}
-  </div>
+    ${items}
+  </div>`
+      : ""
+  }
 </section>`;
 }
 
 /* =========================================================
-   GRID / BOXES
+   GRID / BOXES NODE
    ========================================================= */
 
 function renderGridChild(child: NodeRow): string {
@@ -519,7 +2217,9 @@ function renderGridChild(child: NodeRow): string {
   ${
     child.title
       ? `
-  <small>${child.title}</small>`
+  <small>
+    ${child.title}
+  </small>`
       : ""
   }
 
@@ -537,16 +2237,16 @@ function renderGrid(parent: NodeRow, children: NodeRow[]): string {
   id="node-${attr(slugify(parent.id))}"
   class="${attr(classes("project-detail", parent.class_name))}"
 >
-  ${parentHeader(parent)}
+  ${projectDetailHeader(parent)}
 
   <div class="project-meta">
-${items}
+    ${items}
   </div>
 </section>`;
 }
 
 /* =========================================================
-   SPLIT
+   SPLIT NODE
    ========================================================= */
 
 function parseSplitMode(mode: string): {
@@ -581,206 +2281,87 @@ function parseSplitMode(mode: string): {
   };
 }
 
+function splitClass(
+  layout: "small-left" | "equal" | "small-right" | "three-column",
+): string {
+  switch (layout) {
+    case "equal":
+      return "project-split--equal";
+
+    case "small-right":
+      return "project-split--small-right";
+
+    case "three-column":
+      return "project-split--three-column";
+
+    default:
+      return "project-split--small-left";
+  }
+}
+
 function renderSplitCells(
   child: NodeRow,
   layout: "small-left" | "equal" | "small-right" | "three-column",
   action = "",
 ): string {
-  const values: Array<[string, string]> = [
-    ["details", child.description ?? ""],
-    ["content", child.content ?? ""],
-    ["additional", metaString(child, "additionalHtml")],
+  const values = [
+    child.description ?? "",
+    child.content ?? "",
+    metaString(child, "additionalHtml"),
   ];
 
   const count = layout === "three-column" ? 3 : 2;
 
   return values
     .slice(0, count)
-    .map(([, value], index) => {
+    .map((value, index) => {
       const isLast = index === count - 1;
 
       return `
 <div class="project-split-cell">
   ${value}
+
   ${isLast ? action : ""}
 </div>`;
     })
     .join("\n");
 }
 
-function renderLinkAction(child: NodeRow): string {
-  const url = metaString(child, "url") || "#";
-
-  const label = child.nav_label || child.title || "Open linked item";
-
-  return `
-<a
-  class="project-command-action"
-  href="${attr(url)}"${externalAttributes(url)}
-  aria-label="${attr(label)}"
->
-  <span aria-hidden="true">›</span>
-</a>`;
-}
-
-function renderSplitChild(parent: NodeRow, child: NodeRow): string {
+function renderSplit(
+  record: RecordRow,
+  parent: NodeRow,
+  children: NodeRow[],
+): string {
   const mode = nodeMode(parent);
 
   const { layout, behavior } = parseSplitMode(mode);
 
-  const id = `child-${slugify(child.id)}`;
+  const layoutClass = splitClass(layout);
 
-  const baseClass = classes("project-command", child.class_name);
+  const rows = children
+    .map((child) => {
+      const rawUrl = metaString(child, "url") || "#";
 
-  /*
-   * COLLAPSING SPLIT
-   */
-  if (behavior === "collapse") {
-    const panelId = `${id}-panel`;
+      const url = generatedEntryLink(record, rawUrl);
 
-    return `
-<div
-  id="${attr(id)}"
-  class="${attr(classes(baseClass, "is-collapsible"))}"
->
+      if (behavior === "collapse") {
+        const panelId = `split-${slugify(child.id)}`;
+
+        return `
+<div class="project-command is-collapsible">
   <div class="project-command-summary">
-    ${child.title ?? ""}
+    ${child.title ? `<strong>${child.title}</strong>` : ""}
   </div>
 
   <button
-    class="project-command-action collapse-toggle"
     type="button"
+    class="project-command-action collapse-toggle"
     aria-expanded="false"
     aria-controls="${attr(panelId)}"
-    aria-label="Expand ${attr(child.title || "item")}"
   >
-    <span aria-hidden="true">⌄</span>
-  </button>
-
-  <div
-    id="${attr(panelId)}"
-    class="project-split project-split--${attr(layout)} project-command-panel"
-    hidden
-  >
-    ${renderSplitCells(child, layout)}
-  </div>
-</div>`;
-  }
-
-  /*
-   * LINK SPLIT
-   */
-  if (behavior === "link") {
-    return `
-<div
-  id="${attr(id)}"
-  class="${attr(baseClass)}"
->
-  ${
-    child.title
-      ? `
-  <div class="project-split-child-head">
-    ${child.title}
-  </div>`
-      : ""
-  }
-
-  <div class="project-split project-split--${attr(layout)}">
-    ${renderSplitCells(child, layout, renderLinkAction(child))}
-  </div>
-</div>`;
-  }
-
-  /*
-   * DEFAULT SPLIT
-   */
-  return `
-<div
-  id="${attr(id)}"
-  class="${attr(baseClass)}"
->
-  ${
-    child.title
-      ? `
-  <div class="project-split-child-head">
-    ${child.title}
-  </div>`
-      : ""
-  }
-
-  <div class="project-split project-split--${attr(layout)}">
-    ${renderSplitCells(child, layout)}
-  </div>
-</div>`;
-}
-
-function renderSplit(parent: NodeRow, children: NodeRow[]): string {
-  const items = children
-    .map((child) => renderSplitChild(parent, child))
-    .join("\n");
-
-  return `
-<section
-  id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-doc-section", parent.class_name))}"
->
-  ${parentHeader(parent)}
-
-  <div class="project-command-list">
-${items}
-  </div>
-</section>`;
-}
-
-/* =========================================================
-   CODE / EXAMPLES
-   ========================================================= */
-
-function renderCodeExample(child: NodeRow): string {
-  const code = metaString(child, "code");
-
-  return `
-<div class="project-example">
-  <small>Example</small>
-
-  <pre><code>${escapeHtml(code)}</code></pre>
-</div>`;
-}
-
-function renderCodeChild(parent: NodeRow, child: NodeRow): string {
-  const mode = nodeMode(parent);
-
-  const id = `child-${slugify(child.id)}`;
-
-  const baseClass = classes("project-command", child.class_name);
-
-  const details = child.description ?? "";
-
-  const example = renderCodeExample(child);
-
-  /*
-   * COLLAPSING LIST
-   */
-  if (mode === "collapse-list") {
-    const panelId = `${id}-panel`;
-
-    return `
-<div
-  id="${attr(id)}"
-  class="${attr(classes(baseClass, "is-collapsible"))}"
->
-  <div class="project-command-summary">
-    ${child.title ?? ""}
-  </div>
-
-  <button
-    class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="${attr(panelId)}"
-    aria-label="Expand ${attr(child.title || "example")}"
-  >
-    <span aria-hidden="true">⌄</span>
+    <span aria-hidden="true">
+      ⌄
+    </span>
   </button>
 
   <div
@@ -788,75 +2369,209 @@ function renderCodeChild(parent: NodeRow, child: NodeRow): string {
     class="project-command-panel"
     hidden
   >
-    ${details}
-    ${example}
+    <div
+      class="project-split ${attr(layoutClass)}"
+    >
+      ${renderSplitCells(child, layout)}
+    </div>
   </div>
 </div>`;
+      }
+
+      const action =
+        behavior === "link"
+          ? `
+<a
+  class="project-command-action"
+  href="${attr(url)}"${externalAttributes(url)}
+>
+  <span aria-hidden="true">
+    ›
+  </span>
+</a>`
+          : "";
+
+      return `
+<div
+  class="${attr(classes("project-command", child.class_name))}"
+>
+  ${
+    child.title
+      ? `
+  <div>
+    <strong>
+      ${child.title}
+    </strong>
+  </div>`
+      : ""
   }
 
-  /*
-   * LINK LIST
-   */
-  if (mode === "link-list") {
-    return `
-<div
-  id="${attr(id)}"
-  class="${attr(baseClass)}"
->
-  <div class="project-command-content">
-    ${childTitle(child)}
-    ${details}
-    ${example}
+  <div
+    class="project-split ${attr(layoutClass)}"
+  >
+    ${renderSplitCells(child, layout, action)}
   </div>
-
-  ${renderLinkAction(child)}
 </div>`;
-  }
-
-  /*
-   * DEFAULT
-   */
-  return `
-<div
-  id="${attr(id)}"
-  class="${attr(baseClass)}"
->
-  ${childTitle(child)}
-  ${details}
-  ${example}
-</div>`;
-}
-
-function renderCode(parent: NodeRow, children: NodeRow[]): string {
-  const items = children
-    .map((child) => renderCodeChild(parent, child))
+    })
     .join("\n");
+
+  const sectionClass = isReferenceGuide(record)
+    ? "project-doc-section"
+    : "project-detail";
+
+  const header = isReferenceGuide(record)
+    ? documentSectionHeader(parent)
+    : projectDetailHeader(parent);
 
   return `
 <section
   id="node-${attr(slugify(parent.id))}"
-  class="${attr(classes("project-detail", parent.class_name))}"
+  class="${attr(classes(sectionClass, parent.class_name))}"
 >
-  ${parentHeader(parent)}
+  ${header}
 
   <div class="project-command-list">
-${items}
+    ${rows}
   </div>
 </section>`;
 }
 
 /* =========================================================
-   PARENT NODE RENDERER
+   CODE / EXAMPLES NODE
    ========================================================= */
 
-function renderParent(parent: NodeRow, nodes: NodeRow[]): string {
-  const type = normalizedNodeType(parent);
+function renderCodeChild(
+  record: RecordRow,
+  parent: NodeRow,
+  child: NodeRow,
+): string {
+  const mode = nodeMode(parent);
 
+  const code = metaString(child, "code");
+
+  const rawUrl = metaString(child, "url") || "#";
+
+  const url = generatedEntryLink(record, rawUrl);
+
+  const example = `
+<div class="project-example">
+  <small>
+    EXAMPLE
+  </small>
+
+  <pre><code>${escapeHtml(code)}</code></pre>
+</div>`;
+
+  if (mode === "collapse-list") {
+    const panelId = `code-${slugify(child.id)}`;
+
+    return `
+<div class="project-command is-collapsible">
+  <div class="project-command-summary">
+    ${child.title ? `<strong>${child.title}</strong>` : ""}
+  </div>
+
+  <button
+    type="button"
+    class="project-command-action collapse-toggle"
+    aria-expanded="false"
+    aria-controls="${attr(panelId)}"
+  >
+    <span aria-hidden="true">
+      ⌄
+    </span>
+  </button>
+
+  <div
+    id="${attr(panelId)}"
+    class="project-command-panel"
+    hidden
+  >
+    ${child.description ?? ""}
+
+    ${example}
+  </div>
+</div>`;
+  }
+
+  if (mode === "link-list") {
+    return `
+<div class="project-command">
+  <div>
+    ${child.title ? `<strong>${child.title}</strong>` : ""}
+
+    ${child.description ?? ""}
+
+    ${example}
+  </div>
+
+  <a
+    class="project-command-action"
+    href="${attr(url)}"${externalAttributes(url)}
+  >
+    <span aria-hidden="true">
+      ›
+    </span>
+  </a>
+</div>`;
+  }
+
+  return `
+<div class="project-command">
+  <div>
+    ${child.title ? `<strong>${child.title}</strong>` : ""}
+
+    ${child.description ?? ""}
+  </div>
+
+  ${example}
+</div>`;
+}
+
+function renderCode(
+  record: RecordRow,
+  parent: NodeRow,
+  children: NodeRow[],
+): string {
+  const items = children
+    .map((child) => renderCodeChild(record, parent, child))
+    .join("\n");
+
+  const sectionClass = isReferenceGuide(record)
+    ? "project-doc-section"
+    : "project-detail";
+
+  const header = isReferenceGuide(record)
+    ? documentSectionHeader(parent)
+    : projectDetailHeader(parent);
+
+  return `
+<section
+  id="node-${attr(slugify(parent.id))}"
+  class="${attr(classes(sectionClass, parent.class_name))}"
+>
+  ${header}
+
+  <div class="project-command-list">
+    ${items}
+  </div>
+</section>`;
+}
+
+/* =========================================================
+   PARENT DISPATCH
+   ========================================================= */
+
+function renderParent(
+  record: RecordRow,
+  parent: NodeRow,
+  nodes: NodeRow[],
+): string {
   const children = childrenOf(nodes, parent.id);
 
-  switch (type) {
+  switch (normalizedNodeType(parent)) {
     case "nav":
-      return renderNav(parent, children);
+      return renderNav(record, parent, children);
 
     case "display":
       return renderDisplay(parent);
@@ -865,246 +2580,180 @@ function renderParent(parent: NodeRow, nodes: NodeRow[]): string {
       return renderGrid(parent, children);
 
     case "split":
-      return renderSplit(parent, children);
+      return renderSplit(record, parent, children);
 
     case "code":
-      return renderCode(parent, children);
+      return renderCode(record, parent, children);
 
     case "standard":
     default:
-      return renderStandard(parent, children);
+      return renderStandard(record, parent, children);
   }
 }
 
 /* =========================================================
-   ENTRY TYPE LABEL
+   ENTRY CONTENT
    ========================================================= */
 
-function recordTypeLabel(record: RecordRow): string {
-  switch (String(record.type ?? "")) {
-    case "project":
-      return "PROJECT";
-
-    case "reference-doc":
-      return "REFERENCE GUIDE";
-
-    case "reference-guide":
-      return "REFERENCE GUIDE";
-
-    case "rosetta-stone":
-      return "ROSETTA STONE";
-
-    case "experiment":
-      return "EXPERIMENT";
-
-    case "data-visualization":
-      return "DATA VISUALIZATION";
-
-    case "resource":
-      return "RESOURCE";
-
-    default:
-      return String(record.type || "SANDBOX ENTRY")
-        .replace(/-/g, " ")
-        .toUpperCase();
-  }
-}
-
-/* =========================================================
-   ENTRY IDENTITY / DATABASE HEADER
-   ========================================================= */
-
-function renderEntryIdentity(record: RecordRow): string {
-  return `
-<header>
-  <div>
-    <small>${escapeHtml(recordTypeLabel(record))}</small>
-
-    <h2>${escapeHtml(record.title)}</h2>
-  </div>
-
-  <p>
-    ${
-      record.subtitle
-        ? `
-    <strong>
-      ${escapeHtml(record.subtitle)}
-    </strong>
-    <br />`
-        : ""
-    }
-
-    ${escapeHtml(record.description ?? "")}
-  </p>
-</header>`;
-}
-
-/* =========================================================
-   TEMPLATE FILES
-   ========================================================= */
-
-function readTemplate(name: string): string {
-  return readFileSync(join(TEMPLATE_PATH, name), "utf8");
-}
-
-function replaceTemplateValues(
-  template: string,
-  values: Record<string, string>,
-): string {
-  let output = template;
-
-  for (const [key, value] of Object.entries(values)) {
-    output = output.replaceAll(`{{${key}}}`, value);
-  }
-
-  return output;
-}
-
-/* =========================================================
-   MAIN SITE NAV CURRENT STATE
-   ========================================================= */
-
-function currentNavigation(record: RecordRow): {
-  projects: string;
-  reference: string;
-  rosetta: string;
-} {
-  const type = String(record.type ?? "");
-
-  return {
-    projects: type === "project" ? 'aria-current="page"' : "",
-
-    reference:
-      type === "reference-doc" || type === "reference-guide"
-        ? 'aria-current="page"'
-        : "",
-
-    rosetta: type === "rosetta-stone" ? 'aria-current="page"' : "",
-  };
-}
-
-/* =========================================================
-   GENERATE ONE ENTRY PAGE
-   ========================================================= */
-
-function generateRecord(record: RecordRow): string {
+function renderEntryContent(record: RecordRow): string {
   const nodes = getNodes(record.id);
 
-  const content = topNodes(nodes)
-    .map((node) => renderParent(node, nodes))
+  const parents = topNodes(nodes);
+
+  /*
+   * Reference Guides use project-doc around
+   * their documentation body.
+   */
+  if (isReferenceGuide(record)) {
+    const navigation = parents.filter(
+      (parent) =>
+        normalizedNodeType(parent) === "nav" &&
+        nodeMode(parent) === "navigation",
+    );
+
+    const body = parents.filter(
+      (parent) =>
+        !(
+          normalizedNodeType(parent) === "nav" &&
+          nodeMode(parent) === "navigation"
+        ),
+    );
+
+    const navHtml = navigation
+      .map((parent) => renderParent(record, parent, nodes))
+      .join("\n");
+
+    const bodyHtml = body
+      .map((parent) => renderParent(record, parent, nodes))
+      .join("\n");
+
+    return `
+${navHtml}
+
+<article class="project-doc">
+  ${bodyHtml}
+</article>`;
+  }
+
+  return parents
+    .map((parent) => renderParent(record, parent, nodes))
     .join("\n");
+}
 
-  const navigation = currentNavigation(record);
+/* =========================================================
+   GENERATE INDIVIDUAL ENTRY
+   ========================================================= */
 
+function generateEntry(record: RecordRow, allRecords: RecordRow[]): void {
   /*
-   * ENTRY HEADER
+   * Demo Data and None never generate website pages.
    */
-  const entryHeader = replaceTemplateValues(readTemplate("entry-header.html"), {
-    RECORD_TITLE: escapeHtml(record.title),
+  if (!isDisplayableEntry(record)) {
+    return;
+  }
 
-    RECORD_DESCRIPTION: escapeHtml(record.description ?? ""),
+  const header = renderSharedHeader(
+    currentSection(record),
+    record.title,
+    record.description ?? "",
+  );
 
-    PROJECTS_CURRENT: navigation.projects,
+  const footer = readTemplate("entry-footer.html");
 
-    REFERENCE_CURRENT: navigation.reference,
+  const html = replaceTemplateValues(readTemplate("entry-page.html"), {
+    PAGE_TITLE: `${escapeHtml(record.title)} — Developer Sandbox`,
 
-    ROSETTA_CURRENT: navigation.rosetta,
-  });
+    ENTRY_HEADER: header,
 
-  /*
-   * ENTRY FOOTER
-   */
-  const entryFooter = readTemplate("entry-footer.html");
-
-  /*
-   * ENTRY PAGE
-   */
-  return replaceTemplateValues(readTemplate("entry-page.html"), {
-    PAGE_TITLE: escapeHtml(`${record.title} — Developer Sandbox`),
-
-    ENTRY_HEADER: entryHeader,
-
-    ENTRY_FOOTER: entryFooter,
+    ENTRY_ASIDE: renderEntryAside(record, allRecords),
 
     ENTRY_IDENTITY: renderEntryIdentity(record),
 
-    ENTRY_CONTENT: content,
+    ENTRY_CONTENT: renderEntryContent(record),
+
+    ENTRY_FOOTER: footer,
   });
+
+  const outputFile = join(ENTRY_OUTPUT_PATH, `${entrySlug(record)}.html`);
+
+  writeFileSync(outputFile, html, "utf8");
+
+  console.log(`Generated: ${outputFile}`);
 }
 
 /* =========================================================
-   OUTPUT DIRECTORY
+   OUTPUT SETUP
    ========================================================= */
 
-mkdirSync(OUTPUT_PATH, {
+mkdirSync(ENTRY_OUTPUT_PATH, {
   recursive: true,
 });
 
 /* =========================================================
-   OPTIONAL RECORD ARGUMENT
+   GENERATION
    ========================================================= */
 
+const requestedRecord = process.argv[2]?.trim();
+
+const publicRecords = getPublicRecords();
+
+const renderablePublicRecords = getRenderablePublicRecords();
+
 /*
- * Examples:
- *
- * npm run generate
- *
- * npm run generate -- project-developer-sandbox
- *
- * npm run generate -- developer-sandbox
+ * Root generated pages.
  */
-
-const requestedRecord = process.argv[2]?.trim() || undefined;
-
-/* =========================================================
-   CLEAR OLD GENERATED HTML
-   ========================================================= */
+generateIndex();
+generateLibrary();
+generateRosettaStones();
+generateLabs();
 
 /*
- * Only clear all generated HTML when generating
- * every public record.
+ * FULL GENERATION
  *
- * When one record is requested, leave the other
- * generated pages alone.
+ * Clear generated pg HTML and rebuild only
+ * displayable website entries.
+ *
+ * Demo Data and None are intentionally omitted.
  */
 if (!requestedRecord) {
-  for (const file of readdirSync(OUTPUT_PATH)) {
+  for (const file of readdirSync(ENTRY_OUTPUT_PATH)) {
     if (file.endsWith(".html")) {
-      unlinkSync(join(OUTPUT_PATH, file));
+      unlinkSync(join(ENTRY_OUTPUT_PATH, file));
     }
+  }
+
+  for (const record of renderablePublicRecords) {
+    generateEntry(record, renderablePublicRecords);
   }
 }
 
-/* =========================================================
-   LOAD RECORDS
-   ========================================================= */
+/*
+ * SINGLE ENTRY GENERATION
+ *
+ * Root pages still regenerate because changing one
+ * entry may affect:
+ *
+ * - Project Library
+ * - Rosetta Stones
+ * - Labs & Explorations
+ * - homepage panels
+ * - Featured
+ */
+if (requestedRecord) {
+  const record = getRecord(requestedRecord);
 
-const records = getRecords(requestedRecord);
+  if (!record) {
+    console.error(`No record found for "${requestedRecord}".`);
 
-/* =========================================================
-   GENERATE
-   ========================================================= */
-
-if (!records.length) {
-  console.error(
-    requestedRecord
-      ? `No record found for "${requestedRecord}".`
-      : "No public records found.",
-  );
-
-  process.exitCode = 1;
-} else {
-  for (const record of records) {
-    const slug =
-      slugify(record.slug) || slugify(record.title) || slugify(record.id);
-
-    const outputFile = join(OUTPUT_PATH, `${slug}.html`);
-
-    const html = generateRecord(record);
-
-    writeFileSync(outputFile, html, "utf8");
-
-    console.log(`Generated: ${outputFile}`);
+    process.exitCode = 1;
+  } else if (!isDisplayableEntry(record)) {
+    console.log(
+      `Not generated: ${record.title} is classified as ${classificationLabel(
+        record,
+      )}.`,
+    );
+  } else {
+    generateEntry(record, renderablePublicRecords);
   }
 }
 

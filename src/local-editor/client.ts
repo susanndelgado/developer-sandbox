@@ -648,7 +648,69 @@ function generatedCollapseAttributes(
 /* =========================================================
    GENERAL HELPERS
    ========================================================= */
+function normalizeRecordClassification(
+  value: string | null | undefined,
+): string {
+  const normalized = String(value ?? "")
+    .trim()
+    .toLowerCase();
 
+  switch (normalized) {
+    /*
+     * Existing project records become
+     * General Project in the editor.
+     */
+    case "project":
+    case "general-project":
+      return "general-project";
+
+    /*
+     * Rosetta already has the value we want.
+     */
+    case "rosetta":
+    case "rosetta-stone":
+    case "rosetta-stones":
+      return "rosetta-stone";
+
+    /*
+     * Older experimental classifications
+     * map to Lab / Exploration.
+     */
+    case "experiment":
+    case "exploration":
+    case "lab":
+    case "labs":
+    case "lab-exploration":
+    case "data-visualization":
+      return "lab-exploration";
+
+    /*
+     * Existing reference-doc records become
+     * Reference Guide when next saved.
+     */
+    case "reference-doc":
+    case "reference-guide":
+      return "reference-guide";
+
+    case "demo-data":
+      return "demo-data";
+
+    case "none":
+    case "":
+      return "none";
+
+    /*
+     * Old Resource / Custom values do not have
+     * a direct approved classification.
+     *
+     * Treat them as None rather than guessing.
+     */
+    case "resource":
+    case "custom":
+    default:
+      return "none";
+  }
+}
 function setMessage(message: string, isError = false): void {
   statusMessage.textContent = message;
   statusMessage.classList.toggle("error", isError);
@@ -734,30 +796,27 @@ function positionClass(prefix: "node" | "child", index: number): string {
 }
 
 function schemaTypeForRecord(record: RecordRow): string | null {
-  switch (record.type) {
-    case "project":
+  const classification = normalizeRecordClassification(record.type);
+
+  switch (classification) {
+    case "general-project":
       return "SoftwareSourceCode";
 
     case "rosetta-stone":
       return "SoftwareSourceCode";
 
-    case "experiment":
+    case "lab-exploration":
       return "SoftwareSourceCode";
 
-    case "reference-doc":
+    case "reference-guide":
       return "TechArticle";
 
-    case "data-visualization":
-      return "CreativeWork";
+    case "demo-data":
+      return "Dataset";
 
-    case "resource":
-      return "CreativeWork";
-
-    case "custom":
-      return "CreativeWork";
-
+    case "none":
     default:
-      return null;
+      return "unclassified";
   }
 }
 
@@ -993,7 +1052,7 @@ function fillEntryForm(): void {
   };
 
   set("id", currentRecord.id);
-  set("type", currentRecord.type ?? "project");
+  set("type", normalizeRecordClassification(currentRecord.type));
   set("title", currentRecord.title);
   set("slug", currentRecord.slug ?? "");
   set("status", currentRecord.status ?? "planned");
@@ -1017,7 +1076,8 @@ function resetEntry(): void {
 
   entryForm.reset();
 
-  (entryForm.elements.namedItem("type") as HTMLSelectElement).value = "project";
+  (entryForm.elements.namedItem("type") as HTMLSelectElement).value =
+    "general-project";
   (entryForm.elements.namedItem("status") as HTMLSelectElement).value =
     "planned";
   (entryForm.elements.namedItem("visibility") as HTMLSelectElement).value =
