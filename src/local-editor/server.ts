@@ -1299,9 +1299,25 @@ async function handleApi(
     sendJson(res, 404, { error: "API route not found." });
     return true;
   } catch (error) {
-    sendJson(res, 400, {
-      error: error instanceof Error ? error.message : String(error),
-    });
+    const details =
+      error instanceof Error
+        ? {
+            error: error.message,
+            name: error.name,
+            stack: error.stack ?? "",
+            cause: error.cause == null ? "" : String(error.cause),
+          }
+        : {
+            error: String(error),
+            name: typeof error,
+            stack: "",
+            cause: "",
+          };
+
+    console.error(`\n[LOCAL EDITOR API ERROR] ${req.method ?? "UNKNOWN"} ${req.url ?? ""}`);
+    console.error(error);
+
+    sendJson(res, 400, details);
     return true;
   }
 }

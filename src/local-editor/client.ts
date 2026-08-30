@@ -711,21 +711,168 @@ function normalizeRecordClassification(
       return "none";
   }
 }
+let errorDetailsPanel: HTMLElement | null = null;
+let errorDetailsOutput: HTMLPreElement | null = null;
+
+function clearErrorDetails(): void {
+  if (errorDetailsPanel) {
+    errorDetailsPanel.hidden = true;
+  }
+}
+
+function showErrorDetails(details: string): void {
+  if (!errorDetailsPanel || !errorDetailsOutput) {
+    const panel = document.createElement("section");
+    panel.id = "editor-error-details";
+    panel.setAttribute("role", "alert");
+    panel.style.cssText = [
+      "margin:0",
+      "padding:12px 16px",
+      "border-top:1px solid rgba(255,120,120,.45)",
+      "border-bottom:1px solid rgba(255,120,120,.45)",
+      "background:#160c12",
+      "color:#ffd0d0",
+      "font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace",
+    ].join(";");
+
+    const controls = document.createElement("div");
+    controls.style.cssText =
+      "display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px";
+
+    const label = document.createElement("strong");
+    label.textContent = "FULL ERROR OUTPUT";
+
+    const buttons = document.createElement("div");
+    buttons.style.cssText = "display:flex;gap:8px";
+
+    const copyButton = document.createElement("button");
+    copyButton.type = "button";
+    copyButton.textContent = "Copy Error";
+    copyButton.addEventListener("click", async () => {
+      const text = errorDetailsOutput?.textContent ?? "";
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyButton.textContent = "Copied";
+        window.setTimeout(() => {
+          copyButton.textContent = "Copy Error";
+        }, 1200);
+      } catch (error) {
+        console.error("Could not copy error details.", error);
+      }
+    });
+
+    const closeButton = document.createElement("button");
+    closeButton.type = "button";
+    closeButton.textContent = "Close";
+    closeButton.addEventListener("click", clearErrorDetails);
+
+    buttons.append(copyButton, closeButton);
+    controls.append(label, buttons);
+
+    const output = document.createElement("pre");
+    output.style.cssText = [
+      "margin:0",
+      "padding:10px",
+      "max-height:320px",
+      "overflow:auto",
+      "white-space:pre-wrap",
+      "overflow-wrap:anywhere",
+      "background:#080d14",
+      "color:#ffbcbc",
+      "font-size:12px",
+      "line-height:1.45",
+      "user-select:text",
+    ].join(";");
+
+    panel.append(controls, output);
+
+    const topbar = statusMessage.closest(".topbar");
+    if (topbar) {
+      topbar.insertAdjacentElement("afterend", panel);
+    } else {
+      document.body.prepend(panel);
+    }
+
+    errorDetailsPanel = panel;
+    errorDetailsOutput = output;
+  }
+
+  errorDetailsOutput.textContent = details;
+  errorDetailsPanel.hidden = false;
+}
+
 function setMessage(message: string, isError = false): void {
   statusMessage.textContent = message;
   statusMessage.classList.toggle("error", isError);
+
+  if (!isError) {
+    clearErrorDetails();
+  }
 }
 
 async function api<T>(url: string, options?: RequestInit): Promise<T> {
-  const response = await fetch(url, {
-    headers: { "Content-Type": "application/json" },
-    ...options,
-  });
+  const method = String(options?.method ?? "GET").toUpperCase();
+  let response: Response;
 
-  const data = await response.json();
+  try {
+    response = await fetch(url, {
+      headers: { "Content-Type": "application/json" },
+      ...options,
+    });
+  } catch (error) {
+    const errorText =
+      error instanceof Error
+        ? error.stack || `${error.name}: ${error.message}`
+        : String(error);
+
+    const details = [
+      `REQUEST: ${method} ${url}`,
+      "",
+      "NETWORK / FETCH ERROR",
+      errorText,
+      "",
+      "The request never reached the local editor API.",
+    ].join("\n");
+
+    console.error(details);
+    showErrorDetails(details);
+    throw error;
+  }
+
+  const raw = await response.text();
+  let data: any = {};
+
+  if (raw) {
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      data = { error: raw };
+    }
+  }
 
   if (!response.ok) {
-    throw new Error(data.error ?? "Request failed.");
+    const serverMessage = String(data.error ?? response.statusText ?? "Request failed.");
+    const errorName = String(data.name ?? "Error");
+    const stack = String(data.stack ?? "");
+    const cause = String(data.cause ?? "");
+
+    const details = [
+      `REQUEST: ${method} ${url}`,
+      `HTTP: ${response.status} ${response.statusText}`,
+      "",
+      "SERVER ERROR",
+      `${errorName}: ${serverMessage}`,
+      cause ? `Cause: ${cause}` : "",
+      stack ? `\nSTACK TRACE\n${stack}` : "",
+      raw ? `\nRAW RESPONSE\n${raw}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    console.error(details);
+    showErrorDetails(details);
+    throw new Error(serverMessage);
   }
 
   return data as T;
