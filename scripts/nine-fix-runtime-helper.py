@@ -6,13 +6,46 @@ mode = sys.argv[1] if len(sys.argv) > 1 else ""
 if mode == "prepare":
     path = Path("scripts/apply-nine-safety-fixes-once.py")
     text = path.read_text(encoding="utf8")
-    old = '    3,\n    "generator action link attributes",'
-    new = '    2,\n    "generator action link attributes",'
-    if text.count(old) != 1:
+
+    count_old = '    3,\n    "generator action link attributes",'
+    count_new = '    2,\n    "generator action link attributes",'
+    if text.count(count_old) != 1:
         raise SystemExit(
-            f"Expected one generator action-link count marker, found {text.count(old)}"
+            f"Expected one generator action-link count marker, found {text.count(count_old)}"
         )
-    path.write_text(text.replace(old, new, 1), encoding="utf8")
+    text = text.replace(count_old, count_new, 1)
+
+    old_type_patch = """types = replace_once(
+    types,
+    '''  notes?: string;
+}''',
+    '''  notes?: string;
+  customClasses?: string;
+}''',
+    \"SandboxRecord custom classes\",
+)"""
+
+    new_type_patch = """types = replace_once(
+    types,
+    '''  contentRootId?: string;
+
+  notes?: string;
+}''',
+    '''  contentRootId?: string;
+
+  notes?: string;
+  customClasses?: string;
+}''',
+    \"SandboxRecord custom classes\",
+)"""
+
+    if text.count(old_type_patch) != 1:
+        raise SystemExit(
+            f"Expected one SandboxRecord custom-class patch block, found {text.count(old_type_patch)}"
+        )
+    text = text.replace(old_type_patch, new_type_patch, 1)
+
+    path.write_text(text, encoding="utf8")
     raise SystemExit(0)
 
 if mode == "finish":
