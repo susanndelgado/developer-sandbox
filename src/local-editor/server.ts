@@ -251,7 +251,6 @@ function ensureNamedItem(table: "categories" | "tags", name: string): string {
 
   return id;
 }
-
 function syncRecordRelations(
   recordId: string,
   categories: string[],
@@ -260,28 +259,33 @@ function syncRecordRelations(
   database
     .prepare("DELETE FROM record_categories WHERE record_id = ?")
     .run(recordId);
-  database.prepare("DELETE FROM record_tags WHERE record_id = ?").run(recordId);
+
+  database
+    .prepare("DELETE FROM record_tags WHERE record_id = ?")
+    .run(recordId);
 
   for (const name of categories) {
     const categoryId = ensureNamedItem("categories", name);
+
     database
       .prepare(
         `
-      INSERT OR IGNORE INTO record_categories (record_id, category_id)
-      VALUES (?, ?)
-    `,
+        INSERT OR IGNORE INTO record_categories (record_id, category_id)
+        VALUES (?, ?)
+      `,
       )
       .run(recordId, categoryId);
   }
 
   for (const name of tags) {
     const tagId = ensureNamedItem("tags", name);
+
     database
       .prepare(
         `
-      INSERT OR IGNORE INTO record_tags (record_id, tag_id)
-      VALUES (?, ?)
-    `,
+        INSERT OR IGNORE INTO record_tags (record_id, tag_id)
+        VALUES (?, ?)
+      `,
       )
       .run(recordId, tagId);
   }
@@ -291,85 +295,184 @@ function saveRecord(body: JsonObject, existingId?: string): JsonObject {
   const title = String(body.title ?? "").trim();
   const type = String(body.type ?? "").trim();
 
-  if (!title) throw new Error("Title is required.");
-  if (!type) throw new Error("Record Type is required.");
+  if (!title) {
+    throw new Error("Title is required.");
+  }
+
+  if (!type) {
+    throw new Error("Record Type is required.");
+  }
 
   const id =
-    existingId || String(body.id ?? "").trim() || uniqueId("rec", title);
-  const slug = String(body.slug ?? "").trim() || slugify(title);
+    existingId ||
+    String(body.id ?? "").trim() ||
+    uniqueId("rec", title);
+
+  const slug =
+    String(body.slug ?? "").trim() ||
+    slugify(title);
+
   const now = new Date().toISOString();
 
   const existing = database
-    .prepare("SELECT created FROM records WHERE id = ?")
-    .get(id) as { created?: string } | undefined;
+    .prepare(
+      `
+      SELECT created
+      FROM records
+      WHERE id = ?
+    `,
+    )
+    .get(id) as
+    | {
+        created?: string;
+      }
+    | undefined;
 
-  const values: Record<string, SqlValue> = {
+  const commonValues = {
     id,
     title,
     slug,
-    subtitle: null,
-    description: body.description ? String(body.description) : null,
+
+    description: body.description
+      ? String(body.description)
+      : null,
+
     type,
-    status: body.status ? String(body.status) : "planned",
-    visibility: body.visibility ? String(body.visibility) : "local",
+
+    status: body.status
+      ? String(body.status)
+      : "planned",
+
+    visibility: body.visibility
+      ? String(body.visibility)
+      : "local",
+
     featured: normalizeBoolean(body.featured),
+
     sort_order:
-      body.sortOrder === "" || body.sortOrder == null
+      body.sortOrder === "" ||
+      body.sortOrder == null
         ? null
         : Number(body.sortOrder),
-    created: existing?.created ?? now,
+
     updated: now,
+
     presentation_mode: body.presentationMode
       ? String(body.presentationMode)
       : "single-project",
-    nav_label: body.navLabel ? String(body.navLabel) : null,
-    nav_group: body.navGroup ? String(body.navGroup) : null,
-    parent_id: null,
-    content_root_id: null,
-    notes: body.notes ? String(body.notes) : null,
-    custom_classes: body.customClasses ? String(body.customClasses) : null,
+
+    nav_label: body.navLabel
+      ? String(body.navLabel)
+      : null,
+
+    nav_group: body.navGroup
+      ? String(body.navGroup)
+      : null,
+
+    notes: body.notes
+      ? String(body.notes)
+      : null,
+
+    custom_classes: body.customClasses
+      ? String(body.customClasses)
+      : null,
   };
 
   if (existing) {
+    /*
+     * UPDATE gets only the parameters
+     * actually used by the UPDATE query.
+     */
+
     database
       .prepare(
         `
-      UPDATE records
-      SET
-        title = $title,
-        slug = $slug,
-        description = $description,
-        type = $type,
-        status = $status,
-        visibility = $visibility,
-        featured = $featured,
-        sort_order = $sort_order,
-        updated = $updated,
-        presentation_mode = $presentation_mode,
-        nav_label = $nav_label,
-        nav_group = $nav_group,
-        notes = $notes,
-        custom_classes = $custom_classes
-      WHERE id = $id
-    `,
+        UPDATE records
+        SET
+          title = $title,
+          slug = $slug,
+          description = $description,
+          type = $type,
+          status = $status,
+          visibility = $visibility,
+          featured = $featured,
+          sort_order = $sort_order,
+          updated = $updated,
+          presentation_mode = $presentation_mode,
+          nav_label = $nav_label,
+          nav_group = $nav_group,
+          notes = $notes,
+          custom_classes = $custom_classes
+        WHERE id = $id
+      `,
       )
-      .run(values);
+      .run(commonValues);
   } else {
+    /*
+     * New records still need the complete
+     * database-column set.
+     */
+
+    const insertValues: Record<string, SqlValue> = {
+      ...commonValues,
+
+      subtitle: null,
+
+      created: now,
+
+      parent_id: null,
+
+      content_root_id: null,
+    };
+
     database
       .prepare(
         `
-      INSERT INTO records (
-        id, title, slug, subtitle, description, type, status, visibility,
-        featured, sort_order, created, updated, presentation_mode, nav_label,
-        nav_group, parent_id, content_root_id, notes, custom_classes
-      ) VALUES (
-        $id, $title, $slug, $subtitle, $description, $type, $status, $visibility,
-        $featured, $sort_order, $created, $updated, $presentation_mode, $nav_label,
-        $nav_group, $parent_id, $content_root_id, $notes, $custom_classes
+        INSERT INTO records (
+          id,
+          title,
+          slug,
+          subtitle,
+          description,
+          type,
+          status,
+          visibility,
+          featured,
+          sort_order,
+          created,
+          updated,
+          presentation_mode,
+          nav_label,
+          nav_group,
+          parent_id,
+          content_root_id,
+          notes,
+          custom_classes
+        )
+        VALUES (
+          $id,
+          $title,
+          $slug,
+          $subtitle,
+          $description,
+          $type,
+          $status,
+          $visibility,
+          $featured,
+          $sort_order,
+          $created,
+          $updated,
+          $presentation_mode,
+          $nav_label,
+          $nav_group,
+          $parent_id,
+          $content_root_id,
+          $notes,
+          $custom_classes
+        )
+      `,
       )
-    `,
-      )
-      .run(values);
+      .run(insertValues);
   }
 
   syncRecordRelations(
@@ -380,6 +483,8 @@ function saveRecord(body: JsonObject, existingId?: string): JsonObject {
 
   return getRecord(id) ?? {};
 }
+
+
 
 function nextSortOrder(recordId: string, parentId: string | null): number {
   const row = database

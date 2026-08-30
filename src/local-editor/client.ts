@@ -74,6 +74,8 @@ const entrySummaryMeta = $("#entry-summary-meta");
 const entrySummaryId = $("#entry-summary-id");
 const nodeEditorHeading = $("#node-editor-heading");
 const clearDatabaseButton = $("#clear-database") as HTMLButtonElement;
+const updatePagesButton = $("#update-pages") as HTMLButtonElement;
+const launchPreviewButton = $("#launch-preview") as HTMLButtonElement;
 
 let currentRecord: RecordRow | null = null;
 let currentNodes: NodeRow[] = [];
@@ -816,7 +818,7 @@ function schemaTypeForRecord(record: RecordRow): string | null {
 
     case "none":
     default:
-      return null;
+      return "unclassified";
   }
 }
 
@@ -2832,6 +2834,44 @@ function executeScripts(container: HTMLElement): void {
    ========================================================= */
 
 $("#preview-page").addEventListener("click", renderPreview);
+
+/* =========================================================
+   UPDATE GENERATED SITE PAGES
+   ========================================================= */
+
+updatePagesButton.addEventListener("click", async () => {
+  const originalText = updatePagesButton.textContent;
+
+  updatePagesButton.disabled = true;
+  updatePagesButton.textContent = "Updating...";
+
+  setMessage("Updating generated site pages...");
+
+  try {
+    const result = await api<{
+      ok: boolean;
+      message: string;
+      output?: string;
+    }>("/api/generate", {
+      method: "POST",
+    });
+
+    setMessage(result.message || "Pages updated successfully.");
+  } catch (error) {
+    setMessage(error instanceof Error ? error.message : String(error), true);
+  } finally {
+    updatePagesButton.disabled = false;
+    updatePagesButton.textContent = originalText || "Update Pages";
+  }
+});
+
+/* =========================================================
+   LAUNCH LOCAL SITE PREVIEW
+   ========================================================= */
+
+launchPreviewButton.addEventListener("click", () => {
+  window.open("/site/", "_blank");
+});
 
 $("#copy-html").addEventListener("click", async () => {
   await navigator.clipboard.writeText(generatedHtml.value);
