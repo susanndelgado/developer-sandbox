@@ -1682,7 +1682,7 @@ details:not([open]) summary {
 }
 
 .preview .project-split--small-left {
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
 }
 
 .preview .project-split--equal {
@@ -1716,6 +1716,7 @@ details:not([open]) summary {
 
 .preview .project-split-cell code {
   color: #a8ddff;
+  display: block;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
@@ -2657,6 +2658,7 @@ details:not([open]) summary {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 10px;
   overflow-wrap: anywhere;
+  
 }
 
 .preview .project-command:has(> code) > div:not(.project-command-action) {
@@ -2948,7 +2950,7 @@ details:not([open]) summary {
 }
 
 .preview .project-split--small-left {
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
 }
 
 .preview .project-split--equal {
@@ -2956,11 +2958,11 @@ details:not([open]) summary {
 }
 
 .preview .project-split--small-right {
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
 }
 
 .preview .project-split--three-column {
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
 }
 
 .preview .project-split-cell {
@@ -3933,7 +3935,7 @@ details:not([open]) summary {
 
 /* ---------- COMMAND ---------- */
 
-.project-command > code {
+.project-command code {
   align-self: start;
 
   width: fit-content;
