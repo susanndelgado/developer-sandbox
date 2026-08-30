@@ -1,8 +1,15 @@
-/* ======================
-    NAV
- ====================== */
+/* ==================================================
+   DEVELOPER SANDBOX
+   Shared Interface JavaScript
+   ================================================== */
+
+/* ==================================================
+   1. NAVIGATION
+   ================================================== */
+
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#primary-nav");
+
 function setActiveNavigation() {
   const currentSection = document.body.dataset.section;
 
@@ -21,8 +28,11 @@ function setActiveNavigation() {
   });
 }
 
-setActiveNavigation();
 function closeMenu() {
+  if (!navigation || !menuButton) {
+    return;
+  }
+
   navigation.classList.remove("open");
 
   menuButton.setAttribute("aria-expanded", "false");
@@ -30,81 +40,63 @@ function closeMenu() {
 }
 
 function openMenu() {
+  if (!navigation || !menuButton) {
+    return;
+  }
+
   navigation.classList.add("open");
 
   menuButton.setAttribute("aria-expanded", "true");
   menuButton.setAttribute("aria-label", "Close navigation");
 }
 
-menuButton.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+setActiveNavigation();
 
-  if (isOpen) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-});
+if (menuButton && navigation) {
+  menuButton.addEventListener("click", () => {
+    const isOpen =
+      menuButton.getAttribute("aria-expanded") === "true";
 
-/* close when a navigation item is selected */
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
-navigation.addEventListener("click", (event) => {
-  if (event.target.closest("button")) {
-    closeMenu();
-  }
-});
+  /* close when a navigation item is selected */
 
-/* close if user clicks elsewhere */
+  navigation.addEventListener("click", (event) => {
+    if (event.target.closest("button")) {
+      closeMenu();
+    }
+  });
 
-document.addEventListener("click", (event) => {
-  const clickedMenu = navigation.contains(event.target);
+  /* close if user clicks elsewhere */
 
-  const clickedButton = menuButton.contains(event.target);
+  document.addEventListener("click", (event) => {
+    const clickedMenu = navigation.contains(event.target);
+    const clickedButton = menuButton.contains(event.target);
 
-  if (!clickedMenu && !clickedButton) {
-    closeMenu();
-  }
-});
+    if (!clickedMenu && !clickedButton) {
+      closeMenu();
+    }
+  });
 
-/* close with Escape */
+  /* close with Escape */
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeMenu();
-
-    menuButton.focus();
-  }
-});
-/* ======================
-   PAGE HELP
-   Hover = tooltip
-   Click = speak
-   ====================== */
-
-const pageHelp = document.querySelector(".help");
-
-if (pageHelp) {
-  const helpButton = pageHelp.querySelector("button");
-  const helpTitle = pageHelp.querySelector("strong");
-  const helpDescription = pageHelp.querySelector("p");
-
-  helpButton?.addEventListener("click", () => {
-    const title = helpTitle?.textContent?.trim() ?? "";
-    const description = helpDescription?.textContent?.trim() ?? "";
-
-    const message = [title, description]
-      .filter(Boolean)
-      .join(". ");
-
-    if (message) {
-      speakSandbox(message);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      menuButton.focus();
     }
   });
 }
-/* ======================
-   SANDBOX VOICE
-   Shared by Easter eggs
-   ====================== */
+
+/* ==================================================
+   2. SANDBOX VOICE
+   Shared by page help and Easter eggs
+   ================================================== */
 
 const preferredSandboxVoices = [
   "Victoria",
@@ -122,7 +114,9 @@ function getSandboxVoice() {
 
   for (const name of preferredSandboxVoices) {
     const voice = voices.find(
-      (voice) => voice.name.includes(name) && voice.lang.startsWith("en"),
+      (voice) =>
+        voice.name.includes(name) &&
+        voice.lang.startsWith("en"),
     );
 
     if (voice) {
@@ -137,9 +131,13 @@ function getSandboxVoice() {
   );
 }
 
-function createSandboxMessage(text, rate = 0.9, pitch = 0.85, volume = 0.7) {
+function createSandboxMessage(
+  text,
+  rate = 0.9,
+  pitch = 0.85,
+  volume = 0.7,
+) {
   const message = new SpeechSynthesisUtterance(text);
-
   const voice = getSandboxVoice();
 
   if (voice) {
@@ -163,29 +161,95 @@ function speakSandbox(text) {
 }
 
 /*
-  Prompt the browser to load its
+  Prompt the browser to load
   available speech voices.
 */
 
 window.speechSynthesis.getVoices();
 
-/* ======================
-   SANDBOX RETURN VISITOR
+/* ==================================================
+   3. PAGE HELP
+   Hover = tooltip
+   First click = speak
+   Second click = stop
+   ================================================== */
+
+const pageHelp = document.querySelector(".help");
+
+if (pageHelp) {
+  const helpButton = pageHelp.querySelector("button");
+  const helpTitle = pageHelp.querySelector("strong");
+  const helpDescription = pageHelp.querySelector("p");
+
+  let helpIsSpeaking = false;
+  let currentHelpMessage = null;
+
+  helpButton?.addEventListener("click", () => {
+    /* second click stops the current help message */
+
+    if (helpIsSpeaking) {
+      window.speechSynthesis.cancel();
+
+      helpIsSpeaking = false;
+      currentHelpMessage = null;
+
+      return;
+    }
+
+    const title =
+      helpTitle?.textContent?.trim() ?? "";
+
+    const description =
+      helpDescription?.textContent?.trim() ?? "";
+
+    const text = [title, description]
+      .filter(Boolean)
+      .join(". ");
+
+    if (!text) {
+      return;
+    }
+
+    const message = createSandboxMessage(text);
+
+    currentHelpMessage = message;
+    helpIsSpeaking = true;
+
+    function finishHelpMessage() {
+      if (currentHelpMessage !== message) {
+        return;
+      }
+
+      helpIsSpeaking = false;
+      currentHelpMessage = null;
+    }
+
+    message.onend = finishHelpMessage;
+    message.onerror = finishHelpMessage;
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(message);
+  });
+}
+
+/* ==================================================
+   4. SANDBOX RETURN VISITOR
    Homepage only
-   ====================== */
+   ================================================== */
 
 const sandboxPath = window.location.pathname
   .replace(/\/index\.html$/, "/")
   .replace(/\/+$/, "/");
 
-const isSandboxHome = sandboxPath === "/app/sandbox/";
+const isSandboxHome =
+  sandboxPath === "/app/sandbox/";
 
 if (isSandboxHome) {
   const storageKey = "sandbox-home-visits";
 
   const MEMORY_DAYS = 7;
-
-  const MEMORY_TIME = MEMORY_DAYS * 24 * 60 * 60 * 1000;
+  const MEMORY_TIME =
+    MEMORY_DAYS * 24 * 60 * 60 * 1000;
 
   const now = Date.now();
 
@@ -218,35 +282,32 @@ if (isSandboxHome) {
   data.count++;
 
   /*
-    After seven visits,
+    After 30 visits,
     begin the cycle again.
-
-    Visit 8 becomes visit 1.
   */
 
-  if (data.count > 30) {
+  if (data.count > 10) {
     data.count = 1;
   }
 
   data.expires = now + MEMORY_TIME;
 
-  localStorage.setItem(storageKey, JSON.stringify(data));
+  try {
+    localStorage.setItem(
+      storageKey,
+      JSON.stringify(data),
+    );
+  } catch (error) {
+    /* localStorage unavailable */
+  }
 
   /* ---------- CHOOSE MESSAGE ---------- */
 
   let returnMessage = "";
 
-  if (data.count === 1) {
-    returnMessage = "Hello. Welcome to Susan's Developer Sandbox.";
-  }
   if (data.count === 5) {
-    returnMessage = "Back again? I'm starting to think you like me.";
-  }
-  if (data.count === 9) {
-    returnMessage = "So, should I expect contact soon?";
-  }
-  if (data.count === 25) {
-    returnMessage = "Time to Hire!";
+    returnMessage =
+      "Back again? I'm starting to think you like me.";
   }
 
   /* ---------- QUEUE MESSAGE ---------- */
@@ -256,9 +317,9 @@ if (isSandboxHome) {
 
     function handleReturnVisitor(event) {
       /*
-        Ignore the brand so this does
-        not interfere with the separate
-        five-click Easter egg.
+        Ignore the brand so this does not
+        interfere with the five-click
+        logo Easter egg.
       */
 
       if (event.target.closest(".brand")) {
@@ -271,7 +332,8 @@ if (isSandboxHome) {
 
       messagePlayed = true;
 
-      const control = event.target.closest("a, button");
+      const control =
+        event.target.closest("a, button");
 
       /*
         Temporarily stop navigation
@@ -283,7 +345,8 @@ if (isSandboxHome) {
         event.stopImmediatePropagation();
       }
 
-      const message = createSandboxMessage(returnMessage);
+      const message =
+        createSandboxMessage(returnMessage);
 
       let continued = false;
 
@@ -294,7 +357,11 @@ if (isSandboxHome) {
 
         continued = true;
 
-        document.removeEventListener("click", handleReturnVisitor, true);
+        document.removeEventListener(
+          "click",
+          handleReturnVisitor,
+          true,
+        );
 
         if (control) {
           control.click();
@@ -302,7 +369,6 @@ if (isSandboxHome) {
       }
 
       message.onend = continueAction;
-
       message.onerror = continueAction;
 
       window.speechSynthesis.cancel();
@@ -316,63 +382,82 @@ if (isSandboxHome) {
       setTimeout(continueAction, 4000);
     }
 
-    document.addEventListener("click", handleReturnVisitor, true);
+    document.addEventListener(
+      "click",
+      handleReturnVisitor,
+      true,
+    );
   }
 }
 
-/* ======================
-   SANDBOX LOGO EASTER EGG
-   Five brand clicks
-   ====================== */
+// /* ==================================================
+//    5. SANDBOX LOGO EASTER EGG
+//    Five brand clicks
+//    ================================================== */
 
-const sandboxLogo = document.querySelector(".brand");
+// const sandboxLogo =
+//   document.querySelector(".brand");
 
-if (sandboxLogo) {
-  let logoClicks = 0;
-  let logoTimer;
+// if (sandboxLogo) {
+//   let logoClicks = 0;
+//   let logoTimer;
 
-  sandboxLogo.addEventListener("click", (event) => {
-    /*
-        Prevent # links from jumping
-        or reloading while counting.
-      */
+//   sandboxLogo.addEventListener(
+//     "click",
+//     (event) => {
+//       /*
+//         Prevent # links from jumping
+//         or reloading while counting.
+//       */
 
-    const href = sandboxLogo.getAttribute("href");
+//       const href =
+//         sandboxLogo.getAttribute("href");
 
-    if (!href || href === "#") {
-      event.preventDefault();
-    }
+//       if (!href || href === "#") {
+//         event.preventDefault();
+//       }
 
-    logoClicks++;
+//       logoClicks++;
 
-    clearTimeout(logoTimer);
+//       clearTimeout(logoTimer);
 
-    logoTimer = setTimeout(() => {
-      logoClicks = 0;
-    }, 3000);
+//       logoTimer = setTimeout(() => {
+//         logoClicks = 0;
+//       }, 3000);
 
-    /* ---------- FIVE CLICKS ---------- */
+//       /* ---------- FIVE CLICKS ---------- */
 
-    if (logoClicks === 5) {
-      logoClicks = 0;
+//       if (logoClicks === 5) {
+//         logoClicks = 0;
 
-      clearTimeout(logoTimer);
+//         clearTimeout(logoTimer);
 
-      speakSandbox(
-        "Hello. Welcome to Susan's Developer Sandbox. Curiosity detected.",
-      );
-    }
-  });
-}
-/* ======================
-   SANDBOX UI SOUND
-   ====================== */
+//         speakSandbox(
+//           "Hello. Welcome to Susan's Developer Sandbox. Curiosity detected.",
+//         );
+//       }
+//     },
+//   );
+// }
 
-let audioContext;
+/* ==================================================
+   6. SANDBOX UI SOUND
+   ================================================== */
+
+let audioContext = null;
 
 function enableAudio() {
   if (!audioContext) {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const AudioContextClass =
+      window.AudioContext ||
+      window.webkitAudioContext;
+
+    if (!AudioContextClass) {
+      return;
+    }
+
+    audioContext =
+      new AudioContextClass();
   }
 
   if (audioContext.state === "suspended") {
@@ -382,16 +467,32 @@ function enableAudio() {
 
 /* ---------- CREATE UI TONE ---------- */
 
-function playInterfaceSound(frequency = 520, duration = 0.035, volume = 0.025) {
-  if (!audioContext) return;
+function playInterfaceSound(
+  frequency = 520,
+  duration = 0.035,
+  volume = 0.025,
+) {
+  if (!audioContext) {
+    return;
+  }
 
-  const oscillator = audioContext.createOscillator();
-  const gain = audioContext.createGain();
+  const oscillator =
+    audioContext.createOscillator();
+
+  const gain =
+    audioContext.createGain();
 
   oscillator.type = "sawtooth";
-  oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
 
-  gain.gain.setValueAtTime(volume, audioContext.currentTime);
+  oscillator.frequency.setValueAtTime(
+    frequency,
+    audioContext.currentTime,
+  );
+
+  gain.gain.setValueAtTime(
+    volume,
+    audioContext.currentTime,
+  );
 
   gain.gain.exponentialRampToValueAtTime(
     0.001,
@@ -403,94 +504,119 @@ function playInterfaceSound(frequency = 520, duration = 0.035, volume = 0.025) {
 
   oscillator.start();
 
-  oscillator.stop(audioContext.currentTime + duration);
+  oscillator.stop(
+    audioContext.currentTime + duration,
+  );
 }
 
 /* ---------- ENABLE AUDIO AFTER INTERACTION ---------- */
 
-document.addEventListener("pointerdown", enableAudio, {
-  once: true,
-});
+document.addEventListener(
+  "pointerdown",
+  enableAudio,
+  {
+    once: true,
+  },
+);
 
-document.addEventListener("keydown", enableAudio, {
-  once: true,
-});
+document.addEventListener(
+  "keydown",
+  enableAudio,
+  {
+    once: true,
+  },
+);
 
 /* ---------- HOVER SOUND ---------- */
 
-document.addEventListener("pointerover", (event) => {
-  const control = event.target.closest("a, button, .project-card");
+document.addEventListener(
+  "pointerover",
+  (event) => {
+    const control = event.target.closest(
+      "a, button, .project-card",
+    );
 
-  if (!control) return;
+    if (!control) {
+      return;
+    }
 
-  /*
-   Prevent sound from repeating while moving
-   between children inside the same control.
-  */
-  if (event.relatedTarget && control.contains(event.relatedTarget)) {
-    return;
-  }
+    /*
+      Prevent sound from repeating
+      while moving between children
+      inside the same control.
+    */
 
-  playInterfaceSound(540, 0.035, 0.03);
-});
+    if (
+      event.relatedTarget &&
+      control.contains(event.relatedTarget)
+    ) {
+      return;
+    }
+
+    playInterfaceSound(
+      540,
+      0.035,
+      0.03,
+    );
+  },
+);
 
 /* ---------- CLICK SOUND ---------- */
 
-document.addEventListener("click", (event) => {
-  const control = event.target.closest("a, button, .project-card");
+document.addEventListener(
+  "click",
+  (event) => {
+    const control = event.target.closest(
+      "a, button, .project-card",
+    );
 
-  if (!control) return;
-
-  enableAudio();
-
-  playInterfaceSound(760, 0.045, 0.04);
-});
-/* ======================
-   PAGE HELP
-   Hover = tooltip
-   Click = speak
-   ====================== */
-
-const pageHelp = document.querySelector(".help");
-
-if (pageHelp) {
-  const helpButton = pageHelp.querySelector("button");
-  const helpTitle = pageHelp.querySelector("strong");
-  const helpDescription = pageHelp.querySelector("p");
-
-  helpButton?.addEventListener("click", () => {
-    const title = helpTitle?.textContent?.trim() ?? "";
-    const description = helpDescription?.textContent?.trim() ?? "";
-
-    const message = [title, description]
-      .filter(Boolean)
-      .join(". ");
-
-    if (message) {
-      speakSandbox(message);
+    if (!control) {
+      return;
     }
-  });
-}
-/* ======================
-   FEATURED PROJECT SLIDER
-   ====================== */
 
-const featuredSlider = document.querySelector(".featured");
+    enableAudio();
+
+    playInterfaceSound(
+      760,
+      0.045,
+      0.04,
+    );
+  },
+);
+
+/* ==================================================
+   7. FEATURED PROJECT SLIDER
+   ================================================== */
+
+const featuredSlider =
+  document.querySelector(".featured");
 
 if (featuredSlider) {
   const slides = Array.from(
-    featuredSlider.querySelectorAll("[data-featured-slide]"),
+    featuredSlider.querySelectorAll(
+      "[data-featured-slide]",
+    ),
   );
 
   const dots = Array.from(
-    featuredSlider.querySelectorAll("[data-featured-dot]"),
+    featuredSlider.querySelectorAll(
+      "[data-featured-dot]",
+    ),
   );
 
-  const previousButton = featuredSlider.querySelector("[data-featured-prev]");
-  const nextButton = featuredSlider.querySelector("[data-featured-next]");
+  const previousButton =
+    featuredSlider.querySelector(
+      "[data-featured-prev]",
+    );
 
-  let currentIndex = slides.findIndex((slide) =>
-    slide.classList.contains("active"),
+  const nextButton =
+    featuredSlider.querySelector(
+      "[data-featured-next]",
+    );
+
+  let currentIndex = slides.findIndex(
+    (slide) =>
+      slide.classList.contains("active"),
   );
 
   if (currentIndex < 0) {
@@ -502,49 +628,85 @@ if (featuredSlider) {
       return;
     }
 
-    currentIndex = (index + slides.length) % slides.length;
+    currentIndex =
+      (index + slides.length) %
+      slides.length;
 
-    slides.forEach((slide, slideIndex) => {
-      const isActive = slideIndex === currentIndex;
+    slides.forEach(
+      (slide, slideIndex) => {
+        const isActive =
+          slideIndex === currentIndex;
 
-      slide.classList.toggle("active", isActive);
+        slide.classList.toggle(
+          "active",
+          isActive,
+        );
 
-      slide.setAttribute(
-        "aria-hidden",
-        isActive ? "false" : "true",
-      );
-    });
+        slide.setAttribute(
+          "aria-hidden",
+          isActive ? "false" : "true",
+        );
+      },
+    );
 
-    dots.forEach((dot, dotIndex) => {
-      const isActive = dotIndex === currentIndex;
+    dots.forEach(
+      (dot, dotIndex) => {
+        const isActive =
+          dotIndex === currentIndex;
 
-      dot.classList.toggle("active", isActive);
+        dot.classList.toggle(
+          "active",
+          isActive,
+        );
 
-      if (isActive) {
-        dot.setAttribute("aria-current", "true");
-      } else {
-        dot.removeAttribute("aria-current");
-      }
-    });
+        if (isActive) {
+          dot.setAttribute(
+            "aria-current",
+            "true",
+          );
+        } else {
+          dot.removeAttribute(
+            "aria-current",
+          );
+        }
+      },
+    );
   }
 
-  previousButton?.addEventListener("click", () => {
-    showFeaturedProject(currentIndex - 1);
-  });
+  previousButton?.addEventListener(
+    "click",
+    () => {
+      showFeaturedProject(
+        currentIndex - 1,
+      );
+    },
+  );
 
-  nextButton?.addEventListener("click", () => {
-    showFeaturedProject(currentIndex + 1);
-  });
+  nextButton?.addEventListener(
+    "click",
+    () => {
+      showFeaturedProject(
+        currentIndex + 1,
+      );
+    },
+  );
 
   dots.forEach((dot) => {
-    dot.addEventListener("click", () => {
-      const index = Number(dot.dataset.featuredDot);
+    dot.addEventListener(
+      "click",
+      () => {
+        const index = Number(
+          dot.dataset.featuredDot,
+        );
 
-      if (Number.isInteger(index)) {
-        showFeaturedProject(index);
-      }
-    });
+        if (Number.isInteger(index)) {
+          showFeaturedProject(index);
+        }
+      },
+    );
   });
+
+  /* one featured project = no navigation needed */
 
   if (slides.length <= 1) {
     if (previousButton) {
