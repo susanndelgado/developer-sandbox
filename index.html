@@ -25,32 +25,26 @@
         <button
           type="button"
           aria-current="page"
-          onclick="window.location.href = '/app/sandbox/'"
+          onclick="window.location.href = '/'"
         >
           <span aria-hidden="true">⌂</span>
           Home
         </button>
 
-        <button
-          type="button"
-          onclick="window.location.href = '/app/sandbox/inner.html'"
-        >
+        <button type="button" onclick="window.location.href = '/inner.html'">
           <span aria-hidden="true">▱</span>
           Projects
         </button>
 
         <button
           type="button"
-          onclick="window.location.href = '/app/sandbox/reference-guide.html'"
+          onclick="window.location.href = '/reference-guide.html'"
         >
           <span aria-hidden="true">▤</span>
           Reference Guides
         </button>
 
-        <button
-          type="button"
-          onclick="window.location.href = '/app/sandbox/inner.html'"
-        >
+        <button type="button" onclick="window.location.href = '/inner.html'">
           <span aria-hidden="true">◇</span>
           Rosetta Stones
         </button>
@@ -60,10 +54,7 @@
           System Guide
         </button>
 
-        <button
-          type="button"
-          onclick="window.location.href = '/app/sandbox/inner.html'"
-        >
+        <button type="button" onclick="window.location.href = '/inner.html'">
           <span aria-hidden="true">⚗</span>
           Lab
         </button>
@@ -171,7 +162,7 @@
         <div class="stones">
           <button
             type="button"
-            onclick="window.location.href = '/app/sandbox/single-project.html'"
+            onclick="window.location.href = '/single-project.html'"
           >
             <span class="stone gold">
               <span>JS</span>
@@ -181,7 +172,7 @@
 
           <button
             type="button"
-            onclick="window.location.href = '/app/sandbox/single-project.html'"
+            onclick="window.location.href = '/single-project.html'"
           >
             <span class="stone blue">
               <span>TS</span>
@@ -191,7 +182,7 @@
 
           <button
             type="button"
-            onclick="window.location.href = '/app/sandbox/single-project.html'"
+            onclick="window.location.href = '/single-project.html'"
           >
             <span class="stone cyan">
               <span>
@@ -203,7 +194,7 @@
 
           <button
             type="button"
-            onclick="window.location.href = '/app/sandbox/single-project.html'"
+            onclick="window.location.href = '/single-project.html'"
           >
             <span class="stone purple">
               <span>DB</span>
@@ -213,7 +204,7 @@
 
           <button
             type="button"
-            onclick="window.location.href = '/app/sandbox/single-project.html'"
+            onclick="window.location.href = '/single-project.html'"
           >
             <span class="stone">
               <span>API</span>
@@ -384,15 +375,29 @@
     </main>
     <footer>
       <nav aria-label="Developer tools">
-        <button type="button">
-          <span aria-hidden="true">⌘</span>
-          Terminal
-          <!-- Not sure this should be terminal unless you are planning to build it in which case make a tool tip coming soon pop up for now -->
+        <button
+          type="button"
+          onclick="
+            window.open(
+              'https://github.com/susanndelgado/developer-sandbox',
+              '_blank',
+              'noopener,noreferrer',
+            )
+          "
+        >
+          <span aria-hidden="true">⑂</span>
+          Sandbox Repo
         </button>
 
         <button
           type="button"
-          onclick="window.location.href = 'https://github.com/susanndelgado'"
+          onclick="
+            window.open(
+              'https://github.com/susanndelgado',
+              '_blank',
+              'noopener,noreferrer',
+            )
+          "
         >
           <span aria-hidden="true">⑂</span>
           Git
@@ -400,7 +405,7 @@
 
         <button type="button">
           <span aria-hidden="true">⬡</span>
-          Docker
+          System Guide
           <!-- not even sure what to do with this link -->
         </button>
 

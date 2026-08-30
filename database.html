@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Developer Sandbox — Database Architecture</title>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body>
+    <header>
+      <a class="brand" href="/">
+        <img src="assets/logo-blue.png" alt="" />
+
+        <span>
+          <strong>DEVELOPER SANDBOX</strong>
+          <small>Academy of Mastery</small>
+        </span>
+      </a>
+
+      <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+        <button type="button" onclick="window.location.href = '/'">
+          <span aria-hidden="true">⌂</span>
+          Home
+        </button>
+
+        <button type="button" onclick="window.location.href = '/inner.html'">
+          <span aria-hidden="true">▱</span>
+          Projects
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/reference-guide.html'"
+        >
+          <span aria-hidden="true">▤</span>
+          Reference Guides
+        </button>
+
+        <button type="button" onclick="window.location.href = '/inner.html'">
+          <span aria-hidden="true">◇</span>
+          Rosetta Stones
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = '/system-guide.html'"
+        >
+          <span aria-hidden="true">⊙</span>
+          System Guide
+        </button>
+
+        <button type="button" onclick="window.location.href = '/inner.html'">
+          <span aria-hidden="true">⚗</span>
+          Lab
+        </button>
+      </nav>
+
+      <div class="top-tools">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="help">
+          <button type="button" aria-label="Get help and info"></button>
+
+          <div>
+            <strong>Database Architecture</strong>
+            <p>
+              SQLite schema and data architecture for the Developer Sandbox.
+            </p>
+          </div>
+        </div>
+
+        <a href="/work.html">Return to sdelgado</a>
+
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          onclick="window.location.href = '/work.html'"
+        >
+          ×
+        </button>
+      </div>
+    </header>
+
+    <main class="view-all-page">
+      <section class="project-content" style="grid-column: 1 / -1">
+        <header>
+          <div>
+            <small>DATABASE ARCHITECTURE</small>
+            <h2>Sandbox Datastore</h2>
+          </div>
+
+          <p>
+            Relational content architecture used to organize Entries, page
+            structures, classifications, technologies, and supporting metadata
+            across the Developer Sandbox.
+          </p>
+        </header>
+
+        <nav
+          class="project-doc-nav"
+          aria-label="Database architecture sections"
+        >
+          <a href="#purpose">Purpose</a>
+          <a href="#sqlite">SQLite</a>
+          <a href="#records">Records</a>
+          <a href="#nodes">Content Nodes</a>
+          <a href="#relationships">Relationships</a>
+          <a href="#editor-connection">Editor Connection</a>
+          <a href="#integrity">Data Integrity</a>
+          <a href="#sql-tools">SQL Tools</a>
+          <a href="#schema">Schema</a>
+        </nav>
+
+        <div class="project-actions">
+          <a
+            class="project-link"
+            href="https://github.com/susanndelgado/developer-sandbox/blob/main/database/schema.sql"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View schema.sql ›
+          </a>
+
+          <a
+            class="project-link"
+            href="https://github.com/susanndelgado/developer-sandbox/blob/main/src/local-editor/server.ts"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Database Server ›
+          </a>
+
+          <a class="project-link" href="system-guide.html"> System Guide › </a>
+        </div>
+
+        <article class="project-doc">
+          <!-- =============================================
+               PURPOSE
+               ============================================= -->
+
+          <section class="project-detail" id="purpose">
+            <header>
+              <span>01</span>
+              <h3>Why the Database Exists</h3>
+            </header>
+
+            <p>
+              The Developer Sandbox contains different kinds of material that
+              share common information but require different page structures.
+              Projects, reference guides, experiments, Rosetta Stones, technical
+              documentation, and other resources all need titles, descriptions,
+              classifications, statuses, technologies, and content.
+            </p>
+
+            <p>
+              Storing that information as structured data prevents each item
+              from becoming an isolated collection of hard-coded fields. A
+              common datastore makes content searchable, classifiable, reusable,
+              and manageable from a single editor.
+            </p>
+          </section>
+
+          <!-- =============================================
+               SQLITE
+               ============================================= -->
+
+          <section class="project-detail" id="sqlite">
+            <header>
+              <span>02</span>
+              <h3>Why SQLite</h3>
+            </header>
+
+            <p>
+              SQLite provides a relational database without requiring a separate
+              database server. The complete datastore can remain inside the
+              Sandbox project while still providing tables, relationships,
+              foreign keys, transactions, indexes, and SQL queries.
+            </p>
+
+            <p>
+              This makes it appropriate for a local authoring system: the data
+              is persistent and relational, but the project does not need a
+              continuously running PostgreSQL, MySQL, or other external database
+              service simply to maintain Sandbox content.
+            </p>
+
+            <p>
+              The working database is stored as
+              <code>data/sandbox.db</code>. Database definitions and migrations
+              are kept separately under the <code>database/</code> directory so
+              the structure of the datastore is visible in source control.
+            </p>
+          </section>
+
+          <!-- =============================================
+               RELATIONSHIP MAP
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>03</span>
+              <h3>Relational Structure</h3>
+            </header>
+
+            <p>
+              Records form the central catalog of Sandbox content. Related
+              tables connect those records to categories, tags, technologies,
+              and page content without duplicating the same classification data
+              inside every record.
+            </p>
+
+            <div class="project-example">
+              <small>SIMPLIFIED RELATIONSHIP MAP</small>
+
+              <pre><code>records
+│
+├── record_categories ───── categories
+│
+├── record_tags ─────────── tags
+│
+├── record_technologies ─── technologies
+│
+└── content_nodes
+      │
+      └── parent_id ─────── content_nodes.id</code></pre>
+            </div>
+          </section>
+
+          <!-- =============================================
+               RECORDS
+               ============================================= -->
+
+          <section class="project-detail" id="records">
+            <header>
+              <span>04</span>
+              <h3>Records — The Entry Layer</h3>
+            </header>
+
+            <p>
+              The <code>records</code> table stores the identity of each major
+              Sandbox item. A record can represent a project, reference
+              document, Rosetta Stone, experiment, visualization, resource, or
+              another content type.
+            </p>
+
+            <p>
+              Record fields include the ID, title, slug, subtitle, description,
+              type, status, visibility, featured state, sort order, creation and
+              update timestamps, presentation mode, navigation information,
+              parent information, notes, and optional custom classes.
+            </p>
+
+            <p>
+              The Entry remains separate from its detailed page content. This
+              allows catalog information to be searched and displayed without
+              requiring the system to parse an entire page structure.
+            </p>
+          </section>
+
+          <!-- =============================================
+               CONTENT NODES
+               ============================================= -->
+
+          <section class="project-detail" id="nodes">
+            <header>
+              <span>05</span>
+              <h3>Content Nodes — The Page Layer</h3>
+            </header>
+
+            <p>
+              Detailed page content is stored in
+              <code>content_nodes</code>. Each node belongs to a record and can
+              contain a type, title, subtitle, description, navigation label,
+              content, sort order, visibility state, custom class information,
+              and additional metadata.
+            </p>
+
+            <p>
+              A node with no <code>parent_id</code> is a top-level Parent Node.
+              A node whose <code>parent_id</code> references another node is a
+              Child Node. This creates a controlled hierarchy for constructing
+              page sections.
+            </p>
+
+            <div class="project-example">
+              <small>EXAMPLE PAGE STRUCTURE</small>
+
+              <pre><code>Record: Terminal Reference Guide
+│
+├── NAV / LINK
+│   ├── Shell Essentials
+│   ├── Git
+│   └── npm
+│
+├── STANDARD
+│   ├── Navigation Commands
+│   └── File Commands
+│
+├── SPLIT
+│   ├── Command
+│   └── Explanation
+│
+└── CODE / EXAMPLES
+    ├── Example 01
+    └── Example 02</code></pre>
+            </div>
+          </section>
+
+          <!-- =============================================
+               METADATA
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>06</span>
+              <h3>Node Metadata</h3>
+            </header>
+
+            <p>
+              The core fields required by nearly every Content Node remain
+              normal relational columns. Less universal presentation settings
+              can be stored in the node's metadata field as structured JSON.
+            </p>
+
+            <p>
+              This prevents the schema from accumulating a new column for every
+              optional visual or behavioral setting while preserving a stable
+              relational structure for the fields that need to be queried
+              directly.
+            </p>
+          </section>
+
+          <!-- =============================================
+               CATEGORIES
+               ============================================= -->
+
+          <section class="project-detail" id="relationships">
+            <header>
+              <span>07</span>
+              <h3>Categories</h3>
+            </header>
+
+            <p>
+              Categories provide broader structural classification. The
+              <code>record_categories</code> junction table allows a single
+              record to belong to multiple categories and allows one category to
+              be associated with many records.
+            </p>
+
+            <p>
+              Categories can also reference a parent category, allowing the
+              taxonomy itself to develop a hierarchy without embedding category
+              names directly into each Sandbox record.
+            </p>
+          </section>
+
+          <!-- =============================================
+               TAGS
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>08</span>
+              <h3>Tags</h3>
+            </header>
+
+            <p>
+              Tags provide more flexible descriptive classification. Records and
+              tags are connected through
+              <code>record_tags</code>, creating another many-to-many
+              relationship.
+            </p>
+
+            <p>
+              Because tags are stored as independent records rather than
+              repeated text fields, the same tag can be reused consistently
+              across projects and queried as part of the Sandbox search system.
+            </p>
+          </section>
+
+          <!-- =============================================
+               TECHNOLOGIES
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>09</span>
+              <h3>Technologies</h3>
+            </header>
+
+            <p>
+              Technologies are modeled separately from ordinary tags because
+              they carry technical meaning of their own. A technology can
+              include its name, type, slug, description, official URL, and
+              category relationship.
+            </p>
+
+            <p>
+              The <code>record_technologies</code> junction table connects
+              technologies to records and can also describe a technology's role
+              and display order for that particular project.
+            </p>
+          </section>
+
+          <!-- =============================================
+               EDITOR CONNECTION
+               ============================================= -->
+
+          <section class="project-detail" id="editor-connection">
+            <header>
+              <span>10</span>
+              <h3>Connection to the Local Editor</h3>
+            </header>
+
+            <p>
+              The browser-based editor interface does not manipulate the SQLite
+              file directly. Its TypeScript client sends requests to the local
+              Node.js server, which owns the database connection and performs
+              the required SQL operations.
+            </p>
+
+            <div class="project-example">
+              <small>EDITOR DATA FLOW</small>
+
+              <pre><code>Editor Interface
+      │
+      │ HTTP request
+      ▼
+TypeScript / Node Server
+      │
+      │ validated operation
+      ▼
+SQLite
+data/sandbox.db
+      │
+      │ returned data
+      ▼
+Editor / Preview</code></pre>
+            </div>
+
+            <p>
+              This creates a clear boundary between interface code and database
+              operations. The client is responsible for the editing experience
+              while the server controls file access, SQL execution, database
+              reads, and database writes.
+            </p>
+          </section>
+
+          <!-- =============================================
+               CRUD
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>11</span>
+              <h3>Database Operations</h3>
+            </header>
+
+            <p>
+              The local server provides CRUD operations for Entries and Content
+              Nodes along with specialized operations required by the Sandbox
+              hierarchy. Nodes can be reordered or moved between parents, and
+              moving a former Parent Node beneath another Parent is handled so
+              the hierarchy remains limited to the intended two levels.
+            </p>
+
+            <p>
+              Bulk deletion is available for records and nodes. When records are
+              removed, associated relationship rows and content nodes are
+              removed as part of the operation so orphaned data is not left
+              behind.
+            </p>
+          </section>
+
+          <!-- =============================================
+               DATA INTEGRITY
+               ============================================= -->
+
+          <section class="project-detail" id="integrity">
+            <header>
+              <span>12</span>
+              <h3>Foreign Keys and Data Integrity</h3>
+            </header>
+
+            <p>
+              SQLite foreign-key enforcement is enabled when the editor server
+              opens the database. Relationship tables reference their parent
+              records, and several relationships use cascading deletion where
+              removing a parent should also remove dependent data.
+            </p>
+
+            <p>
+              Transactions protect operations that require multiple SQL
+              statements. A group of related changes can be committed together,
+              while an error causes the transaction to roll back rather than
+              leaving the database only partially updated.
+            </p>
+          </section>
+
+          <!-- =============================================
+               SORTING
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>13</span>
+              <h3>Content Ordering</h3>
+            </header>
+
+            <p>
+              Content Nodes include a numeric sort order. Parent Nodes and
+              children are ordered among their own siblings, allowing the editor
+              to rearrange page content without changing IDs or rebuilding the
+              underlying records.
+            </p>
+
+            <p>
+              Reordering operations normalize sibling values and then exchange
+              positions. This keeps the visible page order explicit in the
+              database instead of relying on insertion order.
+            </p>
+          </section>
+
+          <!-- =============================================
+               SQL TOOLING
+               ============================================= -->
+
+          <section class="project-detail" id="sql-tools">
+            <header>
+              <span>14</span>
+              <h3>SQL Validation and Batch Operations</h3>
+            </header>
+
+            <p>
+              The local editor also includes direct SQL tooling for situations
+              where structured batches are more efficient than entering large
+              amounts of content manually.
+            </p>
+
+            <p>
+              Validation runs SQL inside a SQLite savepoint and then rolls the
+              operation back. This allows syntax and database compatibility to
+              be checked without saving changes. A separate Run operation wraps
+              the submitted SQL in a transaction and commits only after the
+              complete batch succeeds.
+            </p>
+          </section>
+
+          <!-- =============================================
+               SEARCH
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>15</span>
+              <h3>Search</h3>
+            </header>
+
+            <p>
+              The editor search queries the record ID, title, slug, type,
+              status, description, categories, and tags. Because categories and
+              tags live in relational tables, those relationships can be
+              searched without duplicating their values into the primary records
+              table.
+            </p>
+          </section>
+
+          <!-- =============================================
+               WEBSITE CONNECTION
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>16</span>
+              <h3>Connection to the Sandbox Website</h3>
+            </header>
+
+            <p>
+              The database exists to provide a structured content source for the
+              Sandbox system while keeping authoring separate from public
+              presentation. Entries describe what exists in the Sandbox and
+              Content Nodes describe how the detailed content can be assembled
+              into page structures.
+            </p>
+
+            <p>
+              The local editor provides the write environment and preview
+              workflow. The public-facing Sandbox can remain lightweight and
+              does not need to expose the database editing routes in order for
+              the source architecture to remain inspectable in the repository.
+            </p>
+          </section>
+
+          <!-- =============================================
+               SCHEMA
+               ============================================= -->
+
+          <section class="project-detail" id="schema">
+            <header>
+              <span>17</span>
+              <h3>Schema and Migration Files</h3>
+            </header>
+
+            <p>
+              The initial relational structure is documented in
+              <code>database/schema.sql</code>. Later editor requirements are
+              recorded separately in <code>database/editor-migration.sql</code>
+              rather than hiding structural changes inside application code.
+            </p>
+
+            <p>
+              This keeps the evolution of the datastore visible and provides a
+              reproducible description of the tables, relationships, indexes,
+              and fields used by the editor.
+            </p>
+
+            <div class="project-actions">
+              <a
+                class="project-link"
+                href="https://github.com/susanndelgado/developer-sandbox/blob/main/database/schema.sql"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Base Schema ›
+              </a>
+
+              <a
+                class="project-link"
+                href="https://github.com/susanndelgado/developer-sandbox/blob/main/database/editor-migration.sql"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Editor Migration ›
+              </a>
+
+              <a
+                class="project-link"
+                href="https://github.com/susanndelgado/developer-sandbox/tree/main/src/datastore"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Datastore Source ›
+              </a>
+            </div>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Developer tools">
+        <button
+          type="button"
+          onclick="
+            window.open(
+              'https://github.com/susanndelgado/developer-sandbox',
+              '_blank',
+              'noopener,noreferrer',
+            )
+          "
+        >
+          <span aria-hidden="true">⑂</span>
+          Sandbox Repo
+        </button>
+
+        <button
+          type="button"
+          onclick="
+            window.open(
+              'https://github.com/susanndelgado',
+              '_blank',
+              'noopener,noreferrer',
+            )
+          "
+        >
+          <span aria-hidden="true">⑂</span>
+          GitHub
+        </button>
+
+        <button
+          type="button"
+          onclick="window.location.href = 'system-guide.html'"
+        >
+          <span aria-hidden="true">⊙</span>
+          System Guide
+        </button>
+
+        <button
+          type="button"
+          aria-current="page"
+          onclick="window.location.href = 'database.html'"
+        >
+          <span aria-hidden="true">◉</span>
+          Database
+        </button>
+      </nav>
+    </footer>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
