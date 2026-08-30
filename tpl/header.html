@@ -1,6 +1,6 @@
 <header>
   <a class="brand" href="index.html">
-    <img src="/assets/logo-blue.png" alt="" />
+    <img src="assets/logo-blue.png" alt="" />
 
     <span>
       <strong>DEVELOPER SANDBOX</strong>
@@ -9,15 +9,19 @@
   </a>
 
   <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button type="button" onclick="window.location.href = 'index.html'">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
       <span aria-hidden="true">⌂</span>
       Home
     </button>
 
     <button
       type="button"
-      {{PROJECTS_CURRENT}}
-      onclick="window.location.href = 'inner.html'"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
     >
       <span aria-hidden="true">▱</span>
       Projects
@@ -25,8 +29,8 @@
 
     <button
       type="button"
-      {{REFERENCE_CURRENT}}
-      onclick="window.location.href = 'reference-guide.html'"
+      data-nav-section="reference"
+      onclick="window.location.href = '{{REFERENCE_GUIDE_URL}}'"
     >
       <span aria-hidden="true">▤</span>
       Reference Guides
@@ -34,14 +38,18 @@
 
     <button
       type="button"
-      {{ROSETTA_CURRENT}}
-      onclick="window.location.href = 'inner.html'"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
     >
-      <span aria-hidden="true">◇</span>
-      Rosetta Stones
+      <span aria-hidden="true">✦</span>
+      Labs
     </button>
 
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
       <span aria-hidden="true">⊙</span>
       System Guide
     </button>
@@ -64,8 +72,8 @@
       <button type="button" aria-label="Get help and info"></button>
 
       <div>
-        <strong>{{RECORD_TITLE}}</strong>
-        <p>{{RECORD_DESCRIPTION}}</p>
+        <strong>{{HEADER_TITLE}}</strong>
+        <p>{{HEADER_DESCRIPTION}}</p>
       </div>
     </div>
 

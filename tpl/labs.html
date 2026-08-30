@@ -1,18 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>{{PAGE_TITLE}}</title>
+{{HTML_HEAD}}
 
     <link rel="stylesheet" href="assets/styles.css" />
-    <link rel="stylesheet" href="assets/inner.css" />
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body>
-    {{LABS_HEADER}}
+  <body data-section="labs">
+    {{HEADER}}
 
     <main class="view-all-page">
       {{LABS_ASIDE}}
@@ -34,8 +27,4 @@
       </section>
     </main>
 
-    {{LABS_FOOTER}}
-
-    <script src="assets/script.js"></script>
-  </body>
-</html>
+    {{FOOTER}}

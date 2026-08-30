@@ -1,31 +1,22 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+{{HTML_HEAD}}
 
     <base href="../" />
-
-    <title>{{PAGE_TITLE}}</title>
 
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/inner.css" />
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body>
-    {{ENTRY_HEADER}}
+  <body data-section="{{SITE_SECTION}}">
+    {{HEADER}}
 
     <main class="view-all-page">
       {{ENTRY_ASIDE}}
 
       <section class="project-content">
-        {{ENTRY_IDENTITY}} {{ENTRY_CONTENT}}
+        {{ENTRY_IDENTITY}}
+        {{ENTRY_CONTENT}}
       </section>
     </main>
 
-    {{ENTRY_FOOTER}}
-
-    <script src="assets/script.js"></script>
-  </body>
-</html>
+    {{FOOTER}}
