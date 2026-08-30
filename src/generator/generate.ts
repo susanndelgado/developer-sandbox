@@ -23,7 +23,14 @@ type Classification =
   | "demo-data"
   | "none";
 
-type SiteSection = "projects" | "reference" | "rosetta" | "labs" | "none";
+type SiteSection =
+  | "home"
+  | "projects"
+  | "reference"
+  | "labs"
+  | "system"
+  | "database"
+  | "none";
 
 type RecordRow = {
   id: string;
@@ -638,14 +645,13 @@ function groupRecordsByCategory(records: RecordRow[]): CollectionGroup[] {
 /* =========================================================
    SITE SECTION
    ========================================================= */
-
 function currentSection(record: RecordRow): SiteSection {
   switch (classificationOf(record)) {
     case "general-project":
       return "projects";
 
     case "rosetta-stone":
-      return "rosetta";
+      return "projects";
 
     case "lab-exploration":
       return "labs";
@@ -657,31 +663,35 @@ function currentSection(record: RecordRow): SiteSection {
       return "none";
   }
 }
-
 /* =========================================================
-   SHARED HEADER
+   SHARED SITE SHELL
    ========================================================= */
 
-function renderSharedHeader(
-  current: SiteSection,
-  title: string,
-  description: string,
-): string {
-  return replaceTemplateValues(readTemplate("entry-header.html"), {
-    RECORD_TITLE: escapeHtml(title),
+function firstReferenceGuideUrl(): string {
+  const reference = getPublicReferenceGuides()[0];
 
-    RECORD_DESCRIPTION: escapeHtml(description),
+  return reference ? entryUrl(reference) : "index.html";
+}
 
-    PROJECTS_CURRENT: current === "projects" ? 'aria-current="page"' : "",
-
-    REFERENCE_CURRENT: current === "reference" ? 'aria-current="page"' : "",
-
-    ROSETTA_CURRENT: current === "rosetta" ? 'aria-current="page"' : "",
-
-    LABS_CURRENT: current === "labs" ? 'aria-current="page"' : "",
+function renderHtmlHead(pageTitle: string): string {
+  return replaceTemplateValues(readTemplate("html.html"), {
+    PAGE_TITLE: escapeHtml(pageTitle),
   });
 }
 
+function renderSharedHeader(title: string, description: string): string {
+  return replaceTemplateValues(readTemplate("header.html"), {
+    HEADER_TITLE: escapeHtml(title),
+
+    HEADER_DESCRIPTION: escapeHtml(description),
+
+    REFERENCE_GUIDE_URL: attr(firstReferenceGuideUrl()),
+  });
+}
+
+function renderSharedFooter(): string {
+  return readTemplate("footer.html");
+}
 /* =========================================================
    VISUAL HELPERS
    ========================================================= */
@@ -1114,6 +1124,15 @@ function generateIndex(): void {
   const labs = renderHomeLabs();
 
   const html = replaceTemplateValues(readTemplate("index.html"), {
+    HTML_HEAD: renderHtmlHead("Developer Sandbox"),
+
+    HEADER: renderSharedHeader(
+      "Get help and info",
+      "Hover any card or icon to learn more.",
+    ),
+
+    FOOTER: renderSharedFooter(),
+
     HOME_FEATURED_PROJECTS: renderHomeFeaturedProjects(),
 
     HOME_FEATURED_DOTS: renderHomeFeaturedDots(),
@@ -1316,14 +1335,14 @@ function generateLibrary(): void {
   const description =
     "Explore development projects, applications, tools, experiments, and technical work by category.";
 
-  const header = renderSharedHeader("projects", "Project Library", description);
+  const header = renderSharedHeader("Project Library", description);
 
-  const footer = readTemplate("entry-footer.html");
+  const footer = renderSharedFooter();
 
   const html = replaceTemplateValues(readTemplate("library.html"), {
-    PAGE_TITLE: "Project Library — Developer Sandbox",
+    HTML_HEAD: renderHtmlHead("Project Library — Developer Sandbox"),
 
-    LIBRARY_HEADER: header,
+    HEADER: header,
 
     LIBRARY_ASIDE: renderCollectionAside(
       "Project Library",
@@ -1342,7 +1361,7 @@ function generateLibrary(): void {
 
     LIBRARY_CONTENT: renderCollectionContent(groups),
 
-    LIBRARY_FOOTER: footer,
+    FOOTER: footer,
   });
 
   writeFileSync(LIBRARY_OUTPUT_PATH, html, "utf8");
@@ -1366,9 +1385,9 @@ function generateRosettaStones(): void {
   const description =
     "Compare common programming concepts, patterns, and tasks across languages and technologies.";
 
-  const header = renderSharedHeader("rosetta", "Rosetta Stones", description);
+  const header = renderSharedHeader("Rosetta Stones", description);
 
-  const footer = readTemplate("entry-footer.html");
+  const footer = renderSharedFooter();
 
   const aside = renderCollectionAside(
     "Rosetta Stones",
@@ -1382,23 +1401,15 @@ function generateRosettaStones(): void {
   const content = renderCollectionContent(groups);
 
   const html = replaceTemplateValues(readTemplate("rosetta-stones.html"), {
-    PAGE_TITLE: "Rosetta Stones — Developer Sandbox",
+    HTML_HEAD: renderHtmlHead("Rosetta Stones — Developer Sandbox"),
 
-    ROSETTA_HEADER: header,
+    HEADER: header,
 
     ROSETTA_ASIDE: aside,
 
     ROSETTA_CONTENT: content,
 
-    ROSETTA_FOOTER: footer,
-
-    COLLECTION_HEADER: header,
-
-    COLLECTION_ASIDE: aside,
-
-    COLLECTION_CONTENT: content,
-
-    COLLECTION_FOOTER: footer,
+    FOOTER: footer,
   });
 
   writeFileSync(ROSETTA_OUTPUT_PATH, html, "utf8");
@@ -1421,9 +1432,9 @@ function generateLabs(): void {
   const description =
     "Experimental projects exploring interaction, games, data science, visualization, creative coding, and emerging areas of study.";
 
-  const header = renderSharedHeader("labs", "Labs & Explorations", description);
+  const header = renderSharedHeader("Labs & Explorations", description);
 
-  const footer = readTemplate("entry-footer.html");
+  const footer = renderSharedFooter();
 
   const aside = renderCollectionAside(
     "Labs & Explorations",
@@ -1437,23 +1448,15 @@ function generateLabs(): void {
   const content = renderCollectionContent(groups);
 
   const html = replaceTemplateValues(readTemplate("labs.html"), {
-    PAGE_TITLE: "Labs & Explorations — Developer Sandbox",
+    HTML_HEAD: renderHtmlHead("Labs & Explorations — Developer Sandbox"),
 
-    LABS_HEADER: header,
+    HEADER: header,
 
     LABS_ASIDE: aside,
 
     LABS_CONTENT: content,
 
-    LABS_FOOTER: footer,
-
-    COLLECTION_HEADER: header,
-
-    COLLECTION_ASIDE: aside,
-
-    COLLECTION_CONTENT: content,
-
-    COLLECTION_FOOTER: footer,
+    FOOTER: footer,
   });
 
   writeFileSync(LABS_OUTPUT_PATH, html, "utf8");
@@ -2653,17 +2656,18 @@ function generateEntry(record: RecordRow, allRecords: RecordRow[]): void {
   }
 
   const header = renderSharedHeader(
-    currentSection(record),
     record.title,
     record.description ?? "",
   );
 
-  const footer = readTemplate("entry-footer.html");
+  const footer = renderSharedFooter();
 
   const html = replaceTemplateValues(readTemplate("entry-page.html"), {
-    PAGE_TITLE: `${escapeHtml(record.title)} — Developer Sandbox`,
+    HTML_HEAD: renderHtmlHead(`${record.title} — Developer Sandbox`),
 
-    ENTRY_HEADER: header,
+    SITE_SECTION: attr(currentSection(record)),
+
+    HEADER: header,
 
     ENTRY_ASIDE: renderEntryAside(record, allRecords),
 
@@ -2671,7 +2675,7 @@ function generateEntry(record: RecordRow, allRecords: RecordRow[]): void {
 
     ENTRY_CONTENT: renderEntryContent(record),
 
-    ENTRY_FOOTER: footer,
+    FOOTER: footer,
   });
 
   const outputFile = join(ENTRY_OUTPUT_PATH, `${entrySlug(record)}.html`);
@@ -2694,8 +2698,6 @@ mkdirSync(ENTRY_OUTPUT_PATH, {
    ========================================================= */
 
 const requestedRecord = process.argv[2]?.trim();
-
-const publicRecords = getPublicRecords();
 
 const renderablePublicRecords = getRenderablePublicRecords();
 

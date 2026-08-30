@@ -6,92 +6,105 @@
 
     <title>Developer Sandbox</title>
 
+
+
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body>
+  <body data-section="home">
     <header>
-      <a class="brand" href="#">
-        <img src="assets/logo-blue.png" alt="" />
+  <a class="brand" href="index.html">
+    <img src="assets/logo-blue.png" alt="" />
 
-        <span>
-          <strong>DEVELOPER SANDBOX</strong>
-          <small>Academy of Mastery</small>
-        </span>
-      </a>
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
 
-      <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-        <button
-          type="button"
-          aria-current="page"
-          onclick="window.location.href = '/'"
-        >
-          <span aria-hidden="true">⌂</span>
-          Home
-        </button>
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
 
-        <button type="button" onclick="window.location.href = '/library.html'">
-          <span aria-hidden="true">▱</span>
-          Projects
-        </button>
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
 
-        <button
-          type="button"
-          onclick="window.location.href = '/full-stack-developer.html'"
-        >
-          <span aria-hidden="true">▤</span>
-          Reference Guides
-        </button>
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
 
-        <button type="button" onclick="window.location.href = '/labs.html'">
-          <span aria-hidden="true">✦</span>
-          Labs
-        </button>
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
 
-        <button
-          type="button"
-          onclick="window.location.href = '/system-guide.html'"
-        >
-          <span aria-hidden="true">⊙</span>
-          System Guide
-        </button>
-      </nav>
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
 
-      <div class="top-tools">
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Open navigation"
-          aria-controls="primary-nav"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-        <div class="help">
-          <button type="button" aria-label="Get help and info"></button>
+    <div class="help">
+      <button type="button" aria-label="Get help and info"></button>
 
-          <div>
-            <strong>Get help and info</strong>
-            <p>Hover any card or icon to learn more.</p>
-          </div>
-        </div>
-
-        <a href="/work.html">Return to sdelgado</a>
-
-        <button
-          type="button"
-          class="close"
-          aria-label="Close"
-          onclick="window.location.href = '/work.html'"
-        >
-          ×
-        </button>
+      <div>
+        <strong>Get help and info</strong>
+        <p>Hover any card or icon to learn more.</p>
       </div>
-    </header>
+    </div>
+
+    <a href="/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = '/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
 
     <main>
       <div class="sandbox-notice" role="status">
@@ -368,54 +381,47 @@
         </button>
       </div>
     </main>
-    <footer>
-      <nav aria-label="Developer tools">
-        <button
-          type="button"
-          onclick="
-            window.open(
-              'https://github.com/susanndelgado/developer-sandbox',
-              '_blank',
-              'noopener,noreferrer',
-            )
-          "
-        >
-          <span aria-hidden="true">⎇</span>
-          Sandbox Repo
-        </button>
+ <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
 
-        <button
-          type="button"
-          onclick="
-            window.open(
-              'https://github.com/susanndelgado',
-              '_blank',
-              'noopener,noreferrer',
-            )
-          "
-        >
-          <span aria-hidden="true">⑂</span>
-          GitHub
-        </button>
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
 
-        <button
-          type="button"
-          onclick="window.location.href = 'system-guide.html'"
-        >
-          <span aria-hidden="true">⊙</span>
-          System Guide
-        </button>
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
 
-        <button
-          type="button"
-          aria-current="page"
-          onclick="window.location.href = 'database.html'"
-        >
-          <span aria-hidden="true">◉</span>
-          Database
-        </button>
-      </nav>
-    </footer>
-    <script src="assets/script.js"></script>
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
   </body>
 </html>

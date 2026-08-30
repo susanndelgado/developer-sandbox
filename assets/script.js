@@ -3,7 +3,25 @@
  ====================== */
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#primary-nav");
+function setActiveNavigation() {
+  const currentSection = document.body.dataset.section;
 
+  if (!currentSection) {
+    return;
+  }
+
+  document.querySelectorAll("[data-nav-section]").forEach((item) => {
+    const isCurrent = item.dataset.navSection === currentSection;
+
+    if (isCurrent) {
+      item.setAttribute("aria-current", "page");
+    } else {
+      item.removeAttribute("aria-current");
+    }
+  });
+}
+
+setActiveNavigation();
 function closeMenu() {
   navigation.classList.remove("open");
 

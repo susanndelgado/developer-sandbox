@@ -4,19 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <base href="../" />
-
     <title>Full-Stack Developer Terminal Commands — Developer Sandbox</title>
+
+
+
+    <base href="../" />
 
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/inner.css" />
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body>
+  <body data-section="reference">
     <header>
   <a class="brand" href="index.html">
-    <img src="/assets/logo-blue.png" alt="" />
+    <img src="assets/logo-blue.png" alt="" />
 
     <span>
       <strong>DEVELOPER SANDBOX</strong>
@@ -25,15 +27,19 @@
   </a>
 
   <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button type="button" onclick="window.location.href = 'index.html'">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
       <span aria-hidden="true">⌂</span>
       Home
     </button>
 
     <button
       type="button"
-      
-      onclick="window.location.href = 'inner.html'"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
     >
       <span aria-hidden="true">▱</span>
       Projects
@@ -41,8 +47,8 @@
 
     <button
       type="button"
-      aria-current="page"
-      onclick="window.location.href = 'reference-guide.html'"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
     >
       <span aria-hidden="true">▤</span>
       Reference Guides
@@ -50,14 +56,18 @@
 
     <button
       type="button"
-      
-      onclick="window.location.href = 'inner.html'"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
     >
-      <span aria-hidden="true">◇</span>
-      Rosetta Stones
+      <span aria-hidden="true">✦</span>
+      Labs
     </button>
 
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
       <span aria-hidden="true">⊙</span>
       System Guide
     </button>
@@ -155,7 +165,8 @@
 
     A practical developer reference for commonly used Terminal, shell, version-control, JavaScript tooling, framework, database, container, cloud, and troubleshooting commands.
   </p>
-</header> 
+</header>
+        
 
 <nav
   id="node-fs-terminal-nav"
@@ -10492,8 +10503,6 @@ curl -I localhost:PORT</code></pre>
     </button>
   </nav>
 </footer>
-
-
-    <script src="assets/script.js"></script>
+  <script src="assets/script.js"></script>
   </body>
 </html>

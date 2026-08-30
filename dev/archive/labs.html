@@ -4,17 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Rosetta Stones — Developer Sandbox</title>
+    <title>Labs &amp; Explorations — Developer Sandbox</title>
+
+
 
     <link rel="stylesheet" href="assets/styles.css" />
-    <link rel="stylesheet" href="assets/inner.css" />
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body>
+  <body data-section="labs">
     <header>
   <a class="brand" href="index.html">
-    <img src="/assets/logo-blue.png" alt="" />
+    <img src="assets/logo-blue.png" alt="" />
 
     <span>
       <strong>DEVELOPER SANDBOX</strong>
@@ -23,15 +24,19 @@
   </a>
 
   <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button type="button" onclick="window.location.href = 'index.html'">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
       <span aria-hidden="true">⌂</span>
       Home
     </button>
 
     <button
       type="button"
-      
-      onclick="window.location.href = 'inner.html'"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
     >
       <span aria-hidden="true">▱</span>
       Projects
@@ -39,8 +44,8 @@
 
     <button
       type="button"
-      
-      onclick="window.location.href = 'reference-guide.html'"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
     >
       <span aria-hidden="true">▤</span>
       Reference Guides
@@ -48,14 +53,18 @@
 
     <button
       type="button"
-      aria-current="page"
-      onclick="window.location.href = 'inner.html'"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
     >
-      <span aria-hidden="true">◇</span>
-      Rosetta Stones
+      <span aria-hidden="true">✦</span>
+      Labs
     </button>
 
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
       <span aria-hidden="true">⊙</span>
       System Guide
     </button>
@@ -78,8 +87,8 @@
       <button type="button" aria-label="Get help and info"></button>
 
       <div>
-        <strong>Rosetta Stones</strong>
-        <p>Compare common programming concepts, patterns, and tasks across languages and technologies.</p>
+        <strong>Labs &amp; Explorations</strong>
+        <p>Experimental projects exploring interaction, games, data science, visualization, creative coding, and emerging areas of study.</p>
       </div>
     </div>
 
@@ -102,23 +111,23 @@
 <aside class="type-menu">
   <header>
     <h1>
-      Rosetta Stones
+      Labs &amp; Explorations
     </h1>
 
     <p>
-      Compare common programming concepts, patterns, and tasks across languages and technologies.
+      Experimental projects exploring interaction, games, data science, visualization, creative coding, and emerging areas of study.
     </p>
   </header>
 
   <nav
     class="project-types"
-    aria-label="Rosetta Stones"
+    aria-label="Labs &amp; Explorations"
   >
     <button
       type="button"
       data-filter="all"
       aria-current="true"
-      onclick="window.location.href = 'rosetta-stones.html'"
+      onclick="window.location.href = 'labs.html'"
     >
       <span aria-hidden="true">
         ◇
@@ -126,11 +135,11 @@
 
       <span>
         <strong>
-          All Rosetta Stones
+          All Labs &amp; Explorations
         </strong>
 
         <small>
-          View every Rosetta Stone project.
+          View all experimental and exploratory projects.
         </small>
       </span>
     </button>
@@ -142,13 +151,13 @@
       <section class="project-content">
         <header>
           <div>
-            <small>ROSETTA STONES</small>
-            <h2>All Rosetta Stones</h2>
+            <small>LABS &amp; EXPLORATIONS</small>
+            <h2>All Labs &amp; Explorations</h2>
           </div>
 
           <p>
-            Compare common programming concepts, patterns, and tasks across
-            languages and technologies.
+            Experimental projects exploring interaction, games, data science,
+            visualization, creative coding, and emerging areas of study.
           </p>
         </header>
 
@@ -197,8 +206,6 @@
     </button>
   </nav>
 </footer>
-
-
-    <script src="assets/script.js"></script>
+  <script src="assets/script.js"></script>
   </body>
 </html>
