@@ -1246,6 +1246,10 @@ details:not([open]) summary {
 
 /* Editor-generated documentation header has span + h3 directly. */
 .preview .project-doc-section > header > span {
+  display: block;
+  position: static;
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
   grid-column: 1;
   grid-row: 1;
 
@@ -1263,6 +1267,7 @@ details:not([open]) summary {
 
 /* Live reference-guide header has a wrapping div. */
 .preview .project-doc-section > header > div {
+  display: block;
   display: flex;
   align-items: center;
 
@@ -1291,10 +1296,13 @@ details:not([open]) summary {
 }
 
 .preview .project-doc-section > header > span + h3 {
+  display: block;
+  margin-top: 0;
+  line-height: 1.25;
   grid-column: 1;
   grid-row: 1;
 
-  margin-left: 36px;
+  margin-left: 126px;
 }
 
 .preview .project-doc-section > header > p {
@@ -1931,11 +1939,23 @@ details:not([open]) summary {
   line-height: 1.35;
 }
 
-/* ==========================================================================
-   DATABASE MUST REMAIN IN NORMAL DOCUMENT FLOW
-   Prevents the data table from floating over editor inputs.
-   ========================================================================== */
+//* Prevent preview header labels and headings from overlapping */
+.preview header > span + h3 {
+  grid-column: auto;
+  grid-row: auto;
+  margin-left: 0;
+}
 
+.preview header > span {
+  position: static;
+}
+
+.preview header:has(> span + h3) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
 .database-view,
 #databaseView,
 .db-view {
@@ -3027,4 +3047,310 @@ details:not([open]) summary {
 #databaseView[hidden],
 .db-view[hidden] {
   display: none !important;
+}
+
+/* ==========================================================================
+   EDITOR STATE SEPARATION — ENTRY vs NODE
+   ========================================================================== */
+
+.entry-panel--compact {
+  margin-bottom: 1rem;
+  border: 1px solid var(--editor-line);
+  border-radius: 0.4rem;
+  background: #081421;
+  overflow: hidden;
+}
+
+.entry-summary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(95, 170, 255, 0.1);
+}
+
+.entry-summary-bar h2 {
+  margin: 0.12rem 0 0.25rem;
+}
+
+.entry-summary-bar p {
+  margin: 0;
+  color: var(--editor-muted);
+  font-size: 0.72rem;
+}
+
+.entry-summary-bar code {
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: #7fa6cb;
+  font-size: 0.68rem;
+}
+
+.entry-summary-label,
+.node-editor-shell-head small {
+  color: #6d8fb0;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.entry-summary-actions {
+  flex: 0 0 auto;
+}
+
+#entry-form[hidden] {
+  display: none !important;
+}
+
+#entry-form:not([hidden]) {
+  border-top: 1px solid var(--editor-line);
+}
+
+.node-editor-shell {
+  margin-top: 0.8rem;
+  border: 1px solid #223b55;
+  border-radius: 0.4rem;
+  background: #07121f;
+  overflow: hidden;
+}
+
+.node-editor-shell.is-active {
+  border-color: #456d94;
+  box-shadow: 0 0 0 1px rgba(93, 160, 220, 0.08);
+}
+
+.node-editor-shell-head {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid #213852;
+  background: #091827;
+}
+
+.node-editor-shell-head h2 {
+  margin: 0.12rem 0 0;
+  color: #d9e9f8;
+  font-size: 0.92rem;
+}
+
+#node-editor {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .entry-summary-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   DATABASE TABLE — WIDE HORIZONTAL SCROLL + SORTABLE HEADERS
+   ========================================================================== */
+
+/*
+  Do not squeeze the database table to the viewport. The table keeps the
+  natural width of its columns and the wrapper scrolls left/right.
+*/
+.db-table-area {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.db-table-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.55rem;
+  color: var(--editor-muted);
+  font-size: 0.68rem;
+}
+
+.db-table-toolbar strong {
+  color: var(--editor-text);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.db-table-toolbar small {
+  margin-left: auto;
+}
+
+.db-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.db-table-wrap:focus-visible {
+  outline: 2px solid rgba(95, 170, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.db-table-wrap table {
+  width: max-content;
+  min-width: 100%;
+  table-layout: auto;
+}
+
+.db-table-wrap th,
+.db-table-wrap td {
+  width: auto;
+  min-width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/*
+  Keep long text fields readable as their own wide columns rather than wrapping
+  them into narrow vertical strips.
+*/
+.db-table-wrap td[data-column="description"],
+.db-table-wrap td[data-column="notes"],
+.db-table-wrap td[data-column="content"],
+.db-table-wrap td[data-column="metadata"] {
+  min-width: 360px;
+  max-width: 640px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.db-table-wrap th {
+  z-index: 2;
+  padding: 0;
+}
+
+.db-sort-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  width: 100%;
+  min-width: max-content;
+  padding: 0.48rem 0.6rem;
+  border: 0;
+  border-radius: 0;
+  color: #d9e9f8;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.db-sort-button:hover,
+.db-sort-button:focus-visible,
+.db-sort-button.is-sorted {
+  background: rgba(95, 200, 255, 0.09);
+}
+
+.db-sort-indicator {
+  color: #70c7f4;
+  font-size: 0.58rem;
+}
+
+.db-record-action,
+.db-record-action-heading {
+  position: sticky;
+  right: 0;
+  z-index: 1;
+  background: #081421;
+}
+
+.db-record-action-heading {
+  z-index: 3;
+  padding: 0.48rem 0.6rem !important;
+  background: #10243b;
+}
+
+.db-record-action button {
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .db-table-toolbar small {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* ==========================================================================
+   DATABASE BULK SELECTION + DATABASE DANGER ZONE
+   ========================================================================== */
+
+.database-danger-zone {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 110, 110, 0.22);
+}
+
+.database-danger-zone h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  color: #ffd1d1;
+}
+
+.database-danger-zone p {
+  margin: 0 0 0.75rem;
+  color: var(--editor-muted);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.database-danger-zone .danger {
+  width: 100%;
+}
+
+.db-selected-count {
+  color: #b8d5ee;
+  font-size: 0.68rem;
+}
+
+#db-delete-selected {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.db-select-heading,
+.db-select-cell {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  min-width: 42px !important;
+  width: 42px !important;
+  text-align: center;
+  background: #0b1a2a;
+}
+
+.db-select-heading {
+  z-index: 5;
+  background: #10243b;
+}
+
+.db-select-heading input,
+.db-select-cell input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.db-table-wrap tbody tr:has(.db-select-cell input:checked) td {
+  background-color: rgba(85, 154, 211, 0.08);
+}
+
+.db-table-wrap tbody tr:has(.db-select-cell input:checked) .db-select-cell {
+  background: #132a40;
+}
+
+@media (max-width: 900px) {
+  #db-delete-selected {
+    margin-left: 0;
+  }
 }

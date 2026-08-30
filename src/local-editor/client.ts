@@ -68,6 +68,13 @@ const runtimeInfo = document.querySelector(
   "#runtime-info",
 ) as HTMLElement | null;
 
+const editEntryButton = $("#edit-entry") as HTMLButtonElement;
+const entrySummaryTitle = $("#entry-summary-title");
+const entrySummaryMeta = $("#entry-summary-meta");
+const entrySummaryId = $("#entry-summary-id");
+const nodeEditorHeading = $("#node-editor-heading");
+const clearDatabaseButton = $("#clear-database") as HTMLButtonElement;
+
 let currentRecord: RecordRow | null = null;
 let currentNodes: NodeRow[] = [];
 let editingNodeId: string | null = null;
@@ -322,6 +329,323 @@ async function enhanceCodeEditors(root: ParentNode = document): Promise<void> {
 }
 
 /* =========================================================
+   HTML SEMANTIC / ACCESSIBILITY ASSIST
+   ---------------------------------------------------------
+   IMPORTANT:
+   - Never removes user-authored markup.
+   - Never replaces attributes the user already supplied.
+   - Adds only missing attributes where a safe default can be inferred.
+   - Each HTML input has its own Auto Semantic Assist checkbox.
+   - Turning that checkbox off outputs that field exactly as entered.
+   ========================================================= */
+
+type SemanticAssistMap = Record<string, boolean>;
+
+function semanticAssistMap(node?: NodeRow | null): SemanticAssistMap {
+  const raw = nodeMeta(node).semanticAssist;
+
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+    return {};
+  }
+
+  return raw as SemanticAssistMap;
+}
+
+function semanticAssistEnabled(
+  node: NodeRow | null | undefined,
+  fieldName: string,
+): boolean {
+  const map = semanticAssistMap(node);
+
+  // Default ON unless the user explicitly disables a field.
+  return map[fieldName] !== false;
+}
+
+function semanticAssistCheckbox(fieldName: string, checked: boolean): string {
+  return `
+    <label class="semantic-assist-toggle">
+      <input
+        type="checkbox"
+        name="assist_${attr(fieldName)}"
+        ${checked ? "checked" : ""}
+      />
+      <span>Auto semantic assist</span>
+      <small>
+        Adds only missing accessibility/semantic attributes. Existing attributes
+        are preserved. Uncheck to output this field exactly as entered.
+      </small>
+    </label>
+  `;
+}
+
+function readableFileLabel(src: string): string {
+  try {
+    const clean = src.split(/[?#]/)[0] ?? "";
+    const file = clean.split("/").pop() ?? "";
+    const stem = file.replace(/\.[a-z0-9]+$/i, "");
+
+    return stem.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+  } catch {
+    return "";
+  }
+}
+
+function semanticAssistHtml(html: string): string {
+  if (!html.trim()) return html;
+
+  const template = document.createElement("template");
+  template.innerHTML = html;
+
+  /*
+   * Images:
+   * - preserve alt when the user supplied it
+   * - otherwise prefer aria-label, then title, then a readable filename
+   * - if nothing useful exists, add alt="" rather than inventing a description
+   */
+  template.content
+    .querySelectorAll<HTMLImageElement>("img")
+    .forEach((image) => {
+      if (!image.hasAttribute("alt")) {
+        const inferred =
+          image.getAttribute("aria-label")?.trim() ||
+          image.getAttribute("title")?.trim() ||
+          readableFileLabel(image.getAttribute("src") ?? "");
+
+        image.setAttribute("alt", inferred || "");
+      }
+    });
+
+  /*
+   * Buttons default to submit inside forms. Generated/documentation HTML usually
+   * does not intend that behavior, so add type=button only when type is missing.
+   */
+  template.content
+    .querySelectorAll<HTMLButtonElement>("button")
+    .forEach((button) => {
+      if (!button.hasAttribute("type")) {
+        button.setAttribute("type", "button");
+      }
+
+      const visibleName = (button.textContent ?? "").trim();
+
+      if (
+        !visibleName &&
+        !button.hasAttribute("aria-label") &&
+        !button.hasAttribute("aria-labelledby")
+      ) {
+        const inferred = button.getAttribute("title")?.trim();
+
+        if (inferred) {
+          button.setAttribute("aria-label", inferred);
+        }
+      }
+    });
+
+  /*
+   * Links:
+   * - preserve existing target/rel/aria values
+   * - when target=_blank is present, make sure safe rel tokens exist
+   * - if an icon-only link has a title, reuse it as an accessible label
+   */
+  template.content
+    .querySelectorAll<HTMLAnchorElement>("a[href]")
+    .forEach((link) => {
+      if (link.getAttribute("target") === "_blank") {
+        const relTokens = new Set(
+          (link.getAttribute("rel") ?? "")
+            .split(/\s+/)
+            .map((token) => token.trim())
+            .filter(Boolean),
+        );
+
+        relTokens.add("noopener");
+        relTokens.add("noreferrer");
+
+        link.setAttribute("rel", Array.from(relTokens).join(" "));
+      }
+
+      const visibleName = (link.textContent ?? "").trim();
+
+      if (
+        !visibleName &&
+        !link.hasAttribute("aria-label") &&
+        !link.hasAttribute("aria-labelledby")
+      ) {
+        const inferred = link.getAttribute("title")?.trim();
+
+        if (inferred) {
+          link.setAttribute("aria-label", inferred);
+        }
+      }
+    });
+
+  /*
+   * Iframes need a title for assistive technology. Reuse an existing
+   * aria-label when available; otherwise use a neutral fallback.
+   */
+  template.content
+    .querySelectorAll<HTMLIFrameElement>("iframe")
+    .forEach((frame) => {
+      if (!frame.hasAttribute("title")) {
+        const inferred =
+          frame.getAttribute("aria-label")?.trim() || "Embedded content";
+
+        frame.setAttribute("title", inferred);
+      }
+    });
+
+  /*
+   * Table header scope is safe to infer from structural position.
+   */
+  template.content
+    .querySelectorAll<HTMLTableCellElement>("thead th")
+    .forEach((cell) => {
+      if (!cell.hasAttribute("scope")) {
+        cell.setAttribute("scope", "col");
+      }
+    });
+
+  template.content
+    .querySelectorAll<HTMLTableCellElement>("tbody th")
+    .forEach((cell) => {
+      if (!cell.hasAttribute("scope")) {
+        cell.setAttribute("scope", "row");
+      }
+    });
+
+  /*
+   * Inputs need an accessible name. Do not invent one when the author already
+   * supplied aria-label/aria-labelledby/title/placeholder.
+   */
+  template.content
+    .querySelectorAll<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >("input, select, textarea")
+    .forEach((control) => {
+      if (
+        !control.hasAttribute("aria-label") &&
+        !control.hasAttribute("aria-labelledby") &&
+        !control.hasAttribute("title") &&
+        !(control instanceof HTMLInputElement && control.type === "hidden")
+      ) {
+        const placeholder = control.getAttribute("placeholder")?.trim();
+
+        if (placeholder) {
+          control.setAttribute("aria-label", placeholder);
+        }
+      }
+    });
+
+  /*
+   * SVG used purely as an icon is often decorative. Only hide it when it has
+   * no explicit accessible naming supplied by the author.
+   */
+  template.content.querySelectorAll<SVGElement>("svg").forEach((svg) => {
+    if (
+      !svg.hasAttribute("aria-label") &&
+      !svg.hasAttribute("aria-labelledby") &&
+      !svg.querySelector("title")
+    ) {
+      svg.setAttribute("aria-hidden", "true");
+      svg.setAttribute("focusable", "false");
+    }
+  });
+
+  return template.innerHTML;
+}
+
+function renderedHtml(
+  node: NodeRow | null | undefined,
+  fieldName: string,
+  html: string | null | undefined,
+): string {
+  const value = html ?? "";
+
+  return semanticAssistEnabled(node, fieldName)
+    ? semanticAssistHtml(value)
+    : value;
+}
+
+function generatedAssistEnabled(node: NodeRow | null | undefined): boolean {
+  return semanticAssistEnabled(node, "generated");
+}
+
+function generatedLinkAttributes(
+  node: NodeRow,
+  url: string,
+  accessibleLabel: string,
+  needsAriaLabel = false,
+  existing: {
+    target?: string | null;
+    rel?: string | null;
+    ariaLabel?: string | null;
+  } = {},
+): string {
+  if (!generatedAssistEnabled(node)) {
+    return [
+      existing.target ? ` target="${attr(existing.target)}"` : "",
+      existing.rel ? ` rel="${attr(existing.rel)}"` : "",
+      existing.ariaLabel ? ` aria-label="${attr(existing.ariaLabel)}"` : "",
+    ].join("");
+  }
+
+  const target = existing.target ?? (isExternal(url) ? "_blank" : null);
+
+  const relTokens = new Set(
+    String(existing.rel ?? "")
+      .split(/\s+/)
+      .map((token) => token.trim())
+      .filter(Boolean),
+  );
+
+  if (target === "_blank") {
+    relTokens.add("noopener");
+    relTokens.add("noreferrer");
+  }
+
+  /*
+   * Ordinary text links already have an accessible name from their visible
+   * link text, so do not add redundant ARIA. Icon/action links need one.
+   */
+  const ariaLabel =
+    existing.ariaLabel ??
+    (needsAriaLabel ? accessibleLabel.trim() || "Open link" : null);
+
+  return [
+    target ? ` target="${attr(target)}"` : "",
+    relTokens.size ? ` rel="${attr(Array.from(relTokens).join(" "))}"` : "",
+    ariaLabel ? ` aria-label="${attr(ariaLabel)}"` : "",
+  ].join("");
+}
+
+function generatedNavAriaLabel(node: NodeRow): string {
+  if (!generatedAssistEnabled(node)) return "";
+
+  const label = stripHtml(node.title ?? "") || "Section navigation";
+
+  return ` aria-label="${attr(label)}"`;
+}
+
+function generatedCollapseAttributes(
+  parent: NodeRow,
+  child: NodeRow,
+  panelId: string,
+): string {
+  if (!generatedAssistEnabled(parent)) return "";
+
+  const label =
+    stripHtml(child.title ?? "") ||
+    stripHtml(child.description ?? "") ||
+    "item";
+
+  return [
+    ` aria-expanded="false"`,
+    ` aria-controls="${attr(panelId)}"`,
+    ` aria-label="${attr(`Expand ${label}`)}"`,
+  ].join("");
+}
+
+/* =========================================================
    GENERAL HELPERS
    ========================================================= */
 
@@ -409,6 +733,46 @@ function positionClass(prefix: "node" | "child", index: number): string {
   return `${prefix}-${String(index + 1).padStart(2, "0")}`;
 }
 
+function schemaTypeForRecord(record: RecordRow): string | null {
+  switch (record.type) {
+    case "project":
+      return "SoftwareSourceCode";
+
+    case "rosetta-stone":
+      return "SoftwareSourceCode";
+
+    case "experiment":
+      return "SoftwareSourceCode";
+
+    case "reference-doc":
+      return "TechArticle";
+
+    case "data-visualization":
+      return "CreativeWork";
+
+    case "resource":
+      return "CreativeWork";
+
+    case "custom":
+      return "CreativeWork";
+
+    default:
+      return null;
+  }
+}
+
+function schemaRootAttributes(record: RecordRow): string {
+  const schemaType = schemaTypeForRecord(record);
+
+  if (!schemaType) return "";
+
+  return ` itemscope itemtype="https://schema.org/${attr(schemaType)}"`;
+}
+
+function schemaItemProp(name: string): string {
+  return ` itemprop="${attr(name)}"`;
+}
+
 function nodeMeta(node?: NodeRow | null): JsonObject {
   return node?.metadata ?? {};
 }
@@ -467,6 +831,77 @@ function uniquePanelId(parent: NodeRow, child: NodeRow): string {
   return `panel-${slugifyClient(currentRecord?.id ?? "record")}-${slugifyClient(parent.id)}-${slugifyClient(child.id)}`;
 }
 
+function renderEntrySummary(): void {
+  if (!currentRecord) {
+    entrySummaryTitle.textContent = "New Entry";
+    entrySummaryMeta.textContent = "Entry details have not been saved yet.";
+    entrySummaryId.textContent = "";
+    editEntryButton.textContent = "Edit Entry";
+    editEntryButton.disabled = false;
+    return;
+  }
+
+  entrySummaryTitle.textContent = currentRecord.title || "Untitled Entry";
+
+  const type = (currentRecord.type ?? "record")
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+
+  const status = (currentRecord.status ?? "")
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+
+  entrySummaryMeta.textContent = [type, status].filter(Boolean).join(" · ");
+
+  entrySummaryId.textContent = currentRecord.id;
+  editEntryButton.textContent = "Edit Entry";
+  editEntryButton.disabled = false;
+}
+
+function showEntryEditor(shouldScroll = true): void {
+  entryForm.hidden = false;
+  nodeEditor.closest(".node-editor-shell")?.classList.remove("is-active");
+
+  if (nodeEditorHeading) {
+    nodeEditorHeading.textContent = "Node Editor";
+  }
+
+  if (shouldScroll) {
+    requestAnimationFrame(() => {
+      entryForm.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      const first = entryForm.querySelector<
+        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >(
+        "input:not([disabled]), select:not([disabled]), textarea:not([disabled])",
+      );
+
+      first?.focus({ preventScroll: true });
+    });
+  }
+}
+
+function hideEntryEditor(): void {
+  entryForm.hidden = true;
+}
+
+function activateNodeEditor(label: string): void {
+  hideEntryEditor();
+
+  if (nodeEditorHeading) {
+    nodeEditorHeading.textContent = label;
+  }
+
+  nodeEditor.closest(".node-editor-shell")?.classList.add("is-active");
+}
+
+editEntryButton.addEventListener("click", () => {
+  showEntryEditor();
+});
+
 /* =========================================================
    SEARCH / RECORDS
    ========================================================= */
@@ -520,6 +955,8 @@ async function loadRecord(
   draftParentId = null;
 
   fillEntryForm();
+  renderEntrySummary();
+  hideEntryEditor();
   renderOutline();
   renderPreview();
 
@@ -528,9 +965,15 @@ async function loadRecord(
   } else {
     nodeEditor.innerHTML = `
       <div class="node-empty">
-        Select a parent or child in Page Structure, or choose + Add Node.
+        Select a parent or child in Page Structure, or choose + Add Parent Node.
       </div>
     `;
+
+    if (nodeEditorHeading) {
+      nodeEditorHeading.textContent = "Select a Parent or Child Node";
+    }
+
+    nodeEditor.closest(".node-editor-shell")?.classList.remove("is-active");
   }
 
   setMessage(`Loaded ${data.record.title}`);
@@ -583,6 +1026,7 @@ function resetEntry(): void {
     entryForm.elements.namedItem("presentationMode") as HTMLSelectElement
   ).value = "single-project";
 
+  renderEntrySummary();
   renderOutline();
   renderPreview();
 
@@ -592,6 +1036,11 @@ function resetEntry(): void {
     </div>
   `;
 
+  if (nodeEditorHeading) {
+    nodeEditorHeading.textContent = "Select a Parent or Child Node";
+  }
+
+  showEntryEditor(false);
   setMessage("New entry");
 }
 
@@ -629,7 +1078,7 @@ entryForm.addEventListener("submit", async (event) => {
 
     await loadRecord(saved.id);
     await search();
-    setMessage("Entry details saved.");
+    setMessage("Entry details saved. Node editing is ready below.");
   } catch (error) {
     setMessage(error instanceof Error ? error.message : String(error), true);
   }
@@ -1033,6 +1482,29 @@ function htmlField(
   `;
 }
 
+function majorHtmlField(
+  label: string,
+  name: string,
+  value = "",
+  help = "",
+  rows = 5,
+  assistEnabled = true,
+): string {
+  return `
+    <label class="node-field wide" data-node-field="${attr(name)}">
+      <span>${label}</span>
+      <textarea
+        name="${attr(name)}"
+        rows="${rows}"
+        spellcheck="false"
+        data-editor-kind="html"
+      >${escapeHtml(value)}</textarea>
+      ${help ? `<small>${help}</small>` : ""}
+      ${semanticAssistCheckbox(name, assistEnabled)}
+    </label>
+  `;
+}
+
 function textField(
   label: string,
   name: string,
@@ -1131,6 +1603,8 @@ function openNewNodeForm(parentId: string | null = null): void {
   editingNodeId = null;
   draftParentId = parentId;
 
+  activateNodeEditor(parentId ? "New Child Node" : "New Parent Node");
+
   if (parentId) {
     expandedParents.add(parentId);
   }
@@ -1145,6 +1619,12 @@ function openNodeEditor(id: string, shouldScroll = true): void {
 
   editingNodeId = id;
   draftParentId = node.parent_id ?? null;
+
+  activateNodeEditor(
+    node.parent_id
+      ? `Editing Child Node: ${stripHtml(node.title ?? "") || "Untitled"}`
+      : `Editing Parent Node: ${stripHtml(node.title ?? "") || nodeTypeLabel(normalizedNodeType(node.type))}`,
+  );
 
   if (node.parent_id) {
     expandedParents.add(node.parent_id);
@@ -1251,13 +1731,58 @@ function renderNodeForm(node: NodeRow): void {
       </div>
 
       <div class="node-content-fields form-grid">
-        ${htmlField("Title", "title", node.title ?? "", "Rendered HTML when assigned.", 3)}
-        ${htmlField("Sub Title", "subtitle", node.subtitle ?? "", "Rendered HTML when assigned.", 3)}
-        ${htmlField("Details", "details", node.description ?? "", "Rendered HTML. No automatic paragraph wrapper is added.", 6)}
-        ${htmlField("Content", "content", node.content ?? "", "Rendered HTML. No automatic paragraph wrapper is added.", 8)}
-        ${htmlField("Additional", "additional", String(meta.additionalHtml ?? ""), "Third HTML content field used by three-column Split modes.", 6)}
-        ${htmlField("Link Text", "linkText", node.nav_label ?? "", "Rendered HTML for NAV / LINK. In list modes it also supplies an accessible link label.", 3)}
-        ${textField("URL", "url", String(meta.url ?? ""), "Plain URL only. External URLs receive safe target/rel attributes.", "url")}
+        ${htmlField(
+          "Title",
+          "title",
+          node.title ?? "",
+          "Rendered HTML when assigned.",
+          3,
+        )}
+        ${htmlField(
+          "Sub Title",
+          "subtitle",
+          node.subtitle ?? "",
+          "Rendered HTML when assigned.",
+          3,
+        )}
+        ${majorHtmlField(
+          "Details",
+          "details",
+          node.description ?? "",
+          "Rendered HTML. No automatic paragraph wrapper is added.",
+          6,
+          semanticAssistEnabled(node, "details"),
+        )}
+        ${majorHtmlField(
+          "Content",
+          "content",
+          node.content ?? "",
+          "Rendered HTML. No automatic paragraph wrapper is added.",
+          8,
+          semanticAssistEnabled(node, "content"),
+        )}
+        ${majorHtmlField(
+          "Additional",
+          "additional",
+          String(meta.additionalHtml ?? ""),
+          "Third HTML content field used by three-column Split modes.",
+          6,
+          semanticAssistEnabled(node, "additional"),
+        )}
+        ${htmlField(
+          "Link Text",
+          "linkText",
+          node.nav_label ?? "",
+          "Rendered HTML for NAV / LINK. In list modes it also supplies an accessible link label.",
+          3,
+        )}
+        ${textField(
+          "URL",
+          "url",
+          String(meta.url ?? ""),
+          "Accepts internal fragments such as #terminal-basics, relative paths, or full external URLs. External URLs receive safe target/rel attributes.",
+          "text",
+        )}
         ${codeField(String(meta.code ?? ""))}
       </div>
 
@@ -1265,6 +1790,27 @@ function renderNodeForm(node: NodeRow): void {
         <strong>Greyed fields are retained, not deleted.</strong>
         They are currently unassigned by this node's position/type/mode and will
         not render until they become applicable again.
+        <br /><br />
+        <strong>Semantic/accessibility assist never replaces markup you entered.</strong>
+        It only adds missing attributes.
+      </div>
+
+      <div class="node-assignment-note">
+        <label class="semantic-assist-toggle semantic-assist-toggle--generated">
+          <input
+            type="checkbox"
+            name="assist_generated"
+            ${semanticAssistEnabled(node, "generated") ? "checked" : ""}
+          />
+          <span>Generated wrapper semantic/accessibility assist</span>
+          <small>
+            Applies to wrappers created by the Sandbox renderer such as links,
+            navigation, collapse buttons, generated panels, and action controls.
+            Entry-level Schema.org markup is inferred from Record Type when a
+            reliable schema mapping exists. Existing user-authored attributes
+            are never replaced.
+          </small>
+        </label>
       </div>
 
       <div class="node-submit-bar">
@@ -1516,6 +2062,17 @@ function nodeFromForm(form: HTMLFormElement, original: NodeRow): NodeRow {
       additionalHtml: directFieldValue(form, "additional"),
       url: directFieldValue(form, "url"),
       code: directFieldValue(form, "code"),
+
+      /*
+       * Each HTML field independently controls whether safe semantic/
+       * accessibility attributes are added at render time.
+       */
+      semanticAssist: {
+        details: checked(form, "assist_details"),
+        content: checked(form, "assist_content"),
+        additional: checked(form, "assist_additional"),
+        generated: checked(form, "assist_generated"),
+      },
     },
   };
 }
@@ -1577,6 +2134,32 @@ async function saveNodeForm(
     ? (nodeById(editingNodeId)?.parent_id ?? null)
     : null;
 
+  /*
+   * The browser/editor uses database-style NodeRow names such as
+   * nav_label and class_name. The server API deliberately uses camelCase
+   * names (navLabel, className, sortOrder, parentId).
+   *
+   * Map them explicitly here so fields like Link Text and Custom Classes
+   * are not silently lost during save.
+   */
+  const apiPayload = {
+    recordId: currentRecord.id,
+    type: draft.type,
+    parentId: originalParentId,
+    title: draft.title ?? "",
+    subtitle: draft.subtitle ?? "",
+    description: draft.description ?? "",
+
+    // IMPORTANT: these API names are camelCase.
+    navLabel: draft.nav_label ?? "",
+    content: draft.content ?? "",
+    className: draft.class_name ?? "",
+
+    featured: Boolean(draft.featured),
+    hidden: Boolean(draft.hidden),
+    metadata: draft.metadata ?? {},
+  };
+
   try {
     let saved: NodeRow;
 
@@ -1585,17 +2168,16 @@ async function saveNodeForm(
        * Save content first without changing hierarchy. Reparenting is handled
        * transactionally by the dedicated endpoint so parent-flattening rules
        * remain reliable.
+       *
+       * Existing sort order is explicitly preserved.
        */
       saved = await api<NodeRow>(
         `/api/nodes/${encodeURIComponent(editingNodeId)}`,
         {
           method: "PUT",
           body: JSON.stringify({
-            ...draft,
-            recordId: currentRecord.id,
-            parentId: originalParentId,
+            ...apiPayload,
             sortOrder: original.sort_order,
-            metadata: draft.metadata,
           }),
         },
       );
@@ -1614,14 +2196,15 @@ async function saveNodeForm(
         );
       }
     } else {
+      /*
+       * New nodes intentionally omit sortOrder. The server places them at the
+       * bottom of the selected parent/top-level sibling list.
+       */
       saved = await api<NodeRow>("/api/nodes", {
         method: "POST",
         body: JSON.stringify({
-          ...draft,
-          id: "",
-          recordId: currentRecord.id,
+          ...apiPayload,
           parentId: selectedParentId,
-          metadata: draft.metadata,
         }),
       });
     }
@@ -1716,11 +2299,15 @@ function renderPageHtml(record: RecordRow, parents: NodeRow[]): string {
     <small>${escapeHtml(
       (record.type ?? "record").replace(/-/g, " ").toUpperCase(),
     )}</small>
-    <h2>${escapeHtml(record.title)}</h2>
+    <h2${schemaItemProp("name")}>${escapeHtml(record.title)}</h2>
   </div>
   <p>
     <small>${escapeHtml((record.status ?? "").toUpperCase())}</small>
-    ${escapeHtml(record.description ?? "")}
+    ${
+      record.description
+        ? `<span${schemaItemProp("description")}>${escapeHtml(record.description)}</span>`
+        : ""
+    }
     <small>${escapeHtml(record.slug ?? "")}</small>
   </p>
 </header>`;
@@ -1738,17 +2325,20 @@ function renderPageHtml(record: RecordRow, parents: NodeRow[]): string {
 
   return `<article class="sandbox-entry-preview style-${attr(
     record.presentation_mode ?? "single-project",
-  )}">
+  )}"${schemaRootAttributes(record)}>
 ${header}
 ${body}
 </article>`;
 }
 
 function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
-  const subtitle = (node.subtitle ?? "").trim();
-  const title = (node.title ?? "").trim();
+  const rawSubtitle = (node.subtitle ?? "").trim();
+  const rawTitle = (node.title ?? "").trim();
 
-  if (!subtitle && !title) return "";
+  if (!rawSubtitle && !rawTitle) return "";
+
+  const subtitle = rawSubtitle;
+  const title = rawTitle;
 
   return `
 <header>
@@ -1807,16 +2397,14 @@ ${links}
 
     return `<nav id="${attr(nodeId)}" class="${attr(
       parentClasses(parent, nodeIndex, "project-doc-nav"),
-    )}" aria-label="${attr(
-      stripHtml(parent.title ?? "") || "Section navigation",
-    )}">
+    )}"${generatedNavAriaLabel(parent)}>
 ${links}
 </nav>`;
   }
 
   if (type === "display") {
-    const content = parent.content ?? "";
-    const details = parent.description ?? "";
+    const content = renderedHtml(parent, "content", parent.content);
+    const details = renderedHtml(parent, "details", parent.description);
     const header = parentHeader(parent, "h2");
 
     return `<div id="${attr(nodeId)}" class="${attr(
@@ -1900,11 +2488,15 @@ function renderNavChild(
   mode: ParentMode,
 ): string {
   const url = metaString(child, "url") || "#";
-  const external = isExternal(url)
-    ? ` target="_blank" rel="noopener noreferrer"`
-    : "";
+  const wrapperAttrs = generatedLinkAttributes(
+    child,
+    url,
+    stripHtml(child.nav_label || child.title || "") || "Open link",
+    false,
+  );
 
-  const linkText = child.nav_label || child.title || "";
+  const rawLinkText = child.nav_label || child.title || "";
+  const linkText = rawLinkText;
   const label = stripHtml(linkText) || "Open link";
   const id = `child-${slugifyClient(child.id)}`;
 
@@ -1913,7 +2505,7 @@ function renderNavChild(
   id="${attr(id)}"
   class="${attr(childClasses(child, childIndex, "project-link"))}"
   href="${attr(url)}"
-  aria-label="${attr(label)}"${external}
+${wrapperAttrs}
 >${linkText}<span aria-hidden="true">›</span></a>`;
   }
 
@@ -1921,44 +2513,38 @@ function renderNavChild(
   id="${attr(id)}"
   class="${attr(childClasses(child, childIndex))}"
   href="${attr(url)}"
-  aria-label="${attr(label)}"${external}
+${wrapperAttrs}
 >${linkText}</a>`;
 }
 
 function childTitle(child: NodeRow): string {
-  return child.title
-    ? `<div class="project-command-title">${child.title}</div>`
-    : "";
+  const title = child.title ?? "";
+
+  return title ? `<div class="project-command-title">${title}</div>` : "";
 }
 
 function linkAction(child: NodeRow): string {
   const url = metaString(child, "url") || "#";
-  const external = isExternal(url)
-    ? ` target="_blank" rel="noopener noreferrer"`
-    : "";
 
   const label =
     stripHtml(child.nav_label ?? "") ||
     stripHtml(child.title ?? "") ||
     "Open linked item";
 
+  const wrapperAttrs = generatedLinkAttributes(child, url, label, true);
+
   return `<a
   class="project-command-action"
-  href="${attr(url)}"
-  aria-label="${attr(label)}"${external}
+  href="${attr(url)}"${wrapperAttrs}
 ><span aria-hidden="true">›</span></a>`;
 }
 
 function collapseButton(parent: NodeRow, child: NodeRow): string {
   const panelId = uniquePanelId(parent, child);
-  const label = stripHtml(child.title ?? "") || "item";
 
   return `<button
   class="project-command-action collapse-toggle"
-  type="button"
-  aria-expanded="false"
-  aria-controls="${attr(panelId)}"
-  aria-label="${attr(`Expand ${label}`)}"
+  type="button"${generatedCollapseAttributes(parent, child, panelId)}
 ><span aria-hidden="true">⌄</span></button>`;
 }
 
@@ -1973,13 +2559,17 @@ function renderStandardChild(
 
   if (mode === "collapse-list") {
     const panelId = uniquePanelId(parent, child);
-    const summary = `${childTitle(child)}${child.description ?? ""}`;
+    const summary = `${childTitle(child)}${renderedHtml(
+      child,
+      "details",
+      child.description,
+    )}`;
 
     return `<div id="${attr(id)}" class="${attr(classes(base, "is-collapsible"))}">
   <div class="project-command-summary">${summary}</div>
   ${collapseButton(parent, child)}
   <div id="${attr(panelId)}" class="project-command-panel" hidden>
-    ${child.content ?? ""}
+    ${renderedHtml(child, "content", child.content)}
   </div>
 </div>`;
   }
@@ -1988,7 +2578,7 @@ function renderStandardChild(
     return `<div id="${attr(id)}" class="${attr(base)}">
   <div class="project-command-content">
     ${childTitle(child)}
-    ${child.content ?? ""}
+    ${renderedHtml(child, "content", child.content)}
   </div>
   ${linkAction(child)}
 </div>`;
@@ -1996,7 +2586,7 @@ function renderStandardChild(
 
   return `<div id="${attr(id)}" class="${attr(base)}">
   ${childTitle(child)}
-  ${child.content ?? ""}
+  ${renderedHtml(child, "content", child.content)}
 </div>`;
 }
 
@@ -2005,17 +2595,20 @@ function splitCells(
   layout: "small-left" | "equal" | "small-right" | "three-column",
   action = "",
 ): string {
-  const values = [
-    child.description ?? "",
-    child.content ?? "",
-    metaString(child, "additionalHtml"),
+  const values: Array<[string, string]> = [
+    ["details", renderedHtml(child, "details", child.description)],
+    ["content", renderedHtml(child, "content", child.content)],
+    [
+      "additional",
+      renderedHtml(child, "additional", metaString(child, "additionalHtml")),
+    ],
   ];
 
   const cellCount = layout === "three-column" ? 3 : 2;
 
   return values
     .slice(0, cellCount)
-    .map((value, index) => {
+    .map(([, value], index) => {
       const isLast = index === cellCount - 1;
 
       return `<div class="project-split-cell">
@@ -2035,8 +2628,9 @@ function renderSplitChild(
   const { layout, behavior } = parseSplitMode(mode);
   const id = `child-${slugifyClient(child.id)}`;
   const base = childClasses(child, childIndex, "project-command");
-  const title = child.title
-    ? `<div class="project-split-child-head">${child.title}</div>`
+  const splitTitle = child.title ?? "";
+  const title = splitTitle
+    ? `<div class="project-split-child-head">${splitTitle}</div>`
     : "";
 
   if (behavior === "collapse") {
@@ -2079,7 +2673,7 @@ function renderGridChild(child: NodeRow, childIndex: number): string {
     childClasses(child, childIndex),
   )}">
   ${childTitle(child)}
-  ${child.content ?? ""}
+  ${renderedHtml(child, "content", child.content)}
 </div>`;
 }
 
@@ -2100,7 +2694,7 @@ function renderCodeChild(
 ): string {
   const id = `child-${slugifyClient(child.id)}`;
   const base = childClasses(child, childIndex, "project-command");
-  const details = child.description ?? "";
+  const details = renderedHtml(child, "details", child.description);
   const example = renderCodeExample(child);
 
   if (mode === "collapse-list") {
@@ -2216,6 +2810,77 @@ async function loadDatabaseTables(): Promise<void> {
   if (tables[0]) await loadDatabaseTable(tables[0]);
 }
 
+type DbSortDirection = "asc" | "desc";
+
+function databaseSortValue(value: unknown): {
+  kind: "empty" | "number" | "date" | "text";
+  value: number | string;
+} {
+  if (value === null || value === undefined || value === "") {
+    return { kind: "empty", value: "" };
+  }
+
+  if (typeof value === "number") {
+    return { kind: "number", value };
+  }
+
+  const raw = String(value).trim();
+
+  if (/^-?\d+(?:\.\d+)?$/.test(raw)) {
+    return { kind: "number", value: Number(raw) };
+  }
+
+  /*
+   * SQLite datetime values used by this project are sortable as dates.
+   * Only treat clearly date-like values as dates so ordinary IDs/slugs
+   * are not accidentally interpreted.
+   */
+  if (/^\d{4}-\d{2}-\d{2}(?:[ T]\d{2}:\d{2}(?::\d{2})?)?/.test(raw)) {
+    const time = Date.parse(raw.replace(" ", "T"));
+
+    if (!Number.isNaN(time)) {
+      return { kind: "date", value: time };
+    }
+  }
+
+  return {
+    kind: "text",
+    value: raw.toLocaleLowerCase(),
+  };
+}
+
+function compareDatabaseValues(
+  left: unknown,
+  right: unknown,
+  direction: DbSortDirection,
+): number {
+  const a = databaseSortValue(left);
+  const b = databaseSortValue(right);
+
+  /*
+   * Empty values stay at the bottom in either direction.
+   */
+  if (a.kind === "empty" && b.kind === "empty") return 0;
+  if (a.kind === "empty") return 1;
+  if (b.kind === "empty") return -1;
+
+  let result = 0;
+
+  if (
+    (a.kind === "number" || a.kind === "date") &&
+    (b.kind === "number" || b.kind === "date")
+  ) {
+    result = Number(a.value) - Number(b.value);
+  } else {
+    result = String(a.value).localeCompare(String(b.value), undefined, {
+      numeric: true,
+      sensitivity: "base",
+    });
+  }
+
+  return direction === "asc" ? result : -result;
+}
+
 async function loadDatabaseTable(table: string): Promise<void> {
   const rows = await api<JsonObject[]>(
     `/api/db/table/${encodeURIComponent(table)}`,
@@ -2229,53 +2894,407 @@ async function loadDatabaseTable(table: string): Promise<void> {
   }
 
   const columns = Array.from(new Set(rows.flatMap((row) => Object.keys(row))));
+  const supportsBulkDelete = table === "records" || table === "content_nodes";
+  const selectedIds = new Set<string>();
+
+  let sortColumn: string | null = null;
+  let sortDirection: DbSortDirection = "asc";
+
+  const updateSelectionUi = (): void => {
+    if (!supportsBulkDelete) return;
+
+    const count = selectedIds.size;
+    const deleteButton = holder.querySelector<HTMLButtonElement>(
+      "#db-delete-selected",
+    );
+    const countLabel = holder.querySelector<HTMLElement>("#db-selected-count");
+    const selectAll = holder.querySelector<HTMLInputElement>("#db-select-all");
+
+    if (deleteButton) {
+      deleteButton.disabled = count === 0;
+      deleteButton.textContent =
+        count === 0 ? "Delete Selected" : `Delete Selected (${count})`;
+    }
+
+    if (countLabel) {
+      countLabel.textContent =
+        count === 0
+          ? "No rows selected."
+          : `${count} row${count === 1 ? "" : "s"} selected.`;
+    }
+
+    if (selectAll) {
+      const ids = rows.map((row) => String(row.id ?? "")).filter(Boolean);
+
+      const checkedCount = ids.filter((id) => selectedIds.has(id)).length;
+
+      selectAll.checked = ids.length > 0 && checkedCount === ids.length;
+      selectAll.indeterminate = checkedCount > 0 && checkedCount < ids.length;
+    }
+  };
+
+  const bindRowSelection = (): void => {
+    if (!supportsBulkDelete) return;
+
+    holder
+      .querySelectorAll<HTMLInputElement>("[data-db-select-row]")
+      .forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          const id = checkbox.dataset.dbSelectRow ?? "";
+
+          if (!id) return;
+
+          if (checkbox.checked) {
+            selectedIds.add(id);
+          } else {
+            selectedIds.delete(id);
+          }
+
+          updateSelectionUi();
+        });
+      });
+  };
+
+  const renderRows = (): void => {
+    const sortedRows = [...rows];
+
+    if (sortColumn) {
+      sortedRows.sort((a, b) =>
+        compareDatabaseValues(
+          a[sortColumn as keyof JsonObject],
+          b[sortColumn as keyof JsonObject],
+          sortDirection,
+        ),
+      );
+    }
+
+    const tbody = holder.querySelector("tbody");
+
+    if (!tbody) return;
+
+    tbody.innerHTML = sortedRows
+      .map((row) => {
+        const rowId = String(row.id ?? "");
+
+        return `
+          <tr>
+            ${
+              supportsBulkDelete
+                ? `<td class="db-select-cell">
+                    <input
+                      type="checkbox"
+                      data-db-select-row="${attr(rowId)}"
+                      aria-label="Select ${attr(rowId || "database row")}"
+                      ${selectedIds.has(rowId) ? "checked" : ""}
+                    />
+                  </td>`
+                : ""
+            }
+
+            ${columns
+              .map(
+                (column) =>
+                  `<td data-column="${attr(column)}">${escapeHtml(
+                    String(row[column] ?? ""),
+                  )}</td>`,
+              )
+              .join("")}
+
+            ${
+              table === "records"
+                ? `<td class="db-record-action">
+                    <button
+                      type="button"
+                      data-open-record="${attr(rowId)}"
+                    >
+                      Open
+                    </button>
+                  </td>`
+                : ""
+            }
+          </tr>
+        `;
+      })
+      .join("");
+
+    bindRowSelection();
+
+    holder
+      .querySelectorAll<HTMLButtonElement>("[data-open-record]")
+      .forEach((button) => {
+        button.addEventListener("click", async () => {
+          await loadRecord(button.dataset.openRecord ?? "");
+          editorView.hidden = false;
+          editorView.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+    updateSelectionUi();
+  };
+
+  const updateSortHeaders = (): void => {
+    holder
+      .querySelectorAll<HTMLButtonElement>("[data-db-sort]")
+      .forEach((button) => {
+        const column = button.dataset.dbSort ?? "";
+        const th = button.closest("th");
+
+        button.classList.toggle("is-sorted", column === sortColumn);
+
+        const indicator =
+          button.querySelector<HTMLElement>(".db-sort-indicator");
+
+        if (indicator) {
+          indicator.textContent =
+            column === sortColumn ? (sortDirection === "asc" ? "▲" : "▼") : "↕";
+        }
+
+        th?.setAttribute(
+          "aria-sort",
+          column === sortColumn
+            ? sortDirection === "asc"
+              ? "ascending"
+              : "descending"
+            : "none",
+        );
+      });
+
+    const status = holder.querySelector<HTMLElement>("#db-sort-status");
+
+    if (status) {
+      status.textContent = sortColumn
+        ? `Sorted by ${sortColumn} ${
+            sortDirection === "asc" ? "ascending" : "descending"
+          }.`
+        : "Click any column heading to sort.";
+    }
+  };
 
   holder.innerHTML = `
-    <div class="db-table-wrap">
+    <div class="db-table-toolbar">
+      <strong>${escapeHtml(table)}</strong>
+
+      <span id="db-sort-status" aria-live="polite">
+        Click any column heading to sort.
+      </span>
+
+      ${
+        supportsBulkDelete
+          ? `
+            <span
+              id="db-selected-count"
+              class="db-selected-count"
+              aria-live="polite"
+            >
+              No rows selected.
+            </span>
+
+            <button
+              id="db-delete-selected"
+              type="button"
+              class="danger"
+              disabled
+            >
+              Delete Selected
+            </button>
+          `
+          : ""
+      }
+
+      <small>Scroll horizontally to view all columns.</small>
+    </div>
+
+    <div
+      class="db-table-wrap"
+      tabindex="0"
+      aria-label="${attr(
+        `${table} database table; scroll horizontally for additional columns`,
+      )}"
+    >
       <table>
         <thead>
           <tr>
-            ${columns.map((column) => `<th>${escapeHtml(column)}</th>`).join("")}
-            ${table === "records" ? "<th></th>" : ""}
+            ${
+              supportsBulkDelete
+                ? `<th scope="col" class="db-select-heading">
+                    <input
+                      id="db-select-all"
+                      type="checkbox"
+                      aria-label="Select all loaded rows"
+                    />
+                  </th>`
+                : ""
+            }
+
+            ${columns
+              .map(
+                (column) => `
+                  <th scope="col" aria-sort="none">
+                    <button
+                      type="button"
+                      class="db-sort-button"
+                      data-db-sort="${attr(column)}"
+                      title="Sort by ${attr(column)}"
+                    >
+                      <span>${escapeHtml(column)}</span>
+                      <span
+                        class="db-sort-indicator"
+                        aria-hidden="true"
+                      >↕</span>
+                    </button>
+                  </th>
+                `,
+              )
+              .join("")}
+
+            ${
+              table === "records"
+                ? '<th scope="col" class="db-record-action-heading">Open</th>'
+                : ""
+            }
           </tr>
         </thead>
-        <tbody>
-          ${rows
-            .map(
-              (row) => `
-                <tr>
-                  ${columns
-                    .map(
-                      (column) =>
-                        `<td>${escapeHtml(String(row[column] ?? ""))}</td>`,
-                    )
-                    .join("")}
-                  ${
-                    table === "records"
-                      ? `<td><button type="button" data-open-record="${attr(
-                          String(row.id ?? ""),
-                        )}">Open</button></td>`
-                      : ""
-                  }
-                </tr>
-              `,
-            )
-            .join("")}
-        </tbody>
+
+        <tbody></tbody>
       </table>
     </div>
   `;
 
   holder
-    .querySelectorAll<HTMLButtonElement>("[data-open-record]")
+    .querySelectorAll<HTMLButtonElement>("[data-db-sort]")
     .forEach((button) => {
-      button.addEventListener("click", async () => {
-        await loadRecord(button.dataset.openRecord ?? "");
-        editorView.hidden = false;
-        editorView.scrollIntoView({ behavior: "smooth", block: "start" });
+      button.addEventListener("click", () => {
+        const column = button.dataset.dbSort ?? "";
+
+        if (sortColumn === column) {
+          sortDirection = sortDirection === "asc" ? "desc" : "asc";
+        } else {
+          sortColumn = column;
+          sortDirection = "asc";
+        }
+
+        renderRows();
+        updateSortHeaders();
       });
     });
+
+  if (supportsBulkDelete) {
+    const selectAll = holder.querySelector<HTMLInputElement>("#db-select-all");
+
+    selectAll?.addEventListener("change", () => {
+      const ids = rows.map((row) => String(row.id ?? "")).filter(Boolean);
+
+      if (selectAll.checked) {
+        ids.forEach((id) => selectedIds.add(id));
+      } else {
+        selectedIds.clear();
+      }
+
+      renderRows();
+    });
+
+    const deleteSelected = holder.querySelector<HTMLButtonElement>(
+      "#db-delete-selected",
+    );
+
+    deleteSelected?.addEventListener("click", async () => {
+      const ids = Array.from(selectedIds);
+
+      if (!ids.length) return;
+
+      const noun = table === "records" ? "Entries" : "Nodes";
+      const cascadeMessage =
+        table === "records"
+          ? "All Nodes belonging to the selected Entries will also be deleted."
+          : "If a selected Parent Node has children, those children will also be deleted.";
+
+      if (
+        !confirm(
+          `Delete ${ids.length} selected ${noun}?\\n\\n${cascadeMessage}\\n\\nThis cannot be undone.`,
+        )
+      ) {
+        return;
+      }
+
+      deleteSelected.disabled = true;
+      deleteSelected.textContent = "Deleting…";
+      setMessage(`Deleting ${ids.length} selected ${noun}…`);
+
+      try {
+        const endpoint =
+          table === "records"
+            ? "/api/bulk-delete/records"
+            : "/api/bulk-delete/nodes";
+
+        const result = await api<{
+          ok: boolean;
+          deleted: number;
+          message: string;
+        }>(endpoint, {
+          method: "POST",
+          body: JSON.stringify({ ids }),
+        });
+
+        alert(
+          `${result.message}\\n\\nThe editor will now refresh so the database view is current.`,
+        );
+
+        window.location.reload();
+      } catch (error) {
+        setMessage(
+          error instanceof Error ? error.message : String(error),
+          true,
+        );
+
+        deleteSelected.disabled = false;
+        deleteSelected.textContent = `Delete Selected (${ids.length})`;
+      }
+    });
+  }
+
+  renderRows();
+  updateSortHeaders();
 }
+
+clearDatabaseButton.addEventListener("click", async () => {
+  const firstConfirm = confirm(
+    "Clear the ENTIRE Sandbox database?\\n\\nThis deletes every Entry, Node, category, tag, technology, and relationship. The table/schema structure will be kept so the editor can continue to run.\\n\\nThis cannot be undone.",
+  );
+
+  if (!firstConfirm) return;
+
+  const confirmation = prompt(
+    "Type DELETE ALL DATA to confirm clearing the entire database.",
+  );
+
+  if (confirmation !== "DELETE ALL DATA") {
+    setMessage("Database clear cancelled.");
+    return;
+  }
+
+  clearDatabaseButton.disabled = true;
+  clearDatabaseButton.textContent = "Clearing Database…";
+  setMessage("Clearing entire Sandbox database…");
+
+  try {
+    const result = await api<{ ok: boolean; message: string }>(
+      "/api/database/clear",
+      {
+        method: "POST",
+        body: JSON.stringify({ confirmation }),
+      },
+    );
+
+    alert(`${result.message}\\n\\nThe editor will now refresh.`);
+
+    window.location.reload();
+  } catch (error) {
+    setMessage(error instanceof Error ? error.message : String(error), true);
+
+    clearDatabaseButton.disabled = false;
+    clearDatabaseButton.textContent = "Clear Entire Database";
+  }
+});
 
 $("#validate-sql").addEventListener("click", async () => {
   const sql = ($("#sql-batch") as HTMLTextAreaElement).value;
@@ -2303,13 +3322,19 @@ $("#run-sql").addEventListener("click", async () => {
       body: JSON.stringify({ sql }),
     });
 
-    await search();
+    /*
+     * Batch SQL can add/remove many records and nodes at once.
+     * A full reload is the safest way to guarantee every editor view,
+     * search result, database table, preview, and hierarchy is using
+     * the freshly committed database state.
+     */
+    setMessage(result.message || "SQL batch completed successfully.");
 
-    if (currentRecord) {
-      await loadRecord(currentRecord.id, editingNodeId);
-    }
+    alert(
+      `${result.message || "SQL batch completed successfully."}\n\nThe editor will now refresh so all database changes are visible.`,
+    );
 
-    setMessage(result.message);
+    window.location.reload();
   } catch (error) {
     setMessage(error instanceof Error ? error.message : String(error), true);
   }

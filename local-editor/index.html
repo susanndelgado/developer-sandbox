@@ -116,10 +116,21 @@
              This always renders first on the generated page.
              ===================================================== -->
 
-        <details open class="entry-panel">
-          <summary>Required Entry Information</summary>
+        <section class="entry-panel entry-panel--compact">
+          <div class="entry-summary-bar">
+            <div>
+              <small class="entry-summary-label">ENTRY</small>
+              <h2 id="entry-summary-title">No entry selected</h2>
+              <p id="entry-summary-meta">Create or open an entry to begin.</p>
+              <code id="entry-summary-id"></code>
+            </div>
 
-          <form id="entry-form" class="form-grid">
+            <div class="entry-summary-actions">
+              <button id="edit-entry" type="button">Edit Entry</button>
+            </div>
+          </div>
+
+          <form id="entry-form" class="form-grid" hidden>
             <label>
               <span>Record Type *</span>
 
@@ -283,7 +294,7 @@
               </button>
             </div>
           </form>
-        </details>
+        </section>
 
         <!-- =====================================================
              PAGE STRUCTURE
@@ -302,33 +313,49 @@
         <section class="sidebar-section page-structure-section">
           <div class="section-title-row">
             <h2>Page Structure</h2>
-
-            <button id="add-node" type="button">+ Add Node</button>
           </div>
 
           <p class="sidebar-help">
-            The Record Header is always first. Everything below it can be added,
-            removed, edited, and moved up/down.
+            The Record Header is always first. Add a Parent Node to create a new
+            top-level section. Select a Parent Node to add children beneath it.
+            Parent and Child Nodes can be edited, reordered, moved, or removed.
+            Entry editing is separate from Node editing.
           </p>
 
           <div class="node-help">
             <strong>Node types:</strong>
-            Nav / Links, Display / Preview, Standard, Documentation, Grid /
-            Boxes, and Split / Structured Rows. Existing nodes can be changed to
-            another node type from inside the node editor. Standard and
-            Documentation use full-width stacked children. Grid and Split are
-            the multi-column structures.
+            NAV / LINK, DISPLAY / PREVIEW, STANDARD, SPLIT, GRID / BOXES, and
+            CODE / EXAMPLES. A node with no parent is a top-level Parent Node. A
+            node assigned to another Parent Node is a Child Node.
+          </div>
+
+          <div class="structure-actions" aria-label="Page structure actions">
+            <button id="add-node" type="button">+ Add Parent Node</button>
           </div>
 
           <!--
             REQUIRED JAVASCRIPT MOUNT.
-            The Add Child field/button is generated inside this element.
+            client.ts renders the selected Parent/Child editor here.
+            When a Parent Node is selected, its + Add Child and Remove Node
+            controls are generated inside this element.
           -->
-          <div id="node-editor">
-            <div class="node-empty">
-              Save or open an entry, then choose + Add Node.
+          <section
+            class="node-editor-shell"
+            aria-labelledby="node-editor-heading"
+          >
+            <div class="node-editor-shell-head">
+              <div>
+                <small>NODE EDITOR</small>
+                <h2 id="node-editor-heading">Select a Parent or Child Node</h2>
+              </div>
             </div>
-          </div>
+
+            <div id="node-editor">
+              <div class="node-empty">
+                Save or open an entry, then choose + Add Parent Node.
+              </div>
+            </div>
+          </section>
 
           <!--
             REQUIRED JAVASCRIPT MOUNT.
@@ -346,28 +373,28 @@
 
         <section class="node-workspace">
           <div class="node-help">
-            <strong>Editing nodes and children.</strong>
+            <strong>Editing Parent and Child Nodes.</strong>
 
-            Save the Entry first, then add or select a node. Each node has its
-            own form and can be removed, reordered, or converted to another node
-            type. Children can be added, removed, and reordered. Saved children
-            can also be moved to another compatible parent node.
-
-            <br /><br />
-
-            <strong>Standard / Documentation child types:</strong>
-            Standard HTML, Note / Aside, or Code Example.
-
-            <strong>Behavior:</strong>
-            None, Link, or Collapsible. Behavior None remains one full-width
-            content column. Link and Collapsible add only the narrow action area
-            on the right.
+            Save the Entry first, then add or select a Parent Node. Select a
+            Parent Node to add a Child beneath it. Every saved node can be moved
+            to another Parent Node, or set to
+            <em>None — Make Top-Level Node</em>.
 
             <br /><br />
 
-            HTML fields include syntax highlighting, tag completion, auto-close,
-            bracket matching, line numbers, and a Format HTML button when the
-            helper libraries are available.
+            <strong>Parent Node Type + Mode controls child output.</strong>
+            STANDARD supports Full Width, Collapsing List, and Link List. SPLIT
+            supports its layout/mode combinations. GRID / BOXES uses its
+            responsive grid. NAV / LINK creates navigation or action links. CODE
+            / EXAMPLES renders raw Code data inside generated
+            <code>&lt;pre&gt;&lt;code&gt;</code> markup. DISPLAY / PREVIEW has
+            no children.
+
+            <br /><br />
+
+            Major HTML fields include syntax highlighting, tag completion,
+            auto-close, bracket matching, line numbers, Format HTML, and
+            optional semantic/accessibility assist.
           </div>
         </section>
       </section>
@@ -413,6 +440,23 @@
         <h2>Database Tables</h2>
 
         <div id="db-tables" class="db-table-list"></div>
+
+        <section
+          class="database-danger-zone"
+          aria-labelledby="database-danger-title"
+        >
+          <h3 id="database-danger-title">Database Actions</h3>
+
+          <p>
+            Clears every Entry, Node, category, tag, technology, and
+            relationship from the Sandbox database while keeping the database
+            tables and schema intact so the editor can continue to run.
+          </p>
+
+          <button id="clear-database" type="button" class="danger">
+            Clear Entire Database
+          </button>
+        </section>
       </aside>
 
       <section id="db-table" class="db-table-area"></section>

@@ -786,6 +786,145 @@ function deleteNodeTree(nodeId: string): void {
   }
 }
 
+function normalizeIdList(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+
+  return Array.from(
+    new Set(value.map((item) => String(item).trim()).filter(Boolean)),
+  );
+}
+
+function placeholders(count: number): string {
+  return Array.from({ length: count }, () => "?").join(", ");
+}
+
+function bulkDeleteRecords(ids: string[]): number {
+  if (!ids.length) return 0;
+
+  const marks = placeholders(ids.length);
+
+  database.exec("BEGIN;");
+
+  try {
+    database
+      .prepare(
+        `
+      DELETE FROM record_categories
+      WHERE record_id IN (${marks})
+    `,
+      )
+      .run(...ids);
+
+    database
+      .prepare(
+        `
+      DELETE FROM record_tags
+      WHERE record_id IN (${marks})
+    `,
+      )
+      .run(...ids);
+
+    database
+      .prepare(
+        `
+      DELETE FROM record_technologies
+      WHERE record_id IN (${marks})
+    `,
+      )
+      .run(...ids);
+
+    database
+      .prepare(
+        `
+      DELETE FROM content_nodes
+      WHERE record_id IN (${marks})
+    `,
+      )
+      .run(...ids);
+
+    const result = database
+      .prepare(
+        `
+      DELETE FROM records
+      WHERE id IN (${marks})
+    `,
+      )
+      .run(...ids);
+
+    database.exec("COMMIT;");
+    return Number(result.changes ?? 0);
+  } catch (error) {
+    database.exec("ROLLBACK;");
+    throw error;
+  }
+}
+
+function bulkDeleteNodes(ids: string[]): number {
+  if (!ids.length) return 0;
+
+  const marks = placeholders(ids.length);
+
+  database.exec("BEGIN;");
+
+  try {
+    /*
+     * The Sandbox hierarchy is intentionally limited to Parent + Child.
+     * Delete children of selected parents first, then delete the selected
+     * nodes themselves. Selecting a Child by itself simply deletes that row.
+     */
+    const childResult = database
+      .prepare(
+        `
+      DELETE FROM content_nodes
+      WHERE parent_id IN (${marks})
+    `,
+      )
+      .run(...ids);
+
+    const nodeResult = database
+      .prepare(
+        `
+      DELETE FROM content_nodes
+      WHERE id IN (${marks})
+    `,
+      )
+      .run(...ids);
+
+    database.exec("COMMIT;");
+
+    return Number(childResult.changes ?? 0) + Number(nodeResult.changes ?? 0);
+  } catch (error) {
+    database.exec("ROLLBACK;");
+    throw error;
+  }
+}
+
+function clearDatabaseData(): void {
+  database.exec("BEGIN;");
+
+  try {
+    /*
+     * Clear relationship/child tables before their parent tables.
+     * The schema itself is deliberately preserved so the editor remains usable.
+     */
+    database.exec(`
+      DELETE FROM record_categories;
+      DELETE FROM record_tags;
+      DELETE FROM record_technologies;
+      DELETE FROM content_nodes;
+      DELETE FROM records;
+      DELETE FROM categories;
+      DELETE FROM tags;
+      DELETE FROM technologies;
+    `);
+
+    database.exec("COMMIT;");
+  } catch (error) {
+    database.exec("ROLLBACK;");
+    throw error;
+  }
+}
+
 function searchRecords(term: string): JsonObject[] {
   const q = `%${term.trim()}%`;
 
@@ -919,6 +1058,74 @@ async function handleApi(
         database.exec("ROLLBACK;");
         throw error;
       }
+      return true;
+    }
+
+    if (
+      req.method === "POST" &&
+      parts[1] === "bulk-delete" &&
+      parts[2] === "records" &&
+      parts.length === 3
+    ) {
+      const body = await readJson(req);
+      const ids = normalizeIdList(body.ids);
+
+      if (!ids.length) {
+        throw new Error("Select at least one Entry to delete.");
+      }
+
+      const deleted = bulkDeleteRecords(ids);
+
+      sendJson(res, 200, {
+        ok: true,
+        deleted,
+        message: `${deleted} Entr${deleted === 1 ? "y" : "ies"} deleted.`,
+      });
+      return true;
+    }
+
+    if (
+      req.method === "POST" &&
+      parts[1] === "bulk-delete" &&
+      parts[2] === "nodes" &&
+      parts.length === 3
+    ) {
+      const body = await readJson(req);
+      const ids = normalizeIdList(body.ids);
+
+      if (!ids.length) {
+        throw new Error("Select at least one Node to delete.");
+      }
+
+      const deleted = bulkDeleteNodes(ids);
+
+      sendJson(res, 200, {
+        ok: true,
+        deleted,
+        message: `${deleted} Node${deleted === 1 ? "" : "s"} deleted.`,
+      });
+      return true;
+    }
+
+    if (
+      req.method === "POST" &&
+      parts[1] === "database" &&
+      parts[2] === "clear" &&
+      parts.length === 3
+    ) {
+      const body = await readJson(req);
+      const confirmation = String(body.confirmation ?? "");
+
+      if (confirmation !== "DELETE ALL DATA") {
+        throw new Error("Database clear confirmation did not match.");
+      }
+
+      clearDatabaseData();
+
+      sendJson(res, 200, {
+        ok: true,
+        message: "Entire Sandbox database cleared. Schema preserved.",
+      });
       return true;
     }
 
