@@ -816,7 +816,7 @@ function schemaTypeForRecord(record: RecordRow): string | null {
 
     case "none":
     default:
-      return "unclassified";
+      return null;
   }
 }
 
