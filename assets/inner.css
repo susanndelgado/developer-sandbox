@@ -3973,8 +3973,7 @@ details:not([open]) summary {
 
 .project-command p {
   color: #8fa5bb;
-
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
 }
 
@@ -4053,7 +4052,7 @@ details:not([open]) summary {
 .project-note p {
   color: #a9b8c7;
 
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
 }
 
