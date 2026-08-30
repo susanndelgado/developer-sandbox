@@ -144,6 +144,8 @@ const INDEX_OUTPUT_PATH = "index.html";
 const LIBRARY_OUTPUT_PATH = "library.html";
 const ROSETTA_OUTPUT_PATH = "rosetta-stones.html";
 const LABS_OUTPUT_PATH = "labs.html";
+const SYSTEM_GUIDE_OUTPUT_PATH = "system-guide.html";
+const DATABASE_OUTPUT_PATH = "database.html";
 
 const ENTRY_OUTPUT_PATH = "pg";
 
@@ -1465,6 +1467,55 @@ function generateLabs(): void {
 }
 
 /* =========================================================
+   STATIC ROOT PAGES
+
+   System Guide and Database remain hand-authored in tpl/.
+   The generator only inserts the shared HTML start,
+   header, and footer. Their page content is not generated
+   from Sandbox records/content nodes.
+   ========================================================= */
+
+function generateStaticRootPage(
+  templateName: string,
+  outputPath: string,
+  pageTitle: string,
+  headerTitle: string,
+  headerDescription: string,
+): void {
+  const html = replaceTemplateValues(readTemplate(templateName), {
+    HTML_HEAD: renderHtmlHead(pageTitle),
+
+    HEADER: renderSharedHeader(headerTitle, headerDescription),
+
+    FOOTER: renderSharedFooter(),
+  });
+
+  writeFileSync(outputPath, html, "utf8");
+
+  console.log(`Generated: ${outputPath}`);
+}
+
+function generateSystemGuide(): void {
+  generateStaticRootPage(
+    "system-guide.html",
+    SYSTEM_GUIDE_OUTPUT_PATH,
+    "Developer Sandbox — System Guide",
+    "System Guide",
+    "Architecture and implementation notes for the Developer Sandbox.",
+  );
+}
+
+function generateDatabasePage(): void {
+  generateStaticRootPage(
+    "database.html",
+    DATABASE_OUTPUT_PATH,
+    "Developer Sandbox — Database",
+    "Sandbox Database",
+    "How structured content is stored and managed for the Developer Sandbox.",
+  );
+}
+
+/* =========================================================
    PROJECT LIBRARY ENTRY ASIDE
    ========================================================= */
 
@@ -2708,6 +2759,8 @@ generateIndex();
 generateLibrary();
 generateRosettaStones();
 generateLabs();
+generateSystemGuide();
+generateDatabasePage();
 
 /*
  * FULL GENERATION
