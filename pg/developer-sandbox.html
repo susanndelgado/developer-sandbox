@@ -94,7 +94,7 @@
 
   <div>
     <strong>Developer Sandbox</strong>
-    <p>A personal interface used to organize and display my personal projects</p>
+    <p>Personal development environment for projects, references, experiments, learning, and technical knowledge.</p>
   </div>
 </div>
 
@@ -160,6 +160,81 @@
     </strong>
   </span>
 </button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-rosetta-comparisons'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rosetta Comparisons
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-rendering-graphics'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Graphics
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-backend-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Backend &amp; APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-games-simulation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Games &amp; Simulation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-data-databases'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data &amp; Databases
+    </strong>
+  </span>
+</button>
   </nav>
 </aside>
 
@@ -185,7 +260,7 @@
 
     <br />
 
-    A personal interface used to organize and display my personal projects
+    Personal development environment for projects, references, experiments, learning, and technical knowledge.
   </p>
 </header>
         <div
@@ -344,6 +419,155 @@
 <p><strong>Application and Database Layer.</strong> A local Node.js server connects the editor to an SQLite relational datastore and handles database reads, writes, searches, and structured content operations.</p>
 
 <p><strong>Content Model.</strong> Main entries are stored as records and can be related to categories, tags, and technologies. Detailed page content is stored separately as Parent and Child Content Nodes, allowing different projects and resources to use different presentation structures while remaining part of one system.</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-sandbox-version-one"
+  class="project-detail node-07 uid-node-sandbox-version-one project-version"
+>
+  
+<header>
+  <span>V1</span>
+  <h3>Version 1 Implementation Complete</h3>
+</header>
+  The first complete working architecture is implemented and remains the active foundation.
+<p>Version 1 established the Sandbox as a working application rather than a static portfolio mockup.</p>
+<p>The project remains active because new projects, references, labs, data structures, and refinements will continue to be added.</p>
+  <div class="project-command-list">
+<div id="child-node-sandbox-version-one-delivered" class="project-command child-01 uid-node-sandbox-version-one-delivered is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Delivered in Version 1
+</div>The core authoring, storage, generation, and presentation pipeline is working.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-delivered"
+    aria-label="Expand Delivered in Version 1"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-delivered" class="project-command-panel" hidden>
+    <ul><li>Static public interface for projects, Rosetta Stones, reference guides, labs, system documentation, and database documentation.</li><li>Local TypeScript editor served through a Node.js application.</li><li>SQLite relational datastore with records, categories, tags, technologies, relationships, and hierarchical content nodes.</li><li>Database-backed create, edit, reorder, delete, search, preview, and SQL-batch workflows.</li><li>TypeScript generator that produces static project and collection pages from structured data.</li><li>Read-only public database documentation/viewer concept with local editing kept separate.</li><li>Shared rendering structures for NAV, DISPLAY, STANDARD, SPLIT, GRID, and CODE content.</li></ul>
+  </div>
+</div>
+<div id="child-node-sandbox-version-one-active" class="project-command child-02 uid-node-sandbox-version-one-active is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Why Status Remains Active
+</div>Version 1 is complete, but the Sandbox itself is an evolving long-term development system.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-active"
+    aria-label="Expand Why Status Remains Active"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-active" class="project-command-panel" hidden>
+    <ul><li>Populate the catalog with real projects, labs, and Rosetta Stone implementations.</li><li>Expand technical reference material as new technologies are learned or revisited.</li><li>Refine renderer parity, accessibility, diagnostics, and content-authoring ergonomics.</li><li>Use the Sandbox as a durable record of implementation decisions and learning evidence.</li></ul>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-sandbox-architecture-map"
+  class="project-detail node-08 uid-node-sandbox-architecture-map"
+>
+  
+<header>
+  <span>08</span>
+  <h3>Implemented Architecture</h3>
+</header>
+  The current working layers and their responsibilities.
+  <div class="project-meta">
+<div id="child-node-sandbox-architecture-public-layer" class="child-01 uid-node-sandbox-architecture-public-layer">
+  
+<div class="project-command-title">
+  Public Layer
+</div>
+  <p>Static HTML, CSS, and JavaScript generated for browsing without a public database connection.</p>
+</div>
+<div id="child-node-sandbox-architecture-authoring-layer" class="child-02 uid-node-sandbox-architecture-authoring-layer">
+  
+<div class="project-command-title">
+  Authoring Layer
+</div>
+  <p>Local browser editor for records, nodes, preview, database inspection, and SQL batches.</p>
+</div>
+<div id="child-node-sandbox-architecture-application-layer" class="child-03 uid-node-sandbox-architecture-application-layer">
+  
+<div class="project-command-title">
+  Application Layer
+</div>
+  <p>Node.js server provides localhost-only API operations and local file access.</p>
+</div>
+<div id="child-node-sandbox-architecture-data-layer" class="child-04 uid-node-sandbox-architecture-data-layer">
+  
+<div class="project-command-title">
+  Data Layer
+</div>
+  <p>SQLite stores relational project identity, taxonomy, technologies, and hierarchical content.</p>
+</div>
+<div id="child-node-sandbox-architecture-generation-layer" class="child-05 uid-node-sandbox-architecture-generation-layer">
+  
+<div class="project-command-title">
+  Generation Layer
+</div>
+  <p>TypeScript converts database content into static collection and entry pages.</p>
+</div>
+<div id="child-node-sandbox-architecture-diagnostics" class="child-06 uid-node-sandbox-architecture-diagnostics">
+  
+<div class="project-command-title">
+  Diagnostics
+</div>
+  <p>Detailed API errors and source maps expose useful TypeScript stack locations.</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-sandbox-design-evolution"
+  class="project-detail node-09 uid-node-sandbox-design-evolution"
+>
+  
+<header>
+  <span>09</span>
+  <h3>Design Evolution</h3>
+</header>
+  Important architectural decisions that changed while the system became more capable.
+  <div class="project-command-list">
+<div id="child-node-sandbox-design-evolution-sdb" class="project-command child-01 uid-node-sandbox-design-evolution-sdb is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  From .sdb Prototype to SQLite
+</div>The original custom datastore format proved the content concept before relational needs became dominant.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-sdb"
+    aria-label="Expand From .sdb Prototype to SQLite"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-sdb" class="project-command-panel" hidden>
+    <p>The early design used a human-readable .sdb key/value format with lightweight markup tokens.</p>
+<p>As categories, tags, technologies, relationships, hierarchical nodes, searching, and editing expanded, SQLite became the stronger primary datastore.</p>
+<p>The custom-format idea remains useful as a future import/export or document-format experiment rather than the main database.</p>
+  </div>
+</div>
+<div id="child-node-sandbox-design-evolution-separation" class="project-command child-02 uid-node-sandbox-design-evolution-separation is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Separation of Responsibilities
+</div>Project source, catalog data, authoring tools, and public pages remain distinct layers.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-separation"
+    aria-label="Expand Separation of Responsibilities"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-separation" class="project-command-panel" hidden>
+    <ul><li>Individual project repositories remain independent from the Sandbox repository.</li><li>Sandbox stores catalog and documentation data rather than absorbing every project's source code.</li><li>The local editor is an authoring tool; the public site remains static and read-only.</li><li>Structured data can be rendered differently without rewriting project identity.</li></ul>
+  </div>
 </div>
   </div>
 </section>

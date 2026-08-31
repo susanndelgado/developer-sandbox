@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHP Request Lab — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body data-section="labs">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>PHP Request Lab</strong>
+    <p>Focused PHP laboratory for cURL, forms, JSON, REST, GET, and POST requests.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Labs &amp; Explorations
+    </h1>
+
+    <p>
+      Experimental, interactive, and
+      subject-focused development projects.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Labs and Explorations"
+  >
+    <button
+      type="button"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Labs &amp; Explorations
+        </strong>
+      </span>
+    </button>
+
+    
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-developer-tooling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Developer Tooling
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-rendering-graphics'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Graphics
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'labs.html#group-backend-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Backend &amp; APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-games-simulation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Games &amp; Simulation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-data-databases'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data &amp; Databases
+    </strong>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header class="project-detail-header">
+  <div>
+    <small>
+      LAB / EXPLORATION
+    </small>
+
+    <h2>
+      PHP Request Lab
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      PHP HTTP Request Practice
+    </strong>
+
+    <br />
+
+    Focused PHP laboratory for cURL, forms, JSON, REST, GET, and POST requests.
+  </p>
+</header>
+        <div
+  id="node-node-php-request-lab-display"
+  class="project-display node-01 uid-node-php-request-lab-display project-overview"
+>
+  <div class="project-preview"><div><strong>PLANNED LAB</strong><p>Turn familiar request patterns into a compact PHP practice project where every request step is visible. The implementation is planned.</p></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PLANNED LAB</span>
+  <h2>PHP Request Lab</h2>
+</header>
+    <div class="project-display-details">Turn familiar request patterns into a compact PHP practice project where every request step is visible. The implementation is planned.</div>
+  </div>
+</div>
+<section
+  id="node-node-php-request-lab-purpose"
+  class="project-doc-section node-02 uid-node-php-request-lab-purpose project-purpose"
+>
+  
+<header>
+  <span>02</span>
+  <h3>Purpose & Learning Objectives</h3>
+</header>
+  Why this project exists and what the implementation should teach.
+  <div class="project-command-list">
+<div id="child-node-php-request-lab-purpose-core" class="project-command child-01 uid-node-php-request-lab-purpose-core">
+  <div class="project-split-child-head">Purpose / Learning</div>
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <p><strong>Purpose</strong></p>
+<p>Turn familiar request patterns into a compact PHP practice project where every request step is visible.</p>
+  
+</div>
+<div class="project-split-cell">
+  <p><strong>Learning Objectives</strong></p><ul><li>Write clear cURL GET requests.</li><li>Write cURL POST requests with form and JSON payloads.</li><li>Set and inspect headers.</li><li>Handle HTTP status and cURL errors.</li><li>Decode JSON safely.</li><li>Relate PHP requests to forms, AJAX, Fetch, and REST concepts.</li></ul>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-php-request-lab-technologies"
+  class="project-detail node-03 uid-node-php-request-lab-technologies project-technologies"
+>
+  
+<header>
+  <span>03</span>
+  <h3>Technology Plan</h3>
+</header>
+  Current, planned, legacy, or candidate technologies for this project.
+  <div class="project-meta">
+<div id="child-node-php-request-lab-technologies-server" class="child-01 uid-node-php-request-lab-technologies-server">
+  
+<div class="project-command-title">
+  Server
+</div>
+  <p>PHP<br />cURL</p>
+</div>
+<div id="child-node-php-request-lab-technologies-protocol" class="child-02 uid-node-php-request-lab-technologies-protocol">
+  
+<div class="project-command-title">
+  Protocol
+</div>
+  <p>HTTP<br />REST</p>
+</div>
+<div id="child-node-php-request-lab-technologies-data" class="child-03 uid-node-php-request-lab-technologies-data">
+  
+<div class="project-command-title">
+  Data
+</div>
+  <p>JSON</p>
+</div>
+<div id="child-node-php-request-lab-technologies-browser-relationships" class="child-04 uid-node-php-request-lab-technologies-browser-relationships">
+  
+<div class="project-command-title">
+  Browser Relationships
+</div>
+  <p>HTML forms<br />AJAX<br />JavaScript / Fetch comparison</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-php-request-lab-scope"
+  class="project-detail node-04 uid-node-php-request-lab-scope project-scope"
+>
+  
+<header>
+  <span>04</span>
+  <h3>Implementation Scope</h3>
+</header>
+  Planned behaviors, architecture decisions, and evidence this project should produce.
+  <div class="project-command-list">
+<div id="child-node-php-request-lab-scope-get" class="project-command child-01 uid-node-php-request-lab-scope-get is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  GET
+</div>Build a request and inspect the response.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-get"
+    aria-label="Expand GET"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-get" class="project-command-panel" hidden>
+    <ul><li>URL/query parameters.</li><li>Headers.</li><li>Status handling.</li><li>JSON decode.</li></ul>
+  </div>
+</div>
+<div id="child-node-php-request-lab-scope-post" class="project-command child-02 uid-node-php-request-lab-scope-post is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  POST
+</div>Send form and JSON bodies deliberately.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-post"
+    aria-label="Expand POST"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-post" class="project-command-panel" hidden>
+    <ul><li>Content type.</li><li>Payload encoding.</li><li>Response handling.</li></ul>
+  </div>
+</div>
+<div id="child-node-php-request-lab-scope-error-handling" class="project-command child-03 uid-node-php-request-lab-scope-error-handling is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Error handling
+</div>Make failure paths part of the exercise.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-error-handling"
+    aria-label="Expand Error handling"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-error-handling" class="project-command-panel" hidden>
+    <ul><li>Network/cURL errors.</li><li>Non-2xx HTTP status.</li><li>Invalid JSON.</li></ul>
+  </div>
+</div>
+<div id="child-node-php-request-lab-scope-cross-technology-map" class="project-command child-04 uid-node-php-request-lab-scope-cross-technology-map is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Cross-technology map
+</div>Show equivalent request ideas in other technologies.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-cross-technology-map"
+    aria-label="Expand Cross-technology map"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-cross-technology-map" class="project-command-panel" hidden>
+    <ul><li>HTML form submission.</li><li>AJAX.</li><li>Fetch API.</li><li>REST resource calls.</li></ul>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-php-request-lab-notes"
+  class="project-doc-section node-05 uid-node-php-request-lab-notes project-notes"
+>
+  
+<header>
+  <span>05</span>
+  <h3>Project Notes</h3>
+</header>
+  Implementation context, boundaries, and later expansion.
+  <div class="project-command-list">
+<div id="child-node-php-request-lab-notes-content" class="project-command child-01 uid-node-php-request-lab-notes-content">
+  <div class="project-split-child-head">Project Notes</div>
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <p><strong>Learning Context</strong></p>
+<p>The request workflow is familiar from earlier application work; this lab isolates the syntax and vocabulary.</p>
+  
+</div>
+<div class="project-split-cell">
+  <p><strong>Relationship</strong></p>
+<p>Supports Modern Agenda PHP phase and API Explorer.</p>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-node-php-request-lab-related"
+  class="project-actions node-06 uid-node-php-request-lab-related"
+>
+<a
+  id="child-node-php-request-lab-related-01"
+  class="project-link child-01 uid-node-php-request-lab-related-01"
+  href="pg/modern-agenda-phase-07-php.html"
+>Modern Agenda — Phase 07: PHP<span aria-hidden="true">›</span></a>
+<a
+  id="child-node-php-request-lab-related-02"
+  class="project-link child-02 uid-node-php-request-lab-related-02"
+  href="pg/api-explorer.html"
+>API Explorer<span aria-hidden="true">›</span></a>
+</div>
+<section
+  id="node-node-php-request-lab-code"
+  class="project-detail node-07 uid-node-php-request-lab-code"
+>
+  
+<header>
+  <span>07</span>
+  <h3>Implementation Sketch</h3>
+</header>
+  A compact structural example for this project.
+  <div class="project-command-list">
+<div id="child-node-php-request-lab-code-example" class="project-command child-01 uid-node-php-request-lab-code-example">
+  
+<div class="project-command-title">
+  Request Sketch
+</div>
+  A minimal cURL flow the lab will expand and annotate.
+  <div class="project-example">
+  <small>Example</small>
+  <pre><code>$handle = curl_init($url);
+curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($handle);
+$status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+curl_close($handle);</code></pre>
+</div>
+</div>
+  </div>
+</section>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

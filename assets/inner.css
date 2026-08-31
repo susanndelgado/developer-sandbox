@@ -4,7 +4,8 @@
 
 .view-all-page {
   position: relative;
-
+font-size: 13px;
+/* line-height: 2px; */
   width: 100%;
   min-height: 100svh;
 
@@ -54,8 +55,6 @@
 
   color: #b8c7d8;
 
-  font-size: 13px;
-  line-height: 1.65;
 }
 
 /* ==================================================
@@ -901,7 +900,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-blue);
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
 
   letter-spacing: 0.15em;
@@ -979,7 +978,7 @@ details:not([open]) summary {
     rgba(5, 18, 43, 0.28)
   );
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
 
   letter-spacing: 0.045em;
@@ -1092,16 +1091,11 @@ details:not([open]) summary {
 
 .preview .project-detail > header {
   display: flex;
-  align-items: center;
-
+  /* align-items: center; */
   gap: 12px;
-
   min-height: 48px;
-
   padding: 11px 14px;
-
   border-bottom: 1px solid rgba(95, 170, 255, 0.14);
-
   background: rgba(11, 35, 68, 0.66);
 }
 
@@ -1110,7 +1104,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-blue);
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
 
   letter-spacing: 0.12em;
@@ -1190,8 +1184,12 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
+<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
+=======
+  
+>>>>>>> a906075 (generate data)
 }
 
 /* ==========================================================================
@@ -1233,7 +1231,11 @@ details:not([open]) summary {
 .preview .project-documents > a strong {
   color: #e9f5ff;
 
+<<<<<<< HEAD
   font-size: 11px;
+=======
+  font-size: 12px;
+>>>>>>> a906075 (generate data)
   font-weight: 600;
 }
 
@@ -1435,7 +1437,11 @@ details:not([open]) summary {
 
   color: #eaf6ff;
 
+<<<<<<< HEAD
   font-size: 11px;
+=======
+  font-size: 12px;
+>>>>>>> a906075 (generate data)
   font-weight: 600;
   line-height: 1.4;
 }
@@ -1446,9 +1452,13 @@ details:not([open]) summary {
   margin: 0 0 6px;
 
   color: var(--sandbox-muted);
+<<<<<<< HEAD
 
   font-size: 11px;
   line-height: 1.55;
+=======
+  
+>>>>>>> a906075 (generate data)
 
   overflow-wrap: break-word;
   word-break: normal;
@@ -1507,7 +1517,11 @@ details:not([open]) summary {
 
   color: #eaf6ff;
 
+<<<<<<< HEAD
   font-size: 11px;
+=======
+  font-size: 12px;
+>>>>>>> a906075 (generate data)
   font-weight: 600;
   line-height: 1.4;
 }
@@ -1556,7 +1570,11 @@ details:not([open]) summary {
 
   background: rgba(2, 11, 25, 0.36);
 
+<<<<<<< HEAD
   font-size: 11px;
+=======
+  font-size: 12px;
+>>>>>>> a906075 (generate data)
   line-height: 1.6;
 }
 
@@ -1616,8 +1634,12 @@ details:not([open]) summary {
   color: #cdeaff;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
+=======
+  
+>>>>>>> a906075 (generate data)
 }
 
 /* ==========================================================================
@@ -1636,8 +1658,12 @@ details:not([open]) summary {
   color: var(--sandbox-muted);
   background: var(--sandbox-note);
 
+<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
+=======
+  
+>>>>>>> a906075 (generate data)
 }
 
 .preview .project-note strong {
@@ -1706,8 +1732,12 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
+<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
+=======
+  
+>>>>>>> a906075 (generate data)
 }
 
 .preview .project-split-cell:last-child {
@@ -1757,7 +1787,11 @@ details:not([open]) summary {
 
   color: var(--sandbox-text);
 
+<<<<<<< HEAD
   font-size: 11px;
+=======
+  font-size: 12px;
+>>>>>>> a906075 (generate data)
 }
 
 .preview .sandbox-entry-preview th,
@@ -1979,12 +2013,11 @@ details:not([open]) summary {
 
 .preview .project-grid strong {
   display: block;
-
   overflow: hidden;
 
   color: #edf6ff;
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 1.2;
 
@@ -2312,8 +2345,7 @@ details:not([open]) summary {
     width: 100%;
     max-width: none;
 
-    font-size: 11px;
-    line-height: 1.5;
+
 
     text-align: left;
   }
@@ -2391,7 +2423,7 @@ details:not([open]) summary {
     width: 40px;
     height: 40px;
 
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .preview .project-grid strong {
@@ -2400,7 +2432,7 @@ details:not([open]) summary {
     overflow: visible;
     text-overflow: clip;
 
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .preview .project-doc-section > header {
@@ -2419,13 +2451,11 @@ details:not([open]) summary {
     text-align: left;
   }
 
-  .preview .project-command strong {
-    font-size: 10px;
-  }
 
+/* 
   .preview .project-command p {
-    font-size: 10px;
-  }
+    font-size: 12px;
+  } */
   .preview .project-command:has(> .project-command-action) {
     grid-template-columns: minmax(0, 1fr) 40px;
   }
@@ -2443,7 +2473,7 @@ details:not([open]) summary {
   }
 
   .preview .project-example code {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .preview .project-note {
@@ -2474,7 +2504,7 @@ details:not([open]) summary {
   .preview .project-detail > p {
     padding: 12px;
 
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .preview .project-meta {
@@ -2568,7 +2598,7 @@ details:not([open]) summary {
   display: block;
   margin: 0 0 5px;
   color: #eaf6ff;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -2576,8 +2606,7 @@ details:not([open]) summary {
 .preview .project-command p {
   margin: 0 0 6px;
   color: var(--sandbox-muted);
-  font-size: 9.5px;
-  line-height: 1.55;
+  
   overflow-wrap: break-word;
   word-break: normal;
 }
@@ -2636,7 +2665,7 @@ details:not([open]) summary {
   border-top: 1px solid rgba(95, 170, 255, 0.12);
   color: var(--sandbox-muted);
   background: rgba(2, 11, 25, 0.36);
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.6;
 }
 
@@ -2656,7 +2685,7 @@ details:not([open]) summary {
   color: #a8ddff;
   background: rgba(2, 11, 25, 0.58);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 10px;
+  font-size: 12px;
   overflow-wrap: anywhere;
   
 }
@@ -2920,7 +2949,7 @@ details:not([open]) summary {
   display: block;
   margin: 0 0 6px;
   color: #eaf6ff;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -2971,8 +3000,7 @@ details:not([open]) summary {
   padding: 11px 12px;
   border-right: 1px solid rgba(95, 170, 255, 0.12);
   color: var(--sandbox-muted);
-  font-size: 10px;
-  line-height: 1.55;
+  
 }
 
 .preview .project-split-cell:last-child {
@@ -3041,7 +3069,11 @@ details:not([open]) summary {
 .preview .project-display-details {
   padding: 12px 14px;
   color: var(--sandbox-muted);
+<<<<<<< HEAD
   font-size: 11px;
+=======
+  font-size: 12px;
+>>>>>>> a906075 (generate data)
   line-height: 1.6;
 }
 
@@ -3588,7 +3620,7 @@ details:not([open]) summary {
   justify-content: space-between;
   gap: 30px;
   align-items: end;
-
+font-size: 12px;;
   margin-bottom: 20px;
 }
 
@@ -3599,7 +3631,7 @@ details:not([open]) summary {
 
   color: var(--blue);
 
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 
@@ -3615,8 +3647,7 @@ details:not([open]) summary {
 
   color: #b8c7d8;
 
-  font-size: 12px;
-  line-height: 1.55;
+  
 
   text-align: right;
 }
@@ -3819,7 +3850,7 @@ details:not([open]) summary {
 
   color: #a9bdd2;
 
-  font-size: 10px;
+  font-size: 12px;
 
   transition:
     color 160ms ease,
@@ -3886,7 +3917,7 @@ details:not([open]) summary {
 .project-doc-section > header span {
   color: rgba(95, 200, 255, 0.48);
 
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 
@@ -3905,7 +3936,7 @@ details:not([open]) summary {
 
   color: #91a6bc;
 
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.4;
 
   text-align: right;
@@ -3969,14 +4000,13 @@ details:not([open]) summary {
 .project-command strong {
   color: #e5f1fb;
 
-  font-size: 11px;
   font-weight: 500;
 }
 
 .project-command p {
   color: #8fa5bb;
-  font-size: 11px;
-  line-height: 1.5;
+  /* font-size: 11px;
+  line-height: 1.5; */
 }
 
 .project-command p code {
@@ -4047,7 +4077,7 @@ details:not([open]) summary {
 
   color: #ffc461;
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -4080,7 +4110,7 @@ details:not([open]) summary {
 
   color: var(--blue);
 
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 
@@ -4096,8 +4126,7 @@ details:not([open]) summary {
 
   color: #b8c7d8;
 
-  font-size: 12px;
-  line-height: 1.55;
+  
 
   text-align: right;
 }
@@ -4153,7 +4182,7 @@ details:not([open]) summary {
 
   color: var(--blue);
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .project-link:hover,
@@ -4201,8 +4230,6 @@ details:not([open]) summary {
   }
   h3 {
     color: var(--blue);
-
-    font-size: 13px;
     font-weight: 500;
 
     text-transform: uppercase;
@@ -4245,10 +4272,7 @@ details:not([open]) summary {
   }
   strong {
     color: #e5f1fb;
-
-    font-size: 10px;
     font-weight: 500;
-    line-height: 1.4;
   }
 }
 
