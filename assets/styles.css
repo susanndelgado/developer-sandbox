@@ -1259,7 +1259,7 @@ body > footer button:focus-visible {
 
   display: grid;
   justify-items: center;
-  gap: 7px;
+  gap: 2px;
 
   padding: 0;
 
@@ -1653,7 +1653,7 @@ body > footer button:focus-visible {
    ================================================== */
 
 .guides {
-  top: 38%;
+  top: 41.5%;
   right: 4%;
 
   width: 30%;
@@ -1812,7 +1812,7 @@ body > footer button:focus-visible {
    ================================================== */
 
 .data {
-  top: 62%;
+  top: 66%;
   right: 4%;
 
   width: 30%;
