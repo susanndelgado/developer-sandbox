@@ -178,7 +178,7 @@ main {
 
   background:
     linear-gradient(rgba(2, 7, 18, 0.04), rgba(2, 7, 18, 0.08)),
-    url("sandbox-background.png") center / cover no-repeat;
+    url("../img/sandbox-background.png") center / cover no-repeat;
 }
 
 /* ==================================================
@@ -798,7 +798,6 @@ body > footer button {
 
   cursor: pointer;
 }
-
 body > footer button span {
   color: var(--blue);
   font-size: 15px;
@@ -1198,7 +1197,6 @@ body > footer button:focus-visible {
 .dots .active,
 .featured .dots button.active {
   background: var(--blue);
-
   box-shadow: 0 0 7px var(--blue);
 }
 
@@ -1598,7 +1596,6 @@ body > footer button:focus-visible {
 .project-icon.blue {
   --icon-color: #4b96ff;
 }
-
 .project-icon.cyan {
   --icon-color: #41dce9;
 }
