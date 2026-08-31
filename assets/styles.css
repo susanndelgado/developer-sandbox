@@ -1860,6 +1860,7 @@ body > footer button:focus-visible {
 
   color: var(--blue);
 
+  font-size:11px;
   text-align: center;
 }
 
