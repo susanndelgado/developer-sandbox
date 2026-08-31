@@ -19,7 +19,7 @@ font-size: 13px;
 
   background:
     linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.32)),
-    url("innerPg.png") center / cover fixed no-repeat;
+    url("img/innerPg.png") center / cover fixed no-repeat;
 }
 
 /* ==================================================
