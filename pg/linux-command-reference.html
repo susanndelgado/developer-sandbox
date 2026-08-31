@@ -1,0 +1,5949 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linux Command Reference — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>Linux Command Reference</strong>
+    <p>Linux cmds</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      Linux Command Reference
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      Linux shell / CLI
+    </strong>
+
+    <br />
+
+    Linux cmds
+  </p>
+</header>
+        
+<nav
+  id="node-linux-ref-nav"
+  class="project-doc-nav node-01 uid-linux-ref-nav linux-reference-nav" aria-label="Guide Navigation"
+>
+<a
+  id="child-linux-ref-nav-01"
+  class="child-01 uid-linux-ref-nav-01"
+  href="pg/linux-command-reference.html#node-linux-ref-section-01-shell-navigation-files"
+>Shell, Navigation & Files</a>
+<a
+  id="child-linux-ref-nav-02"
+  class="child-02 uid-linux-ref-nav-02"
+  href="pg/linux-command-reference.html#node-linux-ref-section-02-read-search-text-processing"
+>Read, Search & Text Processing</a>
+<a
+  id="child-linux-ref-nav-03"
+  class="child-03 uid-linux-ref-nav-03"
+  href="pg/linux-command-reference.html#node-linux-ref-section-03-permissions-users-shell-environment"
+>Permissions, Users & Shell Environment</a>
+<a
+  id="child-linux-ref-nav-04"
+  class="child-04 uid-linux-ref-nav-04"
+  href="pg/linux-command-reference.html#node-linux-ref-section-04-processes-services-logs-scheduling"
+>Processes, Services, Logs & Scheduling</a>
+<a
+  id="child-linux-ref-nav-05"
+  class="child-05 uid-linux-ref-nav-05"
+  href="pg/linux-command-reference.html#node-linux-ref-section-05-networking-ssh-remote-work"
+>Networking, SSH & Remote Work</a>
+<a
+  id="child-linux-ref-nav-06"
+  class="child-06 uid-linux-ref-nav-06"
+  href="pg/linux-command-reference.html#node-linux-ref-section-06-packages-storage-archives-recovery"
+>Packages, Storage, Archives & Recovery</a>
+</nav>
+
+<article class="project-doc">
+  <div
+  id="node-linux-ref-section-01-shell-navigation-files"
+  class="project-display node-02 uid-linux-ref-section-01-shell-navigation-files linux-reference-section linux-reference-section-01"
+>
+  <div class="project-preview"><p>Orient yourself, move through the filesystem, inspect files, and perform safe everyday file operations.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 1 / 6</span>
+  <h2>01 — Shell, Navigation & Files</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-linux-ref-01-where-am-i-help"
+  class="project-doc-section node-03 uid-linux-ref-01-where-am-i-help linux-reference-command-group"
+>
+  
+<header>
+  <span>Shell, Navigation & Files</span>
+  <h3>Where Am I? / Help</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-01-where-am-i-help-r01" class="project-command child-01 uid-linux-ref-01-where-am-i-help-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pwd</code>
+  
+</div>
+<div class="project-split-cell">
+  Print the current working directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r02" class="project-command child-02 uid-linux-ref-01-where-am-i-help-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>whoami</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current user name.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r03" class="project-command child-03 uid-linux-ref-01-where-am-i-help-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>id</code>
+  
+</div>
+<div class="project-split-cell">
+  Show user ID, group ID, and group memberships.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r04" class="project-command child-04 uid-linux-ref-01-where-am-i-help-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>echo $SHELL</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the configured login shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r05" class="project-command child-05 uid-linux-ref-01-where-am-i-help-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>echo $0</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current shell/process name in many shells.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r06" class="project-command child-06 uid-linux-ref-01-where-am-i-help-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>command -v name</code>
+  
+</div>
+<div class="project-split-cell">
+  Show which executable or command definition will run.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r07" class="project-command child-07 uid-linux-ref-01-where-am-i-help-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>type name</code>
+  
+</div>
+<div class="project-split-cell">
+  Show whether a name is an alias, builtin, function, or executable.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r08" class="project-command child-08 uid-linux-ref-01-where-am-i-help-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>type -a name</code>
+  
+</div>
+<div class="project-split-cell">
+  Show all matching command locations/definitions.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r09" class="project-command child-09 uid-linux-ref-01-where-am-i-help-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>man command</code>
+  
+</div>
+<div class="project-split-cell">
+  Open the manual page for a command.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r10" class="project-command child-10 uid-linux-ref-01-where-am-i-help-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>command --help</code>
+  
+</div>
+<div class="project-split-cell">
+  Show built-in CLI help when supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r11" class="project-command child-11 uid-linux-ref-01-where-am-i-help-r11 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>apropos keyword</code>
+  
+</div>
+<div class="project-split-cell">
+  Search manual-page descriptions by keyword.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r12" class="project-command child-12 uid-linux-ref-01-where-am-i-help-r12 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>info command</code>
+  
+</div>
+<div class="project-split-cell">
+  Open GNU Info documentation where installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r13" class="project-command child-13 uid-linux-ref-01-where-am-i-help-r13 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>history</code>
+  
+</div>
+<div class="project-split-cell">
+  Show recent shell commands.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-where-am-i-help-r14" class="project-command child-14 uid-linux-ref-01-where-am-i-help-r14 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>clear</code>
+  
+</div>
+<div class="project-split-cell">
+  Clear the terminal display.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-01-navigation"
+  class="project-doc-section node-04 uid-linux-ref-01-navigation linux-reference-command-group"
+>
+  
+<header>
+  <span>Shell, Navigation & Files</span>
+  <h3>Navigation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-01-navigation-r01" class="project-command child-01 uid-linux-ref-01-navigation-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cd path</code>
+  
+</div>
+<div class="project-split-cell">
+  Change to a directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-navigation-r02" class="project-command child-02 uid-linux-ref-01-navigation-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cd ..</code>
+  
+</div>
+<div class="project-split-cell">
+  Move up one directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-navigation-r03" class="project-command child-03 uid-linux-ref-01-navigation-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cd ~</code>
+  
+</div>
+<div class="project-split-cell">
+  Move to the current user's home directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-navigation-r04" class="project-command child-04 uid-linux-ref-01-navigation-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cd -</code>
+  
+</div>
+<div class="project-split-cell">
+  Return to the previous working directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-navigation-r05" class="project-command child-05 uid-linux-ref-01-navigation-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pushd path</code>
+  
+</div>
+<div class="project-split-cell">
+  Save the current directory and move to another.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-navigation-r06" class="project-command child-06 uid-linux-ref-01-navigation-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>popd</code>
+  
+</div>
+<div class="project-split-cell">
+  Return to the most recently pushed directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-navigation-r07" class="project-command child-07 uid-linux-ref-01-navigation-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dirs -v</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the directory stack with indexes.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-01-list-inspect"
+  class="project-doc-section node-05 uid-linux-ref-01-list-inspect linux-reference-command-group"
+>
+  
+<header>
+  <span>Shell, Navigation & Files</span>
+  <h3>List & Inspect</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-01-list-inspect-r01" class="project-command child-01 uid-linux-ref-01-list-inspect-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls</code>
+  
+</div>
+<div class="project-split-cell">
+  List directory contents.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r02" class="project-command child-02 uid-linux-ref-01-list-inspect-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -l</code>
+  
+</div>
+<div class="project-split-cell">
+  Long listing with permissions, owner, size, and time.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r03" class="project-command child-03 uid-linux-ref-01-list-inspect-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -la</code>
+  
+</div>
+<div class="project-split-cell">
+  Long listing including hidden files.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r04" class="project-command child-04 uid-linux-ref-01-list-inspect-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -lh</code>
+  
+</div>
+<div class="project-split-cell">
+  Use human-readable file sizes.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r05" class="project-command child-05 uid-linux-ref-01-list-inspect-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -lt</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort newest modified items first.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r06" class="project-command child-06 uid-linux-ref-01-list-inspect-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -lS</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort largest items first.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r07" class="project-command child-07 uid-linux-ref-01-list-inspect-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>stat file</code>
+  
+</div>
+<div class="project-split-cell">
+  Show detailed metadata for a file or directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r08" class="project-command child-08 uid-linux-ref-01-list-inspect-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>file name</code>
+  
+</div>
+<div class="project-split-cell">
+  Identify a file's content/type.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r09" class="project-command child-09 uid-linux-ref-01-list-inspect-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>realpath path</code>
+  
+</div>
+<div class="project-split-cell">
+  Resolve an absolute canonical path.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r10" class="project-command child-10 uid-linux-ref-01-list-inspect-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>basename path</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the final path component.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-list-inspect-r11" class="project-command child-11 uid-linux-ref-01-list-inspect-r11 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dirname path</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the parent directory portion.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-01-create-copy-move"
+  class="project-doc-section node-06 uid-linux-ref-01-create-copy-move linux-reference-command-group"
+>
+  
+<header>
+  <span>Shell, Navigation & Files</span>
+  <h3>Create, Copy & Move</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-01-create-copy-move-r01" class="project-command child-01 uid-linux-ref-01-create-copy-move-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mkdir folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r02" class="project-command child-02 uid-linux-ref-01-create-copy-move-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mkdir -p a/b/c</code>
+  
+</div>
+<div class="project-split-cell">
+  Create nested directories as needed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r03" class="project-command child-03 uid-linux-ref-01-create-copy-move-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>touch file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an empty file or update its timestamp.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r04" class="project-command child-04 uid-linux-ref-01-create-copy-move-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cp source dest</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy a file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r05" class="project-command child-05 uid-linux-ref-01-create-copy-move-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cp -i source dest</code>
+  
+</div>
+<div class="project-split-cell">
+  Prompt before overwriting.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r06" class="project-command child-06 uid-linux-ref-01-create-copy-move-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cp -a source dest</code>
+  
+</div>
+<div class="project-split-cell">
+  Archive-style copy preserving attributes and directories.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r07" class="project-command child-07 uid-linux-ref-01-create-copy-move-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cp -r dir dest</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy a directory tree recursively.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r08" class="project-command child-08 uid-linux-ref-01-create-copy-move-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mv old new</code>
+  
+</div>
+<div class="project-split-cell">
+  Move or rename a file or directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-create-copy-move-r09" class="project-command child-09 uid-linux-ref-01-create-copy-move-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mv -i old new</code>
+  
+</div>
+<div class="project-split-cell">
+  Prompt before overwriting a destination.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-01-delete-carefully"
+  class="project-doc-section node-07 uid-linux-ref-01-delete-carefully linux-reference-command-group"
+>
+  
+<header>
+  <span>Shell, Navigation & Files</span>
+  <h3>Delete Carefully</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-01-delete-carefully-r01" class="project-command child-01 uid-linux-ref-01-delete-carefully-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm file</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete a file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-delete-carefully-r02" class="project-command child-02 uid-linux-ref-01-delete-carefully-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm -i file</code>
+  
+</div>
+<div class="project-split-cell">
+  Prompt before deleting.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-delete-carefully-r03" class="project-command child-03 uid-linux-ref-01-delete-carefully-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rmdir empty-dir</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove an empty directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-delete-carefully-r04" class="project-command child-04 uid-linux-ref-01-delete-carefully-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm -r folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete a directory tree recursively.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-delete-carefully-r05" class="project-command child-05 uid-linux-ref-01-delete-carefully-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm -rf folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Force-delete a directory tree. Verify the path first.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-delete-carefully-r06" class="project-command child-06 uid-linux-ref-01-delete-carefully-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find path -delete</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete matched files directly; inspect the matches before adding -delete.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-delete-carefully-r07" class="project-command child-07 uid-linux-ref-01-delete-carefully-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>trash-put file</code>
+  
+</div>
+<div class="project-split-cell">
+  Move to a trash location when trash-cli is installed.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-01-links"
+  class="project-doc-section node-08 uid-linux-ref-01-links linux-reference-command-group"
+>
+  
+<header>
+  <span>Shell, Navigation & Files</span>
+  <h3>Links</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-01-links-r01" class="project-command child-01 uid-linux-ref-01-links-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ln target linkname</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a hard link.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-links-r02" class="project-command child-02 uid-linux-ref-01-links-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ln -s target linkname</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a symbolic link.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-links-r03" class="project-command child-03 uid-linux-ref-01-links-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>readlink link</code>
+  
+</div>
+<div class="project-split-cell">
+  Show a symbolic link's target.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-links-r04" class="project-command child-04 uid-linux-ref-01-links-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>readlink -f link</code>
+  
+</div>
+<div class="project-split-cell">
+  Resolve the final absolute target where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-01-links-r05" class="project-command child-05 uid-linux-ref-01-links-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -type l</code>
+  
+</div>
+<div class="project-split-cell">
+  Find symbolic links.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-linux-ref-section-02-read-search-text-processing"
+  class="project-display node-09 uid-linux-ref-section-02-read-search-text-processing linux-reference-section linux-reference-section-02"
+>
+  <div class="project-preview"><p>Read files, search recursively, filter text, transform streams, and compose commands with pipes and redirection.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 2 / 6</span>
+  <h2>02 — Read, Search & Text Processing</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-linux-ref-02-read-files"
+  class="project-doc-section node-10 uid-linux-ref-02-read-files linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>Read Files</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-read-files-r01" class="project-command child-01 uid-linux-ref-02-read-files-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cat file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print an entire small file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r02" class="project-command child-02 uid-linux-ref-02-read-files-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>less file</code>
+  
+</div>
+<div class="project-split-cell">
+  Open a scrollable pager.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r03" class="project-command child-03 uid-linux-ref-02-read-files-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>more file</code>
+  
+</div>
+<div class="project-split-cell">
+  Page through text using a simpler pager.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r04" class="project-command child-04 uid-linux-ref-02-read-files-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>head file</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the first 10 lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r05" class="project-command child-05 uid-linux-ref-02-read-files-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>head -n 20 file</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the first 20 lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r06" class="project-command child-06 uid-linux-ref-02-read-files-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tail file</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the last 10 lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r07" class="project-command child-07 uid-linux-ref-02-read-files-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tail -n 20 file</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the last 20 lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r08" class="project-command child-08 uid-linux-ref-02-read-files-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tail -f app.log</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow new lines appended to a growing log.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-read-files-r09" class="project-command child-09 uid-linux-ref-02-read-files-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nl -ba file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print lines with line numbers, including blank lines.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-02-grep"
+  class="project-doc-section node-11 uid-linux-ref-02-grep linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>grep</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-grep-r01" class="project-command child-01 uid-linux-ref-02-grep-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep 'text' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Find matching lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r02" class="project-command child-02 uid-linux-ref-02-grep-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -n 'text' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Include line numbers.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r03" class="project-command child-03 uid-linux-ref-02-grep-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -i 'text' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Search case-insensitively.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r04" class="project-command child-04 uid-linux-ref-02-grep-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -v 'text' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Show lines that do not match.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r05" class="project-command child-05 uid-linux-ref-02-grep-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -E 'regex' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Use extended regular expressions.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r06" class="project-command child-06 uid-linux-ref-02-grep-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -R 'text' dir</code>
+  
+</div>
+<div class="project-split-cell">
+  Search recursively.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r07" class="project-command child-07 uid-linux-ref-02-grep-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -Rni 'text' .</code>
+  
+</div>
+<div class="project-split-cell">
+  Recursive, case-insensitive search with line numbers.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r08" class="project-command child-08 uid-linux-ref-02-grep-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -l 'text' *.log</code>
+  
+</div>
+<div class="project-split-cell">
+  Print only matching file names.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-grep-r09" class="project-command child-09 uid-linux-ref-02-grep-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -c 'text' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Count matching lines.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-02-find"
+  class="project-doc-section node-12 uid-linux-ref-02-find linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>find</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-find-r01" class="project-command child-01 uid-linux-ref-02-find-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -name '*.js'</code>
+  
+</div>
+<div class="project-split-cell">
+  Find items by case-sensitive name pattern.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r02" class="project-command child-02 uid-linux-ref-02-find-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -iname '*.jpg'</code>
+  
+</div>
+<div class="project-split-cell">
+  Find items by case-insensitive name pattern.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r03" class="project-command child-03 uid-linux-ref-02-find-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -type f</code>
+  
+</div>
+<div class="project-split-cell">
+  Find files.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r04" class="project-command child-04 uid-linux-ref-02-find-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -type d</code>
+  
+</div>
+<div class="project-split-cell">
+  Find directories.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r05" class="project-command child-05 uid-linux-ref-02-find-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -type l</code>
+  
+</div>
+<div class="project-split-cell">
+  Find symbolic links.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r06" class="project-command child-06 uid-linux-ref-02-find-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -mtime -1</code>
+  
+</div>
+<div class="project-split-cell">
+  Find items modified within roughly the last day.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r07" class="project-command child-07 uid-linux-ref-02-find-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -size +100M</code>
+  
+</div>
+<div class="project-split-cell">
+  Find files larger than 100 MiB units used by find.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r08" class="project-command child-08 uid-linux-ref-02-find-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -empty</code>
+  
+</div>
+<div class="project-split-cell">
+  Find empty files and directories.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r09" class="project-command child-09 uid-linux-ref-02-find-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -perm /111</code>
+  
+</div>
+<div class="project-split-cell">
+  Find files with any execute bit set on GNU find.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r10" class="project-command child-10 uid-linux-ref-02-find-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -exec command {} \;</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a command once per match.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-find-r11" class="project-command child-11 uid-linux-ref-02-find-r11 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -exec command {} +</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a command with batches of matches.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-02-sort-uniq-cut-paste"
+  class="project-doc-section node-13 uid-linux-ref-02-sort-uniq-cut-paste linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>sort, uniq, cut & paste</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r01" class="project-command child-01 uid-linux-ref-02-sort-uniq-cut-paste-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sort file</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r02" class="project-command child-02 uid-linux-ref-02-sort-uniq-cut-paste-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sort -n file</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort numerically.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r03" class="project-command child-03 uid-linux-ref-02-sort-uniq-cut-paste-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sort -r file</code>
+  
+</div>
+<div class="project-split-cell">
+  Reverse the sort order.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r04" class="project-command child-04 uid-linux-ref-02-sort-uniq-cut-paste-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sort -u file</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort and remove duplicates.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r05" class="project-command child-05 uid-linux-ref-02-sort-uniq-cut-paste-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>uniq file</code>
+  
+</div>
+<div class="project-split-cell">
+  Collapse adjacent duplicate lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r06" class="project-command child-06 uid-linux-ref-02-sort-uniq-cut-paste-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>uniq -c file</code>
+  
+</div>
+<div class="project-split-cell">
+  Count adjacent duplicate lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r07" class="project-command child-07 uid-linux-ref-02-sort-uniq-cut-paste-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cut -d, -f1 file.csv</code>
+  
+</div>
+<div class="project-split-cell">
+  Select fields using a delimiter.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r08" class="project-command child-08 uid-linux-ref-02-sort-uniq-cut-paste-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>paste file1 file2</code>
+  
+</div>
+<div class="project-split-cell">
+  Merge files line-by-line.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sort-uniq-cut-paste-r09" class="project-command child-09 uid-linux-ref-02-sort-uniq-cut-paste-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>column -t file</code>
+  
+</div>
+<div class="project-split-cell">
+  Align whitespace-separated columns into a table where installed.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-02-wc-tr-tee-xargs"
+  class="project-doc-section node-14 uid-linux-ref-02-wc-tr-tee-xargs linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>wc, tr, tee & xargs</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r01" class="project-command child-01 uid-linux-ref-02-wc-tr-tee-xargs-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>wc -l file</code>
+  
+</div>
+<div class="project-split-cell">
+  Count lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r02" class="project-command child-02 uid-linux-ref-02-wc-tr-tee-xargs-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>wc -w file</code>
+  
+</div>
+<div class="project-split-cell">
+  Count words.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r03" class="project-command child-03 uid-linux-ref-02-wc-tr-tee-xargs-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>wc -c file</code>
+  
+</div>
+<div class="project-split-cell">
+  Count bytes.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r04" class="project-command child-04 uid-linux-ref-02-wc-tr-tee-xargs-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tr 'a-z' 'A-Z'</code>
+  
+</div>
+<div class="project-split-cell">
+  Translate characters from one set to another.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r05" class="project-command child-05 uid-linux-ref-02-wc-tr-tee-xargs-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tr -d '\r'</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete carriage-return characters.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r06" class="project-command child-06 uid-linux-ref-02-wc-tr-tee-xargs-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tee file</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy standard input to both screen and file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r07" class="project-command child-07 uid-linux-ref-02-wc-tr-tee-xargs-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tee -a file</code>
+  
+</div>
+<div class="project-split-cell">
+  Append standard input to a file while also displaying it.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r08" class="project-command child-08 uid-linux-ref-02-wc-tr-tee-xargs-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>xargs command</code>
+  
+</div>
+<div class="project-split-cell">
+  Build command arguments from standard input.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-wc-tr-tee-xargs-r09" class="project-command child-09 uid-linux-ref-02-wc-tr-tee-xargs-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>xargs -0 command</code>
+  
+</div>
+<div class="project-split-cell">
+  Read NUL-separated input, useful with find -print0.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-02-sed-quick-patterns"
+  class="project-doc-section node-15 uid-linux-ref-02-sed-quick-patterns linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>sed Quick Patterns</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-sed-quick-patterns-r01" class="project-command child-01 uid-linux-ref-02-sed-quick-patterns-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sed 's/old/new/' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Replace the first match on each line.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sed-quick-patterns-r02" class="project-command child-02 uid-linux-ref-02-sed-quick-patterns-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sed 's/old/new/g' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Replace every match on each line.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sed-quick-patterns-r03" class="project-command child-03 uid-linux-ref-02-sed-quick-patterns-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sed -n '10,20p' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print only lines 10 through 20.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sed-quick-patterns-r04" class="project-command child-04 uid-linux-ref-02-sed-quick-patterns-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sed '/pattern/d' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove matching lines from output.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sed-quick-patterns-r05" class="project-command child-05 uid-linux-ref-02-sed-quick-patterns-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sed -E 's/(a|b)/x/g' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Use extended regular expressions.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-sed-quick-patterns-r06" class="project-command child-06 uid-linux-ref-02-sed-quick-patterns-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sed -i.bak 's/old/new/g' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Edit in place while creating a backup; -i syntax varies across GNU/BSD sed.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-02-awk-quick-patterns"
+  class="project-doc-section node-16 uid-linux-ref-02-awk-quick-patterns linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>awk Quick Patterns</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-awk-quick-patterns-r01" class="project-command child-01 uid-linux-ref-02-awk-quick-patterns-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>awk '{print $1}' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print the first whitespace-separated field.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-awk-quick-patterns-r02" class="project-command child-02 uid-linux-ref-02-awk-quick-patterns-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>awk -F, '{print $1}' file.csv</code>
+  
+</div>
+<div class="project-split-cell">
+  Use a comma field separator.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-awk-quick-patterns-r03" class="project-command child-03 uid-linux-ref-02-awk-quick-patterns-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>awk '$3 > 100 {print $1,$3}' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Filter rows by a field condition.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-awk-quick-patterns-r04" class="project-command child-04 uid-linux-ref-02-awk-quick-patterns-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>awk '{sum += $1} END {print sum}' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Accumulate and print a total.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-awk-quick-patterns-r05" class="project-command child-05 uid-linux-ref-02-awk-quick-patterns-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>awk 'NR==1 || /text/' file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print the first row plus matching rows.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-02-pipes-redirection"
+  class="project-doc-section node-17 uid-linux-ref-02-pipes-redirection linux-reference-command-group"
+>
+  
+<header>
+  <span>Read, Search & Text Processing</span>
+  <h3>Pipes & Redirection</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-02-pipes-redirection-r01" class="project-command child-01 uid-linux-ref-02-pipes-redirection-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a | b</code>
+  
+</div>
+<div class="project-split-cell">
+  Pipe standard output of a into standard input of b.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r02" class="project-command child-02 uid-linux-ref-02-pipes-redirection-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a > file</code>
+  
+</div>
+<div class="project-split-cell">
+  Overwrite a file with standard output.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r03" class="project-command child-03 uid-linux-ref-02-pipes-redirection-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a >> file</code>
+  
+</div>
+<div class="project-split-cell">
+  Append standard output to a file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r04" class="project-command child-04 uid-linux-ref-02-pipes-redirection-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a 2> errors.log</code>
+  
+</div>
+<div class="project-split-cell">
+  Redirect standard error.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r05" class="project-command child-05 uid-linux-ref-02-pipes-redirection-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a 2>> errors.log</code>
+  
+</div>
+<div class="project-split-cell">
+  Append standard error.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r06" class="project-command child-06 uid-linux-ref-02-pipes-redirection-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a > all.log 2>&1</code>
+  
+</div>
+<div class="project-split-cell">
+  Send standard output and error to one file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r07" class="project-command child-07 uid-linux-ref-02-pipes-redirection-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a < input.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Use a file as standard input.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r08" class="project-command child-08 uid-linux-ref-02-pipes-redirection-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a && b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run b only if a succeeds.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r09" class="project-command child-09 uid-linux-ref-02-pipes-redirection-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a || b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run b only if a fails.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r10" class="project-command child-10 uid-linux-ref-02-pipes-redirection-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>a ; b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run sequentially regardless of success.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-02-pipes-redirection-r11" class="project-command child-11 uid-linux-ref-02-pipes-redirection-r11 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$(command)</code>
+  
+</div>
+<div class="project-split-cell">
+  Substitute command output into another command.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-linux-ref-section-03-permissions-users-shell-environment"
+  class="project-display node-18 uid-linux-ref-section-03-permissions-users-shell-environment linux-reference-section linux-reference-section-03"
+>
+  <div class="project-preview"><p>Control permissions, ownership, users, groups, environment variables, shell startup files, aliases, and sudo.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 3 / 6</span>
+  <h2>03 — Permissions, Users & Shell Environment</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-linux-ref-03-permission-bits"
+  class="project-doc-section node-19 uid-linux-ref-03-permission-bits linux-reference-command-group"
+>
+  
+<header>
+  <span>Permissions, Users & Shell Environment</span>
+  <h3>Permission Bits</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-03-permission-bits-r01" class="project-command child-01 uid-linux-ref-03-permission-bits-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -l</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect permission bits and ownership.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r02" class="project-command child-02 uid-linux-ref-03-permission-bits-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod +x script.sh</code>
+  
+</div>
+<div class="project-split-cell">
+  Add execute permission.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r03" class="project-command child-03 uid-linux-ref-03-permission-bits-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod u+x file</code>
+  
+</div>
+<div class="project-split-cell">
+  Add execute permission for the owner.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r04" class="project-command child-04 uid-linux-ref-03-permission-bits-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod go-rwx file</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove all permissions from group and others.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r05" class="project-command child-05 uid-linux-ref-03-permission-bits-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod 644 file</code>
+  
+</div>
+<div class="project-split-cell">
+  Owner read/write; group and others read.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r06" class="project-command child-06 uid-linux-ref-03-permission-bits-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod 755 file</code>
+  
+</div>
+<div class="project-split-cell">
+  Owner read/write/execute; group and others read/execute.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r07" class="project-command child-07 uid-linux-ref-03-permission-bits-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod 700 file</code>
+  
+</div>
+<div class="project-split-cell">
+  Owner-only read/write/execute.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r08" class="project-command child-08 uid-linux-ref-03-permission-bits-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod -R mode dir</code>
+  
+</div>
+<div class="project-split-cell">
+  Apply permission changes recursively; use carefully.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r09" class="project-command child-09 uid-linux-ref-03-permission-bits-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>umask</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current file-creation mask.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-permission-bits-r10" class="project-command child-10 uid-linux-ref-03-permission-bits-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>umask 022</code>
+  
+</div>
+<div class="project-split-cell">
+  Set a common mask producing 755 directories and 644 files from standard defaults.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-03-ownership-acls"
+  class="project-doc-section node-20 uid-linux-ref-03-ownership-acls linux-reference-command-group"
+>
+  
+<header>
+  <span>Permissions, Users & Shell Environment</span>
+  <h3>Ownership & ACLs</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-03-ownership-acls-r01" class="project-command child-01 uid-linux-ref-03-ownership-acls-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chown user file</code>
+  
+</div>
+<div class="project-split-cell">
+  Change file owner.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-ownership-acls-r02" class="project-command child-02 uid-linux-ref-03-ownership-acls-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chown user:group file</code>
+  
+</div>
+<div class="project-split-cell">
+  Change owner and group.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-ownership-acls-r03" class="project-command child-03 uid-linux-ref-03-ownership-acls-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chgrp group file</code>
+  
+</div>
+<div class="project-split-cell">
+  Change group ownership.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-ownership-acls-r04" class="project-command child-04 uid-linux-ref-03-ownership-acls-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chown -R user:group dir</code>
+  
+</div>
+<div class="project-split-cell">
+  Change ownership recursively.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-ownership-acls-r05" class="project-command child-05 uid-linux-ref-03-ownership-acls-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>getfacl file</code>
+  
+</div>
+<div class="project-split-cell">
+  Display POSIX ACLs where the ACL tools are installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-ownership-acls-r06" class="project-command child-06 uid-linux-ref-03-ownership-acls-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>setfacl -m u:user:rwx file</code>
+  
+</div>
+<div class="project-split-cell">
+  Add or modify an ACL entry.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-ownership-acls-r07" class="project-command child-07 uid-linux-ref-03-ownership-acls-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>setfacl -x u:user file</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a specific ACL entry.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-03-sudo-privilege"
+  class="project-doc-section node-21 uid-linux-ref-03-sudo-privilege linux-reference-command-group"
+>
+  
+<header>
+  <span>Permissions, Users & Shell Environment</span>
+  <h3>sudo & Privilege</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-03-sudo-privilege-r01" class="project-command child-01 uid-linux-ref-03-sudo-privilege-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo command</code>
+  
+</div>
+<div class="project-split-cell">
+  Run one command with elevated privileges.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-sudo-privilege-r02" class="project-command child-02 uid-linux-ref-03-sudo-privilege-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo -i</code>
+  
+</div>
+<div class="project-split-cell">
+  Open a root login shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-sudo-privilege-r03" class="project-command child-03 uid-linux-ref-03-sudo-privilege-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo -u user command</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a command as another user.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-sudo-privilege-r04" class="project-command child-04 uid-linux-ref-03-sudo-privilege-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo -l</code>
+  
+</div>
+<div class="project-split-cell">
+  List allowed sudo commands for the current user.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-sudo-privilege-r05" class="project-command child-05 uid-linux-ref-03-sudo-privilege-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>visudo</code>
+  
+</div>
+<div class="project-split-cell">
+  Safely edit sudoers with syntax checking.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-sudo-privilege-r06" class="project-command child-06 uid-linux-ref-03-sudo-privilege-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>su - user</code>
+  
+</div>
+<div class="project-split-cell">
+  Switch to another user with a login shell.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-03-users"
+  class="project-doc-section node-22 uid-linux-ref-03-users linux-reference-command-group"
+>
+  
+<header>
+  <span>Permissions, Users & Shell Environment</span>
+  <h3>Users</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-03-users-r01" class="project-command child-01 uid-linux-ref-03-users-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>who</code>
+  
+</div>
+<div class="project-split-cell">
+  Show logged-in users.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r02" class="project-command child-02 uid-linux-ref-03-users-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>w</code>
+  
+</div>
+<div class="project-split-cell">
+  Show logged-in users and what they are doing.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r03" class="project-command child-03 uid-linux-ref-03-users-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>last</code>
+  
+</div>
+<div class="project-split-cell">
+  Show recent login history.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r04" class="project-command child-04 uid-linux-ref-03-users-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>id user</code>
+  
+</div>
+<div class="project-split-cell">
+  Show a user's UID, GID, and groups.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r05" class="project-command child-05 uid-linux-ref-03-users-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>getent passwd user</code>
+  
+</div>
+<div class="project-split-cell">
+  Query the user-account database.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r06" class="project-command child-06 uid-linux-ref-03-users-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>useradd name</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a user on distributions using shadow-utils.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r07" class="project-command child-07 uid-linux-ref-03-users-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>adduser name</code>
+  
+</div>
+<div class="project-split-cell">
+  Friendly user-creation wrapper on Debian-family systems.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r08" class="project-command child-08 uid-linux-ref-03-users-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>usermod -aG group user</code>
+  
+</div>
+<div class="project-split-cell">
+  Add a user to a supplementary group.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r09" class="project-command child-09 uid-linux-ref-03-users-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>userdel user</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete a user account; options control home-data removal.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-users-r10" class="project-command child-10 uid-linux-ref-03-users-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>passwd user</code>
+  
+</div>
+<div class="project-split-cell">
+  Set or change a user's password.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-03-groups"
+  class="project-doc-section node-23 uid-linux-ref-03-groups linux-reference-command-group"
+>
+  
+<header>
+  <span>Permissions, Users & Shell Environment</span>
+  <h3>Groups</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-03-groups-r01" class="project-command child-01 uid-linux-ref-03-groups-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>groups</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current user's groups.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-groups-r02" class="project-command child-02 uid-linux-ref-03-groups-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>groups user</code>
+  
+</div>
+<div class="project-split-cell">
+  Show another user's group memberships.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-groups-r03" class="project-command child-03 uid-linux-ref-03-groups-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>getent group group</code>
+  
+</div>
+<div class="project-split-cell">
+  Query group information.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-groups-r04" class="project-command child-04 uid-linux-ref-03-groups-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>groupadd group</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a group.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-groups-r05" class="project-command child-05 uid-linux-ref-03-groups-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>groupdel group</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete a group.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-groups-r06" class="project-command child-06 uid-linux-ref-03-groups-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gpasswd -a user group</code>
+  
+</div>
+<div class="project-split-cell">
+  Add a user to a group.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-groups-r07" class="project-command child-07 uid-linux-ref-03-groups-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gpasswd -d user group</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a user from a group.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-groups-r08" class="project-command child-08 uid-linux-ref-03-groups-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>newgrp group</code>
+  
+</div>
+<div class="project-split-cell">
+  Start a shell using a different primary group for the session.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-03-environment-variables"
+  class="project-doc-section node-24 uid-linux-ref-03-environment-variables linux-reference-command-group"
+>
+  
+<header>
+  <span>Permissions, Users & Shell Environment</span>
+  <h3>Environment Variables</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-03-environment-variables-r01" class="project-command child-01 uid-linux-ref-03-environment-variables-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>printenv</code>
+  
+</div>
+<div class="project-split-cell">
+  List environment variables.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-environment-variables-r02" class="project-command child-02 uid-linux-ref-03-environment-variables-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>printenv NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Print one environment variable.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-environment-variables-r03" class="project-command child-03 uid-linux-ref-03-environment-variables-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>env</code>
+  
+</div>
+<div class="project-split-cell">
+  Display the environment or run a command with modified environment values.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-environment-variables-r04" class="project-command child-04 uid-linux-ref-03-environment-variables-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>echo $PATH</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the executable search path.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-environment-variables-r05" class="project-command child-05 uid-linux-ref-03-environment-variables-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>export NAME=value</code>
+  
+</div>
+<div class="project-split-cell">
+  Set and export a variable for the current shell session.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-environment-variables-r06" class="project-command child-06 uid-linux-ref-03-environment-variables-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NAME=value command</code>
+  
+</div>
+<div class="project-split-cell">
+  Set an environment variable for one command only.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-environment-variables-r07" class="project-command child-07 uid-linux-ref-03-environment-variables-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>unset NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a shell variable/environment variable.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-environment-variables-r08" class="project-command child-08 uid-linux-ref-03-environment-variables-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>env -i command</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a command with an almost-empty environment.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-03-shell-startup-aliases"
+  class="project-doc-section node-25 uid-linux-ref-03-shell-startup-aliases linux-reference-command-group"
+>
+  
+<header>
+  <span>Permissions, Users & Shell Environment</span>
+  <h3>Shell Startup & Aliases</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-03-shell-startup-aliases-r01" class="project-command child-01 uid-linux-ref-03-shell-startup-aliases-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>~/.bashrc</code>
+  
+</div>
+<div class="project-split-cell">
+  Common interactive Bash configuration file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r02" class="project-command child-02 uid-linux-ref-03-shell-startup-aliases-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>~/.bash_profile</code>
+  
+</div>
+<div class="project-split-cell">
+  Common Bash login-shell configuration file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r03" class="project-command child-03 uid-linux-ref-03-shell-startup-aliases-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>~/.profile</code>
+  
+</div>
+<div class="project-split-cell">
+  Portable login environment file used by many setups.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r04" class="project-command child-04 uid-linux-ref-03-shell-startup-aliases-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>source ~/.bashrc</code>
+  
+</div>
+<div class="project-split-cell">
+  Reload Bash configuration in the current shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r05" class="project-command child-05 uid-linux-ref-03-shell-startup-aliases-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>. ~/.profile</code>
+  
+</div>
+<div class="project-split-cell">
+  Source a shell configuration file using POSIX dot syntax.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r06" class="project-command child-06 uid-linux-ref-03-shell-startup-aliases-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>alias</code>
+  
+</div>
+<div class="project-split-cell">
+  List aliases.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r07" class="project-command child-07 uid-linux-ref-03-shell-startup-aliases-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>alias ll='ls -lah'</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a session alias.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r08" class="project-command child-08 uid-linux-ref-03-shell-startup-aliases-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>unalias ll</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove an alias.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-03-shell-startup-aliases-r09" class="project-command child-09 uid-linux-ref-03-shell-startup-aliases-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>function name() { ...; }</code>
+  
+</div>
+<div class="project-split-cell">
+  Define a reusable shell function in Bash-style syntax.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-linux-ref-section-04-processes-services-logs-scheduling"
+  class="project-display node-26 uid-linux-ref-section-04-processes-services-logs-scheduling linux-reference-section linux-reference-section-04"
+>
+  <div class="project-preview"><p>Inspect running processes, control jobs and signals, manage systemd services, read logs, and schedule recurring work.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 4 / 6</span>
+  <h2>04 — Processes, Services, Logs & Scheduling</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-linux-ref-04-process-inspection"
+  class="project-doc-section node-27 uid-linux-ref-04-process-inspection linux-reference-command-group"
+>
+  
+<header>
+  <span>Processes, Services, Logs & Scheduling</span>
+  <h3>Process Inspection</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-04-process-inspection-r01" class="project-command child-01 uid-linux-ref-04-process-inspection-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ps</code>
+  
+</div>
+<div class="project-split-cell">
+  Show processes attached to the current terminal.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r02" class="project-command child-02 uid-linux-ref-04-process-inspection-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ps aux</code>
+  
+</div>
+<div class="project-split-cell">
+  Show a broad process list in BSD-style format.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r03" class="project-command child-03 uid-linux-ref-04-process-inspection-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ps -ef</code>
+  
+</div>
+<div class="project-split-cell">
+  Show a broad process list in POSIX/System V-style format.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r04" class="project-command child-04 uid-linux-ref-04-process-inspection-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pgrep name</code>
+  
+</div>
+<div class="project-split-cell">
+  Find process IDs by name.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r05" class="project-command child-05 uid-linux-ref-04-process-inspection-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pgrep -af pattern</code>
+  
+</div>
+<div class="project-split-cell">
+  Show matching PIDs with full command lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r06" class="project-command child-06 uid-linux-ref-04-process-inspection-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pidof program</code>
+  
+</div>
+<div class="project-split-cell">
+  Show PIDs for a program where available.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r07" class="project-command child-07 uid-linux-ref-04-process-inspection-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>top</code>
+  
+</div>
+<div class="project-split-cell">
+  Interactive live process and resource viewer.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r08" class="project-command child-08 uid-linux-ref-04-process-inspection-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>htop</code>
+  
+</div>
+<div class="project-split-cell">
+  Enhanced interactive process viewer when installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-process-inspection-r09" class="project-command child-09 uid-linux-ref-04-process-inspection-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pstree</code>
+  
+</div>
+<div class="project-split-cell">
+  Display processes as a parent/child tree.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-04-signals-stop"
+  class="project-doc-section node-28 uid-linux-ref-04-signals-stop linux-reference-command-group"
+>
+  
+<header>
+  <span>Processes, Services, Logs & Scheduling</span>
+  <h3>Signals & Stop</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-04-signals-stop-r01" class="project-command child-01 uid-linux-ref-04-signals-stop-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kill PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Send SIGTERM, requesting a clean stop.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-signals-stop-r02" class="project-command child-02 uid-linux-ref-04-signals-stop-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kill -TERM PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Explicitly send SIGTERM.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-signals-stop-r03" class="project-command child-03 uid-linux-ref-04-signals-stop-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kill -HUP PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Send SIGHUP; many daemons use it to reload configuration.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-signals-stop-r04" class="project-command child-04 uid-linux-ref-04-signals-stop-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kill -9 PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Send SIGKILL. Force termination; last resort.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-signals-stop-r05" class="project-command child-05 uid-linux-ref-04-signals-stop-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>killall name</code>
+  
+</div>
+<div class="project-split-cell">
+  Signal processes by executable name.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-signals-stop-r06" class="project-command child-06 uid-linux-ref-04-signals-stop-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pkill pattern</code>
+  
+</div>
+<div class="project-split-cell">
+  Signal processes matching a name/pattern.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-signals-stop-r07" class="project-command child-07 uid-linux-ref-04-signals-stop-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>trap '...' SIGNAL</code>
+  
+</div>
+<div class="project-split-cell">
+  Handle signals in a shell script.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-04-foreground-background-jobs"
+  class="project-doc-section node-29 uid-linux-ref-04-foreground-background-jobs linux-reference-command-group"
+>
+  
+<header>
+  <span>Processes, Services, Logs & Scheduling</span>
+  <h3>Foreground & Background Jobs</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-04-foreground-background-jobs-r01" class="project-command child-01 uid-linux-ref-04-foreground-background-jobs-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>command &</code>
+  
+</div>
+<div class="project-split-cell">
+  Start a command in the background.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-foreground-background-jobs-r02" class="project-command child-02 uid-linux-ref-04-foreground-background-jobs-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>jobs</code>
+  
+</div>
+<div class="project-split-cell">
+  List jobs started by the current shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-foreground-background-jobs-r03" class="project-command child-03 uid-linux-ref-04-foreground-background-jobs-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>fg %1</code>
+  
+</div>
+<div class="project-split-cell">
+  Bring job 1 to the foreground.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-foreground-background-jobs-r04" class="project-command child-04 uid-linux-ref-04-foreground-background-jobs-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>bg %1</code>
+  
+</div>
+<div class="project-split-cell">
+  Continue a stopped job in the background.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-foreground-background-jobs-r05" class="project-command child-05 uid-linux-ref-04-foreground-background-jobs-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Ctrl+Z</code>
+  
+</div>
+<div class="project-split-cell">
+  Suspend the foreground process.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-foreground-background-jobs-r06" class="project-command child-06 uid-linux-ref-04-foreground-background-jobs-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Ctrl+C</code>
+  
+</div>
+<div class="project-split-cell">
+  Interrupt the foreground process.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-foreground-background-jobs-r07" class="project-command child-07 uid-linux-ref-04-foreground-background-jobs-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nohup command &</code>
+  
+</div>
+<div class="project-split-cell">
+  Keep a command running after terminal disconnect, writing output to nohup.out by default.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-foreground-background-jobs-r08" class="project-command child-08 uid-linux-ref-04-foreground-background-jobs-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>disown %1</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a job from the shell's job table so it is not sent SIGHUP by that shell.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-04-systemd-services"
+  class="project-doc-section node-30 uid-linux-ref-04-systemd-services linux-reference-command-group"
+>
+  
+<header>
+  <span>Processes, Services, Logs & Scheduling</span>
+  <h3>systemd Services</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-04-systemd-services-r01" class="project-command child-01 uid-linux-ref-04-systemd-services-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl status service</code>
+  
+</div>
+<div class="project-split-cell">
+  Show service state and recent log lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r02" class="project-command child-02 uid-linux-ref-04-systemd-services-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo systemctl start service</code>
+  
+</div>
+<div class="project-split-cell">
+  Start a service now.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r03" class="project-command child-03 uid-linux-ref-04-systemd-services-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo systemctl stop service</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop a service now.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r04" class="project-command child-04 uid-linux-ref-04-systemd-services-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo systemctl restart service</code>
+  
+</div>
+<div class="project-split-cell">
+  Restart a service.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r05" class="project-command child-05 uid-linux-ref-04-systemd-services-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo systemctl reload service</code>
+  
+</div>
+<div class="project-split-cell">
+  Reload service configuration when supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r06" class="project-command child-06 uid-linux-ref-04-systemd-services-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo systemctl enable service</code>
+  
+</div>
+<div class="project-split-cell">
+  Enable service startup at boot.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r07" class="project-command child-07 uid-linux-ref-04-systemd-services-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo systemctl disable service</code>
+  
+</div>
+<div class="project-split-cell">
+  Disable service startup at boot.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r08" class="project-command child-08 uid-linux-ref-04-systemd-services-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl is-active service</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a service is currently active.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r09" class="project-command child-09 uid-linux-ref-04-systemd-services-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl is-enabled service</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a service is enabled at boot.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r10" class="project-command child-10 uid-linux-ref-04-systemd-services-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl list-units --type=service</code>
+  
+</div>
+<div class="project-split-cell">
+  List loaded service units.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-systemd-services-r11" class="project-command child-11 uid-linux-ref-04-systemd-services-r11 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl daemon-reload</code>
+  
+</div>
+<div class="project-split-cell">
+  Reload unit definitions after editing unit files.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-04-journalctl"
+  class="project-doc-section node-31 uid-linux-ref-04-journalctl linux-reference-command-group"
+>
+  
+<header>
+  <span>Processes, Services, Logs & Scheduling</span>
+  <h3>journalctl</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-04-journalctl-r01" class="project-command child-01 uid-linux-ref-04-journalctl-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the systemd journal.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r02" class="project-command child-02 uid-linux-ref-04-journalctl-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl -u service</code>
+  
+</div>
+<div class="project-split-cell">
+  Show logs for one service/unit.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r03" class="project-command child-03 uid-linux-ref-04-journalctl-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl -u service -f</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow logs for one service.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r04" class="project-command child-04 uid-linux-ref-04-journalctl-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl -b</code>
+  
+</div>
+<div class="project-split-cell">
+  Show logs from the current boot.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r05" class="project-command child-05 uid-linux-ref-04-journalctl-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl -b -1</code>
+  
+</div>
+<div class="project-split-cell">
+  Show logs from the previous boot.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r06" class="project-command child-06 uid-linux-ref-04-journalctl-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl --since today</code>
+  
+</div>
+<div class="project-split-cell">
+  Show entries since today.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r07" class="project-command child-07 uid-linux-ref-04-journalctl-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl --since '1 hour ago'</code>
+  
+</div>
+<div class="project-split-cell">
+  Show recent entries using a relative time.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r08" class="project-command child-08 uid-linux-ref-04-journalctl-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl -p err</code>
+  
+</div>
+<div class="project-split-cell">
+  Show error-priority messages.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-journalctl-r09" class="project-command child-09 uid-linux-ref-04-journalctl-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl --disk-usage</code>
+  
+</div>
+<div class="project-split-cell">
+  Show journal disk usage.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-04-traditional-logs"
+  class="project-doc-section node-32 uid-linux-ref-04-traditional-logs linux-reference-command-group"
+>
+  
+<header>
+  <span>Processes, Services, Logs & Scheduling</span>
+  <h3>Traditional Logs</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-04-traditional-logs-r01" class="project-command child-01 uid-linux-ref-04-traditional-logs-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls /var/log</code>
+  
+</div>
+<div class="project-split-cell">
+  List traditional system log files.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-traditional-logs-r02" class="project-command child-02 uid-linux-ref-04-traditional-logs-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tail -f /var/log/syslog</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow Debian/Ubuntu-style system log where present.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-traditional-logs-r03" class="project-command child-03 uid-linux-ref-04-traditional-logs-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tail -f /var/log/messages</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow RHEL-family/general system log where present.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-traditional-logs-r04" class="project-command child-04 uid-linux-ref-04-traditional-logs-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dmesg</code>
+  
+</div>
+<div class="project-split-cell">
+  Read kernel ring-buffer messages.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-traditional-logs-r05" class="project-command child-05 uid-linux-ref-04-traditional-logs-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dmesg -T</code>
+  
+</div>
+<div class="project-split-cell">
+  Show kernel messages with human-readable timestamps where supported.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-04-cron-timers"
+  class="project-doc-section node-33 uid-linux-ref-04-cron-timers linux-reference-command-group"
+>
+  
+<header>
+  <span>Processes, Services, Logs & Scheduling</span>
+  <h3>cron & Timers</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-04-cron-timers-r01" class="project-command child-01 uid-linux-ref-04-cron-timers-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>crontab -e</code>
+  
+</div>
+<div class="project-split-cell">
+  Edit the current user's cron schedule.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-cron-timers-r02" class="project-command child-02 uid-linux-ref-04-cron-timers-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>crontab -l</code>
+  
+</div>
+<div class="project-split-cell">
+  List the current user's cron entries.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-cron-timers-r03" class="project-command child-03 uid-linux-ref-04-cron-timers-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>crontab -r</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove the current user's crontab; use carefully.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-cron-timers-r04" class="project-command child-04 uid-linux-ref-04-cron-timers-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>systemctl list-timers</code>
+  
+</div>
+<div class="project-split-cell">
+  List systemd timers.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-cron-timers-r05" class="project-command child-05 uid-linux-ref-04-cron-timers-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>OnCalendar=</code>
+  
+</div>
+<div class="project-split-cell">
+  systemd timer directive for calendar-style schedules.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-cron-timers-r06" class="project-command child-06 uid-linux-ref-04-cron-timers-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Persistent=true</code>
+  
+</div>
+<div class="project-split-cell">
+  systemd timer option allowing missed runs to execute after downtime.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-cron-timers-r07" class="project-command child-07 uid-linux-ref-04-cron-timers-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>at 17:00</code>
+  
+</div>
+<div class="project-split-cell">
+  Schedule a one-time command where the at service is installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-04-cron-timers-r08" class="project-command child-08 uid-linux-ref-04-cron-timers-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>atq / atrm ID</code>
+  
+</div>
+<div class="project-split-cell">
+  List or remove queued at jobs.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-linux-ref-section-05-networking-ssh-remote-work"
+  class="project-display node-34 uid-linux-ref-section-05-networking-ssh-remote-work linux-reference-section linux-reference-section-05"
+>
+  <div class="project-preview"><p>Inspect interfaces and routes, diagnose DNS and ports, test HTTP, connect with SSH, and transfer or synchronize files.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 5 / 6</span>
+  <h2>05 — Networking, SSH & Remote Work</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-linux-ref-05-interfaces-addresses"
+  class="project-doc-section node-35 uid-linux-ref-05-interfaces-addresses linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>Interfaces & Addresses</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-interfaces-addresses-r01" class="project-command child-01 uid-linux-ref-05-interfaces-addresses-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ip addr</code>
+  
+</div>
+<div class="project-split-cell">
+  Show network interfaces and IP addresses.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-interfaces-addresses-r02" class="project-command child-02 uid-linux-ref-05-interfaces-addresses-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ip -br addr</code>
+  
+</div>
+<div class="project-split-cell">
+  Show a compact interface/address summary.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-interfaces-addresses-r03" class="project-command child-03 uid-linux-ref-05-interfaces-addresses-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ip link</code>
+  
+</div>
+<div class="project-split-cell">
+  Show network interfaces and link state.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-interfaces-addresses-r04" class="project-command child-04 uid-linux-ref-05-interfaces-addresses-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ip route</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the routing table.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-interfaces-addresses-r05" class="project-command child-05 uid-linux-ref-05-interfaces-addresses-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>hostname</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the system hostname.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-interfaces-addresses-r06" class="project-command child-06 uid-linux-ref-05-interfaces-addresses-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>hostname -I</code>
+  
+</div>
+<div class="project-split-cell">
+  Show assigned IP addresses where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-interfaces-addresses-r07" class="project-command child-07 uid-linux-ref-05-interfaces-addresses-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nmcli device status</code>
+  
+</div>
+<div class="project-split-cell">
+  Show NetworkManager device status where NetworkManager is used.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-interfaces-addresses-r08" class="project-command child-08 uid-linux-ref-05-interfaces-addresses-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nmcli connection show</code>
+  
+</div>
+<div class="project-split-cell">
+  List NetworkManager connections.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-05-connectivity"
+  class="project-doc-section node-36 uid-linux-ref-05-connectivity linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>Connectivity</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-connectivity-r01" class="project-command child-01 uid-linux-ref-05-connectivity-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ping host</code>
+  
+</div>
+<div class="project-split-cell">
+  Test ICMP reachability.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-connectivity-r02" class="project-command child-02 uid-linux-ref-05-connectivity-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ping -c 4 host</code>
+  
+</div>
+<div class="project-split-cell">
+  Send four ICMP echo requests.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-connectivity-r03" class="project-command child-03 uid-linux-ref-05-connectivity-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>traceroute host</code>
+  
+</div>
+<div class="project-split-cell">
+  Trace the route to a host when installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-connectivity-r04" class="project-command child-04 uid-linux-ref-05-connectivity-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tracepath host</code>
+  
+</div>
+<div class="project-split-cell">
+  Trace path without requiring the same privileges as traditional traceroute on many Linux systems.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-connectivity-r05" class="project-command child-05 uid-linux-ref-05-connectivity-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mtr host</code>
+  
+</div>
+<div class="project-split-cell">
+  Interactive combined ping/traceroute diagnostics when installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-connectivity-r06" class="project-command child-06 uid-linux-ref-05-connectivity-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nc -vz host 443</code>
+  
+</div>
+<div class="project-split-cell">
+  Test whether a TCP port is reachable.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-connectivity-r07" class="project-command child-07 uid-linux-ref-05-connectivity-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>timeout 5 bash -c '</dev/tcp/host/443'</code>
+  
+</div>
+<div class="project-split-cell">
+  Bash-specific TCP reachability test without netcat.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-05-dns"
+  class="project-doc-section node-37 uid-linux-ref-05-dns linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>DNS</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-dns-r01" class="project-command child-01 uid-linux-ref-05-dns-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dig example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Query DNS records.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-dns-r02" class="project-command child-02 uid-linux-ref-05-dns-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dig +short example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Return compact DNS answers.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-dns-r03" class="project-command child-03 uid-linux-ref-05-dns-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dig MX example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Query mail-exchanger records.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-dns-r04" class="project-command child-04 uid-linux-ref-05-dns-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nslookup example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Traditional DNS lookup tool.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-dns-r05" class="project-command child-05 uid-linux-ref-05-dns-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>host example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Simple DNS lookup utility.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-dns-r06" class="project-command child-06 uid-linux-ref-05-dns-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>resolvectl status</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect systemd-resolved DNS configuration where used.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-dns-r07" class="project-command child-07 uid-linux-ref-05-dns-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cat /etc/resolv.conf</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect resolver configuration or resolver stub details.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-05-ports-sockets"
+  class="project-doc-section node-38 uid-linux-ref-05-ports-sockets linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>Ports & Sockets</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-ports-sockets-r01" class="project-command child-01 uid-linux-ref-05-ports-sockets-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ss -tulpn</code>
+  
+</div>
+<div class="project-split-cell">
+  List listening TCP/UDP sockets with process information where permitted.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ports-sockets-r02" class="project-command child-02 uid-linux-ref-05-ports-sockets-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ss -ltn</code>
+  
+</div>
+<div class="project-split-cell">
+  List listening TCP sockets.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ports-sockets-r03" class="project-command child-03 uid-linux-ref-05-ports-sockets-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ss -tunap</code>
+  
+</div>
+<div class="project-split-cell">
+  Show TCP/UDP sockets broadly with process information where permitted.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ports-sockets-r04" class="project-command child-04 uid-linux-ref-05-ports-sockets-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lsof -i :3000</code>
+  
+</div>
+<div class="project-split-cell">
+  Find processes using port 3000 when lsof is installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ports-sockets-r05" class="project-command child-05 uid-linux-ref-05-ports-sockets-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>fuser 3000/tcp</code>
+  
+</div>
+<div class="project-split-cell">
+  Show processes using a TCP port.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ports-sockets-r06" class="project-command child-06 uid-linux-ref-05-ports-sockets-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo fuser -k 3000/tcp</code>
+  
+</div>
+<div class="project-split-cell">
+  Kill processes using a TCP port; use carefully.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-05-curl-wget"
+  class="project-doc-section node-39 uid-linux-ref-05-curl-wget linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>curl & wget</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-curl-wget-r01" class="project-command child-01 uid-linux-ref-05-curl-wget-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Send an HTTP GET request and print the response body.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r02" class="project-command child-02 uid-linux-ref-05-curl-wget-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -I URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Request headers only.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r03" class="project-command child-03 uid-linux-ref-05-curl-wget-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -L URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow redirects.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r04" class="project-command child-04 uid-linux-ref-05-curl-wget-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -o file URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Save a response to a named file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r05" class="project-command child-05 uid-linux-ref-05-curl-wget-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -O URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Save using the remote filename.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r06" class="project-command child-06 uid-linux-ref-05-curl-wget-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -X POST -H 'Content-Type: application/json' -d '{...}' URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Send a JSON POST request.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r07" class="project-command child-07 uid-linux-ref-05-curl-wget-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -v URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Show verbose request/connection diagnostics.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r08" class="project-command child-08 uid-linux-ref-05-curl-wget-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>wget URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Download a URL to a file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-curl-wget-r09" class="project-command child-09 uid-linux-ref-05-curl-wget-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>wget -c URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Continue a partially downloaded file where supported.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-05-ssh"
+  class="project-doc-section node-40 uid-linux-ref-05-ssh linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>SSH</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-ssh-r01" class="project-command child-01 uid-linux-ref-05-ssh-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh user@host</code>
+  
+</div>
+<div class="project-split-cell">
+  Open an SSH session.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ssh-r02" class="project-command child-02 uid-linux-ref-05-ssh-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh -p 2222 user@host</code>
+  
+</div>
+<div class="project-split-cell">
+  Connect using a non-default SSH port.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ssh-r03" class="project-command child-03 uid-linux-ref-05-ssh-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh -i key user@host</code>
+  
+</div>
+<div class="project-split-cell">
+  Connect using a specific identity/private key.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ssh-r04" class="project-command child-04 uid-linux-ref-05-ssh-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh-keygen -t ed25519 -C 'email'</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an Ed25519 SSH key pair.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ssh-r05" class="project-command child-05 uid-linux-ref-05-ssh-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh-add ~/.ssh/id_ed25519</code>
+  
+</div>
+<div class="project-split-cell">
+  Add a private key to the SSH agent.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ssh-r06" class="project-command child-06 uid-linux-ref-05-ssh-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh -T git@github.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Test SSH authentication to GitHub.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ssh-r07" class="project-command child-07 uid-linux-ref-05-ssh-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh-copy-id user@host</code>
+  
+</div>
+<div class="project-split-cell">
+  Install your public key on a remote host where the helper is available.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-ssh-r08" class="project-command child-08 uid-linux-ref-05-ssh-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>~/.ssh/config</code>
+  
+</div>
+<div class="project-split-cell">
+  Per-user SSH host aliases and connection options.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-05-scp-rsync"
+  class="project-doc-section node-41 uid-linux-ref-05-scp-rsync linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>scp & rsync</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-scp-rsync-r01" class="project-command child-01 uid-linux-ref-05-scp-rsync-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>scp file user@host:/path</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy one file over SSH.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-scp-rsync-r02" class="project-command child-02 uid-linux-ref-05-scp-rsync-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>scp -r dir user@host:/path</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy a directory recursively over SSH.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-scp-rsync-r03" class="project-command child-03 uid-linux-ref-05-scp-rsync-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>rsync -av src/ dest/</code>
+  
+</div>
+<div class="project-split-cell">
+  Archive-style local synchronization.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-scp-rsync-r04" class="project-command child-04 uid-linux-ref-05-scp-rsync-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>rsync -av src/ host:/dest/</code>
+  
+</div>
+<div class="project-split-cell">
+  Synchronize a directory to a remote host.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-scp-rsync-r05" class="project-command child-05 uid-linux-ref-05-scp-rsync-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>rsync -av --delete src/ dest/</code>
+  
+</div>
+<div class="project-split-cell">
+  Make destination mirror source by deleting extra destination files; review carefully.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-scp-rsync-r06" class="project-command child-06 uid-linux-ref-05-scp-rsync-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>rsync -avP src/ dest/</code>
+  
+</div>
+<div class="project-split-cell">
+  Show progress and preserve partially transferred files.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-scp-rsync-r07" class="project-command child-07 uid-linux-ref-05-scp-rsync-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>rsync -n ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Dry-run an rsync command before making changes.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-05-firewall-quick-reference"
+  class="project-doc-section node-42 uid-linux-ref-05-firewall-quick-reference linux-reference-command-group"
+>
+  
+<header>
+  <span>Networking, SSH & Remote Work</span>
+  <h3>Firewall Quick Reference</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-05-firewall-quick-reference-r01" class="project-command child-01 uid-linux-ref-05-firewall-quick-reference-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo ufw status</code>
+  
+</div>
+<div class="project-split-cell">
+  Show UFW status on systems using UFW.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-firewall-quick-reference-r02" class="project-command child-02 uid-linux-ref-05-firewall-quick-reference-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo ufw allow 22/tcp</code>
+  
+</div>
+<div class="project-split-cell">
+  Allow SSH through UFW.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-firewall-quick-reference-r03" class="project-command child-03 uid-linux-ref-05-firewall-quick-reference-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo firewall-cmd --list-all</code>
+  
+</div>
+<div class="project-split-cell">
+  Show firewalld configuration on systems using firewalld.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-firewall-quick-reference-r04" class="project-command child-04 uid-linux-ref-05-firewall-quick-reference-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo firewall-cmd --add-service=http --permanent</code>
+  
+</div>
+<div class="project-split-cell">
+  Permanently allow HTTP in firewalld.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-firewall-quick-reference-r05" class="project-command child-05 uid-linux-ref-05-firewall-quick-reference-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo firewall-cmd --reload</code>
+  
+</div>
+<div class="project-split-cell">
+  Reload permanent firewalld configuration.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-05-firewall-quick-reference-r06" class="project-command child-06 uid-linux-ref-05-firewall-quick-reference-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>nft list ruleset</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect nftables rules where nftables is used.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-linux-ref-section-06-packages-storage-archives-recovery"
+  class="project-display node-43 uid-linux-ref-section-06-packages-storage-archives-recovery linux-reference-section linux-reference-section-06"
+>
+  <div class="project-preview"><p>Manage software, disks, filesystems, archives, system identity, resources, and common Linux troubleshooting.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 6 / 6</span>
+  <h2>06 — Packages, Storage, Archives & Recovery</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-linux-ref-06-apt-dnf-pacman"
+  class="project-doc-section node-44 uid-linux-ref-06-apt-dnf-pacman linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>APT ↔ DNF ↔ Pacman</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-apt-dnf-pacman-r01" class="project-command child-01 uid-linux-ref-06-apt-dnf-pacman-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>sudo apt update</code>
+  
+</div>
+<div class="project-split-cell">
+  Refresh package metadata.
+  
+</div>
+<div class="project-split-cell">
+  <code>sudo dnf check-update</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-apt-dnf-pacman-r02" class="project-command child-02 uid-linux-ref-06-apt-dnf-pacman-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>sudo apt install pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Install a package.
+  
+</div>
+<div class="project-split-cell">
+  <code>sudo dnf install pkg</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-apt-dnf-pacman-r03" class="project-command child-03 uid-linux-ref-06-apt-dnf-pacman-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>sudo apt remove pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a package.
+  
+</div>
+<div class="project-split-cell">
+  <code>sudo dnf remove pkg</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-apt-dnf-pacman-r04" class="project-command child-04 uid-linux-ref-06-apt-dnf-pacman-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>sudo apt upgrade</code>
+  
+</div>
+<div class="project-split-cell">
+  Upgrade installed packages.
+  
+</div>
+<div class="project-split-cell">
+  <code>sudo dnf upgrade</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-apt-dnf-pacman-r05" class="project-command child-05 uid-linux-ref-06-apt-dnf-pacman-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>apt search pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Search packages.
+  
+</div>
+<div class="project-split-cell">
+  <code>dnf search pkg</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-apt-dnf-pacman-r06" class="project-command child-06 uid-linux-ref-06-apt-dnf-pacman-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>apt show pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Show package information.
+  
+</div>
+<div class="project-split-cell">
+  <code>dnf info pkg</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-apt-dnf-pacman-r07" class="project-command child-07 uid-linux-ref-06-apt-dnf-pacman-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>dpkg -l</code>
+  
+</div>
+<div class="project-split-cell">
+  List installed packages using the low-level Debian package tool.
+  
+</div>
+<div class="project-split-cell">
+  <code>rpm -qa</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-pacman-notes"
+  class="project-doc-section node-45 uid-linux-ref-06-pacman-notes linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>Pacman Notes</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-pacman-notes-r01" class="project-command child-01 uid-linux-ref-06-pacman-notes-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo pacman -Syu</code>
+  
+</div>
+<div class="project-split-cell">
+  Arch Linux: refresh package databases and perform a full system upgrade.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-pacman-notes-r02" class="project-command child-02 uid-linux-ref-06-pacman-notes-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo pacman -S pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Arch Linux: install a package.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-pacman-notes-r03" class="project-command child-03 uid-linux-ref-06-pacman-notes-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo pacman -Rns pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Arch Linux: remove a package plus unused dependencies/config where applicable.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-pacman-notes-r04" class="project-command child-04 uid-linux-ref-06-pacman-notes-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>pacman -Ss pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Arch Linux: search repositories.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-pacman-notes-r05" class="project-command child-05 uid-linux-ref-06-pacman-notes-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>pacman -Qi pkg</code>
+  
+</div>
+<div class="project-split-cell">
+  Arch Linux: show installed package information.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-disk-usage"
+  class="project-doc-section node-46 uid-linux-ref-06-disk-usage linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>Disk Usage</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-disk-usage-r01" class="project-command child-01 uid-linux-ref-06-disk-usage-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>df -h</code>
+  
+</div>
+<div class="project-split-cell">
+  Show mounted filesystem space in human-readable units.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-disk-usage-r02" class="project-command child-02 uid-linux-ref-06-disk-usage-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>df -i</code>
+  
+</div>
+<div class="project-split-cell">
+  Show inode usage.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-disk-usage-r03" class="project-command child-03 uid-linux-ref-06-disk-usage-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>du -sh folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Show total apparent disk usage for a folder.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-disk-usage-r04" class="project-command child-04 uid-linux-ref-06-disk-usage-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>du -sh *</code>
+  
+</div>
+<div class="project-split-cell">
+  Show sizes of items in the current directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-disk-usage-r05" class="project-command child-05 uid-linux-ref-06-disk-usage-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>du -ah . | sort -h | tail</code>
+  
+</div>
+<div class="project-split-cell">
+  Find larger files/directories under the current path.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-disk-usage-r06" class="project-command child-06 uid-linux-ref-06-disk-usage-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lsblk</code>
+  
+</div>
+<div class="project-split-cell">
+  Show block devices and mount relationships.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-disk-usage-r07" class="project-command child-07 uid-linux-ref-06-disk-usage-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>blkid</code>
+  
+</div>
+<div class="project-split-cell">
+  Show filesystem UUIDs and types where permitted.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-mounts-filesystems"
+  class="project-doc-section node-47 uid-linux-ref-06-mounts-filesystems linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>Mounts & Filesystems</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-mounts-filesystems-r01" class="project-command child-01 uid-linux-ref-06-mounts-filesystems-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mount</code>
+  
+</div>
+<div class="project-split-cell">
+  List mounted filesystems.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-mounts-filesystems-r02" class="project-command child-02 uid-linux-ref-06-mounts-filesystems-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>findmnt</code>
+  
+</div>
+<div class="project-split-cell">
+  Show mounts in a structured tree.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-mounts-filesystems-r03" class="project-command child-03 uid-linux-ref-06-mounts-filesystems-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo mount /dev/sdb1 /mnt/data</code>
+  
+</div>
+<div class="project-split-cell">
+  Mount a filesystem.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-mounts-filesystems-r04" class="project-command child-04 uid-linux-ref-06-mounts-filesystems-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo umount /mnt/data</code>
+  
+</div>
+<div class="project-split-cell">
+  Unmount a filesystem.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-mounts-filesystems-r05" class="project-command child-05 uid-linux-ref-06-mounts-filesystems-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cat /etc/fstab</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect configured persistent mounts.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-mounts-filesystems-r06" class="project-command child-06 uid-linux-ref-06-mounts-filesystems-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo fdisk -l</code>
+  
+</div>
+<div class="project-split-cell">
+  List disk partition information.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-mounts-filesystems-r07" class="project-command child-07 uid-linux-ref-06-mounts-filesystems-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo parted -l</code>
+  
+</div>
+<div class="project-split-cell">
+  List disks and partition tables using parted.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-mounts-filesystems-r08" class="project-command child-08 uid-linux-ref-06-mounts-filesystems-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>fsck device</code>
+  
+</div>
+<div class="project-split-cell">
+  Check/repair an unmounted filesystem; exact tool/options depend on filesystem.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-archives-compression"
+  class="project-doc-section node-48 uid-linux-ref-06-archives-compression linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>Archives & Compression</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-archives-compression-r01" class="project-command child-01 uid-linux-ref-06-archives-compression-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tar -cf archive.tar folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a tar archive.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r02" class="project-command child-02 uid-linux-ref-06-archives-compression-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tar -tf archive.tar</code>
+  
+</div>
+<div class="project-split-cell">
+  List tar archive contents.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r03" class="project-command child-03 uid-linux-ref-06-archives-compression-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tar -xf archive.tar</code>
+  
+</div>
+<div class="project-split-cell">
+  Extract a tar archive.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r04" class="project-command child-04 uid-linux-ref-06-archives-compression-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tar -czf archive.tar.gz folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a gzip-compressed tar archive.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r05" class="project-command child-05 uid-linux-ref-06-archives-compression-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tar -xzf archive.tar.gz</code>
+  
+</div>
+<div class="project-split-cell">
+  Extract a gzip-compressed tar archive.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r06" class="project-command child-06 uid-linux-ref-06-archives-compression-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tar -cJf archive.tar.xz folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an xz-compressed tar archive.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r07" class="project-command child-07 uid-linux-ref-06-archives-compression-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gzip file</code>
+  
+</div>
+<div class="project-split-cell">
+  Compress one file with gzip.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r08" class="project-command child-08 uid-linux-ref-06-archives-compression-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gunzip file.gz</code>
+  
+</div>
+<div class="project-split-cell">
+  Decompress a gzip file.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r09" class="project-command child-09 uid-linux-ref-06-archives-compression-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>zip -r archive.zip folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a ZIP archive when zip is installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-archives-compression-r10" class="project-command child-10 uid-linux-ref-06-archives-compression-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>unzip archive.zip</code>
+  
+</div>
+<div class="project-split-cell">
+  Extract a ZIP archive.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-system-resource-info"
+  class="project-doc-section node-49 uid-linux-ref-06-system-resource-info linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>System & Resource Info</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-system-resource-info-r01" class="project-command child-01 uid-linux-ref-06-system-resource-info-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>uname -a</code>
+  
+</div>
+<div class="project-split-cell">
+  Show kernel and system information.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r02" class="project-command child-02 uid-linux-ref-06-system-resource-info-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>uname -r</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the kernel release.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r03" class="project-command child-03 uid-linux-ref-06-system-resource-info-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cat /etc/os-release</code>
+  
+</div>
+<div class="project-split-cell">
+  Show distribution identification.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r04" class="project-command child-04 uid-linux-ref-06-system-resource-info-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>hostnamectl</code>
+  
+</div>
+<div class="project-split-cell">
+  Show hostname and system metadata on systemd systems.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r05" class="project-command child-05 uid-linux-ref-06-system-resource-info-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>uptime</code>
+  
+</div>
+<div class="project-split-cell">
+  Show uptime and load averages.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r06" class="project-command child-06 uid-linux-ref-06-system-resource-info-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>free -h</code>
+  
+</div>
+<div class="project-split-cell">
+  Show memory and swap usage.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r07" class="project-command child-07 uid-linux-ref-06-system-resource-info-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lscpu</code>
+  
+</div>
+<div class="project-split-cell">
+  Show CPU architecture details.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r08" class="project-command child-08 uid-linux-ref-06-system-resource-info-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lsmem</code>
+  
+</div>
+<div class="project-split-cell">
+  Show memory block information where available.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r09" class="project-command child-09 uid-linux-ref-06-system-resource-info-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lsusb</code>
+  
+</div>
+<div class="project-split-cell">
+  List USB devices.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-system-resource-info-r10" class="project-command child-10 uid-linux-ref-06-system-resource-info-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lspci</code>
+  
+</div>
+<div class="project-split-cell">
+  List PCI devices.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-kernel-boot"
+  class="project-doc-section node-50 uid-linux-ref-06-kernel-boot linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>Kernel & Boot</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-kernel-boot-r01" class="project-command child-01 uid-linux-ref-06-kernel-boot-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dmesg | less</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect kernel messages.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r02" class="project-command child-02 uid-linux-ref-06-kernel-boot-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>journalctl -k</code>
+  
+</div>
+<div class="project-split-cell">
+  Show kernel journal entries on systemd systems.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r03" class="project-command child-03 uid-linux-ref-06-kernel-boot-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl --failed</code>
+  
+</div>
+<div class="project-split-cell">
+  List failed systemd units.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r04" class="project-command child-04 uid-linux-ref-06-kernel-boot-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl get-default</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the default systemd target.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r05" class="project-command child-05 uid-linux-ref-06-kernel-boot-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl reboot</code>
+  
+</div>
+<div class="project-split-cell">
+  Reboot through systemd.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r06" class="project-command child-06 uid-linux-ref-06-kernel-boot-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>systemctl poweroff</code>
+  
+</div>
+<div class="project-split-cell">
+  Power off through systemd.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r07" class="project-command child-07 uid-linux-ref-06-kernel-boot-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>reboot</code>
+  
+</div>
+<div class="project-split-cell">
+  Reboot using the traditional command; privileges may be required.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r08" class="project-command child-08 uid-linux-ref-06-kernel-boot-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>shutdown -h now</code>
+  
+</div>
+<div class="project-split-cell">
+  Shut down immediately.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-kernel-boot-r09" class="project-command child-09 uid-linux-ref-06-kernel-boot-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>shutdown -r +10</code>
+  
+</div>
+<div class="project-split-cell">
+  Schedule a reboot in 10 minutes.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-fast-troubleshooting-loop"
+  class="project-doc-section node-51 uid-linux-ref-06-fast-troubleshooting-loop linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>Fast Troubleshooting Loop</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r01" class="project-command child-01 uid-linux-ref-06-fast-troubleshooting-loop-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>pwd && ls -la</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm location and visible project files.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r02" class="project-command child-02 uid-linux-ref-06-fast-troubleshooting-loop-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>whoami && id</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm the current identity and groups.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r03" class="project-command child-03 uid-linux-ref-06-fast-troubleshooting-loop-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>command -v tool && tool --version</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm a required CLI exists and which version is active.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r04" class="project-command child-04 uid-linux-ref-06-fast-troubleshooting-loop-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>printenv | sort</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect environment values.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r05" class="project-command child-05 uid-linux-ref-06-fast-troubleshooting-loop-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>df -h && free -h</code>
+  
+</div>
+<div class="project-split-cell">
+  Check disk and memory pressure.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r06" class="project-command child-06 uid-linux-ref-06-fast-troubleshooting-loop-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ps aux | head</code>
+  
+</div>
+<div class="project-split-cell">
+  Check process state quickly.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r07" class="project-command child-07 uid-linux-ref-06-fast-troubleshooting-loop-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ss -tulpn</code>
+  
+</div>
+<div class="project-split-cell">
+  Check listeners and port conflicts.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r08" class="project-command child-08 uid-linux-ref-06-fast-troubleshooting-loop-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>systemctl --failed</code>
+  
+</div>
+<div class="project-split-cell">
+  Find failed services.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r09" class="project-command child-09 uid-linux-ref-06-fast-troubleshooting-loop-r09 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>journalctl -p err -b</code>
+  
+</div>
+<div class="project-split-cell">
+  Review current-boot errors.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-fast-troubleshooting-loop-r10" class="project-command child-10 uid-linux-ref-06-fast-troubleshooting-loop-r10 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl -I http://localhost:PORT</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm a local HTTP service responds.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-linux-ref-06-high-risk-commands"
+  class="project-doc-section node-52 uid-linux-ref-06-high-risk-commands linux-reference-command-group"
+>
+  
+<header>
+  <span>Packages, Storage, Archives & Recovery</span>
+  <h3>High-Risk Commands</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-linux-ref-06-high-risk-commands-r01" class="project-command child-01 uid-linux-ref-06-high-risk-commands-r01 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>rm -rf PATH</code>
+  
+</div>
+<div class="project-split-cell">
+  Permanently removes a directory tree. Verify pwd and the exact path first.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-high-risk-commands-r02" class="project-command child-02 uid-linux-ref-06-high-risk-commands-r02 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sudo command</code>
+  
+</div>
+<div class="project-split-cell">
+  Runs with elevated privileges; system-wide damage is possible.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-high-risk-commands-r03" class="project-command child-03 uid-linux-ref-06-high-risk-commands-r03 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>chmod -R / chown -R</code>
+  
+</div>
+<div class="project-split-cell">
+  Recursive permission/ownership changes can break applications and services.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-high-risk-commands-r04" class="project-command child-04 uid-linux-ref-06-high-risk-commands-r04 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>dd if=... of=...</code>
+  
+</div>
+<div class="project-split-cell">
+  Raw block copying can overwrite disks. Verify the output device before running.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-high-risk-commands-r05" class="project-command child-05 uid-linux-ref-06-high-risk-commands-r05 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>mkfs.* device</code>
+  
+</div>
+<div class="project-split-cell">
+  Creates a new filesystem and destroys existing filesystem data on the target.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-high-risk-commands-r06" class="project-command child-06 uid-linux-ref-06-high-risk-commands-r06 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>fsck -y</code>
+  
+</div>
+<div class="project-split-cell">
+  Automatic repair can modify filesystem structures; use appropriate recovery procedures.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-high-risk-commands-r07" class="project-command child-07 uid-linux-ref-06-high-risk-commands-r07 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>apt/dnf/pacman full upgrades</code>
+  
+</div>
+<div class="project-split-cell">
+  Large upgrades can change runtimes, services, kernels, and dependencies.
+  
+</div>
+  </div>
+</div>
+<div id="child-linux-ref-06-high-risk-commands-r08" class="project-command child-08 uid-linux-ref-06-high-risk-commands-r08 linux-reference-command-row">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>shutdown / reboot</code>
+  
+</div>
+<div class="project-split-cell">
+  Ends current sessions and running work.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>
