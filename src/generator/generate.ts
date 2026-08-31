@@ -843,16 +843,68 @@ function homeShortLabel(record: RecordRow): string {
 function homeColorClass(record: RecordRow): string {
   const value = `${record.title} ${record.slug ?? ""}`.toLowerCase();
 
+  const fallbackColors = [
+    "rose",
+    "pink",
+    "magenta",
+    "violet",
+    "lavender",
+    "indigo",
+    "cobalt",
+    "sky",
+    "aqua",
+    "teal",
+    "mint",
+    "emerald",
+    "green",
+    "lime",
+    "yellow",
+    "amber",
+    "orange",
+    "coral",
+    "crimson",
+    "slate",
+    "silver",
+    "ice",
+    "gold",
+    "purple",
+    "blue",
+    "cyan",
+    "red",
+  ];
+
+  /* Rosetta gets priority */
+  if (value.includes("rosetta")) {
+    return "rose";
+  }
+
   if (value.includes("javascript")) {
     return "gold";
   }
 
   if (
+    value.includes("visual") ||
+    value.includes("chart") ||
+    value.includes("game")
+  ) {
+    return "gold";
+  }
+
+  if (value.includes("git")) {
+    return "red";
+  }
+
+  if (
     value.includes("typescript") ||
+    value.includes("database") ||
     value.includes("jupyter") ||
     value.includes("tensorflow")
   ) {
     return "blue";
+  }
+
+  if (value.includes("node")) {
+    return "green";
   }
 
   if (
@@ -864,27 +916,28 @@ function homeColorClass(record: RecordRow): string {
   }
 
   if (
-    value.includes("database") ||
-    value.includes("sql") ||
     value.includes("api") ||
     value.includes("scikit")
   ) {
     return "purple";
   }
 
-  if (value.includes("git")) {
-    return "red";
-  }
-
   if (
-    value.includes("visual") ||
-    value.includes("chart") ||
-    value.includes("game")
+    value.includes("sql") ||
+    value.includes("angular")
   ) {
-    return "gold";
+    return "rose";
   }
 
-  return "";
+  /* Stable fallback color */
+  let colorIndex = 0;
+
+  for (let i = 0; i < value.length; i += 1) {
+    colorIndex =
+      (colorIndex + value.charCodeAt(i)) % fallbackColors.length;
+  }
+
+  return fallbackColors[colorIndex] ?? "purple";
 }
 
 function recordIconClass(record: RecordRow): string {

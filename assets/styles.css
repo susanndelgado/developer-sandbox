@@ -1453,6 +1453,117 @@ body > footer button:focus-visible {
 .stone.red {
   --stone-color: #ff6c80;
 }
+/* ==================================================
+   GEM / STONE COLOR PALETTE
+   ================================================== */
+
+.stone.rose {
+  --stone-color: #ff6fae;
+}
+
+.stone.pink {
+  --stone-color: #ff82bd;
+}
+
+.stone.magenta {
+  --stone-color: #ed64d9;
+}
+
+.stone.violet {
+  --stone-color: #a66cff;
+}
+
+.stone.purple {
+  --stone-color: #a768ff;
+}
+
+.stone.lavender {
+  --stone-color: #ba9cff;
+}
+
+.stone.indigo {
+  --stone-color: #7479ff;
+}
+
+.stone.cobalt {
+  --stone-color: #397cff;
+}
+
+.stone.blue {
+  --stone-color: #4b96ff;
+}
+
+.stone.sky {
+  --stone-color: #57c7ff;
+}
+
+.stone.cyan {
+  --stone-color: #41dce9;
+}
+
+.stone.aqua {
+  --stone-color: #45e0e8;
+}
+
+.stone.teal {
+  --stone-color: #42d6bd;
+}
+
+.stone.mint {
+  --stone-color: #67e6bd;
+}
+
+.stone.emerald {
+  --stone-color: #54dc8b;
+}
+
+.stone.green {
+  --stone-color: #65e5a0;
+}
+
+.stone.lime {
+  --stone-color: #a9e85f;
+}
+
+.stone.yellow {
+  --stone-color: #f5df63;
+}
+
+.stone.gold {
+  --stone-color: #ffc461;
+}
+
+.stone.amber {
+  --stone-color: #ffbd55;
+}
+
+.stone.orange {
+  --stone-color: #ff955c;
+}
+
+.stone.coral {
+  --stone-color: #ff746f;
+}
+
+.stone.red {
+  --stone-color: #ff6c80;
+}
+
+.stone.crimson {
+  --stone-color: #ff526d;
+}
+
+.stone.slate {
+  --stone-color: #91a9c4;
+}
+
+.stone.silver {
+  --stone-color: #b6c4d4;
+}
+
+.stone.ice {
+  --stone-color: #b7e7ff;
+}
 
 /* ==================================================
    STONE LABEL
@@ -1614,7 +1725,117 @@ body > footer button:focus-visible {
 .project-icon.green {
   --icon-color: #65e5a0;
 }
+/* ==================================================
+   PROJECT ICON COLOR PALETTE
+   ================================================== */
 
+.project-icon.rose {
+  --icon-color: #ff6fae;
+}
+
+.project-icon.pink {
+  --icon-color: #ff82bd;
+}
+
+.project-icon.magenta {
+  --icon-color: #ed64d9;
+}
+
+.project-icon.violet {
+  --icon-color: #a66cff;
+}
+
+.project-icon.purple {
+  --icon-color: #a768ff;
+}
+
+.project-icon.lavender {
+  --icon-color: #ba9cff;
+}
+
+.project-icon.indigo {
+  --icon-color: #7479ff;
+}
+
+.project-icon.cobalt {
+  --icon-color: #397cff;
+}
+
+.project-icon.blue {
+  --icon-color: #4b96ff;
+}
+
+.project-icon.sky {
+  --icon-color: #57c7ff;
+}
+
+.project-icon.cyan {
+  --icon-color: #41dce9;
+}
+
+.project-icon.aqua {
+  --icon-color: #45e0e8;
+}
+
+.project-icon.teal {
+  --icon-color: #42d6bd;
+}
+
+.project-icon.mint {
+  --icon-color: #67e6bd;
+}
+
+.project-icon.emerald {
+  --icon-color: #54dc8b;
+}
+
+.project-icon.green {
+  --icon-color: #65e5a0;
+}
+
+.project-icon.lime {
+  --icon-color: #a9e85f;
+}
+
+.project-icon.yellow {
+  --icon-color: #f5df63;
+}
+
+.project-icon.gold {
+  --icon-color: #ffc461;
+}
+
+.project-icon.amber {
+  --icon-color: #ffbd55;
+}
+
+.project-icon.orange {
+  --icon-color: #ff955c;
+}
+
+.project-icon.coral {
+  --icon-color: #ff746f;
+}
+
+.project-icon.red {
+  --icon-color: #ff6c80;
+}
+
+.project-icon.crimson {
+  --icon-color: #ff526d;
+}
+
+.project-icon.slate {
+  --icon-color: #91a9c4;
+}
+
+.project-icon.silver {
+  --icon-color: #b6c4d4;
+}
+
+.project-icon.ice {
+  --icon-color: #b7e7ff;
+}
 /* ---------- TEXT ---------- */
 
 .projects strong {
@@ -1779,7 +2000,117 @@ body > footer button:focus-visible {
 .guide-icon.green {
   --icon-color: #65e5a0;
 }
+/* ==================================================
+   GUIDE ICON COLOR PALETTE
+   ================================================== */
 
+.guide-icon.rose {
+  --icon-color: #ff6fae;
+}
+
+.guide-icon.pink {
+  --icon-color: #ff82bd;
+}
+
+.guide-icon.magenta {
+  --icon-color: #ed64d9;
+}
+
+.guide-icon.violet {
+  --icon-color: #a66cff;
+}
+
+.guide-icon.purple {
+  --icon-color: #a768ff;
+}
+
+.guide-icon.lavender {
+  --icon-color: #ba9cff;
+}
+
+.guide-icon.indigo {
+  --icon-color: #7479ff;
+}
+
+.guide-icon.cobalt {
+  --icon-color: #397cff;
+}
+
+.guide-icon.blue {
+  --icon-color: #4b96ff;
+}
+
+.guide-icon.sky {
+  --icon-color: #57c7ff;
+}
+
+.guide-icon.cyan {
+  --icon-color: #41dce9;
+}
+
+.guide-icon.aqua {
+  --icon-color: #45e0e8;
+}
+
+.guide-icon.teal {
+  --icon-color: #42d6bd;
+}
+
+.guide-icon.mint {
+  --icon-color: #67e6bd;
+}
+
+.guide-icon.emerald {
+  --icon-color: #54dc8b;
+}
+
+.guide-icon.green {
+  --icon-color: #65e5a0;
+}
+
+.guide-icon.lime {
+  --icon-color: #a9e85f;
+}
+
+.guide-icon.yellow {
+  --icon-color: #f5df63;
+}
+
+.guide-icon.gold {
+  --icon-color: #ffc461;
+}
+
+.guide-icon.amber {
+  --icon-color: #ffbd55;
+}
+
+.guide-icon.orange {
+  --icon-color: #ff955c;
+}
+
+.guide-icon.coral {
+  --icon-color: #ff746f;
+}
+
+.guide-icon.red {
+  --icon-color: #ff6c80;
+}
+
+.guide-icon.crimson {
+  --icon-color: #ff526d;
+}
+
+.guide-icon.slate {
+  --icon-color: #91a9c4;
+}
+
+.guide-icon.silver {
+  --icon-color: #b6c4d4;
+}
+
+.guide-icon.ice {
+  --icon-color: #b7e7ff;
+}
 /* ---------- LABEL ---------- */
 
 .guide-list small {
@@ -1940,7 +2271,118 @@ body > footer button:focus-visible {
 .data-icon.red {
   --icon-color: #ff6c80;
 }
+/* ==================================================
+   INTERACTIVE ICON COLOR PALETTE
+   Existing class name: .data-icon
+   ================================================== */
 
+.data-icon.rose {
+  --icon-color: #ff6fae;
+}
+
+.data-icon.pink {
+  --icon-color: #ff82bd;
+}
+
+.data-icon.magenta {
+  --icon-color: #ed64d9;
+}
+
+.data-icon.violet {
+  --icon-color: #a66cff;
+}
+
+.data-icon.purple {
+  --icon-color: #a768ff;
+}
+
+.data-icon.lavender {
+  --icon-color: #ba9cff;
+}
+
+.data-icon.indigo {
+  --icon-color: #7479ff;
+}
+
+.data-icon.cobalt {
+  --icon-color: #397cff;
+}
+
+.data-icon.blue {
+  --icon-color: #4b96ff;
+}
+
+.data-icon.sky {
+  --icon-color: #57c7ff;
+}
+
+.data-icon.cyan {
+  --icon-color: #41dce9;
+}
+
+.data-icon.aqua {
+  --icon-color: #45e0e8;
+}
+
+.data-icon.teal {
+  --icon-color: #42d6bd;
+}
+
+.data-icon.mint {
+  --icon-color: #67e6bd;
+}
+
+.data-icon.emerald {
+  --icon-color: #54dc8b;
+}
+
+.data-icon.green {
+  --icon-color: #65e5a0;
+}
+
+.data-icon.lime {
+  --icon-color: #a9e85f;
+}
+
+.data-icon.yellow {
+  --icon-color: #f5df63;
+}
+
+.data-icon.gold {
+  --icon-color: #ffc461;
+}
+
+.data-icon.amber {
+  --icon-color: #ffbd55;
+}
+
+.data-icon.orange {
+  --icon-color: #ff955c;
+}
+
+.data-icon.coral {
+  --icon-color: #ff746f;
+}
+
+.data-icon.red {
+  --icon-color: #ff6c80;
+}
+
+.data-icon.crimson {
+  --icon-color: #ff526d;
+}
+
+.data-icon.slate {
+  --icon-color: #91a9c4;
+}
+
+.data-icon.silver {
+  --icon-color: #b6c4d4;
+}
+
+.data-icon.ice {
+  --icon-color: #b7e7ff;
+}
 /* ---------- LABEL ---------- */
 
 .data-list small {
