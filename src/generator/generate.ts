@@ -839,9 +839,12 @@ function homeShortLabel(record: RecordRow): string {
 
   return recordInitials(record);
 }
-
 function homeColorClass(record: RecordRow): string {
-  const value = `${record.title} ${record.slug ?? ""}`.toLowerCase();
+  const value = `
+    ${record.title}
+    ${record.slug ?? ""}
+    ${record.subtitle ?? ""}
+  `.toLowerCase();
 
   const fallbackColors = [
     "rose",
@@ -873,34 +876,57 @@ function homeColorClass(record: RecordRow): string {
     "red",
   ];
 
-  /* Rosetta gets priority */
-  if (value.includes("rosetta")) {
-    return "rose";
-  }
-
-  if (value.includes("javascript")) {
-    return "gold";
-  }
+  /* =========================================================
+     1. TECHNOLOGY
+     Technology gets first priority.
+     ========================================================= */
 
   if (
-    value.includes("visual") ||
-    value.includes("chart") ||
-    value.includes("game")
+    value.includes("javascript") ||
+    value.includes("ecmascript") ||
+    value.includes("es2015") ||
+    value.includes("es6")
   ) {
     return "gold";
   }
 
-  if (value.includes("git")) {
-    return "red";
-  }
-
-  if (
-    value.includes("typescript") ||
-    value.includes("database") ||
-    value.includes("jupyter") ||
-    value.includes("tensorflow")
-  ) {
+  if (value.includes("typescript")) {
     return "blue";
+  }
+
+  if (value.includes("angular")) {
+    return "crimson";
+  }
+
+  if (value.includes("react")) {
+    return "cyan";
+  }
+
+  if (value.includes("python")) {
+    return "amber";
+  }
+
+  /*
+   * JavaScript must be checked before Java
+   * because "javascript" contains "java".
+   */
+  if (
+    value.includes("java") &&
+    !value.includes("javascript")
+  ) {
+    return "orange";
+  }
+
+  if (
+    value.includes("c#") ||
+    value.includes("csharp") ||
+    value.includes("c-sharp")
+  ) {
+    return "violet";
+  }
+
+  if (value.includes("php")) {
+    return "indigo";
   }
 
   if (value.includes("node")) {
@@ -908,38 +934,176 @@ function homeColorClass(record: RecordRow): string {
   }
 
   if (
-    value.includes("python") ||
-    value.includes("php") ||
-    value.includes("pandas")
+    value.includes("postgresql") ||
+    value.includes("postgres")
   ) {
-    return "cyan";
+    return "cobalt";
+  }
+
+  if (value.includes("mongodb")) {
+    return "emerald";
+  }
+
+  if (value.includes("sql")) {
+    return "teal";
+  }
+
+  if (value.includes("git")) {
+    return "red";
+  }
+
+  if (value.includes("docker")) {
+    return "sky";
+  }
+
+  if (value.includes("jupyter")) {
+    return "orange";
+  }
+
+  if (value.includes("pandas")) {
+    return "lavender";
+  }
+
+  if (
+    value.includes("scikit") ||
+    value.includes("sklearn")
+  ) {
+    return "purple";
+  }
+
+  if (value.includes("tensorflow")) {
+    return "coral";
+  }
+
+  /* =========================================================
+     2. APPLICATION / COMPONENT TYPE
+     Used when no specific technology was identified.
+     ========================================================= */
+
+  if (
+    value.includes("visualization") ||
+    value.includes("visualisation") ||
+    value.includes("chart") ||
+    value.includes("graph")
+  ) {
+    return "magenta";
+  }
+
+  if (
+    value.includes("game") ||
+    value.includes("simulation")
+  ) {
+    return "lime";
+  }
+
+  if (
+    value.includes("database") ||
+    value.includes("datastore")
+  ) {
+    return "teal";
   }
 
   if (
     value.includes("api") ||
-    value.includes("scikit")
+    value.includes("service") ||
+    value.includes("gateway")
   ) {
     return "purple";
   }
 
   if (
-    value.includes("sql") ||
-    value.includes("angular")
+    value.includes("browser") ||
+    value.includes("renderer") ||
+    value.includes("rendering")
   ) {
-    return "rose";
+    return "aqua";
   }
 
-  /* Stable fallback color */
-  let colorIndex = 0;
-
-  for (let i = 0; i < value.length; i += 1) {
-    colorIndex =
-      (colorIndex + value.charCodeAt(i)) % fallbackColors.length;
+  if (
+    value.includes("terminal") ||
+    value.includes("command") ||
+    value.includes("shell")
+  ) {
+    return "slate";
   }
 
-  return fallbackColors[colorIndex] ?? "purple";
+  if (
+    value.includes("testing") ||
+    value.includes("test")
+  ) {
+    return "mint";
+  }
+
+  if (
+    value.includes("editor") ||
+    value.includes("tooling") ||
+    value.includes("tool")
+  ) {
+    return "cobalt";
+  }
+
+  if (
+    value.includes("portfolio") ||
+    value.includes("website") ||
+    value.includes("frontend")
+  ) {
+    return "pink";
+  }
+
+  if (
+    value.includes("data science") ||
+    value.includes("machine learning") ||
+    value.includes("learning engine")
+  ) {
+    return "emerald";
+  }
+
+  /* =========================================================
+     3. CLASSIFICATION
+     Used when technology and application type do not decide.
+     ========================================================= */
+
+  switch (classificationOf(record)) {
+    case "rosetta-stone":
+      return "rose";
+
+    case "lab-exploration":
+      return "aqua";
+
+    case "reference-guide":
+      return "ice";
+
+    case "general-project":
+      return "purple";
+
+    case "demo-data":
+      return "silver";
+
+    default:
+      break;
+  }
+
+  /* =========================================================
+     4. STABLE PSEUDO-RANDOM FALLBACK
+
+     This is intentionally deterministic:
+     the same record keeps the same color between builds.
+     ========================================================= */
+
+  const seed = `
+    ${record.id}
+    ${record.title}
+    ${record.slug ?? ""}
+  `;
+
+  let hash = 0;
+
+  for (let i = 0; i < seed.length; i += 1) {
+    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+
+  return fallbackColors[hash % fallbackColors.length] ?? "purple";
 }
-
 function recordIconClass(record: RecordRow): string {
   const inferred = homeColorClass(record);
 
