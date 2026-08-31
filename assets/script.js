@@ -773,3 +773,52 @@ document.addEventListener("click", (event) => {
   }
 });
 
+/* ==================================================
+   9. ALPHABETICAL ASIDE NAVIGATION
+   Display-only ordering for generated collection asides
+   ================================================== */
+
+function asideButtonLabel(button) {
+  return (
+    button.querySelector("strong")?.textContent?.trim() ??
+    button.textContent?.trim() ??
+    ""
+  );
+}
+
+function sortAsideNavigation() {
+  document
+    .querySelectorAll(".type-menu .project-types")
+    .forEach((nav) => {
+      const buttons = Array.from(nav.children).filter(
+        (item) => item instanceof HTMLButtonElement,
+      );
+
+      if (buttons.length < 2) {
+        return;
+      }
+
+      const allButtons = buttons.filter((button) =>
+        asideButtonLabel(button)
+          .toLocaleLowerCase()
+          .startsWith("all "),
+      );
+
+      const alphabeticalButtons = buttons
+        .filter((button) => !allButtons.includes(button))
+        .sort((a, b) =>
+          asideButtonLabel(a).localeCompare(
+            asideButtonLabel(b),
+            undefined,
+            {
+              sensitivity: "base",
+              numeric: true,
+            },
+          ),
+        );
+
+      nav.append(...allButtons, ...alphabeticalButtons);
+    });
+}
+
+sortAsideNavigation();
