@@ -1,0 +1,2305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHP Reference — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/terminal-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>PHP Reference</strong>
+    <p>Modern PHP syntax, requests, PDO, security, cURL, Composer, and development patterns.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/terminal-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal
+    </strong>
+
+    
+    <small>
+      macOS
+    </small>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      PHP Reference
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      macOS / PHP 8.x
+    </strong>
+
+    <br />
+
+    Modern PHP syntax, requests, PDO, security, cURL, Composer, and development patterns.
+  </p>
+</header>
+        
+<nav
+  id="node-ref-php-nav"
+  class="project-doc-nav node-01 uid-ref-php-nav php-reference-nav" aria-label="Section navigation"
+>
+<a
+  id="child-ref-php-nav-01"
+  class="child-01 uid-ref-php-nav-01"
+  href="pg/php-reference.html#node-ref-php-section-01-core-php-syntax-data"
+>Core PHP Syntax & Data</a>
+<a
+  id="child-ref-php-nav-02"
+  class="child-02 uid-ref-php-nav-02"
+  href="pg/php-reference.html#node-ref-php-section-02-control-flow-functions-file-structure"
+>Control Flow, Functions & File Structure</a>
+<a
+  id="child-ref-php-nav-03"
+  class="child-03 uid-ref-php-nav-03"
+  href="pg/php-reference.html#node-ref-php-section-03-web-requests-forms-output"
+>Web Requests, Forms & Output</a>
+<a
+  id="child-ref-php-nav-04"
+  class="child-04 uid-ref-php-nav-04"
+  href="pg/php-reference.html#node-ref-php-section-04-objects-exceptions-files-utilities"
+>Objects, Exceptions, Files & Utilities</a>
+<a
+  id="child-ref-php-nav-05"
+  class="child-05 uid-ref-php-nav-05"
+  href="pg/php-reference.html#node-ref-php-section-05-sessions-cookies-passwords-security"
+>Sessions, Cookies, Passwords & Security</a>
+<a
+  id="child-ref-php-nav-06"
+  class="child-06 uid-ref-php-nav-06"
+  href="pg/php-reference.html#node-ref-php-section-06-pdo-database-access"
+>PDO Database Access</a>
+<a
+  id="child-ref-php-nav-07"
+  class="child-07 uid-ref-php-nav-07"
+  href="pg/php-reference.html#node-ref-php-section-07-php-curl-request-pattern"
+>PHP cURL — Request Pattern</a>
+<a
+  id="child-ref-php-nav-08"
+  class="child-08 uid-ref-php-nav-08"
+  href="pg/php-reference.html#node-ref-php-section-08-curl-post-json-put-patch-delete-uploads"
+>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</a>
+<a
+  id="child-ref-php-nav-09"
+  class="child-09 uid-ref-php-nav-09"
+  href="pg/php-reference.html#node-ref-php-section-09-cli-composer-daily-development"
+>CLI, Composer & Daily Development</a>
+<a
+  id="child-ref-php-nav-10"
+  class="child-10 uid-ref-php-nav-10"
+  href="pg/php-reference.html#node-ref-php-section-10-high-value-patterns"
+>High-Value Patterns</a>
+</nav>
+
+<article class="project-doc">
+  <section
+  id="node-ref-php-section-01-core-php-syntax-data"
+  class="project-detail node-02 uid-ref-php-section-01-core-php-syntax-data php-reference-section"
+>
+  
+<header>
+  <span>01</span>
+  <h3>Core PHP Syntax & Data</h3>
+  <p>Core PHP 8.x syntax, types, operators, strings, arrays, and common transformations.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-01-core-php-syntax-data-php-tags-output" class="project-command child-01 uid-ref-php-section-01-core-php-syntax-data-php-tags-output php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Php Tags + Output
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-php-tags-output" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-php-tags-output" aria-label="Expand Php Tags + Output"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-php-tags-output" class="project-command-panel" hidden>
+    <pre><code>• Statements normally end with ;.
+• Use &lt;?= $value ?&gt; as the short echo form inside templates.
+• Comments: //, #, and /* ... */.
+&lt;?php
+echo &quot;Hello&quot;;
+print &quot;World&quot;;
+$name = &quot;Susan&quot;;
+echo &quot;Hello, $name&quot;;
+echo &#x27;Hello, &#x27; . $name;
+NOTE: For pure PHP files, omitting the closing ?&gt; avoids accidental output after
+the script.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-common-scalar-special-types" class="project-command child-02 uid-ref-php-section-01-core-php-syntax-data-common-scalar-special-types php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Common Scalar + Special Types
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-common-scalar-special-types" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-common-scalar-special-types" aria-label="Expand Common Scalar + Special Types"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-common-scalar-special-types" class="project-command-panel" hidden>
+    <pre><code>$name = &quot;Ada&quot; string
+$count = 12 int
+$price = 19.95 float
+$active = true bool
+$value = null null
+$items = [] array
+$user = new User() object</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-constants-inspection" class="project-command child-03 uid-ref-php-section-01-core-php-syntax-data-constants-inspection php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Constants + Inspection
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-constants-inspection" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-constants-inspection" aria-label="Expand Constants + Inspection"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-constants-inspection" class="project-command-panel" hidden>
+    <pre><code>const APP_NAME = &quot;Creative Exchange&quot;;
+define(&#x27;API_URL&#x27;, &#x27;https://api.example.com&#x27;);
+var_dump($value);
+print_r($items);
+echo gettype($value);
+NOTE: var_dump() shows type and value; it is especially useful while debugging
+arrays, objects and API responses.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-variables-operators" class="project-command child-04 uid-ref-php-section-01-core-php-syntax-data-variables-operators php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Variables + Operators
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-variables-operators" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-variables-operators" aria-label="Expand Variables + Operators"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-variables-operators" class="project-command-panel" hidden>
+    <pre><code>• Comparison: ===, !==, &gt;, &lt;, &gt;=, &lt;=.
+• Boolean: &amp;&amp;, ||, !.
+• Prefer strict comparison === when type matters.
+$a = 10;
+$b = 3;
+$sum = $a + $b;
+$isEqual = ($a === $b);
+$isAllowed = $loggedIn &amp;&amp; $active;
+$count++;
+$total += 5;</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-null-fallback-patterns" class="project-command child-05 uid-ref-php-section-01-core-php-syntax-data-null-fallback-patterns php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Null + Fallback Patterns
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-null-fallback-patterns" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-null-fallback-patterns" aria-label="Expand Null + Fallback Patterns"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-null-fallback-patterns" class="project-command-panel" hidden>
+    <pre><code>• ?? uses a fallback when a value is missing or null.
+• ?-&gt; is null-safe object access.
+• Ternary: condition ? yes : no.
+$name = $_GET[&#x27;name&#x27;] ?? &#x27;Guest&#x27;;
+$userName = $user?-&gt;profile?-&gt;name;
+$status = $code === 200 ? &#x27;ok&#x27; : &#x27;error&#x27;;</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-strings" class="project-command child-06 uid-ref-php-section-01-core-php-syntax-data-strings php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Strings
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-strings" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-strings" aria-label="Expand Strings"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-strings" class="project-command-panel" hidden>
+    <pre><code>$first = &#x27;Susan&#x27;;
+$last = &#x27;Delgado&#x27;;
+$full = $first . &#x27; &#x27; . $last;
+$message = &quot;Welcome, {$full}!&quot;;
+strlen($full);
+trim($full);
+strtolower($full);
+strtoupper($full);
+str_contains($full, &#x27;Susan&#x27;);
+str_replace(&#x27;old&#x27;, &#x27;new&#x27;, $text);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-indexed-arrays" class="project-command child-07 uid-ref-php-section-01-core-php-syntax-data-indexed-arrays php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Indexed Arrays
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-indexed-arrays" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-indexed-arrays" aria-label="Expand Indexed Arrays"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-indexed-arrays" class="project-command-panel" hidden>
+    <pre><code>$colors = [&#x27;red&#x27;, &#x27;blue&#x27;, &#x27;green&#x27;];
+echo $colors[0];
+$colors[] = &#x27;gold&#x27;;
+count($colors);
+in_array(&#x27;blue&#x27;, $colors, true);
+array_push($colors, &#x27;black&#x27;);
+array_pop($colors);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-associative-arrays" class="project-command child-08 uid-ref-php-section-01-core-php-syntax-data-associative-arrays php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Associative Arrays
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-associative-arrays" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-associative-arrays" aria-label="Expand Associative Arrays"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-associative-arrays" class="project-command-panel" hidden>
+    <pre><code>$user = [
+&#x27;id&#x27; =&gt; 42,
+&#x27;name&#x27; =&gt; &#x27;Ada&#x27;,
+&#x27;active&#x27; =&gt; true,
+];
+echo $user[&#x27;name&#x27;];
+$user[&#x27;role&#x27;] = &#x27;admin&#x27;;
+array_key_exists(&#x27;id&#x27;, $user);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-array-transforms" class="project-command child-09 uid-ref-php-section-01-core-php-syntax-data-array-transforms php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Array Transforms
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-array-transforms" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-array-transforms" aria-label="Expand Array Transforms"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-array-transforms" class="project-command-panel" hidden>
+    <pre><code>$names = array_column($users, &#x27;name&#x27;);
+$active = array_filter(
+$users,
+fn($u) =&gt; $u[&#x27;active&#x27;]
+);
+$ids = array_map(fn($u) =&gt; $u[&#x27;id&#x27;], $users);
+$all = array_merge($a, $b);
+sort($names);
+NOTE: array_map() transforms, array_filter() selects, and array_reduce()
+combines values into one result.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-01-core-php-syntax-data-more-documentation-language-reference" class="project-command child-10 uid-ref-php-section-01-core-php-syntax-data-more-documentation-language-reference php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — Language Reference
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-more-documentation-language-reference" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-more-documentation-language-reference" aria-label="Expand Documentation — Language Reference"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-01-core-php-syntax-data-ref-php-section-01-core-php-syntax-data-more-documentation-language-reference" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/langref.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/langref.php</a></p>
+<p>Search php.net for any function name, e.g. &quot;array_filter&quot;.</p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-02-control-flow-functions-file-structure"
+  class="project-detail node-03 uid-ref-php-section-02-control-flow-functions-file-structure php-reference-section"
+>
+  
+<header>
+  <span>02</span>
+  <h3>Control Flow, Functions & File Structure</h3>
+  <p>Branching, loops, typed functions, closures, includes, namespaces, and practical project structure.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-if-elseif-else" class="project-command child-01 uid-ref-php-section-02-control-flow-functions-file-structure-if-elseif-else php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  If / Elseif / Else
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-if-elseif-else" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-if-elseif-else" aria-label="Expand If / Elseif / Else"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-if-elseif-else" class="project-command-panel" hidden>
+    <pre><code>if ($score &gt;= 90) {
+$grade = &#x27;A&#x27;;
+} elseif ($score &gt;= 80) {
+$grade = &#x27;B&#x27;;
+} else {
+$grade = &#x27;C&#x27;;
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-match-switch" class="project-command child-02 uid-ref-php-section-02-control-flow-functions-file-structure-match-switch php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Match + Switch
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-match-switch" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-match-switch" aria-label="Expand Match + Switch"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-match-switch" class="project-command-panel" hidden>
+    <pre><code>$label = match ($status) {
+200 =&gt; &#x27;OK&#x27;,
+404 =&gt; &#x27;Not Found&#x27;,
+default =&gt; &#x27;Other&#x27;,
+};
+switch ($role) {
+case &#x27;admin&#x27;:
+$access = true;
+break;
+default:
+$access = false;
+}
+NOTE: match returns a value and uses strict comparison; switch is useful for
+statement-oriented branching.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-loops" class="project-command child-03 uid-ref-php-section-02-control-flow-functions-file-structure-loops php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Loops
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-loops" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-loops" aria-label="Expand Loops"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-loops" class="project-command-panel" hidden>
+    <pre><code>foreach ($users as $user) {
+echo $user[&#x27;name&#x27;];
+}
+for ($i = 0; $i &lt; 10; $i++) {
+echo $i;
+}
+while ($row = $stmt-&gt;fetch()) {
+// process row
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-functions-types" class="project-command child-04 uid-ref-php-section-02-control-flow-functions-file-structure-functions-types php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Functions + Types
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-functions-types" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-functions-types" aria-label="Expand Functions + Types"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-functions-types" class="project-command-panel" hidden>
+    <pre><code>• Type hints improve readability and catch mistakes.
+• Parameters can have defaults.
+• Return types follow :.
+function total(float $price, int $qty = 1): float {
+return $price * $qty;
+}
+$result = total(12.50, 2);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-arrow-functions-closures" class="project-command child-05 uid-ref-php-section-02-control-flow-functions-file-structure-arrow-functions-closures php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Arrow Functions + Closures
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-arrow-functions-closures" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-arrow-functions-closures" aria-label="Expand Arrow Functions + Closures"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-arrow-functions-closures" class="project-command-panel" hidden>
+    <pre><code>$double = fn(int $n): int =&gt; $n * 2;
+$tax = 0.07;
+$withTax = function (float $price) use ($tax) {
+return $price * (1 + $tax);
+};</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-useful-variable-helpers" class="project-command child-06 uid-ref-php-section-02-control-flow-functions-file-structure-useful-variable-helpers php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Useful Variable Helpers
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-useful-variable-helpers" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-useful-variable-helpers" aria-label="Expand Useful Variable Helpers"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-useful-variable-helpers" class="project-command-panel" hidden>
+    <pre><code>isset($value);
+empty($value);
+is_string($value);
+is_array($value);
+is_numeric($value);
+filter_var($email, FILTER_VALIDATE_EMAIL);
+NOTE: empty() treats several values as empty, including 0 and &quot;0&quot;. Use a stricter
+check when zero is a valid value.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-common-project-structure" class="project-command child-07 uid-ref-php-section-02-control-flow-functions-file-structure-common-project-structure php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Common Project Structure
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-common-project-structure" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-common-project-structure" aria-label="Expand Common Project Structure"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-common-project-structure" class="project-command-panel" hidden>
+    <pre><code>project/
+public/
+index.php
+assets/
+src/
+Controllers/
+Models/
+Services/
+templates/
+config/
+storage/
+tests/
+vendor/
+composer.json
+.env
+NOTE: Exact structure varies by framework. Keep the web-facing entry point in
+public/ when possible and keep secrets outside committed source.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-include-require" class="project-command child-08 uid-ref-php-section-02-control-flow-functions-file-structure-include-require php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Include / Require
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-include-require" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-include-require" aria-label="Expand Include / Require"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-include-require" class="project-command-panel" hidden>
+    <pre><code>• require stops execution if the file cannot be loaded.
+• include emits a warning and continues.
+• *_once prevents loading the same file twice.
+require __DIR__ . &#x27;/config.php&#x27;;
+require_once __DIR__ . &#x27;/vendor/autoload.php&#x27;;
+include __DIR__ . &#x27;/partials/header.php&#x27;;</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-namespaces-imports" class="project-command child-09 uid-ref-php-section-02-control-flow-functions-file-structure-namespaces-imports php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Namespaces + Imports
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-namespaces-imports" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-namespaces-imports" aria-label="Expand Namespaces + Imports"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-namespaces-imports" class="project-command-panel" hidden>
+    <pre><code>namespace App\Services;
+use App\Models\User;
+use PDO;
+class UserService {
+// ...
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-02-control-flow-functions-file-structure-more-documentation-composer-autoloading" class="project-command child-10 uid-ref-php-section-02-control-flow-functions-file-structure-more-documentation-composer-autoloading php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — Composer + autoloading
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-more-documentation-composer-autoloading" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-more-documentation-composer-autoloading" aria-label="Expand Documentation — Composer + autoloading"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-02-control-flow-functions-file-structure-ref-php-section-02-control-flow-functions-file-structure-more-documentation-composer-autoloading" class="project-command-panel" hidden>
+    <p><a href="https://getcomposer.org/doc/" target="_blank" rel="noopener noreferrer">https://getcomposer.org/doc/</a></p>
+<p>PHP Manual &gt; Installation &gt; Introduction to Composer</p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-03-web-requests-forms-output"
+  class="project-detail node-04 uid-ref-php-section-03-web-requests-forms-output php-reference-section"
+>
+  
+<header>
+  <span>03</span>
+  <h3>Web Requests, Forms & Output</h3>
+  <p>Request data, validation, HTML escaping, JSON bodies, responses, uploads, redirects, and status codes.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-03-web-requests-forms-output-request-superglobals" class="project-command child-01 uid-ref-php-section-03-web-requests-forms-output-request-superglobals php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Request Superglobals
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-request-superglobals" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-request-superglobals" aria-label="Expand Request Superglobals"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-request-superglobals" class="project-command-panel" hidden>
+    <pre><code>$_GET       // query string
+$_POST      // form POST body
+$_FILES     // uploaded files
+$_COOKIE    // cookies
+$_SESSION   // session data
+$_SERVER    // request/server info
+$_ENV       // environment values
+NOTE: These are superglobals: they are available inside functions without
+declaring global. Treat request values as untrusted input.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-get-query-example" class="project-command child-02 uid-ref-php-section-03-web-requests-forms-output-get-query-example php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Get Query Example
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-get-query-example" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-get-query-example" aria-label="Expand Get Query Example"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-get-query-example" class="project-command-panel" hidden>
+    <pre><code>// /search.php?q=owl&amp;page=2
+$q = trim($_GET[&#x27;q&#x27;] ?? &#x27;&#x27;);
+$page = max(1, (int)($_GET[&#x27;page&#x27;] ?? 1));
+if ($q === &#x27;&#x27;) {
+http_response_code(400);
+exit(&#x27;Missing search term&#x27;);
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-post-form-example" class="project-command child-03 uid-ref-php-section-03-web-requests-forms-output-post-form-example php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Post Form Example
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-post-form-example" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-post-form-example" aria-label="Expand Post Form Example"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-post-form-example" class="project-command-panel" hidden>
+    <pre><code>$email = filter_input(
+INPUT_POST,
+&#x27;email&#x27;,
+FILTER_VALIDATE_EMAIL
+);
+if (!$email) {
+$error = &#x27;Enter a valid email.&#x27;;
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-escape-html-output" class="project-command child-04 uid-ref-php-section-03-web-requests-forms-output-escape-html-output php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Escape Html Output
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-escape-html-output" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-escape-html-output" aria-label="Expand Escape Html Output"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-escape-html-output" class="project-command-panel" hidden>
+    <pre><code>&lt;?= htmlspecialchars(
+$user[&#x27;name&#x27;],
+ENT_QUOTES | ENT_SUBSTITUTE,
+&#x27;UTF-8&#x27;
+) ?&gt;
+NOTE: Validation asks &quot;is this acceptable input?&quot; Escaping asks &quot;is this safe in
+this output context?&quot; Do both where appropriate.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-request-method-headers" class="project-command child-05 uid-ref-php-section-03-web-requests-forms-output-request-method-headers php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Request Method + Headers
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-request-method-headers" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-request-method-headers" aria-label="Expand Request Method + Headers"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-request-method-headers" class="project-command-panel" hidden>
+    <pre><code>$method = $_SERVER[&#x27;REQUEST_METHOD&#x27;];
+$contentType = $_SERVER[&#x27;CONTENT_TYPE&#x27;] ?? &#x27;&#x27;;
+header(&#x27;Content-Type: application/json&#x27;);
+http_response_code(201);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-read-json-request-body" class="project-command child-06 uid-ref-php-section-03-web-requests-forms-output-read-json-request-body php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Read Json Request Body
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-read-json-request-body" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-read-json-request-body" aria-label="Expand Read Json Request Body"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-read-json-request-body" class="project-command-panel" hidden>
+    <pre><code>$raw = file_get_contents(&#x27;php://input&#x27;);
+$data = json_decode($raw, true, 512, JSON_THROW_ON_ERROR);
+$name = trim($data[&#x27;name&#x27;] ?? &#x27;&#x27;);
+NOTE: Use JSON_THROW_ON_ERROR so malformed JSON becomes an
+exception instead of silently returning null.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-send-json-response" class="project-command child-07 uid-ref-php-section-03-web-requests-forms-output-send-json-response php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Send Json Response
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-send-json-response" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-send-json-response" aria-label="Expand Send Json Response"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-send-json-response" class="project-command-panel" hidden>
+    <pre><code>header(&#x27;Content-Type: application/json&#x27;);
+echo json_encode([
+&#x27;ok&#x27; =&gt; true,
+&#x27;data&#x27; =&gt; $user,
+], JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-file-upload-basics" class="project-command child-08 uid-ref-php-section-03-web-requests-forms-output-file-upload-basics php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  File Upload Basics
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-file-upload-basics" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-file-upload-basics" aria-label="Expand File Upload Basics"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-file-upload-basics" class="project-command-panel" hidden>
+    <pre><code>if ($_FILES[&#x27;photo&#x27;][&#x27;error&#x27;] === UPLOAD_ERR_OK) {
+$tmp = $_FILES[&#x27;photo&#x27;][&#x27;tmp_name&#x27;];
+$name = basename($_FILES[&#x27;photo&#x27;][&#x27;name&#x27;]);
+move_uploaded_file(
+$tmp,
+__DIR__ . &#x27;/uploads/&#x27; . $name
+);
+}
+NOTE: For production uploads, generate your own filename, validate
+MIME/type and size, restrict allowed extensions, and keep executable uploads
+out of web-accessible paths.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-redirect" class="project-command child-09 uid-ref-php-section-03-web-requests-forms-output-redirect php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Redirect
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-redirect" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-redirect" aria-label="Expand Redirect"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-redirect" class="project-command-panel" hidden>
+    <pre><code>header(&#x27;Location: /dashboard.php&#x27;);
+exit;
+NOTE: Call exit after a redirect to stop the current script from continuing.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-common-http-status-codes" class="project-command child-10 uid-ref-php-section-03-web-requests-forms-output-common-http-status-codes php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Common Http Status Codes
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-common-http-status-codes" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-common-http-status-codes" aria-label="Expand Common Http Status Codes"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-common-http-status-codes" class="project-command-panel" hidden>
+    <pre><code>• 200 OK - successful request.
+• 201 Created - resource created.
+• 204 No Content - success with no response body.
+• 400 Bad Request - malformed/invalid request.
+• 401 Unauthorized - authentication required.
+• 403 Forbidden - authenticated but not allowed.
+• 404 Not Found.
+• 422 Unprocessable Content - validation failure.
+• 500 Internal Server Error.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-03-web-requests-forms-output-more-documentation-web-features" class="project-command child-11 uid-ref-php-section-03-web-requests-forms-output-more-documentation-web-features php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — Web features
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-more-documentation-web-features" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-more-documentation-web-features" aria-label="Expand Documentation — Web features"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-03-web-requests-forms-output-ref-php-section-03-web-requests-forms-output-more-documentation-web-features" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/features.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/features.php</a></p>
+<p>PHP Manual &gt; Features &gt; Cookies / Sessions / File Uploads</p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-04-objects-exceptions-files-utilities"
+  class="project-detail node-05 uid-ref-php-section-04-objects-exceptions-files-utilities php-reference-section"
+>
+  
+<header>
+  <span>04</span>
+  <h3>Objects, Exceptions, Files & Utilities</h3>
+  <p>Classes, interfaces, enums, exceptions, logging, dates, files, JSON, paths, and environment values.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-class-constructor" class="project-command child-01 uid-ref-php-section-04-objects-exceptions-files-utilities-class-constructor php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Class + Constructor
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-class-constructor" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-class-constructor" aria-label="Expand Class + Constructor"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-class-constructor" class="project-command-panel" hidden>
+    <pre><code>class User {
+public function __construct(
+public int $id,
+public string $name,
+private string $email
+) {}
+public function label(): string {
+return &quot;{$this-&gt;id}: {$this-&gt;name}&quot;;
+}
+}
+$user = new User(1, &#x27;Ada&#x27;, &#x27;a@example.com&#x27;);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-inheritance-interface" class="project-command child-02 uid-ref-php-section-04-objects-exceptions-files-utilities-inheritance-interface php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Inheritance + Interface
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-inheritance-interface" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-inheritance-interface" aria-label="Expand Inheritance + Interface"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-inheritance-interface" class="project-command-panel" hidden>
+    <pre><code>interface Logger {
+public function log(string $message): void;
+}
+class FileLogger implements Logger {
+public function log(string $message): void {
+// ...
+}
+}
+class AdminUser extends User {
+// ...
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-static-enum" class="project-command child-03 uid-ref-php-section-04-objects-exceptions-files-utilities-static-enum php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Static + Enum
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-static-enum" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-static-enum" aria-label="Expand Static + Enum"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-static-enum" class="project-command-panel" hidden>
+    <pre><code>class Slug {
+public static function make(string $text): string {
+return strtolower(str_replace(&#x27; &#x27;, &#x27;-&#x27;, $text));
+}
+}
+enum Role: string {
+case Admin = &#x27;admin&#x27;;
+case User = &#x27;user&#x27;;
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-exceptions" class="project-command child-04 uid-ref-php-section-04-objects-exceptions-files-utilities-exceptions php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Exceptions
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-exceptions" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-exceptions" aria-label="Expand Exceptions"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-exceptions" class="project-command-panel" hidden>
+    <pre><code>try {
+$user = loadUser($id);
+} catch (PDOException $e) {
+error_log($e-&gt;getMessage());
+http_response_code(500);
+} catch (Throwable $e) {
+error_log($e-&gt;getMessage());
+} finally {
+// optional cleanup
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-throw-your-own-error" class="project-command child-05 uid-ref-php-section-04-objects-exceptions-files-utilities-throw-your-own-error php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Throw Your Own Error
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-throw-your-own-error" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-throw-your-own-error" aria-label="Expand Throw Your Own Error"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-throw-your-own-error" class="project-command-panel" hidden>
+    <pre><code>if ($amount &lt; 0) {
+throw new InvalidArgumentException(
+&#x27;Amount cannot be negative&#x27;
+);
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-debug-logging" class="project-command child-06 uid-ref-php-section-04-objects-exceptions-files-utilities-debug-logging php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Debug + Logging
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-debug-logging" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-debug-logging" aria-label="Expand Debug + Logging"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-debug-logging" class="project-command-panel" hidden>
+    <pre><code>error_reporting(E_ALL);
+ini_set(&#x27;display_errors&#x27;, &#x27;1&#x27;); // local dev only
+error_log(&#x27;Reached checkout&#x27;);
+var_dump($value);
+NOTE: Do not display stack traces or sensitive error details to users in
+production. Log them instead.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-date-time" class="project-command child-07 uid-ref-php-section-04-objects-exceptions-files-utilities-date-time php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Date + Time
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-date-time" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-date-time" aria-label="Expand Date + Time"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-date-time" class="project-command-panel" hidden>
+    <pre><code>$now = new DateTimeImmutable(&#x27;now&#x27;);
+$tomorrow = $now-&gt;modify(&#x27;+1 day&#x27;);
+echo $now-&gt;format(&#x27;Y-m-d H:i:s&#x27;);
+$created = new DateTimeImmutable($row[&#x27;created_at&#x27;]);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-files" class="project-command child-08 uid-ref-php-section-04-objects-exceptions-files-utilities-files php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Files
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-files" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-files" aria-label="Expand Files"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-files" class="project-command-panel" hidden>
+    <pre><code>$text = file_get_contents($path);
+file_put_contents($path, $text);
+file_put_contents($log, $line, FILE_APPEND);
+file_exists($path);
+is_file($path);
+is_dir($path);
+mkdir($dir, 0755, true);
+unlink($path);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-path-helpers" class="project-command child-09 uid-ref-php-section-04-objects-exceptions-files-utilities-path-helpers php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Path Helpers
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-path-helpers" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-path-helpers" aria-label="Expand Path Helpers"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-path-helpers" class="project-command-panel" hidden>
+    <pre><code>__DIR__
+__FILE__
+$path = __DIR__ . &#x27;/data/users.json&#x27;;
+$base = basename($path);
+$dir = dirname($path);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-json" class="project-command child-10 uid-ref-php-section-04-objects-exceptions-files-utilities-json php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Json
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-json" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-json" aria-label="Expand Json"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-json" class="project-command-panel" hidden>
+    <pre><code>$json = json_encode($data, JSON_THROW_ON_ERROR);
+$data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-environment-values" class="project-command child-11 uid-ref-php-section-04-objects-exceptions-files-utilities-environment-values php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Environment Values
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-environment-values" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-environment-values" aria-label="Expand Environment Values"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-environment-values" class="project-command-panel" hidden>
+    <pre><code>$apiKey = getenv(&#x27;API_KEY&#x27;);
+$dbUrl = $_ENV[&#x27;DATABASE_URL&#x27;] ?? null;
+NOTE: How .env is loaded depends on your framework/library. Never commit
+real API keys, passwords or production connection strings.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-04-objects-exceptions-files-utilities-more-documentation-functions-classes" class="project-command child-12 uid-ref-php-section-04-objects-exceptions-files-utilities-more-documentation-functions-classes php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — Functions + classes
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-more-documentation-functions-classes" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-more-documentation-functions-classes" aria-label="Expand Documentation — Functions + classes"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-04-objects-exceptions-files-utilities-ref-php-section-04-objects-exceptions-files-utilities-more-documentation-functions-classes" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/funcref.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/funcref.php</a></p>
+<p><a href="https://www.php.net/manual/en/language.oop5.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/language.oop5.php</a></p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-05-sessions-cookies-passwords-security"
+  class="project-detail node-06 uid-ref-php-section-05-sessions-cookies-passwords-security php-reference-section"
+>
+  
+<header>
+  <span>05</span>
+  <h3>Sessions, Cookies, Passwords & Security</h3>
+  <p>Sessions, cookies, password hashing, CSRF protection, secure randomness, and web security defaults.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-sessions" class="project-command child-01 uid-ref-php-section-05-sessions-cookies-passwords-security-sessions php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Sessions
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-sessions" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-sessions" aria-label="Expand Sessions"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-sessions" class="project-command-panel" hidden>
+    <pre><code>session_start();
+$_SESSION[&#x27;user_id&#x27;] = $user[&#x27;id&#x27;];
+$userId = $_SESSION[&#x27;user_id&#x27;] ?? null;
+unset($_SESSION[&#x27;user_id&#x27;]);
+session_destroy();
+NOTE: Call session_start() before reading/writing $_SESSION, and before output
+unless your environment uses output buffering.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-regenerate-after-login" class="project-command child-02 uid-ref-php-section-05-sessions-cookies-passwords-security-regenerate-after-login php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Regenerate After Login
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-regenerate-after-login" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-regenerate-after-login" aria-label="Expand Regenerate After Login"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-regenerate-after-login" class="project-command-panel" hidden>
+    <pre><code>session_start();
+// after successful authentication
+session_regenerate_id(true);
+$_SESSION[&#x27;user_id&#x27;] = $user[&#x27;id&#x27;];
+NOTE: Regenerating the session ID after authentication helps protect against
+session fixation.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-cookies" class="project-command child-03 uid-ref-php-section-05-sessions-cookies-passwords-security-cookies php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Cookies
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-cookies" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-cookies" aria-label="Expand Cookies"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-cookies" class="project-command-panel" hidden>
+    <pre><code>setcookie(&#x27;theme&#x27;, &#x27;dark&#x27;, [
+&#x27;expires&#x27; =&gt; time() + 86400 * 30,
+&#x27;path&#x27; =&gt; &#x27;/&#x27;,
+&#x27;secure&#x27; =&gt; true,
+&#x27;httponly&#x27; =&gt; true,
+&#x27;samesite&#x27; =&gt; &#x27;Lax&#x27;,
+]);
+$theme = $_COOKIE[&#x27;theme&#x27;] ?? &#x27;light&#x27;;</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-password-hashing" class="project-command child-04 uid-ref-php-section-05-sessions-cookies-passwords-security-password-hashing php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Password Hashing
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-password-hashing" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-password-hashing" aria-label="Expand Password Hashing"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-password-hashing" class="project-command-panel" hidden>
+    <pre><code>$hash = password_hash(
+$password,
+PASSWORD_DEFAULT
+);
+if (password_verify($password, $hash)) {
+// authenticated
+}
+if (password_needs_rehash($hash, PASSWORD_DEFAULT)) {
+$hash = password_hash($password, PASSWORD_DEFAULT);
+}
+NOTE: Store the password hash, never the original password.
+PASSWORD_DEFAULT lets PHP choose the current recommended default
+algorithm.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-csrf-pattern" class="project-command child-05 uid-ref-php-section-05-sessions-cookies-passwords-security-csrf-pattern php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Csrf Pattern
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-csrf-pattern" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-csrf-pattern" aria-label="Expand Csrf Pattern"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-csrf-pattern" class="project-command-panel" hidden>
+    <pre><code>session_start();
+$_SESSION[&#x27;csrf&#x27;] ??= bin2hex(random_bytes(32));
+// form includes token
+// compare submitted token on POST
+if (!hash_equals(
+$_SESSION[&#x27;csrf&#x27;],
+$_POST[&#x27;csrf&#x27;] ?? &#x27;&#x27;
+)) {
+http_response_code(403);
+exit(&#x27;Invalid request&#x27;);
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-generate-secure-random-values" class="project-command child-06 uid-ref-php-section-05-sessions-cookies-passwords-security-generate-secure-random-values php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Generate Secure Random Values
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-generate-secure-random-values" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-generate-secure-random-values" aria-label="Expand Generate Secure Random Values"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-generate-secure-random-values" class="project-command-panel" hidden>
+    <pre><code>$token = bin2hex(random_bytes(32));
+$id = random_int(100000, 999999);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-web-security-checklist" class="project-command child-07 uid-ref-php-section-05-sessions-cookies-passwords-security-web-security-checklist php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Web Security Checklist
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-web-security-checklist" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-web-security-checklist" aria-label="Expand Web Security Checklist"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-web-security-checklist" class="project-command-panel" hidden>
+    <pre><code>• Escape dynamic HTML with htmlspecialchars().
+• Validate expected type/range/format of input.
+• Use PDO prepared statements for user-supplied SQL values.
+• Hash passwords with password_hash().
+• Use HTTPS in production.
+• Use secure, HttpOnly and SameSite cookie settings where appropriate.
+• Use CSRF protection for state-changing browser requests.
+• Do not expose secrets in Git, HTML, JavaScript or error pages.
+• Restrict file uploads by type, size, filename and destination.
+• Return generic production errors; log details server-side.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-do-not-do-this" class="project-command child-08 uid-ref-php-section-05-sessions-cookies-passwords-security-do-not-do-this php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Do Not Do This
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-do-not-do-this" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-do-not-do-this" aria-label="Expand Do Not Do This"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-do-not-do-this" class="project-command-panel" hidden>
+    <pre><code>// SQL injection risk
+$sql = &quot;SELECT * FROM users WHERE email = &#x27;$email&#x27;&quot;;
+// XSS risk
+echo $_GET[&#x27;name&#x27;];
+// secret leak
+$apiKey = &#x27;real-production-key&#x27;;</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-05-sessions-cookies-passwords-security-more-documentation-security" class="project-command child-09 uid-ref-php-section-05-sessions-cookies-passwords-security-more-documentation-security php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — Security
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-more-documentation-security" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-more-documentation-security" aria-label="Expand Documentation — Security"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-05-sessions-cookies-passwords-security-ref-php-section-05-sessions-cookies-passwords-security-more-documentation-security" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/security.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/security.php</a></p>
+<p>PHP Manual &gt; Security &gt; User Submitted Data / Database Security / Session Security</p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-06-pdo-database-access"
+  class="project-detail node-07 uid-ref-php-section-06-pdo-database-access php-reference-section"
+>
+  
+<header>
+  <span>06</span>
+  <h3>PDO Database Access</h3>
+  <p>PDO connections, prepared statements, CRUD operations, transactions, and practical database access patterns.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-06-pdo-database-access-connect-postgresql" class="project-command child-01 uid-ref-php-section-06-pdo-database-access-connect-postgresql php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Connect - Postgresql
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-connect-postgresql" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-connect-postgresql" aria-label="Expand Connect - Postgresql"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-connect-postgresql" class="project-command-panel" hidden>
+    <pre><code>$pdo = new PDO(
+&#x27;pgsql:host=localhost;port=5432;dbname=app&#x27;,
+$dbUser,
+$dbPass,
+[
+PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION,
+PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,
+]
+);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-connect-mysql" class="project-command child-02 uid-ref-php-section-06-pdo-database-access-connect-mysql php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Connect - Mysql
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-connect-mysql" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-connect-mysql" aria-label="Expand Connect - Mysql"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-connect-mysql" class="project-command-panel" hidden>
+    <pre><code>$pdo = new PDO(
+&#x27;mysql:host=localhost;dbname=app;charset=utf8mb4&#x27;,
+$dbUser,
+$dbPass,
+[
+PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION,
+PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,
+]
+);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-select-one-row" class="project-command child-03 uid-ref-php-section-06-pdo-database-access-select-one-row php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Select One Row
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-select-one-row" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-select-one-row" aria-label="Expand Select One Row"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-select-one-row" class="project-command-panel" hidden>
+    <pre><code>$stmt = $pdo-&gt;prepare(
+&#x27;SELECT id, name, email FROM users WHERE id = :id&#x27;
+);
+$stmt-&gt;execute([&#x27;id&#x27; =&gt; $id]);
+$user = $stmt-&gt;fetch();</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-select-many-rows" class="project-command child-04 uid-ref-php-section-06-pdo-database-access-select-many-rows php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Select Many Rows
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-select-many-rows" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-select-many-rows" aria-label="Expand Select Many Rows"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-select-many-rows" class="project-command-panel" hidden>
+    <pre><code>$stmt = $pdo-&gt;prepare(
+&#x27;SELECT id, name FROM users WHERE active = :active ORDER BY name&#x27;
+);
+$stmt-&gt;execute([&#x27;active&#x27; =&gt; true]);
+$users = $stmt-&gt;fetchAll();</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-insert" class="project-command child-05 uid-ref-php-section-06-pdo-database-access-insert php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Insert
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-insert" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-insert" aria-label="Expand Insert"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-insert" class="project-command-panel" hidden>
+    <pre><code>$stmt = $pdo-&gt;prepare(
+&#x27;INSERT INTO users (name, email) VALUES (:name, :email)&#x27;
+);
+$stmt-&gt;execute([
+&#x27;name&#x27; =&gt; $name,
+&#x27;email&#x27; =&gt; $email,
+]);
+$id = $pdo-&gt;lastInsertId();</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-update-delete" class="project-command child-06 uid-ref-php-section-06-pdo-database-access-update-delete php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Update + Delete
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-update-delete" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-update-delete" aria-label="Expand Update + Delete"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-update-delete" class="project-command-panel" hidden>
+    <pre><code>$stmt = $pdo-&gt;prepare(
+&#x27;UPDATE users SET name = :name WHERE id = :id&#x27;
+);
+$stmt-&gt;execute([&#x27;name&#x27; =&gt; $name, &#x27;id&#x27; =&gt; $id]);
+$stmt = $pdo-&gt;prepare(
+&#x27;DELETE FROM users WHERE id = :id&#x27;
+);
+$stmt-&gt;execute([&#x27;id&#x27; =&gt; $id]);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-transaction" class="project-command child-07 uid-ref-php-section-06-pdo-database-access-transaction php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Transaction
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-transaction" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-transaction" aria-label="Expand Transaction"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-transaction" class="project-command-panel" hidden>
+    <pre><code>try {
+$pdo-&gt;beginTransaction();
+// run related statements
+$pdo-&gt;commit();
+} catch (Throwable $e) {
+if ($pdo-&gt;inTransaction()) {
+$pdo-&gt;rollBack();
+}
+throw $e;
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-prepared-statement-rule" class="project-command child-08 uid-ref-php-section-06-pdo-database-access-prepared-statement-rule php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Prepared Statement Rule
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-prepared-statement-rule" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-prepared-statement-rule" aria-label="Expand Prepared Statement Rule"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-prepared-statement-rule" class="project-command-panel" hidden>
+    <pre><code>Use placeholders for data values: :id, :email, or ?. Do not concatenate user
+input into SQL.
+NOTE: Prepared statements help prevent SQL injection. Placeholders represent
+complete data values; they cannot safely stand in for arbitrary SQL identifiers
+such as a table name or ORDER BY column.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-useful-pdo-calls" class="project-command child-09 uid-ref-php-section-06-pdo-database-access-useful-pdo-calls php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Useful Pdo Calls
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-useful-pdo-calls" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-useful-pdo-calls" aria-label="Expand Useful Pdo Calls"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-useful-pdo-calls" class="project-command-panel" hidden>
+    <pre><code>• $pdo-&gt;prepare($sql) - create prepared statement.
+• $stmt-&gt;execute($values) - execute with values.
+• $stmt-&gt;fetch() - next row.
+• $stmt-&gt;fetchAll() - remaining rows.
+• $stmt-&gt;rowCount() - affected rows (behavior varies for SELECT by driver).
+• $pdo-&gt;lastInsertId() - last generated ID where supported.
+• beginTransaction(), commit(), rollBack().</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-06-pdo-database-access-more-documentation-pdo" class="project-command child-10 uid-ref-php-section-06-pdo-database-access-more-documentation-pdo php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — PDO
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-more-documentation-pdo" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-more-documentation-pdo" aria-label="Expand Documentation — PDO"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-06-pdo-database-access-ref-php-section-06-pdo-database-access-more-documentation-pdo" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/book.pdo.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/book.pdo.php</a></p>
+<p><a href="https://www.php.net/manual/en/pdo.prepare.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/pdo.prepare.php</a></p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-07-php-curl-request-pattern"
+  class="project-detail node-08 uid-ref-php-section-07-php-curl-request-pattern php-reference-section"
+>
+  
+<header>
+  <span>07</span>
+  <h3>PHP cURL — Request Pattern</h3>
+  <p>Core PHP cURL lifecycle, GET requests, authentication headers, status inspection, and request debugging.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-07-php-curl-request-pattern-the-pattern-to-remember" class="project-command child-01 uid-ref-php-section-07-php-curl-request-pattern-the-pattern-to-remember php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  The Pattern To Remember
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-the-pattern-to-remember" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-the-pattern-to-remember" aria-label="Expand The Pattern To Remember"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-the-pattern-to-remember" class="project-command-panel" hidden>
+    <pre><code>$ch = curl_init($url);
+curl_setopt_array($ch, [
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_TIMEOUT =&gt; 15,
+]);
+$response = curl_exec($ch);
+if ($response === false) {
+throw new RuntimeException(curl_error($ch));
+}
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+NOTE: Think of cURL as: 1) create request handle, 2) set request options, 3)
+execute, 4) inspect response/status/error, 5) close or let the handle go out of
+scope.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-07-php-curl-request-pattern-simple-get" class="project-command child-02 uid-ref-php-section-07-php-curl-request-pattern-simple-get php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Simple Get
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-simple-get" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-simple-get" aria-label="Expand Simple Get"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-simple-get" class="project-command-panel" hidden>
+    <pre><code>$url = &#x27;https://api.example.com/users/42&#x27;;
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+if ($response === false) {
+throw new RuntimeException(curl_error($ch));
+}
+$data = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
+curl_close($ch);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-07-php-curl-request-pattern-get-with-query-parameters" class="project-command child-03 uid-ref-php-section-07-php-curl-request-pattern-get-with-query-parameters php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Get With Query Parameters
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-get-with-query-parameters" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-get-with-query-parameters" aria-label="Expand Get With Query Parameters"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-get-with-query-parameters" class="project-command-panel" hidden>
+    <pre><code>$query = http_build_query([
+&#x27;q&#x27; =&gt; &#x27;brown pelican&#x27;,
+&#x27;page&#x27; =&gt; 2,
+&#x27;limit&#x27; =&gt; 20,
+]);
+$url = &#x27;https://api.example.com/search?&#x27; . $query;
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-07-php-curl-request-pattern-get-with-bearer-token" class="project-command child-04 uid-ref-php-section-07-php-curl-request-pattern-get-with-bearer-token php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Get With Bearer Token
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-get-with-bearer-token" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-get-with-bearer-token" aria-label="Expand Get With Bearer Token"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-get-with-bearer-token" class="project-command-panel" hidden>
+    <pre><code>$ch = curl_init($url);
+curl_setopt_array($ch, [
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_HTTPHEADER =&gt; [
+&#x27;Accept: application/json&#x27;,
+&#x27;Authorization: Bearer &#x27; . $token,
+],
+]);
+$response = curl_exec($ch);
+NOTE: Send credentials only over HTTPS. Keep tokens in environment/config,
+not in committed source.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-07-php-curl-request-pattern-useful-get-options" class="project-command child-05 uid-ref-php-section-07-php-curl-request-pattern-useful-get-options php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Useful Get Options
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-useful-get-options" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-useful-get-options" aria-label="Expand Useful Get Options"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-useful-get-options" class="project-command-panel" hidden>
+    <pre><code>• CURLOPT_RETURNTRANSFER =&gt; true - return body as a string instead of
+printing it.
+• CURLOPT_TIMEOUT =&gt; 15 - total timeout in seconds.
+• CURLOPT_CONNECTTIMEOUT =&gt; 5 - connection timeout.
+• CURLOPT_FOLLOWLOCATION =&gt; true - follow redirects when appropriate.
+• CURLOPT_HTTPHEADER =&gt; [...] - custom headers.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-07-php-curl-request-pattern-inspect-status-response" class="project-command child-06 uid-ref-php-section-07-php-curl-request-pattern-inspect-status-response php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Inspect Status + Response
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-inspect-status-response" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-inspect-status-response" aria-label="Expand Inspect Status + Response"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-inspect-status-response" class="project-command-panel" hidden>
+    <pre><code>$response = curl_exec($ch);
+if ($response === false) {
+$message = curl_error($ch);
+$number = curl_errno($ch);
+}
+$status = curl_getinfo(
+$ch,
+CURLINFO_HTTP_CODE
+);
+if ($status &gt;= 400) {
+// API returned an HTTP error response
+}
+NOTE: A network/cURL failure and an HTTP 404/500 are different. curl_exec()
+can succeed at the transport level while the server returns an HTTP error
+status.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-07-php-curl-request-pattern-debug-request-metadata" class="project-command child-07 uid-ref-php-section-07-php-curl-request-pattern-debug-request-metadata php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Debug Request Metadata
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-debug-request-metadata" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-debug-request-metadata" aria-label="Expand Debug Request Metadata"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-debug-request-metadata" class="project-command-panel" hidden>
+    <pre><code>$info = curl_getinfo($ch);
+// examples
+$info[&#x27;http_code&#x27;];
+$info[&#x27;total_time&#x27;];
+$info[&#x27;content_type&#x27;];</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-07-php-curl-request-pattern-more-documentation-curl" class="project-command child-08 uid-ref-php-section-07-php-curl-request-pattern-more-documentation-curl php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — cURL
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-more-documentation-curl" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-more-documentation-curl" aria-label="Expand Documentation — cURL"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-07-php-curl-request-pattern-ref-php-section-07-php-curl-request-pattern-more-documentation-curl" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/book.curl.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/book.curl.php</a></p>
+<p>Search PHP Manual for CURLOPT_* or curl_getinfo.</p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-08-curl-post-json-put-patch-delete-uploads"
+  class="project-detail node-09 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads php-reference-section"
+>
+  
+<header>
+  <span>08</span>
+  <h3>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</h3>
+  <p>JSON and form POST requests, HTTP methods, uploads, and a reusable JSON request helper.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-json" class="project-command child-01 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-json php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Post Json
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-json" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-json" aria-label="Expand Post Json"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-json" class="project-command-panel" hidden>
+    <pre><code>$payload = json_encode([
+&#x27;name&#x27; =&gt; &#x27;Ada&#x27;,
+&#x27;email&#x27; =&gt; &#x27;ada@example.com&#x27;,
+], JSON_THROW_ON_ERROR);
+$ch = curl_init(&#x27;https://api.example.com/users&#x27;);
+curl_setopt_array($ch, [
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_POST =&gt; true,
+CURLOPT_POSTFIELDS =&gt; $payload,
+CURLOPT_HTTPHEADER =&gt; [
+&#x27;Content-Type: application/json&#x27;,
+&#x27;Accept: application/json&#x27;,
+],
+]);
+$response = curl_exec($ch);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-form-data" class="project-command child-02 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-form-data php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Post Form Data
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-form-data" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-form-data" aria-label="Expand Post Form Data"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-post-form-data" class="project-command-panel" hidden>
+    <pre><code>$ch = curl_init($url);
+curl_setopt_array($ch, [
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_POST =&gt; true,
+CURLOPT_POSTFIELDS =&gt; [
+&#x27;name&#x27; =&gt; &#x27;Ada&#x27;,
+&#x27;email&#x27; =&gt; &#x27;ada@example.com&#x27;,
+],
+]);
+$response = curl_exec($ch);
+NOTE: Passing an array to CURLOPT_POSTFIELDS creates multipart form data.
+For application/x-www-form-urlencoded data, pass http_build_query($data)
+and the matching content type.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-08-curl-post-json-put-patch-delete-uploads-put-patch-delete" class="project-command child-03 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads-put-patch-delete php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Put / Patch / Delete
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-put-patch-delete" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-put-patch-delete" aria-label="Expand Put / Patch / Delete"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-put-patch-delete" class="project-command-panel" hidden>
+    <pre><code>$payload = json_encode($data, JSON_THROW_ON_ERROR);
+$ch = curl_init($url);
+curl_setopt_array($ch, [
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_CUSTOMREQUEST =&gt; &#x27;PATCH&#x27;, // PUT or DELETE
+CURLOPT_POSTFIELDS =&gt; $payload,
+CURLOPT_HTTPHEADER =&gt; [
+&#x27;Content-Type: application/json&#x27;,
+&#x27;Authorization: Bearer &#x27; . $token,
+],
+]);
+$response = curl_exec($ch);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-08-curl-post-json-put-patch-delete-uploads-upload-a-file" class="project-command child-04 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads-upload-a-file php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Upload A File
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-upload-a-file" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-upload-a-file" aria-label="Expand Upload A File"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-upload-a-file" class="project-command-panel" hidden>
+    <pre><code>$file = new CURLFile(
+$path,
+mime_content_type($path),
+basename($path)
+);
+$ch = curl_init($url);
+curl_setopt_array($ch, [
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_POST =&gt; true,
+CURLOPT_POSTFIELDS =&gt; [
+&#x27;photo&#x27; =&gt; $file,
+&#x27;caption&#x27; =&gt; &#x27;Pelican study&#x27;,
+],
+]);
+$response = curl_exec($ch);</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-08-curl-post-json-put-patch-delete-uploads-reusable-json-request-helper" class="project-command child-05 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads-reusable-json-request-helper php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Reusable Json Request Helper
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-reusable-json-request-helper" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-reusable-json-request-helper" aria-label="Expand Reusable Json Request Helper"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-reusable-json-request-helper" class="project-command-panel" hidden>
+    <pre><code>function requestJson(
+string $method,
+string $url,
+?array $body = null,
+array $headers = []
+): array {
+$ch = curl_init($url);
+$options = [
+CURLOPT_RETURNTRANSFER =&gt; true,
+CURLOPT_TIMEOUT =&gt; 15,
+CURLOPT_CUSTOMREQUEST =&gt; $method,
+CURLOPT_HTTPHEADER =&gt; array_merge(
+[&#x27;Accept: application/json&#x27;],
+$headers
+),
+];
+if ($body !== null) {
+$options[CURLOPT_POSTFIELDS] = json_encode(
+$body, JSON_THROW_ON_ERROR
+);
+}
+curl_setopt_array($ch, $options);
+$response = curl_exec($ch);
+if ($response === false) {
+throw new RuntimeException(curl_error($ch));
+}
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+return [
+&#x27;status&#x27; =&gt; $status,
+&#x27;data&#x27; =&gt; json_decode($response, true, 512, JSON_THROW_ON_ERROR),
+];
+}
+NOTE: If you send a JSON body, include Content-Type: application/json in
+$headers. Production helpers may also need retry rules, structured errors,
+tracing and rate-limit handling.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-08-curl-post-json-put-patch-delete-uploads-more-documentation-curl-file-uploads" class="project-command child-06 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads-more-documentation-curl-file-uploads php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — cURL file uploads
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-more-documentation-curl-file-uploads" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-more-documentation-curl-file-uploads" aria-label="Expand Documentation — cURL file uploads"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-08-curl-post-json-put-patch-delete-uploads-ref-php-section-08-curl-post-json-put-patch-delete-uploads-more-documentation-curl-file-uploads" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/class.curlfile.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/class.curlfile.php</a></p>
+<p><a href="https://www.php.net/manual/en/function.curl-setopt-array.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/function.curl-setopt-array.php</a></p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-09-cli-composer-daily-development"
+  class="project-detail node-10 uid-ref-php-section-09-cli-composer-daily-development php-reference-section"
+>
+  
+<header>
+  <span>09</span>
+  <h3>CLI, Composer & Daily Development</h3>
+  <p>PHP CLI, development server, Composer, package binaries, diagnostics, and macOS environment checks.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-09-cli-composer-daily-development-php-on-macos-terminal" class="project-command child-01 uid-ref-php-section-09-cli-composer-daily-development-php-on-macos-terminal php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Php On Macos Terminal
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-php-on-macos-terminal" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-php-on-macos-terminal" aria-label="Expand Php On Macos Terminal"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-php-on-macos-terminal" class="project-command-panel" hidden>
+    <pre><code>• php -v - installed PHP version.
+• php -m - loaded extensions.
+• php -l - syntax check a PHP file.
+• php --ini - locate loaded configuration files.
+php -v
+php -m
+php -i
+php -l file.php
+php script.php
+php -r &#x27;echo PHP_VERSION;&#x27;
+php --ini</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-built-in-dev-server" class="project-command child-02 uid-ref-php-section-09-cli-composer-daily-development-built-in-dev-server php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Built-In Dev Server
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-built-in-dev-server" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-built-in-dev-server" aria-label="Expand Built-In Dev Server"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-built-in-dev-server" class="project-command-panel" hidden>
+    <pre><code>cd project/public
+php -S localhost:8000
+NOTE: PHP&#x27;s built-in server is for development/testing, not a production web
+server.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-check-curl-pdo-modules" class="project-command child-03 uid-ref-php-section-09-cli-composer-daily-development-check-curl-pdo-modules php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Check Curl + Pdo Modules
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-check-curl-pdo-modules" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-check-curl-pdo-modules" aria-label="Expand Check Curl + Pdo Modules"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-check-curl-pdo-modules" class="project-command-panel" hidden>
+    <pre><code>php -m | grep curl
+php -m | grep PDO
+php -m | grep pdo_pgsql
+php -m | grep pdo_mysql</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-composer-essentials" class="project-command child-04 uid-ref-php-section-09-cli-composer-daily-development-composer-essentials php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Composer Essentials
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-composer-essentials" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-composer-essentials" aria-label="Expand Composer Essentials"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-composer-essentials" class="project-command-panel" hidden>
+    <pre><code>composer --version
+composer init
+composer install
+composer update
+composer require vendor/package
+composer require --dev vendor/package
+composer remove vendor/package
+composer dump-autoload
+composer show
+composer outdated
+NOTE: install follows the lock file when present; update resolves dependency
+versions and can change the lock file. Use update intentionally.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-run-package-binaries" class="project-command child-05 uid-ref-php-section-09-cli-composer-daily-development-run-package-binaries php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Run Package Binaries
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-run-package-binaries" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-run-package-binaries" aria-label="Expand Run Package Binaries"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-run-package-binaries" class="project-command-panel" hidden>
+    <pre><code>./vendor/bin/phpunit
+./vendor/bin/phpstan analyse
+./vendor/bin/php-cs-fixer fix
+NOTE: These commands work only if the corresponding development package
+is installed in the project.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-basic-composer-json-idea" class="project-command child-06 uid-ref-php-section-09-cli-composer-daily-development-basic-composer-json-idea php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Basic Composer.Json Idea
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-basic-composer-json-idea" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-basic-composer-json-idea" aria-label="Expand Basic Composer.Json Idea"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-basic-composer-json-idea" class="project-command-panel" hidden>
+    <pre><code>{
+&quot;require&quot;: {
+&quot;php&quot;: &quot;^8.4&quot;
+},
+&quot;autoload&quot;: {
+&quot;psr-4&quot;: {
+&quot;App\\&quot;: &quot;src/&quot;
+}
+}
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-when-something-fails" class="project-command child-07 uid-ref-php-section-09-cli-composer-daily-development-when-something-fails php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  When Something Fails
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-when-something-fails" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-when-something-fails" aria-label="Expand When Something Fails"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-when-something-fails" class="project-command-panel" hidden>
+    <pre><code>• Syntax error: run php -l file.php and read the first parser error.
+• Undefined function: check spelling and whether its extension is loaded
+with php -m.
+• Class not found: check namespace/import and run composer dump-
+autoload.
+• cURL failure: inspect curl_errno(), curl_error() and curl_getinfo().
+• HTTP API failure: inspect status code and body; transport success does
+not imply HTTP success.
+• PDO failure: use exception mode, log the exception, check
+DSN/credentials/driver.
+• Blank page in local dev: enable full error reporting temporarily and
+check server logs.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-mac-package-note" class="project-command child-08 uid-ref-php-section-09-cli-composer-daily-development-mac-package-note php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Mac Package Note
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-mac-package-note" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-mac-package-note" aria-label="Expand Mac Package Note"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-mac-package-note" class="project-command-panel" hidden>
+    <pre><code>On macOS, PHP is commonly installed/managed separately from the OS,
+often through a package manager or development environment. Your
+exact extension/config locations depend on how PHP was installed.
+NOTE: Use which php, php -v, and php --ini to see which PHP your terminal is
+actually using.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-09-cli-composer-daily-development-more-documentation-php-cli-installation" class="project-command child-09 uid-ref-php-section-09-cli-composer-daily-development-more-documentation-php-cli-installation php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — PHP CLI + installation
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-more-documentation-php-cli-installation" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-more-documentation-php-cli-installation" aria-label="Expand Documentation — PHP CLI + installation"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-09-cli-composer-daily-development-ref-php-section-09-cli-composer-daily-development-more-documentation-php-cli-installation" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/manual/en/features.commandline.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/features.commandline.php</a></p>
+<p><a href="https://www.php.net/manual/en/install.macosx.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/en/install.macosx.php</a></p>
+<p><a href="https://getcomposer.org/doc/" target="_blank" rel="noopener noreferrer">https://getcomposer.org/doc/</a></p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-section-10-high-value-patterns"
+  class="project-detail node-11 uid-ref-php-section-10-high-value-patterns php-reference-section"
+>
+  
+<header>
+  <span>10</span>
+  <h3>High-Value Patterns</h3>
+  <p>Request handling, API endpoints, outbound API calls, application flow, and practical safety checks.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-section-10-high-value-patterns-typical-request-controller-flow" class="project-command child-01 uid-ref-php-section-10-high-value-patterns-typical-request-controller-flow php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Typical Request/Controller Flow
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-request-controller-flow" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-request-controller-flow" aria-label="Expand Typical Request/Controller Flow"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-request-controller-flow" class="project-command-panel" hidden>
+    <pre><code>&lt;?php
+require_once __DIR__ . &#x27;/../vendor/autoload.php&#x27;;
+session_start();
+$id = filter_input(INPUT_GET, &#x27;id&#x27;, FILTER_VALIDATE_INT);
+if (!$id) {
+http_response_code(400);
+exit(&#x27;Invalid id&#x27;);
+}
+$stmt = $pdo-&gt;prepare(
+&#x27;SELECT id, name FROM users WHERE id = :id&#x27;
+);
+$stmt-&gt;execute([&#x27;id&#x27; =&gt; $id]);
+$user = $stmt-&gt;fetch();
+if (!$user) {
+http_response_code(404);
+exit(&#x27;Not found&#x27;);
+}
+require __DIR__ . &#x27;/../templates/user.php&#x27;;
+NOTE: The important pattern is input -&gt; validation -&gt; application/database
+work -&gt; response/template.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-10-high-value-patterns-typical-api-endpoint-flow" class="project-command child-02 uid-ref-php-section-10-high-value-patterns-typical-api-endpoint-flow php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Typical Api Endpoint Flow
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-api-endpoint-flow" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-api-endpoint-flow" aria-label="Expand Typical Api Endpoint Flow"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-api-endpoint-flow" class="project-command-panel" hidden>
+    <pre><code>header(&#x27;Content-Type: application/json&#x27;);
+try {
+$input = json_decode(
+file_get_contents(&#x27;php://input&#x27;),
+true, 512, JSON_THROW_ON_ERROR
+);
+// validate -&gt; perform work
+http_response_code(201);
+echo json_encode([&#x27;ok&#x27; =&gt; true], JSON_THROW_ON_ERROR);
+} catch (Throwable $e) {
+error_log($e-&gt;getMessage());
+http_response_code(500);
+echo json_encode([&#x27;error&#x27; =&gt; &#x27;Server error&#x27;]);
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-10-high-value-patterns-typical-api-client-flow-curl" class="project-command child-03 uid-ref-php-section-10-high-value-patterns-typical-api-client-flow-curl php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Typical Api Client Flow (Curl)
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-api-client-flow-curl" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-api-client-flow-curl" aria-label="Expand Typical Api Client Flow (Curl)"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-typical-api-client-flow-curl" class="project-command-panel" hidden>
+    <pre><code>$result = requestJson(
+&#x27;POST&#x27;,
+&#x27;https://api.example.com/orders&#x27;,
+[&#x27;product_id&#x27; =&gt; 42, &#x27;qty&#x27; =&gt; 2],
+[
+&#x27;Content-Type: application/json&#x27;,
+&#x27;Authorization: Bearer &#x27; . $token,
+]
+);
+if ($result[&#x27;status&#x27;] === 201) {
+$order = $result[&#x27;data&#x27;];
+}</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-10-high-value-patterns-php-vs-curl-in-one-sentence" class="project-command child-04 uid-ref-php-section-10-high-value-patterns-php-vs-curl-in-one-sentence php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Php Vs Curl In One Sentence
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-php-vs-curl-in-one-sentence" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-php-vs-curl-in-one-sentence" aria-label="Expand Php Vs Curl In One Sentence"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-php-vs-curl-in-one-sentence" class="project-command-panel" hidden>
+    <pre><code>PHP is the server-side language running your application. The PHP cURL
+extension is one way that your PHP code can act as an HTTP client and
+call another server or API.
+NOTE: This is why cURL can feel different from ordinary form handling: your
+PHP application has switched roles from receiving a request to sending one.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-10-high-value-patterns-server-receives-vs-php-sends" class="project-command child-05 uid-ref-php-section-10-high-value-patterns-server-receives-vs-php-sends php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Server Receives Vs Php Sends
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-server-receives-vs-php-sends" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-server-receives-vs-php-sends" aria-label="Expand Server Receives Vs Php Sends"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-server-receives-vs-php-sends" class="project-command-panel" hidden>
+    <pre><code>• Browser -&gt; PHP: inspect $_GET, $_POST, headers, JSON body, files.
+• PHP -&gt; Database: use PDO and SQL.
+• PHP -&gt; External API: use cURL (or an HTTP client library).
+• PHP -&gt; Browser/API client: send HTML/JSON, headers and HTTP status.</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-10-high-value-patterns-most-used-mental-checklist" class="project-command child-06 uid-ref-php-section-10-high-value-patterns-most-used-mental-checklist php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Most-Used Mental Checklist
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-most-used-mental-checklist" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-most-used-mental-checklist" aria-label="Expand Most-Used Mental Checklist"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-most-used-mental-checklist" class="project-command-panel" hidden>
+    <pre><code>• What data came in?
+• Is it present, valid and authorized?
+• Do I need to escape it now or only when outputting it?
+• Am I querying the database? Use prepared statements.
+• Am I calling another API? Build the HTTP request deliberately.
+• What status code should I return?
+• What should be logged if this fails?
+• Could this reveal a secret or user data?</code></pre>
+  </div>
+</div>
+<div id="child-ref-php-section-10-high-value-patterns-official-references" class="project-command child-07 uid-ref-php-section-10-high-value-patterns-official-references php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Official References
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-official-references" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-official-references" aria-label="Expand Official References"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-official-references" class="project-command-panel" hidden>
+    <p>• PHP Manual: php.net/manual</p>
+<p>• Language reference: syntax, variables, functions, OOP.</p>
+<p>• Function reference: search a function name directly.</p>
+<p>• PDO manual: database connections and prepared statements.</p>
+<p>• cURL manual: request options and transfer information.</p>
+<p>• Composer docs: package management and autoloading.</p>
+  </div>
+</div>
+<div id="child-ref-php-section-10-high-value-patterns-more-documentation-current-version-check" class="project-command child-08 uid-ref-php-section-10-high-value-patterns-more-documentation-current-version-check php-reference-topic is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Documentation — Current-version check
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-more-documentation-current-version-check" aria-expanded="false" aria-controls="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-more-documentation-current-version-check" aria-label="Expand Documentation — Current-version check"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-php-reference-ref-php-section-10-high-value-patterns-ref-php-section-10-high-value-patterns-more-documentation-current-version-check" class="project-command-panel" hidden>
+    <p><a href="https://www.php.net/supported-versions.php" target="_blank" rel="noopener noreferrer">https://www.php.net/supported-versions.php</a></p>
+<p><a href="https://www.php.net/releases/" target="_blank" rel="noopener noreferrer">https://www.php.net/releases/</a></p>
+<p>version-specific features.</p>
+  </div>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

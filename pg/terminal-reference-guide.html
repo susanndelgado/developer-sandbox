@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Terminal Reference Guide — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/terminal-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>Terminal Reference Guide</strong>
+    <p>macOS terminal, Git, Node, databases, containers, cloud, and troubleshooting commands.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/terminal-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal
+    </strong>
+
+    
+    <small>
+      macOS
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      Terminal Reference Guide
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      macOS
+    </strong>
+
+    <br />
+
+    macOS terminal, Git, Node, databases, containers, cloud, and troubleshooting commands.
+  </p>
+</header>
+        
+<nav
+  id="node-ref-terminal-nav"
+  class="project-doc-nav node-01 uid-ref-terminal-nav terminal-reference-nav" aria-label="Section navigation"
+>
+<a
+  id="child-ref-terminal-nav-01"
+  class="child-01 uid-ref-terminal-nav-01"
+  href="pg/terminal-reference-guide.html#node-ref-terminal-section-01-macos-terminal-shell-essentials"
+>macOS Terminal & Shell Essentials</a>
+<a
+  id="child-ref-terminal-nav-02"
+  class="child-02 uid-ref-terminal-nav-02"
+  href="pg/terminal-reference-guide.html#node-ref-terminal-section-02-git-github-ssh-http-vs-code-cli"
+>Git, GitHub, SSH, HTTP & VS Code CLI</a>
+<a
+  id="child-ref-terminal-nav-03"
+  class="child-03 uid-ref-terminal-nav-03"
+  href="pg/terminal-reference-guide.html#node-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling"
+>Node.js, npm, pnpm, Yarn & JS Tooling</a>
+<a
+  id="child-ref-terminal-nav-04"
+  class="child-04 uid-ref-terminal-nav-04"
+  href="pg/terminal-reference-guide.html#node-ref-terminal-section-04-frontend-javascript-framework-clis"
+>Frontend & JavaScript Framework CLIs</a>
+<a
+  id="child-ref-terminal-nav-05"
+  class="child-05 uid-ref-terminal-nav-05"
+  href="pg/terminal-reference-guide.html#node-ref-terminal-section-05-databases-sql-shells-python-net-java"
+>Databases, SQL Shells, Python, .NET & Java</a>
+<a
+  id="child-ref-terminal-nav-06"
+  class="child-06 uid-ref-terminal-nav-06"
+  href="pg/terminal-reference-guide.html#node-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting"
+>Docker, Compose, Kubernetes, Cloud & Troubleshooting</a>
+</nav>
+
+<article class="project-doc">
+  <section
+  id="node-ref-terminal-section-01-macos-terminal-shell-essentials"
+  class="project-detail node-02 uid-ref-terminal-section-01-macos-terminal-shell-essentials terminal-reference-section"
+>
+  
+<header>
+  <span>01</span>
+  <h3>macOS Terminal & Shell Essentials</h3>
+  <p>Shell navigation, files, filtering, processes, zsh, Homebrew, and environment configuration.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-where-am-i-help" class="child-01 uid-ref-terminal-section-01-macos-terminal-shell-essentials-where-am-i-help terminal-reference-card">
+  
+<div class="project-command-title">
+  Where Am I? / Help
+</div>
+  <pre><code>pwd Print current directory.
+whoami Show current user.
+echo $SHELL Show active macOS shell (normally zsh).
+command -v node Find an executable in PATH.
+man ls Open a macOS manual page.
+command --help Many developer CLIs: show built-in help.
+history Recent shell commands.
+clear Clear terminal screen.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-files-folders" class="child-02 uid-ref-terminal-section-01-macos-terminal-shell-essentials-files-folders terminal-reference-card">
+  
+<div class="project-command-title">
+  Files & Folders
+</div>
+  <pre><code>ls -la List all files with details.
+cd path Change directory.
+cd .. Move up one directory.
+mkdir -p a/b Create nested directories.
+touch file.txt Create empty file / update time.
+cp file copy Copy file.
+cp -R src dst Copy directory recursively.
+mv old new Move or rename.
+rm file Delete file.
+rm -rf folder Force-delete directory tree. DOUBLE-CHECK path.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-read-inspect" class="child-03 uid-ref-terminal-section-01-macos-terminal-shell-essentials-read-inspect terminal-reference-card">
+  
+<div class="project-command-title">
+  Read & Inspect
+</div>
+  <pre><code>cat file Print entire small file.
+less file Scrollable file viewer.
+head -n 20 file First 20 lines.
+tail -n 20 file Last 20 lines.
+tail -f app.log Follow a growing log.
+wc -l file Count lines.
+du -sh folder Human-readable folder size.
+df -h Disk free space.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-search-filter" class="child-04 uid-ref-terminal-section-01-macos-terminal-shell-essentials-search-filter terminal-reference-card">
+  
+<div class="project-command-title">
+  Search & Filter
+</div>
+  <pre><code>grep -n &quot;text&quot; file Find text + line numbers.
+grep -Rni &quot;text&quot; . Recursive, case-insensitive search.
+find . -name &quot;*.js&quot; Find files by name pattern.
+find . -type f -mtime -1 Files modified in last day.
+sort file Sort lines.
+uniq -c Count adjacent duplicate lines.
+cut -d, -f1 file.csv Select delimited field.
+xargs command Build command args from stdin.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-pipes-operators" class="child-05 uid-ref-terminal-section-01-macos-terminal-shell-essentials-pipes-operators terminal-reference-card">
+  
+<div class="project-command-title">
+  Pipes & Operators
+</div>
+  <pre><code>a | b Pipe stdout of a into b.
+a &gt; file Overwrite file with stdout.
+a &gt;&gt; file Append stdout to file.
+a 2&gt; err.log Redirect stderr.
+a 2&gt;&amp;1 Send stderr to stdout.
+a &amp;&amp; b Run b only if a succeeds.
+a || b Run b only if a fails.
+a ; b Run sequentially regardless.
+$(command) Substitute command output.
+VAR=value cmd Set env var for one command.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-permissions-processes" class="child-06 uid-ref-terminal-section-01-macos-terminal-shell-essentials-permissions-processes terminal-reference-card">
+  
+<div class="project-command-title">
+  Permissions & Processes
+</div>
+  <pre><code>ls -la View permissions/owners.
+chmod +x script.sh Make script executable.
+chmod 755 file Owner rwx; others r-x.
+sudo command Run command elevated.
+ps aux List processes.
+lsof -i :3000 Find process using port 3000.
+kill PID Ask process to stop.
+kill -9 PID Force kill; last resort.
+jobs / fg / bg Manage shell jobs.
+Ctrl+C / Ctrl+Z Interrupt / suspend process.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-macos-terminal-zsh" class="child-07 uid-ref-terminal-section-01-macos-terminal-shell-essentials-macos-terminal-zsh terminal-reference-card">
+  
+<div class="project-command-title">
+  macOS TERMINAL & ZSH
+</div>
+  <pre><code>echo $SHELL Confirm active shell; macOS normally uses /bin/zsh.
+zsh --version Show installed zsh version.
+open . Open current folder in Finder.
+open file.pdf Open a file in its default macOS app.
+open -a &quot;Safari&quot; URL Open a URL with a named macOS app.
+pbcopy &lt; file.txt Copy file contents to macOS clipboard.
+pbpaste Print macOS clipboard contents.
+alias ll=&quot;ls -lah&quot; Create a temporary shell alias.
+echo $PATH Show executable search path.
+command -v node Show which executable will run.
+type -a node Show all matching command locations.
+nano ~/.zshrc Edit your zsh startup configuration.
+source ~/.zshrc Reload zsh configuration now.
+exec zsh Restart the current zsh shell.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-homebrew-on-macos" class="child-08 uid-ref-terminal-section-01-macos-terminal-shell-essentials-homebrew-on-macos terminal-reference-card">
+  
+<div class="project-command-title">
+  HOMEBREW ON macOS
+</div>
+  <pre><code>brew --version Check Homebrew version.
+brew update Refresh Homebrew package metadata.
+brew search package Search available formulae/casks.
+brew install package Install a command-line package.
+brew uninstall package Remove an installed package.
+brew list List installed Homebrew packages.
+brew outdated Show packages with newer versions.
+brew upgrade Upgrade installed packages.</code></pre>
+</div>
+<div id="child-ref-terminal-section-01-macos-terminal-shell-essentials-path-environment-zsh-config" class="child-09 uid-ref-terminal-section-01-macos-terminal-shell-essentials-path-environment-zsh-config terminal-reference-card">
+  
+<div class="project-command-title">
+  Path, Environment & Zsh Config
+</div>
+  <pre><code>echo $PATH Show directories searched for commands.
+printenv | sort List environment variables.
+printenv NAME Read one environment variable.
+export NAME=value Set a variable for this shell session.
+NAME=value command Set a variable for one command only.
+cat ~/.zshrc Read your zsh configuration file.
+nano ~/.zshrc Edit zsh configuration in Terminal.
+source ~/.zshrc Apply zsh config changes immediately.
+ls -la ~ Show hidden config files in your home folder.
+which -a node Show every matching executable in PATH.
+NOTE  This macOS edition assumes Terminal/iTerm2 with zsh. Cross-platform developer
+CLIs elsewhere in the guide are included only when they can be run from macOS.</code></pre>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-terminal-section-02-git-github-ssh-http-vs-code-cli"
+  class="project-detail node-03 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli terminal-reference-section"
+>
+  
+<header>
+  <span>02</span>
+  <h3>Git, GitHub, SSH, HTTP & VS Code CLI</h3>
+  <p>Version control, GitHub CLI, SSH, network checks, and VS Code terminal commands.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-git-start-config" class="child-01 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-git-start-config terminal-reference-card">
+  
+<div class="project-command-title">
+  Git: Start & Config
+</div>
+  <pre><code>git --version Check Git version.
+git config --global
+user.name &quot;Name&quot;
+Set commit author name.
+git config --global
+user.email
+&quot;you@example.com&quot;
+Set commit email.
+git init Create repository in current folder.
+git clone URL Clone remote repository.
+git status Show branch + working tree status.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-stage-commit" class="child-02 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-stage-commit terminal-reference-card">
+  
+<div class="project-command-title">
+  Stage & Commit
+</div>
+  <pre><code>git add file Stage one file.
+git add . Stage changes under current directory.
+git diff Unstaged changes.
+git diff --staged Staged changes.
+git commit -m &quot;message&quot; Create commit.
+git commit --amend Replace most recent commit.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-branches" class="child-03 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-branches terminal-reference-card">
+  
+<div class="project-command-title">
+  Branches
+</div>
+  <pre><code>git branch List local branches.
+git switch branch Switch branch.
+git switch -c feature Create + switch branch.
+git merge feature Merge feature into current branch.
+git branch -d feature Delete merged local branch.
+git branch -D feature Force-delete local branch.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-inspect-history" class="child-04 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-inspect-history terminal-reference-card">
+  
+<div class="project-command-title">
+  Inspect History
+</div>
+  <pre><code>git log --oneline Compact history.
+git log --graph --
+decorate --all --oneline
+Visual branch graph.
+git show COMMIT Inspect a commit.
+git blame file Show line-by-line authorship.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-remotes-sync" class="child-05 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-remotes-sync terminal-reference-card">
+  
+<div class="project-command-title">
+  Remotes & Sync
+</div>
+  <pre><code>git remote -v List remote URLs.
+git fetch Download remote refs; no merge.
+git pull Fetch + integrate current branch.
+git push Push current branch.
+git push -u origin
+feature
+Push + set upstream.
+git push --tags Push tags.
+git tag -a v1.0.0 -m
+&quot;release&quot;
+Create annotated tag.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-undo-safely" class="child-06 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-undo-safely terminal-reference-card">
+  
+<div class="project-command-title">
+  Undo Safely
+</div>
+  <pre><code>git restore file Discard unstaged file changes.
+git restore --staged
+file
+Unstage; keep file changes.
+git revert COMMIT New commit that reverses a commit.
+git reset --soft HEAD~1 Move HEAD back; keep changes staged.
+git reset --hard HEAD~1 Discard commit + local changes.
+git stash Temporarily shelve changes.
+git stash list List stashes.
+git stash pop Reapply + remove latest stash.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-github-cli-gh" class="child-07 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-github-cli-gh terminal-reference-card">
+  
+<div class="project-command-title">
+  Github Cli (Gh)
+</div>
+  <pre><code>gh auth login Authenticate GitHub CLI.
+gh repo clone OWNER/REPO Clone GitHub repo.
+gh repo create Create repository interactively.
+gh pr create Open pull request.
+gh pr checkout 123 Check out PR #123.
+gh pr view --web Open current PR in browser.
+gh issue list List issues.
+gh workflow list List Actions workflows.
+NOTE  GitHub CLI is a separate install. Run gh help or gh &lt;command&gt; --help for current
+options.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-ssh-file-transfer" class="child-08 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-ssh-file-transfer terminal-reference-card">
+  
+<div class="project-command-title">
+  Ssh & File Transfer
+</div>
+  <pre><code>ssh user@host Open SSH session.
+ssh-keygen -t ed25519 -C
+&quot;email&quot;
+Create modern SSH key.
+ssh-add
+~/.ssh/id_ed25519
+Add private key to agent.
+scp file user@host:/path Copy file over SSH.
+scp -r dir
+user@host:/path
+Copy directory recursively.
+rsync -av src/
+host:/dest/
+Efficient recursive sync.
+ssh -T git@github.com Test GitHub SSH auth.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-http-network-checks" class="child-09 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-http-network-checks terminal-reference-card">
+  
+<div class="project-command-title">
+  Http / Network Checks
+</div>
+  <pre><code>curl URL GET a URL.
+curl -I URL Headers only.
+curl -L URL Follow redirects.
+curl -X POST URL -H
+&quot;Content-Type:
+application/json&quot; -d
+&#x27;{&quot;x&quot;:1}&#x27;
+POST JSON.
+ping host Basic reachability.
+dig example.com DNS lookup on macOS.
+nslookup example.com Alternative DNS lookup on macOS.
+lsof -i :5173 Find macOS process using the port.
+curl localhost:3000 Quick local-server test.</code></pre>
+</div>
+<div id="child-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-vs-code-terminal-cli" class="child-10 uid-ref-terminal-section-02-git-github-ssh-http-vs-code-cli-vs-code-terminal-cli terminal-reference-card">
+  
+<div class="project-command-title">
+  Vs Code Terminal Cli
+</div>
+  <pre><code>code . Open current folder.
+code file.js Open file.
+code -n . Open in new window.
+code --version Show VS Code version.
+code --list-extensions List extensions.
+code --install-extension
+ID
+Install extension by ID.
+Cmd+P Quick Open files on macOS.
+Cmd+` Toggle integrated terminal on macOS.
+Cmd+Shift+P Open Command Palette on macOS.</code></pre>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling"
+  class="project-detail node-04 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling terminal-reference-section"
+>
+  
+<header>
+  <span>03</span>
+  <h3>Node.js, npm, pnpm, Yarn & JS Tooling</h3>
+  <p>Node.js, package managers, TypeScript, testing, formatting, versions, and dependency troubleshooting.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-node-npm-basics" class="child-01 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-node-npm-basics terminal-reference-card">
+  
+<div class="project-command-title">
+  Node & Npm Basics
+</div>
+  <pre><code>node -v Node.js version.
+npm -v npm CLI version.
+node file.js Run JavaScript file.
+node --watch server.js Restart on file changes.
+node -e
+&quot;console.log(1+1)&quot;
+Run one-line JavaScript.
+npm init -y Create package.json with defaults.
+npm install Install dependencies from package.json.
+npm ci Clean, lockfile-exact install; ideal CI.
+npm install package Add production dependency.
+npm install -D package Add devDependency.
+npm uninstall package Remove dependency.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-npm-inspect-maintain" class="child-02 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-npm-inspect-maintain terminal-reference-card">
+  
+<div class="project-command-title">
+  Npm Inspect & Maintain
+</div>
+  <pre><code>npm outdated Show outdated dependencies.
+npm update Update within allowed semver ranges.
+npm audit Report known dependency issues.
+npm audit fix Apply compatible security updates.
+npm ls Show installed dependency tree.
+npm explain package Why a package is installed.
+npm view package version Registry package info.
+npm cache verify Verify/compact npm cache.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-npm-scripts" class="child-03 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-npm-scripts terminal-reference-card">
+  
+<div class="project-command-title">
+  Npm Scripts
+</div>
+  <pre><code>npm run List available package scripts.
+npm run dev Run dev script.
+npm test Run test script.
+npm run build Run build script.
+npm start Run start script.
+npm run name -- --flag Pass args through to script.
+npm exec -- eslint . Run package binary via npm.
+npx package args Run local/temporary package binary.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-nvm-node-versions" class="child-04 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-nvm-node-versions terminal-reference-card">
+  
+<div class="project-command-title">
+  Nvm: Node Versions
+</div>
+  <pre><code>nvm install --lts Install latest LTS Node.
+nvm use --lts Use LTS Node in shell.
+nvm install 22 Install a major version.
+nvm use 22 Switch active Node version.
+nvm ls List installed Node versions.
+nvm alias default lts/* Default future shells to LTS.
+NOTE  nvm commands require nvm. On macOS, install/configure nvm separately from
+Node before using these commands.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-pnpm-equivalents" class="child-05 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-pnpm-equivalents terminal-reference-card">
+  
+<div class="project-command-title">
+  Pnpm Equivalents
+</div>
+  <pre><code>pnpm install Install project dependencies.
+pnpm add package Add dependency.
+pnpm add -D package Add devDependency.
+pnpm remove package Remove dependency.
+pnpm update Update packages.
+pnpm outdated Show outdated packages.
+pnpm run dev Run package script.
+pnpm exec eslint . Run local binary.
+pnpm dlx create-vite Run one-off package.
+pnpm store prune Remove unreferenced store packages.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-yarn-equivalents" class="child-06 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-yarn-equivalents terminal-reference-card">
+  
+<div class="project-command-title">
+  Yarn Equivalents
+</div>
+  <pre><code>yarn install Install dependencies.
+yarn add package Add dependency.
+yarn add -D package Add devDependency.
+yarn remove package Remove dependency.
+yarn up package Upgrade dependency.
+yarn run dev Run script.
+yarn dlx package Run one-off package.
+yarn why package Why package is present.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-typescript" class="child-07 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-typescript terminal-reference-card">
+  
+<div class="project-command-title">
+  Typescript
+</div>
+  <pre><code>npx tsc --init Create tsconfig.json.
+npx tsc Compile project.
+npx tsc --noEmit Type-check without output.
+npx tsc -w Watch + recompile.
+npx tsx file.ts Run TS directly when tsx is installed.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-lint-format" class="child-08 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-lint-format terminal-reference-card">
+  
+<div class="project-command-title">
+  Lint & Format
+</div>
+  <pre><code>npx eslint . Lint project.
+npx eslint . --fix Auto-fix safe lint issues.
+npx prettier . --check Check formatting.
+npx prettier . --write Rewrite files to formatter rules.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-testing" class="child-09 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-testing terminal-reference-card">
+  
+<div class="project-command-title">
+  Testing
+</div>
+  <pre><code>npx vitest Run Vitest in watch mode.
+npx vitest run Single Vitest run.
+npx jest Run Jest.
+npx playwright test Run Playwright tests.
+npx playwright test --ui Open Playwright UI mode.
+npx playwright show-
+report
+Open HTML report.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-semver-quick-read" class="child-10 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-semver-quick-read terminal-reference-card">
+  
+<div class="project-command-title">
+  Semver Quick Read
+</div>
+  <pre><code>1.2.3 major.minor.patch.
+^1.2.3 Allow compatible minor/patch updates.
+~1.2.3 Allow patch updates within 1.2.x.
+1.2.3 Exact version when no range operator.
+latest Registry distribution tag; not a range.</code></pre>
+</div>
+<div id="child-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-when-installs-are-weird" class="child-11 uid-ref-terminal-section-03-node-js-npm-pnpm-yarn-js-tooling-when-installs-are-weird terminal-reference-card">
+  
+<div class="project-command-title">
+  When Installs Are Weird
+</div>
+  <pre><code>npm ci First choice when lockfile is valid.
+npm cache verify Check cache before deleting things.
+rm -rf node_modules &amp;&amp;
+npm install
+Rebuild local dependency tree.
+npm install
+package@latest
+Explicitly request current latest tag.
+NOTE  Avoid casually deleting lockfiles: they preserve reproducible dependency versions and
+often belong in source control.</code></pre>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-terminal-section-04-frontend-javascript-framework-clis"
+  class="project-detail node-05 uid-ref-terminal-section-04-frontend-javascript-framework-clis terminal-reference-section"
+>
+  
+<header>
+  <span>04</span>
+  <h3>Frontend & JavaScript Framework CLIs</h3>
+  <p>Project scaffolding, framework CLIs, APIs, Prisma, environment variables, workflows, and security.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-vite-projects" class="child-01 uid-ref-terminal-section-04-frontend-javascript-framework-clis-vite-projects terminal-reference-card">
+  
+<div class="project-command-title">
+  Vite Projects
+</div>
+  <pre><code>npm create vite@latest Interactive scaffold.
+npm create vite@latest
+app -- --template react-
+ts
+React + TypeScript scaffold.
+cd app &amp;&amp; npm install Install after scaffold if needed.
+npm run dev Start Vite dev server.
+npm run build Production build.
+npm run preview Preview production build locally.
+NOTE  Current Vite docs use npm create vite@latest; Node version requirements can change
+by Vite release.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-next-js" class="child-02 uid-ref-terminal-section-04-frontend-javascript-framework-clis-next-js terminal-reference-card">
+  
+<div class="project-command-title">
+  Next.Js
+</div>
+  <pre><code>npx create-next-
+app@latest
+Scaffold a Next.js application.
+npm run dev Development server.
+npm run build Production build.
+npm start Run built production server.
+npx next info Print environment info for debugging.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-vue" class="child-03 uid-ref-terminal-section-04-frontend-javascript-framework-clis-vue terminal-reference-card">
+  
+<div class="project-command-title">
+  Vue
+</div>
+  <pre><code>npm create vue@latest Official Vue project scaffold.
+npm install Install dependencies.
+npm run dev Development server.
+npm run build Production build.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-angular" class="child-04 uid-ref-terminal-section-04-frontend-javascript-framework-clis-angular terminal-reference-card">
+  
+<div class="project-command-title">
+  Angular
+</div>
+  <pre><code>npx @angular/cli@latest
+new app
+Create Angular workspace/app.
+cd app &amp;&amp; npm start Start configured dev script.
+npx ng serve Run Angular dev server.
+npx ng generate
+component name
+Generate component.
+npx ng build Production build.
+npx ng test Run configured tests.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-express-node-api" class="child-05 uid-ref-terminal-section-04-frontend-javascript-framework-clis-express-node-api terminal-reference-card">
+  
+<div class="project-command-title">
+  Express / Node Api
+</div>
+  <pre><code>npm init -y Start package.json.
+npm install express Install Express.
+node server.js Run server entry file.
+node --watch server.js Built-in file watch restart.
+npx express-generator
+app
+Optional Express generator scaffold.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-nestjs" class="child-06 uid-ref-terminal-section-04-frontend-javascript-framework-clis-nestjs terminal-reference-card">
+  
+<div class="project-command-title">
+  Nestjs
+</div>
+  <pre><code>npx @nestjs/cli@latest
+new app
+Scaffold Nest application.
+npm run start:dev Watch-mode dev server.
+npx nest g module users Generate module.
+npx nest g controller
+users
+Generate controller.
+npx nest g service users Generate service.
+npx nest g resource
+users
+Generate CRUD resource workflow.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-prisma-orm" class="child-07 uid-ref-terminal-section-04-frontend-javascript-framework-clis-prisma-orm terminal-reference-card">
+  
+<div class="project-command-title">
+  Prisma Orm
+</div>
+  <pre><code>npx prisma init Initialize Prisma project.
+npx prisma migrate dev
+--name init
+Create + apply dev migration.
+npx prisma generate Generate Prisma Client.
+npx prisma studio Open database GUI.
+npx prisma db pull Introspect existing database.
+npx prisma db push Push schema without migration history.
+npx prisma migrate
+deploy
+Apply pending migrations in deploy.
+NOTE  Prisma v7 no longer guarantees that migrate dev will also run prisma generate; run
+generate explicitly when needed.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-environment-variables" class="child-08 uid-ref-terminal-section-04-frontend-javascript-framework-clis-environment-variables terminal-reference-card">
+  
+<div class="project-command-title">
+  Environment Variables
+</div>
+  <pre><code>export
+API_URL=http://localhost
+:3000
+Set macOS/zsh env var for this shell.
+API_URL=x npm run dev Set env var for one command.
+unset API_URL Remove an env var from this shell.
+node --env-file=.env
+server.js
+Node: load an .env file at runtime.
+printenv API_URL Print one macOS environment variable.
+env | sort List environment variables.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-common-js-project-flow" class="child-09 uid-ref-terminal-section-04-frontend-javascript-framework-clis-common-js-project-flow terminal-reference-card">
+  
+<div class="project-command-title">
+  Common Js Project Flow
+</div>
+  <pre><code>git clone URL Get code.
+cd project Enter repository.
+npm ci Install exact locked dependencies.
+cp .env.example .env Create local env file when project supplies template.
+npm run dev Start development.
+npm test Run tests.
+npm run build Verify production build.
+git status Check changed files before commit.</code></pre>
+</div>
+<div id="child-ref-terminal-section-04-frontend-javascript-framework-clis-security-habits" class="child-10 uid-ref-terminal-section-04-frontend-javascript-framework-clis-security-habits terminal-reference-card">
+  
+<div class="project-command-title">
+  Security Habits
+</div>
+  <pre><code>.env Keep secrets out of committed source.
+.gitignore Ignore local secrets/build artifacts.
+npm audit Review dependency advisories.
+--help Read current CLI options before destructive
+operations.
+tokens/keys Use secret managers or environment variables; never
+paste into public repos.</code></pre>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-terminal-section-05-databases-sql-shells-python-net-java"
+  class="project-detail node-06 uid-ref-terminal-section-05-databases-sql-shells-python-net-java terminal-reference-section"
+>
+  
+<header>
+  <span>05</span>
+  <h3>Databases, SQL Shells, Python, .NET & Java</h3>
+  <p>Database shells, SQL essentials, Python tooling, .NET, and Java build commands.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-postgresql-psql" class="child-01 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-postgresql-psql terminal-reference-card">
+  
+<div class="project-command-title">
+  Postgresql / Psql
+</div>
+  <pre><code>psql -U postgres Connect as user postgres.
+psql -d appdb Connect to database.
+\l List databases.
+\c appdb Connect/switch database.
+\dt List tables.
+\d users Describe table.
+\q Quit psql.
+createdb appdb Create database from OS shell.
+dropdb appdb Drop database. DESTRUCTIVE.
+pg_dump appdb &gt;
+backup.sql
+Plain SQL backup.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-mysql-client" class="child-02 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-mysql-client terminal-reference-card">
+  
+<div class="project-command-title">
+  Mysql Client
+</div>
+  <pre><code>mysql -u root -p Connect and prompt for password.
+SHOW DATABASES; List databases.
+USE appdb; Select database.
+SHOW TABLES; List tables.
+DESCRIBE users; Describe table.
+exit Quit client.
+mysqldump -u root -p
+appdb &gt; backup.sql
+SQL backup.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-sqlite" class="child-03 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-sqlite terminal-reference-card">
+  
+<div class="project-command-title">
+  Sqlite
+</div>
+  <pre><code>sqlite3 app.db Open/create database file.
+.tables List tables.
+.schema users Show table schema.
+.headers on Show column headings.
+.mode column Readable column output.
+.quit Exit sqlite3.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-sql-essentials" class="child-04 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-sql-essentials terminal-reference-card">
+  
+<div class="project-command-title">
+  Sql Essentials
+</div>
+  <pre><code>SELECT * FROM users; Read rows.
+SELECT ... WHERE ...; Filter rows.
+INSERT INTO t (...)
+VALUES (...);
+Create row.
+UPDATE t SET x=... WHERE
+...;
+Change rows; WHERE matters.
+DELETE FROM t WHERE ...; Delete rows; WHERE matters.
+CREATE TABLE ...; Create table.
+ALTER TABLE ...; Change table structure.
+DROP TABLE ...; Delete table. DESTRUCTIVE.
+BEGIN; / COMMIT; Start / save transaction.
+ROLLBACK; Undo uncommitted transaction.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-mongodb-shell" class="child-05 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-mongodb-shell terminal-reference-card">
+  
+<div class="project-command-title">
+  Mongodb Shell
+</div>
+  <pre><code>mongosh Open MongoDB shell.
+show dbs List databases.
+use appdb Switch/create-on-use database.
+show collections List collections.
+db.users.find() Query users collection.
+db.users.findOne({email:
+&quot;a@b.com&quot;})
+Find one matching document.
+db.users.countDocuments(
+)
+Count documents.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-redis-cli" class="child-06 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-redis-cli terminal-reference-card">
+  
+<div class="project-command-title">
+  Redis Cli
+</div>
+  <pre><code>redis-cli Open Redis CLI.
+PING Server health check.
+SET key value Store string.
+GET key Read string.
+DEL key Delete key.
+SCAN 0 Iterate keys safely.
+TTL key Seconds until expiration.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-python-environments-pip" class="child-07 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-python-environments-pip terminal-reference-card">
+  
+<div class="project-command-title">
+  Python Environments & Pip
+</div>
+  <pre><code>python3 --version Check Python 3 version.
+python3 -m venv .venv Create virtual environment.
+source
+.venv/bin/activate
+Activate virtual environment on macOS.
+which python3 Show active Python executable.
+python3 -m pip install
+-U pip
+Upgrade pip in active Python.
+python3 -m pip install
+package
+Install package.
+python3 -m pip install
+-r requirements.txt
+Install pinned requirements.
+python3 -m pip freeze &gt;
+requirements.txt
+Record environment packages.
+deactivate Leave virtual environment.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-python-web-quick-starts" class="child-08 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-python-web-quick-starts terminal-reference-card">
+  
+<div class="project-command-title">
+  Python Web Quick Starts
+</div>
+  <pre><code>python3 app.py Run a Python entry file.
+flask --app app run --
+debug
+Flask dev server.
+django-admin
+startproject site
+Create Django project.
+python3 manage.py
+runserver
+Django dev server.
+python3 manage.py
+makemigrations
+Create Django migrations.
+python3 manage.py
+migrate
+Apply Django migrations.
+pytest Run pytest suite.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-net-cli" class="child-09 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-net-cli terminal-reference-card">
+  
+<div class="project-command-title">
+  .Net Cli
+</div>
+  <pre><code>dotnet --info SDK/runtime information.
+dotnet new webapi -n Api Create Web API project.
+dotnet restore Restore NuGet packages.
+dotnet build Compile project.
+dotnet run Run application.
+dotnet watch Watch + rerun.
+dotnet test Run tests.
+dotnet add package NAME Add NuGet package.</code></pre>
+</div>
+<div id="child-ref-terminal-section-05-databases-sql-shells-python-net-java-java-maven-gradle" class="child-10 uid-ref-terminal-section-05-databases-sql-shells-python-net-java-java-maven-gradle terminal-reference-card">
+  
+<div class="project-command-title">
+  Java / Maven / Gradle
+</div>
+  <pre><code>java --version Java runtime version.
+javac File.java Compile Java source.
+mvn -v Maven version.
+mvn clean test Clean + run tests.
+mvn spring-boot:run Run Spring Boot via Maven.
+./gradlew build Gradle wrapper build.
+./gradlew test Gradle wrapper tests.
+./gradlew bootRun Run Spring Boot via Gradle.</code></pre>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting"
+  class="project-detail node-07 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting terminal-reference-section"
+>
+  
+<header>
+  <span>06</span>
+  <h3>Docker, Compose, Kubernetes, Cloud & Troubleshooting</h3>
+  <p>Containers, orchestration, cloud CLIs, ports, troubleshooting workflows, and destructive-command safeguards.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-docker-essentials" class="child-01 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-docker-essentials terminal-reference-card">
+  
+<div class="project-command-title">
+  Docker Essentials
+</div>
+  <pre><code>docker --version Docker CLI version.
+docker info Engine/system information.
+docker pull image Download image.
+docker images List local images.
+docker ps Running containers.
+docker ps -a All containers.
+docker run --rm -it
+image sh
+Temporary interactive container.
+docker run -p 3000:3000
+image
+Map host:container port.
+docker build -t
+app:dev .
+Build image from Dockerfile.
+docker exec -it NAME sh Shell inside running container.
+docker logs -f NAME Follow container logs.
+docker stop NAME Stop container.
+docker rm NAME Remove stopped container.</code></pre>
+</div>
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-docker-cleanup" class="child-02 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-docker-cleanup terminal-reference-card">
+  
+<div class="project-command-title">
+  Docker Cleanup
+</div>
+  <pre><code>docker volume ls List volumes.
+docker network ls List networks.
+docker system df Disk used by Docker.
+docker image prune Remove dangling images.
+docker container prune Remove stopped containers.
+docker system prune Broad cleanup; review prompt carefully.</code></pre>
+</div>
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-docker-compose" class="child-03 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-docker-compose terminal-reference-card">
+  
+<div class="project-command-title">
+  Docker Compose
+</div>
+  <pre><code>docker compose up Create/start + attach.
+docker compose up -d Start in background.
+docker compose up --
+build
+Build then start.
+docker compose ps List project containers.
+docker compose logs -f Follow service logs.
+docker compose exec api
+sh
+Shell in service container.
+docker compose build Build/rebuild services.
+docker compose build --
+no-cache
+Rebuild without cache.
+docker compose pull Pull service images.
+docker compose down Stop/remove project containers/network.
+docker compose down -v Also remove named volumes/data.</code></pre>
+</div>
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-kubernetes-basics" class="child-04 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-kubernetes-basics terminal-reference-card">
+  
+<div class="project-command-title">
+  Kubernetes Basics
+</div>
+  <pre><code>kubectl config current-
+context
+Show active cluster context.
+kubectl get pods List pods.
+kubectl get all Common workload/service objects.
+kubectl describe pod
+NAME
+Detailed pod diagnostics.
+kubectl logs -f POD Follow pod logs.
+kubectl exec -it POD --
+sh
+Shell inside pod.
+kubectl apply -f
+file.yaml
+Create/update resources.
+kubectl delete -f
+file.yaml
+Delete resources from manifest.
+kubectl rollout status
+deploy/APP
+Watch deployment rollout.
+kubectl port-forward
+svc/app 8080:80
+Forward local port to service.</code></pre>
+</div>
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-cloud-cli-identity-checks" class="child-05 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-cloud-cli-identity-checks terminal-reference-card">
+  
+<div class="project-command-title">
+  Cloud Cli Identity Checks
+</div>
+  <pre><code>aws configure Configure AWS CLI credentials/defaults.
+aws sts get-caller-
+identity
+Confirm current AWS identity.
+aws s3 ls List accessible S3 buckets.
+az login Sign in to Azure CLI.
+az account show Current Azure subscription/account.
+az group list -o table List resource groups.
+gcloud auth login Sign in to Google Cloud CLI.
+gcloud config get-value
+project
+Show active GCP project.
+gcloud projects list List accessible projects.
+NOTE  Cloud commands require the vendor CLI plus appropriate account permissions. Prefer
+SSO/short-lived credentials where your organization supports them.</code></pre>
+</div>
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-ports-developers-see-often" class="child-06 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-ports-developers-see-often terminal-reference-card">
+  
+<div class="project-command-title">
+  Ports Developers See Often
+</div>
+  <pre><code>3000 Common Node/Next dev server.
+5173 Common Vite dev server.
+8000 Common Python/dev HTTP port.
+8080 Common alternate HTTP/app port.
+5432 PostgreSQL default port.
+3306 MySQL default port.
+6379 Redis default port.
+27017 MongoDB default port.</code></pre>
+</div>
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-fast-troubleshooting-loop" class="child-07 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-fast-troubleshooting-loop terminal-reference-card">
+  
+<div class="project-command-title">
+  Fast Troubleshooting Loop
+</div>
+  <pre><code>pwd &amp;&amp; ls -la Confirm you are in the right project.
+git status Check branch + local changes.
+node -v / python3 --
+version
+Confirm runtime version.
+npm -v / docker --
+version
+Confirm required CLI exists.
+npm ci Reinstall exact JS dependencies.
+printenv | sort Inspect macOS shell environment.
+lsof -i :PORT Find a macOS process using the port.
+docker compose ps Check container state.
+docker compose logs -f Read service failure details.
+curl -I localhost:PORT Confirm HTTP response.</code></pre>
+</div>
+<div id="child-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-high-risk-commands-slow-down" class="child-08 uid-ref-terminal-section-06-docker-compose-kubernetes-cloud-troubleshooting-high-risk-commands-slow-down terminal-reference-card">
+  
+<div class="project-command-title">
+  High-Risk Commands: Slow Down
+</div>
+  <pre><code>rm -rf PATH Permanently removes files.
+git reset --hard Discards uncommitted changes.
+git clean -fd Deletes untracked files/directories.
+docker compose down -v Can erase local database volumes.
+DROP DATABASE / DROP
+TABLE
+Deletes database structures/data.
+DELETE / UPDATE without
+WHERE
+Can affect every row.
+sudo Runs with elevated privileges.
+NOTE  Before destructive commands: verify pwd, inspect the exact path/resource, make a
+backup when data matters, and prefer reversible commands when possible.</code></pre>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>
