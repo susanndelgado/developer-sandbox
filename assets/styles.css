@@ -1668,8 +1668,8 @@ body > footer button:focus-visible {
 .project-icon {
   --icon-color: #eaf7ff;
 
-  width: 52px;
-  height: 52px;
+  width: 62px;
+  height: 62px;
 
   display: grid;
   place-items: center;
