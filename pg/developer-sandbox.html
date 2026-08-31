@@ -270,6 +270,13 @@
   <div class="project-preview"><img src="assets/sandbox-preview.png" alt="Developer Sandbox interface showing the project library, reference guides, Rosetta Stones, and featured project areas" /></div>
   <div class="project-detail">
     
+<header>
+  
+  
+  <p>
+  The Developer Sandbox is a personal interface used to organize and display projects created through ongoing development learning and experimentation. It also serves as a technical reference system, project catalog, and experimental workspace.
+</p>
+</header>
     <div class="project-display-details"><p>
   The Developer Sandbox is a personal interface used to organize and display projects created through ongoing development learning and experimentation. It also serves as a technical reference system, project catalog, and experimental workspace.
 </p></div>
@@ -303,6 +310,7 @@
 <header>
   <span>01</span>
   <h3>Project Overview</h3>
+  
 </header>
   
   <div class="project-command-list">
@@ -324,6 +332,7 @@
 <header>
   <span>02</span>
   <h3>Purpose & Learning Objectives</h3>
+  
 </header>
   
   <div class="project-command-list">
@@ -366,6 +375,7 @@
 <header>
   <span>03</span>
   <h3>Technologies</h3>
+  
 </header>
   
   <div class="project-meta">
@@ -407,6 +417,7 @@
 <header>
   <span>04</span>
   <h3>Project Details</h3>
+  
 </header>
   
   <div class="project-command-list">
@@ -430,9 +441,9 @@
 <header>
   <span>V1</span>
   <h3>Version 1 Implementation Complete</h3>
-</header>
   The first complete working architecture is implemented and remains the active foundation.
-<p>Version 1 established the Sandbox as a working application rather than a static portfolio mockup.</p>
+</header>
+  <p>Version 1 established the Sandbox as a working application rather than a static portfolio mockup.</p>
 <p>The project remains active because new projects, references, labs, data structures, and refinements will continue to be added.</p>
   <div class="project-command-list">
 <div id="child-node-sandbox-version-one-delivered" class="project-command child-01 uid-node-sandbox-version-one-delivered is-collapsible">
@@ -442,10 +453,7 @@
 </div>The core authoring, storage, generation, and presentation pipeline is working.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-delivered"
-    aria-label="Expand Delivered in Version 1"
+    type="button" data-collapse-target="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-delivered" aria-expanded="false" aria-controls="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-delivered" aria-label="Expand Delivered in Version 1"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-delivered" class="project-command-panel" hidden>
     <ul><li>Static public interface for projects, Rosetta Stones, reference guides, labs, system documentation, and database documentation.</li><li>Local TypeScript editor served through a Node.js application.</li><li>SQLite relational datastore with records, categories, tags, technologies, relationships, and hierarchical content nodes.</li><li>Database-backed create, edit, reorder, delete, search, preview, and SQL-batch workflows.</li><li>TypeScript generator that produces static project and collection pages from structured data.</li><li>Read-only public database documentation/viewer concept with local editing kept separate.</li><li>Shared rendering structures for NAV, DISPLAY, STANDARD, SPLIT, GRID, and CODE content.</li></ul>
@@ -458,10 +466,7 @@
 </div>Version 1 is complete, but the Sandbox itself is an evolving long-term development system.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-active"
-    aria-label="Expand Why Status Remains Active"
+    type="button" data-collapse-target="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-active" aria-expanded="false" aria-controls="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-active" aria-label="Expand Why Status Remains Active"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-project-developer-sandbox-node-sandbox-version-one-node-sandbox-version-one-active" class="project-command-panel" hidden>
     <ul><li>Populate the catalog with real projects, labs, and Rosetta Stone implementations.</li><li>Expand technical reference material as new technologies are learned or revisited.</li><li>Refine renderer parity, accessibility, diagnostics, and content-authoring ergonomics.</li><li>Use the Sandbox as a durable record of implementation decisions and learning evidence.</li></ul>
@@ -477,8 +482,9 @@
 <header>
   <span>08</span>
   <h3>Implemented Architecture</h3>
-</header>
   The current working layers and their responsibilities.
+</header>
+  
   <div class="project-meta">
 <div id="child-node-sandbox-architecture-public-layer" class="child-01 uid-node-sandbox-architecture-public-layer">
   
@@ -532,8 +538,9 @@
 <header>
   <span>09</span>
   <h3>Design Evolution</h3>
-</header>
   Important architectural decisions that changed while the system became more capable.
+</header>
+  
   <div class="project-command-list">
 <div id="child-node-sandbox-design-evolution-sdb" class="project-command child-01 uid-node-sandbox-design-evolution-sdb is-collapsible">
   <div class="project-command-summary">
@@ -542,10 +549,7 @@
 </div>The original custom datastore format proved the content concept before relational needs became dominant.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-sdb"
-    aria-label="Expand From .sdb Prototype to SQLite"
+    type="button" data-collapse-target="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-sdb" aria-expanded="false" aria-controls="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-sdb" aria-label="Expand From .sdb Prototype to SQLite"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-sdb" class="project-command-panel" hidden>
     <p>The early design used a human-readable .sdb key/value format with lightweight markup tokens.</p>
@@ -560,10 +564,7 @@
 </div>Project source, catalog data, authoring tools, and public pages remain distinct layers.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-separation"
-    aria-label="Expand Separation of Responsibilities"
+    type="button" data-collapse-target="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-separation" aria-expanded="false" aria-controls="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-separation" aria-label="Expand Separation of Responsibilities"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-project-developer-sandbox-node-sandbox-design-evolution-node-sandbox-design-evolution-separation" class="project-command-panel" hidden>
     <ul><li>Individual project repositories remain independent from the Sandbox repository.</li><li>Sandbox stores catalog and documentation data rather than absorbing every project's source code.</li><li>The local editor is an authoring tool; the public site remains static and read-only.</li><li>Structured data can be rendered differently without rewriting project identity.</li></ul>

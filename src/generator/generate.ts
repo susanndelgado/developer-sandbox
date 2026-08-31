@@ -198,8 +198,9 @@ function positionClass(prefix: "node" | "child", index: number): string {
 function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
   const subtitle = (node.subtitle ?? "").trim();
   const title = (node.title ?? "").trim();
+  const details = node.description ?? "";
 
-  if (!subtitle && !title) {
+  if (!subtitle && !title && !details) {
     return "";
   }
 
@@ -207,16 +208,13 @@ function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
 <header>
   ${subtitle ? `<span>${subtitle}</span>` : ""}
   ${title ? `<${heading}>${title}</${heading}>` : ""}
+  ${details}
 </header>`;
 }
 
 function parentBody(node: NodeRow): string {
-  const details = node.description ?? "";
-  const content = node.content ?? "";
-
-  return [details, content].filter(Boolean).join("\n");
+  return node.content ?? "";
 }
-
 function parentClasses(
   node: NodeRow,
   nodeIndex: number,

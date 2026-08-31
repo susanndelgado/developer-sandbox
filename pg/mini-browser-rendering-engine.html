@@ -258,6 +258,7 @@
 <header>
   <span>PLANNED LAB</span>
   <h2>Mini Browser / Rendering Engine</h2>
+  Build a deliberately small browser-like renderer to understand what happens beneath normal frontend development. The implementation is planned.
 </header>
     <div class="project-display-details">Build a deliberately small browser-like renderer to understand what happens beneath normal frontend development. The implementation is planned.</div>
   </div>
@@ -270,8 +271,9 @@
 <header>
   <span>02</span>
   <h3>Purpose & Learning Objectives</h3>
-</header>
   Why this project exists and what the implementation should teach.
+</header>
+  
   <div class="project-command-list">
 <div id="child-node-mini-browser-rendering-engine-purpose-core" class="project-command child-01 uid-node-mini-browser-rendering-engine-purpose-core">
   <div class="project-split-child-head">Purpose / Learning</div>
@@ -297,8 +299,9 @@
 <header>
   <span>03</span>
   <h3>Technology Plan</h3>
-</header>
   Current, planned, legacy, or candidate technologies for this project.
+</header>
+  
   <div class="project-meta">
 <div id="child-node-mini-browser-rendering-engine-technologies-core" class="child-01 uid-node-mini-browser-rendering-engine-technologies-core">
   
@@ -338,8 +341,9 @@
 <header>
   <span>04</span>
   <h3>Implementation Scope</h3>
-</header>
   Planned behaviors, architecture decisions, and evidence this project should produce.
+</header>
+  
   <div class="project-command-list">
 <div id="child-node-mini-browser-rendering-engine-scope-parser" class="project-command child-01 uid-node-mini-browser-rendering-engine-scope-parser is-collapsible">
   <div class="project-command-summary">
@@ -348,10 +352,7 @@
 </div>Turn simplified markup into a tree the renderer owns.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-parser"
-    aria-label="Expand Parser"
+    type="button" data-collapse-target="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-parser" aria-expanded="false" aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-parser" aria-label="Expand Parser"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-parser" class="project-command-panel" hidden>
     <ul><li>Tokenization.</li><li>Element/text nodes.</li><li>Parent/child relationships.</li><li>Controlled subset rather than full HTML.</li></ul>
@@ -364,10 +365,7 @@
 </div>Associate simplified style rules with nodes.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-style-system"
-    aria-label="Expand Style system"
+    type="button" data-collapse-target="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-style-system" aria-expanded="false" aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-style-system" aria-label="Expand Style system"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-style-system" class="project-command-panel" hidden>
     <ul><li>Selectors or direct style mapping.</li><li>Inherited values where useful.</li><li>Explicit unsupported features.</li></ul>
@@ -380,10 +378,7 @@
 </div>Calculate where boxes and text should be placed.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-layout-engine"
-    aria-label="Expand Layout engine"
+    type="button" data-collapse-target="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-layout-engine" aria-expanded="false" aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-layout-engine" aria-label="Expand Layout engine"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-layout-engine" class="project-command-panel" hidden>
     <ul><li>Block flow.</li><li>Box dimensions.</li><li>Margins/padding.</li><li>Text measurement.</li></ul>
@@ -396,10 +391,7 @@
 </div>Draw the calculated layout without delegating final layout to the DOM.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-painter"
-    aria-label="Expand Painter"
+    type="button" data-collapse-target="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-painter" aria-expanded="false" aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-painter" aria-label="Expand Painter"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-painter" class="project-command-panel" hidden>
     <ul><li>Canvas rectangles.</li><li>Text.</li><li>Clipping/overflow experiments.</li><li>Debug overlays.</li></ul>
@@ -412,10 +404,7 @@
 </div>Reuse the renderer for a custom document format.</div>
   <button
     class="project-command-action collapse-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-future-language-experiment"
-    aria-label="Expand Future language experiment"
+    type="button" data-collapse-target="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-future-language-experiment" aria-expanded="false" aria-controls="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-future-language-experiment" aria-label="Expand Future language experiment"
   ><span aria-hidden="true">⌄</span></button>
   <div id="panel-rec-mini-browser-rendering-engine-node-mini-browser-rendering-engine-scope-node-mini-browser-rendering-engine-scope-future-language-experiment" class="project-command-panel" hidden>
     <ul><li>Define grammar.</li><li>Parse into same internal representation.</li><li>Compare HTML-oriented and custom input.</li></ul>
@@ -431,8 +420,9 @@
 <header>
   <span>05</span>
   <h3>Project Notes</h3>
-</header>
   Implementation context, boundaries, and later expansion.
+</header>
+  
   <div class="project-command-list">
 <div id="child-node-mini-browser-rendering-engine-notes-content" class="project-command child-01 uid-node-mini-browser-rendering-engine-notes-content">
   <div class="project-split-child-head">Project Notes</div>
@@ -474,8 +464,9 @@
 <header>
   <span>07</span>
   <h3>Implementation Sketch</h3>
-</header>
   A compact structural example for this project.
+</header>
+  
   <div class="project-command-list">
 <div id="child-node-mini-browser-rendering-engine-code-example" class="project-command child-01 uid-node-mini-browser-rendering-engine-code-example">
   

@@ -2572,8 +2572,9 @@ ${body}
 function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
   const rawSubtitle = (node.subtitle ?? "").trim();
   const rawTitle = (node.title ?? "").trim();
+  const details = renderedHtml(node, "details", node.description);
 
-  if (!rawSubtitle && !rawTitle) return "";
+  if (!rawSubtitle && !rawTitle && !details) return "";
 
   const subtitle = rawSubtitle;
   const title = rawTitle;
@@ -2582,13 +2583,12 @@ function parentHeader(node: NodeRow, heading: "h2" | "h3" = "h3"): string {
 <header>
   ${subtitle ? `<span>${subtitle}</span>` : ""}
   ${title ? `<${heading}>${title}</${heading}>` : ""}
+  ${details}
 </header>`;
 }
-function parentBody(node: NodeRow): string {
-  const details = renderedHtml(node, "details", node.description);
-  const content = renderedHtml(node, "content", node.content);
 
-  return [details, content].filter(Boolean).join("\n");
+function parentBody(node: NodeRow): string {
+  return renderedHtml(node, "content", node.content);
 }
 function parentClasses(
   node: NodeRow,
