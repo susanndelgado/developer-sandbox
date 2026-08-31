@@ -822,3 +822,29 @@ function sortAsideNavigation() {
 }
 
 sortAsideNavigation();
+
+/* ==================================================
+   10. HOMEPAGE LATEST-FIRST DISPLAY
+   Reverse generated first-to-latest homepage lists only
+   ================================================== */
+
+function reverseHomepageList(selector) {
+  const container = document.querySelector(selector);
+
+  if (!container) {
+    return;
+  }
+
+  const items = Array.from(container.children).filter(
+    (item) =>
+      item instanceof HTMLAnchorElement ||
+      item instanceof HTMLButtonElement,
+  );
+
+  container.append(...items.reverse());
+}
+
+reverseHomepageList(".rosetta .stones");
+reverseHomepageList(".library .projects");
+reverseHomepageList(".guides .guide-list");
+reverseHomepageList(".data .data-list");
