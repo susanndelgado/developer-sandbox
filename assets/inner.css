@@ -3803,7 +3803,7 @@ font-size: 12px;;
 
 .project-grid small {
   color: #849ab1;
-
+word-break: break-all;
   font-size: 9px;
   line-height: 1.25;
 }

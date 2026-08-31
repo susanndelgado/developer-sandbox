@@ -1259,7 +1259,7 @@ body > footer button:focus-visible {
 
   display: grid;
   justify-items: center;
-  gap: 2px;
+  gap: 0.5px;
 
   padding: 0;
 
@@ -1518,7 +1518,7 @@ body > footer button:focus-visible {
   top: 49%;
   left: 4%;
 
-  width: 34%;
+  width: 42%;
   min-width: 420px;
 }
 
@@ -1527,17 +1527,17 @@ body > footer button:focus-visible {
 .projects {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 
 .projects > a {
   min-width: 0;
 
-  padding: 10px 6px;
+  padding: 8px 6px;
 
   display: grid;
   justify-items: center;
-  gap: 5px;
+  gap: 8px;
 
   border: 1px solid rgba(95, 170, 255, 0.2);
   border-radius: 9px;
@@ -1618,7 +1618,7 @@ body > footer button:focus-visible {
 /* ---------- TEXT ---------- */
 
 .projects strong {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 500;
   line-height: 1.15;
 }
@@ -1639,7 +1639,7 @@ body > footer button:focus-visible {
 
   color: var(--blue);
 
-  font-size: 11px;
+  font-size: 9px;
   text-align: center;
 }
 
