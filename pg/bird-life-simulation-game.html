@@ -94,7 +94,7 @@
 
   <div>
     <strong>Bird Life Simulation Game</strong>
-    <p>Bird-life simulation exploring state, survival behaviors, sprites, nesting, and world interaction.</p>
+    <p>Bird-life 2D Tile Map Survival System</p>
   </div>
 </div>
 
@@ -245,22 +245,22 @@
 
     <br />
 
-    Bird-life simulation exploring state, survival behaviors, sprites, nesting, and world interaction.
+    Bird-life 2D Tile Map Survival System
   </p>
 </header>
         <div
   id="node-node-bird-life-simulation-game-display"
   class="project-display node-01 uid-node-bird-life-simulation-game-display project-overview"
 >
-  <div class="project-preview"><div><strong>PLANNED LAB</strong><p>Build a small bird-life simulation where survival and nesting behaviors drive visible sprite states. The implementation is planned.</p></div></div>
+  <div class="project-preview"><div><strong>PLANNED LAB</strong><p>Build a small bird-life 2D tile map survival system where survival and nesting behaviors drive visible sprite states. The implementation is planned.</p></div></div>
   <div class="project-detail">
     
 <header>
   <span>PLANNED LAB</span>
-  <h2>Bird Life Simulation Game</h2>
-  Build a small bird-life simulation where survival and nesting behaviors drive visible sprite states. The implementation is planned.
+  <h2>Bird Life 2d Tile Map System</h2>
+  Build a small bird-life 2D tile map survival system where survival and nesting behaviors drive visible sprite states. The implementation is planned.
 </header>
-    <div class="project-display-details">Build a small bird-life simulation where survival and nesting behaviors drive visible sprite states. The implementation is planned.</div>
+    <div class="project-display-details">Build a small bird-life 2D tile map survival system where survival and nesting behaviors drive visible sprite states. The implementation is planned.</div>
   </div>
 </div>
 <section
@@ -292,13 +292,164 @@
   </div>
 </section>
 <section
+  id="node-node-tehcnology-planning-7b0d412a74"
+  class="project-doc-section node-03 uid-node-tehcnology-planning-7b0d412a74"
+>
+  
+<header>
+  
+  <h3>Research & Planning</h3>
+  <h3>
+  How to Build Research
+</h3>
+</header>
+  <p>
+  To build a single-player demo of Web Earth Online featuring a player character, tile movement, and basic survival stats running directly on GitHub Pages, I'll need four essential components.
+</p>
+  <div class="project-command-list">
+<div id="child-child-what-i-already-know-9fc4acaf65" class="project-command child-01 uid-child-what-i-already-know-9fc4acaf65">
+  <div class="project-split-child-head">What I already Know</div>
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  Based on the planned techologies and a little research I can figure out what I need and what will contribute to my learning quickly.
+  
+</div>
+<div class="project-split-cell">
+  <p>
+  JavaScript will be the language language in.
+</p>
+<p>
+  Phaser will be the engine doing all the heavy lifting.
+</p>
+<p>
+  Canvas 2D can be the drawing board inside the browser that Phaser paints sprites and tiles onto.
+</p>
+<p>
+  I'll need data. JSON is a data format Phaser can use when loading tile maps, item lists, or game configs.
+</p>
+<p>
+  The browser's native sound engine Web Audio API can be used by Phaser calls whenever I play a sound effect
+</p>
+<p>
+  TypeScript is potential a good tool I can use and learn better during this project.
+</p>
+
+  
+</div>
+  </div>
+</div>
+<div id="child-child-core-engine-framework-a17dfeb2a1" class="project-command child-02 uid-child-core-engine-framework-a17dfeb2a1">
+  <div class="project-split-child-head">What do I need</div>
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+   <strong>Core Engine Frame workPhaser.js</strong>
+  
+</div>
+<div class="project-split-cell">
+  <p>
+  Single index.html file importing Phaser via CDN.
+</p><p>
+  Initialization configuration specifying a 2D canvas size, grid rendering, and Phaser's built-in Arcade Physics.
+</p>
+
+  
+</div>
+  </div>
+</div>
+<div id="child-child-e00c6de312" class="project-command child-03 uid-child-e00c6de312">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  Tile Map & Grid System
+  
+</div>
+<div class="project-split-cell">
+  <p>
+  Terrain Grid: A 2D array or tilemap handling dirt, grass, and water tiles.
+
+</p>
+<p>
+  Obstacles & Collision: Wall properties applied to specific tile IDs (e.g., water or dense trees) to prevent the character from walking through them.
+</p>
+
+
+  
+</div>
+  </div>
+</div>
+<div id="child-child-b63361ec6f" class="project-command child-04 uid-child-b63361ec6f">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <strong>Cahracter & Movement</strong>
+  
+</div>
+<div class="project-split-cell">
+  <p>
+  Character Sprite: A basic 2D sprite or vector image representing the player character.
+</p>
+<p>
+  Input Handling: Keyboard event listeners (cursors = this.input.keyboard.createCursorKeys()) mapping arrow keys or WASD to grid-aligned movement. 
+</p>
+  
+</div>
+  </div>
+</div>
+<div id="child-child-005bc83e9f" class="project-command child-05 uid-child-005bc83e9f">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <strong>Survival Mechanics & UI Overlay</strong>
+
+  
+</div>
+<div class="project-split-cell">
+  <p>
+  Stat Variables: Basic JavaScript variables tracking numeric values for Health, Hunger, and Thirst.
+</p>
+
+  
+</div>
+  </div>
+</div>
+<div id="child-child-98bafb1bcd" class="project-command child-06 uid-child-98bafb1bcd">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <strong>Game Loop Timers</strong>
+  
+</div>
+<div class="project-split-cell">
+  <p>An automated time.addEvent tick that decreases Hunger/Thirst over time.
+</p>
+  
+</div>
+  </div>
+</div>
+<div id="child-child-85e13aa7f9" class="project-command child-07 uid-child-85e13aa7f9">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <strong>UI Display</strong>
+  
+</div>
+<div class="project-split-cell">
+  <p>Simple fixed HTML/CSS or Phaser text labels pinned to the screen corners showing live stat updates
+</p>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
   id="node-node-bird-life-simulation-game-technologies"
-  class="project-detail node-03 uid-node-bird-life-simulation-game-technologies project-technologies"
+  class="project-detail node-04 uid-node-bird-life-simulation-game-technologies project-technologies"
 >
   
 <header>
   <span>03</span>
-  <h3>Technology Plan</h3>
+  <h3>Planned Technologies</h3>
   Current, planned, legacy, or candidate technologies for this project.
 </header>
   
@@ -335,7 +486,7 @@
 </section>
 <section
   id="node-node-bird-life-simulation-game-scope"
-  class="project-detail node-04 uid-node-bird-life-simulation-game-scope project-scope"
+  class="project-detail node-05 uid-node-bird-life-simulation-game-scope project-scope"
 >
   
 <header>
@@ -401,7 +552,7 @@
 </section>
 <section
   id="node-node-bird-life-simulation-game-notes"
-  class="project-doc-section node-05 uid-node-bird-life-simulation-game-notes project-notes"
+  class="project-doc-section node-06 uid-node-bird-life-simulation-game-notes project-notes"
 >
   
 <header>
@@ -430,7 +581,7 @@
 </section>
 <div
   id="node-node-bird-life-simulation-game-related"
-  class="project-actions node-06 uid-node-bird-life-simulation-game-related"
+  class="project-actions node-07 uid-node-bird-life-simulation-game-related"
 >
 <a
   id="child-node-bird-life-simulation-game-related-01"
