@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PHP Request Lab — Developer Sandbox</title>
+    <title>Rebuilding Fetch with XMLHttpRequest — Developer Sandbox</title>
 
 
 
@@ -93,8 +93,8 @@
   ></button>
 
   <div>
-    <strong>PHP Request Lab</strong>
-    <p>Focused PHP laboratory for cURL, forms, JSON, REST, GET, and POST requests.</p>
+    <strong>Rebuilding Fetch with XMLHttpRequest</strong>
+    <p>Builds a simplified data request from scratch with XMLHttpRequest</p>
   </div>
 </div>
 
@@ -147,7 +147,7 @@
 
     
 <button
-  type="button"
+  type="button" aria-current="true"
   onclick="window.location.href = 'labs.html#group-browser-apis'"
 >
   <span aria-hidden="true">
@@ -252,7 +252,7 @@
 </button>
 
 <button
-  type="button" aria-current="true"
+  type="button"
   onclick="window.location.href = 'labs.html#group-backend-apis'"
 >
   <span aria-hidden="true">
@@ -473,242 +473,178 @@
     </small>
 
     <h2>
-      PHP Request Lab
+      Rebuilding Fetch with XMLHttpRequest
     </h2>
   </div>
 
   <p>
     
-    <strong>
-      PHP HTTP Request Practice
-    </strong>
 
-    <br />
-
-    Focused PHP laboratory for cURL, forms, JSON, REST, GET, and POST requests.
+    Builds a simplified data request from scratch with XMLHttpRequest
   </p>
 </header>
         <div
-  id="node-node-php-request-lab-display"
-  class="project-display node-01 uid-node-php-request-lab-display project-overview"
+  id="node-node-b20048bfb2"
+  class="project-display node-01 uid-node-b20048bfb2"
 >
-  <div class="project-preview"><div><strong>PLANNED LAB</strong><p>Turn familiar request patterns into a compact PHP practice project where every request step is visible. The implementation is planned.</p></div></div>
-  <div class="project-detail">
-    
-<header>
-  <span>PLANNED LAB</span>
-  <h2>PHP Request Lab</h2>
-  Turn familiar request patterns into a compact PHP practice project where every request step is visible. The implementation is planned.
-</header>
-    <div class="project-display-details">Turn familiar request patterns into a compact PHP practice project where every request step is visible. The implementation is planned.</div>
-  </div>
+  <div class="project-preview"><img src="/assets/img/fetchJSPreview.png" ></div>
+  
 </div>
 <section
-  id="node-node-php-request-lab-purpose"
-  class="project-doc-section node-02 uid-node-php-request-lab-purpose project-purpose"
+  id="node-node-project-summary-daa64e2242"
+  class="project-detail node-02 uid-node-project-summary-daa64e2242"
 >
   
 <header>
-  <span>02</span>
-  <h3>Purpose & Learning Objectives</h3>
-  Why this project exists and what the implementation should teach.
+  
+  <h3>Project summary</h3>
+  
 </header>
-  
+  <p>This learning project reconstructs the basic request flow behind modern JavaScript data fetching. It creates an XMLHttpRequest, opens and sends a GET request, observes readyState, receives raw JSON as responseText, parses it with JSON.parse(), and accesses the resulting JavaScript objects and arrays. The goal is to understand the mechanics underneath higher-level APIs such as fetch() before returning to the Modern Agenda ECMAScript implementation.</p>
   <div class="project-command-list">
-<div id="child-node-php-request-lab-purpose-core" class="project-command child-01 uid-node-php-request-lab-purpose-core">
-  <div class="project-split-child-head">Purpose / Learning</div>
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <p><strong>Purpose</strong></p>
-<p>Turn familiar request patterns into a compact PHP practice project where every request step is visible.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Learning Objectives</strong></p><ul><li>Write clear cURL GET requests.</li><li>Write cURL POST requests with form and JSON payloads.</li><li>Set and inspect headers.</li><li>Handle HTTP status and cURL errors.</li><li>Decode JSON safely.</li><li>Relate PHP requests to forms, AJAX, Fetch, and REST concepts.</li></ul>
-  
-</div>
-  </div>
-</div>
+
   </div>
 </section>
 <section
-  id="node-node-php-request-lab-technologies"
-  class="project-detail node-03 uid-node-php-request-lab-technologies project-technologies"
+  id="node-node-technologies-a8b802074a"
+  class="project-detail node-03 uid-node-technologies-a8b802074a"
 >
   
 <header>
-  <span>03</span>
-  <h3>Technology Plan</h3>
-  Current, planned, legacy, or candidate technologies for this project.
+  
+  <h3>Technologies</h3>
+  
 </header>
   
   <div class="project-meta">
-<div id="child-node-php-request-lab-technologies-server" class="child-01 uid-node-php-request-lab-technologies-server">
+<div id="child-child-ecmascript-59427aeb6e" class="child-01 uid-child-ecmascript-59427aeb6e">
   
 <div class="project-command-title">
-  Server
+  ECMAScript
 </div>
-  <p>PHP<br />cURL</p>
+  
 </div>
-<div id="child-node-php-request-lab-technologies-protocol" class="child-02 uid-node-php-request-lab-technologies-protocol">
+<div id="child-child-191f07d588" class="child-02 uid-child-191f07d588">
   
 <div class="project-command-title">
-  Protocol
+  JavaScript
 </div>
-  <p>HTTP<br />REST</p>
+  
 </div>
-<div id="child-node-php-request-lab-technologies-data" class="child-03 uid-node-php-request-lab-technologies-data">
+<div id="child-child-xmlhttprequest-9e8f2b4380" class="child-03 uid-child-xmlhttprequest-9e8f2b4380">
   
 <div class="project-command-title">
-  Data
+  XMLHttpRequest
 </div>
-  <p>JSON</p>
+  
 </div>
-<div id="child-node-php-request-lab-technologies-browser-relationships" class="child-04 uid-node-php-request-lab-technologies-browser-relationships">
+<div id="child-child-json-217664b7dc" class="child-04 uid-child-json-217664b7dc">
   
 <div class="project-command-title">
-  Browser Relationships
+  JSON
 </div>
-  <p>HTML forms<br />AJAX<br />JavaScript / Fetch comparison</p>
+  
+</div>
+<div id="child-child-http-30be36a949" class="child-05 uid-child-http-30be36a949">
+  
+<div class="project-command-title">
+  HTTP
+</div>
+  
 </div>
   </div>
 </section>
 <section
-  id="node-node-php-request-lab-scope"
-  class="project-detail node-04 uid-node-php-request-lab-scope project-scope"
+  id="node-node-d257553b5c"
+  class="project-detail node-04 uid-node-d257553b5c"
 >
   
 <header>
-  <span>04</span>
-  <h3>Implementation Scope</h3>
-  Planned behaviors, architecture decisions, and evidence this project should produce.
-</header>
   
+  <h3>Code</h3>
+  
+</header>
+  <pre><code>
+  function myFetch(path){
+    const request = new XMLHttpRequest();
+    // console.log(request);
+     request.open("GET", path);
+     request.onreadystatechange = function() { 
+        if (this.readyState === 4){
+            // console.log(this.responseText);
+            // console.log(typeof this.responseText);
+            const data = JSON.parse(this.responseText);
+            console.log(data[0].sections);
+        }
+       
+    };
+    request.send();
+    }
+myFetch("../data/agenda-data.json");</code></pre>
   <div class="project-command-list">
-<div id="child-node-php-request-lab-scope-get" class="project-command child-01 uid-node-php-request-lab-scope-get is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  GET
-</div>Build a request and inspect the response.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-get" aria-expanded="false" aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-get" aria-label="Expand GET"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-get" class="project-command-panel" hidden>
-    <ul><li>URL/query parameters.</li><li>Headers.</li><li>Status handling.</li><li>JSON decode.</li></ul>
-  </div>
-</div>
-<div id="child-node-php-request-lab-scope-post" class="project-command child-02 uid-node-php-request-lab-scope-post is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  POST
-</div>Send form and JSON bodies deliberately.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-post" aria-expanded="false" aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-post" aria-label="Expand POST"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-post" class="project-command-panel" hidden>
-    <ul><li>Content type.</li><li>Payload encoding.</li><li>Response handling.</li></ul>
-  </div>
-</div>
-<div id="child-node-php-request-lab-scope-error-handling" class="project-command child-03 uid-node-php-request-lab-scope-error-handling is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Error handling
-</div>Make failure paths part of the exercise.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-error-handling" aria-expanded="false" aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-error-handling" aria-label="Expand Error handling"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-error-handling" class="project-command-panel" hidden>
-    <ul><li>Network/cURL errors.</li><li>Non-2xx HTTP status.</li><li>Invalid JSON.</li></ul>
-  </div>
-</div>
-<div id="child-node-php-request-lab-scope-cross-technology-map" class="project-command child-04 uid-node-php-request-lab-scope-cross-technology-map is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Cross-technology map
-</div>Show equivalent request ideas in other technologies.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-cross-technology-map" aria-expanded="false" aria-controls="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-cross-technology-map" aria-label="Expand Cross-technology map"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-php-request-lab-node-php-request-lab-scope-node-php-request-lab-scope-cross-technology-map" class="project-command-panel" hidden>
-    <ul><li>HTML form submission.</li><li>AJAX.</li><li>Fetch API.</li><li>REST resource calls.</li></ul>
-  </div>
-</div>
+
   </div>
 </section>
 <section
-  id="node-node-php-request-lab-notes"
-  class="project-doc-section node-05 uid-node-php-request-lab-notes project-notes"
+  id="node-node-concepts-e687277597"
+  class="project-detail node-05 uid-node-concepts-e687277597"
 >
   
 <header>
-  <span>05</span>
-  <h3>Project Notes</h3>
-  Implementation context, boundaries, and later expansion.
+  
+  <h3>Concepts:</h3>
+  
 </header>
   
-  <div class="project-command-list">
-<div id="child-node-php-request-lab-notes-content" class="project-command child-01 uid-node-php-request-lab-notes-content">
-  <div class="project-split-child-head">Project Notes</div>
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <p><strong>Learning Context</strong></p>
-<p>The request workflow is familiar from earlier application work; this lab isolates the syntax and vocabulary.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Relationship</strong></p>
-<p>Supports Modern Agenda PHP phase and API Explorer.</p>
-  
-</div>
-  </div>
-</div>
-  </div>
-</section>
-<div
-  id="node-node-php-request-lab-related"
-  class="project-actions node-06 uid-node-php-request-lab-related"
->
-<a
-  id="child-node-php-request-lab-related-01"
-  class="project-link child-01 uid-node-php-request-lab-related-01"
-  href="pg/modern-agenda-phase-07-php.html"
->Modern Agenda — Phase 07: PHP<span aria-hidden="true">›</span></a>
-<a
-  id="child-node-php-request-lab-related-02"
-  class="project-link child-02 uid-node-php-request-lab-related-02"
-  href="pg/api-explorer.html"
->API Explorer<span aria-hidden="true">›</span></a>
-</div>
-<section
-  id="node-node-php-request-lab-code"
-  class="project-detail node-07 uid-node-php-request-lab-code"
->
-  
-<header>
-  <span>07</span>
-  <h3>Implementation Sketch</h3>
-  A compact structural example for this project.
-</header>
-  
-  <div class="project-command-list">
-<div id="child-node-php-request-lab-code-example" class="project-command child-01 uid-node-php-request-lab-code-example">
+  <div class="project-meta">
+<div id="child-child-request-lifecycle-3c63875300" class="child-01 uid-child-request-lifecycle-3c63875300">
   
 <div class="project-command-title">
-  Request Sketch
+  Request lifecycle
 </div>
-  A minimal cURL flow the lab will expand and annotate.
-  <div class="project-example">
-  <small>Example</small>
-  <pre><code>$handle = curl_init($url);
-curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($handle);
-$status = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-curl_close($handle);</code></pre>
+  
 </div>
+<div id="child-child-get-requests-2b8a5b4b6c" class="child-02 uid-child-get-requests-2b8a5b4b6c">
+  
+<div class="project-command-title">
+  GET requests
+</div>
+  
+</div>
+<div id="child-child-response-objects-5335debf0b" class="child-03 uid-child-response-objects-5335debf0b">
+  
+<div class="project-command-title">
+  response objects
+</div>
+  
+</div>
+<div id="child-child-readystate-246a2a3a67" class="child-04 uid-child-readystate-246a2a3a67">
+  
+<div class="project-command-title">
+  readyState
+</div>
+  
+</div>
+<div id="child-child-event-handlers-cbc7c896b1" class="child-05 uid-child-event-handlers-cbc7c896b1">
+  
+<div class="project-command-title">
+  event handlers
+</div>
+  
+</div>
+<div id="child-child-json-parsing-c5af168ec3" class="child-06 uid-child-json-parsing-c5af168ec3">
+  
+<div class="project-command-title">
+  JSON parsing
+</div>
+  
+</div>
+<div id="child-child-nested-data-access-136d993bef" class="child-07 uid-child-nested-data-access-136d993bef">
+  
+<div class="project-command-title">
+  nested data access
+</div>
+  
 </div>
   </div>
 </section>
