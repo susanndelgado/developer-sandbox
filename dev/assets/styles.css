@@ -1514,25 +1514,27 @@ footer {
    VIEW ALL / INNER PAGE
    ================================================== */
 
-.view-all-page {
-  position: relative;
+main {
+  &.view-all-page {
+    position: relative;
 
-  width: 100%;
-  min-height: 100svh;
+    width: 100%;
+    min-height: 100svh;
 
-  display: grid;
-  grid-template-columns: minmax(290px, 390px) minmax(0, 1fr);
-  gap: 40px;
+    display: grid;
+    grid-template-columns: minmax(290px, 390px) minmax(0, 1fr);
+    gap: 40px;
 
-  padding: 125px clamp(30px, 4vw, 70px) 100px;
+    padding: 125px clamp(30px, 4vw, 70px) 100px;
 
-  overflow: visible;
+    overflow: visible;
 
-  background:
-    linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.32)),
-    url("img/innerPg.png") center / cover fixed no-repeat;
+    background:
+      linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.32)),
+      url("img/innerPg.png") center / cover fixed no-repeat;
 
-  font-size: 13px;
+    font-size: 13px;
+  }
 }
 
 /* ==================================================
