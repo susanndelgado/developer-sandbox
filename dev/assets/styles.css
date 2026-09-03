@@ -1,17 +1,13 @@
 /*
   DEVELOPER SANDBOX — DEV MIRROR
-  Low-specificity global stylesheet.
+  Clean low-specificity stylesheet.
 
-  Goals:
-  - preserve the current live visual system
-  - use reusable global classes already present in the HTML
-  - keep selector specificity at or near zero with :where()
-  - avoid page-specific ID styling
-  - keep responsive rules in this single stylesheet
-  - no JavaScript-generated markup or styles
+  The dev/ mirror keeps the current live appearance while lowering selector
+  specificity and keeping the existing reusable component classes.
+  All original site files remain untouched.
 */
 
-@layer tokens, base, components, responsive;
+@layer tokens, base, site;
 
 @layer tokens {
   :root {
@@ -40,15 +36,11 @@
   :where(img) { max-width: 100%; }
 }
 
-@layer components {
-:where(/* ==================================================
-   1. STRUCTURE / GLOBALS
-   ================================================== */
-/* ==================================================
-   SANDBOX IN-PROGRESS NOTICE
-   ================================================== */
+@layer site {
 
-.sandbox-notice) {
+
+
+:where(.sandbox-notice) {
   position: fixed;
 
   top: 82px;
@@ -109,9 +101,9 @@
   line-height: 1.4;
 }
 
-:where(/* ---------- MOBILE ---------- */
 
-@media (max-width: 700px)) {
+
+@media (max-width: 700px) {
   :where(.sandbox-notice) {
     top: 62px;
 
@@ -163,9 +155,9 @@
     sans-serif;
 }
 
-:where(/* ---------- TYPOGRAPHY ---------- */
 
-h1),
+
+:where(h1),
 :where(h2),
 :where(h3),
 :where(p) {
@@ -184,24 +176,24 @@ h1),
   line-height: 1.5;
 }
 
-:where(/* ---------- LINKS ---------- */
 
-a) {
+
+:where(a) {
   color: inherit;
   text-decoration: none;
 }
 
-:where(/* ---------- IMAGES ---------- */
 
-img) {
+
+:where(img) {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-:where(/* ---------- FORM / BUTTON ELEMENTS ---------- */
 
-button),
+
+:where(button),
 :where(input),
 :where(select),
 :where(textarea) {
@@ -209,9 +201,9 @@ button),
   color: inherit;
 }
 
-:where(/* ---------- MAIN SANDBOX ---------- */
 
-main) {
+
+:where(main) {
   position: relative;
 
   width: 100%;
@@ -224,11 +216,9 @@ main) {
     url("img/sandbox-background.png") center / cover no-repeat;
 }
 
-:where(/* ==================================================
-   2. TOP HEADER / NAVIGATION
-   ================================================== */
 
-body > header) {
+
+:where(body > header) {
   position: fixed;
   top: 22px;
   left: 0;
@@ -247,9 +237,9 @@ body > header) {
   pointer-events: auto;
 }
 
-:where(/* ---------- TOP LEFT BRAND ---------- */
 
-body > header .brand) {
+
+:where(body > header .brand) {
   position: absolute;
   left: 28px;
   top: 2px;
@@ -285,9 +275,9 @@ body > header .brand) {
   font-size: 11px;
 }
 
-:where(/* ---------- CENTER NAV ---------- */
 
-body > header nav) {
+
+:where(body > header nav) {
   display: flex;
   overflow: hidden;
 
@@ -351,12 +341,9 @@ body > header nav) {
   outline-offset: -3px;
 }
 
-:where(/* ==================================================
-   MOBILE MENU BUTTON
-   hidden on desktop
-   ================================================== */
 
-.menu-toggle) {
+
+:where(.menu-toggle) {
   display: none;
 
   width: 42px;
@@ -395,9 +382,9 @@ body > header nav) {
     opacity 180ms ease;
 }
 
-:where(/* ---------- TOP RIGHT TOOLS ---------- */
 
-body > header .top-tools) {
+
+:where(body > header .top-tools) {
   position: absolute;
   right: 24px;
   top: 0;
@@ -409,9 +396,9 @@ body > header .top-tools) {
   color: white;
 }
 
-:where(/* ---------- HELP ORB + TOOLTIP ---------- */
 
-body > header .help) {
+
+:where(body > header .help) {
   position: relative;
 
   display: flex;
@@ -528,9 +515,9 @@ body > header .help) {
   line-height: 1.5;
 }
 
-:where(/* ---------- RETURN LINK ---------- */
 
-body > header .top-tools > a) {
+
+:where(body > header .top-tools > a) {
   align-self: center;
 
   color: #dce7f2;
@@ -542,9 +529,9 @@ body > header .top-tools > a) {
   color: white;
 }
 
-:where(/* ---------- CLOSE BUTTON ---------- */
 
-body > header .close) {
+
+:where(body > header .close) {
   width: 52px;
   height: 52px;
 
@@ -565,11 +552,9 @@ body > header .close) {
   background: rgba(47, 141, 255, 0.12);
 }
 
-:where(/* ==================================================
-   3. CENTER LOGO
-   ================================================== */
 
-.logo-stage) {
+
+:where(.logo-stage) {
   position: absolute;
   top: 47%;
   left: 50%;
@@ -647,11 +632,9 @@ body > header .close) {
   isolation: isolate;
 }
 
-:where(/* ==================================================
-   INNER CONCENTRIC RINGS
-   ================================================== */
 
-.logo-stage::before) {
+
+:where(.logo-stage::before) {
   content: "";
 
   position: absolute;
@@ -668,10 +651,10 @@ body > header .close) {
   pointer-events: none;
 }
 
-:where(/* blue light beam */
-/* hologram light rays rising from platform */
 
-.logo-stage::after) {
+
+
+:where(.logo-stage::after) {
   content: "";
 
   position: absolute;
@@ -708,9 +691,9 @@ body > header .close) {
   pointer-events: none;
 }
 
-:where(/* logo */
 
-.logo-stage button) {
+
+:where(.logo-stage button) {
   position: relative;
   z-index: 3;
 
@@ -740,11 +723,9 @@ body > header .close) {
     filter 200ms ease;
 }
 
-:where(/* ==================================================
-   ORBIT LINES BEHIND LOGO
-   ================================================== */
 
-.logo-stage button::before),
+
+:where(.logo-stage button::before),
 :where(.logo-stage button::after) {
   content: "";
 
@@ -775,9 +756,9 @@ body > header .close) {
   transform: translate(-50%, -50%) rotate(12deg);
 }
 
-:where(/* logo spin */
 
-.logo-stage button:hover img),
+
+:where(.logo-stage button:hover img),
 :where(.logo-stage button:focus-visible img) {
   transform: rotateY(360deg);
 
@@ -792,11 +773,9 @@ body > header .close) {
   border-radius: 50%;
 }
 
-:where(/* ==================================================
-   4. BOTTOM NAVIGATION
-   ================================================== */
 
-body > footer) {
+
+:where(body > footer) {
   position: fixed;
   bottom: 24px;
   left: 50%;
@@ -858,11 +837,9 @@ body > footer) {
   outline-offset: -2px;
 }
 
-:where(/* ==================================================
-   5. GLASS PANELS
-   ================================================== */
 
-.glass-panel) {
+
+:where(.glass-panel) {
   position: absolute;
   z-index: 10;
 
@@ -883,9 +860,9 @@ body > footer) {
   overflow: hidden;
 }
 
-:where(/* luminous border */
 
-.glass-panel::before) {
+
+:where(.glass-panel::before) {
   content: "";
 
   position: absolute;
@@ -913,9 +890,9 @@ body > footer) {
   mask-composite: exclude;
 }
 
-:where(/* brighter corners */
 
-.glass-panel::after) {
+
+:where(.glass-panel::after) {
   content: "";
 
   position: absolute;
@@ -935,9 +912,9 @@ body > footer) {
   opacity: 0.9;
 }
 
-:where(/* panel heading */
 
-.glass-panel h2) {
+
+:where(.glass-panel h2) {
   position: relative;
   z-index: 1;
 
@@ -952,18 +929,16 @@ body > footer) {
   letter-spacing: 0.06em;
 }
 
-:where(/* keep panel content above border effects */
 
-.glass-panel > *) {
+
+:where(.glass-panel > *) {
   position: relative;
   z-index: 1;
 }
 
-:where(/* ==================================================
-   6. FEATURED
-   ================================================== */
 
-.featured) {
+
+:where(.featured) {
   top: 14%;
   left: 4%;
 
@@ -971,18 +946,18 @@ body > footer) {
   min-width: 420px;
 }
 
-:where(/* ---------- MAIN FEATURE AREA ---------- */
 
-.featured-content) {
+
+:where(.featured-content) {
   display: grid;
   grid-template-columns: 30px 1fr 30px;
   gap: 8px;
   align-items: center;
 }
 
-:where(/* ---------- ARROWS ---------- */
 
-.featured .arrow) {
+
+:where(.featured .arrow) {
   width: 30px;
   height: 30px;
 
@@ -1008,9 +983,9 @@ body > footer) {
   cursor: default;
 }
 
-:where(/* ---------- STACKED CARDS ---------- */
 
-.card-stack) {
+
+:where(.card-stack) {
   position: relative;
 
   height: 220px;
@@ -1038,9 +1013,9 @@ body > footer) {
   opacity: 0.45;
 }
 
-:where(/* ---------- SLIDES ---------- */
 
-.featured .card-stack > .featured-slide) {
+
+:where(.featured .card-stack > .featured-slide) {
   display: none;
 }
 
@@ -1048,9 +1023,9 @@ body > footer) {
   display: grid;
 }
 
-:where(/* ---------- ACTIVE CARD ---------- */
 
-.card-stack article) {
+
+:where(.card-stack article) {
   z-index: 2;
 
   width: 100%;
@@ -1067,9 +1042,9 @@ body > footer) {
   overflow: hidden;
 }
 
-:where(/* ---------- PROJECT IMAGE ---------- */
 
-.featured .project-image) {
+
+:where(.featured .project-image) {
   width: 100%;
   height: 100%;
   min-height: 0;
@@ -1100,9 +1075,9 @@ body > footer) {
   object-fit: cover;
 }
 
-:where(/* ---------- PROJECT INFORMATION ---------- */
 
-.featured .project-info) {
+
+:where(.featured .project-info) {
   display: grid;
 
   grid-template-rows:
@@ -1127,9 +1102,9 @@ body > footer) {
   letter-spacing: 0.08em;
 }
 
-:where(/* ---------- PROJECT TITLE ---------- */
 
-.featured .project-info h3) {
+
+:where(.featured .project-info h3) {
   margin: 0;
 
   overflow: hidden;
@@ -1144,9 +1119,9 @@ body > footer) {
   line-clamp: 2;
 }
 
-:where(/* ---------- DESCRIPTION ---------- */
 
-.featured .project-info p) {
+
+:where(.featured .project-info p) {
   min-height: 0;
 
   overflow: hidden;
@@ -1161,9 +1136,9 @@ body > footer) {
   line-clamp: 3;
 }
 
-:where(/* ---------- TAGS ---------- */
 
-.featured .tags) {
+
+:where(.featured .tags) {
   display: flex;
   flex-wrap: wrap;
 
@@ -1189,9 +1164,9 @@ body > footer) {
   font-size: 9px;
 }
 
-:where(/* ---------- PROJECT LINK ---------- */
 
-.featured .project-info a) {
+
+:where(.featured .project-info a) {
   margin: 0;
 
   padding: 8px 10px;
@@ -1210,9 +1185,9 @@ body > footer) {
   background: rgba(47, 141, 255, 0.28);
 }
 
-:where(/* ---------- DOTS ---------- */
 
-.dots) {
+
+:where(.dots) {
   display: flex;
   justify-content: center;
 
@@ -1250,11 +1225,9 @@ body > footer) {
   outline-offset: 3px;
 }
 
-:where(/* ==================================================
-   7. ROSETTA STONES
-   ================================================== */
 
-.rosetta) {
+
+:where(.rosetta) {
   top: 14%;
   right: 4%;
 
@@ -1262,9 +1235,9 @@ body > footer) {
   min-width: 420px;
 }
 
-:where(/* ---------- HORIZONTAL SCROLL ---------- */
 
-.stones) {
+
+:where(.stones) {
   display: flex;
   gap: 14px;
 
@@ -1295,9 +1268,9 @@ body > footer) {
   border-radius: 9px;
 }
 
-:where(/* ---------- EACH STONE BUTTON ---------- */
 
-.stones button) {
+
+:where(.stones button) {
   flex: 0 0 72px;
 
   display: grid;
@@ -1319,11 +1292,9 @@ body > footer) {
   border-radius: 9px;
 }
 
-:where(/* ==================================================
-   HEXAGON
-   ================================================== */
 
-.stone) {
+
+:where(.stone) {
   --stone-color: #eaf7ff;
 
   position: relative;
@@ -1359,12 +1330,9 @@ body > footer) {
     filter 180ms ease;
 }
 
-:where(/* ==================================================
-   DARK INTERIOR
-   Creates thin outer border
-   ================================================== */
 
-.stone::before) {
+
+:where(.stone::before) {
   content: "";
 
   position: absolute;
@@ -1377,11 +1345,9 @@ body > footer) {
   z-index: 0;
 }
 
-:where(/* ==================================================
-   SECOND INNER BORDER
-   ================================================== */
 
-.stone::after) {
+
+:where(.stone::after) {
   content: "";
 
   position: absolute;
@@ -1398,11 +1364,9 @@ body > footer) {
   z-index: 1;
 }
 
-:where(/* ==================================================
-   CENTER OF HEXAGON
-   ================================================== */
 
-.stone > span) {
+
+:where(.stone > span) {
   position: relative;
   z-index: 2;
 
@@ -1444,11 +1408,9 @@ body > footer) {
     0 0 8px color-mix(in srgb, var(--stone-color) 35%, transparent);
 }
 
-:where(/* ==================================================
-   IMAGE / SVG ICONS
-   ================================================== */
 
-.stone img),
+
+:where(.stone img),
 :where(.stone svg) {
   display: block;
 
@@ -1469,11 +1431,9 @@ body > footer) {
   );
 }
 
-:where(/* ==================================================
-   COLOR CLASSES
-   ================================================== */
 
-.stone.blue) {
+
+:where(.stone.blue) {
   --stone-color: #4b96ff;
 }
 
@@ -1496,11 +1456,9 @@ body > footer) {
 :where(.stone.red) {
   --stone-color: #ff6c80;
 }
-:where(/* ==================================================
-   GEM / STONE COLOR PALETTE
-   ================================================== */
 
-.stone.rose) {
+
+:where(.stone.rose) {
   --stone-color: #ff6fae;
 }
 
@@ -1608,11 +1566,9 @@ body > footer) {
   --stone-color: #b7e7ff;
 }
 
-:where(/* ==================================================
-   STONE LABEL
-   ================================================== */
 
-.stones small) {
+
+:where(.stones small) {
   width: 72px;
 
   color: #d4dfeb;
@@ -1623,11 +1579,9 @@ body > footer) {
   text-align: center;
 }
 
-:where(/* ==================================================
-   HOVER / FOCUS
-   ================================================== */
 
-.stones button:hover .stone),
+
+:where(.stones button:hover .stone),
 :where(.stones button:focus-visible .stone) {
   transform: translateY(-2px);
 
@@ -1642,11 +1596,9 @@ body > footer) {
   outline-offset: 3px;
 }
 
-:where(/* ==================================================
-   VIEW ALL
-   ================================================== */
 
-.rosetta .view-all) {
+
+:where(.rosetta .view-all) {
   display: block;
 
   margin-top: 5px;
@@ -1664,11 +1616,9 @@ body > footer) {
   color: white;
 }
 
-:where(/* ==================================================
-   8. PROJECT LIBRARY
-   ================================================== */
 
-.library) {
+
+:where(.library) {
   top: 50%;
   left: 4%;
 
@@ -1676,9 +1626,9 @@ body > footer) {
   min-width: 420px;
 }
 
-:where(/* ---------- PROJECT GRID ---------- */
 
-.projects) {
+
+:where(.projects) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
@@ -1706,9 +1656,9 @@ body > footer) {
   background: rgba(47, 141, 255, 0.16);
 }
 
-:where(/* ---------- PROJECT ICON ---------- */
 
-.project-icon) {
+
+:where(.project-icon) {
   --icon-color: #eaf7ff;
 
   width: 62px;
@@ -1747,9 +1697,9 @@ body > footer) {
   object-fit: contain;
 }
 
-:where(/* ---------- ICON COLORS ---------- */
 
-.project-icon.blue) {
+
+:where(.project-icon.blue) {
   --icon-color: #4b96ff;
 }
 
@@ -1768,11 +1718,9 @@ body > footer) {
 :where(.project-icon.green) {
   --icon-color: #65e5a0;
 }
-:where(/* ==================================================
-   PROJECT ICON COLOR PALETTE
-   ================================================== */
 
-.project-icon.rose) {
+
+:where(.project-icon.rose) {
   --icon-color: #ff6fae;
 }
 
@@ -1879,9 +1827,9 @@ body > footer) {
 :where(.project-icon.ice) {
   --icon-color: #b7e7ff;
 }
-:where(/* ---------- TEXT ---------- */
 
-.projects strong) {
+
+:where(.projects strong) {
   font-size: 9px;
   font-weight: 500;
   line-height: 1.15;
@@ -1894,9 +1842,9 @@ body > footer) {
   letter-spacing: 0.04em;
 }
 
-:where(/* ---------- VIEW ALL ---------- */
 
-.library .view-all) {
+
+:where(.library .view-all) {
   display: block;
 
   margin-top: 10px;
@@ -1912,11 +1860,9 @@ body > footer) {
   color: white;
 }
 
-:where(/* ==================================================
-   9. REFERENCE GUIDES
-   ================================================== */
 
-.guides) {
+
+:where(.guides) {
   top: 41.5%;
   right: 4%;
 
@@ -1924,9 +1870,9 @@ body > footer) {
   min-width: 420px;
 }
 
-:where(/* ---------- HORIZONTAL LIST ---------- */
 
-.guide-list) {
+
+:where(.guide-list) {
   display: flex;
   gap: 10px;
 
@@ -1951,9 +1897,9 @@ body > footer) {
   border-radius: 9px;
 }
 
-:where(/* ---------- GUIDE ITEM ---------- */
 
-.guide-list > a) {
+
+:where(.guide-list > a) {
   flex: 0 0 76px;
 
   display: grid;
@@ -1975,9 +1921,9 @@ body > footer) {
   background: rgba(47, 141, 255, 0.16);
 }
 
-:where(/* ---------- SQUARE ICON ---------- */
 
-.guide-icon) {
+
+:where(.guide-icon) {
   --icon-color: #eaf7ff;
 
   width: 48px;
@@ -2008,9 +1954,9 @@ body > footer) {
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
 
-:where(/* ---------- IMG / SVG ---------- */
 
-.guide-icon img),
+
+:where(.guide-icon img),
 :where(.guide-icon svg) {
   width: 60%;
   height: 60%;
@@ -2018,9 +1964,9 @@ body > footer) {
   object-fit: contain;
 }
 
-:where(/* ---------- ICON COLORS ---------- */
 
-.guide-icon.blue) {
+
+:where(.guide-icon.blue) {
   --icon-color: #4b96ff;
 }
 
@@ -2043,11 +1989,9 @@ body > footer) {
 :where(.guide-icon.green) {
   --icon-color: #65e5a0;
 }
-:where(/* ==================================================
-   GUIDE ICON COLOR PALETTE
-   ================================================== */
 
-.guide-icon.rose) {
+
+:where(.guide-icon.rose) {
   --icon-color: #ff6fae;
 }
 
@@ -2154,18 +2098,18 @@ body > footer) {
 :where(.guide-icon.ice) {
   --icon-color: #b7e7ff;
 }
-:where(/* ---------- LABEL ---------- */
 
-.guide-list small) {
+
+:where(.guide-list small) {
   color: #d4dfeb;
 
   font-size: 9px;
   line-height: 1.2;
 }
 
-:where(/* ---------- VIEW ALL ---------- */
 
-.guides .view-all) {
+
+:where(.guides .view-all) {
   display: block;
 
   margin-top: 8px;
@@ -2181,11 +2125,9 @@ body > footer) {
   color: white;
 }
 
-:where(/* ==================================================
-   10. DATA SCIENCE
-   ================================================== */
 
-.data) {
+
+:where(.data) {
   top: 66%;
   right: 4%;
 
@@ -2193,9 +2135,9 @@ body > footer) {
   min-width: 420px;
 }
 
-:where(/* ---------- HORIZONTAL LIST ---------- */
 
-.data-list) {
+
+:where(.data-list) {
   display: flex;
   gap: 10px;
 
@@ -2220,9 +2162,9 @@ body > footer) {
   border-radius: 9px;
 }
 
-:where(/* ---------- TOPIC ---------- */
 
-.data-list > a) {
+
+:where(.data-list > a) {
   flex: 0 0 82px;
 
   display: grid;
@@ -2244,9 +2186,9 @@ body > footer) {
   background: rgba(47, 141, 255, 0.16);
 }
 
-:where(/* ---------- ICON ---------- */
 
-.data-icon) {
+
+:where(.data-icon) {
   --icon-color: #eaf7ff;
 
   width: 48px;
@@ -2277,9 +2219,9 @@ body > footer) {
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
 
-:where(/* image / svg */
 
-.data-icon img),
+
+:where(.data-icon img),
 :where(.data-icon svg) {
   width: 60%;
   height: 60%;
@@ -2289,9 +2231,9 @@ body > footer) {
   color: inherit;
 }
 
-:where(/* ---------- COLORS ---------- */
 
-.data-icon.blue) {
+
+:where(.data-icon.blue) {
   --icon-color: #4b96ff;
 }
 
@@ -2314,12 +2256,9 @@ body > footer) {
 :where(.data-icon.red) {
   --icon-color: #ff6c80;
 }
-:where(/* ==================================================
-   INTERACTIVE ICON COLOR PALETTE
-   Existing class name: .data-icon
-   ================================================== */
 
-.data-icon.rose) {
+
+:where(.data-icon.rose) {
   --icon-color: #ff6fae;
 }
 
@@ -2426,18 +2365,18 @@ body > footer) {
 :where(.data-icon.ice) {
   --icon-color: #b7e7ff;
 }
-:where(/* ---------- LABEL ---------- */
 
-.data-list small) {
+
+:where(.data-list small) {
   color: #d4dfeb;
 
   font-size: 9px;
   line-height: 1.25;
 }
 
-:where(/* ---------- VIEW ALL ---------- */
 
-.data .view-all) {
+
+:where(.data .view-all) {
   display: block;
 
   margin-top: 8px;
@@ -2452,14 +2391,13 @@ body > footer) {
 :where(.data .view-all:focus-visible) {
   color: white;
 }
-:where(/* ==================================================
-   VIEW ALL / INNER PAGE
-   ================================================== */
 
-.view-all-page) {
+
+
+:where(.view-all-page) {
   position: relative;
 font-size: 13px;
-/* line-height: 2px; */
+
   width: 100%;
   min-height: 100svh;
 
@@ -2476,19 +2414,17 @@ font-size: 13px;
     url("img/innerPg.png") center / cover fixed no-repeat;
 }
 
-:where(/* ==================================================
-   LEFT TYPE MENU
-   ================================================== */
 
-.type-menu) {
+
+:where(.type-menu) {
   align-self: start;
 
   min-width: 0;
 }
 
-:where(/* ---------- PAGE INTRO ---------- */
 
-.type-menu > header) {
+
+:where(.type-menu > header) {
   margin-bottom: 20px;
 }
 
@@ -2511,10 +2447,8 @@ font-size: 13px;
 
 }
 
-:where(/* ==================================================
-   PROJECT TYPE LIST
-   ================================================== */
-:root) {
+
+:where(:root) {
   font-family:
     Inter,
     ui-sans-serif,
@@ -2533,7 +2467,7 @@ font-size: 13px;
   --editor-text: #e8f1fb;
   --editor-muted: #8da5c1;
 
-  /* Developer Sandbox / project-content colors */
+  
   --sandbox-blue: #5fc8ff;
   --sandbox-blue-dark: #2f8dff;
   --sandbox-violet: #8a67ff;
@@ -2582,11 +2516,9 @@ font-size: 13px;
   color: inherit;
 }
 
-:where(/* ==========================================================================
-   EDITOR TOP BAR
-   ========================================================================== */
 
-.topbar) {
+
+:where(.topbar) {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -2634,11 +2566,9 @@ font-size: 13px;
   gap: 0.45rem;
 }
 
-:where(/* ==========================================================================
-   START / STOP HELP
-   ========================================================================== */
 
-.stop-help) {
+
+:where(.stop-help) {
   padding: 0.5rem 1rem;
 
   border-bottom: 1px solid var(--editor-line);
@@ -2687,11 +2617,9 @@ font-size: 13px;
   margin-right: 0.5rem;
 }
 
-:where(/* ==========================================================================
-   MAIN EDITOR LAYOUT
-   ========================================================================== */
 
-.editor-layout) {
+
+:where(.editor-layout) {
   display: grid;
 
   grid-template-columns:
@@ -2708,11 +2636,9 @@ font-size: 13px;
   min-width: 0;
 }
 
-:where(/* ==========================================================================
-   SIDEBAR
-   ========================================================================== */
 
-.sidebar) {
+
+:where(.sidebar) {
   overflow: auto;
 
   max-height: calc(100vh - 102px);
@@ -2754,11 +2680,9 @@ font-size: 13px;
   line-height: 1.45;
 }
 
-:where(/* ==========================================================================
-   EDITOR INPUTS
-   ========================================================================== */
 
-input),
+
+:where(input),
 :where(select),
 :where(textarea) {
   width: 100%;
@@ -2784,11 +2708,9 @@ input),
   outline-offset: 1px;
 }
 
-:where(/* ==========================================================================
-   EDITOR BUTTONS
-   ========================================================================== */
 
-button) {
+
+:where(button) {
   padding: 0.45rem 0.65rem;
 
   border: 1px solid #476b95;
@@ -2818,11 +2740,9 @@ button) {
   font-size: 0.7rem;
 }
 
-:where(/* ==========================================================================
-   SEARCH RESULTS
-   ========================================================================== */
 
-.search-results) {
+
+:where(.search-results) {
   display: grid;
 
   gap: 0.35rem;
@@ -2858,11 +2778,9 @@ button) {
   font-size: 0.64rem;
 }
 
-:where(/* ==========================================================================
-   PAGE OUTLINE
-   ========================================================================== */
 
-.outline-fixed),
+
+:where(.outline-fixed),
 :where(.outline-item) {
   margin-top: 0.45rem;
 
@@ -2936,11 +2854,9 @@ button) {
   font-size: 0.7rem;
 }
 
-:where(/* ==========================================================================
-   WORKSPACE
-   ========================================================================== */
 
-.workspace) {
+
+:where(.workspace) {
   overflow: auto;
 
   max-height: calc(100vh - 102px);
@@ -2950,11 +2866,9 @@ button) {
   border-right: 1px solid var(--editor-line);
 }
 
-:where(/* ==========================================================================
-   EDITOR DETAILS / PANELS
-   ========================================================================== */
 
-details) {
+
+:where(details) {
   margin-bottom: 0.9rem;
 
   border: 1px solid var(--editor-line);
@@ -2978,11 +2892,9 @@ details) {
   border-bottom: 0;
 }
 
-:where(/* ==========================================================================
-   EDITOR FORMS
-   ========================================================================== */
 
-.form-grid) {
+
+:where(.form-grid) {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
@@ -3037,11 +2949,9 @@ details) {
   gap: 0.45rem;
 }
 
-:where(/* ==========================================================================
-   NODE AREA
-   ========================================================================== */
 
-.node-help) {
+
+:where(.node-help) {
   margin-bottom: 0.7rem;
 
   padding: 0.65rem 0.75rem;
@@ -3082,11 +2992,9 @@ details) {
   gap: 0.5rem;
 }
 
-:where(/* ==========================================================================
-   NODE FORM
-   ========================================================================== */
 
-.node-form) {
+
+:where(.node-form) {
   border: 1px solid #294560;
   border-radius: 0.35rem;
 
@@ -3121,11 +3029,9 @@ details) {
   font-size: 0.65rem;
 }
 
-:where(/* ==========================================================================
-   CHILD EDITOR
-   ========================================================================== */
 
-.children-editor) {
+
+:where(.children-editor) {
   border-top: 1px solid var(--editor-line);
 }
 
@@ -3193,11 +3099,9 @@ details) {
   font-size: 0.66rem;
 }
 
-:where(/* ==========================================================================
-   NODE SUBMIT BAR
-   ========================================================================== */
 
-.node-submit-bar) {
+
+:where(.node-submit-bar) {
   position: sticky;
   bottom: 0;
 
@@ -3217,11 +3121,9 @@ details) {
   display: none !important;
 }
 
-:where(/* ==========================================================================
-   SQL PANEL
-   ========================================================================== */
 
-.sql-inner) {
+
+:where(.sql-inner) {
   padding: 0.8rem;
 }
 
@@ -3238,11 +3140,9 @@ details) {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-:where(/* ==========================================================================
-   PREVIEW COLUMN — EDITOR CHROME ONLY
-   ========================================================================== */
 
-.preview-column) {
+
+:where(.preview-column) {
   overflow: auto;
 
   max-height: calc(100vh - 102px);
@@ -3280,16 +3180,9 @@ details) {
   padding: 1.25rem;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — SANDBOX RIGHT-COLUMN FOUNDATION
-   Everything in this section is scoped to .preview so none of it changes
-   the editor forms),
-:where(sidebar),
-:where(database view),
-:where(or other localhost controls.
-   ========================================================================== */
 
-.preview .sandbox-entry-preview),
+
+:where(.preview .sandbox-entry-preview),
 :where(.preview .project-content) {
   width: 100%;
   min-width: 0;
@@ -3322,12 +3215,9 @@ details) {
   color: inherit;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — RECORD / PROJECT CONTENT HEADER
-   Mirrors the right-column header used by single-project and reference-guide.
-   ========================================================================== */
 
-.preview .sandbox-entry-preview > header),
+
+:where(.preview .sandbox-entry-preview > header),
 :where(.preview .project-content > header),
 :where(.preview .project-detail-header) {
   display: grid;
@@ -3393,11 +3283,9 @@ details) {
   text-align: right;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — NAV / BUTTON NODES
-   ========================================================================== */
 
-.preview .project-doc-nav),
+
+:where(.preview .project-doc-nav),
 :where(.preview .project-actions) {
   display: flex;
   flex-wrap: wrap;
@@ -3461,11 +3349,9 @@ details) {
   background: rgba(47, 141, 255, 0.18);
 }
 
-:where(/* ==========================================================================
-   PREVIEW — DISPLAY NODE
-   ========================================================================== */
 
-.preview .project-display) {
+
+:where(.preview .project-display) {
   overflow: hidden;
 
   margin: 0 0 18px;
@@ -3531,11 +3417,9 @@ details) {
   background: rgba(5, 18, 43, 0.7);
 }
 
-:where(/* ==========================================================================
-   PREVIEW — STANDARD PROJECT DETAIL NODE
-   ========================================================================== */
 
-.preview .project-detail) {
+
+:where(.preview .project-detail) {
   overflow: hidden;
 
   margin: 0 0 16px;
@@ -3548,7 +3432,7 @@ details) {
 
 :where(.preview .project-detail > header) {
   display: flex;
-  /* align-items: center; */
+  
   gap: 12px;
   min-height: 48px;
   padding: 11px 14px;
@@ -3588,11 +3472,9 @@ details) {
   line-height: 1.65;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — PROJECT META / GRID NODE
-   ========================================================================== */
 
-.preview .project-meta) {
+
+:where(.preview .project-meta) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
 
@@ -3649,12 +3531,9 @@ details) {
 >>>>>>> a906075 (generate data)
 }
 
-:where(/* ==========================================================================
-   PREVIEW — PROJECT DOCUMENTATION LINK-ROW STYLE
-   Supports HTML entered inside standard/grid children.
-   ========================================================================== */
 
-.preview .project-documents) {
+
+:where(.preview .project-documents) {
   display: grid;
 }
 
@@ -3709,11 +3588,9 @@ details) {
   font-size: 20px;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — PROJECT IMAGES / GALLERY THROUGH GRID OR HTML
-   ========================================================================== */
 
-.preview .project-images) {
+
+:where(.preview .project-images) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 
@@ -3731,11 +3608,9 @@ details) {
   border: 1px solid rgba(95, 170, 255, 0.14);
 }
 
-:where(/* ==========================================================================
-   PREVIEW — REFERENCE DOCUMENT
-   ========================================================================== */
 
-.preview .project-doc) {
+
+:where(.preview .project-doc) {
   display: grid;
 
   gap: 16px;
@@ -3766,8 +3641,8 @@ details) {
   background: rgba(11, 35, 68, 0.66);
 }
 
-:where(/* Editor-generated documentation header has span + h3 directly. */
-.preview .project-doc-section > header > span) {
+
+:where(.preview .project-doc-section > header > span) {
   display: block;
   position: static;
   margin-bottom: 0.35rem;
@@ -3787,8 +3662,8 @@ details) {
   letter-spacing: 0.12em;
 }
 
-:where(/* Live reference-guide header has a wrapping div. */
-.preview .project-doc-section > header > div) {
+
+:where(.preview .project-doc-section > header > div) {
   display: block;
   display: flex;
   align-items: center;
@@ -3840,22 +3715,9 @@ details) {
   text-align: right;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — STANDARD / DOCUMENTATION CHILDREN
-   LOCKED-IN STRUCTURE
 
-   Standard and Documentation children are ALWAYS one full-width column.
 
-   Behavior = None:
-     full-width content only
-
-   Behavior = Link or Collapsible:
-     full-width content + one narrow action column on the right
-
-   Grid and Split nodes are the ONLY node families that create content columns.
-   ========================================================================== */
-
-.preview .project-command-list) {
+:where(.preview .project-command-list) {
   display: block;
 }
 
@@ -3940,12 +3802,9 @@ details) {
   height: auto;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — STANDARD / DOCUMENTATION LINK OR COLLAPSE ACTION
-   Only these behaviors create a second column.
-   ========================================================================== */
 
-.preview .project-command:has(> .project-command-action)) {
+
+:where(.preview .project-command:has(> .project-command-action)) {
   display: grid;
 
   grid-template-columns:
@@ -4035,12 +3894,9 @@ details) {
   line-height: 1.6;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — INLINE CODE INSIDE STANDARD / DOCUMENTATION CONTENT
-   Code never creates a content column here.
-   ========================================================================== */
 
-.preview .project-command code) {
+
+:where(.preview .project-command code) {
   color: #a8ddff;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -4050,11 +3906,9 @@ details) {
   overflow-wrap: anywhere;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — EXAMPLE
-   ========================================================================== */
 
-.preview .project-example) {
+
+:where(.preview .project-example) {
   margin: 12px;
 
   overflow: hidden;
@@ -4099,11 +3953,9 @@ details) {
 >>>>>>> a906075 (generate data)
 }
 
-:where(/* ==========================================================================
-   PREVIEW — NOTE
-   ========================================================================== */
 
-.preview .project-note) {
+
+:where(.preview .project-note) {
   display: block;
 
   margin: 12px;
@@ -4131,11 +3983,9 @@ details) {
   margin-bottom: 0;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — SPLIT NODE
-   ========================================================================== */
 
-.preview .project-split-list) {
+
+:where(.preview .project-split-list) {
   display: grid;
 }
 
@@ -4208,11 +4058,9 @@ details) {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — GENERIC HTML ENTERED BY USER
-   ========================================================================== */
 
-.preview .sandbox-entry-preview h1),
+
+:where(.preview .sandbox-entry-preview h1),
 :where(.preview .project-content h1) {
   color: #f2f8ff;
 }
@@ -4282,14 +4130,9 @@ details) {
   border-top: 1px solid rgba(95, 170, 255, 0.15);
 }
 
-:where(/* ==========================================================================
-   PREVIEW — PROJECT LIBRARY / INNER.HTML
-   These styles are intentionally scoped to .preview so the editor itself
-   keeps its own controls),
-:where(spacing and colors.
-   ========================================================================== */
 
-.preview .project-group) {
+
+:where(.preview .project-group) {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
 
@@ -4494,7 +4337,7 @@ details) {
   line-height: 1.35;
 }
 
-:where(//* Prevent preview header labels and headings from overlapping */
+:where(/
 .preview header > span + h3) {
   grid-column: auto;
   grid-row: auto;
@@ -4552,11 +4395,9 @@ details) {
   isolation: auto;
 }
 
-:where(/* ==========================================================================
-   GENERATED HTML PANEL
-   ========================================================================== */
 
-.generated-panel) {
+
+:where(.generated-panel) {
   margin: 1rem;
 
   color: var(--editor-text);
@@ -4575,11 +4416,9 @@ details) {
   margin: 0 0.7rem 0.7rem;
 }
 
-:where(/* ==========================================================================
-   DATABASE VIEW — BELOW EDITOR
-   ========================================================================== */
 
-.database-view) {
+
+:where(.database-view) {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
 
@@ -4671,11 +4510,9 @@ details) {
   font-size: 0.72rem;
 }
 
-:where(/* ==========================================================================
-   RESPONSIVE — EDITOR LAYOUT
-   ========================================================================== */
 
-@media (max-width: 1200px)) {
+
+@media (max-width: 1200px) {
   :where(.editor-layout) {
     grid-template-columns: 260px 1fr;
   }
@@ -4698,15 +4535,9 @@ details) {
   }
 }
 
-:where(/* ==========================================================================
-   RESPONSIVE — SANDBOX PREVIEW),
-:where(TABLET
-   This follows the uploaded Sandbox responsive behavior: project content
-   tightens),
-:where(command rows keep a compact code column.
-   ========================================================================== */
 
-@media (max-width: 1100px)) {
+
+@media (max-width: 1100px) {
   :where(.preview) {
     padding: 18px;
   }
@@ -4725,11 +4556,9 @@ details) {
   }
 }
 
-:where(/* ==========================================================================
-   RESPONSIVE — PHONE
-   ========================================================================== */
 
-@media (max-width: 760px)) {
+
+@media (max-width: 760px) {
   :where(.topbar) {
     grid-template-columns: 1fr;
   }
@@ -4912,11 +4741,8 @@ details) {
   }
 
 
-/* 
-  .preview .project-command p {
-    font-size: 12px;
-  } :where(*/
-  .preview .project-command:has(> .project-command-action)) {
+
+  :where(.preview .project-command:has(> .project-command-action)) {
     grid-template-columns: minmax(0, 1fr) 40px;
   }
 
@@ -5028,13 +4854,9 @@ details) {
   }
 }
 
-:where(/* ==========================================================================
-   FINAL PREVIEW CHILD LAYOUT CORRECTION
-   Standard/documentation children contain arbitrary HTML and therefore
-   must not treat each direct HTML element as a separate grid column.
-   ========================================================================== */
 
-.preview .project-command) {
+
+:where(.preview .project-command) {
   position: relative;
   display: block;
   min-width: 0;
@@ -5086,8 +4908,8 @@ details) {
   height: auto;
 }
 
-:where(/* Link/collapse children get content + action columns. */
-.preview .project-command:has(> .project-command-action)) {
+
+:where(.preview .project-command:has(> .project-command-action)) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px;
   padding: 0;
@@ -5129,8 +4951,8 @@ details) {
   line-height: 1.6;
 }
 
-:where(/* Reference-guide command rows alone use command + description columns. */
-.preview .project-command:has(> code)) {
+
+:where(.preview .project-command:has(> code)) {
   display: grid;
   grid-template-columns: minmax(95px, 125px) minmax(0, 1fr);
   padding: 0;
@@ -5159,13 +4981,9 @@ details) {
   grid-template-columns: minmax(95px, 125px) minmax(0, 1fr) 44px;
 }
 
-:where(/* ==========================================================================
-   DATABASE FLOW GUARANTEE
-   The database belongs below the complete editor),
-:where(never over the forms.
-   ========================================================================== */
 
-.database-view),
+
+:where(.database-view),
 :where(#databaseView),
 :where(.db-view) {
   position: static !important;
@@ -5189,11 +5007,9 @@ details) {
   display: none !important;
 }
 
-:where(/* ==========================================================================
-   NODE MODEL V3 — EDITOR HIERARCHY / POSITION / MODE
-   ========================================================================== */
 
-.page-structure-section) {
+
+:where(.page-structure-section) {
   scroll-margin-top: 90px;
 }
 
@@ -5296,11 +5112,9 @@ details) {
   display: none;
 }
 
-:where(/* ==========================================================================
-   NODE FORM — IDENTIFIABLE PARENT / CHILD EDITOR
-   ========================================================================== */
 
-.node-form) {
+
+:where(.node-form) {
   scroll-margin-top: 90px;
 }
 
@@ -5376,12 +5190,9 @@ details) {
   tab-size: 2;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — NODE MODEL V3
-   Parent wrappers determine child layout.
-   ========================================================================== */
 
-.preview .project-command-list) {
+
+:where(.preview .project-command-list) {
   display: block;
   width: 100%;
 }
@@ -5391,8 +5202,8 @@ details) {
   min-width: 0;
 }
 
-:where(/* Standard / Code Link + Collapse: only the action area becomes a second column. */
-.preview .project-command:has(> .project-command-action)) {
+
+:where(.preview .project-command:has(> .project-command-action)) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px;
   align-items: stretch;
@@ -5420,8 +5231,8 @@ details) {
   min-width: 0;
 }
 
-:where(/* Split default rows remain full-width rows containing their own split grid. */
-.preview .project-doc-section .project-command) {
+
+:where(.preview .project-doc-section .project-command) {
   padding: 0;
 }
 
@@ -5468,11 +5279,8 @@ details) {
   border-right: 0;
 }
 
-:where(/*
-  Split Link mode:
-  HTML stays ordinary HTML. Only the dedicated arrow action is clickable.
-*/
-.preview .project-split-cell > .project-command-action) {
+
+:where(.preview .project-split-cell > .project-command-action) {
   float: right;
   width: 40px;
   min-width: 40px;
@@ -5482,8 +5290,8 @@ details) {
   border-radius: 4px;
 }
 
-:where(/* Split Collapse panel uses its split grid when expanded. */
-.preview .project-command-panel.project-split) {
+
+:where(.preview .project-command-panel.project-split) {
   display: grid;
   padding: 0;
 }
@@ -5492,11 +5300,9 @@ details) {
   display: none;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — CODE / EXAMPLES
-   ========================================================================== */
 
-.preview .project-example) {
+
+:where(.preview .project-example) {
   width: auto;
   min-width: 0;
 }
@@ -5512,11 +5318,9 @@ details) {
   overflow-wrap: normal;
 }
 
-:where(/* ==========================================================================
-   PREVIEW — DISPLAY / PREVIEW
-   ========================================================================== */
 
-.preview .project-display) {
+
+:where(.preview .project-display) {
   display: block;
 }
 
@@ -5538,11 +5342,9 @@ details) {
   line-height: 1.6;
 }
 
-:where(/* ==========================================================================
-   RESPONSIVE — NODE MODEL V3
-   ========================================================================== */
 
-@media (max-width: 760px)) {
+
+@media (max-width: 760px) {
   :where(.outline-parent-row),
 :where(.outline-child-row) {
     grid-template-columns: auto minmax(0, 1fr);
@@ -5577,11 +5379,9 @@ details) {
   }
 }
 
-:where(/* ==========================================================================
-   DATABASE FLOW GUARANTEE — KEEP BELOW EDITOR
-   ========================================================================== */
 
-.database-view),
+
+:where(.database-view),
 :where(#database-view),
 :where(#databaseView),
 :where(.db-view) {
@@ -5607,11 +5407,9 @@ details) {
   display: none !important;
 }
 
-:where(/* ==========================================================================
-   EDITOR STATE SEPARATION — ENTRY vs NODE
-   ========================================================================== */
 
-.entry-panel--compact) {
+
+:where(.entry-panel--compact) {
   margin-bottom: 1rem;
   border: 1px solid var(--editor-line);
   border-radius: 0.4rem;
@@ -5701,15 +5499,10 @@ details) {
   }
 }
 
-:where(/* ==========================================================================
-   DATABASE TABLE — WIDE HORIZONTAL SCROLL + SORTABLE HEADERS
-   ========================================================================== */
 
-/*
-  Do not squeeze the database table to the viewport. The table keeps the
-  natural width of its columns and the wrapper scrolls left/right.
-*/
-.db-table-area) {
+
+
+:where(.db-table-area) {
   min-width: 0;
   overflow: hidden;
 }
@@ -5765,11 +5558,8 @@ details) {
   word-break: normal;
 }
 
-:where(/*
-  Keep long text fields readable as their own wide columns rather than wrapping
-  them into narrow vertical strips.
-*/
-.db-table-wrap td[data-column="description"]),
+
+:where(.db-table-wrap td[data-column="description"]),
 :where(.db-table-wrap td[data-column="notes"]),
 :where(.db-table-wrap td[data-column="content"]),
 :where(.db-table-wrap td[data-column="metadata"]) {
@@ -5838,11 +5628,9 @@ details) {
   }
 }
 
-:where(/* ==========================================================================
-   DATABASE BULK SELECTION + DATABASE DANGER ZONE
-   ========================================================================== */
 
-.database-danger-zone) {
+
+:where(.database-danger-zone) {
   margin-top: 1.25rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 110, 110, 0.22);
@@ -5918,9 +5706,9 @@ details) {
   gap: 14px;
 }
 
-:where(/* ---------- TYPE CARD ---------- */
 
-.project-types button) {
+
+:where(.project-types button) {
   width: 100%;
 
   display: grid;
@@ -5954,9 +5742,9 @@ details) {
     box-shadow 160ms ease;
 }
 
-:where(/* ---------- ICON ---------- */
 
-.project-types button > span:first-child) {
+
+:where(.project-types button > span:first-child) {
   width: 50px;
   height: 50px;
 
@@ -5983,9 +5771,9 @@ details) {
     0 0 10px rgba(95, 200, 255, 0.1);
 }
 
-:where(/* ---------- TEXT ---------- */
 
-.project-types button > span:last-child) {
+
+:where(.project-types button > span:last-child) {
   display: grid;
   gap: 4px;
 }
@@ -6007,11 +5795,9 @@ details) {
   line-height: 1.45;
 }
 
-:where(/* ==================================================
-   HOVER
-   ================================================== */
 
-.project-types button:hover),
+
+:where(.project-types button:hover),
 :where(.project-types button:focus-visible) {
   transform: translateX(3px);
 
@@ -6027,11 +5813,9 @@ details) {
     0 0 14px rgba(64, 158, 255, 0.08);
 }
 
-:where(/* ==================================================
-   ACTIVE TYPE
-   ================================================== */
 
-.project-types button[aria-current="true"]) {
+
+:where(.project-types button[aria-current="true"]) {
   border-color: rgba(95, 200, 255, 0.55);
 
   background:
@@ -6050,11 +5834,9 @@ details) {
     inset 0 0 14px rgba(95, 200, 255, 0.12),
     0 0 12px rgba(95, 200, 255, 0.18);
 }
-:where(/* ==================================================
-   RIGHT CONTENT AREA
-   ================================================== */
 
-.project-content) {
+
+:where(.project-content) {
   min-width: 0;
 
   padding: 24px;
@@ -6072,11 +5854,9 @@ details) {
     0 0 22px rgba(64, 158, 255, 0.08);
 }
 
-:where(/* ==================================================
-   CONTENT HEADER
-   ================================================== */
 
-.project-content > header) {
+
+:where(.project-content > header) {
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -6113,11 +5893,9 @@ font-size: 12px;;
   text-align: right;
 }
 
-:where(/* ==================================================
-   PROJECT GROUP
-   ================================================== */
 
-.project-group) {
+
+:where(.project-group) {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
 
@@ -6133,9 +5911,9 @@ font-size: 12px;;
   margin-top: 14px;
 }
 
-:where(/* ---------- GROUP LABEL ---------- */
 
-.project-group > header) {
+
+:where(.project-group > header) {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6194,11 +5972,9 @@ font-size: 12px;;
   line-height: 1.35;
 }
 
-:where(/* ==================================================
-   PROJECT GRID
-   ================================================== */
 
-.project-grid) {
+
+:where(.project-grid) {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
@@ -6207,9 +5983,9 @@ font-size: 12px;;
   padding: 14px;
 }
 
-:where(/* ---------- PROJECT CARD ---------- */
 
-.project-grid > a) {
+
+:where(.project-grid > a) {
   min-width: 0;
 
   display: flex;
@@ -6242,9 +6018,9 @@ font-size: 12px;;
     rgba(5, 18, 43, 0.78);
 }
 
-:where(/* ---------- PROJECT TEXT ---------- */
 
-.project-grid > a > div) {
+
+:where(.project-grid > a > div) {
   min-width: 0;
 
   display: grid;
@@ -6269,12 +6045,9 @@ word-break: break-all;
   line-height: 1.25;
 }
 
-:where(/* ==================================================
-   PROJECT ICON OVERRIDES
-   Reuses existing .project-icon styles
-   ================================================== */
 
-.project-content .project-icon) {
+
+:where(.project-content .project-icon) {
   flex: 0 0 44px;
 
   width: 44px;
@@ -6283,13 +6056,11 @@ word-break: break-all;
   font-size: 11px;
 }
 
-:where(/* ==================================================
-   PROJECT DOCUMENTATION
-   ================================================== */
 
-/* ---------- SECTION INDEX ---------- */
 
-.project-doc-nav) {
+
+
+:where(.project-doc-nav) {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
@@ -6328,20 +6099,16 @@ word-break: break-all;
   background: rgba(47, 141, 255, 0.13);
 }
 
-:where(/* ==================================================
-   DOCUMENT
-   ================================================== */
 
-.project-doc) {
+
+:where(.project-doc) {
   display: grid;
   gap: 24px;
 }
 
-:where(/* ==================================================
-   DOCUMENT SECTION
-   ================================================== */
 
-.project-doc-section) {
+
+:where(.project-doc-section) {
   overflow: hidden;
 
   border: 1px solid rgba(95, 170, 255, 0.18);
@@ -6350,9 +6117,9 @@ word-break: break-all;
   background: rgba(3, 14, 34, 0.52);
 }
 
-:where(/* ---------- SECTION HEADER ---------- */
 
-.project-doc-section > header) {
+
+:where(.project-doc-section > header) {
   display: flex;
   justify-content: space-between;
   align-items: end;
@@ -6403,17 +6170,15 @@ word-break: break-all;
   text-align: right;
 }
 
-:where(/* ==================================================
-   COMMAND LIST
-   ================================================== */
 
-.project-command-list) {
+
+:where(.project-command-list) {
   display: grid;
 }
 
-:where(/* ---------- COMMAND ROW ---------- */
 
-.project-command) {
+
+:where(.project-command) {
   display: grid;
   grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
   gap: 18px;
@@ -6425,9 +6190,9 @@ word-break: break-all;
   border-top: 1px solid rgba(95, 170, 255, 0.11);
 }
 
-:where(/* ---------- COMMAND ---------- */
 
-.project-command code) {
+
+:where(.project-command code) {
   align-self: start;
 display: block;
   width: fit-content;
@@ -6451,9 +6216,9 @@ overflow: scroll;
   box-shadow: inset 0 0 8px rgba(95, 200, 255, 0.04);
 }
 
-:where(/* ---------- COMMAND DESCRIPTION ---------- */
 
-.project-command > div) {
+
+:where(.project-command > div) {
   display: grid;
   gap: 4px;
 }
@@ -6466,8 +6231,7 @@ overflow: scroll;
 
 :where(.project-command p) {
   color: #8fa5bb;
-  /* font-size: 11px;
-  line-height: 1.5; */
+  
 }
 
 :where(.project-command p code) {
@@ -6476,11 +6240,9 @@ overflow: scroll;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-:where(/* ==================================================
-   CODE EXAMPLE
-   ================================================== */
 
-.project-example) {
+
+:where(.project-example) {
   margin: 0 18px 18px;
 }
 
@@ -6518,11 +6280,9 @@ overflow: scroll;
   line-height: 1.7;
 }
 
-:where(/* ==================================================
-   DOCUMENTATION NOTE
-   ================================================== */
 
-.project-note) {
+
+:where(.project-note) {
   margin: 0 18px 18px;
   padding: 12px 14px;
 
@@ -6549,13 +6309,11 @@ overflow: scroll;
   line-height: 1.5;
 }
 
-:where(/* ==================================================
-   SINGLE PROJECT PAGE
-   ================================================== */
 
-/* ---------- PROJECT HEADER ---------- */
 
-.project-detail-header) {
+
+
+:where(.project-detail-header) {
   display: flex;
   justify-content: space-between;
   align-items: end;
@@ -6592,17 +6350,15 @@ overflow: scroll;
   text-align: right;
 }
 
-:where(/* ==================================================
-   PROJECT DISPLAY
-   ================================================== */
 
-.project-display) {
+
+:where(.project-display) {
   margin-bottom: 22px;
 }
 
-:where(/* ---------- MAIN PREVIEW ---------- */
 
-.project-preview) {
+
+:where(.project-preview) {
   overflow: hidden;
 
   min-height: 300px;
@@ -6623,9 +6379,9 @@ overflow: scroll;
   object-fit: contain;
 }
 
-:where(/* ---------- PROJECT LINKS ---------- */
 
-.project-actions) {
+
+:where(.project-actions) {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -6655,26 +6411,18 @@ overflow: scroll;
   background: rgba(47, 141, 255, 0.16);
 }
 
-:where(/* ==================================================
-   PROJECT DETAIL SECTION
-   ================================================== */
 
-.project-detail) {
-  :where(overflow: hidden;
+
+:where(.project-detail) {
+  overflow: hidden;
 
   margin-top: 16px;
 
-  border: 1px solid rgba(95),
-:where(170),
-:where(255),
-:where(0.18);
+  border: 1px solid rgba(95, 170, 255, 0.18);
   border-radius: 9px;
 
-  background: rgba(3),
-:where(14),
-:where(34),
-:where(0.52);
-  & > header) {
+  background: rgba(3, 14, 34, 0.52);
+  & > header {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -6689,47 +6437,43 @@ overflow: scroll;
       transparent 65%
     );
   }
-  :where(& > header span) {
+  & > header span {
     color: rgba(95, 200, 255, 0.5);
 
     font-size: 9px;
     letter-spacing: 0.08em;
   }
-  :where(h3) {
+  h3 {
     color: var(--blue);
     font-weight: 500;
 
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
-  :where(& > p) {
+  & > p {
     padding: 16px;
 
     color: #a6b8ca;
 
-    /* font-size: 11px; */
+    
     line-height: 1.65;
   }
 }
 
-:where(/* ==================================================
-   PROJECT INFORMATION
-   ================================================== */
 
-.project-meta) {
-  :where(display: grid;
-  grid-template-columns: repeat(4),
-:where(minmax(0),
-:where(1fr));
-  & > div) {
+
+:where(.project-meta) {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  & > div {
     min-width: 0;
 
     padding: 15px;
   }
-  :where(& > div + div) {
+  & > div + div {
     border-left: 1px solid rgba(95, 170, 255, 0.12);
   }
-  :where(small) {
+  small {
     display: block;
 
     margin-bottom: 5px;
@@ -6739,19 +6483,17 @@ overflow: scroll;
     font-size: 8px;
     letter-spacing: 0.07em;
   }
-  :where(strong) {
+  strong {
     color: #e5f1fb;
     font-weight: 500;
   }
 }
 
-:where(/* ==================================================
-   PROJECT DOCUMENTS
-   ================================================== */
 
-.project-documents) {
-  :where(display: grid;
-  & > a) {
+
+:where(.project-documents) {
+  display: grid;
+  & > a {
     position: relative;
 
     display: grid;
@@ -6763,27 +6505,27 @@ overflow: scroll;
 
     transition: background 160ms ease;
   }
-  :where(& > a + a) {
+  & > a + a {
     border-top: 1px solid rgba(95, 170, 255, 0.11);
   }
-  :where(& > a:hover),
-:where(& > a:focus-visible) {
+  & > a:hover,
+  & > a:focus-visible {
     background: rgba(47, 141, 255, 0.08);
   }
 
-  :where(strong) {
+  strong {
     color: #e5f1fb;
 
     font-size: 11px;
     font-weight: 500;
   }
-  :where(small) {
+  small {
     color: #879db3;
 
     font-size: 9px;
     line-height: 1.4;
   }
-  :where(& > a > span) {
+  & > a > span {
     color: var(--blue);
 
     font-size: 16px;
@@ -6791,19 +6533,15 @@ overflow: scroll;
   }
 }
 
-:where(/* ==================================================
-   PROJECT IMAGES
-   ================================================== */
 
-.project-images) {
-  :where(display: grid;
-  grid-template-columns: repeat(2),
-:where(minmax(0),
-:where(1fr));
+
+:where(.project-images) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 
   padding: 14px;
-  img) {
+  img {
     width: 100%;
 
     border: 1px solid rgba(95, 170, 255, 0.15);
@@ -6813,27 +6551,15 @@ overflow: scroll;
   }
 }
 
-}
 
-@layer responsive {
-:where(/* ==================================================
-   RESPONSIVE
-   Breakpoints:
-   1350px — Smaller Desktop
-   1100px — Tablet / Collapsed Navigation
-    700px — Phone
-   ================================================== */
 
-/* ==================================================
-   1350px — SMALLER DESKTOP
-   ================================================== */
 
-@media (max-width: 1350px)) {
-  :where(/* ==================================================
-     SHARED HEADER
-     ================================================== */
 
-  body > header .brand) {
+
+@media (max-width: 1350px) {
+  
+
+  :where(body > header .brand) {
     left: 18px;
   }
 
@@ -6859,44 +6585,40 @@ overflow: scroll;
   }
 }
 
-:where(/* ==================================================
-   1100px — TABLET / COLLAPSED NAVIGATION
-   ================================================== */
 
-@media (max-width: 1100px)) {
-  :where(/* ==================================================
-     SHARED HEADER
-     ================================================== */
 
-  body > header) {
+@media (max-width: 1100px) {
+  
+
+  :where(body > header) {
     top: 16px;
   }
 
-  :where(/* ---------- BRAND ---------- */
+  
 
-  body > header .brand) {
+  :where(body > header .brand) {
     top: 0;
     left: 16px;
   }
 
-  :where(/* ---------- RIGHT CONTROLS ---------- */
+  
 
-  body > header .top-tools) {
+  :where(body > header .top-tools) {
     top: 0;
     right: 16px;
 
     align-items: center;
   }
 
-  :where(/* ---------- MENU BUTTON ---------- */
+  
 
-  .menu-toggle) {
+  :where(.menu-toggle) {
     display: block;
   }
 
-  :where(/* ---------- NAV DROPDOWN ---------- */
+  
 
-  body > header nav) {
+  :where(body > header nav) {
     position: absolute;
 
     top: 58px;
@@ -6965,9 +6687,9 @@ overflow: scroll;
     box-shadow: inset 2px 0 var(--blue);
   }
 
-  :where(/* ---------- MENU OPEN STATE ---------- */
+  
 
-  .menu-toggle[aria-expanded="true"] span:first-child) {
+  :where(.menu-toggle[aria-expanded="true"] span:first-child) {
     transform: translateY(6px) rotate(45deg);
   }
 
@@ -6979,17 +6701,15 @@ overflow: scroll;
     transform: translateY(-6px) rotate(-45deg);
   }
 
-  :where(/* ---------- HELP TOOLTIP ---------- */
+  
 
-  body > header .help > div) {
+  :where(body > header .help > div) {
     display: none;
   }
 
-  :where(/* ==================================================
-     HOME PAGE
-     ================================================== */
+  
 
-  body > main:not(.view-all-page)) {
+  :where(body > main:not(.view-all-page)) {
     min-height: 100svh;
 
     display: grid;
@@ -7014,9 +6734,9 @@ overflow: scroll;
       url("/img/sandbox-background.png") center top / cover fixed no-repeat;
   }
 
-  :where(/* ---------- HOME PANELS ---------- */
+  
 
-  body > main:not(.view-all-page) .glass-panel) {
+  :where(body > main:not(.view-all-page) .glass-panel) {
     position: relative;
 
     top: auto;
@@ -7052,9 +6772,9 @@ overflow: scroll;
     grid-area: data;
   }
 
-  :where(/* ---------- HOME HOLOGRAM ---------- */
+  
 
-  body > main:not(.view-all-page) .logo-stage) {
+  :where(body > main:not(.view-all-page) .logo-stage) {
     grid-area: logo;
 
     position: relative;
@@ -7073,25 +6793,23 @@ overflow: scroll;
     bottom: -15%;
   }
 
-  :where(/* ---------- HOME PROJECT LIBRARY ---------- */
+  
 
-  body > main:not(.view-all-page) .projects) {
+  :where(body > main:not(.view-all-page) .projects) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  :where(/* ---------- HOME RIGHT PANELS ---------- */
+  
 
-  body > main:not(.view-all-page) .stones),
+  :where(body > main:not(.view-all-page) .stones),
 :where(body > main:not(.view-all-page) .guide-list),
 :where(body > main:not(.view-all-page) .data-list) {
     width: 100%;
   }
 
-  :where(/* ==================================================
-     INNER PAGES — TABLET
-     ================================================== */
+  
 
-  .view-all-page) {
+  :where(.view-all-page) {
     grid-template-columns:
       minmax(220px, 270px)
       minmax(0, 1fr);
@@ -7101,9 +6819,9 @@ overflow: scroll;
     padding: 110px 24px 90px;
   }
 
-  :where(/* ---------- INNER ASIDE ---------- */
+  
 
-  .type-menu h1) {
+  :where(.type-menu h1) {
     font-size: 24px;
   }
 
@@ -7141,15 +6859,15 @@ overflow: scroll;
     font-size: 9px;
   }
 
-  :where(/* ---------- INNER RIGHT CONTENT ---------- */
+  
 
-  .project-content) {
+  :where(.project-content) {
     padding: 18px;
   }
 
-  :where(/* ---------- PROJECT LIBRARY ---------- */
+  
 
-  .project-group) {
+  :where(.project-group) {
     grid-template-columns:
       120px
       minmax(0, 1fr);
@@ -7159,9 +6877,9 @@ overflow: scroll;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  :where(/* ---------- REFERENCE COMMANDS ---------- */
+  
 
-  .project-command) {
+  :where(.project-command) {
     grid-template-columns:
       minmax(85px, 110px)
       minmax(0, 1fr);
@@ -7169,11 +6887,9 @@ overflow: scroll;
     gap: 14px;
   }
 
-  :where(/* ==================================================
-     SHARED FOOTER
-     ================================================== */
+  
 
-  body > footer) {
+  :where(body > footer) {
     position: relative;
 
     bottom: auto;
@@ -7197,22 +6913,18 @@ overflow: scroll;
   }
 }
 
-:where(/* ==================================================
-   700px — PHONE
-   ================================================== */
 
-@media (max-width: 700px)) {
-  :where(/* ==================================================
-     SHARED HEADER
-     ================================================== */
 
-  body > header) {
+@media (max-width: 700px) {
+  
+
+  :where(body > header) {
     top: 12px;
   }
 
-  :where(/* ---------- BRAND ---------- */
+  
 
-  body > header .brand) {
+  :where(body > header .brand) {
     left: 12px;
 
     gap: 7px;
@@ -7231,9 +6943,9 @@ overflow: scroll;
     font-size: 9px;
   }
 
-  :where(/* ---------- RIGHT CONTROLS ---------- */
+  
 
-  body > header .top-tools) {
+  :where(body > header .top-tools) {
     right: 12px;
 
     gap: 7px;
@@ -7262,9 +6974,9 @@ overflow: scroll;
     display: none;
   }
 
-  :where(/* ---------- NAV DROPDOWN ---------- */
+  
 
-  body > header nav) {
+  :where(body > header nav) {
     top: 48px;
 
     right: 12px;
@@ -7279,11 +6991,9 @@ overflow: scroll;
     font-size: 11px;
   }
 
-  :where(/* ==================================================
-     HOME PAGE
-     ================================================== */
+  
 
-  body > main:not(.view-all-page)) {
+  :where(body > main:not(.view-all-page)) {
     display: grid;
 
     grid-template-columns: 1fr;
@@ -7305,9 +7015,9 @@ overflow: scroll;
       url("sandbox-background.png") center top / cover fixed no-repeat;
   }
 
-  :where(/* ---------- HOME PANELS ---------- */
+  
 
-  body > main:not(.view-all-page) .glass-panel) {
+  :where(body > main:not(.view-all-page) .glass-panel) {
     width: 100%;
 
     padding: 14px;
@@ -7319,9 +7029,9 @@ overflow: scroll;
     font-size: 13px;
   }
 
-  :where(/* ---------- HOME HOLOGRAM ---------- */
+  
 
-  body > main:not(.view-all-page) .logo-stage) {
+  :where(body > main:not(.view-all-page) .logo-stage) {
     width: 205px;
 
     margin: 20px auto 28px;
@@ -7333,9 +7043,9 @@ overflow: scroll;
     opacity: 0.15;
   }
 
-  :where(/* ---------- FEATURED PROJECT ---------- */
+  
 
-  body > main:not(.view-all-page) .featured-content) {
+  :where(body > main:not(.view-all-page) .featured-content) {
     grid-template-columns:
       24px
       minmax(0, 1fr)
@@ -7377,9 +7087,9 @@ overflow: scroll;
     overflow: hidden;
   }
 
-  :where(/* ---------- FEATURED IMAGE ---------- */
+  
 
-  body > main:not(.view-all-page) .featured .project-image) {
+  :where(body > main:not(.view-all-page) .featured .project-image) {
     width: 100%;
     height: 130px;
     min-height: 0;
@@ -7397,9 +7107,9 @@ overflow: scroll;
     object-fit: cover;
   }
 
-  :where(/* ---------- FEATURED INFORMATION ---------- */
+  
 
-  body > main:not(.view-all-page) .featured .project-info) {
+  :where(body > main:not(.view-all-page) .featured .project-info) {
     grid-template-rows:
       auto
       auto
@@ -7434,9 +7144,9 @@ overflow: scroll;
     line-clamp: 3;
   }
 
-  :where(/* ---------- FEATURED TAGS ---------- */
+  
 
-  body > main:not(.view-all-page) .featured .tags) {
+  :where(body > main:not(.view-all-page) .featured .tags) {
     flex-wrap: nowrap;
 
     max-height: 23px;
@@ -7445,17 +7155,17 @@ overflow: scroll;
     overflow: hidden;
   }
 
-  :where(/* ---------- FEATURED LINK ---------- */
+  
 
-  body > main:not(.view-all-page) .featured .project-info a) {
+  :where(body > main:not(.view-all-page) .featured .project-info a) {
     margin: 0;
 
     padding: 7px 8px;
   }
 
-  :where(/* ---------- HOME PROJECT LIBRARY ---------- */
+  
 
-  body > main:not(.view-all-page) .projects) {
+  :where(body > main:not(.view-all-page) .projects) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 7px;
@@ -7470,9 +7180,9 @@ overflow: scroll;
     height: 46px;
   }
 
-  :where(/* ---------- HOME ROSETTA ---------- */
+  
 
-  body > main:not(.view-all-page) .stones) {
+  :where(body > main:not(.view-all-page) .stones) {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7503,9 +7213,9 @@ overflow: scroll;
     text-align: left;
   }
 
-  :where(/* ---------- HOME REFERENCE GUIDES ---------- */
+  
 
-  body > main:not(.view-all-page) .guide-list) {
+  :where(body > main:not(.view-all-page) .guide-list) {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7526,9 +7236,9 @@ overflow: scroll;
     text-align: left;
   }
 
-  :where(/* ---------- HOME DATA VISUALIZATION ---------- */
+  
 
-  body > main:not(.view-all-page) .data-list) {
+  :where(body > main:not(.view-all-page) .data-list) {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7549,11 +7259,9 @@ overflow: scroll;
     text-align: left;
   }
 
-  :where(/* ==================================================
-     INNER PAGES — PHONE
-     ================================================== */
+  
 
-  .view-all-page) {
+  :where(.view-all-page) {
     display: grid;
 
     grid-template-columns: 1fr;
@@ -7572,11 +7280,9 @@ overflow: scroll;
       url("innerPg.png") center top / cover fixed no-repeat;
   }
 
-  :where(/* ==================================================
-     INNER PAGE ASIDE
-     ================================================== */
+  
 
-  .type-menu) {
+  :where(.type-menu) {
     width: 100%;
     min-width: 0;
   }
@@ -7596,9 +7302,9 @@ overflow: scroll;
     line-height: 1.5;
   }
 
-  :where(/* ---------- TYPES / SUBJECTS ---------- */
+  
 
-  .project-types) {
+  :where(.project-types) {
     display: flex;
 
     gap: 8px;
@@ -7642,20 +7348,18 @@ overflow: scroll;
     line-height: 1.4;
   }
 
-  :where(/* ==================================================
-     INNER PAGE CONTENT
-     ================================================== */
+  
 
-  .project-content) {
+  :where(.project-content) {
     width: 100%;
     min-width: 0;
 
     padding: 12px;
   }
 
-  :where(/* ---------- CONTENT HEADER ---------- */
+  
 
-  .project-content > header),
+  :where(.project-content > header),
 :where(.project-detail-header) {
     display: flex;
 
@@ -7690,11 +7394,9 @@ overflow: scroll;
     text-align: left;
   }
 
-  :where(/* ==================================================
-     PROJECT LIBRARY PAGE
-     ================================================== */
+  
 
-  .project-group) {
+  :where(.project-group) {
     grid-template-columns: 1fr;
   }
 
@@ -7725,9 +7427,9 @@ overflow: scroll;
     margin-top: 2px;
   }
 
-  :where(/* ---------- PROJECT CARDS ---------- */
+  
 
-  .project-grid) {
+  :where(.project-grid) {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 
     gap: 7px;
@@ -7759,11 +7461,9 @@ overflow: scroll;
     font-size: 10px;
   }
 
-  :where(/* ==================================================
-     REFERENCE DOCUMENTATION PAGE
-     ================================================== */
+  
 
-  .project-doc-nav) {
+  :where(.project-doc-nav) {
     flex-wrap: nowrap;
 
     gap: 6px;
@@ -7784,9 +7484,9 @@ overflow: scroll;
     gap: 14px;
   }
 
-  :where(/* ---------- DOCUMENT SECTION HEADER ---------- */
+  
 
-  .project-doc-section > header) {
+  :where(.project-doc-section > header) {
     display: grid;
 
     gap: 7px;
@@ -7806,9 +7506,9 @@ overflow: scroll;
     text-align: left;
   }
 
-  :where(/* ---------- COMMAND ROWS ---------- */
+  
 
-  .project-command) {
+  :where(.project-command) {
     grid-template-columns: 1fr;
 
     gap: 7px;
@@ -7831,9 +7531,9 @@ overflow: scroll;
     font-size: 10px;
   }
 
-  :where(/* ---------- CODE EXAMPLES ---------- */
+  
 
-  .project-example) {
+  :where(.project-example) {
     margin: 0 12px 12px;
   }
 
@@ -7845,25 +7545,23 @@ overflow: scroll;
     font-size: 10px;
   }
 
-  :where(/* ---------- DOCUMENT NOTES ---------- */
+  
 
-  .project-note) {
+  :where(.project-note) {
     margin: 0 12px 12px;
 
     padding: 10px 12px;
   }
 
-  :where(/* ==================================================
-     SINGLE PROJECT PAGE
-     ================================================== */
+  
 
-  .project-preview) {
+  :where(.project-preview) {
     min-height: 180px;
   }
 
-  :where(/* ---------- PROJECT LINKS ---------- */
+  
 
-  .project-actions) {
+  :where(.project-actions) {
     display: grid;
 
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -7875,9 +7573,9 @@ overflow: scroll;
     text-align: center;
   }
 
-  :where(/* ---------- DETAIL SECTIONS ---------- */
+  
 
-  .project-detail > header) {
+  :where(.project-detail > header) {
     padding: 11px 12px;
   }
 
@@ -7887,9 +7585,9 @@ overflow: scroll;
     font-size: 10px;
   }
 
-  :where(/* ---------- PROJECT META ---------- */
+  
 
-  .project-meta) {
+  :where(.project-meta) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -7909,9 +7607,9 @@ overflow: scroll;
     border-left: 1px solid rgba(95, 170, 255, 0.12);
   }
 
-  :where(/* ---------- PROJECT DOCUMENTS ---------- */
+  
 
-  .project-documents > a) {
+  :where(.project-documents > a) {
     grid-template-columns: 1fr;
 
     gap: 4px;
@@ -7928,9 +7626,9 @@ overflow: scroll;
     transform: translateY(-50%);
   }
 
-  :where(/* ---------- PROJECT IMAGES ---------- */
+  
 
-  .project-images) {
+  :where(.project-images) {
     grid-template-columns: 1fr;
 
     gap: 8px;
@@ -7938,11 +7636,9 @@ overflow: scroll;
     padding: 9px;
   }
 
-  :where(/* ==================================================
-     SHARED FOOTER
-     ================================================== */
+  
 
-  body > footer) {
+  :where(body > footer) {
     padding: 12px 12px 20px;
   }
 
