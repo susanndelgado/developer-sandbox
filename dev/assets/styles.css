@@ -62,7 +62,6 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100%;
-  
 }
 
 body {
@@ -76,18 +75,18 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    color: var(--editor-text); 
+  margin: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  color: var(--editor-text);
+  background:
+    linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.32)),
+    url("img/innerPg.png") center / cover fixed no-repeat;
+  &#hm {
     background:
-      linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.32)),
-      url("img/innerPg.png") center / cover fixed no-repeat;
-    &#hm{
-      background:
-        linear-gradient(rgba(2, 7, 18, 0.04), rgba(2, 7, 18, 0.08)),
-        url("img/sandbox-background.png") center / cover no-repeat;
-    }
+      linear-gradient(rgba(2, 7, 18, 0.04), rgba(2, 7, 18, 0.08)),
+      url("img/sandbox-background.png") center / cover no-repeat;
+  }
 }
 
 /* ---------- TYPOGRAPHY ---------- */
@@ -140,13 +139,18 @@ textarea {
 
 main {
   position: relative;
- 
   width: 100%;
   min-height: 100svh;
-
   overflow: hidden;
-
- }
+  font-size: 13px;
+  &.view-all-page {
+    display: grid;
+    grid-template-columns: minmax(290px, 390px) minmax(0, 1fr);
+    gap: 40px;
+    padding: 125px clamp(30px, 4vw, 70px) 100px;
+    overflow: visible;
+  }
+}
 
 button,
 input,
@@ -579,7 +583,6 @@ body > header nav button:focus-visible {
   }
 }
 
-
 /* ==================================================
    3. CENTER LOGO
    ================================================== */
@@ -811,7 +814,7 @@ body > header nav button:focus-visible {
    4. BOTTOM NAVIGATION
    ================================================== */
 
- footer {
+footer {
   position: fixed;
   bottom: 24px;
   left: 50%;
@@ -1353,21 +1356,12 @@ footer button:focus-visible {
 
   background: color-mix(in srgb, var(--stone-color) 42%, transparent);
 
-  clip-path: polygon(
-    25% 6.7%,
-    75% 6.7%,
-    100% 50%,
-    75% 93.3%,
-    25% 93.3%,
-    0 50%
-  );
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
 
   filter: drop-shadow(
       0 0 2px color-mix(in srgb, var(--stone-color) 60%, transparent)
     )
-    drop-shadow(
-      0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent)
-    );
+    drop-shadow(0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent));
 
   transition:
     transform 180ms ease,
@@ -1430,14 +1424,7 @@ footer button:focus-visible {
 
   overflow: hidden;
 
-  clip-path: polygon(
-    25% 6.7%,
-    75% 6.7%,
-    100% 50%,
-    75% 93.3%,
-    25% 93.3%,
-    0 50%
-  );
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
 
   background: radial-gradient(
     circle,
@@ -1661,21 +1648,17 @@ footer button:focus-visible {
    VIEW ALL
    ================================================== */
 
-.rosetta .view-all {
+.view-all {
   display: block;
-
   margin-top: 5px;
-
   color: var(--blue);
-
   font-size: 11px;
   text-align: center;
-
   text-decoration: none;
 }
 
-.rosetta .view-all:hover,
-.rosetta .view-all:focus-visible {
+.view-all:hover,
+.view-all:focus-visible {
   color: white;
 }
 
@@ -1909,23 +1892,6 @@ footer button:focus-visible {
   letter-spacing: 0.04em;
 }
 
-/* ---------- VIEW ALL ---------- */
-
-.library .view-all {
-  display: block;
-
-  margin-top: 10px;
-
-  color: var(--blue);
-
-  font-size:11px;
-  text-align: center;
-}
-
-.library .view-all:hover,
-.library .view-all:focus-visible {
-  color: white;
-}
 
 /* ==================================================
    9. REFERENCE GUIDES
@@ -2176,24 +2142,6 @@ footer button:focus-visible {
 
   font-size: 9px;
   line-height: 1.2;
-}
-
-/* ---------- VIEW ALL ---------- */
-
-.guides .view-all {
-  display: block;
-
-  margin-top: 8px;
-
-  color: var(--blue);
-
-  font-size: 11px;
-  text-align: center;
-}
-
-.guides .view-all:hover,
-.guides .view-all:focus-visible {
-  color: white;
 }
 
 /* ==================================================
@@ -2450,47 +2398,9 @@ footer button:focus-visible {
   line-height: 1.25;
 }
 
-/* ---------- VIEW ALL ---------- */
-
-.data .view-all {
-  display: block;
-
-  margin-top: 8px;
-
-  color: var(--blue);
-
-  font-size: 11px;
-  text-align: center;
-}
-
-.data .view-all:hover,
-.data .view-all:focus-visible {
-  color: white;
-}
-
 /* ==================================================
    INNER PAGES
    ================================================== */
-
-/* ==================================================
-   VIEW ALL / INNER PAGE
-   ================================================== */
-
-.view-all-page {
-  position: relative;
-font-size: 13px;
-/* line-height: 2px; */
-  width: 100%;
-  min-height: 100svh;
-
-  display: grid;
-  grid-template-columns: minmax(290px, 390px) minmax(0, 1fr);
-  gap: 40px;
-
-  padding: 125px clamp(30px, 4vw, 70px) 100px;
-
-  overflow: visible;
-  }
 
 /* ==================================================
    LEFT TYPE MENU
@@ -2524,15 +2434,11 @@ font-size: 13px;
   max-width: 340px;
 
   color: #b8c7d8;
-
 }
 
 /* ==================================================
    PROJECT TYPE LIST
    ================================================== */
-
-
-
 
 /* ==========================================================================
    EDITOR TOP BAR
@@ -3234,12 +3140,12 @@ details:not([open]) summary {
 
 /* ==========================================================================
    PREVIEW — SANDBOX RIGHT-COLUMN FOUNDATION
-   Everything in this section is scoped to .preview so none of it changes
+   Everything in this section is scoped to so none of it changes
    the editor forms, sidebar, database view, or other localhost controls.
    ========================================================================== */
 
-.preview .sandbox-entry-preview,
-.preview .project-content {
+.sandbox-entry-preview,
+.project-content {
   width: 100%;
   min-width: 0;
   max-width: 1100px;
@@ -3261,13 +3167,13 @@ details:not([open]) summary {
     0 18px 44px rgba(0, 0, 0, 0.2);
 }
 
-.preview .sandbox-entry-preview *,
-.preview .project-content * {
+.sandbox-entry-preview *,
+.project-content * {
   box-sizing: border-box;
 }
 
-.preview .sandbox-entry-preview a,
-.preview .project-content a {
+.sandbox-entry-preview a,
+.project-content a {
   color: inherit;
 }
 
@@ -3276,9 +3182,9 @@ details:not([open]) summary {
    Mirrors the right-column header used by single-project and reference-guide.
    ========================================================================== */
 
-.preview .sandbox-entry-preview > header,
-.preview .project-content > header,
-.preview .project-detail-header {
+.sandbox-entry-preview > header,
+.project-content > header,
+.project-detail-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
   align-items: end;
@@ -3291,15 +3197,15 @@ details:not([open]) summary {
   border-bottom: 1px solid rgba(95, 170, 255, 0.18);
 }
 
-.preview .sandbox-entry-preview > header > div,
-.preview .project-content > header > div,
-.preview .project-detail-header > div {
+.sandbox-entry-preview > header > div,
+.project-content > header > div,
+.project-detail-header > div {
   min-width: 0;
 }
 
-.preview .sandbox-entry-preview > header small,
-.preview .project-content > header small,
-.preview .project-detail-header small {
+.sandbox-entry-preview > header small,
+.project-content > header small,
+.project-detail-header small {
   display: block;
 
   margin: 0 0 6px;
@@ -3313,9 +3219,9 @@ details:not([open]) summary {
   text-transform: uppercase;
 }
 
-.preview .sandbox-entry-preview > header h2,
-.preview .project-content > header h2,
-.preview .project-detail-header h2 {
+.sandbox-entry-preview > header h2,
+.project-content > header h2,
+.project-detail-header h2 {
   margin: 0;
 
   color: #f1f7ff;
@@ -3327,9 +3233,9 @@ details:not([open]) summary {
   letter-spacing: -0.025em;
 }
 
-.preview .sandbox-entry-preview > header p,
-.preview .project-content > header p,
-.preview .project-detail-header > p {
+.sandbox-entry-preview > header p,
+.project-content > header p,
+.project-detail-header > p {
   max-width: 440px;
 
   margin: 0;
@@ -3346,8 +3252,8 @@ details:not([open]) summary {
    PREVIEW — NAV / BUTTON NODES
    ========================================================================== */
 
-.preview .project-doc-nav,
-.preview .project-actions {
+.project-doc-nav,
+.project-actions {
   display: flex;
   flex-wrap: wrap;
 
@@ -3356,15 +3262,15 @@ details:not([open]) summary {
   margin: 0 0 18px;
 }
 
-.preview .project-doc-nav {
+.project-doc-nav {
   padding-bottom: 14px;
 
   border-bottom: 1px solid rgba(95, 170, 255, 0.12);
 }
 
-.preview .project-doc-nav a,
-.preview .project-actions a,
-.preview .project-link {
+.project-doc-nav a,
+.project-actions a,
+.project-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3397,12 +3303,12 @@ details:not([open]) summary {
     color 160ms ease;
 }
 
-.preview .project-doc-nav a:hover,
-.preview .project-doc-nav a:focus-visible,
-.preview .project-actions a:hover,
-.preview .project-actions a:focus-visible,
-.preview .project-link:hover,
-.preview .project-link:focus-visible {
+.project-doc-nav a:hover,
+.project-doc-nav a:focus-visible,
+.project-actions a:hover,
+.project-actions a:focus-visible,
+.project-link:hover,
+.project-link:focus-visible {
   border-color: rgba(95, 200, 255, 0.62);
 
   color: #ffffff;
@@ -3414,7 +3320,7 @@ details:not([open]) summary {
    PREVIEW — DISPLAY NODE
    ========================================================================== */
 
-.preview .project-display {
+.project-display {
   overflow: hidden;
 
   margin: 0 0 18px;
@@ -3425,7 +3331,7 @@ details:not([open]) summary {
   background: rgba(4, 15, 34, 0.76);
 }
 
-.preview .project-display .project-preview {
+.project-display .project-preview {
   display: grid;
   place-items: center;
 
@@ -3443,11 +3349,11 @@ details:not([open]) summary {
   background-size: 32px 32px;
 }
 
-.preview .project-display .project-preview > * {
+.project-display .project-preview > * {
   max-width: 100%;
 }
 
-.preview .project-display .project-preview img {
+.project-display .project-preview img {
   display: block;
 
   max-width: 100%;
@@ -3458,15 +3364,15 @@ details:not([open]) summary {
   border: 1px solid rgba(95, 170, 255, 0.12);
 }
 
-.preview .project-display .project-preview iframe {
+.project-display .project-preview iframe {
   width: 100%;
   min-height: 280px;
 
   border: 0;
 }
 
-.preview .project-display + .project-actions,
-.preview .project-display .project-actions {
+.project-display + .project-actions,
+.project-display .project-actions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 
@@ -3484,7 +3390,7 @@ details:not([open]) summary {
    PREVIEW — STANDARD PROJECT DETAIL NODE
    ========================================================================== */
 
-.preview .project-detail {
+.project-detail {
   overflow: hidden;
 
   margin: 0 0 16px;
@@ -3495,7 +3401,7 @@ details:not([open]) summary {
   background: rgba(6, 22, 47, 0.68);
 }
 
-.preview .project-detail > header {
+.project-detail > header {
   display: flex;
   /* align-items: center; */
   gap: 12px;
@@ -3505,7 +3411,7 @@ details:not([open]) summary {
   background: rgba(11, 35, 68, 0.66);
 }
 
-.preview .project-detail > header > span {
+.project-detail > header > span {
   flex: 0 0 auto;
 
   color: var(--sandbox-blue);
@@ -3516,7 +3422,7 @@ details:not([open]) summary {
   letter-spacing: 0.12em;
 }
 
-.preview .project-detail > header h3 {
+.project-detail > header h3 {
   margin: 0;
 
   color: #ecf6ff;
@@ -3526,7 +3432,7 @@ details:not([open]) summary {
   line-height: 1.3;
 }
 
-.preview .project-detail > p {
+.project-detail > p {
   margin: 0;
 
   padding: 15px;
@@ -3541,14 +3447,14 @@ details:not([open]) summary {
    PREVIEW — PROJECT META / GRID NODE
    ========================================================================== */
 
-.preview .project-meta {
+.project-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
 
   gap: 0;
 }
 
-.preview .project-meta > div {
+.project-meta > div {
   min-width: 0;
 
   padding: 14px;
@@ -3557,11 +3463,11 @@ details:not([open]) summary {
   border-bottom: 1px solid rgba(95, 170, 255, 0.12);
 }
 
-.preview .project-meta > div:last-child {
+.project-meta > div:last-child {
   border-right: 0;
 }
 
-.preview .project-meta small {
+.project-meta small {
   display: block;
 
   margin-bottom: 5px;
@@ -3575,7 +3481,7 @@ details:not([open]) summary {
   text-transform: uppercase;
 }
 
-.preview .project-meta strong {
+.project-meta strong {
   display: block;
 
   color: #eef7ff;
@@ -3585,7 +3491,7 @@ details:not([open]) summary {
   line-height: 1.45;
 }
 
-.preview .project-meta p {
+.project-meta p {
   margin: 5px 0 0;
 
   color: var(--sandbox-muted);
@@ -3599,11 +3505,11 @@ details:not([open]) summary {
    Supports HTML entered inside standard/grid children.
    ========================================================================== */
 
-.preview .project-documents {
+.project-documents {
   display: grid;
 }
 
-.preview .project-documents > a {
+.project-documents > a {
   position: relative;
 
   display: grid;
@@ -3621,30 +3527,30 @@ details:not([open]) summary {
   text-decoration: none;
 }
 
-.preview .project-documents > a:last-child {
+.project-documents > a:last-child {
   border-bottom: 0;
 }
 
-.preview .project-documents > a:hover,
-.preview .project-documents > a:focus-visible {
+.project-documents > a:hover,
+.project-documents > a:focus-visible {
   background: rgba(95, 200, 255, 0.055);
 }
 
-.preview .project-documents > a strong {
+.project-documents > a strong {
   color: #e9f5ff;
 
   font-size: 11px;
   font-weight: 600;
 }
 
-.preview .project-documents > a small {
+.project-documents > a small {
   color: var(--sandbox-muted);
 
   font-size: 9px;
   line-height: 1.45;
 }
 
-.preview .project-documents > a > span {
+.project-documents > a > span {
   color: var(--sandbox-blue);
 
   font-size: 20px;
@@ -3654,7 +3560,7 @@ details:not([open]) summary {
    PREVIEW — PROJECT IMAGES / GALLERY THROUGH GRID OR HTML
    ========================================================================== */
 
-.preview .project-images {
+.project-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 
@@ -3663,7 +3569,7 @@ details:not([open]) summary {
   padding: 10px;
 }
 
-.preview .project-images img {
+.project-images img {
   display: block;
 
   width: 100%;
@@ -3676,13 +3582,13 @@ details:not([open]) summary {
    PREVIEW — REFERENCE DOCUMENT
    ========================================================================== */
 
-.preview .project-doc {
+.project-doc {
   display: grid;
 
   gap: 16px;
 }
 
-.preview .project-doc-section {
+.project-doc-section {
   overflow: hidden;
 
   margin: 0 0 16px;
@@ -3693,7 +3599,7 @@ details:not([open]) summary {
   background: rgba(6, 22, 47, 0.7);
 }
 
-.preview .project-doc-section > header {
+.project-doc-section > header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(190px, 0.65fr);
   align-items: center;
@@ -3708,7 +3614,7 @@ details:not([open]) summary {
 }
 
 /* Editor-generated documentation header has span + h3 directly. */
-.preview .project-doc-section > header > span {
+.project-doc-section > header > span {
   display: block;
   position: static;
   margin-bottom: 0.35rem;
@@ -3729,7 +3635,7 @@ details:not([open]) summary {
 }
 
 /* Live reference-guide header has a wrapping div. */
-.preview .project-doc-section > header > div {
+.project-doc-section > header > div {
   display: block;
   display: flex;
   align-items: center;
@@ -3739,7 +3645,7 @@ details:not([open]) summary {
   min-width: 0;
 }
 
-.preview .project-doc-section > header > div > span {
+.project-doc-section > header > div > span {
   color: var(--sandbox-blue);
 
   font-size: 10px;
@@ -3748,7 +3654,7 @@ details:not([open]) summary {
   letter-spacing: 0.12em;
 }
 
-.preview .project-doc-section > header h3 {
+.project-doc-section > header h3 {
   margin: 0;
 
   color: #edf7ff;
@@ -3758,7 +3664,7 @@ details:not([open]) summary {
   line-height: 1.25;
 }
 
-.preview .project-doc-section > header > span + h3 {
+.project-doc-section > header > span + h3 {
   display: block;
   margin-top: 0;
   line-height: 1.25;
@@ -3768,7 +3674,7 @@ details:not([open]) summary {
   margin-left: 126px;
 }
 
-.preview .project-doc-section > header > p {
+.project-doc-section > header > p {
   max-width: 360px;
 
   margin: 0;
@@ -3796,11 +3702,11 @@ details:not([open]) summary {
    Grid and Split nodes are the ONLY node families that create content columns.
    ========================================================================== */
 
-.preview .project-command-list {
+.project-command-list {
   display: block;
 }
 
-.preview .project-command {
+.project-command {
   position: relative;
 
   display: block;
@@ -3817,16 +3723,16 @@ details:not([open]) summary {
   background: transparent;
 }
 
-.preview .project-command:last-child {
+.project-command:last-child {
   border-bottom: 0;
 }
 
-.preview .project-command:hover {
+.project-command:hover {
   background: rgba(95, 200, 255, 0.028);
 }
 
-.preview .project-command > .project-command-title,
-.preview .project-command > strong {
+.project-command > .project-command-title,
+.project-command > strong {
   display: block;
 
   width: 100%;
@@ -3840,7 +3746,7 @@ details:not([open]) summary {
   line-height: 1.4;
 }
 
-.preview .project-command p {
+.project-command p {
   width: 100%;
 
   margin: 0 0 6px;
@@ -3854,19 +3760,19 @@ details:not([open]) summary {
   word-break: normal;
 }
 
-.preview .project-command p:last-child {
+.project-command p:last-child {
   margin-bottom: 0;
 }
 
-.preview .project-command ul,
-.preview .project-command ol {
+.project-command ul,
+.project-command ol {
   width: 100%;
 
   margin: 6px 0;
   padding-left: 20px;
 }
 
-.preview .project-command img {
+.project-command img {
   display: block;
 
   max-width: 100%;
@@ -3878,7 +3784,7 @@ details:not([open]) summary {
    Only these behaviors create a second column.
    ========================================================================== */
 
-.preview .project-command:has(> .project-command-action) {
+.project-command:has(> .project-command-action) {
   display: grid;
 
   grid-template-columns:
@@ -3892,15 +3798,15 @@ details:not([open]) summary {
   padding: 0;
 }
 
-.preview .project-command-content,
-.preview .project-command-summary {
+.project-command-content,
+.project-command-summary {
   min-width: 0;
 
   padding: 12px 14px;
 }
 
-.preview .project-command-content > .project-command-title,
-.preview .project-command-summary > .project-command-title {
+.project-command-content > .project-command-title,
+.project-command-summary > .project-command-title {
   display: block;
 
   margin: 0 0 5px;
@@ -3912,7 +3818,7 @@ details:not([open]) summary {
   line-height: 1.4;
 }
 
-.preview .project-command-action {
+.project-command-action {
   display: grid;
 
   place-items: center;
@@ -3934,18 +3840,18 @@ details:not([open]) summary {
   text-decoration: none;
 }
 
-.preview button.project-command-action {
+button.project-command-action {
   font: inherit;
 }
 
-.preview .project-command-action:hover,
-.preview .project-command-action:focus-visible {
+.project-command-action:hover,
+.project-command-action:focus-visible {
   color: #ffffff;
 
   background: rgba(95, 200, 255, 0.13);
 }
 
-.preview .project-command-panel {
+.project-command-panel {
   grid-column: 1 / -1;
 
   padding: 12px 14px;
@@ -3965,7 +3871,7 @@ details:not([open]) summary {
    Code never creates a content column here.
    ========================================================================== */
 
-.preview .project-command code {
+.project-command code {
   color: #a8ddff;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -3979,7 +3885,7 @@ details:not([open]) summary {
    PREVIEW — EXAMPLE
    ========================================================================== */
 
-.preview .project-example {
+.project-example {
   margin: 12px;
 
   overflow: hidden;
@@ -3991,7 +3897,7 @@ details:not([open]) summary {
   background: #050e1b;
 }
 
-.preview .project-example > small {
+.project-example > small {
   display: block;
 
   padding: 8px 10px 0;
@@ -4005,14 +3911,14 @@ details:not([open]) summary {
   text-transform: uppercase;
 }
 
-.preview .project-example pre {
+.project-example pre {
   overflow: auto;
 
   margin: 0;
   padding: 10px;
 }
 
-.preview .project-example code {
+.project-example code {
   color: #cdeaff;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -4024,7 +3930,7 @@ details:not([open]) summary {
    PREVIEW — NOTE
    ========================================================================== */
 
-.preview .project-note {
+.project-note {
   display: block;
 
   margin: 12px;
@@ -4040,11 +3946,11 @@ details:not([open]) summary {
   line-height: 1.55;
 }
 
-.preview .project-note strong {
+.project-note strong {
   color: #e8f5ff;
 }
 
-.preview .project-note p:last-child {
+.project-note p:last-child {
   margin-bottom: 0;
 }
 
@@ -4052,21 +3958,21 @@ details:not([open]) summary {
    PREVIEW — SPLIT NODE
    ========================================================================== */
 
-.preview .project-split-list {
+.project-split-list {
   display: grid;
 }
 
-.preview .project-split-row {
+.project-split-row {
   margin: 0;
 
   border-bottom: 1px solid rgba(95, 170, 255, 0.12);
 }
 
-.preview .project-split-row:last-child {
+.project-split-row:last-child {
   border-bottom: 0;
 }
 
-.preview .project-split-child-head {
+.project-split-child-head {
   width: 100%;
 
   padding: 10px 12px;
@@ -4077,27 +3983,27 @@ details:not([open]) summary {
   background: rgba(95, 200, 255, 0.035);
 }
 
-.preview .project-split {
+.project-split {
   display: grid;
 }
 
-.preview .project-split--small-left {
+.project-split--small-left {
   grid-template-columns: 1fr 3fr;
 }
 
-.preview .project-split--equal {
+.project-split--equal {
   grid-template-columns: 1fr 1fr;
 }
 
-.preview .project-split--small-right {
+.project-split--small-right {
   grid-template-columns: 2fr 1fr;
 }
 
-.preview .project-split--three-column {
+.project-split--three-column {
   grid-template-columns: 1fr 2fr 1fr;
 }
 
-.preview .project-split-cell {
+.project-split-cell {
   min-width: 0;
 
   padding: 11px 12px;
@@ -4110,11 +4016,11 @@ details:not([open]) summary {
   line-height: 1.55;
 }
 
-.preview .project-split-cell:last-child {
+.project-split-cell:last-child {
   border-right: 0;
 }
 
-.preview .project-split-cell code {
+.project-split-cell code {
   color: #a8ddff;
   display: block;
 
@@ -4125,32 +4031,32 @@ details:not([open]) summary {
    PREVIEW — GENERIC HTML ENTERED BY USER
    ========================================================================== */
 
-.preview .sandbox-entry-preview h1,
-.preview .project-content h1 {
+.sandbox-entry-preview h1,
+.project-content h1 {
   color: #f2f8ff;
 }
 
-.preview .sandbox-entry-preview h4,
-.preview .sandbox-entry-preview h5,
-.preview .sandbox-entry-preview h6,
-.preview .project-content h4,
-.preview .project-content h5,
-.preview .project-content h6 {
+.sandbox-entry-preview h4,
+.sandbox-entry-preview h5,
+.sandbox-entry-preview h6,
+.project-content h4,
+.project-content h5,
+.project-content h6 {
   color: #e6f3ff;
 }
 
-.preview .sandbox-entry-preview p,
-.preview .project-content p {
+.sandbox-entry-preview p,
+.project-content p {
   overflow-wrap: anywhere;
 }
 
-.preview .sandbox-entry-preview code,
-.preview .project-content code {
+.sandbox-entry-preview code,
+.project-content code {
   max-width: 100%;
 }
 
-.preview .sandbox-entry-preview table,
-.preview .project-content table {
+.sandbox-entry-preview table,
+.project-content table {
   width: 100%;
 
   border-collapse: collapse;
@@ -4160,10 +4066,10 @@ details:not([open]) summary {
   font-size: 11px;
 }
 
-.preview .sandbox-entry-preview th,
-.preview .sandbox-entry-preview td,
-.preview .project-content th,
-.preview .project-content td {
+.sandbox-entry-preview th,
+.sandbox-entry-preview td,
+.project-content th,
+.project-content td {
   padding: 9px 10px;
 
   border: 1px solid rgba(95, 170, 255, 0.14);
@@ -4172,32 +4078,32 @@ details:not([open]) summary {
   vertical-align: top;
 }
 
-.preview .sandbox-entry-preview th,
-.preview .project-content th {
+.sandbox-entry-preview th,
+.project-content th {
   color: #eaf6ff;
   background: rgba(95, 200, 255, 0.06);
 }
 
-.preview .sandbox-entry-preview ul,
-.preview .sandbox-entry-preview ol,
-.preview .project-content ul,
-.preview .project-content ol {
+.sandbox-entry-preview ul,
+.sandbox-entry-preview ol,
+.project-content ul,
+.project-content ol {
   color: var(--sandbox-muted);
 }
 
-.preview .sandbox-entry-preview hr,
-.preview .project-content hr {
+.sandbox-entry-preview hr,
+.project-content hr {
   border: 0;
   border-top: 1px solid rgba(95, 170, 255, 0.15);
 }
 
 /* ==========================================================================
    PREVIEW — PROJECT LIBRARY / INNER.HTML
-   These styles are intentionally scoped to .preview so the editor itself
+   These styles are intentionally scoped to so the editor itself
    keeps its own controls, spacing and colors.
    ========================================================================== */
 
-.preview .project-group {
+.project-group {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
 
@@ -4213,7 +4119,7 @@ details:not([open]) summary {
     rgba(5, 18, 43, 0.66);
 }
 
-.preview .project-group > header {
+.project-group > header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -4230,7 +4136,7 @@ details:not([open]) summary {
   background: rgba(4, 16, 38, 0.55);
 }
 
-.preview .project-group > header > span {
+.project-group > header > span {
   flex: 0 0 46px;
 
   width: 46px;
@@ -4257,7 +4163,7 @@ details:not([open]) summary {
     0 0 8px rgba(95, 200, 255, 0.08);
 }
 
-.preview .project-group > header strong {
+.project-group > header strong {
   display: block;
 
   color: #edf6ff;
@@ -4267,7 +4173,7 @@ details:not([open]) summary {
   line-height: 1.25;
 }
 
-.preview .project-group > header small {
+.project-group > header small {
   display: block;
 
   color: #7890aa;
@@ -4276,7 +4182,7 @@ details:not([open]) summary {
   line-height: 1.35;
 }
 
-.preview .project-grid {
+.project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
@@ -4285,7 +4191,7 @@ details:not([open]) summary {
   padding: 10px;
 }
 
-.preview .project-grid a {
+.project-grid a {
   min-width: 0;
 
   display: flex;
@@ -4304,12 +4210,12 @@ details:not([open]) summary {
   text-decoration: none;
 }
 
-.preview .project-grid a:hover,
-.preview .project-grid a:focus-visible {
+.project-grid a:hover,
+.project-grid a:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
 
-.preview .project-icon {
+.project-icon {
   --icon-color: #eaf7ff;
 
   flex: 0 0 46px;
@@ -4341,43 +4247,43 @@ details:not([open]) summary {
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
 
-.preview .project-icon img,
-.preview .project-icon svg {
+.project-icon img,
+.project-icon svg {
   width: 65%;
   height: 65%;
 
   object-fit: contain;
 }
 
-.preview .project-icon.blue {
+.project-icon.blue {
   --icon-color: #4b96ff;
 }
 
-.preview .project-icon.cyan {
+.project-icon.cyan {
   --icon-color: #41dce9;
 }
 
-.preview .project-icon.purple {
+.project-icon.purple {
   --icon-color: #a768ff;
 }
 
-.preview .project-icon.gold {
+.project-icon.gold {
   --icon-color: #ffc461;
 }
 
-.preview .project-icon.green {
+.project-icon.green {
   --icon-color: #65e5a0;
 }
 
-.preview .project-icon.red {
+.project-icon.red {
   --icon-color: #ff6c80;
 }
 
-.preview .project-grid a > span:last-child {
+.project-grid a > span:last-child {
   min-width: 0;
 }
 
-.preview .project-grid strong {
+.project-grid strong {
   display: block;
   overflow: hidden;
 
@@ -4391,7 +4297,7 @@ details:not([open]) summary {
   white-space: nowrap;
 }
 
-.preview .project-grid small {
+.project-grid small {
   display: block;
 
   margin-top: 3px;
@@ -4403,17 +4309,17 @@ details:not([open]) summary {
 }
 
 /* Prevent preview header labels and headings from overlapping */
-.preview header > span + h3 {
+header > span + h3 {
   grid-column: auto;
   grid-row: auto;
   margin-left: 0;
 }
 
-.preview header > span {
+header > span {
   position: static;
 }
 
-.preview header:has(> span + h3) {
+header:has(> span + h3) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -4617,16 +4523,16 @@ details:not([open]) summary {
     padding: 18px;
   }
 
-  .preview .project-group {
+  .project-group {
     grid-template-columns: 120px minmax(0, 1fr);
   }
 
-  .preview .project-grid {
+  .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .preview .sandbox-entry-preview,
-  .preview .project-content {
+  .sandbox-entry-preview,
+  .project-content {
     padding: 18px;
   }
 }
@@ -4675,21 +4581,21 @@ details:not([open]) summary {
     border-bottom: 1px solid var(--editor-line);
   }
 
-  .preview {
+  {
     padding: 12px;
   }
 
-  .preview .sandbox-entry-preview,
-  .preview .project-content {
+  .sandbox-entry-preview,
+  .project-content {
     width: 100%;
     min-width: 0;
 
     padding: 12px;
   }
 
-  .preview .sandbox-entry-preview > header,
-  .preview .project-content > header,
-  .preview .project-detail-header {
+  .sandbox-entry-preview > header,
+  .project-content > header,
+  .project-detail-header {
     grid-template-columns: 1fr;
 
     gap: 7px;
@@ -4699,24 +4605,22 @@ details:not([open]) summary {
     margin-bottom: 16px;
   }
 
-  .preview .sandbox-entry-preview > header h2,
-  .preview .project-content > header h2,
-  .preview .project-detail-header h2 {
+  .sandbox-entry-preview > header h2,
+  .project-content > header h2,
+  .project-detail-header h2 {
     font-size: 23px;
   }
 
-  .preview .sandbox-entry-preview > header p,
-  .preview .project-content > header p,
-  .preview .project-detail-header > p {
+  .sandbox-entry-preview > header p,
+  .project-content > header p,
+  .project-detail-header > p {
     width: 100%;
     max-width: none;
-
-
 
     text-align: left;
   }
 
-  .preview .project-doc-nav {
+  .project-doc-nav {
     flex-wrap: nowrap;
 
     gap: 6px;
@@ -4727,21 +4631,21 @@ details:not([open]) summary {
     padding: 8px 0 10px;
   }
 
-  .preview .project-doc-nav a {
+  .project-doc-nav a {
     flex: 0 0 auto;
 
     white-space: nowrap;
   }
 
-  .preview .project-doc {
+  .project-doc {
     gap: 14px;
   }
 
-  .preview .project-group {
+  .project-group {
     grid-template-columns: 1fr;
   }
 
-  .preview .project-group > header {
+  .project-group > header {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -4756,7 +4660,7 @@ details:not([open]) summary {
     text-align: left;
   }
 
-  .preview .project-group > header > span {
+  .project-group > header > span {
     flex: 0 0 38px;
 
     width: 38px;
@@ -4765,11 +4669,11 @@ details:not([open]) summary {
     font-size: 15px;
   }
 
-  .preview .project-group > header small {
+  .project-group > header small {
     margin-top: 2px;
   }
 
-  .preview .project-grid {
+  .project-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 
     gap: 7px;
@@ -4777,13 +4681,13 @@ details:not([open]) summary {
     padding: 9px;
   }
 
-  .preview .project-grid a {
+  .project-grid a {
     min-width: 0;
 
     padding: 9px;
   }
 
-  .preview .project-icon {
+  .project-icon {
     flex: 0 0 40px;
 
     width: 40px;
@@ -4792,7 +4696,7 @@ details:not([open]) summary {
     font-size: 12px;
   }
 
-  .preview .project-grid strong {
+  .project-grid strong {
     white-space: normal;
 
     overflow: visible;
@@ -4801,7 +4705,7 @@ details:not([open]) summary {
     font-size: 12px;
   }
 
-  .preview .project-doc-section > header {
+  .project-doc-section > header {
     grid-template-columns: 1fr;
 
     gap: 7px;
@@ -4811,89 +4715,88 @@ details:not([open]) summary {
     padding: 11px 12px;
   }
 
-  .preview .project-doc-section > header > p {
+  .project-doc-section > header > p {
     max-width: none;
 
     text-align: left;
   }
 
-
-/* 
-  .preview .project-command p {
+  /* 
+  .project-command p {
     font-size: 12px;
   } */
-  .preview .project-command:has(> .project-command-action) {
+  .project-command:has(> .project-command-action) {
     grid-template-columns: minmax(0, 1fr) 40px;
   }
 
-  .preview .project-command-action {
+  .project-command-action {
     min-width: 40px;
   }
 
-  .preview .project-example {
+  .project-example {
     margin: 0 12px 12px;
   }
 
-  .preview .project-example pre {
+  .project-example pre {
     padding: 11px;
   }
 
-  .preview .project-example code {
+  .project-example code {
     font-size: 12px;
   }
 
-  .preview .project-note {
+  .project-note {
     margin: 0 12px 12px;
 
     padding: 10px 12px;
   }
 
-  .preview .project-display .project-preview {
+  .project-display .project-preview {
     min-height: 180px;
   }
 
-  .preview .project-actions {
+  .project-actions {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
 
     gap: 7px;
   }
 
-  .preview .project-link {
+  .project-link {
     text-align: center;
   }
 
-  .preview .project-detail > header {
+  .project-detail > header {
     padding: 11px 12px;
   }
 
-  .preview .project-detail > p {
+  .project-detail > p {
     padding: 12px;
 
     font-size: 12px;
   }
 
-  .preview .project-meta {
+  .project-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .preview .project-meta > div {
+  .project-meta > div {
     padding: 11px;
   }
 
-  .preview .project-meta > div + div {
+  .project-meta > div + div {
     border-left: 0;
   }
 
-  .preview .project-meta > div:nth-child(n + 3) {
+  .project-meta > div:nth-child(n + 3) {
     border-top: 1px solid rgba(95, 170, 255, 0.12);
   }
 
-  .preview .project-meta > div:nth-child(even) {
+  .project-meta > div:nth-child(even) {
     border-left: 1px solid rgba(95, 170, 255, 0.12);
   }
 
-  .preview .project-documents > a {
+  .project-documents > a {
     grid-template-columns: 1fr;
 
     gap: 4px;
@@ -4901,7 +4804,7 @@ details:not([open]) summary {
     padding: 11px 34px 11px 12px;
   }
 
-  .preview .project-documents > a > span {
+  .project-documents > a > span {
     position: absolute;
     top: 50%;
     right: 12px;
@@ -4909,7 +4812,7 @@ details:not([open]) summary {
     transform: translateY(-50%);
   }
 
-  .preview .project-images {
+  .project-images {
     grid-template-columns: 1fr;
 
     gap: 8px;
@@ -4917,19 +4820,19 @@ details:not([open]) summary {
     padding: 9px;
   }
 
-  .preview .project-split--small-left,
-  .preview .project-split--equal,
-  .preview .project-split--small-right,
-  .preview .project-split--three-column {
+  .project-split--small-left,
+  .project-split--equal,
+  .project-split--small-right,
+  .project-split--three-column {
     grid-template-columns: 1fr;
   }
 
-  .preview .project-split-cell {
+  .project-split-cell {
     border-right: 0;
     border-bottom: 1px solid rgba(95, 170, 255, 0.12);
   }
 
-  .preview .project-split-cell:last-child {
+  .project-split-cell:last-child {
     border-bottom: 0;
   }
 }
@@ -4940,7 +4843,7 @@ details:not([open]) summary {
    must not treat each direct HTML element as a separate grid column.
    ========================================================================== */
 
-.preview .project-command {
+.project-command {
   position: relative;
   display: block;
   min-width: 0;
@@ -4951,16 +4854,16 @@ details:not([open]) summary {
   background: transparent;
 }
 
-.preview .project-command:last-child {
+.project-command:last-child {
   border-bottom: 0;
 }
 
-.preview .project-command:hover {
+.project-command:hover {
   background: rgba(95, 200, 255, 0.028);
 }
 
-.preview .project-command > .project-command-title,
-.preview .project-command > strong {
+.project-command > .project-command-title,
+.project-command > strong {
   display: block;
   margin: 0 0 5px;
   color: #eaf6ff;
@@ -4969,43 +4872,43 @@ details:not([open]) summary {
   line-height: 1.4;
 }
 
-.preview .project-command p {
+.project-command p {
   margin: 0 0 6px;
   color: var(--sandbox-muted);
-  
+
   overflow-wrap: break-word;
   word-break: normal;
 }
 
-.preview .project-command p:last-child {
+.project-command p:last-child {
   margin-bottom: 0;
 }
 
-.preview .project-command ul,
-.preview .project-command ol {
+.project-command ul,
+.project-command ol {
   margin: 6px 0;
   padding-left: 20px;
 }
 
-.preview .project-command img {
+.project-command img {
   max-width: 100%;
   height: auto;
 }
 
 /* Link/collapse children get content + action columns. */
-.preview .project-command:has(> .project-command-action) {
+.project-command:has(> .project-command-action) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px;
   padding: 0;
 }
 
-.preview .project-command-content,
-.preview .project-command-summary {
+.project-command-content,
+.project-command-summary {
   min-width: 0;
   padding: 12px 14px;
 }
 
-.preview .project-command-action {
+.project-command-action {
   display: grid;
   place-items: center;
   align-self: stretch;
@@ -5019,13 +4922,13 @@ details:not([open]) summary {
   text-decoration: none;
 }
 
-.preview .project-command-action:hover,
-.preview .project-command-action:focus-visible {
+.project-command-action:hover,
+.project-command-action:focus-visible {
   color: #fff;
   background: rgba(95, 200, 255, 0.13);
 }
 
-.preview .project-command-panel {
+.project-command-panel {
   grid-column: 1 / -1;
   padding: 12px 14px;
   border-top: 1px solid rgba(95, 170, 255, 0.12);
@@ -5036,13 +4939,13 @@ details:not([open]) summary {
 }
 
 /* Reference-guide command rows alone use command + description columns. */
-.preview .project-command:has(> code) {
+.project-command:has(> code) {
   display: grid;
   grid-template-columns: minmax(95px, 125px) minmax(0, 1fr);
   padding: 0;
 }
 
-.preview .project-command > code {
+.project-command > code {
   display: flex;
   align-items: center;
   min-width: 0;
@@ -5053,15 +4956,14 @@ details:not([open]) summary {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 12px;
   overflow-wrap: anywhere;
-  
 }
 
-.preview .project-command:has(> code) > div:not(.project-command-action) {
+.project-command:has(> code) > div:not(.project-command-action) {
   min-width: 0;
   padding: 12px 14px;
 }
 
-.preview .project-command:has(> code):has(> .project-command-action) {
+.project-command:has(> code):has(> .project-command-action) {
   grid-template-columns: minmax(95px, 125px) minmax(0, 1fr) 44px;
 }
 
@@ -5286,18 +5188,18 @@ details:not([open]) summary {
    Parent wrappers determine child layout.
    ========================================================================== */
 
-.preview .project-command-list {
+.project-command-list {
   display: block;
   width: 100%;
 }
 
-.preview .project-command {
+.project-command {
   width: 100%;
   min-width: 0;
 }
 
 /* Standard / Code Link + Collapse: only the action area becomes a second column. */
-.preview .project-command:has(> .project-command-action) {
+.project-command:has(> .project-command-action) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px;
   align-items: stretch;
@@ -5305,13 +5207,13 @@ details:not([open]) summary {
   padding: 0;
 }
 
-.preview .project-command-content,
-.preview .project-command-summary {
+.project-command-content,
+.project-command-summary {
   min-width: 0;
   padding: 12px 14px;
 }
 
-.preview .project-command-title {
+.project-command-title {
   display: block;
   margin: 0 0 6px;
   color: #eaf6ff;
@@ -5320,17 +5222,17 @@ details:not([open]) summary {
   line-height: 1.4;
 }
 
-.preview .project-command-panel {
+.project-command-panel {
   grid-column: 1 / -1;
   min-width: 0;
 }
 
 /* Split default rows remain full-width rows containing their own split grid. */
-.preview .project-doc-section .project-command {
+.project-doc-section .project-command {
   padding: 0;
 }
 
-.preview .project-split-child-head {
+.project-split-child-head {
   width: 100%;
   padding: 10px 12px;
   border-bottom: 1px solid rgba(95, 170, 255, 0.1);
@@ -5338,38 +5240,37 @@ details:not([open]) summary {
   background: rgba(95, 200, 255, 0.035);
 }
 
-.preview .project-split {
+.project-split {
   display: grid;
   width: 100%;
   min-width: 0;
 }
 
-.preview .project-split--small-left {
+.project-split--small-left {
   grid-template-columns: 1fr 3fr;
 }
 
-.preview .project-split--equal {
+.project-split--equal {
   grid-template-columns: 1fr 1fr;
 }
 
-.preview .project-split--small-right {
+.project-split--small-right {
   grid-template-columns: 3fr 1fr;
 }
 
-.preview .project-split--three-column {
+.project-split--three-column {
   grid-template-columns: 1fr 3fr 1fr;
 }
 
-.preview .project-split-cell {
+.project-split-cell {
   position: relative;
   min-width: 0;
   padding: 11px 12px;
   border-right: 1px solid rgba(95, 170, 255, 0.12);
   color: var(--sandbox-muted);
-  
 }
 
-.preview .project-split-cell:last-child {
+.project-split-cell:last-child {
   border-right: 0;
 }
 
@@ -5377,7 +5278,7 @@ details:not([open]) summary {
   Split Link mode:
   HTML stays ordinary HTML. Only the dedicated arrow action is clickable.
 */
-.preview .project-split-cell > .project-command-action {
+.project-split-cell > .project-command-action {
   float: right;
   width: 40px;
   min-width: 40px;
@@ -5388,12 +5289,12 @@ details:not([open]) summary {
 }
 
 /* Split Collapse panel uses its split grid when expanded. */
-.preview .project-command-panel.project-split {
+.project-command-panel.project-split {
   display: grid;
   padding: 0;
 }
 
-.preview .project-command-panel.project-split[hidden] {
+.project-command-panel.project-split[hidden] {
   display: none;
 }
 
@@ -5401,17 +5302,17 @@ details:not([open]) summary {
    PREVIEW — CODE / EXAMPLES
    ========================================================================== */
 
-.preview .project-example {
+.project-example {
   width: auto;
   min-width: 0;
 }
 
-.preview .project-example pre {
+.project-example pre {
   overflow: auto;
   max-width: 100%;
 }
 
-.preview .project-example code {
+.project-example code {
   white-space: pre;
   word-break: normal;
   overflow-wrap: normal;
@@ -5421,18 +5322,18 @@ details:not([open]) summary {
    PREVIEW — DISPLAY / PREVIEW
    ========================================================================== */
 
-.preview .project-display {
+.project-display {
   display: block;
 }
 
-.preview .project-display > .project-detail {
+.project-display > .project-detail {
   margin: 0;
   border: 0;
   border-top: 1px solid rgba(95, 170, 255, 0.16);
   border-radius: 0;
 }
 
-.preview .project-display-details {
+.project-display-details {
   padding: 12px 14px;
   color: var(--sandbox-muted);
   font-size: 11px;
@@ -5457,23 +5358,23 @@ details:not([open]) summary {
     border-left: 0;
   }
 
-  .preview .project-command:has(> .project-command-action) {
+  .project-command:has(> .project-command-action) {
     grid-template-columns: minmax(0, 1fr) 40px;
   }
 
-  .preview .project-split--small-left,
-  .preview .project-split--equal,
-  .preview .project-split--small-right,
-  .preview .project-split--three-column {
+  .project-split--small-left,
+  .project-split--equal,
+  .project-split--small-right,
+  .project-split--three-column {
     grid-template-columns: 1fr;
   }
 
-  .preview .project-split-cell {
+  .project-split-cell {
     border-right: 0;
     border-bottom: 1px solid rgba(95, 170, 255, 0.12);
   }
 
-  .preview .project-split-cell:last-child {
+  .project-split-cell:last-child {
     border-bottom: 0;
   }
 }
@@ -5982,7 +5883,7 @@ details:not([open]) summary {
   justify-content: space-between;
   gap: 30px;
   align-items: end;
-font-size: 12px;;
+  font-size: 12px;
   margin-bottom: 20px;
 }
 
@@ -6008,8 +5909,6 @@ font-size: 12px;;
   max-width: 380px;
 
   color: #b8c7d8;
-
-  
 
   text-align: right;
 }
@@ -6165,7 +6064,7 @@ font-size: 12px;;
 
 .project-grid small {
   color: #849ab1;
-word-break: break-all;
+  word-break: break-all;
   font-size: 9px;
   line-height: 1.25;
 }
@@ -6330,13 +6229,13 @@ word-break: break-all;
 
 .project-command code {
   align-self: start;
-display: block;
+  display: block;
   width: fit-content;
   max-width: 300px;
-min-width: 100%;
+  min-width: 100%;
   padding: 5px 8px;
-overflow: scroll;
-  overflow-wrap:anywhere;
+  overflow: scroll;
+  overflow-wrap: anywhere;
 
   border: 1px solid rgba(95, 200, 255, 0.22);
   border-radius: 5px;
@@ -6487,8 +6386,6 @@ overflow: scroll;
   max-width: 420px;
 
   color: #b8c7d8;
-
-  
 
   text-align: right;
 }
@@ -6704,7 +6601,6 @@ overflow: scroll;
   }
 }
 
-
 /* ==================================================
    RESPONSIVE
    ================================================== */
@@ -6737,7 +6633,7 @@ overflow: scroll;
   .brand small {
     font-size: 10px;
   }
-body > header nav button {
+  body > header nav button {
     padding: 0 13px;
     font-size: 12px;
   }
@@ -6759,7 +6655,7 @@ body > header nav button {
   /* ==================================================
      SHARED HEADER
      ================================================== */
-body > header {
+  body > header {
     top: 16px;
   }
 
@@ -6786,7 +6682,7 @@ body > header {
   }
 
   /* ---------- NAV DROPDOWN ---------- */
-body > header nav {
+  body > header nav {
     position: absolute;
 
     top: 58px;
@@ -6822,7 +6718,7 @@ body > header nav {
       transform 180ms ease,
       visibility 180ms ease;
   }
-body > header nav.open {
+  body > header nav.open {
     opacity: 1;
     visibility: visible;
 
@@ -6830,7 +6726,7 @@ body > header nav.open {
 
     pointer-events: auto;
   }
-body > header nav button {
+  body > header nav button {
     width: 100%;
     min-height: 48px;
 
@@ -6842,12 +6738,12 @@ body > header nav button {
 
     font-size: 12px;
   }
-body > header nav button + button {
+  body > header nav button + button {
     border-left: 0;
 
     border-top: 1px solid rgba(117, 188, 255, 0.1);
   }
-body > header nav button[aria-current="page"] {
+  body > header nav button[aria-current="page"] {
     box-shadow: inset 2px 0 var(--blue);
   }
 
@@ -7059,7 +6955,7 @@ body > header nav button[aria-current="page"] {
      SHARED FOOTER
      ================================================== */
 
-   footer {
+  footer {
     position: relative;
 
     bottom: auto;
@@ -7091,7 +6987,7 @@ body > header nav button[aria-current="page"] {
   /* ==================================================
      SHARED HEADER
      ================================================== */
-body > header {
+  body > header {
     top: 12px;
   }
 
@@ -7148,7 +7044,7 @@ body > header {
   }
 
   /* ---------- NAV DROPDOWN ---------- */
-body > header nav {
+  body > header nav {
     top: 48px;
 
     right: 12px;
@@ -7156,7 +7052,7 @@ body > header nav {
 
     width: auto;
   }
-body > header nav button {
+  body > header nav button {
     min-height: 46px;
 
     font-size: 11px;
@@ -7825,7 +7721,7 @@ body > header nav button {
      SHARED FOOTER
      ================================================== */
 
-   footer {
+  footer {
     padding: 12px 12px 20px;
   }
 
