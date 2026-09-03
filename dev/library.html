@@ -6,478 +6,645 @@
 
     <title>Project Library — Developer Sandbox</title>
 
+
+
     <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
   </head>
 
   <body id="pg lib" data-section="projects">
     <header>
-      <a class="brand" href="index.html">
-        <img src="assets/img/logo-blue.png" alt="" />
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
 
-        <span>
-          <strong>DEVELOPER SANDBOX</strong>
-          <small>Academy of Mastery</small>
-        </span>
-      </a>
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
 
-      <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-        <button
-          type="button"
-          data-nav-section="home"
-          onclick="window.location.href = 'index.html'">
-          <span aria-hidden="true">⌂</span>
-          Home
-        </button>
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
 
-        <button
-          type="button"
-          data-nav-section="projects"
-          onclick="window.location.href = 'library.html'">
-          <span aria-hidden="true">▱</span>
-          Projects
-        </button>
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
 
-        <button
-          type="button"
-          data-nav-section="reference"
-          onclick="window.location.href = 'pg/angular-reference-guide.html'">
-          <span aria-hidden="true">▤</span>
-          Reference Guides
-        </button>
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
 
-        <button
-          type="button"
-          data-nav-section="labs"
-          onclick="window.location.href = 'labs.html'">
-          <span aria-hidden="true">✦</span>
-          Labs
-        </button>
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
 
-        <button
-          type="button"
-          data-nav-section="system"
-          onclick="window.location.href = 'system-guide.html'">
-          <span aria-hidden="true">⊙</span>
-          System Guide
-        </button>
-      </nav>
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
 
-      <div class="top-tools">
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Open navigation"
-          aria-controls="primary-nav"
-          aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-        <div class="help">
-          <button type="button" aria-label="Read page information"></button>
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
 
-          <div>
-            <strong>Project Library</strong>
-            <p>
-              Explore development projects, applications, tools, experiments,
-              and technical work by category.
-            </p>
-          </div>
-        </div>
+  <div>
+    <strong>Project Library</strong>
+    <p>Explore development projects, applications, tools, experiments, and technical work by category.</p>
+  </div>
+</div>
 
-        <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
 
-        <button
-          type="button"
-          class="close"
-          aria-label="Close"
-          onclick="window.location.href = 'https://sdelgado.com/work.html'">
-          ×
-        </button>
-      </div>
-    </header>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
 
     <main class="view-all-page">
-      <aside class="type-menu">
-        <header>
-          <h1>Project Library</h1>
-
-          <p>
-            Explore development projects, applications, tools, experiments, and
-            technical work by category.
-          </p>
-        </header>
-
-        <nav class="project-types" aria-label="Project Library">
-          <button
-            type="button"
-            data-filter="all"
-            aria-current="true"
-            onclick="window.location.href = 'library.html'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> All Projects </strong>
-
-              <small> View the complete project library. </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="browser-apis"
-            onclick="window.location.href = '#group-browser-apis'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Browser APIs </strong>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="data-driven-ui"
-            onclick="window.location.href = '#group-data-driven-ui'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Data-Driven UI </strong>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="developer-tooling"
-            onclick="window.location.href = '#group-developer-tooling'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Developer Tooling </strong>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="typescript-toolchain"
-            onclick="window.location.href = '#group-typescript-toolchain'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> TypeScript Toolchain </strong>
-
-              <small>
-                How TypeScript projects install, compile, and run.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="rosetta-comparisons"
-            onclick="window.location.href = '#group-rosetta-comparisons'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Rosetta Comparisons </strong>
-
-              <small>
-                Same-use-case implementations compared across languages and
-                frameworks.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="typescript-data-modeling"
-            onclick="window.location.href = '#group-typescript-data-modeling'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> TypeScript Data Modeling </strong>
-
-              <small>
-                Make TypeScript types and object contracts visible.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="data-relationships"
-            onclick="window.location.href = '#group-data-relationships'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Data Relationships </strong>
-
-              <small>
-                Visualize relationships between records and structured data.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="modern-agenda"
-            onclick="window.location.href = '#group-modern-agenda'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Modern Agenda </strong>
-
-              <small> Modern Agenda Rosetta Stone implementations. </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="data-transformation"
-            onclick="window.location.href = '#group-data-transformation'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Data Transformation </strong>
-
-              <small>
-                See functions classify, sort, filter, group, and transform data.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="rendering-graphics"
-            onclick="window.location.href = '#group-rendering-graphics'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Rendering &amp; Graphics </strong>
-
-              <small>
-                Rendering, Canvas, layout, graphics, and visual-computing
-                experiments.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="backend-apis"
-            onclick="window.location.href = '#group-backend-apis'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Backend &amp; APIs </strong>
-
-              <small>
-                HTTP services, API architecture, requests, gateways, and
-                integrations.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="rendering-generation"
-            onclick="window.location.href = '#group-rendering-generation'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Rendering &amp; Generation </strong>
-
-              <small>
-                Turn structured values into visible HTML and interface
-                components.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="games-simulation"
-            onclick="window.location.href = '#group-games-simulation'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Games &amp; Simulation </strong>
-
-              <small>
-                Interactive systems, game architecture, simulation, state, and
-                sprites.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="sqlite-data-access"
-            onclick="window.location.href = '#group-sqlite-data-access'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> SQLite &amp; Data Access </strong>
-
-              <small>
-                Read and combine Sandbox data with focused SQLite queries.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="browser-state"
-            onclick="window.location.href = '#group-browser-state'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Browser State </strong>
-
-              <small>
-                Expose application state, forms, selection, and hierarchy in the
-                browser.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="data-databases"
-            onclick="window.location.href = '#group-data-databases'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Data &amp; Databases </strong>
-
-              <small>
-                SQL, NoSQL, modeling, analysis, and data-oriented development.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="dom-async"
-            onclick="window.location.href = '#group-dom-async'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> DOM &amp; Async </strong>
-
-              <small>
-                Build visible DOM interactions, events, promises, and dynamic
-                resources.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="semantic-html"
-            onclick="window.location.href = '#group-semantic-html'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Semantic HTML </strong>
-
-              <small>
-                Transform browser markup while preserving semantics and
-                accessibility.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="node-http-apis"
-            onclick="window.location.href = '#group-node-http-apis'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Node HTTP &amp; APIs </strong>
-
-              <small>
-                Visualize requests, responses, routes, methods, and server
-                behavior.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="crud-persistence"
-            onclick="window.location.href = '#group-crud-persistence'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> CRUD &amp; Persistence </strong>
-
-              <small>
-                Create, read, update, delete, and relate persistent records.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="tree-structures"
-            onclick="window.location.href = '#group-tree-structures'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Tree Structures </strong>
-
-              <small>
-                Manipulate ordered parent-child data and hierarchy.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="validation-safety"
-            onclick="window.location.href = '#group-validation-safety'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Validation &amp; Safety </strong>
-
-              <small>
-                Normalize input and reject unsafe or invalid data.
-              </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="database-transactions"
-            onclick="window.location.href = '#group-database-transactions'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Database Transactions </strong>
-
-              <small> Make atomic commits and rollbacks visible. </small>
-            </span>
-          </button>
-
-          <button
-            type="button"
-            data-filter="static-generation"
-            onclick="window.location.href = '#group-static-generation'">
-            <span aria-hidden="true"> ◇ </span>
-
-            <span>
-              <strong> Static Generation </strong>
-
-              <small>
-                Transform database records into generated HTML files.
-              </small>
-            </span>
-          </button>
-        </nav>
-      </aside>
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Project Library
+    </h1>
+
+    <p>
+      Explore development projects, applications, tools, experiments, and technical work by category.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Project Library"
+  >
+    <button
+      type="button"
+      data-filter="all"
+      aria-current="true"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Projects
+        </strong>
+
+        <small>
+          View the complete project library.
+        </small>
+      </span>
+    </button>
+
+    
+<button
+  type="button"
+  data-filter="browser-apis"
+  onclick="window.location.href = '#group-browser-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Browser APIs
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="data-driven-ui"
+  onclick="window.location.href = '#group-data-driven-ui'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data-Driven UI
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="developer-tooling"
+  onclick="window.location.href = '#group-developer-tooling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Developer Tooling
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="typescript-toolchain"
+  onclick="window.location.href = '#group-typescript-toolchain'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      TypeScript Toolchain
+    </strong>
+
+    
+    <small>
+      How TypeScript projects install, compile, and run.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="rosetta-comparisons"
+  onclick="window.location.href = '#group-rosetta-comparisons'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rosetta Comparisons
+    </strong>
+
+    
+    <small>
+      Same-use-case implementations compared across languages and frameworks.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="typescript-data-modeling"
+  onclick="window.location.href = '#group-typescript-data-modeling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      TypeScript Data Modeling
+    </strong>
+
+    
+    <small>
+      Make TypeScript types and object contracts visible.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="data-relationships"
+  onclick="window.location.href = '#group-data-relationships'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data Relationships
+    </strong>
+
+    
+    <small>
+      Visualize relationships between records and structured data.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="modern-agenda"
+  onclick="window.location.href = '#group-modern-agenda'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Modern Agenda
+    </strong>
+
+    
+    <small>
+      Modern Agenda Rosetta Stone implementations.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="data-transformation"
+  onclick="window.location.href = '#group-data-transformation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data Transformation
+    </strong>
+
+    
+    <small>
+      See functions classify, sort, filter, group, and transform data.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="rendering-graphics"
+  onclick="window.location.href = '#group-rendering-graphics'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Graphics
+    </strong>
+
+    
+    <small>
+      Rendering, Canvas, layout, graphics, and visual-computing experiments.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="backend-apis"
+  onclick="window.location.href = '#group-backend-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Backend &amp; APIs
+    </strong>
+
+    
+    <small>
+      HTTP services, API architecture, requests, gateways, and integrations.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="rendering-generation"
+  onclick="window.location.href = '#group-rendering-generation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Generation
+    </strong>
+
+    
+    <small>
+      Turn structured values into visible HTML and interface components.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="games-simulation"
+  onclick="window.location.href = '#group-games-simulation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Games &amp; Simulation
+    </strong>
+
+    
+    <small>
+      Interactive systems, game architecture, simulation, state, and sprites.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="sqlite-data-access"
+  onclick="window.location.href = '#group-sqlite-data-access'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      SQLite &amp; Data Access
+    </strong>
+
+    
+    <small>
+      Read and combine Sandbox data with focused SQLite queries.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="browser-state"
+  onclick="window.location.href = '#group-browser-state'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Browser State
+    </strong>
+
+    
+    <small>
+      Expose application state, forms, selection, and hierarchy in the browser.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="data-databases"
+  onclick="window.location.href = '#group-data-databases'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data &amp; Databases
+    </strong>
+
+    
+    <small>
+      SQL, NoSQL, modeling, analysis, and data-oriented development.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="dom-async"
+  onclick="window.location.href = '#group-dom-async'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      DOM &amp; Async
+    </strong>
+
+    
+    <small>
+      Build visible DOM interactions, events, promises, and dynamic resources.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="semantic-html"
+  onclick="window.location.href = '#group-semantic-html'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Semantic HTML
+    </strong>
+
+    
+    <small>
+      Transform browser markup while preserving semantics and accessibility.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="node-http-apis"
+  onclick="window.location.href = '#group-node-http-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Node HTTP &amp; APIs
+    </strong>
+
+    
+    <small>
+      Visualize requests, responses, routes, methods, and server behavior.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="crud-persistence"
+  onclick="window.location.href = '#group-crud-persistence'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      CRUD &amp; Persistence
+    </strong>
+
+    
+    <small>
+      Create, read, update, delete, and relate persistent records.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="tree-structures"
+  onclick="window.location.href = '#group-tree-structures'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Tree Structures
+    </strong>
+
+    
+    <small>
+      Manipulate ordered parent-child data and hierarchy.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="validation-safety"
+  onclick="window.location.href = '#group-validation-safety'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Validation &amp; Safety
+    </strong>
+
+    
+    <small>
+      Normalize input and reject unsafe or invalid data.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="database-transactions"
+  onclick="window.location.href = '#group-database-transactions'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Database Transactions
+    </strong>
+
+    
+    <small>
+      Make atomic commits and rollbacks visible.
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  data-filter="static-generation"
+  onclick="window.location.href = '#group-static-generation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Static Generation
+    </strong>
+
+    
+    <small>
+      Transform database records into generated HTML files.
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
 
       <section class="project-content">
         <header>
@@ -486,2232 +653,4106 @@
             <h2>All Projects</h2>
           </div>
 
-          <p>
-            Explore development projects, applications, tools, experiments, and
-            technical work by category.
-          </p>
+          <p>Explore development projects, applications, tools, experiments, and technical work by category.</p>
         </header>
 
-        <section class="project-group" id="group-browser-apis">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Browser APIs</h3>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/rebuilding-fetch-xmlhttprequest.html">
-              <span class="project-icon aqua"> RF </span>
-
-              <div>
-                <strong> Rebuilding Fetch with XMLHttpRequest </strong>
-
-                <small> LAB / EXPLORATION </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-data-driven-ui">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Data-Driven UI</h3>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/week-at-a-glance-component.html">
-              <span class="project-icon purple"> WA </span>
-
-              <div>
-                <strong> Week at a Glance Component </strong>
-
-                <small> GENERAL PROJECT </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-developer-tooling">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Developer Tooling</h3>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/rosetta-core.html">
-              <span class="project-icon rose"> RC </span>
-
-              <div>
-                <strong> Rosetta Core </strong>
-
-                <small>
-                  JavaScript / TypeScript / Python / PHP / Java / C# / SQL /
-                  HTML / CSS
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/developer-sandbox.html">
-              <span class="project-icon purple"> DS </span>
-
-              <div>
-                <strong> Developer Sandbox </strong>
-
-                <small>
-                  HTML / CSS / JavaScript / TypeScript / TypeScript / Node.js /
-                  SQLite / SQL / npm / Git / GitHub / JSON / Static Site
-                  Generation
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-api-service.html">
-              <span class="project-icon blue"> TA </span>
-
-              <div>
-                <strong> TypeScript API Service </strong>
-
-                <small>
-                  TypeScript / Node.js / HTTP / REST / JSON / SQLite /
-                  PostgreSQL / Express / Fastify / Vitest / Playwright
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-library-package.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Library / Package </strong>
-
-                <small>
-                  TypeScript / npm / TypeScript Compiler / ES Modules / Vitest /
-                  GitHub
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/ai-sandbox.html">
-              <span class="project-icon aqua"> AS </span>
-
-              <div>
-                <strong> AI Sandbox </strong>
-
-                <small>
-                  TypeScript / Node.js / AI API / JSON / Fetch API / SQLite
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/portfolio-engine.html">
-              <span class="project-icon pink"> PE </span>
-
-              <div>
-                <strong> Portfolio Engine </strong>
-
-                <small>
-                  TypeScript / Node.js / SQLite / JSON / Static Site Generation
-                  / HTML / CSS / JavaScript
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/game-framework.html">
-              <span class="project-icon lime"> GF </span>
-
-              <div>
-                <strong> Game Framework </strong>
-
-                <small>
-                  TypeScript / Canvas 2D / Phaser / JavaScript / JSON / Web
-                  Audio API
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/academy-of-mastery-learning-engine.html">
-              <span class="project-icon emerald"> AO </span>
-
-              <div>
-                <strong> Academy of Mastery Learning Engine </strong>
-
-                <small>
-                  TypeScript / React / Vite / Node.js / SQLite / PostgreSQL /
-                  JSON / Markdown
-                </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-typescript-toolchain">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>TypeScript Toolchain</h3>
-
-              <small>
-                How TypeScript projects install, compile, and run.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-hello-typescript-browser.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Hello TypeScript Browser </strong>
-
-                <small> TypeScript / Node.js / npm / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-source-vs-dist-viewer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Source vs Dist Viewer </strong>
-
-                <small> TypeScript / Node.js / npm / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-build-button.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Build Button </strong>
-
-                <small> TypeScript / Node.js / npm / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-package-json-explorer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: package.json Explorer </strong>
-
-                <small> TypeScript / Node.js / npm </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-npm-dependency-installer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: npm Dependency Installer </strong>
-
-                <small> TypeScript / Node.js / npm </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-package-lock-dependency-tree.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: package-lock Dependency Tree </strong>
-
-                <small> TypeScript / Node.js / npm </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-es-modules-connector.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: ES Modules Connector </strong>
-
-                <small> TypeScript / Node.js / npm / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-compiler-target-switch.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Compiler Target Switch </strong>
-
-                <small> TypeScript / Node.js / npm / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-dom-and-node-library-map.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: DOM and Node Library Map </strong>
-
-                <small> TypeScript / Node.js / npm </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-source-map-error-finder.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Source Map Error Finder </strong>
-
-                <small> TypeScript / Node.js / npm / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-rosetta-comparisons">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Rosetta Comparisons</h3>
-
-              <small>
-                Same-use-case implementations compared across languages and
-                frameworks.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/rosetta-stone-arrays-and-collections-typescript.html">
-              <span class="project-icon blue"> AA </span>
-
-              <div>
-                <strong> Arrays and Collections: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-classification-machine-typescript.html">
-              <span class="project-icon blue"> CM </span>
-
-              <div>
-                <strong> Classification Machine: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-collection-renderer-typescript.html">
-              <span class="project-icon blue"> CR </span>
-
-              <div>
-                <strong> Collection Renderer: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-color-decision-engine-typescript.html">
-              <span class="project-icon blue"> CD </span>
-
-              <div>
-                <strong> Color Decision Engine: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-crud-typescript.html">
-              <span class="project-icon blue"> CT </span>
-
-              <div>
-                <strong> CRUD: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-data-to-html-card-typescript.html">
-              <span class="project-icon blue"> DT </span>
-
-              <div>
-                <strong> Data to HTML Card: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-data-transformation-typescript.html">
-              <span class="project-icon blue"> DT </span>
-
-              <div>
-                <strong> Data Transformation: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-deduplication-typescript.html">
-              <span class="project-icon blue"> DT </span>
-
-              <div>
-                <strong> Deduplication: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-delete-typescript.html">
-              <span class="project-icon blue"> DT </span>
-
-              <div>
-                <strong> DELETE: TypeScript </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-filter-map-sort-typescript.html">
-              <span class="project-icon blue"> FM </span>
-
-              <div>
-                <strong> Filter Map Sort: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-get-all-records-typescript.html">
-              <span class="project-icon blue"> GA </span>
-
-              <div>
-                <strong> Get All Records: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-get-record-by-id-typescript.html">
-              <span class="project-icon blue"> GR </span>
-
-              <div>
-                <strong> Get Record By ID: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-get-typescript.html">
-              <span class="project-icon blue"> GT </span>
-
-              <div>
-                <strong> GET: TypeScript </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-group-by-category-typescript.html">
-              <span class="project-icon blue"> GB </span>
-
-              <div>
-                <strong> Group By Category: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-http-status-handling-typescript.html">
-              <span class="project-icon blue"> HS </span>
-
-              <div>
-                <strong> HTTP Status Handling: TypeScript </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-json-request-typescript.html">
-              <span class="project-icon blue"> JR </span>
-
-              <div>
-                <strong> JSON Request: TypeScript </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-json-response-typescript.html">
-              <span class="project-icon blue"> JR </span>
-
-              <div>
-                <strong> JSON Response: TypeScript </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-nested-data-typescript.html">
-              <span class="project-icon blue"> ND </span>
-
-              <div>
-                <strong> Nested Data: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-object-record-builder-typescript.html">
-              <span class="project-icon blue"> OR </span>
-
-              <div>
-                <strong> Object Record Builder: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-status-validation-typescript.html">
-              <span class="project-icon blue"> SV </span>
-
-              <div>
-                <strong> Status Validation: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-slug-generator-typescript.html">
-              <span class="project-icon blue"> SG </span>
-
-              <div>
-                <strong> Slug Generator: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-sql-parameter-typescript.html">
-              <span class="project-icon blue"> SP </span>
-
-              <div>
-                <strong> SQL Parameter: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-sql-join-typescript.html">
-              <span class="project-icon blue"> SJ </span>
-
-              <div>
-                <strong> SQL JOIN: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-search-typescript.html">
-              <span class="project-icon blue"> ST </span>
-
-              <div>
-                <strong> Search: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-sort-order-typescript.html">
-              <span class="project-icon blue"> SO </span>
-
-              <div>
-                <strong> Sort Order: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-parent-child-tree-typescript.html">
-              <span class="project-icon blue"> PC </span>
-
-              <div>
-                <strong> Parent Child Tree: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-reorder-typescript.html">
-              <span class="project-icon blue"> RT </span>
-
-              <div>
-                <strong> Reorder: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-reparent-typescript.html">
-              <span class="project-icon blue"> RT </span>
-
-              <div>
-                <strong> Reparent: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-validation-typescript.html">
-              <span class="project-icon blue"> VT </span>
-
-              <div>
-                <strong> Validation: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-post-typescript.html">
-              <span class="project-icon blue"> PT </span>
-
-              <div>
-                <strong> POST: TypeScript </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-put-typescript.html">
-              <span class="project-icon blue"> PT </span>
-
-              <div>
-                <strong> PUT: TypeScript </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-template-replacement-typescript.html">
-              <span class="project-icon blue"> TR </span>
-
-              <div>
-                <strong> Template Replacement: TypeScript </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/rosetta-stone-static-page-generator-typescript.html">
-              <span class="project-icon blue"> SP </span>
-
-              <div>
-                <strong> Static Page Generator: TypeScript </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-typescript-data-modeling">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>TypeScript Data Modeling</h3>
-
-              <small>
-                Make TypeScript types and object contracts visible.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-primitive-type-cards.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Primitive Type Cards </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-typed-profile-builder.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Typed Profile Builder </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-required-vs-optional.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Required vs Optional </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-status-selector.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Status Selector </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-invalid-value-gate.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Invalid Value Gate </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-typed-arrays-gallery.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Typed Arrays Gallery </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-nested-object-inspector.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Nested Object Inspector </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-flexible-metadata-bag.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Flexible Metadata Bag </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-type-narrowing-switchboard.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Type Narrowing Switchboard </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-generic-data-row-table.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Generic Data Row Table </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-data-relationships">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Data Relationships</h3>
-
-              <small>
-                Visualize relationships between records and structured data.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a
-              href="pg/typescript-project-record-and-technology-connector.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong>
-                  TypeScript Project: Record and Technology Connector
-                </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-tag-relationship-board.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Tag Relationship Board </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-media-attachment-map.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Media Attachment Map </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-record-relationship-graph.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Record Relationship Graph </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-parent-and-child-node-tree.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Parent and Child Node Tree </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-manifest-collection-browser.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong>
-                  TypeScript Project: Manifest Collection Browser
-                </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-modern-agenda">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Modern Agenda</h3>
-
-              <small> Modern Agenda Rosetta Stone implementations. </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/modern-agenda.html">
-              <span class="project-icon rose"> MA </span>
-
-              <div>
-                <strong> Modern Agenda </strong>
-
-                <small>
-                  Angular / C# / Java / PHP / Python / React / TypeScript /
-                  ASP.NET Core / Composer / ECMAScript / FastAPI / Spring Boot /
-                  JSON / Vite / AngularJS 1.x / Bootstrap 3 / jQuery / cURL /
-                  JSON / JavaScript / ES2015 / ECMAScript 2026 / TypeScript /
-                  Angular / React / PHP / Python
-                </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-data-transformation">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Data Transformation</h3>
-
-              <small>
-                See functions classify, sort, filter, group, and transform data.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-slug-factory.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Slug Factory </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-html-escape-machine.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: HTML Escape Machine </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-css-class-composer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: CSS Class Composer </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-numbered-position-generator.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Numbered Position Generator </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-classification-machine.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Classification Machine </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-predicate-traffic-lights.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Predicate Traffic Lights </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-array-pipeline-conveyor.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Array Pipeline Conveyor </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-sort-order-visualizer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Sort Order Visualizer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-primary-category-picker.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Primary Category Picker </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-group-by-category-board.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Group By Category Board </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-cache-before-and-after.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Cache Before and After </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-rendering-graphics">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Rendering &amp; Graphics</h3>
-
-              <small>
-                Rendering, Canvas, layout, graphics, and visual-computing
-                experiments.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/interactive-scientific-data-explorer.html">
-              <span class="project-icon aqua"> IS </span>
-
-              <div>
-                <strong> Interactive Scientific Data Explorer </strong>
-
-                <small>
-                  React / TypeScript / D3 / Leaflet / GeoJSON / Python / Flask /
-                  Docker
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/mini-browser-rendering-engine.html">
-              <span class="project-icon aqua"> MB </span>
-
-              <div>
-                <strong> Mini Browser / Rendering Engine </strong>
-
-                <small>
-                  TypeScript / JavaScript / Canvas 2D / HTML / CSS / JSON
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/canvas-playground.html">
-              <span class="project-icon magenta"> CP </span>
-
-              <div>
-                <strong> Canvas Playground </strong>
-
-                <small>
-                  JavaScript / TypeScript / Canvas 2D / HTML / CSS
-                </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-backend-apis">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Backend &amp; APIs</h3>
-
-              <small>
-                HTTP services, API architecture, requests, gateways, and
-                integrations.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/api-explorer.html">
-              <span class="project-icon purple"> AE </span>
-
-              <div>
-                <strong> API Explorer </strong>
-
-                <small>
-                  JavaScript / TypeScript / Fetch API / HTTP / REST / JSON /
-                  Node.js
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/api-gateway.html">
-              <span class="project-icon purple"> AG </span>
-
-              <div>
-                <strong> API Gateway </strong>
-
-                <small>
-                  TypeScript / Node.js / HTTP / REST / Express / Fastify /
-                  Docker / JSON
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/php-request-lab.html">
-              <span class="project-icon indigo"> PR </span>
-
-              <div>
-                <strong> PHP Request Lab </strong>
-
-                <small>
-                  PHP / cURL / HTTP / REST / JSON / AJAX / HTML / JavaScript
-                </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-rendering-generation">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Rendering &amp; Generation</h3>
-
-              <small>
-                Turn structured values into visible HTML and interface
-                components.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-template-replacement-lab.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Template Replacement Lab </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-initials-badge-generator.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Initials Badge Generator </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-technology-short-label.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Technology Short Label </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a
-              href="pg/typescript-project-technology-color-decision-engine.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong>
-                  TypeScript Project: Technology Color Decision Engine
-                </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-project-card-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Project Card Renderer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-featured-project-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Featured Project Renderer </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-navigation-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Navigation Renderer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-display-node-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Display Node Renderer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-standard-node-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Standard Node Renderer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-grid-node-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Grid Node Renderer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-split-layout-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Split Layout Renderer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-collapse-list-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Collapse List Renderer </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-code-renderer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Code Renderer </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-games-simulation">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Games &amp; Simulation</h3>
-
-              <small>
-                Interactive systems, game architecture, simulation, state, and
-                sprites.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/bird-life-simulation-game.html">
-              <span class="project-icon lime"> BL </span>
-
-              <div>
-                <strong> Bird Life Simulation Game </strong>
-
-                <small>
-                  TypeScript / JavaScript / Canvas 2D / Phaser / Web Audio API /
-                  JSON
-                </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-sqlite-data-access">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>SQLite &amp; Data Access</h3>
-
-              <small>
-                Read and combine Sandbox data with focused SQLite queries.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-get-all-records.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Get All Records </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-find-record-by-id.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Find Record By ID </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-prepared-parameter-viewer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Prepared Parameter Viewer </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-technology-join-explorer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Technology JOIN Explorer </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-category-join-explorer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Category JOIN Explorer </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-search-records.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Search Records </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-database-table-viewer.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Database Table Viewer </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-record-preview-query.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Record Preview Query </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-browser-state">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Browser State</h3>
-
-              <small>
-                Expose application state, forms, selection, and hierarchy in the
-                browser.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-dom-selector-type-helper.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: DOM Selector Type Helper </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-current-record-state-inspector.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong>
-                  TypeScript Lab: Current Record State Inspector
-                </strong>
-
-                <small> TypeScript / DOM / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-expandable-parent-state.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Expandable Parent State </strong>
-
-                <small> TypeScript / DOM / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-search-select-load.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Search Select Load </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-object-to-form.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Object to Form </strong>
-
-                <small> TypeScript / DOM / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-form-to-object.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Form to Object </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-node-outline-tree.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Node Outline Tree </strong>
-
-                <small> TypeScript / DOM / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-dynamic-form-factory.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Dynamic Form Factory </strong>
-
-                <small> TypeScript / DOM / HTML / CSS / JSON </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-data-databases">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Data &amp; Databases</h3>
-
-              <small>
-                SQL, NoSQL, modeling, analysis, and data-oriented development.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/database-lab.html">
-              <span class="project-icon teal"> DL </span>
-
-              <div>
-                <strong> Database Lab </strong>
-
-                <small>
-                  SQL / PostgreSQL / MongoDB / Docker / Node.js / TypeScript /
-                  JSON
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/data-science-lab.html">
-              <span class="project-icon amber"> DS </span>
-
-              <div>
-                <strong> Data Science Lab </strong>
-
-                <small>
-                  Python / uv / Jupyter / pandas / Matplotlib / SQL / PostgreSQL
-                  / JSON
-                </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-dom-async">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>DOM &amp; Async</h3>
-
-              <small>
-                Build visible DOM interactions, events, promises, and dynamic
-                resources.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-dynamic-element-creator.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Dynamic Element Creator </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-event-listener-light-switch.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Event Listener Light Switch </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-attribute-inspector.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Attribute Inspector </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-load-styles-dynamically.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Load Styles Dynamically </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-load-script-dynamically.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Load Script Dynamically </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-promise-loading-board.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Promise Loading Board </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-semantic-html">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Semantic HTML</h3>
-
-              <small>
-                Transform browser markup while preserving semantics and
-                accessibility.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-missing-image-alt.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Missing Image Alt </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-safe-button-type.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Safe Button Type </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-external-link-safety.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: External Link Safety </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-icon-link-naming.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Icon Link Naming </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-iframe-title-repair.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Iframe Title Repair </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-table-scope-repair.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Table Scope Repair </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-input-naming-assist.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Input Naming Assist </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-decorative-svg-assist.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Decorative SVG Assist </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-semantic-repair-station.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Semantic Repair Station </strong>
-
-                <small> TypeScript / DOM / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-node-http-apis">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Node HTTP &amp; APIs</h3>
-
-              <small>
-                Visualize requests, responses, routes, methods, and server
-                behavior.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-tiny-http-server.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Tiny HTTP Server </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-route-parts-visualizer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Route Parts Visualizer </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-json-response.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: JSON Response </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-read-post-json.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Read POST JSON </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-http-method-board.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: HTTP Method Board </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-generic-api-client.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Generic API Client </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-status-code-viewer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Status Code Viewer </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-mime-type-server.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: MIME Type Server </strong>
-
-                <small> TypeScript / Node.js / HTTP / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-crud-persistence">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>CRUD &amp; Persistence</h3>
-
-              <small>
-                Create, read, update, delete, and relate persistent records.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-create-record.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Create Record </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-read-record.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Read Record </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-update-record.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Update Record </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-delete-record.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Delete Record </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-crud-dashboard.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: CRUD Dashboard </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-auto-slug-and-unique-id.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Auto Slug and Unique ID </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-ensure-category-exists.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Ensure Category Exists </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-sync-tags.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Sync Tags </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-sync-technologies.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Sync Technologies </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-tree-structures">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Tree Structures</h3>
-
-              <small>
-                Manipulate ordered parent-child data and hierarchy.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-next-sort-order.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Next Sort Order </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-normalize-sort-order.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Normalize Sort Order </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-move-node-up-and-down.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Move Node Up and Down </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-reparent-node.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Reparent Node </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-flatten-parent-tree.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Flatten Parent Tree </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-delete-node-tree.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Delete Node Tree </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-validation-safety">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Validation &amp; Safety</h3>
-
-              <small>
-                Normalize input and reject unsafe or invalid data.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-boolean-normalizer.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Boolean Normalizer </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-comma-list-parser.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Comma List Parser </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-safe-json-metadata-parser.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Safe JSON Metadata Parser </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-unique-id-list.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Unique ID List </strong>
-
-                <small> TypeScript / HTML / CSS / JSON </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-sql-placeholder-factory.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: SQL Placeholder Factory </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-sql-safety-gate.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: SQL Safety Gate </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-safe-file-path-gate.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Safe File Path Gate </strong>
-
-                <small> TypeScript / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-database-transactions">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Database Transactions</h3>
-
-              <small> Make atomic commits and rollbacks visible. </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-begin-and-commit-simulator.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: BEGIN and COMMIT Simulator </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-rollback-simulator.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: ROLLBACK Simulator </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-atomic-reorder.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Atomic Reorder </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-safe-batch-delete.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Safe Batch Delete </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <section class="project-group" id="group-static-generation">
-          <header>
-            <span aria-hidden="true"> ◇ </span>
-
-            <div>
-              <h3>Static Generation</h3>
-
-              <small>
-                Transform database records into generated HTML files.
-              </small>
-            </div>
-          </header>
-
-          <div class="project-grid">
-            <a href="pg/typescript-lab-one-record-to-one-html-file.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: One Record to One HTML File </strong>
-
-                <small>
-                  TypeScript / Node.js / SQLite / HTML / CSS / JSON
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-lab-template-to-generated-page.html">
-              <span class="project-icon blue"> TL </span>
-
-              <div>
-                <strong> TypeScript Lab: Template to Generated Page </strong>
-
-                <small>
-                  TypeScript / Node.js / SQLite / HTML / CSS / JSON
-                </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-database-to-cards-to-page.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Database to Cards to Page </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-category-page-factory.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong> TypeScript Project: Category Page Factory </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-
-            <a href="pg/typescript-project-mini-static-site-generator.html">
-              <span class="project-icon blue"> TP </span>
-
-              <div>
-                <strong>
-                  TypeScript Project: Mini Static Site Generator
-                </strong>
-
-                <small> TypeScript / Node.js / SQLite / HTML / CSS </small>
-              </div>
-            </a>
-          </div>
-        </section>
+        
+<section
+  class="project-group"
+  id="group-browser-apis"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Browser APIs
+      </h3>
+
+      
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/rebuilding-fetch-xmlhttprequest.html"
+>
+  <span
+    class="project-icon aqua"
+  >
+    RF
+  </span>
+
+  <div>
+    <strong>
+      Rebuilding Fetch with XMLHttpRequest
+    </strong>
+
+    <small>
+      LAB / EXPLORATION
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-data-driven-ui"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Data-Driven UI
+      </h3>
+
+      
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/week-at-a-glance-component.html"
+>
+  <span
+    class="project-icon purple"
+  >
+    WA
+  </span>
+
+  <div>
+    <strong>
+      Week at a Glance Component
+    </strong>
+
+    <small>
+      GENERAL PROJECT
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-developer-tooling"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Developer Tooling
+      </h3>
+
+      
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/rosetta-core.html"
+>
+  <span
+    class="project-icon rose"
+  >
+    RC
+  </span>
+
+  <div>
+    <strong>
+      Rosetta Core
+    </strong>
+
+    <small>
+      JavaScript / TypeScript / Python / PHP / Java / C# / SQL / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/developer-sandbox.html"
+>
+  <span
+    class="project-icon purple"
+  >
+    DS
+  </span>
+
+  <div>
+    <strong>
+      Developer Sandbox
+    </strong>
+
+    <small>
+      HTML / CSS / JavaScript / TypeScript / TypeScript / Node.js / SQLite / SQL / npm / Git / GitHub / JSON / Static Site Generation
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-api-service.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TA
+  </span>
+
+  <div>
+    <strong>
+      TypeScript API Service
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / REST / JSON / SQLite / PostgreSQL / Express / Fastify / Vitest / Playwright
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-library-package.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Library / Package
+    </strong>
+
+    <small>
+      TypeScript / npm / TypeScript Compiler / ES Modules / Vitest / GitHub
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/ai-sandbox.html"
+>
+  <span
+    class="project-icon aqua"
+  >
+    AS
+  </span>
+
+  <div>
+    <strong>
+      AI Sandbox
+    </strong>
+
+    <small>
+      TypeScript / Node.js / AI API / JSON / Fetch API / SQLite
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/portfolio-engine.html"
+>
+  <span
+    class="project-icon pink"
+  >
+    PE
+  </span>
+
+  <div>
+    <strong>
+      Portfolio Engine
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / JSON / Static Site Generation / HTML / CSS / JavaScript
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/game-framework.html"
+>
+  <span
+    class="project-icon lime"
+  >
+    GF
+  </span>
+
+  <div>
+    <strong>
+      Game Framework
+    </strong>
+
+    <small>
+      TypeScript / Canvas 2D / Phaser / JavaScript / JSON / Web Audio API
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/academy-of-mastery-learning-engine.html"
+>
+  <span
+    class="project-icon emerald"
+  >
+    AO
+  </span>
+
+  <div>
+    <strong>
+      Academy of Mastery Learning Engine
+    </strong>
+
+    <small>
+      TypeScript / React / Vite / Node.js / SQLite / PostgreSQL / JSON / Markdown
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-typescript-toolchain"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        TypeScript Toolchain
+      </h3>
+
+      
+      <small>
+        How TypeScript projects install, compile, and run.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-hello-typescript-browser.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Hello TypeScript Browser
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-source-vs-dist-viewer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Source vs Dist Viewer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-build-button.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Build Button
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-package-json-explorer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: package.json Explorer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-npm-dependency-installer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: npm Dependency Installer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-package-lock-dependency-tree.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: package-lock Dependency Tree
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-es-modules-connector.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: ES Modules Connector
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-compiler-target-switch.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Compiler Target Switch
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-dom-and-node-library-map.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: DOM and Node Library Map
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-source-map-error-finder.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Source Map Error Finder
+    </strong>
+
+    <small>
+      TypeScript / Node.js / npm / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-rosetta-comparisons"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Rosetta Comparisons
+      </h3>
+
+      
+      <small>
+        Same-use-case implementations compared across languages and frameworks.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/rosetta-stone-arrays-and-collections-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    AA
+  </span>
+
+  <div>
+    <strong>
+      Arrays and Collections: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-classification-machine-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    CM
+  </span>
+
+  <div>
+    <strong>
+      Classification Machine: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-collection-renderer-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    CR
+  </span>
+
+  <div>
+    <strong>
+      Collection Renderer: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-color-decision-engine-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    CD
+  </span>
+
+  <div>
+    <strong>
+      Color Decision Engine: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-crud-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    CT
+  </span>
+
+  <div>
+    <strong>
+      CRUD: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-data-to-html-card-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    DT
+  </span>
+
+  <div>
+    <strong>
+      Data to HTML Card: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-data-transformation-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    DT
+  </span>
+
+  <div>
+    <strong>
+      Data Transformation: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-deduplication-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    DT
+  </span>
+
+  <div>
+    <strong>
+      Deduplication: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-delete-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    DT
+  </span>
+
+  <div>
+    <strong>
+      DELETE: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-filter-map-sort-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    FM
+  </span>
+
+  <div>
+    <strong>
+      Filter Map Sort: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-get-all-records-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    GA
+  </span>
+
+  <div>
+    <strong>
+      Get All Records: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-get-record-by-id-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    GR
+  </span>
+
+  <div>
+    <strong>
+      Get Record By ID: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-get-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    GT
+  </span>
+
+  <div>
+    <strong>
+      GET: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-group-by-category-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    GB
+  </span>
+
+  <div>
+    <strong>
+      Group By Category: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-http-status-handling-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    HS
+  </span>
+
+  <div>
+    <strong>
+      HTTP Status Handling: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-json-request-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    JR
+  </span>
+
+  <div>
+    <strong>
+      JSON Request: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-json-response-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    JR
+  </span>
+
+  <div>
+    <strong>
+      JSON Response: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-nested-data-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    ND
+  </span>
+
+  <div>
+    <strong>
+      Nested Data: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-object-record-builder-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    OR
+  </span>
+
+  <div>
+    <strong>
+      Object Record Builder: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-status-validation-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    SV
+  </span>
+
+  <div>
+    <strong>
+      Status Validation: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-slug-generator-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    SG
+  </span>
+
+  <div>
+    <strong>
+      Slug Generator: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-sql-parameter-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    SP
+  </span>
+
+  <div>
+    <strong>
+      SQL Parameter: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-sql-join-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    SJ
+  </span>
+
+  <div>
+    <strong>
+      SQL JOIN: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-search-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    ST
+  </span>
+
+  <div>
+    <strong>
+      Search: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-sort-order-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    SO
+  </span>
+
+  <div>
+    <strong>
+      Sort Order: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-parent-child-tree-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    PC
+  </span>
+
+  <div>
+    <strong>
+      Parent Child Tree: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-reorder-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    RT
+  </span>
+
+  <div>
+    <strong>
+      Reorder: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-reparent-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    RT
+  </span>
+
+  <div>
+    <strong>
+      Reparent: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-validation-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    VT
+  </span>
+
+  <div>
+    <strong>
+      Validation: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-post-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    PT
+  </span>
+
+  <div>
+    <strong>
+      POST: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-put-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    PT
+  </span>
+
+  <div>
+    <strong>
+      PUT: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-template-replacement-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TR
+  </span>
+
+  <div>
+    <strong>
+      Template Replacement: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/rosetta-stone-static-page-generator-typescript.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    SP
+  </span>
+
+  <div>
+    <strong>
+      Static Page Generator: TypeScript
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-typescript-data-modeling"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        TypeScript Data Modeling
+      </h3>
+
+      
+      <small>
+        Make TypeScript types and object contracts visible.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-primitive-type-cards.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Primitive Type Cards
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-typed-profile-builder.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Typed Profile Builder
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-required-vs-optional.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Required vs Optional
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-status-selector.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Status Selector
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-invalid-value-gate.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Invalid Value Gate
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-typed-arrays-gallery.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Typed Arrays Gallery
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-nested-object-inspector.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Nested Object Inspector
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-flexible-metadata-bag.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Flexible Metadata Bag
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-type-narrowing-switchboard.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Type Narrowing Switchboard
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-generic-data-row-table.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Generic Data Row Table
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-data-relationships"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Data Relationships
+      </h3>
+
+      
+      <small>
+        Visualize relationships between records and structured data.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-project-record-and-technology-connector.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Record and Technology Connector
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-tag-relationship-board.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Tag Relationship Board
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-media-attachment-map.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Media Attachment Map
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-record-relationship-graph.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Record Relationship Graph
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-parent-and-child-node-tree.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Parent and Child Node Tree
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-manifest-collection-browser.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Manifest Collection Browser
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-modern-agenda"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Modern Agenda
+      </h3>
+
+      
+      <small>
+        Modern Agenda Rosetta Stone implementations.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/modern-agenda.html"
+>
+  <span
+    class="project-icon rose"
+  >
+    MA
+  </span>
+
+  <div>
+    <strong>
+      Modern Agenda
+    </strong>
+
+    <small>
+      Angular / C# / Java / PHP / Python / React / TypeScript / ASP.NET Core / Composer / ECMAScript / FastAPI / Spring Boot / JSON / Vite / AngularJS 1.x / Bootstrap 3 / jQuery / cURL / JSON / JavaScript / ES2015 / ECMAScript 2026 / TypeScript / Angular / React / PHP / Python
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-data-transformation"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Data Transformation
+      </h3>
+
+      
+      <small>
+        See functions classify, sort, filter, group, and transform data.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-slug-factory.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Slug Factory
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-html-escape-machine.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: HTML Escape Machine
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-css-class-composer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: CSS Class Composer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-numbered-position-generator.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Numbered Position Generator
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-classification-machine.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Classification Machine
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-predicate-traffic-lights.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Predicate Traffic Lights
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-array-pipeline-conveyor.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Array Pipeline Conveyor
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-sort-order-visualizer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Sort Order Visualizer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-primary-category-picker.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Primary Category Picker
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-group-by-category-board.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Group By Category Board
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-cache-before-and-after.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Cache Before and After
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-rendering-graphics"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Rendering &amp; Graphics
+      </h3>
+
+      
+      <small>
+        Rendering, Canvas, layout, graphics, and visual-computing experiments.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/interactive-scientific-data-explorer.html"
+>
+  <span
+    class="project-icon aqua"
+  >
+    IS
+  </span>
+
+  <div>
+    <strong>
+      Interactive Scientific Data Explorer
+    </strong>
+
+    <small>
+      React / TypeScript / D3 / Leaflet / GeoJSON / Python / Flask / Docker
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/mini-browser-rendering-engine.html"
+>
+  <span
+    class="project-icon aqua"
+  >
+    MB
+  </span>
+
+  <div>
+    <strong>
+      Mini Browser / Rendering Engine
+    </strong>
+
+    <small>
+      TypeScript / JavaScript / Canvas 2D / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/canvas-playground.html"
+>
+  <span
+    class="project-icon magenta"
+  >
+    CP
+  </span>
+
+  <div>
+    <strong>
+      Canvas Playground
+    </strong>
+
+    <small>
+      JavaScript / TypeScript / Canvas 2D / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-backend-apis"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Backend &amp; APIs
+      </h3>
+
+      
+      <small>
+        HTTP services, API architecture, requests, gateways, and integrations.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/api-explorer.html"
+>
+  <span
+    class="project-icon purple"
+  >
+    AE
+  </span>
+
+  <div>
+    <strong>
+      API Explorer
+    </strong>
+
+    <small>
+      JavaScript / TypeScript / Fetch API / HTTP / REST / JSON / Node.js
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/api-gateway.html"
+>
+  <span
+    class="project-icon purple"
+  >
+    AG
+  </span>
+
+  <div>
+    <strong>
+      API Gateway
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / REST / Express / Fastify / Docker / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/php-request-lab.html"
+>
+  <span
+    class="project-icon indigo"
+  >
+    PR
+  </span>
+
+  <div>
+    <strong>
+      PHP Request Lab
+    </strong>
+
+    <small>
+      PHP / cURL / HTTP / REST / JSON / AJAX / HTML / JavaScript
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-rendering-generation"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Rendering &amp; Generation
+      </h3>
+
+      
+      <small>
+        Turn structured values into visible HTML and interface components.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-template-replacement-lab.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Template Replacement Lab
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-initials-badge-generator.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Initials Badge Generator
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-technology-short-label.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Technology Short Label
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-technology-color-decision-engine.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Technology Color Decision Engine
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-project-card-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Project Card Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-featured-project-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Featured Project Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-navigation-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Navigation Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-display-node-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Display Node Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-standard-node-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Standard Node Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-grid-node-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Grid Node Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-split-layout-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Split Layout Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-collapse-list-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Collapse List Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-code-renderer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Code Renderer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-games-simulation"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Games &amp; Simulation
+      </h3>
+
+      
+      <small>
+        Interactive systems, game architecture, simulation, state, and sprites.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/bird-life-simulation-game.html"
+>
+  <span
+    class="project-icon lime"
+  >
+    BL
+  </span>
+
+  <div>
+    <strong>
+      Bird Life Simulation Game
+    </strong>
+
+    <small>
+      TypeScript / JavaScript / Canvas 2D / Phaser / Web Audio API / JSON
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-sqlite-data-access"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        SQLite &amp; Data Access
+      </h3>
+
+      
+      <small>
+        Read and combine Sandbox data with focused SQLite queries.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-get-all-records.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Get All Records
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-find-record-by-id.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Find Record By ID
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-prepared-parameter-viewer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Prepared Parameter Viewer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-technology-join-explorer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Technology JOIN Explorer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-category-join-explorer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Category JOIN Explorer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-search-records.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Search Records
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-database-table-viewer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Database Table Viewer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-record-preview-query.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Record Preview Query
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-browser-state"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Browser State
+      </h3>
+
+      
+      <small>
+        Expose application state, forms, selection, and hierarchy in the browser.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-dom-selector-type-helper.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: DOM Selector Type Helper
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-current-record-state-inspector.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Current Record State Inspector
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-expandable-parent-state.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Expandable Parent State
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-search-select-load.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Search Select Load
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-object-to-form.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Object to Form
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-form-to-object.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Form to Object
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-node-outline-tree.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Node Outline Tree
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-dynamic-form-factory.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Dynamic Form Factory
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-data-databases"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Data &amp; Databases
+      </h3>
+
+      
+      <small>
+        SQL, NoSQL, modeling, analysis, and data-oriented development.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/database-lab.html"
+>
+  <span
+    class="project-icon teal"
+  >
+    DL
+  </span>
+
+  <div>
+    <strong>
+      Database Lab
+    </strong>
+
+    <small>
+      SQL / PostgreSQL / MongoDB / Docker / Node.js / TypeScript / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/data-science-lab.html"
+>
+  <span
+    class="project-icon amber"
+  >
+    DS
+  </span>
+
+  <div>
+    <strong>
+      Data Science Lab
+    </strong>
+
+    <small>
+      Python / uv / Jupyter / pandas / Matplotlib / SQL / PostgreSQL / JSON
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-dom-async"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        DOM &amp; Async
+      </h3>
+
+      
+      <small>
+        Build visible DOM interactions, events, promises, and dynamic resources.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-dynamic-element-creator.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Dynamic Element Creator
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-event-listener-light-switch.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Event Listener Light Switch
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-attribute-inspector.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Attribute Inspector
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-load-styles-dynamically.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Load Styles Dynamically
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-load-script-dynamically.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Load Script Dynamically
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-promise-loading-board.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Promise Loading Board
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-semantic-html"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Semantic HTML
+      </h3>
+
+      
+      <small>
+        Transform browser markup while preserving semantics and accessibility.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-missing-image-alt.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Missing Image Alt
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-safe-button-type.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Safe Button Type
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-external-link-safety.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: External Link Safety
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-icon-link-naming.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Icon Link Naming
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-iframe-title-repair.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Iframe Title Repair
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-table-scope-repair.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Table Scope Repair
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-input-naming-assist.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Input Naming Assist
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-decorative-svg-assist.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Decorative SVG Assist
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-semantic-repair-station.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Semantic Repair Station
+    </strong>
+
+    <small>
+      TypeScript / DOM / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-node-http-apis"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Node HTTP &amp; APIs
+      </h3>
+
+      
+      <small>
+        Visualize requests, responses, routes, methods, and server behavior.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-tiny-http-server.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Tiny HTTP Server
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-route-parts-visualizer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Route Parts Visualizer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-json-response.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: JSON Response
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-read-post-json.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Read POST JSON
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-http-method-board.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: HTTP Method Board
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-generic-api-client.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Generic API Client
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-status-code-viewer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Status Code Viewer
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-mime-type-server.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: MIME Type Server
+    </strong>
+
+    <small>
+      TypeScript / Node.js / HTTP / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-crud-persistence"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        CRUD &amp; Persistence
+      </h3>
+
+      
+      <small>
+        Create, read, update, delete, and relate persistent records.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-create-record.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Create Record
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-read-record.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Read Record
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-update-record.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Update Record
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-delete-record.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Delete Record
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-crud-dashboard.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: CRUD Dashboard
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-auto-slug-and-unique-id.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Auto Slug and Unique ID
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-ensure-category-exists.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Ensure Category Exists
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-sync-tags.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Sync Tags
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-sync-technologies.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Sync Technologies
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-tree-structures"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Tree Structures
+      </h3>
+
+      
+      <small>
+        Manipulate ordered parent-child data and hierarchy.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-next-sort-order.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Next Sort Order
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-normalize-sort-order.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Normalize Sort Order
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-move-node-up-and-down.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Move Node Up and Down
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-reparent-node.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Reparent Node
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-flatten-parent-tree.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Flatten Parent Tree
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-delete-node-tree.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Delete Node Tree
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-validation-safety"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Validation &amp; Safety
+      </h3>
+
+      
+      <small>
+        Normalize input and reject unsafe or invalid data.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-boolean-normalizer.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Boolean Normalizer
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-comma-list-parser.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Comma List Parser
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-safe-json-metadata-parser.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Safe JSON Metadata Parser
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-unique-id-list.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Unique ID List
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-sql-placeholder-factory.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: SQL Placeholder Factory
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-sql-safety-gate.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: SQL Safety Gate
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-safe-file-path-gate.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Safe File Path Gate
+    </strong>
+
+    <small>
+      TypeScript / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-database-transactions"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Database Transactions
+      </h3>
+
+      
+      <small>
+        Make atomic commits and rollbacks visible.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-begin-and-commit-simulator.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: BEGIN and COMMIT Simulator
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-rollback-simulator.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: ROLLBACK Simulator
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-atomic-reorder.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Atomic Reorder
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-safe-batch-delete.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Safe Batch Delete
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
+
+<section
+  class="project-group"
+  id="group-static-generation"
+>
+  <header>
+    <span aria-hidden="true">
+      ◇
+    </span>
+
+    <div>
+      <h3>
+        Static Generation
+      </h3>
+
+      
+      <small>
+        Transform database records into generated HTML files.
+      </small>
+    </div>
+  </header>
+
+  <div class="project-grid">
+    
+<a
+  href="pg/typescript-lab-one-record-to-one-html-file.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: One Record to One HTML File
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-lab-template-to-generated-page.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TL
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Lab: Template to Generated Page
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS / JSON
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-database-to-cards-to-page.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Database to Cards to Page
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-category-page-factory.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Category Page Factory
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+
+<a
+  href="pg/typescript-project-mini-static-site-generator.html"
+>
+  <span
+    class="project-icon blue"
+  >
+    TP
+  </span>
+
+  <div>
+    <strong>
+      TypeScript Project: Mini Static Site Generator
+    </strong>
+
+    <small>
+      TypeScript / Node.js / SQLite / HTML / CSS
+    </small>
+  </div>
+</a>
+  </div>
+</section>
       </section>
     </main>
 
     <footer>
-      <nav aria-label="Developer tools">
-        <button
-          type="button"
-          onclick="
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
         window.open(
           'https://github.com/susanndelgado/developer-sandbox',
           '_blank',
           'noopener,noreferrer',
         )
-      ">
-          <span aria-hidden="true">⑂</span>
-          Sandbox Repo
-        </button>
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
 
-        <button
-          type="button"
-          onclick="
+    <button
+      type="button"
+      onclick="
         window.open(
           'https://github.com/susanndelgado',
           '_blank',
           'noopener,noreferrer',
         )
-      ">
-          <span aria-hidden="true">⑂</span>
-          GitHub
-        </button>
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
 
-        <button
-          type="button"
-          onclick="window.location.href = 'system-guide.html'">
-          <span aria-hidden="true">⊙</span>
-          System Guide
-        </button>
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
 
-        <button type="button" onclick="window.location.href = 'database.html'">
-          <span aria-hidden="true">◉</span>
-          Database
-        </button>
-      </nav>
-    </footer>
-    <script src="assets/script.js"></script>
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
   </body>
 </html>
+
+  
