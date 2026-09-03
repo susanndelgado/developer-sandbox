@@ -2,94 +2,45 @@
   DEVELOPER SANDBOX — DEV CSS REFACTOR
 
 /* ==================================================
-   SHARED + HOME
-   ================================================== */
-
-/* ==================================================
    1. STRUCTURE / GLOBALS
    ================================================== */
-/* ==================================================
-   SANDBOX IN-PROGRESS NOTICE
-   ================================================== */
-
-.sandbox-notice {
-  position: fixed;
-
-  top: 82px;
-  left: 50%;
-  z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  width: max-content;
-  max-width: calc(100% - 30px);
-
-  padding: 10px 16px;
-
-  border: 1px solid rgba(255, 196, 97, 0.75);
-  border-radius: 8px;
-
-  background: rgba(54, 39, 8, 0.96);
-
-  color: #ffd36f;
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.35),
-    0 0 18px rgba(255, 196, 97, 0.15);
-
-  transform: translateX(-50%);
-
-  backdrop-filter: blur(10px);
-}
-
-.sandbox-notice > span {
-  color: #ffc461;
-
-  font-size: 18px;
-}
-
-.sandbox-notice > div {
-  display: grid;
-  gap: 2px;
-}
-
-.sandbox-notice strong {
-  color: #ffe0a0;
-
-  font-size: 11px;
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-}
-
-.sandbox-notice small {
-  color: #d8bd80;
-
-  font-size: 9px;
-  line-height: 1.4;
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 700px) {
-  .sandbox-notice {
-    top: 62px;
-
-    width: calc(100% - 24px);
-
-    padding: 9px 12px;
-  }
-
-  .sandbox-notice small {
-    font-size: 8px;
-  }
-}
 
 :root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --editor-bg: #07111f;
+  --editor-panel: #081421;
+  --editor-panel-2: #0a1727;
+  --editor-panel-3: #0e1e31;
+  --editor-line: #263d5b;
+  --editor-line-strong: #355578;
+  --editor-text: #e8f1fb;
+  --editor-muted: #8da5c1;
+
+  /* Developer Sandbox / project-content colors */
+  --sandbox-blue: #5fc8ff;
+  --sandbox-blue-dark: #2f8dff;
+  --sandbox-violet: #8a67ff;
+  --sandbox-text: #edf6ff;
+  --sandbox-muted: #a8bbcf;
+  --sandbox-background: #030815;
+
+  --sandbox-bg: rgba(4, 15, 34, 0.88);
+  --sandbox-panel: rgba(7, 24, 52, 0.88);
+  --sandbox-panel-soft: rgba(10, 31, 62, 0.72);
+  --sandbox-panel-lighter: rgba(23, 57, 92, 0.42);
+  --sandbox-border: rgba(95, 170, 255, 0.2);
+  --sandbox-border-strong: rgba(95, 200, 255, 0.38);
+  --sandbox-code: #071323;
+  --sandbox-note: rgba(95, 200, 255, 0.07);
+
   --blue: #5fc8ff;
   --blue-dark: #2f8dff;
   --violet: #8a67ff;
@@ -111,12 +62,12 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100%;
+  
 }
 
 body {
-  background: var(--background);
-  color: var(--text);
-
+  color: #edf6ff;
+  background-color: #07152f;
   font-family:
     Inter,
     ui-sans-serif,
@@ -125,6 +76,18 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    color: var(--editor-text); 
+    background:
+      linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.32)),
+      url("img/innerPg.png") center / cover fixed no-repeat;
+    &#hm{
+      background:
+        linear-gradient(rgba(2, 7, 18, 0.04), rgba(2, 7, 18, 0.08)),
+        url("img/sandbox-background.png") center / cover no-repeat;
+    }
 }
 
 /* ---------- TYPOGRAPHY ---------- */
@@ -177,16 +140,31 @@ textarea {
 
 main {
   position: relative;
-
+ 
   width: 100%;
   min-height: 100svh;
 
   overflow: hidden;
 
-  background:
-    linear-gradient(rgba(2, 7, 18, 0.04), rgba(2, 7, 18, 0.08)),
-    url("img/sandbox-background.png") center / cover no-repeat;
+ }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+/* ==================================================
+   SHARED + HOME
+   ================================================== */
 
 /* ==================================================
    2. TOP HEADER / NAVIGATION
@@ -519,6 +497,88 @@ body > header nav button:focus-visible {
 .close:focus-visible {
   background: rgba(47, 141, 255, 0.12);
 }
+
+/* ==================================================
+   SANDBOX IN-PROGRESS NOTICE
+   ================================================== */
+
+.sandbox-notice {
+  position: fixed;
+
+  top: 82px;
+  left: 50%;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: max-content;
+  max-width: calc(100% - 30px);
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(255, 196, 97, 0.75);
+  border-radius: 8px;
+
+  background: rgba(54, 39, 8, 0.96);
+
+  color: #ffd36f;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(255, 196, 97, 0.15);
+
+  transform: translateX(-50%);
+
+  backdrop-filter: blur(10px);
+}
+
+.sandbox-notice > span {
+  color: #ffc461;
+
+  font-size: 18px;
+}
+
+.sandbox-notice > div {
+  display: grid;
+  gap: 2px;
+}
+
+.sandbox-notice strong {
+  color: #ffe0a0;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.sandbox-notice small {
+  color: #d8bd80;
+
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+  .sandbox-notice {
+    top: 62px;
+
+    width: calc(100% - 24px);
+
+    padding: 9px 12px;
+  }
+
+  .sandbox-notice small {
+    font-size: 8px;
+  }
+}
+
 
 /* ==================================================
    3. CENTER LOGO
@@ -2430,11 +2490,7 @@ font-size: 13px;
   padding: 125px clamp(30px, 4vw, 70px) 100px;
 
   overflow: visible;
-
-  background:
-    linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.32)),
-    url("img/innerPg.png") center / cover fixed no-repeat;
-}
+  }
 
 /* ==================================================
    LEFT TYPE MENU
@@ -2474,73 +2530,9 @@ font-size: 13px;
 /* ==================================================
    PROJECT TYPE LIST
    ================================================== */
-:root {
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
 
-  --editor-bg: #07111f;
-  --editor-panel: #081421;
-  --editor-panel-2: #0a1727;
-  --editor-panel-3: #0e1e31;
-  --editor-line: #263d5b;
-  --editor-line-strong: #355578;
-  --editor-text: #e8f1fb;
-  --editor-muted: #8da5c1;
 
-  /* Developer Sandbox / project-content colors */
-  --sandbox-blue: #5fc8ff;
-  --sandbox-blue-dark: #2f8dff;
-  --sandbox-violet: #8a67ff;
-  --sandbox-text: #edf6ff;
-  --sandbox-muted: #a8bbcf;
-  --sandbox-background: #030815;
 
-  --sandbox-bg: rgba(4, 15, 34, 0.88);
-  --sandbox-panel: rgba(7, 24, 52, 0.88);
-  --sandbox-panel-soft: rgba(10, 31, 62, 0.72);
-  --sandbox-panel-lighter: rgba(23, 57, 92, 0.42);
-  --sandbox-border: rgba(95, 170, 255, 0.2);
-  --sandbox-border-strong: rgba(95, 200, 255, 0.38);
-  --sandbox-code: #071323;
-  --sandbox-note: rgba(95, 200, 255, 0.07);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-
-  color: var(--editor-text);
-  background: var(--editor-bg);
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  color: inherit;
-}
 
 /* ==========================================================================
    EDITOR TOP BAR
