@@ -1,3 +1,8 @@
+
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
+
 /* ==================================================
    RESPONSIVE
    Breakpoints:
@@ -9,34 +14,32 @@
 /* ==================================================
    1350px — SMALLER DESKTOP
    ================================================== */
-
-@media (max-width: 1350px) {
+@media (max-width: 1350px){
   /* ==================================================
      SHARED HEADER
      ================================================== */
 
-  body > header .brand {
+  .brand {
     left: 18px;
   }
 
-  body > header .brand strong {
+  .brand strong {
     font-size: 14px;
   }
 
-  body > header .brand small {
+  .brand small {
     font-size: 10px;
   }
-
   body > header nav button {
     padding: 0 13px;
     font-size: 12px;
   }
 
-  body > header .top-tools {
+  .top-tools {
     right: 18px;
   }
 
-  body > header .top-tools > a {
+  .top-tools a {
     font-size: 11px;
   }
 }
@@ -44,26 +47,24 @@
 /* ==================================================
    1100px — TABLET / COLLAPSED NAVIGATION
    ================================================== */
-
-@media (max-width: 1100px) {
+@media (max-width: 1100px){
   /* ==================================================
      SHARED HEADER
      ================================================== */
-
   body > header {
     top: 16px;
   }
 
   /* ---------- BRAND ---------- */
 
-  body > header .brand {
+  .brand {
     top: 0;
     left: 16px;
   }
 
   /* ---------- RIGHT CONTROLS ---------- */
 
-  body > header .top-tools {
+  .top-tools {
     top: 0;
     right: 16px;
 
@@ -77,7 +78,6 @@
   }
 
   /* ---------- NAV DROPDOWN ---------- */
-
   body > header nav {
     position: absolute;
 
@@ -114,7 +114,6 @@
       transform 180ms ease,
       visibility 180ms ease;
   }
-
   body > header nav.open {
     opacity: 1;
     visibility: visible;
@@ -123,7 +122,6 @@
 
     pointer-events: auto;
   }
-
   body > header nav button {
     width: 100%;
     min-height: 48px;
@@ -136,13 +134,11 @@
 
     font-size: 12px;
   }
-
   body > header nav button + button {
     border-left: 0;
 
     border-top: 1px solid rgba(117, 188, 255, 0.1);
   }
-
   body > header nav button[aria-current="page"] {
     box-shadow: inset 2px 0 var(--blue);
   }
@@ -163,7 +159,7 @@
 
   /* ---------- HELP TOOLTIP ---------- */
 
-  body > header .help > div {
+  .help div {
     display: none;
   }
 
@@ -171,7 +167,7 @@
      HOME PAGE
      ================================================== */
 
-  body > main:not(.view-all-page) {
+{
     min-height: 100svh;
 
     display: grid;
@@ -198,19 +194,8 @@
 
   /* ---------- HOME PANELS ---------- */
 
-  body > main:not(.view-all-page) .glass-panel {
-    position: relative;
 
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-
-    width: 100%;
-    min-width: 0;
-  }
-
-  body > main:not(.view-all-page) .featured {
+.featured {
     grid-area: featured;
 
     max-width: 760px;
@@ -218,25 +203,25 @@
     margin-inline: auto;
   }
 
-  body > main:not(.view-all-page) .library {
+.library {
     grid-area: library;
   }
 
-  body > main:not(.view-all-page) .rosetta {
+.rosetta {
     grid-area: rosetta;
   }
 
-  body > main:not(.view-all-page) .guides {
+.guides {
     grid-area: guides;
   }
 
-  body > main:not(.view-all-page) .data {
+.data {
     grid-area: data;
   }
 
   /* ---------- HOME HOLOGRAM ---------- */
 
-  body > main:not(.view-all-page) .logo-stage {
+.logo-stage {
     grid-area: logo;
 
     position: relative;
@@ -251,21 +236,21 @@
     transform: none;
   }
 
-  body > main:not(.view-all-page) .logo-stage::after {
+.logo-stage::after {
     bottom: -15%;
   }
 
   /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  body > main:not(.view-all-page) .projects {
+.projects {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   /* ---------- HOME RIGHT PANELS ---------- */
 
-  body > main:not(.view-all-page) .stones,
-  body > main:not(.view-all-page) .guide-list,
-  body > main:not(.view-all-page) .data-list {
+.stones,
+.guide-list,
+.data-list {
     width: 100%;
   }
 
@@ -273,23 +258,13 @@
      INNER PAGES — TABLET
      ================================================== */
 
-  .view-all-page {
-    grid-template-columns:
-      minmax(220px, 270px)
-      minmax(0, 1fr);
-
-    gap: 24px;
-
-    padding: 110px 24px 90px;
-  }
-
   /* ---------- INNER ASIDE ---------- */
 
   .type-menu h1 {
     font-size: 24px;
   }
 
-  .type-menu > header p {
+  .type-menu header p {
     font-size: 11px;
     line-height: 1.5;
   }
@@ -355,7 +330,7 @@
      SHARED FOOTER
      ================================================== */
 
-  body > footer {
+  footer {
     position: relative;
 
     bottom: auto;
@@ -370,7 +345,7 @@
     background: var(--background);
   }
 
-  body > footer nav {
+  footer nav {
     width: min(680px, 100%);
 
     margin-inline: auto;
@@ -382,40 +357,38 @@
 /* ==================================================
    700px — PHONE
    ================================================== */
-
-@media (max-width: 700px) {
+@media (max-width: 700px){
   /* ==================================================
      SHARED HEADER
      ================================================== */
-
   body > header {
     top: 12px;
   }
 
   /* ---------- BRAND ---------- */
 
-  body > header .brand {
+  .brand {
     left: 12px;
 
     gap: 7px;
   }
 
-  body > header .brand img {
+  .brand img {
     width: 32px;
     height: 32px;
   }
 
-  body > header .brand strong {
+  .brand strong {
     font-size: 11px;
   }
 
-  body > header .brand small {
+  .brand small {
     font-size: 9px;
   }
 
   /* ---------- RIGHT CONTROLS ---------- */
 
-  body > header .top-tools {
+  .top-tools {
     right: 12px;
 
     gap: 7px;
@@ -428,24 +401,23 @@
     padding: 7px;
   }
 
-  body > header .help > button {
+  .help button {
     width: 36px;
     height: 36px;
   }
 
-  body > header .close {
+  .close {
     width: 36px;
     height: 36px;
 
     font-size: 21px;
   }
 
-  body > header .top-tools > a {
+  .top-tools a {
     display: none;
   }
 
   /* ---------- NAV DROPDOWN ---------- */
-
   body > header nav {
     top: 48px;
 
@@ -454,7 +426,6 @@
 
     width: auto;
   }
-
   body > header nav button {
     min-height: 46px;
 
@@ -465,7 +436,7 @@
      HOME PAGE
      ================================================== */
 
-  body > main:not(.view-all-page) {
+#hm main{
     display: grid;
 
     grid-template-columns: 1fr;
@@ -489,27 +460,16 @@
 
   /* ---------- HOME PANELS ---------- */
 
-  body > main:not(.view-all-page) .glass-panel {
-    width: 100%;
-
-    padding: 14px;
-  }
-
-  body > main:not(.view-all-page) .glass-panel h2 {
-    margin-bottom: 12px;
-
-    font-size: 13px;
-  }
 
   /* ---------- HOME HOLOGRAM ---------- */
 
-  body > main:not(.view-all-page) .logo-stage {
+.logo-stage {
     width: 205px;
 
     margin: 20px auto 28px;
   }
 
-  body > main:not(.view-all-page) .logo-stage::after {
+.logo-stage::after {
     bottom: -12%;
 
     opacity: 0.15;
@@ -517,7 +477,7 @@
 
   /* ---------- FEATURED PROJECT ---------- */
 
-  body > main:not(.view-all-page) .featured-content {
+.featured-content {
     grid-template-columns:
       24px
       minmax(0, 1fr)
@@ -526,23 +486,23 @@
     gap: 5px;
   }
 
-  body > main:not(.view-all-page) .featured .arrow {
+.featured .arrow {
     width: 24px;
     height: 24px;
 
     font-size: 18px;
   }
 
-  body > main:not(.view-all-page) .card-stack {
+.card-stack {
     height: 320px;
     min-height: 320px;
   }
 
-  body > main:not(.view-all-page) .card-stack > span {
+ .card-stack > span {
     display: none;
   }
 
-  body > main:not(.view-all-page) .card-stack article {
+.card-stack article {
     width: 100%;
     height: 320px;
 
@@ -561,18 +521,18 @@
 
   /* ---------- FEATURED IMAGE ---------- */
 
-  body > main:not(.view-all-page) .featured .project-image {
+.featured .project-image {
     width: 100%;
     height: 130px;
     min-height: 0;
   }
 
-  body > main:not(.view-all-page) .featured .project-image > * {
+.featured .project-image > * {
     width: 100%;
     height: 100%;
   }
 
-  body > main:not(.view-all-page) .featured .project-image img {
+.featured .project-image img {
     width: 100%;
     height: 100%;
 
@@ -581,7 +541,7 @@
 
   /* ---------- FEATURED INFORMATION ---------- */
 
-  body > main:not(.view-all-page) .featured .project-info {
+.featured .project-info {
     grid-template-rows:
       auto
       auto
@@ -596,7 +556,7 @@
     overflow: hidden;
   }
 
-  body > main:not(.view-all-page) .featured .project-info h3 {
+.featured .project-info h3 {
     margin: 0;
 
     font-size: 18px;
@@ -605,7 +565,7 @@
     line-clamp: 1;
   }
 
-  body > main:not(.view-all-page) .featured .project-info p {
+.featured .project-info p {
     min-height: 0;
 
     overflow: hidden;
@@ -618,7 +578,7 @@
 
   /* ---------- FEATURED TAGS ---------- */
 
-  body > main:not(.view-all-page) .featured .tags {
+.featured .tags {
     flex-wrap: nowrap;
 
     max-height: 23px;
@@ -629,7 +589,7 @@
 
   /* ---------- FEATURED LINK ---------- */
 
-  body > main:not(.view-all-page) .featured .project-info a {
+.featured .project-info a {
     margin: 0;
 
     padding: 7px 8px;
@@ -637,24 +597,24 @@
 
   /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  body > main:not(.view-all-page) .projects {
+.projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 7px;
   }
 
-  body > main:not(.view-all-page) .projects > a {
+.projects > a {
     padding: 9px 5px;
   }
 
-  body > main:not(.view-all-page) .project-icon {
+.project-icon {
     width: 46px;
     height: 46px;
   }
 
   /* ---------- HOME ROSETTA ---------- */
 
-  body > main:not(.view-all-page) .stones {
+.stones {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -664,7 +624,7 @@
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .stones button {
+.stones button {
     width: 100%;
 
     display: grid;
@@ -679,7 +639,7 @@
     text-align: left;
   }
 
-  body > main:not(.view-all-page) .stones small {
+.stones small {
     width: auto;
 
     text-align: left;
@@ -687,7 +647,7 @@
 
   /* ---------- HOME REFERENCE GUIDES ---------- */
 
-  body > main:not(.view-all-page) .guide-list {
+.guide-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -697,7 +657,7 @@
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .guide-list > a {
+.guide-list > a {
     width: 100%;
 
     display: flex;
@@ -710,7 +670,7 @@
 
   /* ---------- HOME DATA VISUALIZATION ---------- */
 
-  body > main:not(.view-all-page) .data-list {
+.data-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -720,7 +680,7 @@
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .data-list > a {
+.data-list > a {
     width: 100%;
 
     display: flex;
@@ -763,7 +723,7 @@
     min-width: 0;
   }
 
-  .type-menu > header {
+  .type-menu header {
     margin-bottom: 12px;
   }
 
@@ -771,7 +731,7 @@
     font-size: 22px;
   }
 
-  .type-menu > header p {
+  .type-menu header p {
     max-width: none;
 
     font-size: 11px;
@@ -917,13 +877,13 @@
     padding: 9px;
   }
 
-  .project-grid > a {
+  .project-grid a {
     min-width: 0;
 
     padding: 9px;
   }
 
-  .project-content .project-icon {
+  .project-icon {
     flex: 0 0 40px;
 
     width: 40px;
@@ -1124,11 +1084,11 @@
      SHARED FOOTER
      ================================================== */
 
-  body > footer {
+  footer {
     padding: 12px 12px 20px;
   }
 
-  body > footer nav {
+  footer nav {
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
@@ -1138,7 +1098,7 @@
     padding: 5px;
   }
 
-  body > footer button {
+  footer button {
     justify-content: center;
 
     min-width: 0;
