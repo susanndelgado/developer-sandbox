@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Developer Sandbox — System Guide</title>
+
+
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body data-section="home">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>System Guide</strong>
+    <p>Architecture and implementation notes for the Developer Sandbox.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+
+    <main class="view-all-page">
+      <section class="project-content" style="grid-column: 1 / -1">
+        <header>
+          <div>
+            <small>SYSTEM DOCUMENTATION</small>
+            <h2>Developer Sandbox</h2>
+          </div>
+
+          <p>
+            Architecture, purpose, content model, and development workflow for
+            the custom system behind the Developer Sandbox.
+          </p>
+        </header>
+
+        <nav
+          class="project-doc-nav"
+          aria-label="Developer Sandbox system guide sections"
+        >
+          <a href="#purpose">Purpose</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#content-model">Content Model</a>
+          <a href="#editor">Local Editor</a>
+          <a href="#public-site">Public Website</a>
+          <a href="#repository">Repository Structure</a>
+          <a href="#decisions">Design Decisions</a>
+        </nav>
+
+        <div class="project-actions">
+          <a
+            class="project-link"
+            href="https://github.com/susanndelgado/developer-sandbox"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Sandbox Repository ›
+          </a>
+
+          <a class="project-link" href="database.html">
+            Database Architecture ›
+          </a>
+        </div>
+
+        <article class="project-doc">
+          <!-- =============================================
+               PURPOSE
+               ============================================= -->
+
+          <section class="project-detail" id="purpose">
+            <header>
+              <span>01</span>
+              <h3>Purpose</h3>
+            </header>
+
+            <p>
+              The Developer Sandbox is a personal development environment, technical reference system, project catalog, and experimental workspace built to organize ongoing development work within one cohesive system.
+
+
+            </p>
+
+            <p>
+              It supports complete projects, development experiments, Rosetta Stone language comparisons, reference guides, data work, and technical documentation without forcing every item into the same page structure. The system separates project identity and metadata from the content used to construct each page, allowing different types of work to share a consistent interface while retaining the presentation each project requires.
+
+
+            </p>
+
+            <p>
+              The Sandbox functions both as a portfolio and as a long-term development knowledge base. The entire system and its related project sites are deployed through GitHub Pages with no paid hosting dependencies.
+            </p>
+          </section>
+
+          <!-- =============================================
+               ARCHITECTURE
+               ============================================= -->
+
+          <section class="project-detail" id="architecture">
+            <header>
+              <span>02</span>
+              <h3>System Architecture</h3>
+            </header>
+
+            <p>
+              The system is divided into three primary layers: the public
+              Sandbox interface, a structured SQLite datastore, and a local
+              TypeScript and Node.js editor used to manage that data.
+            </p>
+
+            <div class="project-example">
+              <small>SYSTEM FLOW</small>
+
+              <pre><code>Developer Sandbox
+│
+├── Public Interface
+│   ├── HTML
+│   ├── CSS
+│   ├── JavaScript
+│   ├── Projects
+│   ├── Reference Guides
+│   └── Technical Documentation
+│
+├── SQLite Datastore
+│   ├── Records
+│   ├── Content Nodes
+│   ├── Categories
+│   ├── Tags
+│   └── Technologies
+│
+└── Local Editor
+    ├── TypeScript Client
+    ├── Node.js Server
+    ├── SQLite Operations
+    ├── Content Preview
+    └── Database / SQL Tools</code></pre>
+            </div>
+
+            <p>
+              The separation is intentional. Public presentation does not need
+              the same permissions or capabilities as the authoring system.
+              Editing, database writes, SQL operations, file access, and content
+              management belong to the local development environment rather than
+              the public-facing website.
+            </p>
+          </section>
+
+          <!-- =============================================
+               CONTENT MODEL
+               ============================================= -->
+
+          <section class="project-detail" id="content-model">
+            <header>
+              <span>03</span>
+              <h3>Content Model</h3>
+            </header>
+
+            <p>
+              The primary content object is an Entry stored in the
+              <code>records</code> table. An Entry represents the identity of a
+              Sandbox item: its title, slug, description, type, status,
+              visibility, navigation information, presentation mode, and other
+              catalog-level information.
+            </p>
+
+            <p>
+              Page content is stored separately as Content Nodes. This allows
+              one Entry to contain multiple structured sections without
+              requiring a different database table for every project or page
+              design.
+            </p>
+
+            <p>
+              Content Nodes can be organized as top-level Parent Nodes and Child
+              Nodes. Parent Nodes define major page structures while Child Nodes
+              provide the content inside those structures. The hierarchy is
+              deliberately limited to two levels to keep page structure
+              understandable and manageable.
+            </p>
+
+            <div class="project-example">
+              <small>CONTENT STRUCTURE</small>
+
+              <pre><code>Entry
+│
+├── Parent Node
+│   ├── Child Node
+│   ├── Child Node
+│   └── Child Node
+│
+├── Parent Node
+│   ├── Child Node
+│   └── Child Node
+│
+└── Parent Node</code></pre>
+            </div>
+          </section>
+
+          <!-- =============================================
+               NODE SYSTEM
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>04</span>
+              <h3>Flexible Page Structures</h3>
+            </header>
+
+            <p>
+              Parent Nodes can represent different visual structures such as
+              navigation groups, display or preview areas, standard content,
+              split layouts, responsive groups of boxes, and code or example
+              sections. The type describes how content should be presented,
+              while the stored content remains independent of a single
+              hard-coded project page.
+            </p>
+
+            <p>
+              Additional node metadata can store presentation-specific
+              information without requiring a new SQLite column every time the
+              interface gains another optional feature. This provides a balance
+              between a relational core schema and flexible page-level
+              configuration.
+            </p>
+          </section>
+
+          <!-- =============================================
+               LOCAL EDITOR
+               ============================================= -->
+
+          <section class="project-detail" id="editor">
+            <header>
+              <span>05</span>
+              <h3>Local Editor</h3>
+            </header>
+
+            <p>
+              A custom editor was built specifically for the Sandbox rather than
+              adapting the project to an existing content-management system. The
+              editor interface is written in TypeScript and communicates with a
+              lightweight Node.js server.
+            </p>
+
+            <p>
+              The server opens the SQLite database with Node's SQLite support
+              and provides the operations required by the editor. These include
+              searching records, creating and updating Entries, creating and
+              editing Nodes, changing node relationships, reordering content,
+              deleting records or node trees, viewing database tables, and
+              performing controlled SQL operations.
+            </p>
+
+            <p>
+              Multi-step database operations use SQLite transactions so related
+              changes can succeed or fail as one operation. SQL validation uses
+              a savepoint and rollback so a batch can be checked without
+              committing its changes.
+            </p>
+          </section>
+
+          <!-- =============================================
+               EDITOR PURPOSE
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>06</span>
+              <h3>Why Build a Custom Editor?</h3>
+            </header>
+
+            <p>
+              The Sandbox contains content that does not fit neatly into a
+              conventional blog or portfolio CMS. A reference guide, code
+              comparison, experiment, project case study, and data visualization
+              may share common identity fields while requiring very different
+              internal page structures.
+            </p>
+
+            <p>
+              Building the editor around the Sandbox data model makes the
+              authoring workflow match the system rather than forcing the system
+              to match a third-party editor. It also provides a practical
+              environment for working with TypeScript, Node.js, SQLite, data
+              modeling, CRUD operations, rendering logic, and development
+              tooling as parts of one connected project.
+            </p>
+          </section>
+
+          <!-- =============================================
+               PUBLIC WEBSITE
+               ============================================= -->
+
+          <section class="project-detail" id="public-site">
+            <header>
+              <span>07</span>
+              <h3>Public Website</h3>
+            </header>
+
+            <p>
+              The public Sandbox remains separate from the local authoring
+              environment. The website presents projects, documentation,
+              reference material, and technical work using the visual system
+              shared across the Sandbox pages.
+            </p>
+
+            <p>
+              Database editing routes are part of the local development server,
+              not a required public service. This keeps authoring capabilities
+              separate from presentation while allowing the source code,
+              database design, schema, and implementation to remain available
+              for inspection in the repository.
+            </p>
+          </section>
+
+          <!-- =============================================
+               REPOSITORY
+               ============================================= -->
+
+          <section class="project-detail" id="repository">
+            <header>
+              <span>08</span>
+              <h3>Repository Structure</h3>
+            </header>
+
+            <p>
+              Source code is organized so the static Sandbox interface, database
+              files, database definitions, TypeScript source, and local editor
+              remain identifiable as separate parts of the same application.
+            </p>
+
+            <div class="project-example">
+              <small>SIMPLIFIED REPOSITORY STRUCTURE</small>
+
+              <pre><code>developer-sandbox/
+│
+├── assets/
+│   ├── styles.css
+│   ├── inner.css
+│   ├── media.css
+│   └── script.js
+│
+├── data/
+│   └── sandbox.db
+│
+├── database/
+│   ├── schema.sql
+│   ├── editor-migration.sql
+│   └── seed.sql
+│
+├── local-editor/
+│   ├── index.html
+│   ├── style.css
+│   └── editor.config.json
+│
+├── src/
+│   ├── datastore/
+│   │   ├── database.ts
+│   │   ├── queries.ts
+│   │   └── types.ts
+│   │
+│   └── local-editor/
+│       ├── client.ts
+│       └── server.ts
+│
+├── tpl/
+│   ├── header.html
+│   ├── page.html
+│   └── footer.html
+│
+├── index.html
+├── package.json
+└── tsconfig.json</code></pre>
+            </div>
+          </section>
+
+          <!-- =============================================
+               TYPESCRIPT
+               ============================================= -->
+
+          <section class="project-detail">
+            <header>
+              <span>09</span>
+              <h3>TypeScript and Data Contracts</h3>
+            </header>
+
+            <p>
+              Shared TypeScript definitions describe Sandbox records,
+              presentation modes, visibility states, status values, links,
+              media, and content structures. Strict TypeScript compiler options
+              are used so uncertainty in stored or optional data is handled
+              deliberately rather than silently passed through the system.
+            </p>
+
+            <p>
+              This gives the datastore and editor a documented contract while
+              still allowing the underlying SQLite schema to remain compact and
+              understandable.
+            </p>
+          </section>
+
+          <!-- =============================================
+               DESIGN DECISIONS
+               ============================================= -->
+
+          <section class="project-detail" id="decisions">
+            <header>
+              <span>10</span>
+              <h3>Design Decisions</h3>
+            </header>
+
+            <p>
+              SQLite was selected because the Sandbox needs relational data and
+              persistent local storage without requiring a separate database
+              service. The database travels with the project, can be inspected
+              directly, and supports the relationships and transactions needed
+              by the editor.
+            </p>
+
+            <p>
+              TypeScript is used for the editor and datastore layer because the
+              system contains many related object shapes, optional fields,
+              status values, node types, and data transformations. Static HTML
+              and CSS remain appropriate for the public interface because the
+              Sandbox should remain lightweight and easy to host.
+            </p>
+
+            <p>
+              The result is intentionally hybrid: a simple public interface
+              backed by a more capable local development system. The Sandbox
+              itself becomes both the place where development work is presented
+              and an ongoing software project demonstrating how that content is
+              organized and maintained.
+            </p>
+          </section>
+        </article>
+      </section>
+    </main>
+
+ <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PHP Reference — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>PHP Reference</strong>
+    <p>Modern PHP syntax, requests, PDO, security, cURL, Composer, and application patterns.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/angular-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Angular
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Cross-Device Web Testing
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Node.js
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      TypeScript
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/java-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Java
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      C#
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/python-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Python
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      PHP Reference
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      macOS / PHP 8.x
+    </strong>
+
+    <br />
+
+    Modern PHP syntax, requests, PDO, security, cURL, Composer, and application patterns.
+  </p>
+</header>
+        
+<nav
+  id="node-ref-php-nav"
+  class="project-doc-nav node-01 uid-ref-php-nav php-reference-nav" aria-label="Section navigation"
+>
+<a
+  id="child-ref-php-nav-01"
+  class="child-01 uid-ref-php-nav-01"
+  href="pg/php-reference.html#node-ref-php-section-01-core-php-syntax-data"
+>Core PHP Syntax & Data</a>
+<a
+  id="child-ref-php-nav-02"
+  class="child-02 uid-ref-php-nav-02"
+  href="pg/php-reference.html#node-ref-php-section-02-control-flow-functions-file-structure"
+>Control Flow, Functions & File Structure</a>
+<a
+  id="child-ref-php-nav-03"
+  class="child-03 uid-ref-php-nav-03"
+  href="pg/php-reference.html#node-ref-php-section-03-web-requests-forms-output"
+>Web Requests, Forms & Output</a>
+<a
+  id="child-ref-php-nav-04"
+  class="child-04 uid-ref-php-nav-04"
+  href="pg/php-reference.html#node-ref-php-section-04-objects-exceptions-files-utilities"
+>Objects, Exceptions, Files & Utilities</a>
+<a
+  id="child-ref-php-nav-05"
+  class="child-05 uid-ref-php-nav-05"
+  href="pg/php-reference.html#node-ref-php-section-05-sessions-cookies-passwords-security"
+>Sessions, Cookies, Passwords & Security</a>
+<a
+  id="child-ref-php-nav-06"
+  class="child-06 uid-ref-php-nav-06"
+  href="pg/php-reference.html#node-ref-php-section-06-pdo-database-access"
+>PDO Database Access for Web Apps</a>
+<a
+  id="child-ref-php-nav-07"
+  class="child-07 uid-ref-php-nav-07"
+  href="pg/php-reference.html#node-ref-php-section-07-php-curl-request-pattern"
+>PHP cURL - The Request Pattern</a>
+<a
+  id="child-ref-php-nav-08"
+  class="child-08 uid-ref-php-nav-08"
+  href="pg/php-reference.html#node-ref-php-section-08-curl-post-json-put-patch-delete-uploads"
+>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</a>
+<a
+  id="child-ref-php-nav-09"
+  class="child-09 uid-ref-php-nav-09"
+  href="pg/php-reference.html#node-ref-php-section-09-cli-composer-daily-development"
+>CLI, Composer & Daily Development Commands</a>
+<a
+  id="child-ref-php-nav-10"
+  class="child-10 uid-ref-php-nav-10"
+  href="pg/php-reference.html#node-ref-php-section-10-high-value-patterns"
+>High-Value Patterns to Recognize</a>
+</nav>
+
+<article class="project-doc">
+  <div
+  id="node-ref-php-section-01-core-php-syntax-data"
+  class="project-display node-02 uid-ref-php-section-01-core-php-syntax-data php-reference-section php-reference-section-01"
+>
+  <div class="project-preview"><p>Core PHP 8.x syntax, types, operators, strings, arrays, and common transformations.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>01 — Core PHP Syntax & Data</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-01-php-tags-output"
+  class="project-doc-section node-03 uid-ref-php-01-php-tags-output php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>PHP Tags + Output</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-php-tags-output-r01" class="project-command child-01 uid-ref-php-01-php-tags-output-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>&lt;?php</code>
+  
+</div>
+<div class="project-split-cell">
+  Open a PHP code block.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-php-tags-output-r02" class="project-command child-02 uid-ref-php-01-php-tags-output-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>echo "Hello";</code>
+  
+</div>
+<div class="project-split-cell">
+  Output a value or string.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-php-tags-output-r03" class="project-command child-03 uid-ref-php-01-php-tags-output-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>print "World";</code>
+  
+</div>
+<div class="project-split-cell">
+  Output a string using print.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-php-tags-output-r04" class="project-command child-04 uid-ref-php-01-php-tags-output-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>&lt;?= $value ?&gt;</code>
+  
+</div>
+<div class="project-split-cell">
+  Short echo form commonly used inside templates.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-php-tags-output-r05" class="project-command child-05 uid-ref-php-01-php-tags-output-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>//  #  /* ... */</code>
+  
+</div>
+<div class="project-split-cell">
+  PHP supports line comments and block comments.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-php-tags-output-r06" class="project-command child-06 uid-ref-php-01-php-tags-output-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  Statements normally end with a semicolon. Pure PHP files commonly omit the closing ?&gt; tag.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-common-scalar-special-types"
+  class="project-doc-section node-04 uid-ref-php-01-common-scalar-special-types php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Common Scalar + Special Types</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-common-scalar-special-types-r01" class="project-command child-01 uid-ref-php-01-common-scalar-special-types-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$name = "Ada";</code>
+  
+</div>
+<div class="project-split-cell">
+  string
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-common-scalar-special-types-r02" class="project-command child-02 uid-ref-php-01-common-scalar-special-types-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$count = 12;</code>
+  
+</div>
+<div class="project-split-cell">
+  int
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-common-scalar-special-types-r03" class="project-command child-03 uid-ref-php-01-common-scalar-special-types-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$price = 19.95;</code>
+  
+</div>
+<div class="project-split-cell">
+  float
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-common-scalar-special-types-r04" class="project-command child-04 uid-ref-php-01-common-scalar-special-types-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$active = true;</code>
+  
+</div>
+<div class="project-split-cell">
+  bool
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-common-scalar-special-types-r05" class="project-command child-05 uid-ref-php-01-common-scalar-special-types-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$value = null;</code>
+  
+</div>
+<div class="project-split-cell">
+  null
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-common-scalar-special-types-r06" class="project-command child-06 uid-ref-php-01-common-scalar-special-types-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$items = [];</code>
+  
+</div>
+<div class="project-split-cell">
+  array
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-common-scalar-special-types-r07" class="project-command child-07 uid-ref-php-01-common-scalar-special-types-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$user = new User();</code>
+  
+</div>
+<div class="project-split-cell">
+  object
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-constants-inspection"
+  class="project-doc-section node-05 uid-ref-php-01-constants-inspection php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Constants + Inspection</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-constants-inspection-r01" class="project-command child-01 uid-ref-php-01-constants-inspection-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>const APP_NAME = "Creative Exchange";</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare a constant.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-constants-inspection-r02" class="project-command child-02 uid-ref-php-01-constants-inspection-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>define('API_URL', 'https://api.example.com');</code>
+  
+</div>
+<div class="project-split-cell">
+  Define a constant at runtime.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-constants-inspection-r03" class="project-command child-03 uid-ref-php-01-constants-inspection-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>var_dump($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Show type and value while debugging.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-constants-inspection-r04" class="project-command child-04 uid-ref-php-01-constants-inspection-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>print_r($items);</code>
+  
+</div>
+<div class="project-split-cell">
+  Print readable array/object information.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-constants-inspection-r05" class="project-command child-05 uid-ref-php-01-constants-inspection-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>echo gettype($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the runtime type name.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-variables-operators"
+  class="project-doc-section node-06 uid-ref-php-01-variables-operators php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Variables + Operators</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-variables-operators-r01" class="project-command child-01 uid-ref-php-01-variables-operators-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>===  !==  &gt;  &lt;  &gt;=  &lt;=</code>
+  
+</div>
+<div class="project-split-cell">
+  Comparison operators; strict comparison is preferred when type matters.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-variables-operators-r02" class="project-command child-02 uid-ref-php-01-variables-operators-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>&amp;&amp;  ||  !</code>
+  
+</div>
+<div class="project-split-cell">
+  Boolean operators.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-variables-operators-r03" class="project-command child-03 uid-ref-php-01-variables-operators-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$sum = $a + $b;</code>
+  
+</div>
+<div class="project-split-cell">
+  Arithmetic and assignment.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-variables-operators-r04" class="project-command child-04 uid-ref-php-01-variables-operators-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$isEqual = ($a === $b);</code>
+  
+</div>
+<div class="project-split-cell">
+  Strict equality comparison.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-variables-operators-r05" class="project-command child-05 uid-ref-php-01-variables-operators-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$isAllowed = $loggedIn &amp;&amp; $active;</code>
+  
+</div>
+<div class="project-split-cell">
+  Combine boolean conditions.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-variables-operators-r06" class="project-command child-06 uid-ref-php-01-variables-operators-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$count++;</code>
+  
+</div>
+<div class="project-split-cell">
+  Increment.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-variables-operators-r07" class="project-command child-07 uid-ref-php-01-variables-operators-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$total += 5;</code>
+  
+</div>
+<div class="project-split-cell">
+  Compound assignment.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-null-fallback-patterns"
+  class="project-doc-section node-07 uid-ref-php-01-null-fallback-patterns php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Null + Fallback Patterns</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-null-fallback-patterns-r01" class="project-command child-01 uid-ref-php-01-null-fallback-patterns-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$name = $_GET['name'] ?? 'Guest';</code>
+  
+</div>
+<div class="project-split-cell">
+  Use a fallback when a value is missing or null.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-null-fallback-patterns-r02" class="project-command child-02 uid-ref-php-01-null-fallback-patterns-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$userName = $user?-&gt;profile?-&gt;name;</code>
+  
+</div>
+<div class="project-split-cell">
+  Null-safe object access.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-null-fallback-patterns-r03" class="project-command child-03 uid-ref-php-01-null-fallback-patterns-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$status = $code === 200 ? 'ok' : 'error';</code>
+  
+</div>
+<div class="project-split-cell">
+  Ternary conditional expression.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-strings"
+  class="project-doc-section node-08 uid-ref-php-01-strings php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Strings</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-strings-r01" class="project-command child-01 uid-ref-php-01-strings-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$full = $first . ' ' . $last;</code>
+  
+</div>
+<div class="project-split-cell">
+  Concatenate strings with the dot operator.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-strings-r02" class="project-command child-02 uid-ref-php-01-strings-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$message = "Welcome, {$full}!";</code>
+  
+</div>
+<div class="project-split-cell">
+  Interpolate a variable inside a double-quoted string.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-strings-r03" class="project-command child-03 uid-ref-php-01-strings-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>strlen($full);</code>
+  
+</div>
+<div class="project-split-cell">
+  String length.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-strings-r04" class="project-command child-04 uid-ref-php-01-strings-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>trim($full);</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove surrounding whitespace.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-strings-r05" class="project-command child-05 uid-ref-php-01-strings-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>strtolower($full);</code>
+  
+</div>
+<div class="project-split-cell">
+  Convert to lowercase.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-strings-r06" class="project-command child-06 uid-ref-php-01-strings-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>strtoupper($full);</code>
+  
+</div>
+<div class="project-split-cell">
+  Convert to uppercase.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-strings-r07" class="project-command child-07 uid-ref-php-01-strings-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>str_contains($full, 'Susan');</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a substring exists.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-strings-r08" class="project-command child-08 uid-ref-php-01-strings-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>str_replace('old', 'new', $text);</code>
+  
+</div>
+<div class="project-split-cell">
+  Replace text.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-indexed-arrays"
+  class="project-doc-section node-09 uid-ref-php-01-indexed-arrays php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Indexed Arrays</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-indexed-arrays-r01" class="project-command child-01 uid-ref-php-01-indexed-arrays-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$colors = ['red', 'blue', 'green'];</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an indexed array.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-indexed-arrays-r02" class="project-command child-02 uid-ref-php-01-indexed-arrays-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>echo $colors[0];</code>
+  
+</div>
+<div class="project-split-cell">
+  Read by numeric index.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-indexed-arrays-r03" class="project-command child-03 uid-ref-php-01-indexed-arrays-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$colors[] = 'gold';</code>
+  
+</div>
+<div class="project-split-cell">
+  Append a value.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-indexed-arrays-r04" class="project-command child-04 uid-ref-php-01-indexed-arrays-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>count($colors);</code>
+  
+</div>
+<div class="project-split-cell">
+  Count items.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-indexed-arrays-r05" class="project-command child-05 uid-ref-php-01-indexed-arrays-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>in_array('blue', $colors, true);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check membership using strict comparison.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-indexed-arrays-r06" class="project-command child-06 uid-ref-php-01-indexed-arrays-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>array_push($colors, 'black');</code>
+  
+</div>
+<div class="project-split-cell">
+  Append with array_push.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-indexed-arrays-r07" class="project-command child-07 uid-ref-php-01-indexed-arrays-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>array_pop($colors);</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove and return the last item.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-associative-arrays"
+  class="project-doc-section node-10 uid-ref-php-01-associative-arrays php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Associative Arrays</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-associative-arrays-r01" class="project-command child-01 uid-ref-php-01-associative-arrays-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$user = ['id' =&gt; 42, 'name' =&gt; 'Ada', 'active' =&gt; true];</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an associative array.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-associative-arrays-r02" class="project-command child-02 uid-ref-php-01-associative-arrays-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>echo $user['name'];</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a value by key.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-associative-arrays-r03" class="project-command child-03 uid-ref-php-01-associative-arrays-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$user['role'] = 'admin';</code>
+  
+</div>
+<div class="project-split-cell">
+  Add or update a keyed value.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-associative-arrays-r04" class="project-command child-04 uid-ref-php-01-associative-arrays-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>array_key_exists('id', $user);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a key exists.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-array-transforms"
+  class="project-doc-section node-11 uid-ref-php-01-array-transforms php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Array Transforms</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-array-transforms-r01" class="project-command child-01 uid-ref-php-01-array-transforms-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>array_column($users, 'name');</code>
+  
+</div>
+<div class="project-split-cell">
+  Extract one field from each row.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-array-transforms-r02" class="project-command child-02 uid-ref-php-01-array-transforms-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>array_filter($users, fn($u) =&gt; $u['active']);</code>
+  
+</div>
+<div class="project-split-cell">
+  Select items that match a condition.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-array-transforms-r03" class="project-command child-03 uid-ref-php-01-array-transforms-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>array_map(fn($u) =&gt; $u['id'], $users);</code>
+  
+</div>
+<div class="project-split-cell">
+  Transform each item.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-array-transforms-r04" class="project-command child-04 uid-ref-php-01-array-transforms-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>array_merge($a, $b);</code>
+  
+</div>
+<div class="project-split-cell">
+  Merge arrays.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-array-transforms-r05" class="project-command child-05 uid-ref-php-01-array-transforms-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>sort($names);</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort an indexed array.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-array-transforms-r06" class="project-command child-06 uid-ref-php-01-array-transforms-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  array_map transforms, array_filter selects, and array_reduce combines values into one result.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-01-documentation"
+  class="project-doc-section node-12 uid-ref-php-01-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>Core PHP Syntax & Data</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-01-documentation-r01" class="project-command child-01 uid-ref-php-01-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Language Reference</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/langref.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/langref.php</a>
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-01-documentation-r02" class="project-command child-02 uid-ref-php-01-documentation-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Function Search</code>
+  
+</div>
+<div class="project-split-cell">
+  Search php.net for a function name such as array_filter.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-02-control-flow-functions-file-structure"
+  class="project-display node-13 uid-ref-php-section-02-control-flow-functions-file-structure php-reference-section php-reference-section-02"
+>
+  <div class="project-preview"><p>Conditionals, loops, typed functions, closures, project structure, includes, namespaces, and imports.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>02 — Control Flow, Functions & File Structure</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-02-if-elseif-else"
+  class="project-doc-section node-14 uid-ref-php-02-if-elseif-else php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>If / Elseif / Else</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-if-elseif-else-r01" class="project-command child-01 uid-ref-php-02-if-elseif-else-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>if ($score &gt;= 90) { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a branch when the first condition is true.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-if-elseif-else-r02" class="project-command child-02 uid-ref-php-02-if-elseif-else-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>elseif ($score &gt;= 80) { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Test another condition when earlier branches fail.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-if-elseif-else-r03" class="project-command child-03 uid-ref-php-02-if-elseif-else-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>else { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Fallback branch.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-match-switch"
+  class="project-doc-section node-15 uid-ref-php-02-match-switch php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Match + Switch</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-match-switch-r01" class="project-command child-01 uid-ref-php-02-match-switch-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$label = match ($status) { 200 =&gt; 'OK', 404 =&gt; 'Not Found', default =&gt; 'Other' };</code>
+  
+</div>
+<div class="project-split-cell">
+  match returns a value and uses strict comparison.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-match-switch-r02" class="project-command child-02 uid-ref-php-02-match-switch-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>switch ($role) { case 'admin': ... break; default: ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  switch is useful for statement-oriented branching.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-loops"
+  class="project-doc-section node-16 uid-ref-php-02-loops php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Loops</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-loops-r01" class="project-command child-01 uid-ref-php-02-loops-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>foreach ($users as $user) { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Iterate through arrays or iterable values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-loops-r02" class="project-command child-02 uid-ref-php-02-loops-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>for ($i = 0; $i &lt; 10; $i++) { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Counter-controlled loop.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-loops-r03" class="project-command child-03 uid-ref-php-02-loops-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>while ($row = $stmt-&gt;fetch()) { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Continue while a fetched row exists.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-functions-types"
+  class="project-doc-section node-17 uid-ref-php-02-functions-types php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Functions + Types</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-functions-types-r01" class="project-command child-01 uid-ref-php-02-functions-types-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>function total(float $price, int $qty = 1): float { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Type hints improve readability and catch mistakes.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-functions-types-r02" class="project-command child-02 uid-ref-php-02-functions-types-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>int $qty = 1</code>
+  
+</div>
+<div class="project-split-cell">
+  Parameters can have default values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-functions-types-r03" class="project-command child-03 uid-ref-php-02-functions-types-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>: float</code>
+  
+</div>
+<div class="project-split-cell">
+  Return types follow the parameter list.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-functions-types-r04" class="project-command child-04 uid-ref-php-02-functions-types-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$result = total(12.50, 2);</code>
+  
+</div>
+<div class="project-split-cell">
+  Call the function with explicit arguments.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-arrow-functions-closures"
+  class="project-doc-section node-18 uid-ref-php-02-arrow-functions-closures php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Arrow Functions + Closures</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-arrow-functions-closures-r01" class="project-command child-01 uid-ref-php-02-arrow-functions-closures-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$double = fn(int $n): int =&gt; $n * 2;</code>
+  
+</div>
+<div class="project-split-cell">
+  Compact arrow function.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-arrow-functions-closures-r02" class="project-command child-02 uid-ref-php-02-arrow-functions-closures-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$withTax = function (float $price) use ($tax) { ... };</code>
+  
+</div>
+<div class="project-split-cell">
+  Closure importing a variable from the outer scope.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-useful-variable-helpers"
+  class="project-doc-section node-19 uid-ref-php-02-useful-variable-helpers php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Useful Variable Helpers</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-useful-variable-helpers-r01" class="project-command child-01 uid-ref-php-02-useful-variable-helpers-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>isset($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a value exists and is not null.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-useful-variable-helpers-r02" class="project-command child-02 uid-ref-php-02-useful-variable-helpers-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>empty($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check PHP "empty" values; note that 0 and "0" are considered empty.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-useful-variable-helpers-r03" class="project-command child-03 uid-ref-php-02-useful-variable-helpers-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>is_string($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check for a string.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-useful-variable-helpers-r04" class="project-command child-04 uid-ref-php-02-useful-variable-helpers-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>is_array($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check for an array.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-useful-variable-helpers-r05" class="project-command child-05 uid-ref-php-02-useful-variable-helpers-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>is_numeric($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a value is numeric.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-useful-variable-helpers-r06" class="project-command child-06 uid-ref-php-02-useful-variable-helpers-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>filter_var($email, FILTER_VALIDATE_EMAIL);</code>
+  
+</div>
+<div class="project-split-cell">
+  Validate an email address.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-common-project-structure"
+  class="project-doc-section node-20 uid-ref-php-02-common-project-structure php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Common Project Structure</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-common-project-structure-r01" class="project-command child-01 uid-ref-php-02-common-project-structure-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>public/</code>
+  
+</div>
+<div class="project-split-cell">
+  Web-facing entry point and public assets.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r02" class="project-command child-02 uid-ref-php-02-common-project-structure-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>src/</code>
+  
+</div>
+<div class="project-split-cell">
+  Application source code.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r03" class="project-command child-03 uid-ref-php-02-common-project-structure-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Controllers/ Models/ Services/</code>
+  
+</div>
+<div class="project-split-cell">
+  Common application-layer directories.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r04" class="project-command child-04 uid-ref-php-02-common-project-structure-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>templates/</code>
+  
+</div>
+<div class="project-split-cell">
+  View/template files.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r05" class="project-command child-05 uid-ref-php-02-common-project-structure-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>config/</code>
+  
+</div>
+<div class="project-split-cell">
+  Configuration.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r06" class="project-command child-06 uid-ref-php-02-common-project-structure-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>storage/</code>
+  
+</div>
+<div class="project-split-cell">
+  Application-managed storage.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r07" class="project-command child-07 uid-ref-php-02-common-project-structure-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tests/</code>
+  
+</div>
+<div class="project-split-cell">
+  Automated tests.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r08" class="project-command child-08 uid-ref-php-02-common-project-structure-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>vendor/</code>
+  
+</div>
+<div class="project-split-cell">
+  Composer-installed dependencies.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r09" class="project-command child-09 uid-ref-php-02-common-project-structure-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer.json</code>
+  
+</div>
+<div class="project-split-cell">
+  Composer package configuration.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-common-project-structure-r10" class="project-command child-10 uid-ref-php-02-common-project-structure-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.env</code>
+  
+</div>
+<div class="project-split-cell">
+  Environment-specific settings; do not commit real secrets.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-include-require"
+  class="project-doc-section node-21 uid-ref-php-02-include-require php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Include / Require</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-include-require-r01" class="project-command child-01 uid-ref-php-02-include-require-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>require __DIR__ . '/config.php';</code>
+  
+</div>
+<div class="project-split-cell">
+  Stops execution if the file cannot be loaded.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-include-require-r02" class="project-command child-02 uid-ref-php-02-include-require-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>require_once __DIR__ . '/vendor/autoload.php';</code>
+  
+</div>
+<div class="project-split-cell">
+  Require a file only once.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-include-require-r03" class="project-command child-03 uid-ref-php-02-include-require-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>include __DIR__ . '/partials/header.php';</code>
+  
+</div>
+<div class="project-split-cell">
+  Emits a warning and continues if the file cannot be loaded.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-namespaces-imports"
+  class="project-doc-section node-22 uid-ref-php-02-namespaces-imports php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Namespaces + Imports</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-namespaces-imports-r01" class="project-command child-01 uid-ref-php-02-namespaces-imports-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>namespace App\Services;</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare a namespace.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-namespaces-imports-r02" class="project-command child-02 uid-ref-php-02-namespaces-imports-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>use App\Models\User;</code>
+  
+</div>
+<div class="project-split-cell">
+  Import a class.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-namespaces-imports-r03" class="project-command child-03 uid-ref-php-02-namespaces-imports-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>use PDO;</code>
+  
+</div>
+<div class="project-split-cell">
+  Import PDO into the namespace.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-02-namespaces-imports-r04" class="project-command child-04 uid-ref-php-02-namespaces-imports-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>class UserService { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare a namespaced class.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-02-documentation"
+  class="project-doc-section node-23 uid-ref-php-02-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>Control Flow, Functions & File Structure</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-02-documentation-r01" class="project-command child-01 uid-ref-php-02-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Composer</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://getcomposer.org/doc/" target="_blank" rel="noopener noreferrer">getcomposer.org/doc</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-03-web-requests-forms-output"
+  class="project-display node-24 uid-ref-php-section-03-web-requests-forms-output php-reference-section php-reference-section-03"
+>
+  <div class="project-preview"><p>Request input, forms, JSON bodies, response headers, uploads, redirects, and HTTP status codes.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>03 — Web Requests, Forms & Output</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-03-request-superglobals"
+  class="project-doc-section node-25 uid-ref-php-03-request-superglobals php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Request Superglobals</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-request-superglobals-r01" class="project-command child-01 uid-ref-php-03-request-superglobals-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$_GET</code>
+  
+</div>
+<div class="project-split-cell">
+  Query-string values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-superglobals-r02" class="project-command child-02 uid-ref-php-03-request-superglobals-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$_POST</code>
+  
+</div>
+<div class="project-split-cell">
+  Form POST body.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-superglobals-r03" class="project-command child-03 uid-ref-php-03-request-superglobals-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$_FILES</code>
+  
+</div>
+<div class="project-split-cell">
+  Uploaded files.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-superglobals-r04" class="project-command child-04 uid-ref-php-03-request-superglobals-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$_COOKIE</code>
+  
+</div>
+<div class="project-split-cell">
+  Cookie values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-superglobals-r05" class="project-command child-05 uid-ref-php-03-request-superglobals-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$_SESSION</code>
+  
+</div>
+<div class="project-split-cell">
+  Session data.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-superglobals-r06" class="project-command child-06 uid-ref-php-03-request-superglobals-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$_SERVER</code>
+  
+</div>
+<div class="project-split-cell">
+  Request and server information.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-superglobals-r07" class="project-command child-07 uid-ref-php-03-request-superglobals-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$_ENV</code>
+  
+</div>
+<div class="project-split-cell">
+  Environment values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-superglobals-r08" class="project-command child-08 uid-ref-php-03-request-superglobals-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  Superglobals are available inside functions without declaring global; treat request values as untrusted input.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-get-query-example"
+  class="project-doc-section node-26 uid-ref-php-03-get-query-example php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>GET Query Example</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-get-query-example-r01" class="project-command child-01 uid-ref-php-03-get-query-example-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$q = trim($_GET['q'] ?? '');</code>
+  
+</div>
+<div class="project-split-cell">
+  Read and normalize a query-string value.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-get-query-example-r02" class="project-command child-02 uid-ref-php-03-get-query-example-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$page = max(1, (int)($_GET['page'] ?? 1));</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a numeric page value with a minimum of 1.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-get-query-example-r03" class="project-command child-03 uid-ref-php-03-get-query-example-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>http_response_code(400);</code>
+  
+</div>
+<div class="project-split-cell">
+  Return Bad Request when required input is missing.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-get-query-example-r04" class="project-command child-04 uid-ref-php-03-get-query-example-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>exit('Missing search term');</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop the request after returning the error.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-post-form-example"
+  class="project-doc-section node-27 uid-ref-php-03-post-form-example php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>POST Form Example</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-post-form-example-r01" class="project-command child-01 uid-ref-php-03-post-form-example-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);</code>
+  
+</div>
+<div class="project-split-cell">
+  Read and validate a POSTed email.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-post-form-example-r02" class="project-command child-02 uid-ref-php-03-post-form-example-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>if (!$email) { $error = 'Enter a valid email.'; }</code>
+  
+</div>
+<div class="project-split-cell">
+  Handle validation failure.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-escape-html-output"
+  class="project-doc-section node-28 uid-ref-php-03-escape-html-output php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Escape HTML Output</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-escape-html-output-r01" class="project-command child-01 uid-ref-php-03-escape-html-output-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>htmlspecialchars($user['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')</code>
+  
+</div>
+<div class="project-split-cell">
+  Escape dynamic HTML output.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-escape-html-output-r02" class="project-command child-02 uid-ref-php-03-escape-html-output-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Validation</code>
+  
+</div>
+<div class="project-split-cell">
+  Asks: "Is this acceptable input?"
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-escape-html-output-r03" class="project-command child-03 uid-ref-php-03-escape-html-output-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Escaping</code>
+  
+</div>
+<div class="project-split-cell">
+  Asks: "Is this safe in this output context?"
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-request-method-headers"
+  class="project-doc-section node-29 uid-ref-php-03-request-method-headers php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Request Method + Headers</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-request-method-headers-r01" class="project-command child-01 uid-ref-php-03-request-method-headers-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_SERVER['REQUEST_METHOD']</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the HTTP request method.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-method-headers-r02" class="project-command child-02 uid-ref-php-03-request-method-headers-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_SERVER['CONTENT_TYPE'] ?? ''</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the request Content-Type.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-method-headers-r03" class="project-command child-03 uid-ref-php-03-request-method-headers-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>header('Content-Type: application/json');</code>
+  
+</div>
+<div class="project-split-cell">
+  Send a JSON response content type.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-request-method-headers-r04" class="project-command child-04 uid-ref-php-03-request-method-headers-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>http_response_code(201);</code>
+  
+</div>
+<div class="project-split-cell">
+  Set Created status.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-read-json-request-body"
+  class="project-doc-section node-30 uid-ref-php-03-read-json-request-body php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Read JSON Request Body</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-read-json-request-body-r01" class="project-command child-01 uid-ref-php-03-read-json-request-body-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$raw = file_get_contents('php://input');</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the raw request body.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-read-json-request-body-r02" class="project-command child-02 uid-ref-php-03-read-json-request-body-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$data = json_decode($raw, true, 512, JSON_THROW_ON_ERROR);</code>
+  
+</div>
+<div class="project-split-cell">
+  Decode JSON and throw on malformed input.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-read-json-request-body-r03" class="project-command child-03 uid-ref-php-03-read-json-request-body-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$name = trim($data['name'] ?? '');</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a decoded field safely.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-send-json-response"
+  class="project-doc-section node-31 uid-ref-php-03-send-json-response php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Send JSON Response</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-send-json-response-r01" class="project-command child-01 uid-ref-php-03-send-json-response-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>header('Content-Type: application/json');</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare JSON output.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-send-json-response-r02" class="project-command child-02 uid-ref-php-03-send-json-response-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>json_encode(['ok' =&gt; true, 'data' =&gt; $user], JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR)</code>
+  
+</div>
+<div class="project-split-cell">
+  Encode response data.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-file-upload-basics"
+  class="project-doc-section node-32 uid-ref-php-03-file-upload-basics php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>File Upload Basics</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-file-upload-basics-r01" class="project-command child-01 uid-ref-php-03-file-upload-basics-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_FILES['photo']['error'] === UPLOAD_ERR_OK</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm the upload completed successfully.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-file-upload-basics-r02" class="project-command child-02 uid-ref-php-03-file-upload-basics-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_FILES['photo']['tmp_name']</code>
+  
+</div>
+<div class="project-split-cell">
+  Temporary uploaded-file path.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-file-upload-basics-r03" class="project-command child-03 uid-ref-php-03-file-upload-basics-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>basename($_FILES['photo']['name'])</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the submitted filename safely as a basename.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-file-upload-basics-r04" class="project-command child-04 uid-ref-php-03-file-upload-basics-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>move_uploaded_file($tmp, $destination);</code>
+  
+</div>
+<div class="project-split-cell">
+  Move an uploaded file into application storage.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-file-upload-basics-r05" class="project-command child-05 uid-ref-php-03-file-upload-basics-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PRODUCTION</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate your own filename; validate MIME/type and size; restrict extensions; keep executable uploads out of web-accessible paths.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-redirect"
+  class="project-doc-section node-33 uid-ref-php-03-redirect php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Redirect</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-redirect-r01" class="project-command child-01 uid-ref-php-03-redirect-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>header('Location: /dashboard.php');</code>
+  
+</div>
+<div class="project-split-cell">
+  Send a redirect.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-redirect-r02" class="project-command child-02 uid-ref-php-03-redirect-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>exit;</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop the script immediately after the redirect.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-common-http-status-codes"
+  class="project-doc-section node-34 uid-ref-php-03-common-http-status-codes php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Common HTTP Status Codes</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-common-http-status-codes-r01" class="project-command child-01 uid-ref-php-03-common-http-status-codes-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>200 OK</code>
+  
+</div>
+<div class="project-split-cell">
+  Successful request.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r02" class="project-command child-02 uid-ref-php-03-common-http-status-codes-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>201 Created</code>
+  
+</div>
+<div class="project-split-cell">
+  Resource created.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r03" class="project-command child-03 uid-ref-php-03-common-http-status-codes-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>204 No Content</code>
+  
+</div>
+<div class="project-split-cell">
+  Success with no response body.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r04" class="project-command child-04 uid-ref-php-03-common-http-status-codes-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>400 Bad Request</code>
+  
+</div>
+<div class="project-split-cell">
+  Malformed or invalid request.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r05" class="project-command child-05 uid-ref-php-03-common-http-status-codes-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>401 Unauthorized</code>
+  
+</div>
+<div class="project-split-cell">
+  Authentication required.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r06" class="project-command child-06 uid-ref-php-03-common-http-status-codes-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>403 Forbidden</code>
+  
+</div>
+<div class="project-split-cell">
+  Authenticated but not allowed.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r07" class="project-command child-07 uid-ref-php-03-common-http-status-codes-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>404 Not Found</code>
+  
+</div>
+<div class="project-split-cell">
+  Requested resource was not found.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r08" class="project-command child-08 uid-ref-php-03-common-http-status-codes-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>422 Unprocessable Content</code>
+  
+</div>
+<div class="project-split-cell">
+  Validation failure.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-03-common-http-status-codes-r09" class="project-command child-09 uid-ref-php-03-common-http-status-codes-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>500 Internal Server Error</code>
+  
+</div>
+<div class="project-split-cell">
+  Server-side failure.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-03-documentation"
+  class="project-doc-section node-35 uid-ref-php-03-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>Web Requests, Forms & Output</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-03-documentation-r01" class="project-command child-01 uid-ref-php-03-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Web Features</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/features.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/features.php</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-04-objects-exceptions-files-utilities"
+  class="project-display node-36 uid-ref-php-section-04-objects-exceptions-files-utilities php-reference-section php-reference-section-04"
+>
+  <div class="project-preview"><p>Classes, interfaces, enums, exceptions, logging, dates, files, paths, JSON, and environment values.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>04 — Objects, Exceptions, Files & Utilities</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-04-class-constructor"
+  class="project-doc-section node-37 uid-ref-php-04-class-constructor php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Class + Constructor</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-class-constructor-r01" class="project-command child-01 uid-ref-php-04-class-constructor-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>class User { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare a class.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-class-constructor-r02" class="project-command child-02 uid-ref-php-04-class-constructor-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>public function __construct(...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Constructor; promoted properties can be declared in the parameter list.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-class-constructor-r03" class="project-command child-03 uid-ref-php-04-class-constructor-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>public function label(): string { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Typed instance method.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-class-constructor-r04" class="project-command child-04 uid-ref-php-04-class-constructor-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$user = new User(1, 'Ada', 'a@example.com');</code>
+  
+</div>
+<div class="project-split-cell">
+  Instantiate the class.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-inheritance-interface"
+  class="project-doc-section node-38 uid-ref-php-04-inheritance-interface php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Inheritance + Interface</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-inheritance-interface-r01" class="project-command child-01 uid-ref-php-04-inheritance-interface-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>interface Logger { public function log(string $message): void; }</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare an interface contract.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-inheritance-interface-r02" class="project-command child-02 uid-ref-php-04-inheritance-interface-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>class FileLogger implements Logger { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Implement an interface.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-inheritance-interface-r03" class="project-command child-03 uid-ref-php-04-inheritance-interface-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>class AdminUser extends User { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Extend another class.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-static-enum"
+  class="project-doc-section node-39 uid-ref-php-04-static-enum php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Static + Enum</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-static-enum-r01" class="project-command child-01 uid-ref-php-04-static-enum-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>public static function make(string $text): string { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare a static method.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-static-enum-r02" class="project-command child-02 uid-ref-php-04-static-enum-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Slug::make($text)</code>
+  
+</div>
+<div class="project-split-cell">
+  Call a static method.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-static-enum-r03" class="project-command child-03 uid-ref-php-04-static-enum-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>enum Role: string { case Admin = 'admin'; case User = 'user'; }</code>
+  
+</div>
+<div class="project-split-cell">
+  Backed enum with string values.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-exceptions"
+  class="project-doc-section node-40 uid-ref-php-04-exceptions php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Exceptions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-exceptions-r01" class="project-command child-01 uid-ref-php-04-exceptions-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>try { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Run code that may throw.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-exceptions-r02" class="project-command child-02 uid-ref-php-04-exceptions-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>catch (PDOException $e) { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Handle PDO-specific errors.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-exceptions-r03" class="project-command child-03 uid-ref-php-04-exceptions-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>catch (Throwable $e) { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Catch broader PHP throwables.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-exceptions-r04" class="project-command child-04 uid-ref-php-04-exceptions-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>finally { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Optional cleanup that runs after try/catch.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-exceptions-r05" class="project-command child-05 uid-ref-php-04-exceptions-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>error_log($e-&gt;getMessage());</code>
+  
+</div>
+<div class="project-split-cell">
+  Log exception details instead of exposing them to users.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-throw-your-own-error"
+  class="project-doc-section node-41 uid-ref-php-04-throw-your-own-error php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Throw Your Own Error</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-throw-your-own-error-r01" class="project-command child-01 uid-ref-php-04-throw-your-own-error-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>throw new InvalidArgumentException('Amount cannot be negative');</code>
+  
+</div>
+<div class="project-split-cell">
+  Throw a domain-appropriate exception when input is invalid.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-debug-logging"
+  class="project-doc-section node-42 uid-ref-php-04-debug-logging php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Debug + Logging</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-debug-logging-r01" class="project-command child-01 uid-ref-php-04-debug-logging-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>error_reporting(E_ALL);</code>
+  
+</div>
+<div class="project-split-cell">
+  Enable all error reporting.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-debug-logging-r02" class="project-command child-02 uid-ref-php-04-debug-logging-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ini_set('display_errors', '1');</code>
+  
+</div>
+<div class="project-split-cell">
+  Display errors during local development only.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-debug-logging-r03" class="project-command child-03 uid-ref-php-04-debug-logging-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>error_log('Reached checkout');</code>
+  
+</div>
+<div class="project-split-cell">
+  Write a diagnostic message to the error log.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-debug-logging-r04" class="project-command child-04 uid-ref-php-04-debug-logging-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>var_dump($value);</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect a value during development.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-debug-logging-r05" class="project-command child-05 uid-ref-php-04-debug-logging-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PRODUCTION</code>
+  
+</div>
+<div class="project-split-cell">
+  Do not display stack traces or sensitive error details to users; log them instead.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-date-time"
+  class="project-doc-section node-43 uid-ref-php-04-date-time php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Date + Time</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-date-time-r01" class="project-command child-01 uid-ref-php-04-date-time-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$now = new DateTimeImmutable('now');</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an immutable date/time value.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-date-time-r02" class="project-command child-02 uid-ref-php-04-date-time-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$tomorrow = $now-&gt;modify('+1 day');</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a modified copy.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-date-time-r03" class="project-command child-03 uid-ref-php-04-date-time-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$now-&gt;format('Y-m-d H:i:s');</code>
+  
+</div>
+<div class="project-split-cell">
+  Format a date/time.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-date-time-r04" class="project-command child-04 uid-ref-php-04-date-time-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>new DateTimeImmutable($row['created_at']);</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a date/time from stored data.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-files"
+  class="project-doc-section node-44 uid-ref-php-04-files php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Files</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-files-r01" class="project-command child-01 uid-ref-php-04-files-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>file_get_contents($path);</code>
+  
+</div>
+<div class="project-split-cell">
+  Read an entire file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-files-r02" class="project-command child-02 uid-ref-php-04-files-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>file_put_contents($path, $text);</code>
+  
+</div>
+<div class="project-split-cell">
+  Write a file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-files-r03" class="project-command child-03 uid-ref-php-04-files-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>file_put_contents($log, $line, FILE_APPEND);</code>
+  
+</div>
+<div class="project-split-cell">
+  Append to a file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-files-r04" class="project-command child-04 uid-ref-php-04-files-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>file_exists($path);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check existence.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-files-r05" class="project-command child-05 uid-ref-php-04-files-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>is_file($path);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check for a regular file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-files-r06" class="project-command child-06 uid-ref-php-04-files-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>is_dir($path);</code>
+  
+</div>
+<div class="project-split-cell">
+  Check for a directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-files-r07" class="project-command child-07 uid-ref-php-04-files-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>mkdir($dir, 0755, true);</code>
+  
+</div>
+<div class="project-split-cell">
+  Create nested directories.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-files-r08" class="project-command child-08 uid-ref-php-04-files-r08">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>unlink($path);</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete a file.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-path-helpers"
+  class="project-doc-section node-45 uid-ref-php-04-path-helpers php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Path Helpers</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-path-helpers-r01" class="project-command child-01 uid-ref-php-04-path-helpers-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>__DIR__</code>
+  
+</div>
+<div class="project-split-cell">
+  Directory of the current file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-path-helpers-r02" class="project-command child-02 uid-ref-php-04-path-helpers-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>__FILE__</code>
+  
+</div>
+<div class="project-split-cell">
+  Full path of the current file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-path-helpers-r03" class="project-command child-03 uid-ref-php-04-path-helpers-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$path = __DIR__ . '/data/users.json';</code>
+  
+</div>
+<div class="project-split-cell">
+  Build a path relative to the current file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-path-helpers-r04" class="project-command child-04 uid-ref-php-04-path-helpers-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>basename($path);</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the final path component.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-path-helpers-r05" class="project-command child-05 uid-ref-php-04-path-helpers-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>dirname($path);</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the parent directory.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-json"
+  class="project-doc-section node-46 uid-ref-php-04-json php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>JSON</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-json-r01" class="project-command child-01 uid-ref-php-04-json-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>json_encode($data, JSON_THROW_ON_ERROR);</code>
+  
+</div>
+<div class="project-split-cell">
+  Encode PHP data to JSON and throw on errors.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-json-r02" class="project-command child-02 uid-ref-php-04-json-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>json_decode($json, true, 512, JSON_THROW_ON_ERROR);</code>
+  
+</div>
+<div class="project-split-cell">
+  Decode JSON to an associative array and throw on errors.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-environment-values"
+  class="project-doc-section node-47 uid-ref-php-04-environment-values php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Environment Values</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-environment-values-r01" class="project-command child-01 uid-ref-php-04-environment-values-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>getenv('API_KEY');</code>
+  
+</div>
+<div class="project-split-cell">
+  Read an environment variable.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-environment-values-r02" class="project-command child-02 uid-ref-php-04-environment-values-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_ENV['DATABASE_URL'] ?? null</code>
+  
+</div>
+<div class="project-split-cell">
+  Read an environment value from $_ENV when available.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-environment-values-r03" class="project-command child-03 uid-ref-php-04-environment-values-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  How .env is loaded depends on the framework/library; never commit real API keys, passwords, or production connection strings.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-04-documentation"
+  class="project-doc-section node-48 uid-ref-php-04-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>Objects, Exceptions, Files & Utilities</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-04-documentation-r01" class="project-command child-01 uid-ref-php-04-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Function Reference</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/funcref.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/funcref.php</a>
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-04-documentation-r02" class="project-command child-02 uid-ref-php-04-documentation-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Object-Oriented PHP</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/language.oop5.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/language.oop5.php</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-05-sessions-cookies-passwords-security"
+  class="project-display node-49 uid-ref-php-section-05-sessions-cookies-passwords-security php-reference-section php-reference-section-05"
+>
+  <div class="project-preview"><p>Session state, cookies, password hashing, CSRF protection, secure randomness, and web security defaults.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>05 — Sessions, Cookies, Passwords & Security</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-05-sessions"
+  class="project-doc-section node-50 uid-ref-php-05-sessions php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Sessions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-sessions-r01" class="project-command child-01 uid-ref-php-05-sessions-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>session_start();</code>
+  
+</div>
+<div class="project-split-cell">
+  Start or resume a session before reading or writing $_SESSION.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-sessions-r02" class="project-command child-02 uid-ref-php-05-sessions-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_SESSION['user_id'] = $user['id'];</code>
+  
+</div>
+<div class="project-split-cell">
+  Store a value in the session.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-sessions-r03" class="project-command child-03 uid-ref-php-05-sessions-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$userId = $_SESSION['user_id'] ?? null;</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a session value safely.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-sessions-r04" class="project-command child-04 uid-ref-php-05-sessions-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>unset($_SESSION['user_id']);</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove one session value.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-sessions-r05" class="project-command child-05 uid-ref-php-05-sessions-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>session_destroy();</code>
+  
+</div>
+<div class="project-split-cell">
+  Destroy the session.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-regenerate-after-login"
+  class="project-doc-section node-51 uid-ref-php-05-regenerate-after-login php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Regenerate After Login</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-regenerate-after-login-r01" class="project-command child-01 uid-ref-php-05-regenerate-after-login-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>session_regenerate_id(true);</code>
+  
+</div>
+<div class="project-split-cell">
+  Regenerate the session ID after successful authentication to reduce session-fixation risk.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-regenerate-after-login-r02" class="project-command child-02 uid-ref-php-05-regenerate-after-login-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_SESSION['user_id'] = $user['id'];</code>
+  
+</div>
+<div class="project-split-cell">
+  Store the authenticated user after regeneration.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-cookies"
+  class="project-doc-section node-52 uid-ref-php-05-cookies php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Cookies</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-cookies-r01" class="project-command child-01 uid-ref-php-05-cookies-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>setcookie('theme', 'dark', [...]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Set a cookie with explicit options.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-cookies-r02" class="project-command child-02 uid-ref-php-05-cookies-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'secure' =&gt; true</code>
+  
+</div>
+<div class="project-split-cell">
+  Send only over HTTPS.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-cookies-r03" class="project-command child-03 uid-ref-php-05-cookies-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'httponly' =&gt; true</code>
+  
+</div>
+<div class="project-split-cell">
+  Prevent JavaScript access.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-cookies-r04" class="project-command child-04 uid-ref-php-05-cookies-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'samesite' =&gt; 'Lax'</code>
+  
+</div>
+<div class="project-split-cell">
+  Set SameSite behavior.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-cookies-r05" class="project-command child-05 uid-ref-php-05-cookies-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$theme = $_COOKIE['theme'] ?? 'light';</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a cookie with a fallback.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-password-hashing"
+  class="project-doc-section node-53 uid-ref-php-05-password-hashing php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Password Hashing</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-password-hashing-r01" class="project-command child-01 uid-ref-php-05-password-hashing-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>password_hash($password, PASSWORD_DEFAULT);</code>
+  
+</div>
+<div class="project-split-cell">
+  Hash a password using PHP's current recommended default algorithm.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-password-hashing-r02" class="project-command child-02 uid-ref-php-05-password-hashing-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>password_verify($password, $hash)</code>
+  
+</div>
+<div class="project-split-cell">
+  Verify a password against its stored hash.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-password-hashing-r03" class="project-command child-03 uid-ref-php-05-password-hashing-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>password_needs_rehash($hash, PASSWORD_DEFAULT)</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether an existing hash should be upgraded.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-password-hashing-r04" class="project-command child-04 uid-ref-php-05-password-hashing-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>RULE</code>
+  
+</div>
+<div class="project-split-cell">
+  Store password hashes, never original passwords.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-csrf-pattern"
+  class="project-doc-section node-54 uid-ref-php-05-csrf-pattern php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>CSRF Pattern</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-csrf-pattern-r01" class="project-command child-01 uid-ref-php-05-csrf-pattern-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$_SESSION['csrf'] ??= bin2hex(random_bytes(32));</code>
+  
+</div>
+<div class="project-split-cell">
+  Create and store a CSRF token.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-csrf-pattern-r02" class="project-command child-02 uid-ref-php-05-csrf-pattern-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>hash_equals($_SESSION['csrf'], $_POST['csrf'] ?? '')</code>
+  
+</div>
+<div class="project-split-cell">
+  Compare the submitted token safely.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-csrf-pattern-r03" class="project-command child-03 uid-ref-php-05-csrf-pattern-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>http_response_code(403);</code>
+  
+</div>
+<div class="project-split-cell">
+  Return Forbidden when the token is invalid.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-generate-secure-random-values"
+  class="project-doc-section node-55 uid-ref-php-05-generate-secure-random-values php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Generate Secure Random Values</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-generate-secure-random-values-r01" class="project-command child-01 uid-ref-php-05-generate-secure-random-values-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>bin2hex(random_bytes(32));</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate a cryptographically secure token.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-generate-secure-random-values-r02" class="project-command child-02 uid-ref-php-05-generate-secure-random-values-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>random_int(100000, 999999);</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate a cryptographically secure random integer.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-web-security-checklist"
+  class="project-doc-section node-56 uid-ref-php-05-web-security-checklist php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Web Security Checklist</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-web-security-checklist-r01" class="project-command child-01 uid-ref-php-05-web-security-checklist-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>HTML output</code>
+  
+</div>
+<div class="project-split-cell">
+  Escape dynamic HTML with htmlspecialchars().
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r02" class="project-command child-02 uid-ref-php-05-web-security-checklist-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Input</code>
+  
+</div>
+<div class="project-split-cell">
+  Validate expected type, range, and format.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r03" class="project-command child-03 uid-ref-php-05-web-security-checklist-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>SQL</code>
+  
+</div>
+<div class="project-split-cell">
+  Use PDO prepared statements for user-supplied values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r04" class="project-command child-04 uid-ref-php-05-web-security-checklist-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Passwords</code>
+  
+</div>
+<div class="project-split-cell">
+  Hash passwords with password_hash().
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r05" class="project-command child-05 uid-ref-php-05-web-security-checklist-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>HTTPS</code>
+  
+</div>
+<div class="project-split-cell">
+  Use HTTPS in production.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r06" class="project-command child-06 uid-ref-php-05-web-security-checklist-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Cookies</code>
+  
+</div>
+<div class="project-split-cell">
+  Use Secure, HttpOnly, and SameSite settings where appropriate.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r07" class="project-command child-07 uid-ref-php-05-web-security-checklist-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CSRF</code>
+  
+</div>
+<div class="project-split-cell">
+  Protect state-changing browser requests.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r08" class="project-command child-08 uid-ref-php-05-web-security-checklist-r08">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Secrets</code>
+  
+</div>
+<div class="project-split-cell">
+  Do not expose secrets in Git, HTML, JavaScript, or error pages.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r09" class="project-command child-09 uid-ref-php-05-web-security-checklist-r09">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Uploads</code>
+  
+</div>
+<div class="project-split-cell">
+  Restrict type, size, filename, and destination.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-web-security-checklist-r10" class="project-command child-10 uid-ref-php-05-web-security-checklist-r10">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Errors</code>
+  
+</div>
+<div class="project-split-cell">
+  Return generic production errors and log details server-side.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-do-not-do-this"
+  class="project-doc-section node-57 uid-ref-php-05-do-not-do-this php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Do Not Do This</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-do-not-do-this-r01" class="project-command child-01 uid-ref-php-05-do-not-do-this-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$sql = "SELECT * FROM users WHERE email = '$email'";</code>
+  
+</div>
+<div class="project-split-cell">
+  SQL injection risk: do not concatenate untrusted values into SQL.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-do-not-do-this-r02" class="project-command child-02 uid-ref-php-05-do-not-do-this-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>echo $_GET['name'];</code>
+  
+</div>
+<div class="project-split-cell">
+  XSS risk: do not output unescaped request data.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-05-do-not-do-this-r03" class="project-command child-03 uid-ref-php-05-do-not-do-this-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$apiKey = 'real-production-key';</code>
+  
+</div>
+<div class="project-split-cell">
+  Secret leak: do not hard-code production credentials.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-05-documentation"
+  class="project-doc-section node-58 uid-ref-php-05-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>Sessions, Cookies, Passwords & Security</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-05-documentation-r01" class="project-command child-01 uid-ref-php-05-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PHP Security</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/security.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/security.php</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-06-pdo-database-access"
+  class="project-display node-59 uid-ref-php-section-06-pdo-database-access php-reference-section php-reference-section-06"
+>
+  <div class="project-preview"><p>PDO connections, prepared statements, CRUD operations, transactions, and database safety.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>06 — PDO Database Access for Web Apps</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-06-connect-postgresql"
+  class="project-doc-section node-60 uid-ref-php-06-connect-postgresql php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Connect - PostgreSQL</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-connect-postgresql-r01" class="project-command child-01 uid-ref-php-06-connect-postgresql-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>new PDO('pgsql:host=localhost;port=5432;dbname=app', $dbUser, $dbPass, [...])</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a PostgreSQL PDO connection.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-connect-postgresql-r02" class="project-command child-02 uid-ref-php-06-connect-postgresql-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION</code>
+  
+</div>
+<div class="project-split-cell">
+  Throw exceptions for database errors.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-connect-postgresql-r03" class="project-command child-03 uid-ref-php-06-connect-postgresql-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC</code>
+  
+</div>
+<div class="project-split-cell">
+  Fetch rows as associative arrays by default.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-connect-mysql"
+  class="project-doc-section node-61 uid-ref-php-06-connect-mysql php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Connect - MySQL</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-connect-mysql-r01" class="project-command child-01 uid-ref-php-06-connect-mysql-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>new PDO('mysql:host=localhost;dbname=app;charset=utf8mb4', $dbUser, $dbPass, [...])</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a MySQL PDO connection using utf8mb4.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-connect-mysql-r02" class="project-command child-02 uid-ref-php-06-connect-mysql-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION</code>
+  
+</div>
+<div class="project-split-cell">
+  Throw exceptions for database errors.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-connect-mysql-r03" class="project-command child-03 uid-ref-php-06-connect-mysql-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC</code>
+  
+</div>
+<div class="project-split-cell">
+  Fetch rows as associative arrays by default.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-select-one-row"
+  class="project-doc-section node-62 uid-ref-php-06-select-one-row php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Select One Row</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-select-one-row-r01" class="project-command child-01 uid-ref-php-06-select-one-row-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt = $pdo-&gt;prepare('SELECT id, name, email FROM users WHERE id = :id');</code>
+  
+</div>
+<div class="project-split-cell">
+  Prepare a SELECT with a named placeholder.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-select-one-row-r02" class="project-command child-02 uid-ref-php-06-select-one-row-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;execute(['id' =&gt; $id]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute with bound data.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-select-one-row-r03" class="project-command child-03 uid-ref-php-06-select-one-row-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$user = $stmt-&gt;fetch();</code>
+  
+</div>
+<div class="project-split-cell">
+  Fetch one row.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-select-many-rows"
+  class="project-doc-section node-63 uid-ref-php-06-select-many-rows php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Select Many Rows</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-select-many-rows-r01" class="project-command child-01 uid-ref-php-06-select-many-rows-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt = $pdo-&gt;prepare('SELECT id, name FROM users WHERE active = :active ORDER BY name');</code>
+  
+</div>
+<div class="project-split-cell">
+  Prepare a filtered multi-row query.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-select-many-rows-r02" class="project-command child-02 uid-ref-php-06-select-many-rows-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;execute(['active' =&gt; true]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute the query.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-select-many-rows-r03" class="project-command child-03 uid-ref-php-06-select-many-rows-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$users = $stmt-&gt;fetchAll();</code>
+  
+</div>
+<div class="project-split-cell">
+  Fetch all remaining rows.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-insert"
+  class="project-doc-section node-64 uid-ref-php-06-insert php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Insert</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-insert-r01" class="project-command child-01 uid-ref-php-06-insert-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt = $pdo-&gt;prepare('INSERT INTO users (name, email) VALUES (:name, :email)');</code>
+  
+</div>
+<div class="project-split-cell">
+  Prepare an INSERT.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-insert-r02" class="project-command child-02 uid-ref-php-06-insert-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;execute(['name' =&gt; $name, 'email' =&gt; $email]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute with values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-insert-r03" class="project-command child-03 uid-ref-php-06-insert-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$id = $pdo-&gt;lastInsertId();</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the generated ID where supported.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-update-delete"
+  class="project-doc-section node-65 uid-ref-php-06-update-delete php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Update + Delete</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-update-delete-r01" class="project-command child-01 uid-ref-php-06-update-delete-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;prepare('UPDATE users SET name = :name WHERE id = :id');</code>
+  
+</div>
+<div class="project-split-cell">
+  Prepare an UPDATE with a WHERE condition.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-update-delete-r02" class="project-command child-02 uid-ref-php-06-update-delete-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;execute(['name' =&gt; $name, 'id' =&gt; $id]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute the UPDATE.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-update-delete-r03" class="project-command child-03 uid-ref-php-06-update-delete-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;prepare('DELETE FROM users WHERE id = :id');</code>
+  
+</div>
+<div class="project-split-cell">
+  Prepare a DELETE with a WHERE condition.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-update-delete-r04" class="project-command child-04 uid-ref-php-06-update-delete-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;execute(['id' =&gt; $id]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute the DELETE.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-transaction"
+  class="project-doc-section node-66 uid-ref-php-06-transaction php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Transaction</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-transaction-r01" class="project-command child-01 uid-ref-php-06-transaction-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;beginTransaction();</code>
+  
+</div>
+<div class="project-split-cell">
+  Start a transaction.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-transaction-r02" class="project-command child-02 uid-ref-php-06-transaction-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;commit();</code>
+  
+</div>
+<div class="project-split-cell">
+  Commit related statements when all succeed.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-transaction-r03" class="project-command child-03 uid-ref-php-06-transaction-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;inTransaction()</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a transaction is active.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-transaction-r04" class="project-command child-04 uid-ref-php-06-transaction-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;rollBack();</code>
+  
+</div>
+<div class="project-split-cell">
+  Roll back when an exception occurs.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-transaction-r05" class="project-command child-05 uid-ref-php-06-transaction-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>throw $e;</code>
+  
+</div>
+<div class="project-split-cell">
+  Re-throw after cleanup when the caller should handle the failure.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-prepared-statement-rule"
+  class="project-doc-section node-67 uid-ref-php-06-prepared-statement-rule php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Prepared Statement Rule</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-prepared-statement-rule-r01" class="project-command child-01 uid-ref-php-06-prepared-statement-rule-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>:id  :email  ?</code>
+  
+</div>
+<div class="project-split-cell">
+  Use placeholders for complete data values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-prepared-statement-rule-r02" class="project-command child-02 uid-ref-php-06-prepared-statement-rule-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>RULE</code>
+  
+</div>
+<div class="project-split-cell">
+  Do not concatenate user input into SQL.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-prepared-statement-rule-r03" class="project-command child-03 uid-ref-php-06-prepared-statement-rule-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>LIMITATION</code>
+  
+</div>
+<div class="project-split-cell">
+  Placeholders cannot safely stand in for arbitrary SQL identifiers such as table names or ORDER BY columns.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-useful-pdo-calls"
+  class="project-doc-section node-68 uid-ref-php-06-useful-pdo-calls php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Useful PDO Calls</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-useful-pdo-calls-r01" class="project-command child-01 uid-ref-php-06-useful-pdo-calls-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;prepare($sql)</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a prepared statement.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-useful-pdo-calls-r02" class="project-command child-02 uid-ref-php-06-useful-pdo-calls-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;execute($values)</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute with values.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-useful-pdo-calls-r03" class="project-command child-03 uid-ref-php-06-useful-pdo-calls-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;fetch()</code>
+  
+</div>
+<div class="project-split-cell">
+  Fetch the next row.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-useful-pdo-calls-r04" class="project-command child-04 uid-ref-php-06-useful-pdo-calls-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;fetchAll()</code>
+  
+</div>
+<div class="project-split-cell">
+  Fetch remaining rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-useful-pdo-calls-r05" class="project-command child-05 uid-ref-php-06-useful-pdo-calls-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;rowCount()</code>
+  
+</div>
+<div class="project-split-cell">
+  Affected rows; SELECT behavior varies by driver.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-useful-pdo-calls-r06" class="project-command child-06 uid-ref-php-06-useful-pdo-calls-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;lastInsertId()</code>
+  
+</div>
+<div class="project-split-cell">
+  Last generated ID where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-useful-pdo-calls-r07" class="project-command child-07 uid-ref-php-06-useful-pdo-calls-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>beginTransaction() / commit() / rollBack()</code>
+  
+</div>
+<div class="project-split-cell">
+  Transaction control methods.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-06-documentation"
+  class="project-doc-section node-69 uid-ref-php-06-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>PDO Database Access for Web Apps</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-06-documentation-r01" class="project-command child-01 uid-ref-php-06-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PDO</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/book.pdo.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/book.pdo.php</a>
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-06-documentation-r02" class="project-command child-02 uid-ref-php-06-documentation-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PDO::prepare</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/pdo.prepare.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/pdo.prepare.php</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-07-php-curl-request-pattern"
+  class="project-display node-70 uid-ref-php-section-07-php-curl-request-pattern php-reference-section php-reference-section-07"
+>
+  <div class="project-preview"><p>The cURL request lifecycle, GET requests, headers, status inspection, errors, and request metadata.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>07 — PHP cURL - The Request Pattern</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-07-the-pattern-to-remember"
+  class="project-doc-section node-71 uid-ref-php-07-the-pattern-to-remember php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>The Pattern to Remember</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-the-pattern-to-remember-r01" class="project-command child-01 uid-ref-php-07-the-pattern-to-remember-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$ch = curl_init($url);</code>
+  
+</div>
+<div class="project-split-cell">
+  1. Create the request handle.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-the-pattern-to-remember-r02" class="project-command child-02 uid-ref-php-07-the-pattern-to-remember-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_setopt_array($ch, [...]);</code>
+  
+</div>
+<div class="project-split-cell">
+  2. Set request options.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-the-pattern-to-remember-r03" class="project-command child-03 uid-ref-php-07-the-pattern-to-remember-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$response = curl_exec($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  3. Execute the request.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-the-pattern-to-remember-r04" class="project-command child-04 uid-ref-php-07-the-pattern-to-remember-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_getinfo($ch, CURLINFO_HTTP_CODE);</code>
+  
+</div>
+<div class="project-split-cell">
+  4. Inspect response status and metadata.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-the-pattern-to-remember-r05" class="project-command child-05 uid-ref-php-07-the-pattern-to-remember-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_error($ch) / curl_errno($ch)</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect transport errors.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-the-pattern-to-remember-r06" class="project-command child-06 uid-ref-php-07-the-pattern-to-remember-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_close($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  5. Close the handle or let it go out of scope.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-07-simple-get"
+  class="project-doc-section node-72 uid-ref-php-07-simple-get php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>Simple GET</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-simple-get-r01" class="project-command child-01 uid-ref-php-07-simple-get-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$ch = curl_init('https://api.example.com/users/42');</code>
+  
+</div>
+<div class="project-split-cell">
+  Initialize the request with a URL.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-simple-get-r02" class="project-command child-02 uid-ref-php-07-simple-get-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the body as a string instead of printing it.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-simple-get-r03" class="project-command child-03 uid-ref-php-07-simple-get-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$response = curl_exec($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute the GET request.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-simple-get-r04" class="project-command child-04 uid-ref-php-07-simple-get-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>json_decode($response, true, 512, JSON_THROW_ON_ERROR);</code>
+  
+</div>
+<div class="project-split-cell">
+  Decode a JSON response.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-simple-get-r05" class="project-command child-05 uid-ref-php-07-simple-get-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_close($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  Close the handle.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-07-get-with-query-parameters"
+  class="project-doc-section node-73 uid-ref-php-07-get-with-query-parameters php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>GET with Query Parameters</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-get-with-query-parameters-r01" class="project-command child-01 uid-ref-php-07-get-with-query-parameters-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$query = http_build_query(['q' =&gt; 'brown pelican', 'page' =&gt; 2, 'limit' =&gt; 20]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Build an encoded query string.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-get-with-query-parameters-r02" class="project-command child-02 uid-ref-php-07-get-with-query-parameters-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$url = 'https://api.example.com/search?' . $query;</code>
+  
+</div>
+<div class="project-split-cell">
+  Append the query string to the endpoint.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-get-with-query-parameters-r03" class="project-command child-03 uid-ref-php-07-get-with-query-parameters-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_exec($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute the request.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-07-get-with-bearer-token"
+  class="project-doc-section node-74 uid-ref-php-07-get-with-bearer-token php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>GET with Bearer Token</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-get-with-bearer-token-r01" class="project-command child-01 uid-ref-php-07-get-with-bearer-token-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'Accept: application/json'</code>
+  
+</div>
+<div class="project-split-cell">
+  Request JSON.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-get-with-bearer-token-r02" class="project-command child-02 uid-ref-php-07-get-with-bearer-token-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'Authorization: Bearer ' . $token</code>
+  
+</div>
+<div class="project-split-cell">
+  Send a bearer token.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-get-with-bearer-token-r03" class="project-command child-03 uid-ref-php-07-get-with-bearer-token-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_HTTPHEADER =&gt; [...]</code>
+  
+</div>
+<div class="project-split-cell">
+  Provide custom request headers.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-get-with-bearer-token-r04" class="project-command child-04 uid-ref-php-07-get-with-bearer-token-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>SECURITY</code>
+  
+</div>
+<div class="project-split-cell">
+  Send credentials only over HTTPS and keep tokens in environment/config, not committed source.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-07-useful-get-options"
+  class="project-doc-section node-75 uid-ref-php-07-useful-get-options php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>Useful GET Options</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-useful-get-options-r01" class="project-command child-01 uid-ref-php-07-useful-get-options-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_RETURNTRANSFER =&gt; true</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the response body as a string.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-useful-get-options-r02" class="project-command child-02 uid-ref-php-07-useful-get-options-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_TIMEOUT =&gt; 15</code>
+  
+</div>
+<div class="project-split-cell">
+  Total timeout in seconds.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-useful-get-options-r03" class="project-command child-03 uid-ref-php-07-useful-get-options-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_CONNECTTIMEOUT =&gt; 5</code>
+  
+</div>
+<div class="project-split-cell">
+  Connection timeout.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-useful-get-options-r04" class="project-command child-04 uid-ref-php-07-useful-get-options-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_FOLLOWLOCATION =&gt; true</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow redirects when appropriate.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-useful-get-options-r05" class="project-command child-05 uid-ref-php-07-useful-get-options-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_HTTPHEADER =&gt; [...]</code>
+  
+</div>
+<div class="project-split-cell">
+  Send custom headers.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-07-inspect-status-response"
+  class="project-doc-section node-76 uid-ref-php-07-inspect-status-response php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>Inspect Status + Response</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-inspect-status-response-r01" class="project-command child-01 uid-ref-php-07-inspect-status-response-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$response = curl_exec($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  Transport-level execution.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-inspect-status-response-r02" class="project-command child-02 uid-ref-php-07-inspect-status-response-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$response === false</code>
+  
+</div>
+<div class="project-split-cell">
+  Detect a cURL/network failure.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-inspect-status-response-r03" class="project-command child-03 uid-ref-php-07-inspect-status-response-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_error($ch)</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the transport error message.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-inspect-status-response-r04" class="project-command child-04 uid-ref-php-07-inspect-status-response-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_errno($ch)</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the transport error number.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-inspect-status-response-r05" class="project-command child-05 uid-ref-php-07-inspect-status-response-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_getinfo($ch, CURLINFO_HTTP_CODE)</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the HTTP status code.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-inspect-status-response-r06" class="project-command child-06 uid-ref-php-07-inspect-status-response-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$status &gt;= 400</code>
+  
+</div>
+<div class="project-split-cell">
+  Detect an HTTP error response even when transport succeeded.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-07-debug-request-metadata"
+  class="project-doc-section node-77 uid-ref-php-07-debug-request-metadata php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>Debug Request Metadata</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-debug-request-metadata-r01" class="project-command child-01 uid-ref-php-07-debug-request-metadata-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$info = curl_getinfo($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  Read transfer metadata.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-debug-request-metadata-r02" class="project-command child-02 uid-ref-php-07-debug-request-metadata-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$info['http_code']</code>
+  
+</div>
+<div class="project-split-cell">
+  HTTP response code.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-debug-request-metadata-r03" class="project-command child-03 uid-ref-php-07-debug-request-metadata-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$info['total_time']</code>
+  
+</div>
+<div class="project-split-cell">
+  Total transfer time.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-07-debug-request-metadata-r04" class="project-command child-04 uid-ref-php-07-debug-request-metadata-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$info['content_type']</code>
+  
+</div>
+<div class="project-split-cell">
+  Response content type.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-07-documentation"
+  class="project-doc-section node-78 uid-ref-php-07-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>PHP cURL - The Request Pattern</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-07-documentation-r01" class="project-command child-01 uid-ref-php-07-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cURL</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/book.curl.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/book.curl.php</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-08-curl-post-json-put-patch-delete-uploads"
+  class="project-display node-79 uid-ref-php-section-08-curl-post-json-put-patch-delete-uploads php-reference-section php-reference-section-08"
+>
+  <div class="project-preview"><p>POST bodies, form data, custom methods, file uploads, and reusable JSON request helpers.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>08 — cURL POST, JSON, PUT/PATCH/DELETE & Uploads</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-08-post-json"
+  class="project-doc-section node-80 uid-ref-php-08-post-json php-reference-command-group"
+>
+  
+<header>
+  <span>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</span>
+  <h3>POST JSON</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-08-post-json-r01" class="project-command child-01 uid-ref-php-08-post-json-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$payload = json_encode([...], JSON_THROW_ON_ERROR);</code>
+  
+</div>
+<div class="project-split-cell">
+  Encode the request body as JSON.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-post-json-r02" class="project-command child-02 uid-ref-php-08-post-json-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_POST =&gt; true</code>
+  
+</div>
+<div class="project-split-cell">
+  Send a POST request.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-post-json-r03" class="project-command child-03 uid-ref-php-08-post-json-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_POSTFIELDS =&gt; $payload</code>
+  
+</div>
+<div class="project-split-cell">
+  Attach the JSON body.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-post-json-r04" class="project-command child-04 uid-ref-php-08-post-json-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'Content-Type: application/json'</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare the request body format.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-post-json-r05" class="project-command child-05 uid-ref-php-08-post-json-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'Accept: application/json'</code>
+  
+</div>
+<div class="project-split-cell">
+  Request a JSON response.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-post-json-r06" class="project-command child-06 uid-ref-php-08-post-json-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$response = curl_exec($ch);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute the request.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-08-post-form-data"
+  class="project-doc-section node-81 uid-ref-php-08-post-form-data php-reference-command-group"
+>
+  
+<header>
+  <span>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</span>
+  <h3>POST Form Data</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-08-post-form-data-r01" class="project-command child-01 uid-ref-php-08-post-form-data-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_POSTFIELDS =&gt; ['name' =&gt; 'Ada', 'email' =&gt; 'ada@example.com']</code>
+  
+</div>
+<div class="project-split-cell">
+  Passing an array creates multipart form data.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-post-form-data-r02" class="project-command child-02 uid-ref-php-08-post-form-data-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>http_build_query($data)</code>
+  
+</div>
+<div class="project-split-cell">
+  Use for application/x-www-form-urlencoded data with the matching content type.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-08-put-patch-delete"
+  class="project-doc-section node-82 uid-ref-php-08-put-patch-delete php-reference-command-group"
+>
+  
+<header>
+  <span>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</span>
+  <h3>PUT / PATCH / DELETE</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-08-put-patch-delete-r01" class="project-command child-01 uid-ref-php-08-put-patch-delete-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_CUSTOMREQUEST =&gt; 'PATCH'</code>
+  
+</div>
+<div class="project-split-cell">
+  Set PATCH; use PUT or DELETE for those methods.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-put-patch-delete-r02" class="project-command child-02 uid-ref-php-08-put-patch-delete-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_POSTFIELDS =&gt; $payload</code>
+  
+</div>
+<div class="project-split-cell">
+  Attach a request body when needed.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-put-patch-delete-r03" class="project-command child-03 uid-ref-php-08-put-patch-delete-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'Content-Type: application/json'</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare JSON body data.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-put-patch-delete-r04" class="project-command child-04 uid-ref-php-08-put-patch-delete-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>'Authorization: Bearer ' . $token</code>
+  
+</div>
+<div class="project-split-cell">
+  Send authorization.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-08-upload-a-file"
+  class="project-doc-section node-83 uid-ref-php-08-upload-a-file php-reference-command-group"
+>
+  
+<header>
+  <span>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</span>
+  <h3>Upload a File</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-08-upload-a-file-r01" class="project-command child-01 uid-ref-php-08-upload-a-file-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>new CURLFile($path, mime_content_type($path), basename($path))</code>
+  
+</div>
+<div class="project-split-cell">
+  Wrap a local file for multipart upload.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-upload-a-file-r02" class="project-command child-02 uid-ref-php-08-upload-a-file-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_POST =&gt; true</code>
+  
+</div>
+<div class="project-split-cell">
+  Send the upload as POST.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-upload-a-file-r03" class="project-command child-03 uid-ref-php-08-upload-a-file-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_POSTFIELDS =&gt; ['photo' =&gt; $file, 'caption' =&gt; 'Pelican study']</code>
+  
+</div>
+<div class="project-split-cell">
+  Attach the file and related form fields.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-08-reusable-json-request-helper"
+  class="project-doc-section node-84 uid-ref-php-08-reusable-json-request-helper php-reference-command-group"
+>
+  
+<header>
+  <span>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</span>
+  <h3>Reusable JSON Request Helper</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-08-reusable-json-request-helper-r01" class="project-command child-01 uid-ref-php-08-reusable-json-request-helper-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>function requestJson(string $method, string $url, ?array $body = null, array $headers = []): array</code>
+  
+</div>
+<div class="project-split-cell">
+  Reusable request helper signature.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-reusable-json-request-helper-r02" class="project-command child-02 uid-ref-php-08-reusable-json-request-helper-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_CUSTOMREQUEST =&gt; $method</code>
+  
+</div>
+<div class="project-split-cell">
+  Use the requested HTTP method.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-reusable-json-request-helper-r03" class="project-command child-03 uid-ref-php-08-reusable-json-request-helper-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLOPT_HTTPHEADER =&gt; array_merge(['Accept: application/json'], $headers)</code>
+  
+</div>
+<div class="project-split-cell">
+  Combine default and caller-provided headers.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-reusable-json-request-helper-r04" class="project-command child-04 uid-ref-php-08-reusable-json-request-helper-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>JSON_THROW_ON_ERROR</code>
+  
+</div>
+<div class="project-split-cell">
+  Throw for JSON encoding/decoding failures.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-reusable-json-request-helper-r05" class="project-command child-05 uid-ref-php-08-reusable-json-request-helper-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>curl_error($ch)</code>
+  
+</div>
+<div class="project-split-cell">
+  Throw on transport failure.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-reusable-json-request-helper-r06" class="project-command child-06 uid-ref-php-08-reusable-json-request-helper-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CURLINFO_HTTP_CODE</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the HTTP status with decoded response data.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-reusable-json-request-helper-r07" class="project-command child-07 uid-ref-php-08-reusable-json-request-helper-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  If sending JSON, include Content-Type: application/json. Production helpers may also need retries, structured errors, tracing, and rate-limit handling.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-08-documentation"
+  class="project-doc-section node-85 uid-ref-php-08-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>cURL POST, JSON, PUT/PATCH/DELETE & Uploads</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-08-documentation-r01" class="project-command child-01 uid-ref-php-08-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CURLFile</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/class.curlfile.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/class.curlfile.php</a>
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-08-documentation-r02" class="project-command child-02 uid-ref-php-08-documentation-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl_setopt_array</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/function.curl-setopt-array.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/function.curl-setopt-array.php</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-09-cli-composer-daily-development"
+  class="project-display node-86 uid-ref-php-section-09-cli-composer-daily-development php-reference-section php-reference-section-09"
+>
+  <div class="project-preview"><p>PHP CLI commands, local server use, extensions, Composer, package binaries, and troubleshooting.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>09 — CLI, Composer & Daily Development Commands</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-09-php-on-macos-terminal"
+  class="project-doc-section node-87 uid-ref-php-09-php-on-macos-terminal php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>PHP on macOS Terminal</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-php-on-macos-terminal-r01" class="project-command child-01 uid-ref-php-09-php-on-macos-terminal-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -v</code>
+  
+</div>
+<div class="project-split-cell">
+  Installed PHP version.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-php-on-macos-terminal-r02" class="project-command child-02 uid-ref-php-09-php-on-macos-terminal-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -m</code>
+  
+</div>
+<div class="project-split-cell">
+  Loaded extensions.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-php-on-macos-terminal-r03" class="project-command child-03 uid-ref-php-09-php-on-macos-terminal-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -i</code>
+  
+</div>
+<div class="project-split-cell">
+  PHP configuration information.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-php-on-macos-terminal-r04" class="project-command child-04 uid-ref-php-09-php-on-macos-terminal-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -l file.php</code>
+  
+</div>
+<div class="project-split-cell">
+  Syntax-check a PHP file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-php-on-macos-terminal-r05" class="project-command child-05 uid-ref-php-09-php-on-macos-terminal-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php script.php</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a PHP script.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-php-on-macos-terminal-r06" class="project-command child-06 uid-ref-php-09-php-on-macos-terminal-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -r 'echo PHP_VERSION;'</code>
+  
+</div>
+<div class="project-split-cell">
+  Run inline PHP.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-php-on-macos-terminal-r07" class="project-command child-07 uid-ref-php-09-php-on-macos-terminal-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php --ini</code>
+  
+</div>
+<div class="project-split-cell">
+  Locate loaded configuration files.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-built-in-dev-server"
+  class="project-doc-section node-88 uid-ref-php-09-built-in-dev-server php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>Built-in Dev Server</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-built-in-dev-server-r01" class="project-command child-01 uid-ref-php-09-built-in-dev-server-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>cd project/public</code>
+  
+</div>
+<div class="project-split-cell">
+  Enter the web-facing directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-built-in-dev-server-r02" class="project-command child-02 uid-ref-php-09-built-in-dev-server-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>php -S localhost:8000</code>
+  
+</div>
+<div class="project-split-cell">
+  Start PHP's built-in development server.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-built-in-dev-server-r03" class="project-command child-03 uid-ref-php-09-built-in-dev-server-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  The built-in server is for development/testing, not production.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-check-curl-pdo-modules"
+  class="project-doc-section node-89 uid-ref-php-09-check-curl-pdo-modules php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>Check cURL + PDO Modules</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-check-curl-pdo-modules-r01" class="project-command child-01 uid-ref-php-09-check-curl-pdo-modules-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -m | grep curl</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether the cURL extension is loaded.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-check-curl-pdo-modules-r02" class="project-command child-02 uid-ref-php-09-check-curl-pdo-modules-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -m | grep PDO</code>
+  
+</div>
+<div class="project-split-cell">
+  Check PDO.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-check-curl-pdo-modules-r03" class="project-command child-03 uid-ref-php-09-check-curl-pdo-modules-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -m | grep pdo_pgsql</code>
+  
+</div>
+<div class="project-split-cell">
+  Check the PostgreSQL PDO driver.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-check-curl-pdo-modules-r04" class="project-command child-04 uid-ref-php-09-check-curl-pdo-modules-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>php -m | grep pdo_mysql</code>
+  
+</div>
+<div class="project-split-cell">
+  Check the MySQL PDO driver.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-composer-essentials"
+  class="project-doc-section node-90 uid-ref-php-09-composer-essentials php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>Composer Essentials</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-composer-essentials-r01" class="project-command child-01 uid-ref-php-09-composer-essentials-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer --version</code>
+  
+</div>
+<div class="project-split-cell">
+  Composer version.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r02" class="project-command child-02 uid-ref-php-09-composer-essentials-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer init</code>
+  
+</div>
+<div class="project-split-cell">
+  Create composer.json interactively.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r03" class="project-command child-03 uid-ref-php-09-composer-essentials-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer install</code>
+  
+</div>
+<div class="project-split-cell">
+  Install dependencies using composer.lock when present.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r04" class="project-command child-04 uid-ref-php-09-composer-essentials-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer update</code>
+  
+</div>
+<div class="project-split-cell">
+  Resolve dependency versions and update the lock file.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r05" class="project-command child-05 uid-ref-php-09-composer-essentials-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer require vendor/package</code>
+  
+</div>
+<div class="project-split-cell">
+  Add a runtime dependency.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r06" class="project-command child-06 uid-ref-php-09-composer-essentials-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer require --dev vendor/package</code>
+  
+</div>
+<div class="project-split-cell">
+  Add a development dependency.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r07" class="project-command child-07 uid-ref-php-09-composer-essentials-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer remove vendor/package</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a package.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r08" class="project-command child-08 uid-ref-php-09-composer-essentials-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer dump-autoload</code>
+  
+</div>
+<div class="project-split-cell">
+  Regenerate autoload files.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r09" class="project-command child-09 uid-ref-php-09-composer-essentials-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer show</code>
+  
+</div>
+<div class="project-split-cell">
+  Show installed packages.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-composer-essentials-r10" class="project-command child-10 uid-ref-php-09-composer-essentials-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>composer outdated</code>
+  
+</div>
+<div class="project-split-cell">
+  Show packages with available updates.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-run-package-binaries"
+  class="project-doc-section node-91 uid-ref-php-09-run-package-binaries php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>Run Package Binaries</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-run-package-binaries-r01" class="project-command child-01 uid-ref-php-09-run-package-binaries-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>./vendor/bin/phpunit</code>
+  
+</div>
+<div class="project-split-cell">
+  Run PHPUnit when installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-run-package-binaries-r02" class="project-command child-02 uid-ref-php-09-run-package-binaries-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>./vendor/bin/phpstan analyse</code>
+  
+</div>
+<div class="project-split-cell">
+  Run PHPStan when installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-run-package-binaries-r03" class="project-command child-03 uid-ref-php-09-run-package-binaries-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>./vendor/bin/php-cs-fixer fix</code>
+  
+</div>
+<div class="project-split-cell">
+  Run PHP CS Fixer when installed.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-basic-composer-json-idea"
+  class="project-doc-section node-92 uid-ref-php-09-basic-composer-json-idea php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>Basic composer.json Idea</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-basic-composer-json-idea-r01" class="project-command child-01 uid-ref-php-09-basic-composer-json-idea-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>"php": "^8.4"</code>
+  
+</div>
+<div class="project-split-cell">
+  Example PHP version constraint.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-basic-composer-json-idea-r02" class="project-command child-02 uid-ref-php-09-basic-composer-json-idea-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>"psr-4": { "App\\": "src/" }</code>
+  
+</div>
+<div class="project-split-cell">
+  Example PSR-4 autoload mapping.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-basic-composer-json-idea-r03" class="project-command child-03 uid-ref-php-09-basic-composer-json-idea-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>composer.json</code>
+  
+</div>
+<div class="project-split-cell">
+  Defines package requirements and autoloading.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-when-something-fails"
+  class="project-doc-section node-93 uid-ref-php-09-when-something-fails php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>When Something Fails</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-when-something-fails-r01" class="project-command child-01 uid-ref-php-09-when-something-fails-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Syntax error</code>
+  
+</div>
+<div class="project-split-cell">
+  Run php -l file.php and read the first parser error.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-when-something-fails-r02" class="project-command child-02 uid-ref-php-09-when-something-fails-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Undefined function</code>
+  
+</div>
+<div class="project-split-cell">
+  Check spelling and whether the required extension is loaded with php -m.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-when-something-fails-r03" class="project-command child-03 uid-ref-php-09-when-something-fails-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Class not found</code>
+  
+</div>
+<div class="project-split-cell">
+  Check namespace/import and run composer dump-autoload.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-when-something-fails-r04" class="project-command child-04 uid-ref-php-09-when-something-fails-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>cURL failure</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect curl_errno(), curl_error(), and curl_getinfo().
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-when-something-fails-r05" class="project-command child-05 uid-ref-php-09-when-something-fails-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>HTTP API failure</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect status code and body; transport success does not imply HTTP success.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-when-something-fails-r06" class="project-command child-06 uid-ref-php-09-when-something-fails-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PDO failure</code>
+  
+</div>
+<div class="project-split-cell">
+  Use exception mode, log the exception, and check DSN/credentials/driver.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-when-something-fails-r07" class="project-command child-07 uid-ref-php-09-when-something-fails-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Blank page in local dev</code>
+  
+</div>
+<div class="project-split-cell">
+  Enable full error reporting temporarily and check server logs.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-macos-package-note"
+  class="project-doc-section node-94 uid-ref-php-09-macos-package-note php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>macOS Package Note</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-macos-package-note-r01" class="project-command child-01 uid-ref-php-09-macos-package-note-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>which php</code>
+  
+</div>
+<div class="project-split-cell">
+  Show which PHP executable the shell will run.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-macos-package-note-r02" class="project-command child-02 uid-ref-php-09-macos-package-note-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>php -v</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm the active PHP version.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-macos-package-note-r03" class="project-command child-03 uid-ref-php-09-macos-package-note-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>php --ini</code>
+  
+</div>
+<div class="project-split-cell">
+  Show active configuration files.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-macos-package-note-r04" class="project-command child-04 uid-ref-php-09-macos-package-note-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  On macOS, PHP is commonly managed separately from the OS; extension and configuration paths depend on installation method.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-09-documentation"
+  class="project-doc-section node-95 uid-ref-php-09-documentation php-reference-command-group"
+>
+  
+<header>
+  <span>CLI, Composer & Daily Development Commands</span>
+  <h3>Documentation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-09-documentation-r01" class="project-command child-01 uid-ref-php-09-documentation-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PHP CLI</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/features.commandline.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/features.commandline.php</a>
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-documentation-r02" class="project-command child-02 uid-ref-php-09-documentation-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PHP on macOS</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/install.macosx.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/install.macosx.php</a>
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-09-documentation-r03" class="project-command child-03 uid-ref-php-09-documentation-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Composer</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://getcomposer.org/doc/" target="_blank" rel="noopener noreferrer">getcomposer.org/doc</a>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-ref-php-section-10-high-value-patterns"
+  class="project-display node-96 uid-ref-php-section-10-high-value-patterns php-reference-section php-reference-section-10"
+>
+  <div class="project-preview"><p>Common request, endpoint, API-client, database, and security flows worth recognizing quickly.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PHP 8.x</span>
+  <h2>10 — High-Value Patterns to Recognize</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-ref-php-10-typical-request-controller-flow"
+  class="project-doc-section node-97 uid-ref-php-10-typical-request-controller-flow php-reference-command-group"
+>
+  
+<header>
+  <span>High-Value Patterns to Recognize</span>
+  <h3>Typical Request / Controller Flow</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-10-typical-request-controller-flow-r01" class="project-command child-01 uid-ref-php-10-typical-request-controller-flow-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>require_once __DIR__ . '/../vendor/autoload.php';</code>
+  
+</div>
+<div class="project-split-cell">
+  Load dependencies.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r02" class="project-command child-02 uid-ref-php-10-typical-request-controller-flow-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>session_start();</code>
+  
+</div>
+<div class="project-split-cell">
+  Start session state when required.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r03" class="project-command child-03 uid-ref-php-10-typical-request-controller-flow-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT)</code>
+  
+</div>
+<div class="project-split-cell">
+  Read and validate request input.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r04" class="project-command child-04 uid-ref-php-10-typical-request-controller-flow-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>http_response_code(400);</code>
+  
+</div>
+<div class="project-split-cell">
+  Reject invalid input.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r05" class="project-command child-05 uid-ref-php-10-typical-request-controller-flow-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$pdo-&gt;prepare('SELECT ... WHERE id = :id')</code>
+  
+</div>
+<div class="project-split-cell">
+  Prepare the database query.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r06" class="project-command child-06 uid-ref-php-10-typical-request-controller-flow-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$stmt-&gt;execute(['id' =&gt; $id]);</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute with data.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r07" class="project-command child-07 uid-ref-php-10-typical-request-controller-flow-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$user = $stmt-&gt;fetch();</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the result.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r08" class="project-command child-08 uid-ref-php-10-typical-request-controller-flow-r08">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>http_response_code(404);</code>
+  
+</div>
+<div class="project-split-cell">
+  Return Not Found when no record exists.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r09" class="project-command child-09 uid-ref-php-10-typical-request-controller-flow-r09">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>require __DIR__ . '/../templates/user.php';</code>
+  
+</div>
+<div class="project-split-cell">
+  Render the response template.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-request-controller-flow-r10" class="project-command child-10 uid-ref-php-10-typical-request-controller-flow-r10">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PATTERN</code>
+  
+</div>
+<div class="project-split-cell">
+  Input -&gt; validation -&gt; application/database work -&gt; response/template.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-10-typical-api-endpoint-flow"
+  class="project-doc-section node-98 uid-ref-php-10-typical-api-endpoint-flow php-reference-command-group"
+>
+  
+<header>
+  <span>High-Value Patterns to Recognize</span>
+  <h3>Typical API Endpoint Flow</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-10-typical-api-endpoint-flow-r01" class="project-command child-01 uid-ref-php-10-typical-api-endpoint-flow-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>header('Content-Type: application/json');</code>
+  
+</div>
+<div class="project-split-cell">
+  Declare JSON response output.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-endpoint-flow-r02" class="project-command child-02 uid-ref-php-10-typical-api-endpoint-flow-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>file_get_contents('php://input')</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the request body.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-endpoint-flow-r03" class="project-command child-03 uid-ref-php-10-typical-api-endpoint-flow-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>json_decode(..., JSON_THROW_ON_ERROR)</code>
+  
+</div>
+<div class="project-split-cell">
+  Decode JSON and throw on malformed input.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-endpoint-flow-r04" class="project-command child-04 uid-ref-php-10-typical-api-endpoint-flow-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>validate -&gt; perform work</code>
+  
+</div>
+<div class="project-split-cell">
+  Perform application logic after validation.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-endpoint-flow-r05" class="project-command child-05 uid-ref-php-10-typical-api-endpoint-flow-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>http_response_code(201);</code>
+  
+</div>
+<div class="project-split-cell">
+  Return Created on success.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-endpoint-flow-r06" class="project-command child-06 uid-ref-php-10-typical-api-endpoint-flow-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>json_encode(['ok' =&gt; true], JSON_THROW_ON_ERROR)</code>
+  
+</div>
+<div class="project-split-cell">
+  Send JSON response.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-endpoint-flow-r07" class="project-command child-07 uid-ref-php-10-typical-api-endpoint-flow-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>catch (Throwable $e)</code>
+  
+</div>
+<div class="project-split-cell">
+  Log failure and return a generic server error.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-10-typical-api-client-flow-curl"
+  class="project-doc-section node-99 uid-ref-php-10-typical-api-client-flow-curl php-reference-command-group"
+>
+  
+<header>
+  <span>High-Value Patterns to Recognize</span>
+  <h3>Typical API Client Flow (cURL)</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-10-typical-api-client-flow-curl-r01" class="project-command child-01 uid-ref-php-10-typical-api-client-flow-curl-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>requestJson('POST', $url, $body, $headers)</code>
+  
+</div>
+<div class="project-split-cell">
+  Call the reusable HTTP client helper.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-client-flow-curl-r02" class="project-command child-02 uid-ref-php-10-typical-api-client-flow-curl-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$result['status'] === 201</code>
+  
+</div>
+<div class="project-split-cell">
+  Check the HTTP status.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-typical-api-client-flow-curl-r03" class="project-command child-03 uid-ref-php-10-typical-api-client-flow-curl-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>$order = $result['data'];</code>
+  
+</div>
+<div class="project-split-cell">
+  Use decoded response data.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-10-php-vs-curl"
+  class="project-doc-section node-100 uid-ref-php-10-php-vs-curl php-reference-command-group"
+>
+  
+<header>
+  <span>High-Value Patterns to Recognize</span>
+  <h3>PHP vs cURL</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-10-php-vs-curl-r01" class="project-command child-01 uid-ref-php-10-php-vs-curl-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PHP</code>
+  
+</div>
+<div class="project-split-cell">
+  Server-side language running the application.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-php-vs-curl-r02" class="project-command child-02 uid-ref-php-10-php-vs-curl-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PHP cURL extension</code>
+  
+</div>
+<div class="project-split-cell">
+  One way PHP code can act as an HTTP client and call another server or API.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-php-vs-curl-r03" class="project-command child-03 uid-ref-php-10-php-vs-curl-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>WHY IT FEELS DIFFERENT</code>
+  
+</div>
+<div class="project-split-cell">
+  The PHP application has switched roles from receiving a request to sending one.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-10-server-receives-vs-php-sends"
+  class="project-doc-section node-101 uid-ref-php-10-server-receives-vs-php-sends php-reference-command-group"
+>
+  
+<header>
+  <span>High-Value Patterns to Recognize</span>
+  <h3>Server Receives vs PHP Sends</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-10-server-receives-vs-php-sends-r01" class="project-command child-01 uid-ref-php-10-server-receives-vs-php-sends-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Browser -&gt; PHP</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect $_GET, $_POST, headers, JSON body, and files.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-server-receives-vs-php-sends-r02" class="project-command child-02 uid-ref-php-10-server-receives-vs-php-sends-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PHP -&gt; Database</code>
+  
+</div>
+<div class="project-split-cell">
+  Use PDO and SQL.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-server-receives-vs-php-sends-r03" class="project-command child-03 uid-ref-php-10-server-receives-vs-php-sends-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PHP -&gt; External API</code>
+  
+</div>
+<div class="project-split-cell">
+  Use cURL or another HTTP client library.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-server-receives-vs-php-sends-r04" class="project-command child-04 uid-ref-php-10-server-receives-vs-php-sends-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PHP -&gt; Browser/API client</code>
+  
+</div>
+<div class="project-split-cell">
+  Send HTML/JSON, headers, and HTTP status.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-10-most-used-mental-checklist"
+  class="project-doc-section node-102 uid-ref-php-10-most-used-mental-checklist php-reference-command-group"
+>
+  
+<header>
+  <span>High-Value Patterns to Recognize</span>
+  <h3>Most-Used Mental Checklist</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-10-most-used-mental-checklist-r01" class="project-command child-01 uid-ref-php-10-most-used-mental-checklist-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Input</code>
+  
+</div>
+<div class="project-split-cell">
+  What data came in?
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-most-used-mental-checklist-r02" class="project-command child-02 uid-ref-php-10-most-used-mental-checklist-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Validation</code>
+  
+</div>
+<div class="project-split-cell">
+  Is it present, valid, and authorized?
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-most-used-mental-checklist-r03" class="project-command child-03 uid-ref-php-10-most-used-mental-checklist-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Escaping</code>
+  
+</div>
+<div class="project-split-cell">
+  Do I need to escape it now or only when outputting it?
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-most-used-mental-checklist-r04" class="project-command child-04 uid-ref-php-10-most-used-mental-checklist-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Database</code>
+  
+</div>
+<div class="project-split-cell">
+  Am I querying the database? Use prepared statements.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-most-used-mental-checklist-r05" class="project-command child-05 uid-ref-php-10-most-used-mental-checklist-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>External API</code>
+  
+</div>
+<div class="project-split-cell">
+  Am I calling another API? Build the HTTP request deliberately.
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-most-used-mental-checklist-r06" class="project-command child-06 uid-ref-php-10-most-used-mental-checklist-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Response</code>
+  
+</div>
+<div class="project-split-cell">
+  What status code should I return?
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-most-used-mental-checklist-r07" class="project-command child-07 uid-ref-php-10-most-used-mental-checklist-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Logging</code>
+  
+</div>
+<div class="project-split-cell">
+  What should be logged if this fails?
+  
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-most-used-mental-checklist-r08" class="project-command child-08 uid-ref-php-10-most-used-mental-checklist-r08">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Privacy</code>
+  
+</div>
+<div class="project-split-cell">
+  Could this reveal a secret or user data?
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-ref-php-10-official-references"
+  class="project-doc-section node-103 uid-ref-php-10-official-references php-reference-command-group"
+>
+  
+<header>
+  <span>High-Value Patterns to Recognize</span>
+  <h3>Official References</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-ref-php-10-official-references-r01" class="project-command child-01 uid-ref-php-10-official-references-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PHP Manual</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual" target="_blank" rel="noopener noreferrer">php.net/manual</a>
+  <a
+  class="project-command-action"
+  href="pg/php-reference.html#" aria-label="Open linked item"
+><span aria-hidden="true">›</span></a>
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-official-references-r02" class="project-command child-02 uid-ref-php-10-official-references-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PDO Manual</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/book.pdo.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/book.pdo.php</a>
+  <a
+  class="project-command-action"
+  href="pg/php-reference.html#" aria-label="Open linked item"
+><span aria-hidden="true">›</span></a>
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-official-references-r03" class="project-command child-03 uid-ref-php-10-official-references-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cURL Manual</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/manual/en/book.curl.php" target="_blank" rel="noopener noreferrer">php.net/manual/en/book.curl.php</a>
+  <a
+  class="project-command-action"
+  href="pg/php-reference.html#" aria-label="Open linked item"
+><span aria-hidden="true">›</span></a>
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-official-references-r04" class="project-command child-04 uid-ref-php-10-official-references-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Composer Docs</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://getcomposer.org/doc/" target="_blank" rel="noopener noreferrer">getcomposer.org/doc</a>
+  <a
+  class="project-command-action"
+  href="pg/php-reference.html#" aria-label="Open linked item"
+><span aria-hidden="true">›</span></a>
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-official-references-r05" class="project-command child-05 uid-ref-php-10-official-references-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Supported PHP Versions</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/supported-versions.php" target="_blank" rel="noopener noreferrer">php.net/supported-versions.php</a>
+  <a
+  class="project-command-action"
+  href="pg/php-reference.html#" aria-label="Open linked item"
+><span aria-hidden="true">›</span></a>
+</div>
+  </div>
+</div>
+<div id="child-ref-php-10-official-references-r06" class="project-command child-06 uid-ref-php-10-official-references-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PHP Releases</code>
+  
+</div>
+<div class="project-split-cell">
+  <a href="https://www.php.net/releases/" target="_blank" rel="noopener noreferrer">php.net/releases</a>
+  <a
+  class="project-command-action"
+  href="pg/php-reference.html#" aria-label="Open linked item"
+><span aria-hidden="true">›</span></a>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

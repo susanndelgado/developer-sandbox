@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TypeScript Library / Package — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body data-section="projects">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>TypeScript Library / Package</strong>
+    <p>Reusable TypeScript package focused on public APIs, types, testing, and distribution.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Project Library
+    </h1>
+
+    <p>
+      Development projects, applications,
+      tools, experiments, and technical work.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Project Library"
+  >
+    <button
+      type="button"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Projects
+        </strong>
+      </span>
+    </button>
+
+    
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-browser-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Browser APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-data-driven-ui'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data-Driven UI
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'library.html#group-developer-tooling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Developer Tooling
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-typescript-toolchain'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      TypeScript Toolchain
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-rosetta-comparisons'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rosetta Comparisons
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-typescript-data-modeling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      TypeScript Data Modeling
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-data-relationships'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data Relationships
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-modern-agenda'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Modern Agenda
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-data-transformation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data Transformation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-rendering-graphics'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Graphics
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-backend-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Backend &amp; APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-rendering-generation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Generation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-games-simulation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Games &amp; Simulation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-sqlite-data-access'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      SQLite &amp; Data Access
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-browser-state'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Browser State
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-data-databases'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data &amp; Databases
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-dom-async'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      DOM &amp; Async
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-semantic-html'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Semantic HTML
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-node-http-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Node HTTP &amp; APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-crud-persistence'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      CRUD &amp; Persistence
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-tree-structures'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Tree Structures
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-validation-safety'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Validation &amp; Safety
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-database-transactions'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Database Transactions
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'library.html#group-static-generation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Static Generation
+    </strong>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header class="project-detail-header">
+  <div>
+    <small>
+      GENERAL PROJECT
+    </small>
+
+    <h2>
+      TypeScript Library / Package
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      Reusable Package and Public API Design
+    </strong>
+
+    <br />
+
+    Reusable TypeScript package focused on public APIs, types, testing, and distribution.
+  </p>
+</header>
+        <div
+  id="node-node-typescript-library-package-display"
+  class="project-display node-01 uid-node-typescript-library-package-display project-overview"
+>
+  <div class="project-preview"><div><strong>PLANNED PROJECT</strong><p>Learn to design code for other developers to consume instead of designing another standalone application. The implementation is planned.</p></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>PLANNED PROJECT</span>
+  <h2>TypeScript Library / Package</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-node-typescript-library-package-purpose"
+  class="project-doc-section node-02 uid-node-typescript-library-package-purpose project-purpose"
+>
+  
+<header>
+  <span>02</span>
+  <h3>Purpose & Learning Objectives</h3>
+  <p>
+  Why this project exists and what the implementation should teach.
+</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-node-typescript-library-package-purpose-core" class="project-command child-01 uid-node-typescript-library-package-purpose-core">
+  <div class="project-split-child-head">Purpose / Learning</div>
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <p><strong>Purpose</strong></p>
+<p>Learn to design code for other developers to consume instead of designing another standalone application.</p>
+  
+</div>
+<div class="project-split-cell">
+  <p><strong>Learning Objectives</strong></p><ul><li>Design a small stable public API.</li><li>Separate exported behavior from internal implementation.</li><li>Publish useful TypeScript declarations.</li><li>Handle package entry points and module format deliberately.</li><li>Create automated tests around public behavior.</li><li>Document parameters, return values, errors, and examples.</li><li>Optionally prepare for npm publication after the package is worth publishing.</li></ul>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-typescript-library-package-technologies"
+  class="project-detail node-03 uid-node-typescript-library-package-technologies project-technologies"
+>
+  
+<header>
+  <span>03</span>
+  <h3>Technology Plan</h3>
+  
+</header>
+  
+  <div class="project-meta">
+<div id="child-node-typescript-library-package-technologies-language" class="child-01 uid-node-typescript-library-package-technologies-language">
+  
+<div class="project-command-title">
+  Language
+</div>
+  <p>TypeScript</p>
+</div>
+<div id="child-node-typescript-library-package-technologies-package-tooling" class="child-02 uid-node-typescript-library-package-technologies-package-tooling">
+  
+<div class="project-command-title">
+  Package Tooling
+</div>
+  <p>npm<br />TypeScript Compiler<br />ES Modules</p>
+</div>
+<div id="child-node-typescript-library-package-technologies-testing-candidate" class="child-03 uid-node-typescript-library-package-technologies-testing-candidate">
+  
+<div class="project-command-title">
+  Testing Candidate
+</div>
+  <p>Vitest</p>
+</div>
+<div id="child-node-typescript-library-package-technologies-distribution" class="child-04 uid-node-typescript-library-package-technologies-distribution">
+  
+<div class="project-command-title">
+  Distribution
+</div>
+  <p>GitHub<br />npm package structure</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-typescript-library-package-scope"
+  class="project-detail node-04 uid-node-typescript-library-package-scope project-scope"
+>
+  
+<header>
+  <span>04</span>
+  <h3>Implementation Scope</h3>
+  Planned behaviors, architecture decisions, and evidence this project should produce.
+</header>
+  
+  <div class="project-command-list">
+<div id="child-node-typescript-library-package-scope-public-api" class="project-command child-01 uid-node-typescript-library-package-scope-public-api is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Public API
+</div>Choose a focused problem and expose only intentional functions/types.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-public-api" aria-expanded="false" aria-controls="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-public-api" aria-label="Expand Public API"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-public-api" class="project-command-panel" hidden>
+    <ul><li>Named exports.</li><li>Clear parameter types.</li><li>Predictable return values.</li><li>Documented errors.</li></ul>
+  </div>
+</div>
+<div id="child-node-typescript-library-package-scope-package-structure" class="project-command child-02 uid-node-typescript-library-package-scope-package-structure is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Package structure
+</div>Separate source, tests, declarations, and build output.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-package-structure" aria-expanded="false" aria-controls="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-package-structure" aria-label="Expand Package structure"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-package-structure" class="project-command-panel" hidden>
+    <ul><li>src/</li><li>dist/</li><li>package exports</li><li>type declarations</li></ul>
+  </div>
+</div>
+<div id="child-node-typescript-library-package-scope-quality" class="project-command child-03 uid-node-typescript-library-package-scope-quality is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Quality
+</div>Treat consumers as external callers.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-quality" aria-expanded="false" aria-controls="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-quality" aria-label="Expand Quality"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-quality" class="project-command-panel" hidden>
+    <ul><li>Automated tests.</li><li>Semantic version thinking.</li><li>Backward-compatible API decisions.</li><li>Examples.</li></ul>
+  </div>
+</div>
+<div id="child-node-typescript-library-package-scope-distribution" class="project-command child-04 uid-node-typescript-library-package-scope-distribution is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Distribution
+</div>Make the package usable outside its own repository.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-distribution" aria-expanded="false" aria-controls="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-distribution" aria-label="Expand Distribution"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-typescript-library-package-node-typescript-library-package-scope-node-typescript-library-package-scope-distribution" class="project-command-panel" hidden>
+    <ul><li>README installation.</li><li>Import examples.</li><li>Package metadata.</li><li>Optional npm publish step.</li></ul>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-typescript-library-package-notes"
+  class="project-doc-section node-05 uid-node-typescript-library-package-notes project-notes"
+>
+  
+<header>
+  <span>05</span>
+  <h3>Project Notes</h3>
+  Implementation context, boundaries, and later expansion.
+</header>
+  
+  <div class="project-command-list">
+<div id="child-node-typescript-library-package-notes-content" class="project-command child-01 uid-node-typescript-library-package-notes-content">
+  <div class="project-split-child-head">Project Notes</div>
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <p><strong>Boundary</strong></p>
+<p>The goal is package-quality API design, not publishing for its own sake.</p>
+  
+</div>
+<div class="project-split-cell">
+  <p><strong>Comparison</strong></p>
+<p>This complements the TypeScript API Service: one designs a reusable code API, the other an HTTP API.</p>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>
