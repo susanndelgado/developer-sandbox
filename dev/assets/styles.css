@@ -110,12 +110,6 @@ p {
   line-height: 1.5;
 }
 
-/* ---------- LINKS ---------- */
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
 /* ---------- IMAGES ---------- */
 
@@ -125,14 +119,30 @@ img {
   height: auto;
 }
 
-/* ---------- FORM / BUTTON ELEMENTS ---------- */
+/* ---------- Link / BUTTON ELEMENTS ---------- */
 
+a {
+  color: inherit;
+  text-decoration: none;
+  color: inherit;
+}
 button,
 input,
 select,
 textarea {
   font: inherit;
   color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* ---------- MAIN SANDBOX ---------- */
@@ -152,28 +162,10 @@ main {
   }
 }
 
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  color: inherit;
-}
-/* ==================================================
-   SHARED + HOME
-   ================================================== */
-
 /* ==================================================
    2. TOP HEADER / NAVIGATION
    ================================================== */
-body > header {
+ body > header {
   position: fixed;
   top: 22px;
   left: 0;
@@ -203,34 +195,30 @@ body > header > * {
   gap: 10px;
 
   color: white;
-}
+  img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
 
-.brand img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-
-  filter: drop-shadow(0 0 6px rgba(84, 190, 255, 0.45));
-}
-
-.brand span {
-  display: grid;
-  gap: 2px;
-}
-
-.brand strong {
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.brand small {
-  color: #c8d8ea;
-  font-size: 11px;
+    filter: drop-shadow(0 0 6px rgba(84, 190, 255, 0.45));
+  }
+    span {
+    display: grid;
+    gap: 2px;
+  }
+  strong {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  small {
+    color: #c8d8ea;
+    font-size: 11px;
+  }
 }
 
 /* ---------- CENTER NAV ---------- */
-body > header nav {
+#primary-nav {
   display: flex;
   overflow: hidden;
 
@@ -238,54 +226,67 @@ body > header nav {
   border-radius: 18px;
 
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.07), transparent 30%),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.07),
+      transparent 30%
+    ),
     rgba(5, 18, 43, 0.8);
 
   box-shadow:
     0 15px 35px rgba(0, 0, 0, 0.3),
     inset 0 1px rgba(255, 255, 255, 0.1),
     0 0 18px rgba(64, 158, 255, 0.12);
-}
-body > header nav button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 
-  min-height: 60px;
-  padding: 0 20px;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-  border: 0;
-  background: transparent;
+    min-height: 60px;
+    padding: 0 20px;
 
-  color: #cbd9e9;
+    border: 0;
 
-  cursor: pointer;
-}
-body > header nav button + button {
-  border-left: 1px solid rgba(117, 188, 255, 0.1);
-}
-body > header nav button span {
-  color: var(--blue);
-  font-size: 17px;
-}
-body > header nav button:hover,
-body > header nav button:focus-visible {
-  color: white;
-  background: rgba(47, 141, 255, 0.15);
-}
-body > header nav button[aria-current="page"] {
-  color: white;
+    background: transparent;
 
-  background: linear-gradient(
-    rgba(47, 141, 255, 0.25),
-    rgba(47, 141, 255, 0.08)
-  );
+    color: #cbd9e9;
 
-  box-shadow: inset 0 -2px var(--blue);
-}
-body > header nav button:focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: -3px;
+    cursor: pointer;
+
+    + button {
+      border-left: 1px solid rgba(117, 188, 255, 0.1);
+    }
+
+    span {
+      color: var(--blue);
+
+      font-size: 17px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: white;
+
+      background: rgba(47, 141, 255, 0.15);
+    }
+
+    &[aria-current="page"] {
+      color: white;
+
+      background: linear-gradient(
+        rgba(47, 141, 255, 0.25),
+        rgba(47, 141, 255, 0.08)
+      );
+
+      box-shadow: inset 0 -2px var(--blue);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: -3px;
+    }
+  }
 }
 
 /* ==================================================
@@ -313,25 +314,23 @@ body > header nav button:focus-visible {
     0 0 12px rgba(64, 158, 255, 0.1);
 
   cursor: pointer;
+  span {
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    margin: 5px 0;
+
+    background: var(--blue);
+
+    box-shadow: 0 0 5px rgba(95, 200, 255, 0.7);
+
+    transition:
+      transform 180ms ease,
+      opacity 180ms ease;
+  }
 }
-
-.menu-toggle span {
-  display: block;
-
-  width: 100%;
-  height: 1px;
-
-  margin: 5px 0;
-
-  background: var(--blue);
-
-  box-shadow: 0 0 5px rgba(95, 200, 255, 0.7);
-
-  transition:
-    transform 180ms ease,
-    opacity 180ms ease;
-}
-
 /* ---------- TOP RIGHT TOOLS ---------- */
 
 .top-tools {
@@ -347,124 +346,134 @@ body > header nav button:focus-visible {
 }
 
 /* ---------- HELP ORB + TOOLTIP ---------- */
-
 .help {
   position: relative;
 
   display: flex;
   align-items: flex-start;
+
+  button {
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(95, 200, 255, 0.45);
+    border-radius: 50%;
+
+    background: radial-gradient(
+      circle,
+      rgba(120, 225, 255, 0.95) 0 10%,
+      rgba(61, 176, 255, 0.35) 14%,
+      rgba(12, 41, 92, 0.92) 35%,
+      rgba(4, 17, 43, 0.95) 100%
+    );
+
+    box-shadow:
+      0 0 10px rgba(76, 181, 255, 0.28),
+      inset 0 0 10px rgba(105, 204, 255, 0.12);
+
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      inset: 7px;
+
+      border: 1px solid rgba(77, 183, 255, 0.35);
+      border-radius: 50%;
+    }
+
+    &::after {
+      inset: 12px;
+
+      border-color: rgba(77, 183, 255, 0.2);
+    }
+
+    &:focus-visible + div {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+  }
+
+  div {
+    position: absolute;
+    top: 50px;
+    left: -8px;
+
+    width: 185px;
+
+    padding: 14px 14px 12px;
+
+    border: 1px solid rgba(95, 170, 255, 0.28);
+    border-radius: 12px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.04),
+        transparent 30%
+      ),
+      rgba(7, 20, 46, 0.9);
+
+    box-shadow:
+      0 16px 30px rgba(0, 0, 0, 0.28),
+      0 0 16px rgba(73, 162, 255, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-4px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease,
+      visibility 160ms ease;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: -8px;
+      left: 20px;
+
+      width: 14px;
+      height: 14px;
+
+      background: rgba(7, 20, 46, 0.9);
+
+      border-top: 1px solid rgba(95, 170, 255, 0.28);
+      border-left: 1px solid rgba(95, 170, 255, 0.28);
+
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover div {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
 }
-
-.help button {
-  width: 44px;
-  height: 44px;
-
-  border: 1px solid rgba(95, 200, 255, 0.45);
-  border-radius: 50%;
-
-  background: radial-gradient(
-    circle,
-    rgba(120, 225, 255, 0.95) 0 10%,
-    rgba(61, 176, 255, 0.35) 14%,
-    rgba(12, 41, 92, 0.92) 35%,
-    rgba(4, 17, 43, 0.95) 100%
-  );
-
-  box-shadow:
-    0 0 10px rgba(76, 181, 255, 0.28),
-    inset 0 0 10px rgba(105, 204, 255, 0.12);
-
-  cursor: pointer;
-}
-
-.help button::before,
-.help button::after {
-  content: "";
-
-  position: absolute;
-  inset: 7px;
-
-  border: 1px solid rgba(77, 183, 255, 0.35);
-  border-radius: 50%;
-}
-
-.help button::after {
-  inset: 12px;
-  border-color: rgba(77, 183, 255, 0.2);
-}
-
-.help div {
-  position: absolute;
-  top: 50px;
-  left: -8px;
-
-  width: 185px;
-  padding: 14px 14px 12px;
-
-  border: 1px solid rgba(95, 170, 255, 0.28);
-  border-radius: 12px;
-
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.04), transparent 30%),
-    rgba(7, 20, 46, 0.9);
-
-  box-shadow:
-    0 16px 30px rgba(0, 0, 0, 0.28),
-    0 0 16px rgba(73, 162, 255, 0.08);
-
-  opacity: 0;
-  visibility: hidden;
-
-  transform: translateY(-4px);
-
-  pointer-events: none;
-
-  transition:
-    opacity 160ms ease,
-    transform 160ms ease,
-    visibility 160ms ease;
-}
-
-.help:hover div,
-.help button:focus-visible + div {
-  opacity: 1;
-  visibility: visible;
-
-  transform: translateY(0);
-}
-
-.help div::before {
-  content: "";
-
-  position: absolute;
-  top: -8px;
-  left: 20px;
-
-  width: 14px;
-  height: 14px;
-
-  background: rgba(7, 20, 46, 0.9);
-
-  border-top: 1px solid rgba(95, 170, 255, 0.28);
-  border-left: 1px solid rgba(95, 170, 255, 0.28);
-
-  transform: rotate(45deg);
-}
-
-.help strong {
-  display: block;
-
-  margin-bottom: 8px;
-
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.help p {
-  font-size: 11px;
-  line-height: 1.5;
-}
-
 /* ---------- RETURN LINK ---------- */
 
 .top-tools a {
@@ -472,11 +481,9 @@ body > header nav button:focus-visible {
 
   color: #dce7f2;
   font-size: 12px;
-}
-
-.top-tools a:hover,
-.top-tools a:focus-visible {
-  color: white;
+  &:hover,&:focus-visible {
+    color: white;
+  }
 }
 
 /* ---------- CLOSE BUTTON ---------- */
@@ -495,17 +502,15 @@ body > header nav button:focus-visible {
   line-height: 1;
 
   cursor: pointer;
-}
-
-.close:hover,
-.close:focus-visible {
-  background: rgba(47, 141, 255, 0.12);
+  &:hover,
+  &:focus-visible {
+    background: rgba(47, 141, 255, 0.12);
+  }
 }
 
 /* ==================================================
    SANDBOX IN-PROGRESS NOTICE
    ================================================== */
-
 .sandbox-notice {
   position: fixed;
 
@@ -536,37 +541,37 @@ body > header nav button:focus-visible {
   transform: translateX(-50%);
 
   backdrop-filter: blur(10px);
+
+  > span {
+    color: #ffc461;
+
+    font-size: 18px;
+  }
+
+  > div {
+    display: grid;
+
+    gap: 2px;
+  }
+
+  strong {
+    color: #ffe0a0;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+  }
+
+  small {
+    color: #d8bd80;
+
+    font-size: 9px;
+    line-height: 1.4;
+  }
 }
-
-.sandbox-notice > span {
-  color: #ffc461;
-
-  font-size: 18px;
-}
-
-.sandbox-notice > div {
-  display: grid;
-  gap: 2px;
-}
-
-.sandbox-notice strong {
-  color: #ffe0a0;
-
-  font-size: 11px;
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-}
-
-.sandbox-notice small {
-  color: #d8bd80;
-
-  font-size: 9px;
-  line-height: 1.4;
-}
-
 /* ---------- MOBILE ---------- */
 
 @media (max-width: 700px) {
@@ -586,14 +591,15 @@ body > header nav button:focus-visible {
 /* ==================================================
    3. CENTER LOGO
    ================================================== */
-
 .logo-stage {
   position: absolute;
+
   top: 47%;
   left: 50%;
   z-index: 2;
 
   width: clamp(240px, 18vw, 440px);
+
   aspect-ratio: 1;
 
   display: grid;
@@ -663,219 +669,213 @@ body > header nav button:focus-visible {
     inset 0 0 30px rgba(61, 153, 255, 0.06);
 
   isolation: isolate;
-}
 
-/* ==================================================
-   INNER CONCENTRIC RINGS
-   ================================================== */
+  &::before {
+    content: "";
 
-.logo-stage::before {
-  content: "";
+    position: absolute;
+    inset: 8%;
 
-  position: absolute;
-  inset: 8%;
+    border: 1px solid rgba(93, 185, 255, 0.42);
+    border-radius: 50%;
 
-  border: 1px solid rgba(93, 185, 255, 0.42);
-  border-radius: 50%;
+    box-shadow:
+      0 0 0 8px rgba(78, 161, 255, 0.1),
+      0 0 12px rgba(66, 168, 255, 0.17),
+      inset 0 0 15px rgba(67, 157, 255, 0.07);
 
-  box-shadow:
-    0 0 0 8px rgba(78, 161, 255, 0.1),
-    0 0 12px rgba(66, 168, 255, 0.17),
-    inset 0 0 15px rgba(67, 157, 255, 0.07);
+    pointer-events: none;
+  }
 
-  pointer-events: none;
-}
+  &::after {
+    content: "";
 
-/* blue light beam */
-/* hologram light rays rising from platform */
+    position: absolute;
 
-.logo-stage::after {
-  content: "";
+    top: 55%;
+    bottom: -20%;
+    left: 29%;
+    right: 29%;
 
-  position: absolute;
+    z-index: -1;
 
-  top: 55%;
-  bottom: -20%;
-  left: 29%;
-  right: 29%;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 9%,
+        rgba(105, 205, 255, 0.08) 10%,
+        rgba(135, 225, 255, 0.55) 11%,
+        rgba(105, 205, 255, 0.08) 12%,
+        transparent 13% 20%
+      ),
+      linear-gradient(
+        to top,
+        rgba(80, 185, 255, 0.75),
+        rgba(66, 160, 255, 0.25) 55%,
+        transparent
+      );
 
-  z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 58% 100%, 42% 100%);
 
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 9%,
-      rgba(105, 205, 255, 0.08) 10%,
-      rgba(135, 225, 255, 0.55) 11%,
-      rgba(105, 205, 255, 0.08) 12%,
-      transparent 13% 20%
-    ),
-    linear-gradient(
-      to top,
-      rgba(80, 185, 255, 0.75),
-      rgba(66, 160, 255, 0.25) 55%,
-      transparent
-    );
+    filter:
+      drop-shadow(0 0 5px rgba(80, 190, 255, 0.6))
+      blur(0.4px);
 
-  clip-path: polygon(0 0, 100% 0, 58% 100%, 42% 100%);
+    opacity: 0.2;
 
-  filter: drop-shadow(0 0 5px rgba(80, 190, 255, 0.6)) blur(0.4px);
+    pointer-events: none;
+  }
 
-  opacity: 0.2;
+  button {
+    position: relative;
+    z-index: 3;
 
-  pointer-events: none;
-}
+    width: 58%;
 
-/* logo */
+    padding: 0;
 
-.logo-stage button {
-  position: relative;
-  z-index: 3;
+    border: 0;
 
-  width: 58%;
+    background: none;
 
-  padding: 0;
-  border: 0;
-  background: none;
+    cursor: pointer;
 
-  cursor: pointer;
-}
+    &::before,
+    &::after {
+      content: "";
 
-.logo-stage img {
-  position: relative;
-  z-index: 2;
+      position: absolute;
 
-  width: 100%;
+      top: 50%;
+      left: 50%;
 
-  opacity: 0.95;
+      width: 145%;
+      height: 42%;
 
-  filter: drop-shadow(0 0 4px rgba(220, 247, 255, 0.5))
-    drop-shadow(0 0 12px rgba(80, 185, 255, 0.7))
-    drop-shadow(0 0 24px rgba(64, 110, 255, 0.4));
+      border: 1px solid rgba(69, 167, 255, 0.3);
+      border-radius: 50%;
 
-  transition:
-    transform 800ms ease,
-    filter 200ms ease;
-}
+      pointer-events: none;
 
-/* ==================================================
-   ORBIT LINES BEHIND LOGO
-   ================================================== */
+      transform: translate(-50%, -50%) rotate(-8deg);
 
-.logo-stage button::before,
-.logo-stage button::after {
-  content: "";
+      box-shadow: 0 0 8px rgba(66, 164, 255, 0.08);
+    }
 
-  position: absolute;
+    &::after {
+      width: 135%;
+      height: 35%;
 
-  top: 50%;
-  left: 50%;
+      border-color: rgba(78, 128, 255, 0.2);
 
-  width: 145%;
-  height: 42%;
+      transform: translate(-50%, -50%) rotate(12deg);
+    }
 
-  border: 1px solid rgba(69, 167, 255, 0.3);
-  border-radius: 50%;
+    &:hover img,
+    &:focus-visible img {
+      transform: rotateY(360deg);
 
-  pointer-events: none;
+      filter:
+        drop-shadow(0 0 5px white)
+        drop-shadow(0 0 16px rgba(90, 205, 255, 0.9))
+        drop-shadow(0 0 30px rgba(70, 120, 255, 0.6));
+    }
 
-  transform: translate(-50%, -50%) rotate(-8deg);
+    &:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 8px;
 
-  box-shadow: 0 0 8px rgba(66, 164, 255, 0.08);
-}
+      border-radius: 50%;
+    }
+  }
 
-.logo-stage button::after {
-  width: 135%;
-  height: 35%;
+  img {
+    position: relative;
+    z-index: 2;
 
-  border-color: rgba(78, 128, 255, 0.2);
+    width: 100%;
 
-  transform: translate(-50%, -50%) rotate(12deg);
-}
+    opacity: 0.95;
 
-/* logo spin */
+    filter:
+      drop-shadow(0 0 4px rgba(220, 247, 255, 0.5))
+      drop-shadow(0 0 12px rgba(80, 185, 255, 0.7))
+      drop-shadow(0 0 24px rgba(64, 110, 255, 0.4));
 
-.logo-stage button:hover img,
-.logo-stage button:focus-visible img {
-  transform: rotateY(360deg);
-
-  filter: drop-shadow(0 0 5px white)
-    drop-shadow(0 0 16px rgba(90, 205, 255, 0.9))
-    drop-shadow(0 0 30px rgba(70, 120, 255, 0.6));
-}
-
-.logo-stage button:focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: 8px;
-  border-radius: 50%;
+    transition:
+      transform 800ms ease,
+      filter 200ms ease;
+  }
 }
 
 /* ==================================================
    4. BOTTOM NAVIGATION
    ================================================== */
-
 footer {
   position: fixed;
+
   bottom: 24px;
   left: 50%;
   z-index: 50;
 
   transform: translateX(-50%);
+
+  nav {
+    display: flex;
+
+    padding: 5px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(117, 188, 255, 0.3);
+    border-radius: 9px;
+
+    background: rgba(5, 18, 43, 0.82);
+
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.35),
+      inset 0 1px rgba(255, 255, 255, 0.08),
+      0 0 18px rgba(64, 158, 255, 0.1);
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    min-height: 42px;
+    padding: 0 15px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #bdccdc;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    span {
+      color: var(--blue);
+
+      font-size: 15px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: white;
+
+      background: rgba(47, 141, 255, 0.15);
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--blue);
+      outline-offset: -2px;
+    }
+  }
 }
-
-footer nav {
-  display: flex;
-
-  padding: 5px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(117, 188, 255, 0.3);
-  border-radius: 9px;
-
-  background: rgba(5, 18, 43, 0.82);
-
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.35),
-    inset 0 1px rgba(255, 255, 255, 0.08),
-    0 0 18px rgba(64, 158, 255, 0.1);
-}
-
-footer button {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-
-  min-height: 42px;
-  padding: 0 15px;
-
-  border: 0;
-  border-radius: 9px;
-
-  background: transparent;
-  color: #bdccdc;
-
-  font-size: 12px;
-
-  cursor: pointer;
-}
-
-footer button span {
-  color: var(--blue);
-  font-size: 15px;
-}
-
-footer button:hover,
-footer button:focus-visible {
-  color: white;
-  background: rgba(47, 141, 255, 0.15);
-}
-
-footer button:focus-visible {
-  outline: 1px solid var(--blue);
-  outline-offset: -2px;
-}
-
 /* ==================================================
    5. GLASS PANELS
    ================================================== */
