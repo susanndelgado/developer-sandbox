@@ -525,6 +525,92 @@ body > header > * {
     font-size: 8px;
   }
 }
+
+/* ==================================================
+   COLOR CLASSES
+   ================================================== */
+.blue {
+  --icon-color: #4b96ff !important;
+}
+.cyan {
+  --icon-color: #41dce9 !important;
+}
+.purple {
+  --icon-color: #a768ff !important;
+}
+.gold {
+  --icon-color: #ffc461 !important;
+}
+.green {
+  --icon-color: #65e5a0 !important;
+}
+.red {
+  --icon-color: #ff6c80 !important;
+}
+.rose {
+  --icon-color: #ff6fae !important;
+}
+.pink {
+  --icon-color: #ff82bd !important;
+}
+.magenta {
+  --icon-color: #ed64d9 !important;
+}
+.violet {
+  --icon-color: #a66cff !important;
+}
+.lavender {
+  --icon-color: #ba9cff !important;
+}
+.indigo {
+  --icon-color: #7479ff !important;
+}
+.cobalt {
+  --icon-color: #397cff !important;
+}
+.sky {
+  --icon-color: #57c7ff !important;
+}
+.aqua {
+  --icon-color: #45e0e8 !important;
+}
+.teal {
+  --icon-color: #42d6bd !important;
+}
+.mint {
+  --icon-color: #67e6bd !important;
+}
+.emerald {
+  --icon-color: #54dc8b !important;
+}
+.lime {
+  --icon-color: #a9e85f !important;
+}
+.yellow {
+  --icon-color: #f5df63 !important;
+}
+.amber {
+  --icon-color: #ffbd55 !important;
+}
+.orange {
+  --icon-color: #ff955c !important;
+}
+.coral {
+  --icon-color: #ff746f !important;
+}
+.crimson {
+  --icon-color: #ff526d !important;
+}
+.slate {
+  --icon-color: #91a9c4 !important;
+}
+.silver {
+  --icon-color: #b6c4d4 !important;
+}
+.ice {
+  --icon-color: #b7e7ff !important;
+}
+
 /* ---------- MAIN SANDBOX ---------- */
 main {
   position: relative;
@@ -2503,88 +2589,4 @@ main {
 
     object-fit: cover;
   }
-}
-/* ==================================================
-   COLOR CLASSES
-   ================================================== */
-.blue {
-  --icon-color: #4b96ff;
-}
-.cyan {
-  --icon-color: #41dce9;
-}
-.purple {
-  --icon-color: #a768ff;
-}
-.gold {
-  --icon-color: #ffc461;
-}
-.green {
-  --icon-color: #65e5a0;
-}
-.red {
-  --icon-color: #ff6c80;
-}
-.rose {
-  --icon-color: #ff6fae;
-}
-.pink {
-  --icon-color: #ff82bd;
-}
-.magenta {
-  --icon-color: #ed64d9;
-}
-.violet {
-  --icon-color: #a66cff;
-}
-.lavender {
-  --icon-color: #ba9cff;
-}
-.indigo {
-  --icon-color: #7479ff;
-}
-.cobalt {
-  --icon-color: #397cff;
-}
-.sky {
-  --icon-color: #57c7ff;
-}
-.aqua {
-  --icon-color: #45e0e8;
-}
-.teal {
-  --icon-color: #42d6bd;
-}
-.mint {
-  --icon-color: #67e6bd;
-}
-.emerald {
-  --icon-color: #54dc8b;
-}
-.lime {
-  --icon-color: #a9e85f;
-}
-.yellow {
-  --icon-color: #f5df63;
-}
-.amber {
-  --icon-color: #ffbd55;
-}
-.orange {
-  --icon-color: #ff955c;
-}
-.coral {
-  --icon-color: #ff746f;
-}
-.crimson {
-  --icon-color: #ff526d;
-}
-.slate {
-  --icon-color: #91a9c4;
-}
-.silver {
-  --icon-color: #b6c4d4;
-}
-.ice {
-  --icon-color: #b7e7ff;
 }
