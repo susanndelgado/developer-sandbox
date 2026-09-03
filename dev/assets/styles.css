@@ -191,8 +191,7 @@ main {
 /* ==================================================
    2. TOP HEADER / NAVIGATION
    ================================================== */
-
- header {
+body > header {
   position: fixed;
   top: 22px;
   left: 0;
@@ -206,8 +205,7 @@ main {
 
   pointer-events: none;
 }
-
- header > * {
+body > header > * {
   pointer-events: auto;
 }
 
@@ -250,8 +248,7 @@ main {
 }
 
 /* ---------- CENTER NAV ---------- */
-
- header nav {
+body > header nav {
   display: flex;
   overflow: hidden;
 
@@ -267,8 +264,7 @@ main {
     inset 0 1px rgba(255, 255, 255, 0.1),
     0 0 18px rgba(64, 158, 255, 0.12);
 }
-
- header nav button {
+body > header nav button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -283,23 +279,19 @@ main {
 
   cursor: pointer;
 }
-
- header nav button + button {
+body > header nav button + button {
   border-left: 1px solid rgba(117, 188, 255, 0.1);
 }
-
- header nav button span {
+body > header nav button span {
   color: var(--blue);
   font-size: 17px;
 }
-
- header nav button:hover,
- header nav button:focus-visible {
+body > header nav button:hover,
+body > header nav button:focus-visible {
   color: white;
   background: rgba(47, 141, 255, 0.15);
 }
-
- header nav button[aria-current="page"] {
+body > header nav button[aria-current="page"] {
   color: white;
 
   background: linear-gradient(
@@ -309,8 +301,7 @@ main {
 
   box-shadow: inset 0 -2px var(--blue);
 }
-
- header nav button:focus-visible {
+body > header nav button:focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: -3px;
 }
@@ -3607,12 +3598,8 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
-<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
-=======
-  
->>>>>>> a906075 (generate data)
 }
 
 /* ==========================================================================
@@ -3654,11 +3641,7 @@ details:not([open]) summary {
 .preview .project-documents > a strong {
   color: #e9f5ff;
 
-<<<<<<< HEAD
   font-size: 11px;
-=======
-  font-size: 12px;
->>>>>>> a906075 (generate data)
   font-weight: 600;
 }
 
@@ -3860,11 +3843,7 @@ details:not([open]) summary {
 
   color: #eaf6ff;
 
-<<<<<<< HEAD
   font-size: 11px;
-=======
-  font-size: 12px;
->>>>>>> a906075 (generate data)
   font-weight: 600;
   line-height: 1.4;
 }
@@ -3875,13 +3854,9 @@ details:not([open]) summary {
   margin: 0 0 6px;
 
   color: var(--sandbox-muted);
-<<<<<<< HEAD
 
   font-size: 11px;
   line-height: 1.55;
-=======
-  
->>>>>>> a906075 (generate data)
 
   overflow-wrap: break-word;
   word-break: normal;
@@ -3940,11 +3915,7 @@ details:not([open]) summary {
 
   color: #eaf6ff;
 
-<<<<<<< HEAD
   font-size: 11px;
-=======
-  font-size: 12px;
->>>>>>> a906075 (generate data)
   font-weight: 600;
   line-height: 1.4;
 }
@@ -3993,11 +3964,7 @@ details:not([open]) summary {
 
   background: rgba(2, 11, 25, 0.36);
 
-<<<<<<< HEAD
   font-size: 11px;
-=======
-  font-size: 12px;
->>>>>>> a906075 (generate data)
   line-height: 1.6;
 }
 
@@ -4057,12 +4024,8 @@ details:not([open]) summary {
   color: #cdeaff;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
-=======
-  
->>>>>>> a906075 (generate data)
 }
 
 /* ==========================================================================
@@ -4081,12 +4044,8 @@ details:not([open]) summary {
   color: var(--sandbox-muted);
   background: var(--sandbox-note);
 
-<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
-=======
-  
->>>>>>> a906075 (generate data)
 }
 
 .preview .project-note strong {
@@ -4155,12 +4114,8 @@ details:not([open]) summary {
 
   color: var(--sandbox-muted);
 
-<<<<<<< HEAD
   font-size: 11px;
   line-height: 1.55;
-=======
-  
->>>>>>> a906075 (generate data)
 }
 
 .preview .project-split-cell:last-child {
@@ -4210,11 +4165,7 @@ details:not([open]) summary {
 
   color: var(--sandbox-text);
 
-<<<<<<< HEAD
   font-size: 11px;
-=======
-  font-size: 12px;
->>>>>>> a906075 (generate data)
 }
 
 .preview .sandbox-entry-preview th,
@@ -5492,11 +5443,7 @@ details:not([open]) summary {
 .preview .project-display-details {
   padding: 12px 14px;
   color: var(--sandbox-muted);
-<<<<<<< HEAD
   font-size: 11px;
-=======
-  font-size: 12px;
->>>>>>> a906075 (generate data)
   line-height: 1.6;
 }
 
@@ -6798,8 +6745,7 @@ overflow: scroll;
   .brand small {
     font-size: 10px;
   }
-
-   header nav button {
+body > header nav button {
     padding: 0 13px;
     font-size: 12px;
   }
@@ -6821,8 +6767,7 @@ overflow: scroll;
   /* ==================================================
      SHARED HEADER
      ================================================== */
-
-   header {
+body > header {
     top: 16px;
   }
 
@@ -6849,8 +6794,7 @@ overflow: scroll;
   }
 
   /* ---------- NAV DROPDOWN ---------- */
-
-   header nav {
+body > header nav {
     position: absolute;
 
     top: 58px;
@@ -6886,8 +6830,7 @@ overflow: scroll;
       transform 180ms ease,
       visibility 180ms ease;
   }
-
-   header nav.open {
+body > header nav.open {
     opacity: 1;
     visibility: visible;
 
@@ -6895,8 +6838,7 @@ overflow: scroll;
 
     pointer-events: auto;
   }
-
-   header nav button {
+body > header nav button {
     width: 100%;
     min-height: 48px;
 
@@ -6908,14 +6850,12 @@ overflow: scroll;
 
     font-size: 12px;
   }
-
-   header nav button + button {
+body > header nav button + button {
     border-left: 0;
 
     border-top: 1px solid rgba(117, 188, 255, 0.1);
   }
-
-   header nav button[aria-current="page"] {
+body > header nav button[aria-current="page"] {
     box-shadow: inset 2px 0 var(--blue);
   }
 
@@ -7159,8 +7099,7 @@ overflow: scroll;
   /* ==================================================
      SHARED HEADER
      ================================================== */
-
-   header {
+body > header {
     top: 12px;
   }
 
@@ -7217,8 +7156,7 @@ overflow: scroll;
   }
 
   /* ---------- NAV DROPDOWN ---------- */
-
-   header nav {
+body > header nav {
     top: 48px;
 
     right: 12px;
@@ -7226,8 +7164,7 @@ overflow: scroll;
 
     width: auto;
   }
-
-   header nav button {
+body > header nav button {
     min-height: 46px;
 
     font-size: 11px;
