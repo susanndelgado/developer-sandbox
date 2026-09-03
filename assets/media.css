@@ -11,10 +11,6 @@
    ================================================== */
 
 @media (max-width: 1350px) {
-  /* ==================================================
-     SHARED HEADER
-     ================================================== */
-
   body > header .brand {
     left: 18px;
   }
@@ -54,41 +50,29 @@
     top: 16px;
   }
 
-  /* ---------- BRAND ---------- */
-
   body > header .brand {
     top: 0;
     left: 16px;
   }
 
-  /* ---------- RIGHT CONTROLS ---------- */
-
   body > header .top-tools {
     top: 0;
     right: 16px;
-
     align-items: center;
   }
-
-  /* ---------- MENU BUTTON ---------- */
 
   .menu-toggle {
     display: block;
   }
 
-  /* ---------- NAV DROPDOWN ---------- */
-
   #primary-nav {
     position: absolute;
-
     top: 58px;
     right: 16px;
     z-index: 60;
 
     width: 230px;
-
     display: grid;
-
     overflow: hidden;
 
     border: 1px solid rgba(117, 188, 255, 0.35);
@@ -105,9 +89,7 @@
 
     opacity: 0;
     visibility: hidden;
-
     transform: translateY(-8px);
-
     pointer-events: none;
 
     transition:
@@ -119,36 +101,27 @@
   #primary-nav.open {
     opacity: 1;
     visibility: visible;
-
     transform: translateY(0);
-
     pointer-events: auto;
   }
 
   #primary-nav button {
     width: 100%;
     min-height: 48px;
-
     justify-content: flex-start;
-
     padding: 0 16px;
-
     border-radius: 0;
-
     font-size: 12px;
   }
 
   #primary-nav button + button {
     border-left: 0;
-
     border-top: 1px solid rgba(117, 188, 255, 0.1);
   }
 
   #primary-nav button[aria-current="page"] {
     box-shadow: inset 2px 0 var(--blue);
   }
-
-  /* ---------- MENU OPEN STATE ---------- */
 
   .menu-toggle[aria-expanded="true"] span:first-child {
     transform: translateY(6px) rotate(45deg);
@@ -162,13 +135,9 @@
     transform: translateY(-6px) rotate(-45deg);
   }
 
-  /* ---------- KEEP NOTICE BELOW HEADER / MENU ---------- */
-
   .sandbox-notice {
     z-index: 40;
   }
-
-  /* ---------- HELP TOOLTIP ---------- */
 
   body > header .help > div {
     display: none;
@@ -178,99 +147,78 @@
      HOME PAGE
      ================================================== */
 
-  #hm .view-all-page {
+  #hm main {
     min-height: 100svh;
-
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     grid-template-areas:
       "logo logo"
       "featured featured"
       "library library"
       "rosetta guides"
       "data data";
-
     gap: 18px;
-
     padding: 100px 18px 90px;
-
     overflow: visible;
 
     background:
       linear-gradient(rgba(2, 7, 18, 0.16), rgba(2, 7, 18, 0.42)),
-      url("/img/sandbox-background.png") center top / cover fixed no-repeat;
+      url("img/sandbox-background.png") center top / cover fixed no-repeat;
   }
 
-  /* ---------- HOME PANELS ---------- */
-
-  #hm .view-all-page .glass-panel {
+  #hm main .glass-panel {
     position: relative;
-
     top: auto;
     right: auto;
     bottom: auto;
     left: auto;
-
     width: 100%;
     min-width: 0;
   }
-  #hm .view-all-page .featured {
+
+  #hm main .featured {
     grid-area: featured;
-
     max-width: 760px;
-
     margin-inline: auto;
   }
-  #hm .view-all-page .library {
+
+  #hm main .library {
     grid-area: library;
   }
 
-  #hm .view-all-page .rosetta {
+  #hm main .rosetta {
     grid-area: rosetta;
   }
 
-  #hm .view-all-page .guides {
+  #hm main .guides {
     grid-area: guides;
   }
 
-  #hm .view-all-page .data {
+  #hm main .data {
     grid-area: data;
   }
 
-  /* ---------- HOME HOLOGRAM ---------- */
-
-  #hm .view-all-page .logo-stage {
+  #hm main .logo-stage {
     grid-area: logo;
-
     position: relative;
-
     top: auto;
     left: auto;
-
     width: 250px;
-
     margin: 20px auto 30px;
-
     transform: none;
   }
 
-  #hm .view-all-page .logo-stage::after {
+  #hm main .logo-stage::after {
     bottom: -15%;
   }
 
-  /* ---------- HOME PROJECT LIBRARY ---------- */
-
-  #hm .view-all-page .projects {
+  #hm main .projects {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  /* ---------- HOME RIGHT PANELS ---------- */
-
-  #hm .view-all-page .stones,
-  #hm .view-all-page .guide-list,
-  #hm .view-all-page .data-list {
+  #hm main .stones,
+  #hm main .guide-list,
+  #hm main .data-list {
     width: 100%;
   }
 
@@ -278,17 +226,14 @@
      INNER PAGES — TABLET
      ================================================== */
 
-  .view-all-page {
+  #pg main.view-all-page,
+  body[id^="pg "] main.view-all-page {
     grid-template-columns:
       minmax(220px, 270px)
       minmax(0, 1fr);
-
     gap: 24px;
-
     padding: 110px 24px 90px;
   }
-
-  /* ---------- INNER ASIDE ---------- */
 
   .type-menu h1 {
     font-size: 24px;
@@ -307,16 +252,13 @@
     grid-template-columns:
       46px
       minmax(0, 1fr);
-
     gap: 10px;
-
     padding: 11px;
   }
 
   .project-types button > span:first-child {
     width: 42px;
     height: 42px;
-
     font-size: 18px;
   }
 
@@ -328,13 +270,9 @@
     font-size: 9px;
   }
 
-  /* ---------- INNER RIGHT CONTENT ---------- */
-
   .project-content {
     padding: 18px;
   }
-
-  /* ---------- PROJECT LIBRARY ---------- */
 
   .project-group {
     grid-template-columns:
@@ -346,13 +284,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* ---------- REFERENCE COMMANDS ---------- */
-
   .project-command {
     grid-template-columns:
       minmax(85px, 110px)
       minmax(0, 1fr);
-
     gap: 14px;
   }
 
@@ -362,24 +297,17 @@
 
   body > footer {
     position: relative;
-
     bottom: auto;
     left: auto;
-
     width: 100%;
-
     padding: 0 18px 20px;
-
     transform: none;
-
     background: var(--background);
   }
 
   body > footer nav {
     width: min(680px, 100%);
-
     margin-inline: auto;
-
     justify-content: center;
   }
 }
@@ -397,11 +325,8 @@
     top: 12px;
   }
 
-  /* ---------- BRAND ---------- */
-
   body > header .brand {
     left: 12px;
-
     gap: 7px;
   }
 
@@ -418,18 +343,14 @@
     font-size: 9px;
   }
 
-  /* ---------- RIGHT CONTROLS ---------- */
-
   body > header .top-tools {
     right: 12px;
-
     gap: 7px;
   }
 
   .menu-toggle {
     width: 36px;
     height: 36px;
-
     padding: 7px;
   }
 
@@ -441,7 +362,6 @@
   body > header .close {
     width: 36px;
     height: 36px;
-
     font-size: 21px;
   }
 
@@ -449,20 +369,15 @@
     display: none;
   }
 
-  /* ---------- NAV DROPDOWN ---------- */
-
   #primary-nav {
     top: 48px;
-
     right: 12px;
     left: 12px;
-
     width: auto;
   }
 
   #primary-nav button {
     min-height: 46px;
-
     font-size: 11px;
   }
 
@@ -470,11 +385,8 @@
      HOME PAGE
      ================================================== */
 
-  #hm .view-all-page {
-    display: grid;
-
+  #hm main {
     grid-template-columns: 1fr;
-
     grid-template-areas:
       "logo"
       "featured"
@@ -482,257 +394,189 @@
       "rosetta"
       "guides"
       "data";
-
     gap: 14px;
-
     padding: 82px 12px 30px;
 
     background:
       linear-gradient(rgba(2, 7, 18, 0.22), rgba(2, 7, 18, 0.55)),
-      url("sandbox-background.png") center top / cover fixed no-repeat;
+      url("img/sandbox-background.png") center top / cover fixed no-repeat;
   }
 
-  /* ---------- HOME PANELS ---------- */
-
-  #hm .view-all-page .glass-panel {
+  #hm main .glass-panel {
     width: 100%;
-
     padding: 14px;
   }
 
-  #hm .view-all-page .glass-panel h2 {
+  #hm main .glass-panel h2 {
     margin-bottom: 12px;
-
     font-size: 13px;
   }
 
-  /* ---------- HOME HOLOGRAM ---------- */
-
-  #hm .view-all-page .logo-stage {
+  #hm main .logo-stage {
     width: 205px;
-
     margin: 20px auto 28px;
   }
 
-  #hm .view-all-page .logo-stage::after {
+  #hm main .logo-stage::after {
     bottom: -12%;
-
     opacity: 0.15;
   }
 
-  /* ---------- FEATURED PROJECT ---------- */
-
-  #hm .view-all-page .featured-content {
+  #hm main .featured-content {
     grid-template-columns:
       24px
       minmax(0, 1fr)
       24px;
-
     gap: 5px;
   }
 
-  #hm .view-all-page .featured .arrow {
+  #hm main .featured .arrow {
     width: 24px;
     height: 24px;
-
     font-size: 18px;
   }
 
-  #hm .view-all-page .card-stack {
+  #hm main .card-stack {
     height: 320px;
     min-height: 320px;
   }
 
-  #hm .view-all-page .card-stack > span {
+  #hm main .card-stack > span {
     display: none;
   }
 
-  #hm .view-all-page .card-stack article {
+  #hm main .card-stack article {
     width: 100%;
     height: 320px;
-
     grid-template-columns: 1fr;
-
     grid-template-rows:
       130px
       minmax(0, 1fr);
-
     gap: 10px;
-
     padding: 10px;
-
     overflow: hidden;
   }
 
-  /* ---------- FEATURED IMAGE ---------- */
-
-  #hm .view-all-page .featured .project-image {
+  #hm main .featured .project-image {
     width: 100%;
     height: 130px;
     min-height: 0;
   }
 
-  #hm .view-all-page .featured .project-image > * {
+  #hm main .featured .project-image > * {
     width: 100%;
     height: 100%;
   }
 
-  #hm .view-all-page .featured .project-image img {
+  #hm main .featured .project-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
   }
 
-  /* ---------- FEATURED INFORMATION ---------- */
-
-  #hm .view-all-page .featured .project-info {
+  #hm main .featured .project-info {
     grid-template-rows:
       auto
       auto
       minmax(0, 1fr)
       auto
       auto;
-
     gap: 5px;
-
     min-height: 0;
-
     overflow: hidden;
   }
 
-  #hm .view-all-page .featured .project-info h3 {
+  #hm main .featured .project-info h3 {
     margin: 0;
-
     font-size: 18px;
-
     -webkit-line-clamp: 1;
     line-clamp: 1;
   }
 
-  #hm .view-all-page .featured .project-info p {
+  #hm main .featured .project-info p {
     min-height: 0;
-
     overflow: hidden;
-
     font-size: 11px;
-
     -webkit-line-clamp: 3;
     line-clamp: 3;
   }
 
-  /* ---------- FEATURED TAGS ---------- */
-
-  #hm .view-all-page .featured .tags {
+  #hm main .featured .tags {
     flex-wrap: nowrap;
-
     max-height: 23px;
     margin: 0;
-
     overflow: hidden;
   }
 
-  /* ---------- FEATURED LINK ---------- */
-
-  #hm .view-all-page .featured .project-info a {
+  #hm main .featured .project-info a {
     margin: 0;
-
     padding: 7px 8px;
   }
 
-  /* ---------- HOME PROJECT LIBRARY ---------- */
-
-  #hm .view-all-page .projects {
+  #hm main .projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 7px;
   }
 
-  #hm .view-all-page .projects > a {
+  #hm main .projects > a {
     padding: 9px 5px;
   }
 
-  #hm .view-all-page .project-icon {
+  #hm main .project-icon {
     width: 46px;
     height: 46px;
   }
 
-  /* ---------- HOME ROSETTA ---------- */
-
-  #hm .view-all-page .stones {
+  #hm main .stones {
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 8px;
-
     overflow: visible;
   }
 
-  #hm .view-all-page .stones button {
+  #hm main .stones button {
     width: 100%;
-
     display: grid;
-
     grid-template-columns:
       64px
       minmax(0, 1fr);
-
     align-items: center;
     justify-items: start;
-
     text-align: left;
   }
 
-  #hm .view-all-page .stones small {
+  #hm main .stones small {
     width: auto;
-
     text-align: left;
   }
 
-  /* ---------- HOME REFERENCE GUIDES ---------- */
-
-  #hm .view-all-page .guide-list {
+  #hm main .guide-list {
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 8px;
-
     overflow: visible;
   }
 
-  #hm .view-all-page .guide-list > a {
+  #hm main .guide-list > a {
     width: 100%;
-
     display: flex;
     align-items: center;
-
     gap: 9px;
-
     text-align: left;
   }
 
-  /* ---------- HOME DATA VISUALIZATION ---------- */
-
-  #hm .view-all-page .data-list {
+  #hm main .data-list {
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 8px;
-
     overflow: visible;
   }
 
-  #hm .view-all-page .data-list > a {
+  #hm main .data-list > a {
     width: 100%;
-
     display: flex;
     align-items: center;
-
     gap: 9px;
-
     text-align: left;
   }
 
@@ -740,28 +584,20 @@
      INNER PAGES — PHONE
      ================================================== */
 
-  .view-all-page {
+  #pg main.view-all-page,
+  body[id^="pg "] main.view-all-page {
     display: grid;
-
     grid-template-columns: 1fr;
     grid-template-areas: none;
-
     gap: 18px;
-
     align-items: start;
-
     padding: 82px 12px 90px;
-
     overflow: visible;
 
     background:
       linear-gradient(rgba(2, 7, 18, 0.22), rgba(2, 7, 18, 0.48)),
-      url("innerPg.png") center top / cover fixed no-repeat;
+      url("img/innerPg.png") center top / cover fixed no-repeat;
   }
-
-  /* ==================================================
-     INNER PAGE ASIDE
-     ================================================== */
 
   .type-menu {
     width: 100%;
@@ -778,45 +614,33 @@
 
   .type-menu > header p {
     max-width: none;
-
     font-size: 11px;
     line-height: 1.5;
   }
 
-  /* ---------- TYPES / SUBJECTS ---------- */
-
   .project-types {
     display: flex;
-
     gap: 8px;
-
     width: 100%;
-
     overflow-x: auto;
     overflow-y: hidden;
-
     padding: 2px 2px 8px;
-
     scrollbar-width: thin;
     scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
   }
 
   .project-types button {
     flex: 0 0 min(245px, 80vw);
-
     grid-template-columns:
       42px
       minmax(0, 1fr);
-
     gap: 10px;
-
     padding: 10px;
   }
 
   .project-types button > span:first-child {
     width: 40px;
     height: 40px;
-
     font-size: 16px;
   }
 
@@ -829,23 +653,13 @@
     line-height: 1.4;
   }
 
-  /* ==================================================
-     INNER PAGE CONTENT
-     ================================================== */
-
-  /* ---------- CONTENT HEADER ---------- */
-
   .project-content > header,
   .project-detail-header {
     display: flex;
-
     flex-direction: column;
-
     align-items: flex-start;
     justify-content: flex-start;
-
     gap: 8px;
-
     margin-bottom: 16px;
   }
 
@@ -863,16 +677,10 @@
   .project-detail-header > p {
     width: 100%;
     max-width: none;
-
     font-size: 11px;
     line-height: 1.5;
-
     text-align: left;
   }
-
-  /* ==================================================
-     PROJECT LIBRARY PAGE
-     ================================================== */
 
   .project-group {
     grid-template-columns: 1fr;
@@ -880,24 +688,18 @@
 
   .project-group > header {
     flex-direction: row;
-
     justify-content: flex-start;
     align-items: center;
-
     gap: 10px;
-
     padding: 11px 12px;
-
     border-right: 0;
     border-bottom: 1px solid rgba(95, 170, 255, 0.18);
   }
 
   .project-group > header > span {
     flex: 0 0 38px;
-
     width: 38px;
     height: 38px;
-
     font-size: 15px;
   }
 
@@ -905,58 +707,41 @@
     margin-top: 2px;
   }
 
-  /* ---------- PROJECT CARDS ---------- */
-
   .project-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-
     gap: 7px;
-
     padding: 9px;
   }
 
   .project-grid > a {
     min-width: 0;
-
     padding: 9px;
   }
 
   .project-content .project-icon {
     flex: 0 0 40px;
-
     width: 40px;
     height: 40px;
-
     font-size: 10px;
   }
 
   .project-grid strong {
     white-space: normal;
-
     overflow: visible;
     text-overflow: clip;
-
     font-size: 10px;
   }
 
-  /* ==================================================
-     REFERENCE DOCUMENTATION PAGE
-     ================================================== */
-
   .project-doc-nav {
     flex-wrap: nowrap;
-
     gap: 6px;
-
     overflow-x: auto;
     overflow-y: hidden;
-
     padding: 8px 0 10px;
   }
 
   .project-doc-nav a {
     flex: 0 0 auto;
-
     white-space: nowrap;
   }
 
@@ -964,15 +749,10 @@
     gap: 14px;
   }
 
-  /* ---------- DOCUMENT SECTION HEADER ---------- */
-
   .project-doc-section > header {
     display: grid;
-
     gap: 7px;
-
     align-items: start;
-
     padding: 11px 12px;
   }
 
@@ -982,24 +762,18 @@
 
   .project-doc-section > header > p {
     max-width: none;
-
     text-align: left;
   }
 
-  /* ---------- COMMAND ROWS ---------- */
-
   .project-command {
     grid-template-columns: 1fr;
-
     gap: 7px;
-
     padding: 11px 12px;
   }
 
   .project-command > code {
     width: fit-content;
     max-width: 100%;
-
     font-size: 10px;
   }
 
@@ -1010,8 +784,6 @@
   .project-command p {
     font-size: 10px;
   }
-
-  /* ---------- CODE EXAMPLES ---------- */
 
   .project-example {
     margin: 0 12px 12px;
@@ -1025,29 +797,18 @@
     font-size: 10px;
   }
 
-  /* ---------- DOCUMENT NOTES ---------- */
-
   .project-note {
     margin: 0 12px 12px;
-
     padding: 10px 12px;
   }
-
-  /* ==================================================
-     SINGLE PROJECT PAGE
-     ================================================== */
 
   .project-preview {
     min-height: 180px;
   }
 
-  /* ---------- PROJECT LINKS ---------- */
-
   .project-actions {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-
     gap: 7px;
   }
 
@@ -1055,19 +816,14 @@
     text-align: center;
   }
 
-  /* ---------- DETAIL SECTIONS ---------- */
-
   .project-detail > header {
     padding: 11px 12px;
   }
 
   .project-detail > p {
     padding: 12px;
-
     font-size: 10px;
   }
-
-  /* ---------- PROJECT META ---------- */
 
   .project-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1089,38 +845,24 @@
     border-left: 1px solid rgba(95, 170, 255, 0.12);
   }
 
-  /* ---------- PROJECT DOCUMENTS ---------- */
-
   .project-documents > a {
     grid-template-columns: 1fr;
-
     gap: 4px;
-
     padding: 11px 34px 11px 12px;
   }
 
   .project-documents > a > span {
     position: absolute;
-
     top: 50%;
     right: 12px;
-
     transform: translateY(-50%);
   }
 
-  /* ---------- PROJECT IMAGES ---------- */
-
   .project-images {
     grid-template-columns: 1fr;
-
     gap: 8px;
-
     padding: 9px;
   }
-
-  /* ==================================================
-     SHARED FOOTER
-     ================================================== */
 
   body > footer {
     padding: 12px 12px 20px;
@@ -1128,31 +870,28 @@
 
   body > footer nav {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 4px;
-
     padding: 5px;
   }
 
   body > footer button {
     justify-content: center;
-
     min-width: 0;
-
     padding: 8px 5px;
-
     font-size: 10px;
   }
-  #pg .view-all-page .type-menu {
+
+  #pg main.view-all-page .type-menu,
+  body[id^="pg "] main.view-all-page .type-menu {
     display: none;
   }
-  #pg .project-content {
+
+  #pg .project-content,
+  body[id^="pg "] .project-content {
     display: block;
     width: 100%;
     min-width: 0;
-
     padding: 12px;
   }
 }
