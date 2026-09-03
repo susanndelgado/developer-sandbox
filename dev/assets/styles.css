@@ -1762,12 +1762,43 @@ main {
   }
 
   .project-icon {
+    --icon-color: #eaf7ff;
+
     flex: 0 0 44px;
 
     width: 44px;
     height: 44px;
 
+    display: grid;
+    place-items: center;
+
+    border: 1px solid color-mix(in srgb, var(--icon-color) 45%, transparent);
+    border-radius: 9px;
+
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--icon-color) 14%, transparent),
+      rgba(5, 15, 35, 0.9) 70%
+    );
+
+    color: var(--icon-color);
+
     font-size: 11px;
+    font-weight: 600;
+
+    text-shadow: 0 0 7px var(--icon-color);
+
+    box-shadow:
+      inset 0 0 10px color-mix(in srgb, var(--icon-color) 10%, transparent),
+      0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
+
+    img,
+    svg {
+      width: 65%;
+      height: 65%;
+
+      object-fit: contain;
+    }
   }
 }
 
