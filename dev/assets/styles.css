@@ -1,18 +1,6 @@
 /*
   DEVELOPER SANDBOX — DEV CSS REFACTOR
 
-  Purpose:
-  Preserve the LIVE Sandbox look while reducing selector specificity
-  and making styles reusable.
-
-  Conventions:
-  - simple component class when one class is enough
-  - component + element for shared internal styling
-  - parent/child structure only where the relationship is actually required
-  - no :where() blanket wrapping
-  - no JavaScript-generated styles
-*/
-
 /* ==================================================
    SHARED + HOME
    ================================================== */
