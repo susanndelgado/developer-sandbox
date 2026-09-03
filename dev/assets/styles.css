@@ -192,7 +192,7 @@ main {
    2. TOP HEADER / NAVIGATION
    ================================================== */
 
-body > header {
+ header {
   position: fixed;
   top: 22px;
   left: 0;
@@ -207,7 +207,7 @@ body > header {
   pointer-events: none;
 }
 
-body > header > * {
+ header > * {
   pointer-events: auto;
 }
 
@@ -251,7 +251,7 @@ body > header > * {
 
 /* ---------- CENTER NAV ---------- */
 
-body > header nav {
+ header nav {
   display: flex;
   overflow: hidden;
 
@@ -268,7 +268,7 @@ body > header nav {
     0 0 18px rgba(64, 158, 255, 0.12);
 }
 
-body > header nav button {
+ header nav button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -284,22 +284,22 @@ body > header nav button {
   cursor: pointer;
 }
 
-body > header nav button + button {
+ header nav button + button {
   border-left: 1px solid rgba(117, 188, 255, 0.1);
 }
 
-body > header nav button span {
+ header nav button span {
   color: var(--blue);
   font-size: 17px;
 }
 
-body > header nav button:hover,
-body > header nav button:focus-visible {
+ header nav button:hover,
+ header nav button:focus-visible {
   color: white;
   background: rgba(47, 141, 255, 0.15);
 }
 
-body > header nav button[aria-current="page"] {
+ header nav button[aria-current="page"] {
   color: white;
 
   background: linear-gradient(
@@ -310,7 +310,7 @@ body > header nav button[aria-current="page"] {
   box-shadow: inset 0 -2px var(--blue);
 }
 
-body > header nav button:focus-visible {
+ header nav button:focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: -3px;
 }
@@ -760,7 +760,7 @@ body > header nav button:focus-visible {
    4. BOTTOM NAVIGATION
    ================================================== */
 
-body > footer {
+ footer {
   position: fixed;
   bottom: 24px;
   left: 50%;
@@ -6799,7 +6799,7 @@ overflow: scroll;
     font-size: 10px;
   }
 
-  body > header nav button {
+   header nav button {
     padding: 0 13px;
     font-size: 12px;
   }
@@ -6822,7 +6822,7 @@ overflow: scroll;
      SHARED HEADER
      ================================================== */
 
-  body > header {
+   header {
     top: 16px;
   }
 
@@ -6850,7 +6850,7 @@ overflow: scroll;
 
   /* ---------- NAV DROPDOWN ---------- */
 
-  body > header nav {
+   header nav {
     position: absolute;
 
     top: 58px;
@@ -6887,7 +6887,7 @@ overflow: scroll;
       visibility 180ms ease;
   }
 
-  body > header nav.open {
+   header nav.open {
     opacity: 1;
     visibility: visible;
 
@@ -6896,7 +6896,7 @@ overflow: scroll;
     pointer-events: auto;
   }
 
-  body > header nav button {
+   header nav button {
     width: 100%;
     min-height: 48px;
 
@@ -6909,13 +6909,13 @@ overflow: scroll;
     font-size: 12px;
   }
 
-  body > header nav button + button {
+   header nav button + button {
     border-left: 0;
 
     border-top: 1px solid rgba(117, 188, 255, 0.1);
   }
 
-  body > header nav button[aria-current="page"] {
+   header nav button[aria-current="page"] {
     box-shadow: inset 2px 0 var(--blue);
   }
 
@@ -7127,7 +7127,7 @@ overflow: scroll;
      SHARED FOOTER
      ================================================== */
 
-  body > footer {
+   footer {
     position: relative;
 
     bottom: auto;
@@ -7160,7 +7160,7 @@ overflow: scroll;
      SHARED HEADER
      ================================================== */
 
-  body > header {
+   header {
     top: 12px;
   }
 
@@ -7218,7 +7218,7 @@ overflow: scroll;
 
   /* ---------- NAV DROPDOWN ---------- */
 
-  body > header nav {
+   header nav {
     top: 48px;
 
     right: 12px;
@@ -7227,7 +7227,7 @@ overflow: scroll;
     width: auto;
   }
 
-  body > header nav button {
+   header nav button {
     min-height: 46px;
 
     font-size: 11px;
@@ -7896,7 +7896,7 @@ overflow: scroll;
      SHARED FOOTER
      ================================================== */
 
-  body > footer {
+   footer {
     padding: 12px 12px 20px;
   }
 
