@@ -27,7 +27,7 @@
     font-size: 10px;
   }
 
-  body > header nav button {
+  #primary-nav button {
     padding: 0 13px;
     font-size: 12px;
   }
@@ -78,11 +78,12 @@
 
   /* ---------- NAV DROPDOWN ---------- */
 
-  body > header nav {
+  #primary-nav {
     position: absolute;
 
     top: 58px;
     right: 16px;
+    z-index: 60;
 
     width: 230px;
 
@@ -115,7 +116,7 @@
       visibility 180ms ease;
   }
 
-  body > header nav.open {
+  #primary-nav.open {
     opacity: 1;
     visibility: visible;
 
@@ -124,7 +125,7 @@
     pointer-events: auto;
   }
 
-  body > header nav button {
+  #primary-nav button {
     width: 100%;
     min-height: 48px;
 
@@ -137,13 +138,13 @@
     font-size: 12px;
   }
 
-  body > header nav button + button {
+  #primary-nav button + button {
     border-left: 0;
 
     border-top: 1px solid rgba(117, 188, 255, 0.1);
   }
 
-  body > header nav button[aria-current="page"] {
+  #primary-nav button[aria-current="page"] {
     box-shadow: inset 2px 0 var(--blue);
   }
 
@@ -161,6 +162,12 @@
     transform: translateY(-6px) rotate(-45deg);
   }
 
+  /* ---------- KEEP NOTICE BELOW HEADER / MENU ---------- */
+
+  .sandbox-notice {
+    z-index: 40;
+  }
+
   /* ---------- HELP TOOLTIP ---------- */
 
   body > header .help > div {
@@ -171,7 +178,7 @@
      HOME PAGE
      ================================================== */
 
-  body > main:not(.view-all-page) {
+  #hm .view-all-page {
     min-height: 100svh;
 
     display: grid;
@@ -198,7 +205,7 @@
 
   /* ---------- HOME PANELS ---------- */
 
-  body > main:not(.view-all-page) .glass-panel {
+  #hm .view-all-page .glass-panel {
     position: relative;
 
     top: auto;
@@ -209,34 +216,32 @@
     width: 100%;
     min-width: 0;
   }
-
-  body > main:not(.view-all-page) .featured {
+  #hm .view-all-page .featured {
     grid-area: featured;
 
     max-width: 760px;
 
     margin-inline: auto;
   }
-
-  body > main:not(.view-all-page) .library {
+  #hm .view-all-page .library {
     grid-area: library;
   }
 
-  body > main:not(.view-all-page) .rosetta {
+  #hm .view-all-page .rosetta {
     grid-area: rosetta;
   }
 
-  body > main:not(.view-all-page) .guides {
+  #hm .view-all-page .guides {
     grid-area: guides;
   }
 
-  body > main:not(.view-all-page) .data {
+  #hm .view-all-page .data {
     grid-area: data;
   }
 
   /* ---------- HOME HOLOGRAM ---------- */
 
-  body > main:not(.view-all-page) .logo-stage {
+  #hm .view-all-page .logo-stage {
     grid-area: logo;
 
     position: relative;
@@ -251,21 +256,21 @@
     transform: none;
   }
 
-  body > main:not(.view-all-page) .logo-stage::after {
+  #hm .view-all-page .logo-stage::after {
     bottom: -15%;
   }
 
   /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  body > main:not(.view-all-page) .projects {
+  #hm .view-all-page .projects {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   /* ---------- HOME RIGHT PANELS ---------- */
 
-  body > main:not(.view-all-page) .stones,
-  body > main:not(.view-all-page) .guide-list,
-  body > main:not(.view-all-page) .data-list {
+  #hm .view-all-page .stones,
+  #hm .view-all-page .guide-list,
+  #hm .view-all-page .data-list {
     width: 100%;
   }
 
@@ -387,29 +392,11 @@
   /* ==================================================
      SHARED HEADER
      ================================================== */
-  .sandbox-notice {
-    display: none;
-  }
+
   body > header {
     top: 12px;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
-  #primary-nav {
-    /* mobile menu position and layout */
-    display: none;
-
-    &.open {
-      display: flex;
-    }
-
-    button {
-      /* stack the navigation buttons vertically */
-    }
-  }
   /* ---------- BRAND ---------- */
 
   body > header .brand {
@@ -464,7 +451,7 @@
 
   /* ---------- NAV DROPDOWN ---------- */
 
-  body > header nav {
+  #primary-nav {
     top: 48px;
 
     right: 12px;
@@ -473,7 +460,7 @@
     width: auto;
   }
 
-  body > header nav button {
+  #primary-nav button {
     min-height: 46px;
 
     font-size: 11px;
@@ -483,7 +470,7 @@
      HOME PAGE
      ================================================== */
 
-  body > main:not(.view-all-page) {
+  #hm .view-all-page {
     display: grid;
 
     grid-template-columns: 1fr;
@@ -507,13 +494,13 @@
 
   /* ---------- HOME PANELS ---------- */
 
-  body > main:not(.view-all-page) .glass-panel {
+  #hm .view-all-page .glass-panel {
     width: 100%;
 
     padding: 14px;
   }
 
-  body > main:not(.view-all-page) .glass-panel h2 {
+  #hm .view-all-page .glass-panel h2 {
     margin-bottom: 12px;
 
     font-size: 13px;
@@ -521,13 +508,13 @@
 
   /* ---------- HOME HOLOGRAM ---------- */
 
-  body > main:not(.view-all-page) .logo-stage {
+  #hm .view-all-page .logo-stage {
     width: 205px;
 
     margin: 20px auto 28px;
   }
 
-  body > main:not(.view-all-page) .logo-stage::after {
+  #hm .view-all-page .logo-stage::after {
     bottom: -12%;
 
     opacity: 0.15;
@@ -535,7 +522,7 @@
 
   /* ---------- FEATURED PROJECT ---------- */
 
-  body > main:not(.view-all-page) .featured-content {
+  #hm .view-all-page .featured-content {
     grid-template-columns:
       24px
       minmax(0, 1fr)
@@ -544,23 +531,23 @@
     gap: 5px;
   }
 
-  body > main:not(.view-all-page) .featured .arrow {
+  #hm .view-all-page .featured .arrow {
     width: 24px;
     height: 24px;
 
     font-size: 18px;
   }
 
-  body > main:not(.view-all-page) .card-stack {
+  #hm .view-all-page .card-stack {
     height: 320px;
     min-height: 320px;
   }
 
-  body > main:not(.view-all-page) .card-stack > span {
+  #hm .view-all-page .card-stack > span {
     display: none;
   }
 
-  body > main:not(.view-all-page) .card-stack article {
+  #hm .view-all-page .card-stack article {
     width: 100%;
     height: 320px;
 
@@ -579,18 +566,18 @@
 
   /* ---------- FEATURED IMAGE ---------- */
 
-  body > main:not(.view-all-page) .featured .project-image {
+  #hm .view-all-page .featured .project-image {
     width: 100%;
     height: 130px;
     min-height: 0;
   }
 
-  body > main:not(.view-all-page) .featured .project-image > * {
+  #hm .view-all-page .featured .project-image > * {
     width: 100%;
     height: 100%;
   }
 
-  body > main:not(.view-all-page) .featured .project-image img {
+  #hm .view-all-page .featured .project-image img {
     width: 100%;
     height: 100%;
 
@@ -599,7 +586,7 @@
 
   /* ---------- FEATURED INFORMATION ---------- */
 
-  body > main:not(.view-all-page) .featured .project-info {
+  #hm .view-all-page .featured .project-info {
     grid-template-rows:
       auto
       auto
@@ -614,7 +601,7 @@
     overflow: hidden;
   }
 
-  body > main:not(.view-all-page) .featured .project-info h3 {
+  #hm .view-all-page .featured .project-info h3 {
     margin: 0;
 
     font-size: 18px;
@@ -623,7 +610,7 @@
     line-clamp: 1;
   }
 
-  body > main:not(.view-all-page) .featured .project-info p {
+  #hm .view-all-page .featured .project-info p {
     min-height: 0;
 
     overflow: hidden;
@@ -636,7 +623,7 @@
 
   /* ---------- FEATURED TAGS ---------- */
 
-  body > main:not(.view-all-page) .featured .tags {
+  #hm .view-all-page .featured .tags {
     flex-wrap: nowrap;
 
     max-height: 23px;
@@ -647,7 +634,7 @@
 
   /* ---------- FEATURED LINK ---------- */
 
-  body > main:not(.view-all-page) .featured .project-info a {
+  #hm .view-all-page .featured .project-info a {
     margin: 0;
 
     padding: 7px 8px;
@@ -655,24 +642,24 @@
 
   /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  body > main:not(.view-all-page) .projects {
+  #hm .view-all-page .projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 7px;
   }
 
-  body > main:not(.view-all-page) .projects > a {
+  #hm .view-all-page .projects > a {
     padding: 9px 5px;
   }
 
-  body > main:not(.view-all-page) .project-icon {
+  #hm .view-all-page .project-icon {
     width: 46px;
     height: 46px;
   }
 
   /* ---------- HOME ROSETTA ---------- */
 
-  body > main:not(.view-all-page) .stones {
+  #hm .view-all-page .stones {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -682,7 +669,7 @@
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .stones button {
+  #hm .view-all-page .stones button {
     width: 100%;
 
     display: grid;
@@ -697,7 +684,7 @@
     text-align: left;
   }
 
-  body > main:not(.view-all-page) .stones small {
+  #hm .view-all-page .stones small {
     width: auto;
 
     text-align: left;
@@ -705,7 +692,7 @@
 
   /* ---------- HOME REFERENCE GUIDES ---------- */
 
-  body > main:not(.view-all-page) .guide-list {
+  #hm .view-all-page .guide-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -715,7 +702,7 @@
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .guide-list > a {
+  #hm .view-all-page .guide-list > a {
     width: 100%;
 
     display: flex;
@@ -728,7 +715,7 @@
 
   /* ---------- HOME DATA VISUALIZATION ---------- */
 
-  body > main:not(.view-all-page) .data-list {
+  #hm .view-all-page .data-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -738,7 +725,7 @@
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .data-list > a {
+  #hm .view-all-page .data-list > a {
     width: 100%;
 
     display: flex;
@@ -845,13 +832,6 @@
   /* ==================================================
      INNER PAGE CONTENT
      ================================================== */
-
-  .project-content {
-    width: 100%;
-    min-width: 0;
-
-    padding: 12px;
-  }
 
   /* ---------- CONTENT HEADER ---------- */
 
@@ -1164,5 +1144,15 @@
     padding: 8px 5px;
 
     font-size: 10px;
+  }
+  #pg .view-all-page .type-menu {
+    display: none;
+  }
+  #pg .project-content {
+    display: block;
+    width: 100%;
+    min-width: 0;
+
+    padding: 12px;
   }
 }
