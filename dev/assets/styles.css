@@ -141,30 +141,14 @@ textarea {
   font: inherit;
 }
 
-button {
+button, a {
   cursor: pointer;
-}
+   > span{
 
-/* ---------- MAIN SANDBOX ---------- */
-
-main {
-  position: relative;
-  width: 100%;
-  min-height: 100svh;
-  overflow: hidden;
-  font-size: 13px;
-  &.view-all-page {
-    display: grid;
-    grid-template-columns: minmax(290px, 390px) minmax(0, 1fr);
-    gap: 40px;
-    padding: 125px clamp(30px, 4vw, 70px) 100px;
-    overflow: visible;
   }
+  
 }
 
-/* ==================================================
-   2. TOP HEADER / NAVIGATION
-   ================================================== */
  body > header {
   position: fixed;
   top: 22px;
@@ -331,20 +315,6 @@ body > header > * {
       opacity 180ms ease;
   }
 }
-/* ---------- TOP RIGHT TOOLS ---------- */
-
-.top-tools {
-  position: absolute;
-  right: 24px;
-  top: 0;
-
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-
-  color: white;
-}
-
 /* ---------- HELP ORB + TOOLTIP ---------- */
 .help {
   position: relative;
@@ -474,9 +444,19 @@ body > header > * {
     line-height: 1.5;
   }
 }
-/* ---------- RETURN LINK ---------- */
+/* ---------- TOP RIGHT TOOLS ---------- */
 
-.top-tools a {
+.top-tools {
+  position: absolute;
+  right: 24px;
+  top: 0;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  color: white;
+  a {
   align-self: center;
 
   color: #dce7f2;
@@ -486,6 +466,7 @@ body > header > * {
   }
 }
 
+}
 /* ---------- CLOSE BUTTON ---------- */
 
 .close {
@@ -587,10 +568,29 @@ body > header > * {
     font-size: 8px;
   }
 }
-
-/* ==================================================
+/* ---------- MAIN SANDBOX ---------- */
+main {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  font-size: 13px;
+  &.view-all-page {
+    display: grid;
+    /* grid-template-columns: minmax(290px, 390px) minmax(0, 1fr);
+    gap: 40px; */
+    /* padding: 125px clamp(30px, 4vw, 70px) 100px; */
+    overflow: visible;
+    grid-template-columns:
+      minmax(220px, 270px)
+      minmax(0, 1fr);
+      gap: 24px;
+      padding: 110px 24px 90px;
+  }
+}
+/* 
    3. CENTER LOGO
-   ================================================== */
+*/
 .logo-stage {
   position: absolute;
 
@@ -807,10 +807,6 @@ body > header > * {
       filter 200ms ease;
   }
 }
-
-/* ==================================================
-   4. BOTTOM NAVIGATION
-   ================================================== */
 footer {
   position: fixed;
 
@@ -879,158 +875,308 @@ footer {
 /* ==================================================
    5. GLASS PANELS
    ================================================== */
-
 .glass-panel {
   position: absolute;
+  overflow: hidden;
   z-index: 10;
-
   padding: 18px;
-
   border: 1px solid rgba(120, 190, 255, 0.2);
   border-radius: 9px;
-
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 25%),
-    rgba(5, 18, 43, 0.75);
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.3),
-    inset 0 1px rgba(255, 255, 255, 0.08),
-    0 0 20px rgba(60, 150, 255, 0.08);
-
-  overflow: hidden;
-}
-
-/* luminous border */
-
-.glass-panel::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  padding: 1px;
-
-  border-radius: inherit;
-
-  pointer-events: none;
-
-  background: linear-gradient(
-    135deg,
-    rgba(190, 235, 255, 0.9),
-    rgba(90, 170, 255, 0.18) 30%,
-    rgba(140, 90, 255, 0.22) 70%,
-    rgba(120, 210, 255, 0.85)
-  );
-
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* brighter corners */
-
-.glass-panel::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(circle at 0 0, rgba(210, 245, 255, 0.65), transparent 12%),
-    radial-gradient(
-      circle at 100% 0,
-      rgba(120, 220, 255, 0.75),
-      transparent 12%
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      transparent 25%
     ),
-    radial-gradient(circle at 0 100%, rgba(100, 120, 255, 0.4), transparent 14%);
+    rgba(5, 18, 43, 0.75);
+  box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.3),
+      inset 0 1px rgba(255, 255, 255, 0.08),
+      0 0 20px rgba(60, 150, 255, 0.08);
+  width: 100%;
+  padding: 14px;
+  h2 {
+    margin-bottom: 12px;
 
-  opacity: 0.9;
+    font-size: 13px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      135deg,
+      rgba(190, 235, 255, 0.9),
+      rgba(90, 170, 255, 0.18) 30%,
+      rgba(140, 90, 255, 0.22) 70%,
+      rgba(120, 210, 255, 0.85)
+    );
+
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        circle at 0 0,
+        rgba(210, 245, 255, 0.65),
+        transparent 12%
+      ),
+      radial-gradient(
+        circle at 100% 0,
+        rgba(120, 220, 255, 0.75),
+        transparent 12%
+      ),
+      radial-gradient(
+        circle at 0 100%,
+        rgba(100, 120, 255, 0.4),
+        transparent 14%
+      );
+    opacity: 0.9;
+  }
+
+  h2 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 14px;
+    color: var(--blue);
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  small {
+    font-size: 9px;
+    line-height: 1.2;
+  }
+  .projects,
+  .guide-list,
+  .data-list {
+    a {
+      display: grid;
+      justify-items: center;
+      border: 1px solid rgba(95, 170, 255, 0.2);
+      border-radius: 9px;
+      background: rgba(47, 141, 255, 0.08);
+      text-align: center;
+      &:hover,
+      &:focus-visible {
+        background: rgba(47, 141, 255, 0.16);
+      }
+    }
+  }
+  &.rosetta {
+    top: 14%;
+    right: 4%;
+    width: 30%;
+    min-width: 420px;
+     > div{
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 4px 2px 10px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
+      padding: 8px;
+      border: 1px solid rgba(95, 170, 255, 0.2);
+      border-radius: 9px;
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(95, 200, 255, 0.25);
+        border-radius: 9px;
+      }
+    }
+  }
+  &.featured {
+    top: 14%;
+    left: 4%;
+    width: 40%;
+    min-width: 420px;
+     > div{
+      
+    }
+  }
+  &.library {
+    top: 50%;
+    left: 4%;
+    width: 42%;
+    min-width: 420px;
+     > div{
+      
+    }
+  }
+  &.guides {
+    top: 41.5%;
+    right: 4%;
+    width: 30%;
+    min-width: 420px;
+     > div{
+      display: flex;
+    }
+  }
+  &.data {
+    top: 66%;
+    right: 4%;
+    width: 30%;
+    min-width: 420px;
+    > div{
+      display: flex;
+    }
+  }
+  &.data,&.guides,&.stones, &.library > div {
+   
+  }
+
 }
-
-/* panel heading */
-
-.glass-panel h2 {
-  position: relative;
-  z-index: 1;
-
-  margin-bottom: 14px;
-
-  color: var(--blue);
-
-  font-size: 15px;
-  font-weight: 500;
-
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-/* keep panel content above border effects */
-
-.glass-panel > * {
-  position: relative;
-  z-index: 1;
-}
-
 /* ==================================================
-   6. FEATURED
+   COLOR CLASSES
    ================================================== */
-
-.featured {
-  top: 14%;
-  left: 4%;
-
-  width: 40%;
-  min-width: 420px;
+.blue {
+  --icon-color: #4b96ff;
 }
 
-/* ---------- MAIN FEATURE AREA ---------- */
-
-.featured-content {
-  display: grid;
-  grid-template-columns: 30px 1fr 30px;
-  gap: 8px;
-  align-items: center;
+.cyan {
+  --icon-color: #41dce9;
 }
 
-/* ---------- ARROWS ---------- */
-
-.featured .arrow {
-  width: 30px;
-  height: 30px;
-
-  padding: 0;
-
-  border: 1px solid rgba(95, 200, 255, 0.35);
-  border-radius: 50%;
-
-  background: rgba(5, 18, 43, 0.75);
-  color: var(--blue);
-
-  font-size: 22px;
-
-  cursor: pointer;
+.purple {
+  --icon-color: #a768ff;
 }
 
-.featured .arrow:hover {
-  background: rgba(47, 141, 255, 0.2);
+.gold {
+  --icon-color: #ffc461;
 }
 
-.featured .arrow:disabled {
-  opacity: 0.35;
-  cursor: default;
+.green {
+  --icon-color: #65e5a0;
+}
+
+.red {
+  --icon-color: #ff6c80;
+}
+
+.rose {
+  --icon-color: #ff6fae;
+}
+
+.pink {
+  --icon-color: #ff82bd;
+}
+
+.magenta {
+  --icon-color: #ed64d9;
+}
+
+.violet {
+  --icon-color: #a66cff;
+}
+
+.lavender {
+  --icon-color: #ba9cff;
+}
+
+.indigo {
+  --icon-color: #7479ff;
+}
+
+.cobalt {
+  --icon-color: #397cff;
+}
+
+.sky {
+  --icon-color: #57c7ff;
+}
+
+.aqua {
+  --icon-color: #45e0e8;
+}
+
+.teal {
+  --icon-color: #42d6bd;
+}
+
+.mint {
+  --icon-color: #67e6bd;
+}
+
+.emerald {
+  --icon-color: #54dc8b;
+}
+
+.lime {
+  --icon-color: #a9e85f;
+}
+
+.yellow {
+  --icon-color: #f5df63;
+}
+
+.amber {
+  --icon-color: #ffbd55;
+}
+
+.orange {
+  --icon-color: #ff955c;
+}
+
+.coral {
+  --icon-color: #ff746f;
+}
+
+.crimson {
+  --icon-color: #ff526d;
+}
+
+.slate {
+  --icon-color: #91a9c4;
+}
+
+.silver {
+  --icon-color: #b6c4d4;
+}
+
+.ice {
+  --icon-color: #b7e7ff;
 }
 
 /* ---------- STACKED CARDS ---------- */
 
 .card-stack {
   position: relative;
-
   height: 220px;
   min-height: 220px;
 }
@@ -1056,16 +1202,6 @@ footer {
   opacity: 0.45;
 }
 
-/* ---------- SLIDES ---------- */
-
-.featured .card-stack > .featured-slide {
-  display: none;
-}
-
-.featured .card-stack > .featured-slide.active {
-  display: grid;
-}
-
 /* ---------- ACTIVE CARD ---------- */
 
 .card-stack article {
@@ -1085,18 +1221,49 @@ footer {
   overflow: hidden;
 }
 
-/* ---------- PROJECT IMAGE ---------- */
+/* ==================================================
+   6. FEATURED
+   ================================================== */
 
+/* ---------- MAIN FEATURE AREA ---------- */
+.featured-content {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  gap: 8px;
+  align-items: center;
+}
+.featured .arrow {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(95, 200, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(5, 18, 43, 0.75);
+  color: var(--blue);
+  font-size: 22px;
+  cursor: pointer;
+  &:hover {
+    background: rgba(47, 141, 255, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+.featured .card-stack > .featured-slide {
+  display: none;
+  &.active {
+    display: grid;
+  }
+}
 .featured .project-image {
   width: 100%;
   height: 100%;
   min-height: 0;
-
   overflow: hidden;
-
   border: 1px solid rgba(95, 170, 255, 0.2);
   border-radius: 9px;
-
   background:
     radial-gradient(
       circle at center,
@@ -1105,213 +1272,119 @@ footer {
     ),
     #07152f;
 }
-
 .featured .project-image > * {
   width: 100%;
   height: 100%;
 }
-
 .featured .project-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 }
-
-/* ---------- PROJECT INFORMATION ---------- */
-
 .featured .project-info {
   display: grid;
-
   grid-template-rows:
     auto
     auto
     minmax(0, 1fr)
     auto
     auto;
-
   gap: 6px;
-
   min-width: 0;
   min-height: 0;
-
   overflow: hidden;
+  a {
+    margin: 0;
+
+    padding: 8px 10px;
+
+    border: 1px solid rgba(95, 200, 255, 0.4);
+    border-radius: 8px;
+
+    background: rgba(47, 141, 255, 0.15);
+
+    text-align: center;
+
+    font-size: 11px;
+  }
+
+  a:hover {
+    background: rgba(47, 141, 255, 0.28);
+  }
+   small {
+    color: var(--blue);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+   h3 {
+    margin: 0;
+    overflow: hidden;
+    font-size: 21px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+   p {
+    min-height: 0;
+    overflow: hidden;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-height: 24px;
+    margin: 0;
+    overflow: hidden;
+    span {
+      flex: 0 0 auto;
+      padding: 4px 6px;
+      border-radius: 6px;
+      background: rgba(47, 141, 255, 0.15);
+      color: #acd9f7;
+      font-size: 9px;
+    }
+  }
 }
-
-.featured .project-info small {
-  color: var(--blue);
-
-  font-size: 9px;
-  letter-spacing: 0.08em;
-}
-
-/* ---------- PROJECT TITLE ---------- */
-
-.featured .project-info h3 {
-  margin: 0;
-
-  overflow: hidden;
-
-  font-size: 21px;
-
-  display: -webkit-box;
-
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-
-  line-clamp: 2;
-}
-
-/* ---------- DESCRIPTION ---------- */
-
-.featured .project-info p {
-  min-height: 0;
-
-  overflow: hidden;
-
-  font-size: 12px;
-
-  display: -webkit-box;
-
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-
-  line-clamp: 3;
-}
-
-/* ---------- TAGS ---------- */
-
-.featured .tags {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 5px;
-
-  max-height: 24px;
-  margin: 0;
-
-  overflow: hidden;
-}
-
-.featured .tags span {
-  flex: 0 0 auto;
-
-  padding: 4px 6px;
-
-  border-radius: 6px;
-
-  background: rgba(47, 141, 255, 0.15);
-
-  color: #acd9f7;
-
-  font-size: 9px;
-}
-
-/* ---------- PROJECT LINK ---------- */
-
-.featured .project-info a {
-  margin: 0;
-
-  padding: 8px 10px;
-
-  border: 1px solid rgba(95, 200, 255, 0.4);
-  border-radius: 8px;
-
-  background: rgba(47, 141, 255, 0.15);
-
-  text-align: center;
-
-  font-size: 11px;
-}
-
-.featured .project-info a:hover {
-  background: rgba(47, 141, 255, 0.28);
-}
-
-/* ---------- DOTS ---------- */
 
 .dots {
   display: flex;
   justify-content: center;
-
   gap: 6px;
-
   margin-top: 12px;
-}
-
-.dots span,
-.featured .dots button {
-  width: 6px;
-  height: 6px;
-
-  padding: 0;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: #46617d;
-}
-
-.featured .dots button {
-  cursor: pointer;
-}
-
-.dots .active,
-.featured .dots button.active {
-  background: var(--blue);
-
-  box-shadow: 0 0 7px var(--blue);
-}
-
-.featured .dots button:focus-visible {
-  outline: 1px solid var(--blue);
-  outline-offset: 3px;
+  span, button {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #46617d;
+    .active {
+      background: var(--blue);
+      box-shadow: 0 0 7px var(--blue);
+    }
+    &:focus-visible {
+      outline: 1px solid var(--blue);
+      outline-offset: 3px;
+    }
+  }
 }
 
 /* ==================================================
    7. ROSETTA STONES
    ================================================== */
 
-.rosetta {
-  top: 14%;
-  right: 4%;
-
-  width: 30%;
-  min-width: 420px;
-}
 
 /* ---------- HORIZONTAL SCROLL ---------- */
 
-.stones {
-  display: flex;
-  gap: 14px;
 
-  overflow-x: auto;
-  overflow-y: hidden;
 
-  padding: 4px 2px 10px;
-
-  scrollbar-width: thin;
-  scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
-
-  padding: 8px;
-
-  border: 1px solid rgba(95, 170, 255, 0.2);
-  border-radius: 9px;
-}
-
-.stones::-webkit-scrollbar {
-  height: 4px;
-}
-
-.stones::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.stones::-webkit-scrollbar-thumb {
-  background: rgba(95, 200, 255, 0.25);
-  border-radius: 9px;
-}
 
 /* ---------- EACH STONE BUTTON ---------- */
 
@@ -1342,75 +1415,52 @@ footer {
    ================================================== */
 
 .stone {
-  --stone-color: #eaf7ff;
-
+  /* --icon-color: #eaf7ff; */
   position: relative;
-
   width: 64px;
   height: 64px;
-
   display: grid;
   place-items: center;
-
-  color: var(--stone-color);
-
-  background: color-mix(in srgb, var(--stone-color) 42%, transparent);
-
-  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
-
+  color: var(--icon-color);
+  background: color-mix(in srgb, var(--icon-color) 42%, transparent);
+  clip-path: polygon(
+    25% 6.7%,
+    75% 6.7%,
+    100% 50%,
+    75% 93.3%,
+    25% 93.3%,
+    0 50%
+  );
   filter: drop-shadow(
-      0 0 2px color-mix(in srgb, var(--stone-color) 60%, transparent)
+      0 0 2px color-mix(in srgb, var(--icon-color) 60%, transparent)
     )
-    drop-shadow(0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent));
-
+    drop-shadow(
+      0 0 7px color-mix(in srgb, var(--icon-color) 35%, transparent)
+    );
   transition:
     transform 180ms ease,
     filter 180ms ease;
 }
-
-/* ==================================================
-   DARK INTERIOR
-   Creates thin outer border
-   ================================================== */
-
 .stone::before {
   content: "";
-
   position: absolute;
   inset: 1.5px;
-
   background: rgba(5, 15, 35, 0.95);
-
   clip-path: inherit;
-
   z-index: 0;
 }
 
-/* ==================================================
-   SECOND INNER BORDER
-   ================================================== */
-
 .stone::after {
   content: "";
-
   position: absolute;
   inset: 7px;
-
-  background: color-mix(in srgb, var(--stone-color) 22%, transparent);
-
+  background: color-mix(in srgb, var(--icon-color) 22%, transparent);
   clip-path: inherit;
-
   filter: drop-shadow(
-    0 0 2px color-mix(in srgb, var(--stone-color) 20%, transparent)
+    0 0 2px color-mix(in srgb, var(--icon-color) 20%, transparent)
   );
-
   z-index: 1;
 }
-
-/* ==================================================
-   CENTER OF HEXAGON
-   ================================================== */
-
 .stone > span {
   position: relative;
   z-index: 2;
@@ -1442,14 +1492,9 @@ footer {
   white-space: nowrap;
 
   text-shadow:
-    0 0 4px color-mix(in srgb, var(--stone-color) 75%, transparent),
-    0 0 8px color-mix(in srgb, var(--stone-color) 35%, transparent);
+    0 0 4px color-mix(in srgb, var(--icon-color) 75%, transparent),
+    0 0 8px color-mix(in srgb, var(--icon-color) 35%, transparent);
 }
-
-/* ==================================================
-   IMAGE / SVG ICONS
-   ================================================== */
-
 .stone img,
 .stone svg {
   display: block;
@@ -1464,157 +1509,17 @@ footer {
 
   color: inherit;
 }
-
 .stone img {
   filter: drop-shadow(
-    0 0 4px color-mix(in srgb, var(--stone-color) 45%, transparent)
+    0 0 4px color-mix(in srgb, var(--icon-color) 45%, transparent)
   );
-}
-
-/* ==================================================
-   COLOR CLASSES
-   ================================================== */
-
-.stone.blue {
-  --stone-color: #4b96ff;
-}
-
-.stone.cyan {
-  --stone-color: #41dce9;
-}
-
-.stone.purple {
-  --stone-color: #a768ff;
-}
-
-.stone.gold {
-  --stone-color: #ffc461;
-}
-
-.stone.green {
-  --stone-color: #65e5a0;
-}
-
-.stone.red {
-  --stone-color: #ff6c80;
-}
-/* ==================================================
-   GEM / STONE COLOR PALETTE
-   ================================================== */
-
-.stone.rose {
-  --stone-color: #ff6fae;
-}
-
-.stone.pink {
-  --stone-color: #ff82bd;
-}
-
-.stone.magenta {
-  --stone-color: #ed64d9;
-}
-
-.stone.violet {
-  --stone-color: #a66cff;
-}
-
-.stone.purple {
-  --stone-color: #a768ff;
-}
-
-.stone.lavender {
-  --stone-color: #ba9cff;
-}
-
-.stone.indigo {
-  --stone-color: #7479ff;
-}
-
-.stone.cobalt {
-  --stone-color: #397cff;
-}
-
-.stone.blue {
-  --stone-color: #4b96ff;
-}
-
-.stone.sky {
-  --stone-color: #57c7ff;
-}
-
-.stone.cyan {
-  --stone-color: #41dce9;
-}
-
-.stone.aqua {
-  --stone-color: #45e0e8;
-}
-
-.stone.teal {
-  --stone-color: #42d6bd;
-}
-
-.stone.mint {
-  --stone-color: #67e6bd;
-}
-
-.stone.emerald {
-  --stone-color: #54dc8b;
-}
-
-.stone.green {
-  --stone-color: #65e5a0;
-}
-
-.stone.lime {
-  --stone-color: #a9e85f;
-}
-
-.stone.yellow {
-  --stone-color: #f5df63;
-}
-
-.stone.gold {
-  --stone-color: #ffc461;
-}
-
-.stone.amber {
-  --stone-color: #ffbd55;
-}
-
-.stone.orange {
-  --stone-color: #ff955c;
-}
-
-.stone.coral {
-  --stone-color: #ff746f;
-}
-
-.stone.red {
-  --stone-color: #ff6c80;
-}
-
-.stone.crimson {
-  --stone-color: #ff526d;
-}
-
-.stone.slate {
-  --stone-color: #91a9c4;
-}
-
-.stone.silver {
-  --stone-color: #b6c4d4;
-}
-
-.stone.ice {
-  --stone-color: #b7e7ff;
 }
 
 /* ==================================================
    STONE LABEL
    ================================================== */
 
-.stones small {
+/* .stones small {
   width: 72px;
 
   color: #d4dfeb;
@@ -1623,22 +1528,16 @@ footer {
   line-height: 1.2;
 
   text-align: center;
-}
-
-/* ==================================================
-   HOVER / FOCUS
-   ================================================== */
-
+} */
 .stones button:hover .stone,
 .stones button:focus-visible .stone {
   transform: translateY(-2px);
 
-  filter: drop-shadow(0 0 3px var(--stone-color))
+  filter: drop-shadow(0 0 3px var(--icon-color))
     drop-shadow(
-      0 0 10px color-mix(in srgb, var(--stone-color) 50%, transparent)
+      0 0 10px color-mix(in srgb, var(--icon-color) 50%, transparent)
     );
 }
-
 .stones button:focus-visible {
   outline: 1px solid var(--blue);
   outline-offset: 3px;
@@ -1665,23 +1564,11 @@ footer {
 /* ==================================================
    8. PROJECT LIBRARY
    ================================================== */
-
-.library {
-  top: 50%;
-  left: 4%;
-
-  width: 42%;
-  min-width: 420px;
-}
-
-/* ---------- PROJECT GRID ---------- */
-
 .projects {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
-
 .projects > a {
   min-width: 0;
 
@@ -1698,16 +1585,12 @@ footer {
 
   text-align: center;
 }
-
 .projects > a:hover,
 .projects > a:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
-
-/* ---------- PROJECT ICON ---------- */
-
 .project-icon {
-  --icon-color: #eaf7ff;
+  /* --icon-color: #eaf7ff; */
 
   width: 62px;
   height: 62px;
@@ -1736,7 +1619,6 @@ footer {
     inset 0 0 10px color-mix(in srgb, var(--icon-color) 10%, transparent),
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
-
 .project-icon img,
 .project-icon svg {
   width: 65%;
@@ -1744,168 +1626,22 @@ footer {
 
   object-fit: contain;
 }
-
-/* ---------- ICON COLORS ---------- */
-
-.project-icon.blue {
-  --icon-color: #4b96ff;
-}
-
-.project-icon.cyan {
-  --icon-color: #41dce9;
-}
-
-.project-icon.purple {
-  --icon-color: #a768ff;
-}
-
-.project-icon.gold {
-  --icon-color: #ffc461;
-}
-
-.project-icon.green {
-  --icon-color: #65e5a0;
-}
-/* ==================================================
-   PROJECT ICON COLOR PALETTE
-   ================================================== */
-
-.project-icon.rose {
-  --icon-color: #ff6fae;
-}
-
-.project-icon.pink {
-  --icon-color: #ff82bd;
-}
-
-.project-icon.magenta {
-  --icon-color: #ed64d9;
-}
-
-.project-icon.violet {
-  --icon-color: #a66cff;
-}
-
-.project-icon.purple {
-  --icon-color: #a768ff;
-}
-
-.project-icon.lavender {
-  --icon-color: #ba9cff;
-}
-
-.project-icon.indigo {
-  --icon-color: #7479ff;
-}
-
-.project-icon.cobalt {
-  --icon-color: #397cff;
-}
-
-.project-icon.blue {
-  --icon-color: #4b96ff;
-}
-
-.project-icon.sky {
-  --icon-color: #57c7ff;
-}
-
-.project-icon.cyan {
-  --icon-color: #41dce9;
-}
-
-.project-icon.aqua {
-  --icon-color: #45e0e8;
-}
-
-.project-icon.teal {
-  --icon-color: #42d6bd;
-}
-
-.project-icon.mint {
-  --icon-color: #67e6bd;
-}
-
-.project-icon.emerald {
-  --icon-color: #54dc8b;
-}
-
-.project-icon.green {
-  --icon-color: #65e5a0;
-}
-
-.project-icon.lime {
-  --icon-color: #a9e85f;
-}
-
-.project-icon.yellow {
-  --icon-color: #f5df63;
-}
-
-.project-icon.gold {
-  --icon-color: #ffc461;
-}
-
-.project-icon.amber {
-  --icon-color: #ffbd55;
-}
-
-.project-icon.orange {
-  --icon-color: #ff955c;
-}
-
-.project-icon.coral {
-  --icon-color: #ff746f;
-}
-
-.project-icon.red {
-  --icon-color: #ff6c80;
-}
-
-.project-icon.crimson {
-  --icon-color: #ff526d;
-}
-
-.project-icon.slate {
-  --icon-color: #91a9c4;
-}
-
-.project-icon.silver {
-  --icon-color: #b6c4d4;
-}
-
-.project-icon.ice {
-  --icon-color: #b7e7ff;
-}
-/* ---------- TEXT ---------- */
-
-.projects strong {
+/* .projects strong {
   font-size: 9px;
   font-weight: 500;
   line-height: 1.15;
 }
-
 .projects small {
   color: #7890aa;
 
   font-size: 8px;
   letter-spacing: 0.04em;
-}
+} */
 
 
 /* ==================================================
    9. REFERENCE GUIDES
    ================================================== */
-
-.guides {
-  top: 41.5%;
-  right: 4%;
-
-  width: 30%;
-  min-width: 420px;
-}
-
-/* ---------- HORIZONTAL LIST ---------- */
 
 .guide-list {
   display: flex;
@@ -1922,18 +1658,13 @@ footer {
   scrollbar-width: thin;
   scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
 }
-
 .guide-list::-webkit-scrollbar {
   height: 4px;
 }
-
 .guide-list::-webkit-scrollbar-thumb {
   background: rgba(95, 200, 255, 0.25);
   border-radius: 9px;
 }
-
-/* ---------- GUIDE ITEM ---------- */
-
 .guide-list > a {
   flex: 0 0 76px;
 
@@ -1950,47 +1681,32 @@ footer {
 
   text-align: center;
 }
-
 .guide-list > a:hover,
 .guide-list > a:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
-
-/* ---------- SQUARE ICON ---------- */
-
 .guide-icon {
-  --icon-color: #eaf7ff;
-
+  /* --icon-color: #eaf7ff; */
   width: 48px;
   height: 48px;
-
+  font-size: 11px;
+  font-weight: 700;
   display: grid;
   place-items: center;
-
-  border: 1px solid color-mix(in srgb, var(--icon-color) 45%, transparent);
-
   border-radius: 7px;
 
+  color: var(--icon-color);
+  border: 1px solid color-mix(in srgb, var(--icon-color) 45%, transparent);
   background: linear-gradient(
     145deg,
     color-mix(in srgb, var(--icon-color) 18%, transparent),
     rgba(5, 15, 35, 0.9)
   );
-
-  color: var(--icon-color);
-
-  font-size: 11px;
-  font-weight: 700;
-
   text-shadow: 0 0 6px var(--icon-color);
-
   box-shadow:
     inset 0 0 10px color-mix(in srgb, var(--icon-color) 10%, transparent),
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
-
-/* ---------- IMG / SVG ---------- */
-
 .guide-icon img,
 .guide-icon svg {
   width: 60%;
@@ -1998,166 +1714,15 @@ footer {
 
   object-fit: contain;
 }
-
-/* ---------- ICON COLORS ---------- */
-
-.guide-icon.blue {
-  --icon-color: #4b96ff;
-}
-
-.guide-icon.cyan {
-  --icon-color: #41dce9;
-}
-
-.guide-icon.purple {
-  --icon-color: #a768ff;
-}
-
-.guide-icon.gold {
-  --icon-color: #ffc461;
-}
-
-.guide-icon.red {
-  --icon-color: #ff6c80;
-}
-
-.guide-icon.green {
-  --icon-color: #65e5a0;
-}
-/* ==================================================
-   GUIDE ICON COLOR PALETTE
-   ================================================== */
-
-.guide-icon.rose {
-  --icon-color: #ff6fae;
-}
-
-.guide-icon.pink {
-  --icon-color: #ff82bd;
-}
-
-.guide-icon.magenta {
-  --icon-color: #ed64d9;
-}
-
-.guide-icon.violet {
-  --icon-color: #a66cff;
-}
-
-.guide-icon.purple {
-  --icon-color: #a768ff;
-}
-
-.guide-icon.lavender {
-  --icon-color: #ba9cff;
-}
-
-.guide-icon.indigo {
-  --icon-color: #7479ff;
-}
-
-.guide-icon.cobalt {
-  --icon-color: #397cff;
-}
-
-.guide-icon.blue {
-  --icon-color: #4b96ff;
-}
-
-.guide-icon.sky {
-  --icon-color: #57c7ff;
-}
-
-.guide-icon.cyan {
-  --icon-color: #41dce9;
-}
-
-.guide-icon.aqua {
-  --icon-color: #45e0e8;
-}
-
-.guide-icon.teal {
-  --icon-color: #42d6bd;
-}
-
-.guide-icon.mint {
-  --icon-color: #67e6bd;
-}
-
-.guide-icon.emerald {
-  --icon-color: #54dc8b;
-}
-
-.guide-icon.green {
-  --icon-color: #65e5a0;
-}
-
-.guide-icon.lime {
-  --icon-color: #a9e85f;
-}
-
-.guide-icon.yellow {
-  --icon-color: #f5df63;
-}
-
-.guide-icon.gold {
-  --icon-color: #ffc461;
-}
-
-.guide-icon.amber {
-  --icon-color: #ffbd55;
-}
-
-.guide-icon.orange {
-  --icon-color: #ff955c;
-}
-
-.guide-icon.coral {
-  --icon-color: #ff746f;
-}
-
-.guide-icon.red {
-  --icon-color: #ff6c80;
-}
-
-.guide-icon.crimson {
-  --icon-color: #ff526d;
-}
-
-.guide-icon.slate {
-  --icon-color: #91a9c4;
-}
-
-.guide-icon.silver {
-  --icon-color: #b6c4d4;
-}
-
-.guide-icon.ice {
-  --icon-color: #b7e7ff;
-}
-/* ---------- LABEL ---------- */
-
 .guide-list small {
   color: #d4dfeb;
 
   font-size: 9px;
   line-height: 1.2;
 }
-
 /* ==================================================
    10. DATA SCIENCE
    ================================================== */
-
-.data {
-  top: 66%;
-  right: 4%;
-
-  width: 30%;
-  min-width: 420px;
-}
-
-/* ---------- HORIZONTAL LIST ---------- */
-
 .data-list {
   display: flex;
   gap: 10px;
@@ -2173,7 +1738,6 @@ footer {
   scrollbar-width: thin;
   scrollbar-color: rgba(95, 200, 255, 0.25) transparent;
 }
-
 .data-list::-webkit-scrollbar {
   height: 4px;
 }
@@ -2182,9 +1746,6 @@ footer {
   background: rgba(95, 200, 255, 0.25);
   border-radius: 9px;
 }
-
-/* ---------- TOPIC ---------- */
-
 .data-list > a {
   flex: 0 0 82px;
 
@@ -2201,16 +1762,12 @@ footer {
 
   text-align: center;
 }
-
 .data-list > a:hover,
 .data-list > a:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
-
-/* ---------- ICON ---------- */
-
 .data-icon {
-  --icon-color: #eaf7ff;
+  /* --icon-color: #eaf7ff; */
 
   width: 48px;
   height: 48px;
@@ -2239,9 +1796,6 @@ footer {
     inset 0 0 10px color-mix(in srgb, var(--icon-color) 10%, transparent),
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
-
-/* image / svg */
-
 .data-icon img,
 .data-icon svg {
   width: 60%;
@@ -2251,173 +1805,23 @@ footer {
 
   color: inherit;
 }
-
-/* ---------- COLORS ---------- */
-
-.data-icon.blue {
-  --icon-color: #4b96ff;
-}
-
-.data-icon.cyan {
-  --icon-color: #41dce9;
-}
-
-.data-icon.purple {
-  --icon-color: #a768ff;
-}
-
-.data-icon.gold {
-  --icon-color: #ffc461;
-}
-
-.data-icon.green {
-  --icon-color: #65e5a0;
-}
-
-.data-icon.red {
-  --icon-color: #ff6c80;
-}
-/* ==================================================
-   INTERACTIVE ICON COLOR PALETTE
-   Existing class name: .data-icon
-   ================================================== */
-
-.data-icon.rose {
-  --icon-color: #ff6fae;
-}
-
-.data-icon.pink {
-  --icon-color: #ff82bd;
-}
-
-.data-icon.magenta {
-  --icon-color: #ed64d9;
-}
-
-.data-icon.violet {
-  --icon-color: #a66cff;
-}
-
-.data-icon.purple {
-  --icon-color: #a768ff;
-}
-
-.data-icon.lavender {
-  --icon-color: #ba9cff;
-}
-
-.data-icon.indigo {
-  --icon-color: #7479ff;
-}
-
-.data-icon.cobalt {
-  --icon-color: #397cff;
-}
-
-.data-icon.blue {
-  --icon-color: #4b96ff;
-}
-
-.data-icon.sky {
-  --icon-color: #57c7ff;
-}
-
-.data-icon.cyan {
-  --icon-color: #41dce9;
-}
-
-.data-icon.aqua {
-  --icon-color: #45e0e8;
-}
-
-.data-icon.teal {
-  --icon-color: #42d6bd;
-}
-
-.data-icon.mint {
-  --icon-color: #67e6bd;
-}
-
-.data-icon.emerald {
-  --icon-color: #54dc8b;
-}
-
-.data-icon.green {
-  --icon-color: #65e5a0;
-}
-
-.data-icon.lime {
-  --icon-color: #a9e85f;
-}
-
-.data-icon.yellow {
-  --icon-color: #f5df63;
-}
-
-.data-icon.gold {
-  --icon-color: #ffc461;
-}
-
-.data-icon.amber {
-  --icon-color: #ffbd55;
-}
-
-.data-icon.orange {
-  --icon-color: #ff955c;
-}
-
-.data-icon.coral {
-  --icon-color: #ff746f;
-}
-
-.data-icon.red {
-  --icon-color: #ff6c80;
-}
-
-.data-icon.crimson {
-  --icon-color: #ff526d;
-}
-
-.data-icon.slate {
-  --icon-color: #91a9c4;
-}
-
-.data-icon.silver {
-  --icon-color: #b6c4d4;
-}
-
-.data-icon.ice {
-  --icon-color: #b7e7ff;
-}
-/* ---------- LABEL ---------- */
-
 .data-list small {
   color: #d4dfeb;
 
   font-size: 9px;
   line-height: 1.25;
 }
-
-/* ==================================================
-   INNER PAGES
-   ================================================== */
-
 /* ==================================================
    LEFT TYPE MENU
    ================================================== */
-
 .type-menu {
   align-self: start;
 
   min-width: 0;
 }
-
-/* ---------- PAGE INTRO ---------- */
-
 .type-menu header {
   margin-bottom: 20px;
 }
-
 .type-menu h1 {
   margin: 0 0 8px;
 
@@ -2429,21 +1833,15 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.035em;
 }
-
 .type-menu header p {
   max-width: 340px;
 
   color: #b8c7d8;
 }
 
-/* ==================================================
-   PROJECT TYPE LIST
-   ================================================== */
-
 /* ==========================================================================
    EDITOR TOP BAR
    ========================================================================== */
-
 .topbar {
   position: sticky;
   top: 0;
@@ -2465,37 +1863,30 @@ footer {
 
   backdrop-filter: blur(14px);
 }
-
 .topbar > div:first-child strong,
 .topbar > div:first-child span {
   display: block;
 }
-
 .topbar > div:first-child span,
 .status {
   color: var(--editor-muted);
   font-size: 0.75rem;
 }
-
 .status {
   text-align: right;
 }
-
 .status.error {
   color: #ffb9b9;
 }
-
 .top-actions {
   display: flex;
   flex-wrap: wrap;
 
   gap: 0.45rem;
 }
-
 /* ==========================================================================
    START / STOP HELP
    ========================================================================== */
-
 .stop-help {
   padding: 0.5rem 1rem;
 
@@ -2507,15 +1898,12 @@ footer {
   font-size: 0.75rem;
   line-height: 1.7;
 }
-
 .stop-help strong {
   margin-left: 0.55rem;
 }
-
 .stop-help strong:first-child {
   margin-left: 0;
 }
-
 .stop-help code,
 .stop-help kbd {
   padding: 0.12rem 0.3rem;
@@ -2526,7 +1914,6 @@ footer {
   color: #eef6ff;
   background: #07111f;
 }
-
 .runtime-info {
   display: block;
 
@@ -2534,13 +1921,11 @@ footer {
 
   color: #8fa8c4;
 }
-
 .runtime-info strong {
   margin-right: 0.25rem;
 
   color: #bfd1e4;
 }
-
 .runtime-info code {
   margin-right: 0.5rem;
 }
@@ -2559,17 +1944,14 @@ footer {
 
   min-height: calc(100vh - 102px);
 }
-
 .sidebar,
 .workspace,
 .preview-column {
   min-width: 0;
 }
-
 /* ==========================================================================
    SIDEBAR
    ========================================================================== */
-
 .sidebar {
   overflow: auto;
 
@@ -2579,13 +1961,10 @@ footer {
 
   background: var(--editor-panel);
 }
-
 .sidebar-section {
   padding: 0.85rem;
-
   border-bottom: 1px solid var(--editor-line);
 }
-
 .section-title-row {
   display: flex;
   align-items: center;
@@ -2595,7 +1974,6 @@ footer {
 
   margin-bottom: 0.6rem;
 }
-
 .section-title-row h2 {
   margin: 0;
 
@@ -2604,14 +1982,12 @@ footer {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-
 .sidebar-help {
   color: var(--editor-muted);
 
   font-size: 0.7rem;
   line-height: 1.45;
 }
-
 /* ==========================================================================
    EDITOR INPUTS
    ========================================================================== */
@@ -2629,19 +2005,16 @@ textarea {
   color: #edf5ff;
   background: #06101d;
 }
-
 textarea {
   resize: vertical;
   line-height: 1.45;
 }
-
 input:focus,
 select:focus,
 textarea:focus {
   outline: 2px solid rgba(91, 143, 194, 0.25);
   outline-offset: 1px;
 }
-
 /* ==========================================================================
    EDITOR BUTTONS
    ========================================================================== */
@@ -2655,22 +2028,18 @@ button {
   color: #edf5ff;
   background: #153556;
 }
-
 button:hover {
   background: #1d476f;
 }
-
 button.danger,
 .danger-small {
   border-color: #7a4957;
   background: #47242f;
 }
-
 button.danger:hover,
 .danger-small:hover {
   background: #5a2b39;
 }
-
 .danger-small {
   padding: 0.2rem 0.42rem;
   font-size: 0.7rem;
@@ -2687,7 +2056,6 @@ button.danger:hover,
 
   margin-top: 0.55rem;
 }
-
 .search-result {
   display: grid;
 
@@ -2698,28 +2066,23 @@ button.danger:hover,
   background: transparent;
   border-color: #213852;
 }
-
 .search-result strong {
   font-size: 0.76rem;
 }
-
 .search-result span,
 .search-result small {
   color: var(--editor-muted);
   font-size: 0.66rem;
 }
-
 .search-result code {
   overflow-wrap: anywhere;
 
   color: #b8d0ea;
   font-size: 0.64rem;
 }
-
 /* ==========================================================================
    PAGE OUTLINE
    ========================================================================== */
-
 .outline-fixed,
 .outline-item {
   margin-top: 0.45rem;
@@ -2729,23 +2092,19 @@ button.danger:hover,
 
   background: #0a1828;
 }
-
 .outline-fixed {
   display: grid;
 
   padding: 0.6rem;
 }
-
 .outline-fixed small {
   color: var(--editor-muted);
   font-size: 0.64rem;
 }
-
 .outline-item {
   display: grid;
   grid-template-columns: 1fr auto;
 }
-
 .outline-open {
   display: grid;
   grid-template-columns: 2.2rem 1fr;
@@ -2759,27 +2118,22 @@ button.danger:hover,
 
   background: transparent;
 }
-
 .outline-open strong,
 .outline-open small {
   display: block;
 }
-
 .outline-open strong {
   font-size: 0.72rem;
 }
-
 .outline-open small {
   color: var(--editor-muted);
   font-size: 0.62rem;
 }
-
 .outline-number {
   color: #8bb0d8;
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
-
 .outline-actions {
   display: flex;
   align-items: center;
@@ -2788,7 +2142,6 @@ button.danger:hover,
 
   padding-right: 0.35rem;
 }
-
 .outline-actions button {
   padding: 0.2rem 0.35rem;
   font-size: 0.7rem;
@@ -3690,16 +3043,6 @@ details:not([open]) summary {
 /* ==========================================================================
    PREVIEW — STANDARD / DOCUMENTATION CHILDREN
    LOCKED-IN STRUCTURE
-
-   Standard and Documentation children are ALWAYS one full-width column.
-
-   Behavior = None:
-     full-width content only
-
-   Behavior = Link or Collapsible:
-     full-width content + one narrow action column on the right
-
-   Grid and Split nodes are the ONLY node families that create content columns.
    ========================================================================== */
 
 .project-command-list {
@@ -4216,7 +3559,7 @@ button.project-command-action {
 }
 
 .project-icon {
-  --icon-color: #eaf7ff;
+  /* --icon-color: #eaf7ff; */
 
   flex: 0 0 46px;
 
@@ -4253,30 +3596,6 @@ button.project-command-action {
   height: 65%;
 
   object-fit: contain;
-}
-
-.project-icon.blue {
-  --icon-color: #4b96ff;
-}
-
-.project-icon.cyan {
-  --icon-color: #41dce9;
-}
-
-.project-icon.purple {
-  --icon-color: #a768ff;
-}
-
-.project-icon.gold {
-  --icon-color: #ffc461;
-}
-
-.project-icon.green {
-  --icon-color: #65e5a0;
-}
-
-.project-icon.red {
-  --icon-color: #ff6c80;
 }
 
 .project-grid a > span:last-child {
@@ -6771,7 +6090,7 @@ header:has(> span + h3) {
      HOME PAGE
      ================================================== */
 
-  main:not(.view-all-page) {
+{
     min-height: 100svh;
 
     display: grid;
@@ -6798,7 +6117,7 @@ header:has(> span + h3) {
 
   /* ---------- HOME PANELS ---------- */
 
-  main:not(.view-all-page) .glass-panel {
+.glass-panel {
     position: relative;
 
     top: auto;
@@ -6810,7 +6129,7 @@ header:has(> span + h3) {
     min-width: 0;
   }
 
-  main:not(.view-all-page) .featured {
+.featured {
     grid-area: featured;
 
     max-width: 760px;
@@ -6818,25 +6137,25 @@ header:has(> span + h3) {
     margin-inline: auto;
   }
 
-  main:not(.view-all-page) .library {
+.library {
     grid-area: library;
   }
 
-  main:not(.view-all-page) .rosetta {
+.rosetta {
     grid-area: rosetta;
   }
 
-  main:not(.view-all-page) .guides {
+.guides {
     grid-area: guides;
   }
 
-  main:not(.view-all-page) .data {
+.data {
     grid-area: data;
   }
 
   /* ---------- HOME HOLOGRAM ---------- */
 
-  main:not(.view-all-page) .logo-stage {
+.logo-stage {
     grid-area: logo;
 
     position: relative;
@@ -6851,37 +6170,27 @@ header:has(> span + h3) {
     transform: none;
   }
 
-  main:not(.view-all-page) .logo-stage::after {
+.logo-stage::after {
     bottom: -15%;
   }
 
   /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  main:not(.view-all-page) .projects {
+.projects {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   /* ---------- HOME RIGHT PANELS ---------- */
 
-  main:not(.view-all-page) .stones,
-  main:not(.view-all-page) .guide-list,
-  main:not(.view-all-page) .data-list {
+.stones,
+.guide-list,
+.data-list {
     width: 100%;
   }
 
   /* ==================================================
      INNER PAGES — TABLET
      ================================================== */
-
-  .view-all-page {
-    grid-template-columns:
-      minmax(220px, 270px)
-      minmax(0, 1fr);
-
-    gap: 24px;
-
-    padding: 110px 24px 90px;
-  }
 
   /* ---------- INNER ASIDE ---------- */
 
@@ -7062,7 +6371,7 @@ header:has(> span + h3) {
      HOME PAGE
      ================================================== */
 
-  main:not(.view-all-page) {
+{
     display: grid;
 
     grid-template-columns: 1fr;
@@ -7086,27 +6395,16 @@ header:has(> span + h3) {
 
   /* ---------- HOME PANELS ---------- */
 
-  main:not(.view-all-page) .glass-panel {
-    width: 100%;
-
-    padding: 14px;
-  }
-
-  .glass-panel h2 {
-    margin-bottom: 12px;
-
-    font-size: 13px;
-  }
 
   /* ---------- HOME HOLOGRAM ---------- */
 
-  main:not(.view-all-page) .logo-stage {
+.logo-stage {
     width: 205px;
 
     margin: 20px auto 28px;
   }
 
-  main:not(.view-all-page) .logo-stage::after {
+.logo-stage::after {
     bottom: -12%;
 
     opacity: 0.15;
@@ -7114,7 +6412,7 @@ header:has(> span + h3) {
 
   /* ---------- FEATURED PROJECT ---------- */
 
-  main:not(.view-all-page) .featured-content {
+.featured-content {
     grid-template-columns:
       24px
       minmax(0, 1fr)
@@ -7123,23 +6421,23 @@ header:has(> span + h3) {
     gap: 5px;
   }
 
-  main:not(.view-all-page) .featured .arrow {
+.featured .arrow {
     width: 24px;
     height: 24px;
 
     font-size: 18px;
   }
 
-  main:not(.view-all-page) .card-stack {
+.card-stack {
     height: 320px;
     min-height: 320px;
   }
 
-  main:not(.view-all-page) .card-stack > span {
+ .card-stack > span {
     display: none;
   }
 
-  main:not(.view-all-page) .card-stack article {
+.card-stack article {
     width: 100%;
     height: 320px;
 
@@ -7158,18 +6456,18 @@ header:has(> span + h3) {
 
   /* ---------- FEATURED IMAGE ---------- */
 
-  main:not(.view-all-page) .featured .project-image {
+.featured .project-image {
     width: 100%;
     height: 130px;
     min-height: 0;
   }
 
-  main:not(.view-all-page) .featured .project-image > * {
+.featured .project-image > * {
     width: 100%;
     height: 100%;
   }
 
-  main:not(.view-all-page) .featured .project-image img {
+.featured .project-image img {
     width: 100%;
     height: 100%;
 
@@ -7178,7 +6476,7 @@ header:has(> span + h3) {
 
   /* ---------- FEATURED INFORMATION ---------- */
 
-  main:not(.view-all-page) .featured .project-info {
+.featured .project-info {
     grid-template-rows:
       auto
       auto
@@ -7193,7 +6491,7 @@ header:has(> span + h3) {
     overflow: hidden;
   }
 
-  main:not(.view-all-page) .featured .project-info h3 {
+.featured .project-info h3 {
     margin: 0;
 
     font-size: 18px;
@@ -7202,7 +6500,7 @@ header:has(> span + h3) {
     line-clamp: 1;
   }
 
-  main:not(.view-all-page) .featured .project-info p {
+.featured .project-info p {
     min-height: 0;
 
     overflow: hidden;
@@ -7215,7 +6513,7 @@ header:has(> span + h3) {
 
   /* ---------- FEATURED TAGS ---------- */
 
-  main:not(.view-all-page) .featured .tags {
+.featured .tags {
     flex-wrap: nowrap;
 
     max-height: 23px;
@@ -7226,7 +6524,7 @@ header:has(> span + h3) {
 
   /* ---------- FEATURED LINK ---------- */
 
-  main:not(.view-all-page) .featured .project-info a {
+.featured .project-info a {
     margin: 0;
 
     padding: 7px 8px;
@@ -7234,24 +6532,24 @@ header:has(> span + h3) {
 
   /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  main:not(.view-all-page) .projects {
+.projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 7px;
   }
 
-  main:not(.view-all-page) .projects > a {
+.projects > a {
     padding: 9px 5px;
   }
 
-  main:not(.view-all-page) .project-icon {
+.project-icon {
     width: 46px;
     height: 46px;
   }
 
   /* ---------- HOME ROSETTA ---------- */
 
-  main:not(.view-all-page) .stones {
+.stones {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7261,7 +6559,7 @@ header:has(> span + h3) {
     overflow: visible;
   }
 
-  main:not(.view-all-page) .stones button {
+.stones button {
     width: 100%;
 
     display: grid;
@@ -7276,7 +6574,7 @@ header:has(> span + h3) {
     text-align: left;
   }
 
-  main:not(.view-all-page) .stones small {
+.stones small {
     width: auto;
 
     text-align: left;
@@ -7284,7 +6582,7 @@ header:has(> span + h3) {
 
   /* ---------- HOME REFERENCE GUIDES ---------- */
 
-  main:not(.view-all-page) .guide-list {
+.guide-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7294,7 +6592,7 @@ header:has(> span + h3) {
     overflow: visible;
   }
 
-  main:not(.view-all-page) .guide-list > a {
+.guide-list > a {
     width: 100%;
 
     display: flex;
@@ -7307,7 +6605,7 @@ header:has(> span + h3) {
 
   /* ---------- HOME DATA VISUALIZATION ---------- */
 
-  main:not(.view-all-page) .data-list {
+.data-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7317,7 +6615,7 @@ header:has(> span + h3) {
     overflow: visible;
   }
 
-  main:not(.view-all-page) .data-list > a {
+.data-list > a {
     width: 100%;
 
     display: flex;

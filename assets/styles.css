@@ -1295,21 +1295,12 @@ body > footer button:focus-visible {
 
   background: color-mix(in srgb, var(--stone-color) 42%, transparent);
 
-  clip-path: polygon(
-    25% 6.7%,
-    75% 6.7%,
-    100% 50%,
-    75% 93.3%,
-    25% 93.3%,
-    0 50%
-  );
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
 
   filter: drop-shadow(
       0 0 2px color-mix(in srgb, var(--stone-color) 60%, transparent)
     )
-    drop-shadow(
-      0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent)
-    );
+    drop-shadow(0 0 7px color-mix(in srgb, var(--stone-color) 35%, transparent));
 
   transition:
     transform 180ms ease,
@@ -1372,14 +1363,7 @@ body > footer button:focus-visible {
 
   overflow: hidden;
 
-  clip-path: polygon(
-    25% 6.7%,
-    75% 6.7%,
-    100% 50%,
-    75% 93.3%,
-    25% 93.3%,
-    0 50%
-  );
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
 
   background: radial-gradient(
     circle,
@@ -1860,7 +1844,7 @@ body > footer button:focus-visible {
 
   color: var(--blue);
 
-  font-size:11px;
+  font-size: 11px;
   text-align: center;
 }
 
