@@ -1,45 +1,28 @@
 /*
-  DEVELOPER SANDBOX — DEV MIRROR
-  Clean low-specificity stylesheet.
+  DEVELOPER SANDBOX — DEV CSS REFACTOR
 
-  The dev/ mirror keeps the current live appearance using normal reusable
-  class selectors. Structural selectors are kept only where context is required.
-  :where() is reserved for the base reset where zero specificity is useful.
-  All original site files remain untouched.
+  Purpose:
+  Preserve the LIVE Sandbox look while reducing selector specificity
+  and making styles reusable.
+
+  Conventions:
+  - simple component class when one class is enough
+  - component + element for shared internal styling
+  - parent/child structure only where the relationship is actually required
+  - no :where() blanket wrapping
+  - no JavaScript-generated styles
 */
 
-@layer tokens, base, site;
+/* ==================================================
+   SHARED + HOME
+   ================================================== */
 
-@layer tokens {
-  :root {
-    --ds-bg: #020712;
-    --ds-panel: rgba(5, 18, 43, 0.78);
-    --ds-panel-strong: rgba(5, 18, 43, 0.92);
-    --ds-line: rgba(117, 188, 255, 0.28);
-    --ds-line-strong: rgba(117, 188, 255, 0.46);
-    --ds-text: #eef6ff;
-    --ds-muted: #a8bdd5;
-    --ds-blue: #59c9ff;
-    --ds-cyan: #5ee7ff;
-    --ds-violet: #9b6cff;
-    --ds-radius: 14px;
-    --ds-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
-  }
-}
-
-@layer base {
-  :where(*, *::before, *::after) { box-sizing: border-box; }
-  :where(html) { scroll-behavior: smooth; }
-  :where(body) { margin: 0; min-height: 100vh; }
-  :where(button, input, select, textarea) { font: inherit; }
-  :where(button) { cursor: pointer; }
-  :where(a) { color: inherit; }
-  :where(img) { max-width: 100%; }
-}
-
-@layer site {
-
-
+/* ==================================================
+   1. STRUCTURE / GLOBALS
+   ================================================== */
+/* ==================================================
+   SANDBOX IN-PROGRESS NOTICE
+   ================================================== */
 
 .sandbox-notice {
   position: fixed;
@@ -102,7 +85,7 @@
   line-height: 1.4;
 }
 
-
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 700px) {
   .sandbox-notice {
@@ -156,7 +139,7 @@ body {
     sans-serif;
 }
 
-
+/* ---------- TYPOGRAPHY ---------- */
 
 h1,
 h2,
@@ -177,14 +160,14 @@ p {
   line-height: 1.5;
 }
 
-
+/* ---------- LINKS ---------- */
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-
+/* ---------- IMAGES ---------- */
 
 img {
   display: block;
@@ -192,7 +175,7 @@ img {
   height: auto;
 }
 
-
+/* ---------- FORM / BUTTON ELEMENTS ---------- */
 
 button,
 input,
@@ -202,7 +185,7 @@ textarea {
   color: inherit;
 }
 
-
+/* ---------- MAIN SANDBOX ---------- */
 
 main {
   position: relative;
@@ -217,7 +200,9 @@ main {
     url("img/sandbox-background.png") center / cover no-repeat;
 }
 
-
+/* ==================================================
+   2. TOP HEADER / NAVIGATION
+   ================================================== */
 
 body > header {
   position: fixed;
@@ -238,7 +223,7 @@ body > header > * {
   pointer-events: auto;
 }
 
-
+/* ---------- TOP LEFT BRAND ---------- */
 
 .brand {
   position: absolute;
@@ -276,7 +261,7 @@ body > header > * {
   font-size: 11px;
 }
 
-
+/* ---------- CENTER NAV ---------- */
 
 body > header nav {
   display: flex;
@@ -342,7 +327,10 @@ body > header nav button:focus-visible {
   outline-offset: -3px;
 }
 
-
+/* ==================================================
+   MOBILE MENU BUTTON
+   hidden on desktop
+   ================================================== */
 
 .menu-toggle {
   display: none;
@@ -383,7 +371,7 @@ body > header nav button:focus-visible {
     opacity 180ms ease;
 }
 
-
+/* ---------- TOP RIGHT TOOLS ---------- */
 
 .top-tools {
   position: absolute;
@@ -397,7 +385,7 @@ body > header nav button:focus-visible {
   color: white;
 }
 
-
+/* ---------- HELP ORB + TOOLTIP ---------- */
 
 .help {
   position: relative;
@@ -406,7 +394,7 @@ body > header nav button:focus-visible {
   align-items: flex-start;
 }
 
-.help > button {
+.help button {
   width: 44px;
   height: 44px;
 
@@ -428,8 +416,8 @@ body > header nav button:focus-visible {
   cursor: pointer;
 }
 
-.help > button::before,
-.help > button::after {
+.help button::before,
+.help button::after {
   content: "";
 
   position: absolute;
@@ -439,12 +427,12 @@ body > header nav button:focus-visible {
   border-radius: 50%;
 }
 
-.help > button::after {
+.help button::after {
   inset: 12px;
   border-color: rgba(77, 183, 255, 0.2);
 }
 
-.help > div {
+.help div {
   position: absolute;
   top: 50px;
   left: -8px;
@@ -476,15 +464,15 @@ body > header nav button:focus-visible {
     visibility 160ms ease;
 }
 
-.help:hover > div,
-.help > button:focus-visible + div {
+.help:hover div,
+.help button:focus-visible + div {
   opacity: 1;
   visibility: visible;
 
   transform: translateY(0);
 }
 
-.help > div::before {
+.help div::before {
   content: "";
 
   position: absolute;
@@ -516,21 +504,21 @@ body > header nav button:focus-visible {
   line-height: 1.5;
 }
 
+/* ---------- RETURN LINK ---------- */
 
-
-.top-tools > a {
+.top-tools a {
   align-self: center;
 
   color: #dce7f2;
   font-size: 12px;
 }
 
-.top-tools > a:hover,
-.top-tools > a:focus-visible {
+.top-tools a:hover,
+.top-tools a:focus-visible {
   color: white;
 }
 
-
+/* ---------- CLOSE BUTTON ---------- */
 
 .close {
   width: 52px;
@@ -553,7 +541,9 @@ body > header nav button:focus-visible {
   background: rgba(47, 141, 255, 0.12);
 }
 
-
+/* ==================================================
+   3. CENTER LOGO
+   ================================================== */
 
 .logo-stage {
   position: absolute;
@@ -633,7 +623,9 @@ body > header nav button:focus-visible {
   isolation: isolate;
 }
 
-
+/* ==================================================
+   INNER CONCENTRIC RINGS
+   ================================================== */
 
 .logo-stage::before {
   content: "";
@@ -652,8 +644,8 @@ body > header nav button:focus-visible {
   pointer-events: none;
 }
 
-
-
+/* blue light beam */
+/* hologram light rays rising from platform */
 
 .logo-stage::after {
   content: "";
@@ -692,7 +684,7 @@ body > header nav button:focus-visible {
   pointer-events: none;
 }
 
-
+/* logo */
 
 .logo-stage button {
   position: relative;
@@ -724,7 +716,9 @@ body > header nav button:focus-visible {
     filter 200ms ease;
 }
 
-
+/* ==================================================
+   ORBIT LINES BEHIND LOGO
+   ================================================== */
 
 .logo-stage button::before,
 .logo-stage button::after {
@@ -757,7 +751,7 @@ body > header nav button:focus-visible {
   transform: translate(-50%, -50%) rotate(12deg);
 }
 
-
+/* logo spin */
 
 .logo-stage button:hover img,
 .logo-stage button:focus-visible img {
@@ -774,7 +768,9 @@ body > header nav button:focus-visible {
   border-radius: 50%;
 }
 
-
+/* ==================================================
+   4. BOTTOM NAVIGATION
+   ================================================== */
 
 body > footer {
   position: fixed;
@@ -785,7 +781,7 @@ body > footer {
   transform: translateX(-50%);
 }
 
-body > footer nav {
+footer nav {
   display: flex;
 
   padding: 5px;
@@ -803,7 +799,7 @@ body > footer nav {
     0 0 18px rgba(64, 158, 255, 0.1);
 }
 
-body > footer button {
+footer button {
   display: flex;
   align-items: center;
   gap: 7px;
@@ -822,23 +818,25 @@ body > footer button {
   cursor: pointer;
 }
 
-body > footer button span {
+footer button span {
   color: var(--blue);
   font-size: 15px;
 }
 
-body > footer button:hover,
-body > footer button:focus-visible {
+footer button:hover,
+footer button:focus-visible {
   color: white;
   background: rgba(47, 141, 255, 0.15);
 }
 
-body > footer button:focus-visible {
+footer button:focus-visible {
   outline: 1px solid var(--blue);
   outline-offset: -2px;
 }
 
-
+/* ==================================================
+   5. GLASS PANELS
+   ================================================== */
 
 .glass-panel {
   position: absolute;
@@ -861,7 +859,7 @@ body > footer button:focus-visible {
   overflow: hidden;
 }
 
-
+/* luminous border */
 
 .glass-panel::before {
   content: "";
@@ -891,7 +889,7 @@ body > footer button:focus-visible {
   mask-composite: exclude;
 }
 
-
+/* brighter corners */
 
 .glass-panel::after {
   content: "";
@@ -913,7 +911,7 @@ body > footer button:focus-visible {
   opacity: 0.9;
 }
 
-
+/* panel heading */
 
 .glass-panel h2 {
   position: relative;
@@ -930,14 +928,16 @@ body > footer button:focus-visible {
   letter-spacing: 0.06em;
 }
 
-
+/* keep panel content above border effects */
 
 .glass-panel > * {
   position: relative;
   z-index: 1;
 }
 
-
+/* ==================================================
+   6. FEATURED
+   ================================================== */
 
 .featured {
   top: 14%;
@@ -947,7 +947,7 @@ body > footer button:focus-visible {
   min-width: 420px;
 }
 
-
+/* ---------- MAIN FEATURE AREA ---------- */
 
 .featured-content {
   display: grid;
@@ -956,7 +956,7 @@ body > footer button:focus-visible {
   align-items: center;
 }
 
-
+/* ---------- ARROWS ---------- */
 
 .featured .arrow {
   width: 30px;
@@ -984,7 +984,7 @@ body > footer button:focus-visible {
   cursor: default;
 }
 
-
+/* ---------- STACKED CARDS ---------- */
 
 .card-stack {
   position: relative;
@@ -1014,7 +1014,7 @@ body > footer button:focus-visible {
   opacity: 0.45;
 }
 
-
+/* ---------- SLIDES ---------- */
 
 .featured .card-stack > .featured-slide {
   display: none;
@@ -1024,7 +1024,7 @@ body > footer button:focus-visible {
   display: grid;
 }
 
-
+/* ---------- ACTIVE CARD ---------- */
 
 .card-stack article {
   z-index: 2;
@@ -1043,7 +1043,7 @@ body > footer button:focus-visible {
   overflow: hidden;
 }
 
-
+/* ---------- PROJECT IMAGE ---------- */
 
 .featured .project-image {
   width: 100%;
@@ -1076,7 +1076,7 @@ body > footer button:focus-visible {
   object-fit: cover;
 }
 
-
+/* ---------- PROJECT INFORMATION ---------- */
 
 .featured .project-info {
   display: grid;
@@ -1103,7 +1103,7 @@ body > footer button:focus-visible {
   letter-spacing: 0.08em;
 }
 
-
+/* ---------- PROJECT TITLE ---------- */
 
 .featured .project-info h3 {
   margin: 0;
@@ -1120,7 +1120,7 @@ body > footer button:focus-visible {
   line-clamp: 2;
 }
 
-
+/* ---------- DESCRIPTION ---------- */
 
 .featured .project-info p {
   min-height: 0;
@@ -1137,7 +1137,7 @@ body > footer button:focus-visible {
   line-clamp: 3;
 }
 
-
+/* ---------- TAGS ---------- */
 
 .featured .tags {
   display: flex;
@@ -1165,7 +1165,7 @@ body > footer button:focus-visible {
   font-size: 9px;
 }
 
-
+/* ---------- PROJECT LINK ---------- */
 
 .featured .project-info a {
   margin: 0;
@@ -1186,7 +1186,7 @@ body > footer button:focus-visible {
   background: rgba(47, 141, 255, 0.28);
 }
 
-
+/* ---------- DOTS ---------- */
 
 .dots {
   display: flex;
@@ -1226,7 +1226,9 @@ body > footer button:focus-visible {
   outline-offset: 3px;
 }
 
-
+/* ==================================================
+   7. ROSETTA STONES
+   ================================================== */
 
 .rosetta {
   top: 14%;
@@ -1236,7 +1238,7 @@ body > footer button:focus-visible {
   min-width: 420px;
 }
 
-
+/* ---------- HORIZONTAL SCROLL ---------- */
 
 .stones {
   display: flex;
@@ -1269,7 +1271,7 @@ body > footer button:focus-visible {
   border-radius: 9px;
 }
 
-
+/* ---------- EACH STONE BUTTON ---------- */
 
 .stones button {
   flex: 0 0 72px;
@@ -1293,7 +1295,9 @@ body > footer button:focus-visible {
   border-radius: 9px;
 }
 
-
+/* ==================================================
+   HEXAGON
+   ================================================== */
 
 .stone {
   --stone-color: #eaf7ff;
@@ -1331,7 +1335,10 @@ body > footer button:focus-visible {
     filter 180ms ease;
 }
 
-
+/* ==================================================
+   DARK INTERIOR
+   Creates thin outer border
+   ================================================== */
 
 .stone::before {
   content: "";
@@ -1346,7 +1353,9 @@ body > footer button:focus-visible {
   z-index: 0;
 }
 
-
+/* ==================================================
+   SECOND INNER BORDER
+   ================================================== */
 
 .stone::after {
   content: "";
@@ -1365,7 +1374,9 @@ body > footer button:focus-visible {
   z-index: 1;
 }
 
-
+/* ==================================================
+   CENTER OF HEXAGON
+   ================================================== */
 
 .stone > span {
   position: relative;
@@ -1409,7 +1420,9 @@ body > footer button:focus-visible {
     0 0 8px color-mix(in srgb, var(--stone-color) 35%, transparent);
 }
 
-
+/* ==================================================
+   IMAGE / SVG ICONS
+   ================================================== */
 
 .stone img,
 .stone svg {
@@ -1432,7 +1445,9 @@ body > footer button:focus-visible {
   );
 }
 
-
+/* ==================================================
+   COLOR CLASSES
+   ================================================== */
 
 .stone.blue {
   --stone-color: #4b96ff;
@@ -1457,7 +1472,9 @@ body > footer button:focus-visible {
 .stone.red {
   --stone-color: #ff6c80;
 }
-
+/* ==================================================
+   GEM / STONE COLOR PALETTE
+   ================================================== */
 
 .stone.rose {
   --stone-color: #ff6fae;
@@ -1567,7 +1584,9 @@ body > footer button:focus-visible {
   --stone-color: #b7e7ff;
 }
 
-
+/* ==================================================
+   STONE LABEL
+   ================================================== */
 
 .stones small {
   width: 72px;
@@ -1580,7 +1599,9 @@ body > footer button:focus-visible {
   text-align: center;
 }
 
-
+/* ==================================================
+   HOVER / FOCUS
+   ================================================== */
 
 .stones button:hover .stone,
 .stones button:focus-visible .stone {
@@ -1597,7 +1618,9 @@ body > footer button:focus-visible {
   outline-offset: 3px;
 }
 
-
+/* ==================================================
+   VIEW ALL
+   ================================================== */
 
 .rosetta .view-all {
   display: block;
@@ -1617,7 +1640,9 @@ body > footer button:focus-visible {
   color: white;
 }
 
-
+/* ==================================================
+   8. PROJECT LIBRARY
+   ================================================== */
 
 .library {
   top: 50%;
@@ -1627,7 +1652,7 @@ body > footer button:focus-visible {
   min-width: 420px;
 }
 
-
+/* ---------- PROJECT GRID ---------- */
 
 .projects {
   display: grid;
@@ -1657,7 +1682,7 @@ body > footer button:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
 
-
+/* ---------- PROJECT ICON ---------- */
 
 .project-icon {
   --icon-color: #eaf7ff;
@@ -1698,7 +1723,7 @@ body > footer button:focus-visible {
   object-fit: contain;
 }
 
-
+/* ---------- ICON COLORS ---------- */
 
 .project-icon.blue {
   --icon-color: #4b96ff;
@@ -1719,7 +1744,9 @@ body > footer button:focus-visible {
 .project-icon.green {
   --icon-color: #65e5a0;
 }
-
+/* ==================================================
+   PROJECT ICON COLOR PALETTE
+   ================================================== */
 
 .project-icon.rose {
   --icon-color: #ff6fae;
@@ -1828,7 +1855,7 @@ body > footer button:focus-visible {
 .project-icon.ice {
   --icon-color: #b7e7ff;
 }
-
+/* ---------- TEXT ---------- */
 
 .projects strong {
   font-size: 9px;
@@ -1843,7 +1870,7 @@ body > footer button:focus-visible {
   letter-spacing: 0.04em;
 }
 
-
+/* ---------- VIEW ALL ---------- */
 
 .library .view-all {
   display: block;
@@ -1861,7 +1888,9 @@ body > footer button:focus-visible {
   color: white;
 }
 
-
+/* ==================================================
+   9. REFERENCE GUIDES
+   ================================================== */
 
 .guides {
   top: 41.5%;
@@ -1871,7 +1900,7 @@ body > footer button:focus-visible {
   min-width: 420px;
 }
 
-
+/* ---------- HORIZONTAL LIST ---------- */
 
 .guide-list {
   display: flex;
@@ -1898,7 +1927,7 @@ body > footer button:focus-visible {
   border-radius: 9px;
 }
 
-
+/* ---------- GUIDE ITEM ---------- */
 
 .guide-list > a {
   flex: 0 0 76px;
@@ -1922,7 +1951,7 @@ body > footer button:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
 
-
+/* ---------- SQUARE ICON ---------- */
 
 .guide-icon {
   --icon-color: #eaf7ff;
@@ -1955,7 +1984,7 @@ body > footer button:focus-visible {
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
 
-
+/* ---------- IMG / SVG ---------- */
 
 .guide-icon img,
 .guide-icon svg {
@@ -1965,7 +1994,7 @@ body > footer button:focus-visible {
   object-fit: contain;
 }
 
-
+/* ---------- ICON COLORS ---------- */
 
 .guide-icon.blue {
   --icon-color: #4b96ff;
@@ -1990,7 +2019,9 @@ body > footer button:focus-visible {
 .guide-icon.green {
   --icon-color: #65e5a0;
 }
-
+/* ==================================================
+   GUIDE ICON COLOR PALETTE
+   ================================================== */
 
 .guide-icon.rose {
   --icon-color: #ff6fae;
@@ -2099,7 +2130,7 @@ body > footer button:focus-visible {
 .guide-icon.ice {
   --icon-color: #b7e7ff;
 }
-
+/* ---------- LABEL ---------- */
 
 .guide-list small {
   color: #d4dfeb;
@@ -2108,7 +2139,7 @@ body > footer button:focus-visible {
   line-height: 1.2;
 }
 
-
+/* ---------- VIEW ALL ---------- */
 
 .guides .view-all {
   display: block;
@@ -2126,7 +2157,9 @@ body > footer button:focus-visible {
   color: white;
 }
 
-
+/* ==================================================
+   10. DATA SCIENCE
+   ================================================== */
 
 .data {
   top: 66%;
@@ -2136,7 +2169,7 @@ body > footer button:focus-visible {
   min-width: 420px;
 }
 
-
+/* ---------- HORIZONTAL LIST ---------- */
 
 .data-list {
   display: flex;
@@ -2163,7 +2196,7 @@ body > footer button:focus-visible {
   border-radius: 9px;
 }
 
-
+/* ---------- TOPIC ---------- */
 
 .data-list > a {
   flex: 0 0 82px;
@@ -2187,7 +2220,7 @@ body > footer button:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
 
-
+/* ---------- ICON ---------- */
 
 .data-icon {
   --icon-color: #eaf7ff;
@@ -2220,7 +2253,7 @@ body > footer button:focus-visible {
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
 
-
+/* image / svg */
 
 .data-icon img,
 .data-icon svg {
@@ -2232,7 +2265,7 @@ body > footer button:focus-visible {
   color: inherit;
 }
 
-
+/* ---------- COLORS ---------- */
 
 .data-icon.blue {
   --icon-color: #4b96ff;
@@ -2257,7 +2290,10 @@ body > footer button:focus-visible {
 .data-icon.red {
   --icon-color: #ff6c80;
 }
-
+/* ==================================================
+   INTERACTIVE ICON COLOR PALETTE
+   Existing class name: .data-icon
+   ================================================== */
 
 .data-icon.rose {
   --icon-color: #ff6fae;
@@ -2366,7 +2402,7 @@ body > footer button:focus-visible {
 .data-icon.ice {
   --icon-color: #b7e7ff;
 }
-
+/* ---------- LABEL ---------- */
 
 .data-list small {
   color: #d4dfeb;
@@ -2375,7 +2411,7 @@ body > footer button:focus-visible {
   line-height: 1.25;
 }
 
-
+/* ---------- VIEW ALL ---------- */
 
 .data .view-all {
   display: block;
@@ -2393,12 +2429,18 @@ body > footer button:focus-visible {
   color: white;
 }
 
+/* ==================================================
+   INNER PAGES
+   ================================================== */
 
+/* ==================================================
+   VIEW ALL / INNER PAGE
+   ================================================== */
 
 .view-all-page {
   position: relative;
 font-size: 13px;
-
+/* line-height: 2px; */
   width: 100%;
   min-height: 100svh;
 
@@ -2415,7 +2457,9 @@ font-size: 13px;
     url("img/innerPg.png") center / cover fixed no-repeat;
 }
 
-
+/* ==================================================
+   LEFT TYPE MENU
+   ================================================== */
 
 .type-menu {
   align-self: start;
@@ -2423,9 +2467,9 @@ font-size: 13px;
   min-width: 0;
 }
 
+/* ---------- PAGE INTRO ---------- */
 
-
-.type-menu > header {
+.type-menu header {
   margin-bottom: 20px;
 }
 
@@ -2441,14 +2485,16 @@ font-size: 13px;
   letter-spacing: 0.035em;
 }
 
-.type-menu > header p {
+.type-menu header p {
   max-width: 340px;
 
   color: #b8c7d8;
 
 }
 
-
+/* ==================================================
+   PROJECT TYPE LIST
+   ================================================== */
 :root {
   font-family:
     Inter,
@@ -2468,7 +2514,7 @@ font-size: 13px;
   --editor-text: #e8f1fb;
   --editor-muted: #8da5c1;
 
-  
+  /* Developer Sandbox / project-content colors */
   --sandbox-blue: #5fc8ff;
   --sandbox-blue-dark: #2f8dff;
   --sandbox-violet: #8a67ff;
@@ -2517,7 +2563,9 @@ a {
   color: inherit;
 }
 
-
+/* ==========================================================================
+   EDITOR TOP BAR
+   ========================================================================== */
 
 .topbar {
   position: sticky;
@@ -2567,7 +2615,9 @@ a {
   gap: 0.45rem;
 }
 
-
+/* ==========================================================================
+   START / STOP HELP
+   ========================================================================== */
 
 .stop-help {
   padding: 0.5rem 1rem;
@@ -2618,7 +2668,9 @@ a {
   margin-right: 0.5rem;
 }
 
-
+/* ==========================================================================
+   MAIN EDITOR LAYOUT
+   ========================================================================== */
 
 .editor-layout {
   display: grid;
@@ -2637,7 +2689,9 @@ a {
   min-width: 0;
 }
 
-
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
 
 .sidebar {
   overflow: auto;
@@ -2681,7 +2735,9 @@ a {
   line-height: 1.45;
 }
 
-
+/* ==========================================================================
+   EDITOR INPUTS
+   ========================================================================== */
 
 input,
 select,
@@ -2709,7 +2765,9 @@ textarea:focus {
   outline-offset: 1px;
 }
 
-
+/* ==========================================================================
+   EDITOR BUTTONS
+   ========================================================================== */
 
 button {
   padding: 0.45rem 0.65rem;
@@ -2741,7 +2799,9 @@ button.danger:hover,
   font-size: 0.7rem;
 }
 
-
+/* ==========================================================================
+   SEARCH RESULTS
+   ========================================================================== */
 
 .search-results {
   display: grid;
@@ -2779,7 +2839,9 @@ button.danger:hover,
   font-size: 0.64rem;
 }
 
-
+/* ==========================================================================
+   PAGE OUTLINE
+   ========================================================================== */
 
 .outline-fixed,
 .outline-item {
@@ -2855,7 +2917,9 @@ button.danger:hover,
   font-size: 0.7rem;
 }
 
-
+/* ==========================================================================
+   WORKSPACE
+   ========================================================================== */
 
 .workspace {
   overflow: auto;
@@ -2867,7 +2931,9 @@ button.danger:hover,
   border-right: 1px solid var(--editor-line);
 }
 
-
+/* ==========================================================================
+   EDITOR DETAILS / PANELS
+   ========================================================================== */
 
 details {
   margin-bottom: 0.9rem;
@@ -2893,7 +2959,9 @@ details:not([open]) summary {
   border-bottom: 0;
 }
 
-
+/* ==========================================================================
+   EDITOR FORMS
+   ========================================================================== */
 
 .form-grid {
   display: grid;
@@ -2950,7 +3018,9 @@ details:not([open]) summary {
   gap: 0.45rem;
 }
 
-
+/* ==========================================================================
+   NODE AREA
+   ========================================================================== */
 
 .node-help {
   margin-bottom: 0.7rem;
@@ -2993,7 +3063,9 @@ details:not([open]) summary {
   gap: 0.5rem;
 }
 
-
+/* ==========================================================================
+   NODE FORM
+   ========================================================================== */
 
 .node-form {
   border: 1px solid #294560;
@@ -3030,7 +3102,9 @@ details:not([open]) summary {
   font-size: 0.65rem;
 }
 
-
+/* ==========================================================================
+   CHILD EDITOR
+   ========================================================================== */
 
 .children-editor {
   border-top: 1px solid var(--editor-line);
@@ -3100,7 +3174,9 @@ details:not([open]) summary {
   font-size: 0.66rem;
 }
 
-
+/* ==========================================================================
+   NODE SUBMIT BAR
+   ========================================================================== */
 
 .node-submit-bar {
   position: sticky;
@@ -3122,7 +3198,9 @@ details:not([open]) summary {
   display: none !important;
 }
 
-
+/* ==========================================================================
+   SQL PANEL
+   ========================================================================== */
 
 .sql-inner {
   padding: 0.8rem;
@@ -3141,7 +3219,9 @@ details:not([open]) summary {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-
+/* ==========================================================================
+   PREVIEW COLUMN — EDITOR CHROME ONLY
+   ========================================================================== */
 
 .preview-column {
   overflow: auto;
@@ -3181,7 +3261,11 @@ details:not([open]) summary {
   padding: 1.25rem;
 }
 
-
+/* ==========================================================================
+   PREVIEW — SANDBOX RIGHT-COLUMN FOUNDATION
+   Everything in this section is scoped to .preview so none of it changes
+   the editor forms, sidebar, database view, or other localhost controls.
+   ========================================================================== */
 
 .preview .sandbox-entry-preview,
 .preview .project-content {
@@ -3216,7 +3300,10 @@ details:not([open]) summary {
   color: inherit;
 }
 
-
+/* ==========================================================================
+   PREVIEW — RECORD / PROJECT CONTENT HEADER
+   Mirrors the right-column header used by single-project and reference-guide.
+   ========================================================================== */
 
 .preview .sandbox-entry-preview > header,
 .preview .project-content > header,
@@ -3284,7 +3371,9 @@ details:not([open]) summary {
   text-align: right;
 }
 
-
+/* ==========================================================================
+   PREVIEW — NAV / BUTTON NODES
+   ========================================================================== */
 
 .preview .project-doc-nav,
 .preview .project-actions {
@@ -3350,7 +3439,9 @@ details:not([open]) summary {
   background: rgba(47, 141, 255, 0.18);
 }
 
-
+/* ==========================================================================
+   PREVIEW — DISPLAY NODE
+   ========================================================================== */
 
 .preview .project-display {
   overflow: hidden;
@@ -3418,7 +3509,9 @@ details:not([open]) summary {
   background: rgba(5, 18, 43, 0.7);
 }
 
-
+/* ==========================================================================
+   PREVIEW — STANDARD PROJECT DETAIL NODE
+   ========================================================================== */
 
 .preview .project-detail {
   overflow: hidden;
@@ -3433,7 +3526,7 @@ details:not([open]) summary {
 
 .preview .project-detail > header {
   display: flex;
-  
+  /* align-items: center; */
   gap: 12px;
   min-height: 48px;
   padding: 11px 14px;
@@ -3473,7 +3566,9 @@ details:not([open]) summary {
   line-height: 1.65;
 }
 
-
+/* ==========================================================================
+   PREVIEW — PROJECT META / GRID NODE
+   ========================================================================== */
 
 .preview .project-meta {
   display: grid;
@@ -3532,7 +3627,10 @@ details:not([open]) summary {
 >>>>>>> a906075 (generate data)
 }
 
-
+/* ==========================================================================
+   PREVIEW — PROJECT DOCUMENTATION LINK-ROW STYLE
+   Supports HTML entered inside standard/grid children.
+   ========================================================================== */
 
 .preview .project-documents {
   display: grid;
@@ -3589,7 +3687,9 @@ details:not([open]) summary {
   font-size: 20px;
 }
 
-
+/* ==========================================================================
+   PREVIEW — PROJECT IMAGES / GALLERY THROUGH GRID OR HTML
+   ========================================================================== */
 
 .preview .project-images {
   display: grid;
@@ -3609,7 +3709,9 @@ details:not([open]) summary {
   border: 1px solid rgba(95, 170, 255, 0.14);
 }
 
-
+/* ==========================================================================
+   PREVIEW — REFERENCE DOCUMENT
+   ========================================================================== */
 
 .preview .project-doc {
   display: grid;
@@ -3642,7 +3744,7 @@ details:not([open]) summary {
   background: rgba(11, 35, 68, 0.66);
 }
 
-
+/* Editor-generated documentation header has span + h3 directly. */
 .preview .project-doc-section > header > span {
   display: block;
   position: static;
@@ -3663,7 +3765,7 @@ details:not([open]) summary {
   letter-spacing: 0.12em;
 }
 
-
+/* Live reference-guide header has a wrapping div. */
 .preview .project-doc-section > header > div {
   display: block;
   display: flex;
@@ -3716,7 +3818,20 @@ details:not([open]) summary {
   text-align: right;
 }
 
+/* ==========================================================================
+   PREVIEW — STANDARD / DOCUMENTATION CHILDREN
+   LOCKED-IN STRUCTURE
 
+   Standard and Documentation children are ALWAYS one full-width column.
+
+   Behavior = None:
+     full-width content only
+
+   Behavior = Link or Collapsible:
+     full-width content + one narrow action column on the right
+
+   Grid and Split nodes are the ONLY node families that create content columns.
+   ========================================================================== */
 
 .preview .project-command-list {
   display: block;
@@ -3803,7 +3918,10 @@ details:not([open]) summary {
   height: auto;
 }
 
-
+/* ==========================================================================
+   PREVIEW — STANDARD / DOCUMENTATION LINK OR COLLAPSE ACTION
+   Only these behaviors create a second column.
+   ========================================================================== */
 
 .preview .project-command:has(> .project-command-action) {
   display: grid;
@@ -3895,7 +4013,10 @@ details:not([open]) summary {
   line-height: 1.6;
 }
 
-
+/* ==========================================================================
+   PREVIEW — INLINE CODE INSIDE STANDARD / DOCUMENTATION CONTENT
+   Code never creates a content column here.
+   ========================================================================== */
 
 .preview .project-command code {
   color: #a8ddff;
@@ -3907,7 +4028,9 @@ details:not([open]) summary {
   overflow-wrap: anywhere;
 }
 
-
+/* ==========================================================================
+   PREVIEW — EXAMPLE
+   ========================================================================== */
 
 .preview .project-example {
   margin: 12px;
@@ -3954,7 +4077,9 @@ details:not([open]) summary {
 >>>>>>> a906075 (generate data)
 }
 
-
+/* ==========================================================================
+   PREVIEW — NOTE
+   ========================================================================== */
 
 .preview .project-note {
   display: block;
@@ -3984,7 +4109,9 @@ details:not([open]) summary {
   margin-bottom: 0;
 }
 
-
+/* ==========================================================================
+   PREVIEW — SPLIT NODE
+   ========================================================================== */
 
 .preview .project-split-list {
   display: grid;
@@ -4059,7 +4186,9 @@ details:not([open]) summary {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-
+/* ==========================================================================
+   PREVIEW — GENERIC HTML ENTERED BY USER
+   ========================================================================== */
 
 .preview .sandbox-entry-preview h1,
 .preview .project-content h1 {
@@ -4131,7 +4260,11 @@ details:not([open]) summary {
   border-top: 1px solid rgba(95, 170, 255, 0.15);
 }
 
-
+/* ==========================================================================
+   PREVIEW — PROJECT LIBRARY / INNER.HTML
+   These styles are intentionally scoped to .preview so the editor itself
+   keeps its own controls, spacing and colors.
+   ========================================================================== */
 
 .preview .project-group {
   display: grid;
@@ -4221,7 +4354,7 @@ details:not([open]) summary {
   padding: 10px;
 }
 
-.preview .project-grid > a {
+.preview .project-grid a {
   min-width: 0;
 
   display: flex;
@@ -4240,12 +4373,12 @@ details:not([open]) summary {
   text-decoration: none;
 }
 
-.preview .project-grid > a:hover,
-.preview .project-grid > a:focus-visible {
+.preview .project-grid a:hover,
+.preview .project-grid a:focus-visible {
   background: rgba(47, 141, 255, 0.16);
 }
 
-.preview .project-content .project-icon {
+.preview .project-icon {
   --icon-color: #eaf7ff;
 
   flex: 0 0 46px;
@@ -4277,39 +4410,39 @@ details:not([open]) summary {
     0 0 8px color-mix(in srgb, var(--icon-color) 18%, transparent);
 }
 
-.preview .project-content .project-icon img,
-.preview .project-content .project-icon svg {
+.preview .project-icon img,
+.preview .project-icon svg {
   width: 65%;
   height: 65%;
 
   object-fit: contain;
 }
 
-.preview .project-content .project-icon.blue {
+.preview .project-icon.blue {
   --icon-color: #4b96ff;
 }
 
-.preview .project-content .project-icon.cyan {
+.preview .project-icon.cyan {
   --icon-color: #41dce9;
 }
 
-.preview .project-content .project-icon.purple {
+.preview .project-icon.purple {
   --icon-color: #a768ff;
 }
 
-.preview .project-content .project-icon.gold {
+.preview .project-icon.gold {
   --icon-color: #ffc461;
 }
 
-.preview .project-content .project-icon.green {
+.preview .project-icon.green {
   --icon-color: #65e5a0;
 }
 
-.preview .project-content .project-icon.red {
+.preview .project-icon.red {
   --icon-color: #ff6c80;
 }
 
-.preview .project-grid > a > span:last-child {
+.preview .project-grid a > span:last-child {
   min-width: 0;
 }
 
@@ -4338,7 +4471,7 @@ details:not([open]) summary {
   line-height: 1.35;
 }
 
-/
+/* Prevent preview header labels and headings from overlapping */
 .preview header > span + h3 {
   grid-column: auto;
   grid-row: auto;
@@ -4396,7 +4529,9 @@ details:not([open]) summary {
   isolation: auto;
 }
 
-
+/* ==========================================================================
+   GENERATED HTML PANEL
+   ========================================================================== */
 
 .generated-panel {
   margin: 1rem;
@@ -4417,7 +4552,9 @@ details:not([open]) summary {
   margin: 0 0.7rem 0.7rem;
 }
 
-
+/* ==========================================================================
+   DATABASE VIEW — BELOW EDITOR
+   ========================================================================== */
 
 .database-view {
   display: grid;
@@ -4511,7 +4648,9 @@ details:not([open]) summary {
   font-size: 0.72rem;
 }
 
-
+/* ==========================================================================
+   RESPONSIVE — EDITOR LAYOUT
+   ========================================================================== */
 
 @media (max-width: 1200px) {
   .editor-layout {
@@ -4527,7 +4666,7 @@ details:not([open]) summary {
   }
 
   .workspace,
-.sidebar {
+  .sidebar {
     max-height: none;
   }
 
@@ -4536,7 +4675,11 @@ details:not([open]) summary {
   }
 }
 
-
+/* ==========================================================================
+   RESPONSIVE — SANDBOX PREVIEW, TABLET
+   This follows the uploaded Sandbox responsive behavior: project content
+   tightens, command rows keep a compact code column.
+   ========================================================================== */
 
 @media (max-width: 1100px) {
   .preview {
@@ -4552,12 +4695,14 @@ details:not([open]) summary {
   }
 
   .preview .sandbox-entry-preview,
-.preview .project-content {
+  .preview .project-content {
     padding: 18px;
   }
 }
 
-
+/* ==========================================================================
+   RESPONSIVE — PHONE
+   ========================================================================== */
 
 @media (max-width: 760px) {
   .topbar {
@@ -4569,7 +4714,7 @@ details:not([open]) summary {
   }
 
   .editor-layout,
-.database-view {
+  .database-view {
     display: block;
   }
 
@@ -4586,7 +4731,7 @@ details:not([open]) summary {
   }
 
   .form-grid,
-.node-picker-grid {
+  .node-picker-grid {
     grid-template-columns: 1fr;
   }
 
@@ -4604,7 +4749,7 @@ details:not([open]) summary {
   }
 
   .preview .sandbox-entry-preview,
-.preview .project-content {
+  .preview .project-content {
     width: 100%;
     min-width: 0;
 
@@ -4612,8 +4757,8 @@ details:not([open]) summary {
   }
 
   .preview .sandbox-entry-preview > header,
-.preview .project-content > header,
-.preview .project-detail-header {
+  .preview .project-content > header,
+  .preview .project-detail-header {
     grid-template-columns: 1fr;
 
     gap: 7px;
@@ -4624,14 +4769,14 @@ details:not([open]) summary {
   }
 
   .preview .sandbox-entry-preview > header h2,
-.preview .project-content > header h2,
-.preview .project-detail-header h2 {
+  .preview .project-content > header h2,
+  .preview .project-detail-header h2 {
     font-size: 23px;
   }
 
   .preview .sandbox-entry-preview > header p,
-.preview .project-content > header p,
-.preview .project-detail-header > p {
+  .preview .project-content > header p,
+  .preview .project-detail-header > p {
     width: 100%;
     max-width: none;
 
@@ -4701,13 +4846,13 @@ details:not([open]) summary {
     padding: 9px;
   }
 
-  .preview .project-grid > a {
+  .preview .project-grid a {
     min-width: 0;
 
     padding: 9px;
   }
 
-  .preview .project-content .project-icon {
+  .preview .project-icon {
     flex: 0 0 40px;
 
     width: 40px;
@@ -4742,7 +4887,10 @@ details:not([open]) summary {
   }
 
 
-
+/* 
+  .preview .project-command p {
+    font-size: 12px;
+  } */
   .preview .project-command:has(> .project-command-action) {
     grid-template-columns: minmax(0, 1fr) 40px;
   }
@@ -4839,9 +4987,9 @@ details:not([open]) summary {
   }
 
   .preview .project-split--small-left,
-.preview .project-split--equal,
-.preview .project-split--small-right,
-.preview .project-split--three-column {
+  .preview .project-split--equal,
+  .preview .project-split--small-right,
+  .preview .project-split--three-column {
     grid-template-columns: 1fr;
   }
 
@@ -4855,7 +5003,11 @@ details:not([open]) summary {
   }
 }
 
-
+/* ==========================================================================
+   FINAL PREVIEW CHILD LAYOUT CORRECTION
+   Standard/documentation children contain arbitrary HTML and therefore
+   must not treat each direct HTML element as a separate grid column.
+   ========================================================================== */
 
 .preview .project-command {
   position: relative;
@@ -4909,7 +5061,7 @@ details:not([open]) summary {
   height: auto;
 }
 
-
+/* Link/collapse children get content + action columns. */
 .preview .project-command:has(> .project-command-action) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px;
@@ -4952,7 +5104,7 @@ details:not([open]) summary {
   line-height: 1.6;
 }
 
-
+/* Reference-guide command rows alone use command + description columns. */
 .preview .project-command:has(> code) {
   display: grid;
   grid-template-columns: minmax(95px, 125px) minmax(0, 1fr);
@@ -4982,7 +5134,10 @@ details:not([open]) summary {
   grid-template-columns: minmax(95px, 125px) minmax(0, 1fr) 44px;
 }
 
-
+/* ==========================================================================
+   DATABASE FLOW GUARANTEE
+   The database belongs below the complete editor, never over the forms.
+   ========================================================================== */
 
 .database-view,
 #databaseView,
@@ -5008,7 +5163,9 @@ details:not([open]) summary {
   display: none !important;
 }
 
-
+/* ==========================================================================
+   NODE MODEL V3 — EDITOR HIERARCHY / POSITION / MODE
+   ========================================================================== */
 
 .page-structure-section {
   scroll-margin-top: 90px;
@@ -5113,7 +5270,9 @@ details:not([open]) summary {
   display: none;
 }
 
-
+/* ==========================================================================
+   NODE FORM — IDENTIFIABLE PARENT / CHILD EDITOR
+   ========================================================================== */
 
 .node-form {
   scroll-margin-top: 90px;
@@ -5191,7 +5350,10 @@ details:not([open]) summary {
   tab-size: 2;
 }
 
-
+/* ==========================================================================
+   PREVIEW — NODE MODEL V3
+   Parent wrappers determine child layout.
+   ========================================================================== */
 
 .preview .project-command-list {
   display: block;
@@ -5203,7 +5365,7 @@ details:not([open]) summary {
   min-width: 0;
 }
 
-
+/* Standard / Code Link + Collapse: only the action area becomes a second column. */
 .preview .project-command:has(> .project-command-action) {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px;
@@ -5232,7 +5394,7 @@ details:not([open]) summary {
   min-width: 0;
 }
 
-
+/* Split default rows remain full-width rows containing their own split grid. */
 .preview .project-doc-section .project-command {
   padding: 0;
 }
@@ -5280,7 +5442,10 @@ details:not([open]) summary {
   border-right: 0;
 }
 
-
+/*
+  Split Link mode:
+  HTML stays ordinary HTML. Only the dedicated arrow action is clickable.
+*/
 .preview .project-split-cell > .project-command-action {
   float: right;
   width: 40px;
@@ -5291,7 +5456,7 @@ details:not([open]) summary {
   border-radius: 4px;
 }
 
-
+/* Split Collapse panel uses its split grid when expanded. */
 .preview .project-command-panel.project-split {
   display: grid;
   padding: 0;
@@ -5301,7 +5466,9 @@ details:not([open]) summary {
   display: none;
 }
 
-
+/* ==========================================================================
+   PREVIEW — CODE / EXAMPLES
+   ========================================================================== */
 
 .preview .project-example {
   width: auto;
@@ -5319,7 +5486,9 @@ details:not([open]) summary {
   overflow-wrap: normal;
 }
 
-
+/* ==========================================================================
+   PREVIEW — DISPLAY / PREVIEW
+   ========================================================================== */
 
 .preview .project-display {
   display: block;
@@ -5343,16 +5512,18 @@ details:not([open]) summary {
   line-height: 1.6;
 }
 
-
+/* ==========================================================================
+   RESPONSIVE — NODE MODEL V3
+   ========================================================================== */
 
 @media (max-width: 760px) {
   .outline-parent-row,
-.outline-child-row {
+  .outline-child-row {
     grid-template-columns: auto minmax(0, 1fr);
   }
 
   .outline-parent-row .outline-actions,
-.outline-child-row .outline-actions {
+  .outline-child-row .outline-actions {
     grid-column: 1 / -1;
     justify-content: flex-end;
     border-top: 1px solid #1f3752;
@@ -5364,9 +5535,9 @@ details:not([open]) summary {
   }
 
   .preview .project-split--small-left,
-.preview .project-split--equal,
-.preview .project-split--small-right,
-.preview .project-split--three-column {
+  .preview .project-split--equal,
+  .preview .project-split--small-right,
+  .preview .project-split--three-column {
     grid-template-columns: 1fr;
   }
 
@@ -5380,7 +5551,9 @@ details:not([open]) summary {
   }
 }
 
-
+/* ==========================================================================
+   DATABASE FLOW GUARANTEE — KEEP BELOW EDITOR
+   ========================================================================== */
 
 .database-view,
 #database-view,
@@ -5408,7 +5581,9 @@ details:not([open]) summary {
   display: none !important;
 }
 
-
+/* ==========================================================================
+   EDITOR STATE SEPARATION — ENTRY vs NODE
+   ========================================================================== */
 
 .entry-panel--compact {
   margin-bottom: 1rem;
@@ -5500,9 +5675,14 @@ details:not([open]) summary {
   }
 }
 
+/* ==========================================================================
+   DATABASE TABLE — WIDE HORIZONTAL SCROLL + SORTABLE HEADERS
+   ========================================================================== */
 
-
-
+/*
+  Do not squeeze the database table to the viewport. The table keeps the
+  natural width of its columns and the wrapper scrolls left/right.
+*/
 .db-table-area {
   min-width: 0;
   overflow: hidden;
@@ -5559,7 +5739,10 @@ details:not([open]) summary {
   word-break: normal;
 }
 
-
+/*
+  Keep long text fields readable as their own wide columns rather than wrapping
+  them into narrow vertical strips.
+*/
 .db-table-wrap td[data-column="description"],
 .db-table-wrap td[data-column="notes"],
 .db-table-wrap td[data-column="content"],
@@ -5629,7 +5812,9 @@ details:not([open]) summary {
   }
 }
 
-
+/* ==========================================================================
+   DATABASE BULK SELECTION + DATABASE DANGER ZONE
+   ========================================================================== */
 
 .database-danger-zone {
   margin-top: 1.25rem;
@@ -5707,7 +5892,7 @@ details:not([open]) summary {
   gap: 14px;
 }
 
-
+/* ---------- TYPE CARD ---------- */
 
 .project-types button {
   width: 100%;
@@ -5743,7 +5928,7 @@ details:not([open]) summary {
     box-shadow 160ms ease;
 }
 
-
+/* ---------- ICON ---------- */
 
 .project-types button > span:first-child {
   width: 50px;
@@ -5772,7 +5957,7 @@ details:not([open]) summary {
     0 0 10px rgba(95, 200, 255, 0.1);
 }
 
-
+/* ---------- TEXT ---------- */
 
 .project-types button > span:last-child {
   display: grid;
@@ -5796,7 +5981,9 @@ details:not([open]) summary {
   line-height: 1.45;
 }
 
-
+/* ==================================================
+   HOVER
+   ================================================== */
 
 .project-types button:hover,
 .project-types button:focus-visible {
@@ -5814,7 +6001,9 @@ details:not([open]) summary {
     0 0 14px rgba(64, 158, 255, 0.08);
 }
 
-
+/* ==================================================
+   ACTIVE TYPE
+   ================================================== */
 
 .project-types button[aria-current="true"] {
   border-color: rgba(95, 200, 255, 0.55);
@@ -5835,7 +6024,9 @@ details:not([open]) summary {
     inset 0 0 14px rgba(95, 200, 255, 0.12),
     0 0 12px rgba(95, 200, 255, 0.18);
 }
-
+/* ==================================================
+   RIGHT CONTENT AREA
+   ================================================== */
 
 .project-content {
   min-width: 0;
@@ -5855,7 +6046,9 @@ details:not([open]) summary {
     0 0 22px rgba(64, 158, 255, 0.08);
 }
 
-
+/* ==================================================
+   CONTENT HEADER
+   ================================================== */
 
 .project-content > header {
   display: flex;
@@ -5894,7 +6087,9 @@ font-size: 12px;;
   text-align: right;
 }
 
-
+/* ==================================================
+   PROJECT GROUP
+   ================================================== */
 
 .project-group {
   display: grid;
@@ -5912,7 +6107,7 @@ font-size: 12px;;
   margin-top: 14px;
 }
 
-
+/* ---------- GROUP LABEL ---------- */
 
 .project-group > header {
   display: flex;
@@ -5973,7 +6168,9 @@ font-size: 12px;;
   line-height: 1.35;
 }
 
-
+/* ==================================================
+   PROJECT GRID
+   ================================================== */
 
 .project-grid {
   display: grid;
@@ -5984,9 +6181,9 @@ font-size: 12px;;
   padding: 14px;
 }
 
+/* ---------- PROJECT CARD ---------- */
 
-
-.project-grid > a {
+.project-grid a {
   min-width: 0;
 
   display: flex;
@@ -6008,8 +6205,8 @@ font-size: 12px;;
     background 160ms ease;
 }
 
-.project-grid > a:hover,
-.project-grid > a:focus-visible {
+.project-grid a:hover,
+.project-grid a:focus-visible {
   transform: translateY(-2px);
 
   border-color: rgba(95, 200, 255, 0.42);
@@ -6019,9 +6216,9 @@ font-size: 12px;;
     rgba(5, 18, 43, 0.78);
 }
 
+/* ---------- PROJECT TEXT ---------- */
 
-
-.project-grid > a > div {
+.project-grid a div {
   min-width: 0;
 
   display: grid;
@@ -6046,9 +6243,12 @@ word-break: break-all;
   line-height: 1.25;
 }
 
+/* ==================================================
+   PROJECT ICON OVERRIDES
+   Reuses existing .project-icon styles
+   ================================================== */
 
-
-.project-content .project-icon {
+.project-icon {
   flex: 0 0 44px;
 
   width: 44px;
@@ -6057,9 +6257,11 @@ word-break: break-all;
   font-size: 11px;
 }
 
+/* ==================================================
+   PROJECT DOCUMENTATION
+   ================================================== */
 
-
-
+/* ---------- SECTION INDEX ---------- */
 
 .project-doc-nav {
   display: flex;
@@ -6100,14 +6302,18 @@ word-break: break-all;
   background: rgba(47, 141, 255, 0.13);
 }
 
-
+/* ==================================================
+   DOCUMENT
+   ================================================== */
 
 .project-doc {
   display: grid;
   gap: 24px;
 }
 
-
+/* ==================================================
+   DOCUMENT SECTION
+   ================================================== */
 
 .project-doc-section {
   overflow: hidden;
@@ -6118,7 +6324,7 @@ word-break: break-all;
   background: rgba(3, 14, 34, 0.52);
 }
 
-
+/* ---------- SECTION HEADER ---------- */
 
 .project-doc-section > header {
   display: flex;
@@ -6171,13 +6377,15 @@ word-break: break-all;
   text-align: right;
 }
 
-
+/* ==================================================
+   COMMAND LIST
+   ================================================== */
 
 .project-command-list {
   display: grid;
 }
 
-
+/* ---------- COMMAND ROW ---------- */
 
 .project-command {
   display: grid;
@@ -6191,7 +6399,7 @@ word-break: break-all;
   border-top: 1px solid rgba(95, 170, 255, 0.11);
 }
 
-
+/* ---------- COMMAND ---------- */
 
 .project-command code {
   align-self: start;
@@ -6217,7 +6425,7 @@ overflow: scroll;
   box-shadow: inset 0 0 8px rgba(95, 200, 255, 0.04);
 }
 
-
+/* ---------- COMMAND DESCRIPTION ---------- */
 
 .project-command > div {
   display: grid;
@@ -6232,7 +6440,8 @@ overflow: scroll;
 
 .project-command p {
   color: #8fa5bb;
-  
+  /* font-size: 11px;
+  line-height: 1.5; */
 }
 
 .project-command p code {
@@ -6241,7 +6450,9 @@ overflow: scroll;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-
+/* ==================================================
+   CODE EXAMPLE
+   ================================================== */
 
 .project-example {
   margin: 0 18px 18px;
@@ -6281,7 +6492,9 @@ overflow: scroll;
   line-height: 1.7;
 }
 
-
+/* ==================================================
+   DOCUMENTATION NOTE
+   ================================================== */
 
 .project-note {
   margin: 0 18px 18px;
@@ -6310,9 +6523,11 @@ overflow: scroll;
   line-height: 1.5;
 }
 
+/* ==================================================
+   SINGLE PROJECT PAGE
+   ================================================== */
 
-
-
+/* ---------- PROJECT HEADER ---------- */
 
 .project-detail-header {
   display: flex;
@@ -6351,13 +6566,15 @@ overflow: scroll;
   text-align: right;
 }
 
-
+/* ==================================================
+   PROJECT DISPLAY
+   ================================================== */
 
 .project-display {
   margin-bottom: 22px;
 }
 
-
+/* ---------- MAIN PREVIEW ---------- */
 
 .project-preview {
   overflow: hidden;
@@ -6380,7 +6597,7 @@ overflow: scroll;
   object-fit: contain;
 }
 
-
+/* ---------- PROJECT LINKS ---------- */
 
 .project-actions {
   display: flex;
@@ -6412,7 +6629,9 @@ overflow: scroll;
   background: rgba(47, 141, 255, 0.16);
 }
 
-
+/* ==================================================
+   PROJECT DETAIL SECTION
+   ================================================== */
 
 .project-detail {
   overflow: hidden;
@@ -6456,12 +6675,14 @@ overflow: scroll;
 
     color: #a6b8ca;
 
-    
+    /* font-size: 11px; */
     line-height: 1.65;
   }
 }
 
-
+/* ==================================================
+   PROJECT INFORMATION
+   ================================================== */
 
 .project-meta {
   display: grid;
@@ -6490,7 +6711,9 @@ overflow: scroll;
   }
 }
 
-
+/* ==================================================
+   PROJECT DOCUMENTS
+   ================================================== */
 
 .project-documents {
   display: grid;
@@ -6534,7 +6757,9 @@ overflow: scroll;
   }
 }
 
-
+/* ==================================================
+   PROJECT IMAGES
+   ================================================== */
 
 .project-images {
   display: grid;
@@ -6553,12 +6778,26 @@ overflow: scroll;
 }
 
 
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
 
+/* ==================================================
+   RESPONSIVE
+   Breakpoints:
+   1350px — Smaller Desktop
+   1100px — Tablet / Collapsed Navigation
+    700px — Phone
+   ================================================== */
 
-
+/* ==================================================
+   1350px — SMALLER DESKTOP
+   ================================================== */
 
 @media (max-width: 1350px) {
-  
+  /* ==================================================
+     SHARED HEADER
+     ================================================== */
 
   .brand {
     left: 18px;
@@ -6581,28 +6820,32 @@ overflow: scroll;
     right: 18px;
   }
 
-  .top-tools > a {
+  .top-tools a {
     font-size: 11px;
   }
 }
 
-
+/* ==================================================
+   1100px — TABLET / COLLAPSED NAVIGATION
+   ================================================== */
 
 @media (max-width: 1100px) {
-  
+  /* ==================================================
+     SHARED HEADER
+     ================================================== */
 
   body > header {
     top: 16px;
   }
 
-  
+  /* ---------- BRAND ---------- */
 
   .brand {
     top: 0;
     left: 16px;
   }
 
-  
+  /* ---------- RIGHT CONTROLS ---------- */
 
   .top-tools {
     top: 0;
@@ -6611,13 +6854,13 @@ overflow: scroll;
     align-items: center;
   }
 
-  
+  /* ---------- MENU BUTTON ---------- */
 
   .menu-toggle {
     display: block;
   }
 
-  
+  /* ---------- NAV DROPDOWN ---------- */
 
   body > header nav {
     position: absolute;
@@ -6688,7 +6931,7 @@ overflow: scroll;
     box-shadow: inset 2px 0 var(--blue);
   }
 
-  
+  /* ---------- MENU OPEN STATE ---------- */
 
   .menu-toggle[aria-expanded="true"] span:first-child {
     transform: translateY(6px) rotate(45deg);
@@ -6702,15 +6945,17 @@ overflow: scroll;
     transform: translateY(-6px) rotate(-45deg);
   }
 
-  
+  /* ---------- HELP TOOLTIP ---------- */
 
-  .help > div {
+  .help div {
     display: none;
   }
 
-  
+  /* ==================================================
+     HOME PAGE
+     ================================================== */
 
-  body > main:not(.view-all-page) {
+  main:not(.view-all-page) {
     min-height: 100svh;
 
     display: grid;
@@ -6735,9 +6980,9 @@ overflow: scroll;
       url("/img/sandbox-background.png") center top / cover fixed no-repeat;
   }
 
-  
+  /* ---------- HOME PANELS ---------- */
 
-  body > main:not(.view-all-page) .glass-panel {
+  main:not(.view-all-page) .glass-panel {
     position: relative;
 
     top: auto;
@@ -6749,7 +6994,7 @@ overflow: scroll;
     min-width: 0;
   }
 
-  body > main:not(.view-all-page) .featured {
+  main:not(.view-all-page) .featured {
     grid-area: featured;
 
     max-width: 760px;
@@ -6757,25 +7002,25 @@ overflow: scroll;
     margin-inline: auto;
   }
 
-  body > main:not(.view-all-page) .library {
+  main:not(.view-all-page) .library {
     grid-area: library;
   }
 
-  body > main:not(.view-all-page) .rosetta {
+  main:not(.view-all-page) .rosetta {
     grid-area: rosetta;
   }
 
-  body > main:not(.view-all-page) .guides {
+  main:not(.view-all-page) .guides {
     grid-area: guides;
   }
 
-  body > main:not(.view-all-page) .data {
+  main:not(.view-all-page) .data {
     grid-area: data;
   }
 
-  
+  /* ---------- HOME HOLOGRAM ---------- */
 
-  body > main:not(.view-all-page) .logo-stage {
+  main:not(.view-all-page) .logo-stage {
     grid-area: logo;
 
     position: relative;
@@ -6790,25 +7035,27 @@ overflow: scroll;
     transform: none;
   }
 
-  body > main:not(.view-all-page) .logo-stage::after {
+  main:not(.view-all-page) .logo-stage::after {
     bottom: -15%;
   }
 
-  
+  /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  body > main:not(.view-all-page) .projects {
+  main:not(.view-all-page) .projects {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  
+  /* ---------- HOME RIGHT PANELS ---------- */
 
-  body > main:not(.view-all-page) .stones,
-body > main:not(.view-all-page) .guide-list,
-body > main:not(.view-all-page) .data-list {
+  main:not(.view-all-page) .stones,
+  main:not(.view-all-page) .guide-list,
+  main:not(.view-all-page) .data-list {
     width: 100%;
   }
 
-  
+  /* ==================================================
+     INNER PAGES — TABLET
+     ================================================== */
 
   .view-all-page {
     grid-template-columns:
@@ -6820,13 +7067,13 @@ body > main:not(.view-all-page) .data-list {
     padding: 110px 24px 90px;
   }
 
-  
+  /* ---------- INNER ASIDE ---------- */
 
   .type-menu h1 {
     font-size: 24px;
   }
 
-  .type-menu > header p {
+  .type-menu header p {
     font-size: 11px;
     line-height: 1.5;
   }
@@ -6860,13 +7107,13 @@ body > main:not(.view-all-page) .data-list {
     font-size: 9px;
   }
 
-  
+  /* ---------- INNER RIGHT CONTENT ---------- */
 
   .project-content {
     padding: 18px;
   }
 
-  
+  /* ---------- PROJECT LIBRARY ---------- */
 
   .project-group {
     grid-template-columns:
@@ -6878,7 +7125,7 @@ body > main:not(.view-all-page) .data-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  
+  /* ---------- REFERENCE COMMANDS ---------- */
 
   .project-command {
     grid-template-columns:
@@ -6888,7 +7135,9 @@ body > main:not(.view-all-page) .data-list {
     gap: 14px;
   }
 
-  
+  /* ==================================================
+     SHARED FOOTER
+     ================================================== */
 
   body > footer {
     position: relative;
@@ -6905,7 +7154,7 @@ body > main:not(.view-all-page) .data-list {
     background: var(--background);
   }
 
-  body > footer nav {
+  footer nav {
     width: min(680px, 100%);
 
     margin-inline: auto;
@@ -6914,16 +7163,20 @@ body > main:not(.view-all-page) .data-list {
   }
 }
 
-
+/* ==================================================
+   700px — PHONE
+   ================================================== */
 
 @media (max-width: 700px) {
-  
+  /* ==================================================
+     SHARED HEADER
+     ================================================== */
 
   body > header {
     top: 12px;
   }
 
-  
+  /* ---------- BRAND ---------- */
 
   .brand {
     left: 12px;
@@ -6944,7 +7197,7 @@ body > main:not(.view-all-page) .data-list {
     font-size: 9px;
   }
 
-  
+  /* ---------- RIGHT CONTROLS ---------- */
 
   .top-tools {
     right: 12px;
@@ -6959,7 +7212,7 @@ body > main:not(.view-all-page) .data-list {
     padding: 7px;
   }
 
-  .help > button {
+  .help button {
     width: 36px;
     height: 36px;
   }
@@ -6971,11 +7224,11 @@ body > main:not(.view-all-page) .data-list {
     font-size: 21px;
   }
 
-  .top-tools > a {
+  .top-tools a {
     display: none;
   }
 
-  
+  /* ---------- NAV DROPDOWN ---------- */
 
   body > header nav {
     top: 48px;
@@ -6992,9 +7245,11 @@ body > main:not(.view-all-page) .data-list {
     font-size: 11px;
   }
 
-  
+  /* ==================================================
+     HOME PAGE
+     ================================================== */
 
-  body > main:not(.view-all-page) {
+  main:not(.view-all-page) {
     display: grid;
 
     grid-template-columns: 1fr;
@@ -7016,37 +7271,37 @@ body > main:not(.view-all-page) .data-list {
       url("sandbox-background.png") center top / cover fixed no-repeat;
   }
 
-  
+  /* ---------- HOME PANELS ---------- */
 
-  body > main:not(.view-all-page) .glass-panel {
+  main:not(.view-all-page) .glass-panel {
     width: 100%;
 
     padding: 14px;
   }
 
-  body > main:not(.view-all-page) .glass-panel h2 {
+  .glass-panel h2 {
     margin-bottom: 12px;
 
     font-size: 13px;
   }
 
-  
+  /* ---------- HOME HOLOGRAM ---------- */
 
-  body > main:not(.view-all-page) .logo-stage {
+  main:not(.view-all-page) .logo-stage {
     width: 205px;
 
     margin: 20px auto 28px;
   }
 
-  body > main:not(.view-all-page) .logo-stage::after {
+  main:not(.view-all-page) .logo-stage::after {
     bottom: -12%;
 
     opacity: 0.15;
   }
 
-  
+  /* ---------- FEATURED PROJECT ---------- */
 
-  body > main:not(.view-all-page) .featured-content {
+  main:not(.view-all-page) .featured-content {
     grid-template-columns:
       24px
       minmax(0, 1fr)
@@ -7055,23 +7310,23 @@ body > main:not(.view-all-page) .data-list {
     gap: 5px;
   }
 
-  body > main:not(.view-all-page) .featured .arrow {
+  main:not(.view-all-page) .featured .arrow {
     width: 24px;
     height: 24px;
 
     font-size: 18px;
   }
 
-  body > main:not(.view-all-page) .card-stack {
+  main:not(.view-all-page) .card-stack {
     height: 320px;
     min-height: 320px;
   }
 
-  body > main:not(.view-all-page) .card-stack > span {
+  main:not(.view-all-page) .card-stack > span {
     display: none;
   }
 
-  body > main:not(.view-all-page) .card-stack article {
+  main:not(.view-all-page) .card-stack article {
     width: 100%;
     height: 320px;
 
@@ -7088,29 +7343,29 @@ body > main:not(.view-all-page) .data-list {
     overflow: hidden;
   }
 
-  
+  /* ---------- FEATURED IMAGE ---------- */
 
-  body > main:not(.view-all-page) .featured .project-image {
+  main:not(.view-all-page) .featured .project-image {
     width: 100%;
     height: 130px;
     min-height: 0;
   }
 
-  body > main:not(.view-all-page) .featured .project-image > * {
+  main:not(.view-all-page) .featured .project-image > * {
     width: 100%;
     height: 100%;
   }
 
-  body > main:not(.view-all-page) .featured .project-image img {
+  main:not(.view-all-page) .featured .project-image img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
   }
 
-  
+  /* ---------- FEATURED INFORMATION ---------- */
 
-  body > main:not(.view-all-page) .featured .project-info {
+  main:not(.view-all-page) .featured .project-info {
     grid-template-rows:
       auto
       auto
@@ -7125,7 +7380,7 @@ body > main:not(.view-all-page) .data-list {
     overflow: hidden;
   }
 
-  body > main:not(.view-all-page) .featured .project-info h3 {
+  main:not(.view-all-page) .featured .project-info h3 {
     margin: 0;
 
     font-size: 18px;
@@ -7134,7 +7389,7 @@ body > main:not(.view-all-page) .data-list {
     line-clamp: 1;
   }
 
-  body > main:not(.view-all-page) .featured .project-info p {
+  main:not(.view-all-page) .featured .project-info p {
     min-height: 0;
 
     overflow: hidden;
@@ -7145,9 +7400,9 @@ body > main:not(.view-all-page) .data-list {
     line-clamp: 3;
   }
 
-  
+  /* ---------- FEATURED TAGS ---------- */
 
-  body > main:not(.view-all-page) .featured .tags {
+  main:not(.view-all-page) .featured .tags {
     flex-wrap: nowrap;
 
     max-height: 23px;
@@ -7156,34 +7411,34 @@ body > main:not(.view-all-page) .data-list {
     overflow: hidden;
   }
 
-  
+  /* ---------- FEATURED LINK ---------- */
 
-  body > main:not(.view-all-page) .featured .project-info a {
+  main:not(.view-all-page) .featured .project-info a {
     margin: 0;
 
     padding: 7px 8px;
   }
 
-  
+  /* ---------- HOME PROJECT LIBRARY ---------- */
 
-  body > main:not(.view-all-page) .projects {
+  main:not(.view-all-page) .projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 7px;
   }
 
-  body > main:not(.view-all-page) .projects > a {
+  main:not(.view-all-page) .projects > a {
     padding: 9px 5px;
   }
 
-  body > main:not(.view-all-page) .project-icon {
+  main:not(.view-all-page) .project-icon {
     width: 46px;
     height: 46px;
   }
 
-  
+  /* ---------- HOME ROSETTA ---------- */
 
-  body > main:not(.view-all-page) .stones {
+  main:not(.view-all-page) .stones {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7193,7 +7448,7 @@ body > main:not(.view-all-page) .data-list {
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .stones button {
+  main:not(.view-all-page) .stones button {
     width: 100%;
 
     display: grid;
@@ -7208,15 +7463,15 @@ body > main:not(.view-all-page) .data-list {
     text-align: left;
   }
 
-  body > main:not(.view-all-page) .stones small {
+  main:not(.view-all-page) .stones small {
     width: auto;
 
     text-align: left;
   }
 
-  
+  /* ---------- HOME REFERENCE GUIDES ---------- */
 
-  body > main:not(.view-all-page) .guide-list {
+  main:not(.view-all-page) .guide-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7226,7 +7481,7 @@ body > main:not(.view-all-page) .data-list {
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .guide-list > a {
+  main:not(.view-all-page) .guide-list > a {
     width: 100%;
 
     display: flex;
@@ -7237,9 +7492,9 @@ body > main:not(.view-all-page) .data-list {
     text-align: left;
   }
 
-  
+  /* ---------- HOME DATA VISUALIZATION ---------- */
 
-  body > main:not(.view-all-page) .data-list {
+  main:not(.view-all-page) .data-list {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7249,7 +7504,7 @@ body > main:not(.view-all-page) .data-list {
     overflow: visible;
   }
 
-  body > main:not(.view-all-page) .data-list > a {
+  main:not(.view-all-page) .data-list > a {
     width: 100%;
 
     display: flex;
@@ -7260,7 +7515,9 @@ body > main:not(.view-all-page) .data-list {
     text-align: left;
   }
 
-  
+  /* ==================================================
+     INNER PAGES — PHONE
+     ================================================== */
 
   .view-all-page {
     display: grid;
@@ -7281,14 +7538,16 @@ body > main:not(.view-all-page) .data-list {
       url("innerPg.png") center top / cover fixed no-repeat;
   }
 
-  
+  /* ==================================================
+     INNER PAGE ASIDE
+     ================================================== */
 
   .type-menu {
     width: 100%;
     min-width: 0;
   }
 
-  .type-menu > header {
+  .type-menu header {
     margin-bottom: 12px;
   }
 
@@ -7296,14 +7555,14 @@ body > main:not(.view-all-page) .data-list {
     font-size: 22px;
   }
 
-  .type-menu > header p {
+  .type-menu header p {
     max-width: none;
 
     font-size: 11px;
     line-height: 1.5;
   }
 
-  
+  /* ---------- TYPES / SUBJECTS ---------- */
 
   .project-types {
     display: flex;
@@ -7349,7 +7608,9 @@ body > main:not(.view-all-page) .data-list {
     line-height: 1.4;
   }
 
-  
+  /* ==================================================
+     INNER PAGE CONTENT
+     ================================================== */
 
   .project-content {
     width: 100%;
@@ -7358,10 +7619,10 @@ body > main:not(.view-all-page) .data-list {
     padding: 12px;
   }
 
-  
+  /* ---------- CONTENT HEADER ---------- */
 
   .project-content > header,
-.project-detail-header {
+  .project-detail-header {
     display: flex;
 
     flex-direction: column;
@@ -7375,17 +7636,17 @@ body > main:not(.view-all-page) .data-list {
   }
 
   .project-content > header > div,
-.project-detail-header > div {
+  .project-detail-header > div {
     width: 100%;
   }
 
   .project-content > header h2,
-.project-detail-header h2 {
+  .project-detail-header h2 {
     font-size: 23px;
   }
 
   .project-content > header p,
-.project-detail-header > p {
+  .project-detail-header > p {
     width: 100%;
     max-width: none;
 
@@ -7395,7 +7656,9 @@ body > main:not(.view-all-page) .data-list {
     text-align: left;
   }
 
-  
+  /* ==================================================
+     PROJECT LIBRARY PAGE
+     ================================================== */
 
   .project-group {
     grid-template-columns: 1fr;
@@ -7428,7 +7691,7 @@ body > main:not(.view-all-page) .data-list {
     margin-top: 2px;
   }
 
-  
+  /* ---------- PROJECT CARDS ---------- */
 
   .project-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -7438,13 +7701,13 @@ body > main:not(.view-all-page) .data-list {
     padding: 9px;
   }
 
-  .project-grid > a {
+  .project-grid a {
     min-width: 0;
 
     padding: 9px;
   }
 
-  .project-content .project-icon {
+  .project-icon {
     flex: 0 0 40px;
 
     width: 40px;
@@ -7462,7 +7725,9 @@ body > main:not(.view-all-page) .data-list {
     font-size: 10px;
   }
 
-  
+  /* ==================================================
+     REFERENCE DOCUMENTATION PAGE
+     ================================================== */
 
   .project-doc-nav {
     flex-wrap: nowrap;
@@ -7485,7 +7750,7 @@ body > main:not(.view-all-page) .data-list {
     gap: 14px;
   }
 
-  
+  /* ---------- DOCUMENT SECTION HEADER ---------- */
 
   .project-doc-section > header {
     display: grid;
@@ -7507,7 +7772,7 @@ body > main:not(.view-all-page) .data-list {
     text-align: left;
   }
 
-  
+  /* ---------- COMMAND ROWS ---------- */
 
   .project-command {
     grid-template-columns: 1fr;
@@ -7532,7 +7797,7 @@ body > main:not(.view-all-page) .data-list {
     font-size: 10px;
   }
 
-  
+  /* ---------- CODE EXAMPLES ---------- */
 
   .project-example {
     margin: 0 12px 12px;
@@ -7546,7 +7811,7 @@ body > main:not(.view-all-page) .data-list {
     font-size: 10px;
   }
 
-  
+  /* ---------- DOCUMENT NOTES ---------- */
 
   .project-note {
     margin: 0 12px 12px;
@@ -7554,13 +7819,15 @@ body > main:not(.view-all-page) .data-list {
     padding: 10px 12px;
   }
 
-  
+  /* ==================================================
+     SINGLE PROJECT PAGE
+     ================================================== */
 
   .project-preview {
     min-height: 180px;
   }
 
-  
+  /* ---------- PROJECT LINKS ---------- */
 
   .project-actions {
     display: grid;
@@ -7574,7 +7841,7 @@ body > main:not(.view-all-page) .data-list {
     text-align: center;
   }
 
-  
+  /* ---------- DETAIL SECTIONS ---------- */
 
   .project-detail > header {
     padding: 11px 12px;
@@ -7586,7 +7853,7 @@ body > main:not(.view-all-page) .data-list {
     font-size: 10px;
   }
 
-  
+  /* ---------- PROJECT META ---------- */
 
   .project-meta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7608,7 +7875,7 @@ body > main:not(.view-all-page) .data-list {
     border-left: 1px solid rgba(95, 170, 255, 0.12);
   }
 
-  
+  /* ---------- PROJECT DOCUMENTS ---------- */
 
   .project-documents > a {
     grid-template-columns: 1fr;
@@ -7627,7 +7894,7 @@ body > main:not(.view-all-page) .data-list {
     transform: translateY(-50%);
   }
 
-  
+  /* ---------- PROJECT IMAGES ---------- */
 
   .project-images {
     grid-template-columns: 1fr;
@@ -7637,13 +7904,15 @@ body > main:not(.view-all-page) .data-list {
     padding: 9px;
   }
 
-  
+  /* ==================================================
+     SHARED FOOTER
+     ================================================== */
 
   body > footer {
     padding: 12px 12px 20px;
   }
 
-  body > footer nav {
+  footer nav {
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
@@ -7653,7 +7922,7 @@ body > main:not(.view-all-page) .data-list {
     padding: 5px;
   }
 
-  body > footer button {
+  footer button {
     justify-content: center;
 
     min-width: 0;
@@ -7662,5 +7931,4 @@ body > main:not(.view-all-page) .data-list {
 
     font-size: 10px;
   }
-}
 }
