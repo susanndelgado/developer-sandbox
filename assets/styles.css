@@ -31,7 +31,7 @@ html,
 body {
   margin: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -74,15 +74,12 @@ svg {
    One wrapper, header, navigation and footer system.
    ================================================== */
 
-.home-shell,
-.app-shell,
-.library-shell {
+.app-shell {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   width: 100%;
-  /* height: 100dvh; */
+  min-height: 100dvh;
   padding: 14px var(--page-gutter) 8px;
-  /* overflow: hidden; */
   background:
     radial-gradient(
       circle at 50% 10%,
@@ -144,7 +141,6 @@ svg {
 .site-nav {
   display: flex;
   justify-self: center;
-  /* overflow: hidden; */
 }
 
 .nav-link {
@@ -234,7 +230,6 @@ svg {
 }
 
 .footer-links,
-.footer-signature,
 .footer-links a {
   display: flex;
   align-items: center;
@@ -250,8 +245,7 @@ svg {
 }
 
 .footer-signature {
-  justify-content: flex-end;
-  gap: 12px;
+  text-align: right;
   letter-spacing: 0.12em;
 }
 
@@ -393,9 +387,8 @@ svg {
   z-index: 2;
   min-width: 0;
   min-height: 0;
-  /* overflow: hidden; */
   border-radius: var(--radius);
-  padding: 16px 18px;
+  padding: clamp(12px, 1vw, 16px) clamp(14px, 1.2vw, 18px);
 }
 
 .panel-header {
@@ -490,7 +483,7 @@ svg {
 
 .preview-frame {
   min-height: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
   border: 1px solid rgba(137, 201, 246, 0.2);
   border-radius: var(--radius-small);
   background: rgba(3, 11, 28, 0.68);
@@ -537,7 +530,7 @@ svg {
   align-content: center;
   gap: 5px;
   min-width: 0;
-  min-height: 64px;
+  min-height: clamp(50px, 7vh, 64px);
   padding: 5px;
   border: 1px solid rgba(119, 189, 245, 0.17);
   border-radius: 10px;
@@ -563,8 +556,8 @@ svg {
 .mini-mark {
   display: grid;
   place-items: center;
-  width: 68px;
-  height: 68px;
+  width: clamp(42px, 3.5vw, 68px);
+  height: clamp(42px, 3.5vw, 68px);
   border: 1px solid rgba(103, 211, 255, 0.3);
   border-radius: 8px;
   color: var(--cyan);
@@ -609,8 +602,7 @@ svg {
    ================================================== */
 
 #hm {
-  /* height: 100dvh; */
-  /* overflow: hidden; */
+  min-height: 100dvh;
   background:
     linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.22)),
     url("img/Bg-platform-light.png") center / cover no-repeat,
@@ -619,7 +611,7 @@ svg {
 
 .home-main {
   display: grid;
-  grid-template-rows: minmax(176px, 30%) minmax(0, 1fr);
+  grid-template-rows: clamp(150px, 27vh, 250px) minmax(0, 1fr);
   min-height: 0;
   padding-top: 2px;
 }
@@ -641,7 +633,7 @@ svg {
 
 .hero-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 5.35rem;
+  font-size: clamp(3.2rem, 5vw, 5.35rem);
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: 0.025em;
@@ -696,7 +688,7 @@ svg {
       340px,
       1fr
     );
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(100px, 0.54fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(88px, 0.54fr);
   gap: 17px;
   width: 100%;
   min-height: 0;
@@ -798,7 +790,7 @@ svg {
   display: none;
 }
 
-/* Fixed logical desktop stage. JS applies .scaled-home only to desktop. */
+/* Optional logical desktop stage. The script is currently not loaded. */
 
 #hm.scaled-home {
   display: block;
@@ -818,7 +810,6 @@ svg {
 
 #hm.scaled-home .mini-grid {
   overflow-x: auto;
-  /* overflow-y: hidden; */
   overscroll-behavior-x: contain;
   scrollbar-width: thin;
   scrollbar-color: var(--app-scrollbar) transparent;
