@@ -53,15 +53,44 @@
   const libraryRows = Array.from(document.querySelectorAll(".catalog-row[data-library-record]"))
   const libraryDetails = Array.from(document.querySelectorAll("[data-library-detail]"))
   const libraryFilters = Array.from(document.querySelectorAll("[data-library-filter]"))
+  const libraryStatusFilters = Array.from(document.querySelectorAll(".library-heading .status"))
   const libraryEmpty = document.querySelector("#library-empty")
   const libraryMobile = window.matchMedia("(max-width: 899px)")
 
   if (libraryRows.length && libraryDetails.length) {
     let activeFilter = "all"
+    let activeStatus = "all"
     let currentRecord =
       libraryRows.find((row) => row.classList.contains("selected"))?.dataset.libraryRecord ||
       libraryRows[0]?.dataset.libraryRecord ||
       ""
+
+    const normalizeLibraryStatus = (value) => {
+      const status = String(value || "").trim().toLowerCase()
+
+      if (status.includes("in progress")) return "in-progress"
+      if (status.includes("complete")) return "complete"
+      if (status.includes("inactive")) return "inactive"
+      return "planned"
+    }
+
+    libraryRows.forEach((row) => {
+      const recordKey = row.dataset.libraryRecord
+      const detail = libraryDetails.find(
+        (item) => item.dataset.libraryDetail === recordKey,
+      )
+      const statusLabel = detail?.querySelector(".status-stack .status")?.textContent || ""
+      row.dataset.status = normalizeLibraryStatus(statusLabel)
+    })
+
+    libraryStatusFilters.forEach((control) => {
+      const statusKey = normalizeLibraryStatus(control.textContent)
+      control.dataset.libraryStatus = statusKey
+      control.classList.add("tag")
+      control.setAttribute("role", "button")
+      control.setAttribute("tabindex", "0")
+      control.setAttribute("aria-pressed", "false")
+    })
 
     const showLibraryProject = (recordKey) => {
       if (!recordKey) return
@@ -85,9 +114,11 @@
       libraryRows.forEach((row) => {
         const matchesType =
           activeFilter === "all" || row.dataset.classification === activeFilter
+        const matchesStatus =
+          activeStatus === "all" || row.dataset.status === activeStatus
         const searchText = (row.dataset.search || row.textContent || "").toLowerCase()
         const matchesSearch = !query || searchText.includes(query)
-        const visible = matchesType && matchesSearch
+        const visible = matchesType && matchesStatus && matchesSearch
 
         row.hidden = !visible
 
@@ -120,6 +151,19 @@
       }
     }
 
+    const setLibraryStatusFilter = (control) => {
+      const requestedStatus = control.dataset.libraryStatus || "all"
+      activeStatus = activeStatus === requestedStatus ? "all" : requestedStatus
+
+      libraryStatusFilters.forEach((item) => {
+        const active = item.dataset.libraryStatus === activeStatus
+        item.classList.toggle("active", active)
+        item.setAttribute("aria-pressed", active ? "true" : "false")
+      })
+
+      applyLibraryFilters()
+    }
+
     libraryRows.forEach((row) => {
       const recordKey = row.dataset.libraryRecord
 
@@ -143,6 +187,15 @@
         })
 
         applyLibraryFilters()
+      })
+    })
+
+    libraryStatusFilters.forEach((control) => {
+      control.addEventListener("click", () => setLibraryStatusFilter(control))
+      control.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return
+        event.preventDefault()
+        setLibraryStatusFilter(control)
       })
     })
 
@@ -297,7 +350,7 @@
     const target = event.target
     if (!(target instanceof Element)) return
 
-    const control = target.closest("a, button, .project-card")
+    const control = target.closest("a, button, [role='button'], .project-card")
     if (!control) return
 
     if (event.relatedTarget instanceof Node && control.contains(event.relatedTarget)) {
@@ -311,7 +364,7 @@
     const target = event.target
     if (!(target instanceof Element)) return
 
-    const control = target.closest("a, button, .project-card")
+    const control = target.closest("a, button, [role='button'], .project-card")
     if (!control) return
 
     enableAudio()
