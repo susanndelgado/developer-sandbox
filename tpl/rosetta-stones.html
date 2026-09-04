@@ -15,6 +15,23 @@
             <p class="eyebrow">Rosetta Stones</p>
             <h1 id="rosetta-title">All Rosetta Stones</h1>
             <p class="rosetta-lead">Compare the same recognizable programming problem across changing languages, frameworks, and runtime environments.</p>
+
+            <div class="catalog-toolbar" aria-label="Search and filter Rosetta Stones">
+              <input
+                class="catalog-search"
+                id="rosetta-search"
+                type="search"
+                placeholder="Search Rosetta Stones…"
+                autocomplete="off"
+                aria-label="Search Rosetta Stones"
+              />
+
+              <div class="status-stack" aria-label="Filter Rosetta Stones by status">
+                <button class="tag active" type="button" data-rosetta-filter="all" aria-pressed="true">All</button>
+                <button class="tag" type="button" data-rosetta-filter="in-progress" aria-pressed="false">In Progress</button>
+                <button class="tag" type="button" data-rosetta-filter="complete" aria-pressed="false">Complete</button>
+              </div>
+            </div>
           </header>
 
           <aside class="rosetta-explainer glass-soft" aria-labelledby="rosetta-about-title">
@@ -26,6 +43,7 @@
 
         <div class="rosetta-scroll app-scroll" aria-label="Rosetta Stone project maps">
           {{ROSETTA_CONTENT}}
+          <p class="rosetta-empty" id="rosetta-filter-empty" hidden>No Rosetta Stones match this search or filter.</p>
         </div>
       </section>
     </main>
