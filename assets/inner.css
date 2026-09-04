@@ -1,0 +1,60 @@
+/* Shared inner-page layout. Visual treatments stay in styles.css. */
+
+body > header,
+.view-all-page,
+body > footer {
+  width: 100%;
+  padding-inline: var(--page-gutter, clamp(8px, 1.8vw, 16px));
+}
+
+.library-shell {
+  padding-inline: var(--page-gutter, clamp(8px, 1.8vw, 16px));
+}
+
+.library-shell .page-frame {
+  width: 100%;
+  max-width: none;
+}
+
+.library-main,
+.library-workspace {
+  overflow: clip;
+}
+
+.catalog-scroll {
+  display: grid;
+  grid-template-rows: minmax(150px, 0.72fr) minmax(250px, 1.28fr);
+  gap: 10px;
+  min-height: 0;
+  padding: 10px;
+  overflow: clip;
+}
+
+.catalog-scroll .panel-bottom {
+  display: none;
+}
+
+.catalog-scroll .library-panel-block:first-child {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(95, 200, 255, 0.34) transparent;
+}
+
+.inspector {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.inspector-grid {
+  height: 100%;
+}
+
+@media (orientation: landscape) and (max-width: 899px) {
+  .catalog-scroll {
+    grid-template-rows: minmax(115px, 0.65fr) minmax(190px, 1.35fr);
+    gap: 7px;
+    padding: 7px;
+  }
+}
