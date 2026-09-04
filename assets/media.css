@@ -216,11 +216,15 @@
 }
 
 /* ==================================================
-   MOBILE — BELOW 900px
-   Shared shell plus Library list-only behavior.
+   MOBILE / NARROW VIEWPORT
+   Standard narrow layouts still respond by width. Large landscape phones
+   are included by touch input + short height so iOS does not fall out of
+   the mobile shell when its landscape width exceeds 899px.
    ================================================== */
 
-@media (max-width: 899px) {
+@media (max-width: 899px),
+  (hover: none) and (pointer: coarse) and (max-width: 1100px) and
+    (max-height: 600px) and (min-aspect-ratio: 4/3) {
   .app-shell {
     grid-template-rows: auto minmax(0, 1fr) auto;
     padding: 5px var(--page-gutter) 4px;
@@ -328,10 +332,12 @@
     font-size: 0.52rem;
     display: none;
   }
+
   .tag-row,
   .mini-grid {
     display: none;
   }
+
   .library-workspace .catalog-scroll {
     grid-template-rows: minmax(0, 1fr);
     gap: 0;
@@ -370,10 +376,14 @@
 }
 
 /* ==================================================
-   LANDSCAPE MOBILE — BELOW 900px
+   LANDSCAPE PHONE
+   A phone is recognized by touch input, short viewport height, and a wide
+   aspect ratio instead of width alone. This includes large iPhones whose
+   landscape CSS width is greater than 899px.
    ================================================== */
 
-@media (orientation: landscape) and (max-width: 899px) {
+@media (hover: none) and (pointer: coarse) and (max-width: 1100px) and
+  (max-height: 600px) and (min-aspect-ratio: 4/3) {
   /* Homepage composition inside the shared main region. */
 
   #hm {
@@ -446,6 +456,30 @@
   }
 
   .featured-copy {
+    display: none;
+  }
+
+  .preview-placeholder {
+    min-height: 0;
+    gap: 3px;
+    padding: 6px;
+  }
+
+  .preview-placeholder-mark {
+    font-size: clamp(2.5rem, 16vh, 4.5rem);
+  }
+
+  .preview-placeholder-type {
+    font-size: 0.42rem;
+    letter-spacing: 0.12em;
+  }
+
+  .preview-placeholder-title {
+    max-width: 12ch;
+    font-size: clamp(0.92rem, 2.6vw, 1.35rem);
+  }
+
+  .preview-placeholder-note {
     display: none;
   }
 
@@ -595,11 +629,13 @@
 }
 
 /* ==================================================
-   PORTRAIT MOBILE — ROTATE EXPERIENCE
-   Left unchanged for the separate iPhone rotation pass.
+   PORTRAIT PHONE — ROTATE EXPERIENCE
+   Only touch-first, phone-width portrait viewports are forced to rotate.
+   Desktop/laptop windows remain responsive instead of receiving this state.
    ================================================== */
 
-@media (orientation: portrait) and (max-width: 900px) {
+@media (hover: none) and (pointer: coarse) and (max-width: 600px) and
+  (max-aspect-ratio: 1/1) {
   #hm {
     background:
       linear-gradient(rgba(1, 6, 20, 0.04), rgba(1, 6, 20, 0.12)),
@@ -723,7 +759,8 @@
   }
 }
 
-@media (orientation: portrait) and (max-width: 900px) and (max-height: 700px) {
+@media (hover: none) and (pointer: coarse) and (max-width: 600px) and
+  (max-height: 700px) and (max-aspect-ratio: 1/1) {
   .rotate-brand {
     top: max(14px, env(safe-area-inset-top));
   }
