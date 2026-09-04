@@ -1,0 +1,15 @@
+:root {
+  --page-gutter: clamp(8px, 1.8vw, 16px);
+}
+
+@media (min-width: 900px) {
+  :root {
+    --page-gutter: 38px;
+  }
+}
+
+@media (min-width: 1080px) {
+  :root {
+    --page-gutter: 58px;
+  }
+}
