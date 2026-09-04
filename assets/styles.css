@@ -435,6 +435,7 @@ main {
   min-height: 0;
   border-radius: var(--radius);
   padding: clamp(12px, 1vw, 16px) clamp(14px, 1.2vw, 18px);
+  backdrop-filter: blur(17px) saturate(118%);
 }
 
 .panel-header {
