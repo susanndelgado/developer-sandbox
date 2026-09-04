@@ -730,7 +730,7 @@ main {
     pointer-events: none;
   }
 
-  &::after {
+  /* &::after {
     content: "";
 
     position: absolute;
@@ -765,7 +765,7 @@ main {
     opacity: 0.2;
 
     pointer-events: none;
-  }
+  } */
 
   button {
     position: relative;
@@ -838,9 +838,12 @@ main {
     opacity: 0.95;
 
     filter: drop-shadow(0 0 4px rgba(220, 247, 255, 0.5))
-      drop-shadow(0 0 12px rgba(80, 185, 255, 0.7))
-      drop-shadow(0 0 24px rgba(64, 110, 255, 0.4));
+      drop-shadow(0 0 12px rgba(80, 185, 255, 0.1))
+      drop-shadow(0 0 15px rgba(64, 110, 255, 0.1));
 
+    /* drop-shadow(0 0 4px rgba(220, 247, 255, 0.5))
+      drop-shadow(0 0 12px rgba(80, 185, 255, 0.7))
+      drop-shadow(0 0 24px rgba(64, 110, 255, 0.4)); */
     transition:
       transform 800ms ease,
       filter 200ms ease;
