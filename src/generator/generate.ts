@@ -675,7 +675,7 @@ function getPreviewForRecord(recordId: string): string {
         SELECT content
         FROM content_nodes
         WHERE record_id = ?
-          AND hidden = 0
+          AND COALESCE(hidden, 0) = 0
           AND LOWER(COALESCE(type, '')) IN ('display', 'preview')
         ORDER BY sort_order, id
         LIMIT 1
@@ -686,12 +686,22 @@ function getPreviewForRecord(recordId: string): string {
   return row?.content ?? "";
 }
 
+function renderPreviewPlaceholder(record: RecordRow): string {
+  return `
+<div class="preview-placeholder" role="img" aria-label="${attr(`${record.title} preview not yet available`)}">
+  <span class="preview-placeholder-mark" aria-hidden="true">${escapeHtml(homeShortLabel(record))}</span>
+  <span class="preview-placeholder-type">${escapeHtml(classificationDisplayLabel(record))}</span>
+  <strong class="preview-placeholder-title">${escapeHtml(record.title)}</strong>
+  <span class="preview-placeholder-note">Preview coming soon</span>
+</div>`;
+}
+
 function renderPreviewOrFallback(record: RecordRow): string {
   const preview = getPreviewForRecord(record.id).trim();
 
   if (preview) return preview;
 
-  return `<img src="assets/img/desktop.png" alt="${attr(record.title)} project preview" />`;
+  return renderPreviewPlaceholder(record);
 }
 
 function renderTechnologyTags(record: RecordRow, limit = 8): string {
