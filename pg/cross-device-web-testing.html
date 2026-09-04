@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020817" />
 
     <title>Cross-Device Web Testing — Developer Sandbox</title>
-
 
 
     <base href="../" />
@@ -75,7 +75,10 @@
     <main class="view-all-page app-main page-frame full-frame">
       
 <aside class="type-menu app-sidebar glass">
-  <header><h1>Reference Guides</h1><p>Technical documentation, commands, workflows, and development references.</p></header>
+  <header>
+    <h1>Reference Guides</h1>
+    <p>Technical documentation, commands, workflows, and development references.</p>
+  </header>
   <nav class="project-types" aria-label="Reference guides">
 <a href="pg/angular-reference-guide.html">
   <span aria-hidden="true">▤</span>
@@ -199,8 +202,8 @@
 </aside>
 
       <section class="project-content app-content glass">
-        <div id="preview" class="preview">
-
+        <div id="preview" class="preview app-scroll">
+          
 <header>
   <div>
     <small>REFERENCE GUIDE</small>
@@ -211,11 +214,10 @@
     Device testing
   </p>
 </header>
-        <nav
+          <nav
   id="node-webtest-nav"
   class="project-doc-nav node-01 uid-webtest-nav" aria-label="Guide navigation"
->
-<a
+><a
   id="child-webtest-nav-start"
   class="child-01 uid-webtest-nav-start"
   href="pg/cross-device-web-testing.html#node-webtest-start"
@@ -259,8 +261,7 @@
   id="child-webtest-nav-docs"
   class="child-09 uid-webtest-nav-docs"
   href="pg/cross-device-web-testing.html#node-webtest-docs"
->Official Docs</a>
-</nav>
+>Official Docs</a></nav>
 <article class="project-doc"><section
   id="node-webtest-start"
   class="project-detail node-02 uid-webtest-start"
@@ -697,7 +698,7 @@ test(&#039;page has no automatically detectable a11y violations&#039;, async ({ 
   <a class="project-command-action" href="https://developer.apple.com/safari/technology-preview/" target="_blank" rel="noopener noreferrer" aria-label="Open Safari Technology Preview"><span aria-hidden="true">›</span></a>
 </div></div>
 </section></article>
-</div>
+        </div>
       </section>
     </main>
 
@@ -728,3 +729,7 @@ test(&#039;page has no automatically detectable a11y violations&#039;, async ({ 
   <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
 
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

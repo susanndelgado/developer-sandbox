@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020817" />
 
     <title>Developer Sandbox — Database</title>
-
 
 
     <link rel="stylesheet" href="assets/styles.css" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="home">
+  <body id="pg" class="site-page app-shell" data-section="system">
     <header class="home-header page-frame full-frame">
   <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
@@ -70,10 +70,9 @@
 </header>
 
 
-
-    <main class="view-all-page">
-      <section class="project-content" style="grid-column: 1 / -1">
-        <header>
+    <main class="view-all-page app-main page-frame full-frame">
+      <section class="project-content app-content glass app-scroll">
+        <header class="content-header">
           <div>
             <small>DATABASE</small>
             <h2>Sandbox Datastore</h2>
@@ -85,10 +84,7 @@
           </p>
         </header>
 
-        <nav
-          class="project-doc-nav"
-          aria-label="Database documentation sections"
-        >
+        <nav class="project-doc-nav" aria-label="Database documentation sections">
           <a href="#what-it-does">What It Does</a>
           <a href="#technologies">Technologies</a>
           <a href="#structure">Structure</a>
@@ -101,18 +97,12 @@
             href="https://github.com/susanndelgado/developer-sandbox/blob/main/database/schema.sql"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            View Schema ›
-          </a>
+          >View Schema ›</a>
 
-          <a class="project-link" href="system-guide.html"> System Guide › </a>
+          <a class="project-link" href="system-guide.html">System Guide ›</a>
         </div>
 
         <article class="project-doc">
-          <!-- =============================================
-               WHAT IT DOES
-               ============================================= -->
-
           <section class="project-detail" id="what-it-does">
             <header>
               <span>01</span>
@@ -141,10 +131,6 @@
             </section>
           </section>
 
-          <!-- =============================================
-               TECHNOLOGIES
-               ============================================= -->
-
           <section class="project-detail" id="technologies">
             <header>
               <span>02</span>
@@ -159,31 +145,12 @@
             </p>
 
             <div class="project-meta">
-              <div>
-                <small>DATABASE</small>
-                <strong>SQLite</strong>
-              </div>
-
-              <div>
-                <small>QUERY LANGUAGE</small>
-                <strong>SQL</strong>
-              </div>
-
-              <div>
-                <small>APPLICATION</small>
-                <strong>TypeScript</strong>
-              </div>
-
-              <div>
-                <small>RUNTIME</small>
-                <strong>Node.js</strong>
-              </div>
+              <div><small>DATABASE</small><strong>SQLite</strong></div>
+              <div><small>QUERY LANGUAGE</small><strong>SQL</strong></div>
+              <div><small>APPLICATION</small><strong>TypeScript</strong></div>
+              <div><small>RUNTIME</small><strong>Node.js</strong></div>
             </div>
           </section>
-
-          <!-- =============================================
-               STRUCTURE
-               ============================================= -->
 
           <section class="project-detail" id="structure">
             <header>
@@ -203,17 +170,18 @@
               tags, and technologies without storing the same information
               repeatedly.
             </p>
+
             <section class="project-display">
               <div class="project-preview">
                 <img
                   src="assets/img/Editor-preview.png"
-                  alt="Sandbox database view showing records and related database tables"
+                  alt="Sandbox editor view showing records and related database content"
                 />
               </div>
             </section>
+
             <div class="project-example">
               <small>SIMPLIFIED STRUCTURE</small>
-
               <pre><code>records
 │
 ├── categories
@@ -225,10 +193,6 @@
       └── parent / child page content</code></pre>
             </div>
           </section>
-
-          <!-- =============================================
-               WHY IT IS USED
-               ============================================= -->
 
           <section class="project-detail" id="why">
             <header>
@@ -256,8 +220,7 @@
       </section>
     </main>
 
-
- <footer class="home-footer page-frame full-frame">
+    <footer class="home-footer page-frame full-frame">
   <nav class="footer-links" aria-label="Developer Sandbox resources">
     <a href="https://github.com/susanndelgado/developer-sandbox">
       <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
@@ -284,3 +247,7 @@
   <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
 
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

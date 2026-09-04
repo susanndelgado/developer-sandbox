@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020817" />
 
     <title>Developer Sandbox — System Guide</title>
-
 
 
     <link rel="stylesheet" href="assets/styles.css" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="home">
+  <body id="pg" class="site-page app-shell" data-section="system">
     <header class="home-header page-frame full-frame">
   <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
@@ -70,10 +70,9 @@
 </header>
 
 
-
-    <main class="view-all-page">
-      <section class="project-content" style="grid-column: 1 / -1">
-        <header>
+    <main class="view-all-page app-main page-frame full-frame">
+      <section class="project-content app-content glass app-scroll">
+        <header class="content-header">
           <div>
             <small>SYSTEM DOCUMENTATION</small>
             <h2>Developer Sandbox</h2>
@@ -85,10 +84,7 @@
           </p>
         </header>
 
-        <nav
-          class="project-doc-nav"
-          aria-label="Developer Sandbox system guide sections"
-        >
+        <nav class="project-doc-nav" aria-label="Developer Sandbox system guide sections">
           <a href="#purpose">Purpose</a>
           <a href="#architecture">Architecture</a>
           <a href="#content-model">Content Model</a>
@@ -104,53 +100,26 @@
             href="https://github.com/susanndelgado/developer-sandbox"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            View Sandbox Repository ›
-          </a>
-
-          <a class="project-link" href="database.html">
-            Database Architecture ›
-          </a>
+          >View Sandbox Repository ›</a>
+          <a class="project-link" href="database.html">Database Architecture ›</a>
         </div>
 
         <article class="project-doc">
-          <!-- =============================================
-               PURPOSE
-               ============================================= -->
-
           <section class="project-detail" id="purpose">
-            <header>
-              <span>01</span>
-              <h3>Purpose</h3>
-            </header>
-
+            <header><span>01</span><h3>Purpose</h3></header>
             <p>
               The Developer Sandbox is a personal development environment, technical reference system, project catalog, and experimental workspace built to organize ongoing development work within one cohesive system.
-
-
             </p>
-
             <p>
               It supports complete projects, development experiments, Rosetta Stone language comparisons, reference guides, data work, and technical documentation without forcing every item into the same page structure. The system separates project identity and metadata from the content used to construct each page, allowing different types of work to share a consistent interface while retaining the presentation each project requires.
-
-
             </p>
-
             <p>
               The Sandbox functions both as a portfolio and as a long-term development knowledge base. The entire system and its related project sites are deployed through GitHub Pages with no paid hosting dependencies.
             </p>
           </section>
 
-          <!-- =============================================
-               ARCHITECTURE
-               ============================================= -->
-
           <section class="project-detail" id="architecture">
-            <header>
-              <span>02</span>
-              <h3>System Architecture</h3>
-            </header>
-
+            <header><span>02</span><h3>System Architecture</h3></header>
             <p>
               The system is divided into three primary layers: the public
               Sandbox interface, a structured SQLite datastore, and a local
@@ -159,7 +128,6 @@
 
             <div class="project-example">
               <small>SYSTEM FLOW</small>
-
               <pre><code>Developer Sandbox
 │
 ├── Public Interface
@@ -194,16 +162,8 @@
             </p>
           </section>
 
-          <!-- =============================================
-               CONTENT MODEL
-               ============================================= -->
-
           <section class="project-detail" id="content-model">
-            <header>
-              <span>03</span>
-              <h3>Content Model</h3>
-            </header>
-
+            <header><span>03</span><h3>Content Model</h3></header>
             <p>
               The primary content object is an Entry stored in the
               <code>records</code> table. An Entry represents the identity of a
@@ -211,14 +171,12 @@
               visibility, navigation information, presentation mode, and other
               catalog-level information.
             </p>
-
             <p>
               Page content is stored separately as Content Nodes. This allows
               one Entry to contain multiple structured sections without
               requiring a different database table for every project or page
               design.
             </p>
-
             <p>
               Content Nodes can be organized as top-level Parent Nodes and Child
               Nodes. Parent Nodes define major page structures while Child Nodes
@@ -229,7 +187,6 @@
 
             <div class="project-example">
               <small>CONTENT STRUCTURE</small>
-
               <pre><code>Entry
 │
 ├── Parent Node
@@ -245,16 +202,8 @@
             </div>
           </section>
 
-          <!-- =============================================
-               NODE SYSTEM
-               ============================================= -->
-
           <section class="project-detail">
-            <header>
-              <span>04</span>
-              <h3>Flexible Page Structures</h3>
-            </header>
-
+            <header><span>04</span><h3>Flexible Page Structures</h3></header>
             <p>
               Parent Nodes can represent different visual structures such as
               navigation groups, display or preview areas, standard content,
@@ -263,7 +212,6 @@
               while the stored content remains independent of a single
               hard-coded project page.
             </p>
-
             <p>
               Additional node metadata can store presentation-specific
               information without requiring a new SQLite column every time the
@@ -273,23 +221,14 @@
             </p>
           </section>
 
-          <!-- =============================================
-               LOCAL EDITOR
-               ============================================= -->
-
           <section class="project-detail" id="editor">
-            <header>
-              <span>05</span>
-              <h3>Local Editor</h3>
-            </header>
-
+            <header><span>05</span><h3>Local Editor</h3></header>
             <p>
               A custom editor was built specifically for the Sandbox rather than
               adapting the project to an existing content-management system. The
               editor interface is written in TypeScript and communicates with a
               lightweight Node.js server.
             </p>
-
             <p>
               The server opens the SQLite database with Node's SQLite support
               and provides the operations required by the editor. These include
@@ -298,7 +237,6 @@
               deleting records or node trees, viewing database tables, and
               performing controlled SQL operations.
             </p>
-
             <p>
               Multi-step database operations use SQLite transactions so related
               changes can succeed or fail as one operation. SQL validation uses
@@ -307,16 +245,8 @@
             </p>
           </section>
 
-          <!-- =============================================
-               EDITOR PURPOSE
-               ============================================= -->
-
           <section class="project-detail">
-            <header>
-              <span>06</span>
-              <h3>Why Build a Custom Editor?</h3>
-            </header>
-
+            <header><span>06</span><h3>Why Build a Custom Editor?</h3></header>
             <p>
               The Sandbox contains content that does not fit neatly into a
               conventional blog or portfolio CMS. A reference guide, code
@@ -324,7 +254,6 @@
               may share common identity fields while requiring very different
               internal page structures.
             </p>
-
             <p>
               Building the editor around the Sandbox data model makes the
               authoring workflow match the system rather than forcing the system
@@ -335,23 +264,14 @@
             </p>
           </section>
 
-          <!-- =============================================
-               PUBLIC WEBSITE
-               ============================================= -->
-
           <section class="project-detail" id="public-site">
-            <header>
-              <span>07</span>
-              <h3>Public Website</h3>
-            </header>
-
+            <header><span>07</span><h3>Public Website</h3></header>
             <p>
               The public Sandbox remains separate from the local authoring
               environment. The website presents projects, documentation,
               reference material, and technical work using the visual system
               shared across the Sandbox pages.
             </p>
-
             <p>
               Database editing routes are part of the local development server,
               not a required public service. This keeps authoring capabilities
@@ -361,16 +281,8 @@
             </p>
           </section>
 
-          <!-- =============================================
-               REPOSITORY
-               ============================================= -->
-
           <section class="project-detail" id="repository">
-            <header>
-              <span>08</span>
-              <h3>Repository Structure</h3>
-            </header>
-
+            <header><span>08</span><h3>Repository Structure</h3></header>
             <p>
               Source code is organized so the static Sandbox interface, database
               files, database definitions, TypeScript source, and local editor
@@ -379,7 +291,6 @@
 
             <div class="project-example">
               <small>SIMPLIFIED REPOSITORY STRUCTURE</small>
-
               <pre><code>developer-sandbox/
 │
 ├── assets/
@@ -403,17 +314,11 @@
 │
 ├── src/
 │   ├── datastore/
-│   │   ├── database.ts
-│   │   ├── queries.ts
-│   │   └── types.ts
-│   │
 │   └── local-editor/
-│       ├── client.ts
-│       └── server.ts
 │
 ├── tpl/
 │   ├── header.html
-│   ├── page.html
+│   ├── html.html
 │   └── footer.html
 │
 ├── index.html
@@ -422,16 +327,8 @@
             </div>
           </section>
 
-          <!-- =============================================
-               TYPESCRIPT
-               ============================================= -->
-
           <section class="project-detail">
-            <header>
-              <span>09</span>
-              <h3>TypeScript and Data Contracts</h3>
-            </header>
-
+            <header><span>09</span><h3>TypeScript and Data Contracts</h3></header>
             <p>
               Shared TypeScript definitions describe Sandbox records,
               presentation modes, visibility states, status values, links,
@@ -439,7 +336,6 @@
               are used so uncertainty in stored or optional data is handled
               deliberately rather than silently passed through the system.
             </p>
-
             <p>
               This gives the datastore and editor a documented contract while
               still allowing the underlying SQLite schema to remain compact and
@@ -447,16 +343,8 @@
             </p>
           </section>
 
-          <!-- =============================================
-               DESIGN DECISIONS
-               ============================================= -->
-
           <section class="project-detail" id="decisions">
-            <header>
-              <span>10</span>
-              <h3>Design Decisions</h3>
-            </header>
-
+            <header><span>10</span><h3>Design Decisions</h3></header>
             <p>
               SQLite was selected because the Sandbox needs relational data and
               persistent local storage without requiring a separate database
@@ -464,7 +352,6 @@
               directly, and supports the relationships and transactions needed
               by the editor.
             </p>
-
             <p>
               TypeScript is used for the editor and datastore layer because the
               system contains many related object shapes, optional fields,
@@ -472,7 +359,6 @@
               and CSS remain appropriate for the public interface because the
               Sandbox should remain lightweight and easy to host.
             </p>
-
             <p>
               The result is intentionally hybrid: a simple public interface
               backed by a more capable local development system. The Sandbox
@@ -485,7 +371,7 @@
       </section>
     </main>
 
- <footer class="home-footer page-frame full-frame">
+    <footer class="home-footer page-frame full-frame">
   <nav class="footer-links" aria-label="Developer Sandbox resources">
     <a href="https://github.com/susanndelgado/developer-sandbox">
       <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
@@ -512,3 +398,7 @@
   <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
 
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020817" />
 
     <title>API Explorer — Developer Sandbox</title>
-
 
 
     <base href="../" />
@@ -75,7 +75,10 @@
     <main class="view-all-page app-main page-frame full-frame">
       
 <aside class="type-menu app-sidebar glass">
-  <header><h1>Project Library</h1><p>Development projects, applications, tools, experiments, and technical work.</p></header>
+  <header>
+    <h1>Project Library</h1>
+    <p>Development projects, applications, tools, experiments, and technical work.</p>
+  </header>
   <nav class="project-types" aria-label="Project Library">
     <a href="library.html"><span aria-hidden="true">◇</span><span><strong>All Projects</strong></span></a>
     <a href="library.html#group-browser-apis"><span aria-hidden="true">◇</span><span><strong>Browser APIs</strong></span></a>
@@ -106,8 +109,8 @@
 </aside>
 
       <section class="project-content app-content glass">
-        <div id="preview" class="preview">
-
+        <div id="preview" class="preview app-scroll">
+          
 <header class="project-detail-header">
   <div>
     <small>LAB / EXPLORATION</small>
@@ -118,7 +121,7 @@
     Interactive HTTP request laboratory for methods, headers, payloads, responses, and debugging.
   </p>
 </header>
-        <div
+          <div
   id="node-node-api-explorer-display"
   class="project-display node-01 uid-node-api-explorer-display project-overview"
 >
@@ -225,8 +228,7 @@
 <div
   id="node-node-api-explorer-related"
   class="project-actions node-06 uid-node-api-explorer-related"
->
-<a
+><a
   id="child-node-api-explorer-related-01"
   class="project-link child-01 uid-node-api-explorer-related-01"
   href="pg/typescript-api-service.html"
@@ -235,9 +237,8 @@
   id="child-node-api-explorer-related-02"
   class="project-link child-02 uid-node-api-explorer-related-02"
   href="pg/php-request-lab.html"
->PHP Request Lab<span aria-hidden="true">›</span></a>
-</div>
-</div>
+>PHP Request Lab<span aria-hidden="true">›</span></a></div>
+        </div>
       </section>
     </main>
 
@@ -268,3 +269,7 @@
   <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
 
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

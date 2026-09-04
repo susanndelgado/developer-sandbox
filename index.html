@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020817" />
 
-    <title>Developer Sandbox</title>
-
+    <title>Developer Sandbox — Academy of Mastery</title>
 
 
     <link rel="stylesheet" href="assets/styles.css" />
@@ -13,7 +13,26 @@
   </head>
 
   <body id="hm" data-section="home">
-    <header class="home-header page-frame full-frame">
+    <section class="rotate-screen" aria-label="Rotate device notice">
+      <div class="rotate-brand">
+        <img src="assets/img/logo-blue.png" alt="" />
+        <span class="brand-copy">
+          <strong>DEVELOPER SANDBOX</strong>
+          <small>Academy of Mastery</small>
+        </span>
+      </div>
+
+      <div class="rotate-copy">
+        <span class="phone-icon" aria-hidden="true"></span>
+        <h1>Rotate Your Device</h1>
+        <p>For the full Developer Sandbox experience.</p>
+      </div>
+
+      <p class="rotate-quote">“Dreams are the Foundation of Reality.”<br />— Susan Delgado</p>
+    </section>
+
+    <div class="home-shell app-shell">
+      <header class="home-header page-frame full-frame">
   <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
     <span class="brand-copy">
@@ -69,434 +88,233 @@
 </header>
 
 
-    <main>
-      <div class="sandbox-notice" role="status">
-        <span aria-hidden="true">⚠</span>
+      <main class="home-main page-frame full-frame">
+        <section class="hero" aria-labelledby="home-title">
+          <p class="hero-kicker">Code ✦ Create ✦ Explore ✦ Learn</p>
+          <h1 class="hero-title" id="home-title">Developer Sandbox</h1>
+          <p class="academy-line">Academy of Mastery</p>
+          <p class="hero-tagline">Where Technology and Art Build a Bigger Imagination</p>
+        </section>
 
-        <div>
-          <strong>Sandbox in Progress</strong>
-          <small
-            >This developer sandbox is actively being built and updated.</small
-          >
-        </div>
-      </div>
-       <section class="glass-panel featured">
-  <h2>Featured Project</h2>
-
-  <div class="featured-content">
-    <button
-      class="arrow"
-      type="button"
-      data-featured-prev
-      aria-label="Previous project"
-    >
-      ‹
-    </button>
-
-    <div class="card-stack">
-      <span></span>
-      <span></span>
-
-      
-<article
-  class="featured-slide active"
-  data-featured-slide
-  data-featured-index="0"
-  aria-hidden="false"
->
-  <div class="project-image"><img src="assets/img/agenda-preview.png"></div>
-  <div class="project-info">
-    <small>ROSETTA STONE</small>
-    <h3>Modern Agenda</h3>
-    <p>One conference agenda application rebuilt across modern technologies.</p>
-    <div class="tags"><span>Angular</span>
-<span>C#</span>
-<span>Java</span>
-<span>PHP</span></div>
-    <a href="pg/modern-agenda.html">Explore Project ›</a>
-  </div>
-</article>
-
-<article
-  class="featured-slide"
-  data-featured-slide
-  data-featured-index="1"
-  aria-hidden="true"
->
-  <div class="project-image"><img src="/assets/img/wag-preview.png" ></div>
-  <div class="project-info">
-    <small>GENERAL PROJECT</small>
-    <h3>Week at a Glance Component</h3>
-    <p>Event schedule</p>
-    <div class="tags"></div>
-    <a href="pg/week-at-a-glance-component.html">Explore Project ›</a>
-  </div>
-</article>
-
-<article
-  class="featured-slide"
-  data-featured-slide
-  data-featured-index="2"
-  aria-hidden="true"
->
-  <div class="project-image"><img src="assets/img/sandbox-preview.png" alt="Developer Sandbox interface showing the project library, reference guides, Rosetta Stones, and featured project areas" /></div>
-  <div class="project-info">
-    <small>GENERAL PROJECT</small>
-    <h3>Developer Sandbox</h3>
-    <p>Personal development environment for projects, references, experiments, learning, and technical knowledge.</p>
-    <div class="tags"><span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>TypeScript</span></div>
-    <a href="pg/developer-sandbox.html">Explore Project ›</a>
-  </div>
-</article>
-    </div>
-
-    <button
-      class="arrow"
-      type="button"
-      data-featured-next
-      aria-label="Next project"
-    >
-      ›
-    </button>
-  </div>
-
-  <div class="dots">
-    
-<button
-  type="button"
-  data-featured-dot="0"
-  class="active"
-  aria-label="Show Modern Agenda"
-></button>
-
-<button
-  type="button"
-  data-featured-dot="1"
-  class=""
-  aria-label="Show Week at a Glance Component"
-></button>
-
-<button
-  type="button"
-  data-featured-dot="2"
-  class=""
-  aria-label="Show Developer Sandbox"
-></button>
-  </div>
-</section>
-
-      <section class="glass-panel rosetta">
-        <h2>Rosetta Stones</h2>
-
-        <div class="stones">
-          <!-- <button
-            type="button"
-            onclick="window.location.href = '/single-project.html'"
-          >
-            <span class="stone gold">
-              <span>JS</span>
-            </span>
-            <small>JavaScript</small>
-          </button>
-
-          <button
-            type="button"
-            onclick="window.location.href = '/single-project.html'"
-          >
-            <span class="stone blue">
-              <span>TS</span>
-            </span>
-            <small>TypeScript</small>
-          </button>
-
-          <button
-            type="button"
-            onclick="window.location.href = '/single-project.html'"
-          >
-            <span class="stone cyan">
-              <span>
-                <img src="assets/python.svg" alt="" />
+        <section class="dashboard-grid" aria-label="Developer Sandbox sections">
+          <article class="panel glass featured-panel">
+            <header class="panel-header">
+              <span class="panel-icon" aria-hidden="true">
+                <svg class="icon-large icon-glow" viewBox="0 0 24 24">
+                  <path d="m12 2.8 2.6 5.5 6 .8-4.4 4.2 1.1 5.9-5.3-2.9-5.3 2.9 1.1-5.9-4.4-4.2 6-.8Z" />
+                </svg>
               </span>
-            </span>
-            <small>Python</small>
-          </button>
+              <h2 class="panel-title">Featured Project</h2>
+            </header>
 
-          <button
-            type="button"
-            onclick="window.location.href = '/single-project.html'"
-          >
-            <span class="stone purple">
-              <span>DB</span>
-            </span>
-            <small>Database</small>
-          </button>
+            
+<div class="featured-body">
+  <figure class="preview-frame"><img src="assets/img/agenda-preview.png"></figure>
+  <div class="featured-copy">
+    <small>Rosetta Stone</small>
+    <h2>Modern Agenda</h2>
+    <p class="panel-copy">One conference agenda application rebuilt across modern technologies.</p>
+    <div class="tag-row" aria-label="Modern Agenda technologies">
+      <span class="tag">Angular</span>
+<span class="tag">C#</span>
+<span class="tag">Java</span>
+<span class="tag">PHP</span>
+<span class="tag">+23</span>
+    </div>
+    <a class="panel-link" href="pg/modern-agenda.html">View Project →</a>
+  </div>
+</div>
+          </article>
 
-          <button
-            type="button"
-            onclick="window.location.href = '/single-project.html'"
-          >
-            <span class="stone">
-              <span>API</span>
-            </span>
-            <small>API</small>
-          </button> -->
-          
-<button type="button" onclick="window.location.href = 'pg/rosetta-stone-arrays-and-collections-typescript.html'">
-  <span class="stone blue"><span>TS</span></span>
-  <small>Arrays and Collections: TypeScript</small>
-</button>
+          <article class="panel glass library-panel">
+            <header class="panel-header">
+              <span class="panel-icon" aria-hidden="true">
+                <svg class="icon-large icon-glow" viewBox="0 0 24 24">
+                  <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+                </svg>
+              </span>
+              <div>
+                <h2 class="panel-title">Project Library</h2>
+                <p class="panel-copy">All projects, organized and searchable.</p>
+              </div>
+            </header>
 
-<button type="button" onclick="window.location.href = 'pg/rosetta-stone-classification-machine-typescript.html'">
-  <span class="stone blue"><span>TS</span></span>
-  <small>Classification Machine: TypeScript</small>
-</button>
-
-<button type="button" onclick="window.location.href = 'pg/rosetta-stone-collection-renderer-typescript.html'">
-  <span class="stone blue"><span>TS</span></span>
-  <small>Collection Renderer: TypeScript</small>
-</button>
-
-<button type="button" onclick="window.location.href = 'pg/rosetta-stone-color-decision-engine-typescript.html'">
-  <span class="stone blue"><span>TS</span></span>
-  <small>Color Decision Engine: TypeScript</small>
-</button>
-
-<button type="button" onclick="window.location.href = 'pg/rosetta-stone-crud-typescript.html'">
-  <span class="stone blue"><span>TS</span></span>
-  <small>CRUD: TypeScript</small>
-</button>
-        </div>
-
-        <a class="view-all" href="rosetta-stones.html"
-          >Core Languages &amp; Technologies ›</a
-        >
-      </section>
-
-      <section class="glass-panel library">
-        <h2>Project Library</h2>
-
-        <div class="projects">
-          <!-- <a href="single-project.html">
-            <span class="project-icon">RC</span>
-            <strong>Rosetta: Core</strong>
-            <small>WEB</small>
-          </a>
-
-          <a href="single-project.html">
-            <span class="project-icon blue">MA</span>
-            <strong>Modern Agenda</strong>
-            <small>WEB</small>
-          </a>
-
-          <a href="single-project.html">
-            <span class="project-icon cyan">MB</span>
-            <strong>Mini Browser</strong>
-            <small>EXPERIMENT</small>
-          </a>
-
-          <a href="single-project.html">
-            <span class="project-icon purple">DB</span>
-            <strong>Database Lab</strong>
-            <small>LAB</small>
-          </a>
-
-          <a href="single-project.html">
-            <span class="project-icon gold">CP</span>
-            <strong>Canvas Playground</strong>
-            <small>EXPERIMENT</small>
-          </a>
-
-          <a href="single-project.html">
-            <span class="project-icon green">API</span>
-            <strong>API Explorer</strong>
-            <small>WEB</small>
-          </a>
-
-          <a href="single-project.html">
-            <span class="project-icon blue">AI</span>
-            <strong>AI Sandbox</strong>
-            <small>EXPERIMENT</small>
-          </a>
-
-          <a href="single-project.html">
-            <span class="project-icon cyan">PF</span>
-            <strong>Portfolio Engine</strong>
-            <small>WEB</small>
-          </a> -->
-          
-<a href="pg/week-at-a-glance-component.html">
-  <span class="project-icon purple">WA</span>
-  <strong>Week at a Glance Component</strong>
-  <small>DATA-DRIVEN UI</small>
+            <div class="mini-grid">
+              
+<a class="mini-card" href="pg/week-at-a-glance-component.html">
+  <span class="mini-mark purple">WA</span>
+  Week at a Glance Component
 </a>
 
-<a href="pg/developer-sandbox.html">
-  <span class="project-icon purple">DS</span>
-  <strong>Developer Sandbox</strong>
-  <small>DEVELOPER TOOLING</small>
+<a class="mini-card" href="pg/developer-sandbox.html">
+  <span class="mini-mark purple">DS</span>
+  Developer Sandbox
 </a>
 
-<a href="pg/typescript-api-service.html">
-  <span class="project-icon blue">TA</span>
-  <strong>TypeScript API Service</strong>
-  <small>DEVELOPER TOOLING</small>
+<a class="mini-card" href="pg/typescript-api-service.html">
+  <span class="mini-mark blue">TS</span>
+  TypeScript API Service
 </a>
 
-<a href="pg/typescript-library-package.html">
-  <span class="project-icon blue">TL</span>
-  <strong>TypeScript Library / Package</strong>
-  <small>DEVELOPER TOOLING</small>
+<a class="mini-card" href="pg/typescript-library-package.html">
+  <span class="mini-mark blue">TS</span>
+  TypeScript Library / Package
 </a>
 
-<a href="pg/portfolio-engine.html">
-  <span class="project-icon pink">PE</span>
-  <strong>Portfolio Engine</strong>
-  <small>DEVELOPER TOOLING</small>
+<a class="mini-card" href="pg/portfolio-engine.html">
+  <span class="mini-mark pink">PE</span>
+  Portfolio Engine
+</a>
+            </div>
+
+            <div class="panel-bottom">
+              <a class="panel-link" href="library.html">View Library →</a>
+            </div>
+          </article>
+
+          <div class="hologram" aria-hidden="true">
+            <img src="assets/img/logo-lighter.png" alt="" />
+          </div>
+
+          <article class="panel glass rosetta-panel">
+            <header class="panel-header">
+              <span class="panel-icon violet" aria-hidden="true">
+                <svg class="icon-large icon-glow" viewBox="0 0 24 24">
+                  <path d="m12 2.8 8 4.6v9.2l-8 4.6-8-4.6V7.4Zm0 0v9.3m8-4.7-8 4.7-8-4.7m8 4.7v9.1" />
+                </svg>
+              </span>
+              <div>
+                <h2 class="panel-title">Rosetta Stones</h2>
+                <p class="panel-copy">Learn by building. One concept. Many languages.</p>
+              </div>
+            </header>
+
+            <div class="mini-grid">
+              
+<a class="mini-card" href="pg/rosetta-stone-arrays-and-collections-typescript.html">
+  <span class="mini-mark blue">TS</span>
+  Arrays and Collections: TypeScript
 </a>
 
-<a href="pg/api-gateway.html">
-  <span class="project-icon purple">AG</span>
-  <strong>API Gateway</strong>
-  <small>BACKEND &amp; APIS</small>
+<a class="mini-card" href="pg/rosetta-stone-classification-machine-typescript.html">
+  <span class="mini-mark blue">TS</span>
+  Classification Machine: TypeScript
 </a>
 
-<a href="pg/academy-of-mastery-learning-engine.html">
-  <span class="project-icon emerald">AO</span>
-  <strong>Academy of Mastery Learning Engine</strong>
-  <small>DEVELOPER TOOLING</small>
+<a class="mini-card" href="pg/rosetta-stone-collection-renderer-typescript.html">
+  <span class="mini-mark blue">TS</span>
+  Collection Renderer: TypeScript
 </a>
 
-<a href="pg/typescript-project-typed-profile-builder.html">
-  <span class="project-icon blue">TP</span>
-  <strong>TypeScript Project: Typed Profile Builder</strong>
-  <small>TYPESCRIPT DATA MODELING</small>
-</a>
-        </div>
-
-        <a class="view-all" href="library.html"
-          >View All Projects ›
-          <!-- links to a page with links to all projects in category "core" grouped by type and sidebar types maybe hide show group? --></a
-        >
-      </section>
-
-      <section class="glass-panel guides">
-        <h2>Reference Guides</h2>
-
-        <div class="guide-list">
-          <!-- <a href="reference-guide.html">
-            <span class="guide-icon">HTML</span>
-            <small>HTML / CSS</small>
-          </a>
-
-          <a href="reference-guide.html">
-            <span class="guide-icon gold">JS</span>
-            <small>JavaScript</small>
-          </a>
-
-          <a href="reference-guide.html">
-            <span class="guide-icon blue">TS</span>
-            <small>TypeScript</small>
-          </a>
-
-          <a href="reference-guide.html">
-            <span class="guide-icon red">
-              <img src="assets/git.svg" alt="" />
-            </span>
-            <small>Git</small>
-          </a>
-
-          <a href="reference-guide.html">
-            <span class="guide-icon purple">API</span>
-            <small>API Design</small>
-          </a>
-
-          <a href="reference-guide.html">
-            <span class="guide-icon cyan">PHP</span>
-            <small>PHP</small>
-          </a> -->
-          
-<a href="pg/angular-reference-guide.html">
-  <span class="guide-icon crimson">NG</span>
-  <small>Angular</small>
+<a class="mini-card" href="pg/rosetta-stone-color-decision-engine-typescript.html">
+  <span class="mini-mark blue">TS</span>
+  Color Decision Engine: TypeScript
 </a>
 
-<a href="pg/cross-device-web-testing.html">
-  <span class="guide-icon mint">CW</span>
-  <small>Cross-Device Web Testing</small>
+<a class="mini-card" href="pg/rosetta-stone-crud-typescript.html">
+  <span class="mini-mark blue">TS</span>
+  CRUD: TypeScript
+</a>
+            </div>
+
+            <div class="panel-bottom">
+              <a class="panel-link" href="rosetta-stones.html">Browse Rosetta Stones →</a>
+            </div>
+          </article>
+
+          <article class="panel glass guides-panel">
+            <header class="panel-header">
+              <span class="panel-icon" aria-hidden="true">
+                <svg class="icon-large icon-glow" viewBox="0 0 24 24">
+                  <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H20Z" />
+                </svg>
+              </span>
+              <div>
+                <h2 class="panel-title">Reference Guides</h2>
+                <p class="panel-copy">Quick references and deep dives.</p>
+              </div>
+            </header>
+
+            <div class="mini-grid">
+              
+<a class="mini-card" href="pg/angular-reference-guide.html">
+  <span class="mini-mark crimson">NG</span>
+  Angular
 </a>
 
-<a href="pg/full-stack-developer-terminal-commands.html">
-  <span class="guide-icon slate">FD</span>
-  <small>Terminal Commands</small>
+<a class="mini-card" href="pg/cross-device-web-testing.html">
+  <span class="mini-mark mint">CW</span>
+  Cross-Device Web Testing
 </a>
 
-<a href="pg/nodejs-reference-guide.html">
-  <span class="guide-icon green">NODE</span>
-  <small>Node.js</small>
+<a class="mini-card" href="pg/full-stack-developer-terminal-commands.html">
+  <span class="mini-mark slate">FD</span>
+  Terminal Commands
 </a>
 
-<a href="pg/typescript-reference-guide.html">
-  <span class="guide-icon blue">TS</span>
-  <small>TypeScript</small>
+<a class="mini-card" href="pg/nodejs-reference-guide.html">
+  <span class="mini-mark green">NODE</span>
+  Node.js
 </a>
 
-<a href="pg/php-reference.html">
-  <span class="guide-icon indigo">PHP</span>
-  <small>PHP</small>
+<a class="mini-card" href="pg/typescript-reference-guide.html">
+  <span class="mini-mark blue">TS</span>
+  TypeScript
 </a>
-        </div>
+            </div>
 
-        <a class="view-all" href="pg/full-stack-developer-terminal-commands.html"
-          >Browse All Guides ›
-          <!-- links to a page with all projects and sidebar all reference guides --></a
-        >
-      </section>
+            <div class="panel-bottom">
+              <a class="panel-link" href="reference-guides.html">Browse Guides →</a>
+            </div>
+          </article>
 
-      <section class="glass-panel data">
-        <h2>LABS & EXPLORATIONS</h2>
+          <article class="panel glass labs-panel">
+            <div class="labs-heading">
+              <header class="panel-header">
+                <span class="panel-icon" aria-hidden="true">
+                  <svg class="icon-large icon-glow" viewBox="0 0 24 24">
+                    <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+                  </svg>
+                </span>
+                <h2 class="panel-title">Labs &amp; Explorations</h2>
+              </header>
+              <p class="panel-copy">Prototype. Experiment. Push Further.</p>
+            </div>
 
-        <div class="data-list">
-<a href="pg/bird-life-simulation-game.html">
-  <span class="data-icon lime">BL</span>
-  <small>Bird Life Simulation Game</small>
-</a>
-
-<a href="pg/interactive-scientific-data-explorer.html">
-  <span class="data-icon aqua">IS</span>
-  <small>Interactive Scientific Data Explorer</small>
-</a>
-
-<a href="pg/rebuilding-fetch-xmlhttprequest.html">
-  <span class="data-icon aqua">RF</span>
-  <small>Rebuilding Fetch with XMLHttpRequest</small>
-</a>
-
-<a href="pg/mini-browser-rendering-engine.html">
-  <span class="data-icon aqua">MB</span>
-  <small>Mini Browser / Rendering Engine</small>
+            <div class="mini-grid">
+              
+<a class="mini-card" href="pg/bird-life-simulation-game.html">
+  <span class="mini-mark lime">BL</span>
+  Bird Life Simulation Game
 </a>
 
-<a href="pg/database-lab.html">
-  <span class="data-icon teal">DB</span>
-  <small>Database Lab</small>
-</a></div>
+<a class="mini-card" href="pg/interactive-scientific-data-explorer.html">
+  <span class="mini-mark aqua">IS</span>
+  Interactive Scientific Data Explorer
+</a>
 
-        <a class="view-all" href="labs.html"
-          >Browse All Topics ›
-          <!-- links to a page with links to all projects and sidebar has all types under this category  maybe hide show group? -->
-        </a>
-      </section>
-      <!-- interface panels -->
-      <div class="logo-stage">
-        <button type="button" aria-label="Developer Sandbox logo">
-          <img src="assets/img/logo-blue.png" alt="Developer Sandbox logo" />
-        </button>
-      </div>
-    </main>
- <footer class="home-footer page-frame full-frame">
+<a class="mini-card" href="pg/rebuilding-fetch-xmlhttprequest.html">
+  <span class="mini-mark aqua">RF</span>
+  Rebuilding Fetch with XMLHttpRequest
+</a>
+
+<a class="mini-card" href="pg/mini-browser-rendering-engine.html">
+  <span class="mini-mark aqua">MB</span>
+  Mini Browser / Rendering Engine
+</a>
+
+<a class="mini-card" href="pg/database-lab.html">
+  <span class="mini-mark teal">DB</span>
+  Database Lab
+</a>
+            </div>
+
+            <a class="panel-link" href="labs.html">View All Labs →</a>
+          </article>
+        </section>
+      </main>
+
+      <footer class="home-footer page-frame full-frame">
   <nav class="footer-links" aria-label="Developer Sandbox resources">
     <a href="https://github.com/susanndelgado/developer-sandbox">
       <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
@@ -522,3 +340,9 @@
   <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
   <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
+
+    </div>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>
