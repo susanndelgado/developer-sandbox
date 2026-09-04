@@ -3,651 +3,244 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>Project Library — Developer Sandbox</title>
-
-    <link rel="stylesheet" href="assets/styles.css" />
-    <link rel="stylesheet" href="assets/inner.css" />
-    <link rel="stylesheet" href="assets/media.css" />
     <link rel="stylesheet" href="assets/lib.css" />
   </head>
 
-  <body id="pg lib" data-section="projects">
-    <header>
-      <a class="brand" href="index.html">
-        <img src="assets/img/logo-blue.png" alt="" />
+  <body id="lib">
+    <div class="rotate-screen" aria-hidden="true">
+      <img class="rotate-logo" src="assets/img/logo-blue.png" alt="" />
+      <span class="eyebrow">Developer Sandbox</span>
+      <h1>Rotate your device</h1>
+      <p>This workspace is designed for landscape viewing.</p>
+      <span class="rotate-icon" aria-hidden="true">↻</span>
+    </div>
 
-        <span>
-          <strong>DEVELOPER SANDBOX</strong>
-          <small>Academy of Mastery</small>
-        </span>
-      </a>
+    <div class="app-shell">
+      <header class="site-header glass">
+        <a class="brand" href="index.html" aria-label="Developer Sandbox home">
+          <img src="assets/img/logo-blue.png" alt="" />
+          <span class="brand-copy">
+            <strong>DEVELOPER SANDBOX</strong>
+            <small>Academy of Mastery</small>
+          </span>
+        </a>
 
-      <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-        <button
-          type="button"
-          data-nav-section="home"
-          onclick="window.location.href = 'index.html'"
-        >
-          <span aria-hidden="true">⌂</span>
-          Home
-        </button>
+        <nav class="site-nav" aria-label="Developer Sandbox navigation">
+          <a class="nav-link" href="index.html"><span aria-hidden="true">⌂</span>Home</a>
+          <a class="nav-link active" href="library.html"><span aria-hidden="true">▱</span>Projects</a>
+          <a class="nav-link" href="pg/angular-reference-guide.html"><span aria-hidden="true">▤</span>Reference Guides</a>
+          <a class="nav-link" href="labs.html"><span aria-hidden="true">✦</span>Labs</a>
+          <a class="nav-link" href="system-guide.html"><span aria-hidden="true">⊙</span>System Guide</a>
+        </nav>
 
-        <button
-          type="button"
-          data-nav-section="projects"
-          onclick="window.location.href = 'library.html'"
-        >
-          <span aria-hidden="true">▱</span>
-          Projects
-        </button>
-
-        <button
-          type="button"
-          data-nav-section="reference"
-          onclick="window.location.href = 'pg/angular-reference-guide.html'"
-        >
-          <span aria-hidden="true">▤</span>
-          Reference Guides
-        </button>
-
-        <button
-          type="button"
-          data-nav-section="labs"
-          onclick="window.location.href = 'labs.html'"
-        >
-          <span aria-hidden="true">✦</span>
-          Labs
-        </button>
-
-        <button
-          type="button"
-          data-nav-section="system"
-          onclick="window.location.href = 'system-guide.html'"
-        >
-          <span aria-hidden="true">⊙</span>
-          System Guide
-        </button>
-      </nav>
-
-      <div class="top-tools">
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Open navigation"
-          aria-controls="primary-nav"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="help">
-          <button type="button" aria-label="Read page information"></button>
-
-          <div>
-            <strong>Project Library</strong>
-            <p>
-              Browse, search, and review Sandbox projects without leaving the
-              library.
-            </p>
-          </div>
+        <div class="header-actions">
+          <a class="return-link" href="https://sdelgado.com/work.html">Return to sdelgado</a>
+          <a class="icon-button" href="https://sdelgado.com/work.html" aria-label="Close Developer Sandbox">×</a>
         </div>
+      </header>
 
-        <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
-
-        <button
-          type="button"
-          class="close"
-          aria-label="Close"
-          onclick="window.location.href = 'https://sdelgado.com/work.html'"
-        >
-          ×
-        </button>
-      </div>
-    </header>
-
-    <main class="library-workspace">
-      <section class="library-frame" aria-labelledby="library-title">
-        <header class="library-toolbar">
-          <div class="library-titleblock">
-            <span class="library-kicker">Project Library</span>
-            <h1 id="library-title">Development Work</h1>
-            <p>Search the catalog, then review the selected project below.</p>
-          </div>
-
-          <label class="library-search">
-            <span aria-hidden="true">⌕</span>
-            <input
-              id="library-search"
-              type="search"
-              placeholder="Search title, technology, category, tag, or keyword"
-              autocomplete="off"
-            />
-          </label>
-
-          <div class="library-filters" aria-label="Project type filters">
-            <button type="button" data-library-filter="all" aria-pressed="true">
-              All
-            </button>
-            <button type="button" data-library-filter="project" aria-pressed="false">
-              Projects
-            </button>
-            <button type="button" data-library-filter="rosetta" aria-pressed="false">
-              Rosetta
-            </button>
-            <button type="button" data-library-filter="lab" aria-pressed="false">
-              Labs
-            </button>
-          </div>
-        </header>
-
-        <section class="library-catalog" aria-label="Project catalog">
-          <div class="catalog-meta" aria-hidden="true">
-            <span>Project</span>
-            <span>Classification</span>
-            <span>Technologies / Focus</span>
-            <span></span>
-          </div>
-
-          <div class="catalog-scroll" id="catalog-scroll">
-            <button
-              class="catalog-row is-selected"
-              type="button"
-              data-classification="rosetta"
-              data-title="Modern Agenda"
-              data-type="Rosetta Stone"
-              data-status="Completed"
-              data-tech="Angular|TypeScript|Java|PHP|Python|React"
-              data-description="A comparative application project used to revisit the same agenda concepts across languages and frameworks while making implementation differences visible."
-              data-built="A working agenda application and a growing set of comparable implementations that expose how the same application structure changes across technologies."
-              data-learning="Application structure, data flow, typed models, framework differences, and repeated implementation practice."
-              data-image="assets/img/agenda-preview.png"
-              data-url="pg/modern-agenda.html"
-              data-keywords="comparative application productivity agenda framework frontend backend rosetta learning"
-            >
-              <span class="catalog-title">
-                <strong>Modern Agenda</strong>
-                <small>Comparative application series</small>
-              </span>
-              <span class="catalog-type">Rosetta Stone</span>
-              <span class="catalog-tech">Angular · TypeScript · Java · PHP · Python · React</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="project"
-              data-title="Developer Sandbox"
-              data-type="General Project"
-              data-status="Active"
-              data-tech="HTML|CSS|JavaScript|TypeScript|Node.js|SQLite|Static Site Generation"
-              data-description="The database-backed learning and generation system that organizes projects, experiments, references, and generated documentation for the Developer Sandbox."
-              data-built="A local editor, SQLite datastore, TypeScript generator, reusable templates, and static deployment workflow."
-              data-learning="Relational data modeling, TypeScript generation, content architecture, local tooling, static deployment, and separation of data from presentation."
-              data-image="assets/img/Editor-preview.png"
-              data-url="pg/developer-sandbox.html"
-              data-keywords="editor database datastore generator templates content model sql static website system tooling"
-            >
-              <span class="catalog-title">
-                <strong>Developer Sandbox</strong>
-                <small>Learning and generation platform</small>
-              </span>
-              <span class="catalog-type">General Project</span>
-              <span class="catalog-tech">HTML · CSS · JavaScript · TypeScript · Node.js · SQLite</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="lab"
-              data-title="Rebuilding Fetch with XMLHttpRequest"
-              data-type="Lab / Exploration"
-              data-status="Completed"
-              data-tech="JavaScript|Browser APIs|XMLHttpRequest|HTTP"
-              data-description="A focused browser experiment that rebuilds familiar request behavior with XMLHttpRequest to expose what higher-level request APIs are doing."
-              data-built="A small browser request experiment using XMLHttpRequest directly."
-              data-learning="Request lifecycle, callbacks, response handling, HTTP behavior, and the relationship between older and newer browser networking APIs."
-              data-image="assets/img/fetchJSPreview.png"
-              data-url="pg/rebuilding-fetch-xmlhttprequest.html"
-              data-keywords="fetch ajax request response async network browser api http lab"
-            >
-              <span class="catalog-title">
-                <strong>Rebuilding Fetch with XMLHttpRequest</strong>
-                <small>Browser API experiment</small>
-              </span>
-              <span class="catalog-type">Lab / Exploration</span>
-              <span class="catalog-tech">JavaScript · Browser APIs · XMLHttpRequest · HTTP</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="project"
-              data-title="Week at a Glance Component"
-              data-type="General Project"
-              data-status="Completed"
-              data-tech="JavaScript|HTML|CSS|Data-Driven UI"
-              data-description="A compact interface component for turning structured weekly information into a visible, scannable layout."
-              data-built="A reusable week-at-a-glance interface component driven by structured data."
-              data-learning="Data-driven rendering, component structure, browser state, and information hierarchy."
-              data-image="assets/img/desktop.png"
-              data-url="pg/week-at-a-glance-component.html"
-              data-keywords="calendar schedule weekly ui frontend component data rendering"
-            >
-              <span class="catalog-title">
-                <strong>Week at a Glance Component</strong>
-                <small>Data-driven interface</small>
-              </span>
-              <span class="catalog-type">General Project</span>
-              <span class="catalog-tech">JavaScript · HTML · CSS · Data-Driven UI</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="project"
-              data-title="TypeScript API Service"
-              data-type="General Project"
-              data-status="Planned"
-              data-tech="TypeScript|Node.js|REST|JSON|SQLite|PostgreSQL"
-              data-description="A service-oriented TypeScript project centered on HTTP behavior, typed data boundaries, persistence, validation, and API structure."
-              data-built="A typed API service project with persistent data and clear request and response boundaries."
-              data-learning="HTTP services, REST structure, TypeScript contracts, validation, persistence, and backend architecture."
-              data-image="assets/img/desktop.png"
-              data-url="pg/typescript-api-service.html"
-              data-keywords="backend server api service database persistence http rest endpoint sql"
-            >
-              <span class="catalog-title">
-                <strong>TypeScript API Service</strong>
-                <small>Backend service project</small>
-              </span>
-              <span class="catalog-type">General Project</span>
-              <span class="catalog-tech">TypeScript · Node.js · REST · JSON · SQLite · PostgreSQL</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="project"
-              data-title="TypeScript Library / Package"
-              data-type="General Project"
-              data-status="Planned"
-              data-tech="TypeScript|npm|ES Modules|Vitest|TypeScript Compiler"
-              data-description="A package-focused TypeScript project for understanding compilation, exports, modules, package structure, tests, and reusable code distribution."
-              data-built="A reusable TypeScript package structure with explicit module and build boundaries."
-              data-learning="Compilation, ES modules, package metadata, exports, testing, and library organization."
-              data-image="assets/img/desktop.png"
-              data-url="pg/typescript-library-package.html"
-              data-keywords="toolchain package library module npm compile tsc testing reusable code"
-            >
-              <span class="catalog-title">
-                <strong>TypeScript Library / Package</strong>
-                <small>Toolchain and package structure</small>
-              </span>
-              <span class="catalog-type">General Project</span>
-              <span class="catalog-tech">TypeScript · npm · ES Modules · Vitest</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="project"
-              data-title="AI Sandbox"
-              data-type="General Project"
-              data-status="Planned"
-              data-tech="TypeScript|Node.js|AI API|JSON|Fetch API|SQLite"
-              data-description="A contained development area for learning how AI requests, structured responses, local data, and application logic connect."
-              data-built="A TypeScript and Node-based AI experimentation project connected to structured local data."
-              data-learning="API calls, JSON, request handling, local persistence, and application integration."
-              data-image="assets/img/desktop.png"
-              data-url="pg/ai-sandbox.html"
-              data-keywords="artificial intelligence ai api integration backend fetch database experiment"
-            >
-              <span class="catalog-title">
-                <strong>AI Sandbox</strong>
-                <small>API integration project</small>
-              </span>
-              <span class="catalog-type">General Project</span>
-              <span class="catalog-tech">TypeScript · Node.js · AI API · JSON · SQLite</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="project"
-              data-title="Portfolio Engine"
-              data-type="General Project"
-              data-status="Planned"
-              data-tech="TypeScript|Node.js|SQLite|Static Site Generation|HTML|CSS"
-              data-description="A structured-content project exploring how stored portfolio data can be transformed into generated static web output."
-              data-built="A data-to-static-page portfolio generation workflow built around structured content."
-              data-learning="Content modeling, generation, SQLite, templates, build steps, and separation of data from presentation."
-              data-image="assets/img/desktop.png"
-              data-url="pg/portfolio-engine.html"
-              data-keywords="portfolio generator database templates static website build content architecture"
-            >
-              <span class="catalog-title">
-                <strong>Portfolio Engine</strong>
-                <small>Static generation project</small>
-              </span>
-              <span class="catalog-type">General Project</span>
-              <span class="catalog-tech">TypeScript · Node.js · SQLite · Static Site Generation</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <button
-              class="catalog-row"
-              type="button"
-              data-classification="project"
-              data-title="Game Framework"
-              data-type="General Project"
-              data-status="Planned"
-              data-tech="TypeScript|Canvas 2D|Phaser|JavaScript|Web Audio API"
-              data-description="A game-development learning project focused on the systems beneath interactive scenes, rendering, state, input, and sound."
-              data-built="A framework-oriented browser game project with a clear separation between state, rendering, input, assets, and sound."
-              data-learning="Rendering loops, state, input, assets, Canvas, audio, and browser game architecture."
-              data-image="assets/img/desktop.png"
-              data-url="pg/game-framework.html"
-              data-keywords="game simulation canvas phaser rendering sprites interactive audio state"
-            >
-              <span class="catalog-title">
-                <strong>Game Framework</strong>
-                <small>Interactive systems project</small>
-              </span>
-              <span class="catalog-type">General Project</span>
-              <span class="catalog-tech">TypeScript · Canvas 2D · Phaser · JavaScript · Web Audio API</span>
-              <span class="catalog-open" aria-hidden="true">›</span>
-            </button>
-
-            <p id="library-empty" class="catalog-empty">
-              No projects match this search.
-            </p>
-          </div>
-        </section>
-
-        <section class="library-inspector" aria-labelledby="detail-title">
-          <header class="inspector-head">
-            <div class="inspector-identity">
-              <span class="inspector-index" id="detail-index">01</span>
-
-              <div>
-                <span class="inspector-eyebrow">Selected Project</span>
-                <h2 id="detail-title">Modern Agenda</h2>
-              </div>
+      <main class="workspace">
+        <section class="workspace-panel glass">
+          <header class="workspace-header">
+            <div class="title-group">
+              <span class="eyebrow">Project Library</span>
+              <h1>Development Work</h1>
+              <p>Browse projects, comparative builds, and focused experiments.</p>
             </div>
 
-            <div class="inspector-badges">
-              <span id="detail-type" class="inspector-badge">Rosetta Stone</span>
-              <span id="detail-status" class="inspector-status">Completed</span>
-            </div>
+            <nav class="section-nav" aria-label="Browse project groups">
+              <a class="chip active" href="#catalog">All</a>
+              <a class="chip" href="#projects">Projects</a>
+              <a class="chip" href="#rosetta">Rosetta</a>
+              <a class="chip" href="#labs">Labs</a>
+            </nav>
           </header>
 
-          <div class="inspector-body">
-            <figure class="inspector-preview">
-              <img
-                id="detail-image"
-                src="assets/img/agenda-preview.png"
-                alt="Modern Agenda project preview"
-              />
-            </figure>
-
-            <div class="inspector-copy">
-              <p id="detail-description">
-                A comparative application project used to revisit the same agenda
-                concepts across languages and frameworks while making implementation
-                differences visible.
-              </p>
-
-              <section class="inspector-section" aria-labelledby="detail-tech-title">
-                <h3 id="detail-tech-title">Technologies</h3>
-                <div id="detail-tech" class="inspector-tags">
-                  <span>Angular</span>
-                  <span>TypeScript</span>
-                  <span>Java</span>
-                  <span>PHP</span>
-                  <span>Python</span>
-                  <span>React</span>
+          <div class="workspace-body">
+            <section class="catalog panel" id="catalog" aria-labelledby="catalog-title">
+              <header class="panel-header">
+                <div>
+                  <span class="eyebrow">Catalog</span>
+                  <h2 id="catalog-title">All Projects</h2>
                 </div>
-              </section>
+                <span class="muted">Scroll to browse</span>
+              </header>
 
-              <div class="inspector-notes">
-                <section class="inspector-note">
-                  <strong>What I built</strong>
-                  <p id="detail-built">
-                    A working agenda application and a growing set of comparable
-                    implementations.
-                  </p>
-                </section>
-
-                <section class="inspector-note">
-                  <strong>What I was learning</strong>
-                  <p id="detail-learning">
-                    Application structure, data flow, typed models, framework
-                    differences, and repeated implementation practice.
-                  </p>
-                </section>
+              <div class="catalog-head" aria-hidden="true">
+                <span>Project</span>
+                <span>Type</span>
+                <span>Technology</span>
               </div>
 
-              <div class="inspector-actions">
-                <a id="detail-open" href="pg/modern-agenda.html">Open Full Project</a>
-                <span id="catalog-result-count" class="catalog-result-count">9 projects</span>
+              <div class="scroll-area">
+                <section class="catalog-group" id="rosetta">
+                  <h3 class="group-title">Rosetta Stones</h3>
+
+                  <a class="catalog-row selected" href="#selected-project">
+                    <span class="project-mark rose">MA</span>
+                    <span class="project-copy">
+                      <strong>Modern Agenda</strong>
+                      <small>Comparative application series</small>
+                    </span>
+                    <span class="badge rose">Rosetta</span>
+                    <span class="technology">Angular · TypeScript · Java · PHP · Python</span>
+                  </a>
+
+                  <a class="catalog-row" href="pg/color-decision-engine-typescript.html">
+                    <span class="project-mark violet">CD</span>
+                    <span class="project-copy">
+                      <strong>Color Decision Engine</strong>
+                      <small>Decision logic across technologies</small>
+                    </span>
+                    <span class="badge violet">Rosetta</span>
+                    <span class="technology">JavaScript · TypeScript</span>
+                  </a>
+                </section>
+
+                <section class="catalog-group" id="projects">
+                  <h3 class="group-title">Projects</h3>
+
+                  <a class="catalog-row" href="pg/developer-sandbox.html">
+                    <span class="project-mark cyan">DS</span>
+                    <span class="project-copy">
+                      <strong>Developer Sandbox</strong>
+                      <small>Learning and generation platform</small>
+                    </span>
+                    <span class="badge cyan">Project</span>
+                    <span class="technology">TypeScript · Node.js · SQLite</span>
+                  </a>
+
+                  <a class="catalog-row" href="pg/typescript-api-service.html">
+                    <span class="project-mark blue">TA</span>
+                    <span class="project-copy">
+                      <strong>TypeScript API Service</strong>
+                      <small>Backend service project</small>
+                    </span>
+                    <span class="badge blue">Project</span>
+                    <span class="technology">TypeScript · REST · SQLite</span>
+                  </a>
+
+                  <a class="catalog-row" href="pg/typescript-library-package.html">
+                    <span class="project-mark blue">TL</span>
+                    <span class="project-copy">
+                      <strong>TypeScript Library / Package</strong>
+                      <small>Toolchain and package structure</small>
+                    </span>
+                    <span class="badge blue">Project</span>
+                    <span class="technology">TypeScript · npm · ES Modules</span>
+                  </a>
+
+                  <a class="catalog-row" href="pg/portfolio-engine.html">
+                    <span class="project-mark pink">PE</span>
+                    <span class="project-copy">
+                      <strong>Portfolio Engine</strong>
+                      <small>Static generation project</small>
+                    </span>
+                    <span class="badge pink">Project</span>
+                    <span class="technology">TypeScript · SQLite · Static Generation</span>
+                  </a>
+
+                  <a class="catalog-row" href="pg/week-at-a-glance-component.html">
+                    <span class="project-mark violet">WA</span>
+                    <span class="project-copy">
+                      <strong>Week at a Glance Component</strong>
+                      <small>Data-driven interface</small>
+                    </span>
+                    <span class="badge violet">Project</span>
+                    <span class="technology">JavaScript · HTML · CSS</span>
+                  </a>
+                </section>
+
+                <section class="catalog-group" id="labs">
+                  <h3 class="group-title">Labs &amp; Explorations</h3>
+
+                  <a class="catalog-row" href="pg/rebuilding-fetch-xmlhttprequest.html">
+                    <span class="project-mark teal">RF</span>
+                    <span class="project-copy">
+                      <strong>Rebuilding Fetch with XMLHttpRequest</strong>
+                      <small>Browser API experiment</small>
+                    </span>
+                    <span class="badge teal">Lab</span>
+                    <span class="technology">JavaScript · HTTP · Browser APIs</span>
+                  </a>
+
+                  <a class="catalog-row" href="pg/game-framework.html">
+                    <span class="project-mark green">GF</span>
+                    <span class="project-copy">
+                      <strong>Game Framework</strong>
+                      <small>Interactive systems project</small>
+                    </span>
+                    <span class="badge green">Lab</span>
+                    <span class="technology">TypeScript · Canvas · Phaser</span>
+                  </a>
+                </section>
               </div>
-            </div>
+            </section>
+
+            <section class="inspector panel" id="selected-project" aria-labelledby="selected-title">
+              <header class="inspector-header">
+                <div class="project-number">01</div>
+                <div class="project-heading">
+                  <span class="eyebrow">Selected Project</span>
+                  <h2 id="selected-title">Modern Agenda</h2>
+                  <p>One application rebuilt across modern technologies to make implementation differences visible.</p>
+                </div>
+                <div class="status-stack">
+                  <span class="badge rose">Rosetta Stone</span>
+                  <span class="status complete">Complete</span>
+                </div>
+              </header>
+
+              <div class="inspector-grid">
+                <figure class="preview-frame">
+                  <img src="assets/img/agenda-preview.png" alt="Modern Agenda project preview" />
+                </figure>
+
+                <div class="project-details">
+                  <section class="detail-block">
+                    <span class="label">Technologies</span>
+                    <div class="tag-list">
+                      <span class="tag">Angular</span>
+                      <span class="tag">TypeScript</span>
+                      <span class="tag">Java</span>
+                      <span class="tag">PHP</span>
+                      <span class="tag">Python</span>
+                      <span class="tag">React</span>
+                    </div>
+                  </section>
+
+                  <div class="detail-columns">
+                    <section class="detail-card">
+                      <span class="label">What I Built</span>
+                      <p>A working conference agenda application and related implementations that repeat the same product structure across technologies.</p>
+                    </section>
+
+                    <section class="detail-card">
+                      <span class="label">What I Was Learning</span>
+                      <p>Application structure, data flow, typed models, framework differences, and repeated implementation practice.</p>
+                    </section>
+                  </div>
+
+                  <div class="action-row">
+                    <a class="button primary" href="pg/modern-agenda.html">Open Full Project</a>
+                    <a class="button" href="rosetta-stones.html">View Rosetta Stones</a>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
-      </section>
-    </main>
+      </main>
 
-    <footer>
-      <nav aria-label="Developer tools">
-        <button
-          type="button"
-          onclick="
-            window.open(
-              'https://github.com/susanndelgado/developer-sandbox',
-              '_blank',
-              'noopener,noreferrer',
-            )
-          "
-        >
-          <span aria-hidden="true">⑂</span>
-          Sandbox Repo
-        </button>
-
-        <button
-          type="button"
-          onclick="
-            window.open(
-              'https://github.com/susanndelgado',
-              '_blank',
-              'noopener,noreferrer',
-            )
-          "
-        >
-          <span aria-hidden="true">⑂</span>
-          GitHub
-        </button>
-
-        <button type="button" onclick="window.location.href = 'system-guide.html'">
-          <span aria-hidden="true">⊙</span>
-          System Guide
-        </button>
-
-        <button type="button" onclick="window.location.href = 'database.html'">
-          <span aria-hidden="true">◉</span>
-          Database
-        </button>
-      </nav>
-    </footer>
-
-    <script src="assets/script.js"></script>
-    <script>
-      (() => {
-        const search = document.querySelector("#library-search");
-        const rows = Array.from(document.querySelectorAll(".catalog-row"));
-        const filters = Array.from(
-          document.querySelectorAll("[data-library-filter]"),
-        );
-        const empty = document.querySelector("#library-empty");
-        const resultCount = document.querySelector("#catalog-result-count");
-
-        const detailIndex = document.querySelector("#detail-index");
-        const detailTitle = document.querySelector("#detail-title");
-        const detailType = document.querySelector("#detail-type");
-        const detailStatus = document.querySelector("#detail-status");
-        const detailDescription = document.querySelector("#detail-description");
-        const detailTech = document.querySelector("#detail-tech");
-        const detailBuilt = document.querySelector("#detail-built");
-        const detailLearning = document.querySelector("#detail-learning");
-        const detailImage = document.querySelector("#detail-image");
-        const detailOpen = document.querySelector("#detail-open");
-
-        let activeFilter = "all";
-
-        const relatedTerms = {
-          ts: ["typescript"],
-          js: ["javascript", "ecmascript"],
-          db: ["database", "sqlite", "sql", "persistence"],
-          database: ["sqlite", "sql", "persistence", "data"],
-          backend: ["api", "node", "rest", "http", "server"],
-          frontend: ["html", "css", "javascript", "browser", "ui"],
-          api: ["rest", "http", "server", "backend"],
-          web: ["html", "css", "javascript", "browser"],
-          package: ["npm", "module", "library", "compiler"],
-          game: ["canvas", "phaser", "simulation", "rendering", "audio"],
-        };
-
-        function rowSearchText(row) {
-          return [
-            row.dataset.title,
-            row.dataset.type,
-            row.dataset.status,
-            row.dataset.tech,
-            row.dataset.description,
-            row.dataset.built,
-            row.dataset.learning,
-            row.dataset.keywords,
-          ]
-            .filter(Boolean)
-            .join(" ")
-            .toLowerCase();
-        }
-
-        function searchGroups(query) {
-          return query
-            .toLowerCase()
-            .trim()
-            .split(/\s+/)
-            .filter(Boolean)
-            .map((term) => [term, ...(relatedTerms[term] || [])]);
-        }
-
-        function rowMatchesSearch(row, query) {
-          if (!query.trim()) return true;
-
-          const text = rowSearchText(row);
-          const groups = searchGroups(query);
-
-          return groups.every((terms) =>
-            terms.some((term) => text.includes(term)),
-          );
-        }
-
-        function showProject(row) {
-          rows.forEach((item) =>
-            item.classList.toggle("is-selected", item === row),
-          );
-
-          const visibleRows = rows.filter((item) => !item.hidden);
-          const visibleIndex = Math.max(0, visibleRows.indexOf(row));
-
-          detailIndex.textContent = String(visibleIndex + 1).padStart(2, "0");
-          detailTitle.textContent = row.dataset.title || "Project";
-          detailType.textContent = row.dataset.type || "Project";
-          detailStatus.textContent = row.dataset.status || "";
-          detailDescription.textContent = row.dataset.description || "";
-          detailBuilt.textContent = row.dataset.built || "";
-          detailLearning.textContent = row.dataset.learning || "";
-          detailOpen.href = row.dataset.url || "#";
-
-          const image = row.dataset.image || "assets/img/desktop.png";
-          detailImage.src = image;
-          detailImage.alt = `${row.dataset.title || "Project"} project preview`;
-
-          detailTech.replaceChildren();
-
-          (row.dataset.tech || "")
-            .split("|")
-            .map((item) => item.trim())
-            .filter(Boolean)
-            .forEach((technology) => {
-              const tag = document.createElement("span");
-              tag.textContent = technology;
-              detailTech.append(tag);
-            });
-        }
-
-        function applyFilters() {
-          const query = search.value || "";
-          const visibleRows = [];
-
-          rows.forEach((row) => {
-            const matchesType =
-              activeFilter === "all" ||
-              row.dataset.classification === activeFilter;
-            const matchesSearch = rowMatchesSearch(row, query);
-            const visible = matchesType && matchesSearch;
-
-            row.hidden = !visible;
-
-            if (visible) visibleRows.push(row);
-          });
-
-          empty.classList.toggle("is-visible", visibleRows.length === 0);
-          resultCount.textContent = `${visibleRows.length} ${
-            visibleRows.length === 1 ? "project" : "projects"
-          }`;
-
-          const selected = rows.find((row) =>
-            row.classList.contains("is-selected"),
-          );
-
-          if (visibleRows.length && (!selected || selected.hidden)) {
-            showProject(visibleRows[0]);
-          }
-        }
-
-        rows.forEach((row) => {
-          row.addEventListener("click", () => showProject(row));
-        });
-
-        filters.forEach((button) => {
-          button.addEventListener("click", () => {
-            activeFilter = button.dataset.libraryFilter || "all";
-
-            filters.forEach((item) =>
-              item.setAttribute(
-                "aria-pressed",
-                item === button ? "true" : "false",
-              ),
-            );
-
-            applyFilters();
-          });
-        });
-
-        search.addEventListener("input", applyFilters);
-        applyFilters();
-      })();
-    </script>
+      <footer class="site-footer glass">
+        <nav class="footer-nav" aria-label="Developer tools">
+          <a href="https://github.com/susanndelgado/developer-sandbox">⑂ Sandbox Repo</a>
+          <a href="https://github.com/susanndelgado">⑂ GitHub</a>
+          <a href="system-guide.html">⊙ System Guide</a>
+          <a href="database.html">◉ Database</a>
+        </nav>
+      </footer>
+    </div>
   </body>
 </html>
