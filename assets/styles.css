@@ -1326,8 +1326,17 @@ svg {
   padding: 14px clamp(18px, 3vw, 58px) 8px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 10%, rgba(49, 132, 220, 0.045), transparent 34%),
-    linear-gradient(180deg, rgba(1, 6, 20, 0.12), transparent 28%, rgba(1, 6, 20, 0.16));
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(49, 132, 220, 0.045),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(1, 6, 20, 0.12),
+      transparent 28%,
+      rgba(1, 6, 20, 0.16)
+    );
 }
 
 .library-main {
@@ -1454,7 +1463,10 @@ svg {
 .catalog-head,
 .catalog-row {
   display: grid;
-  grid-template-columns: minmax(180px, 1.18fr) minmax(78px, 0.4fr) minmax(160px, 0.9fr);
+  grid-template-columns: minmax(180px, 1.18fr) minmax(78px, 0.4fr) minmax(
+      160px,
+      0.9fr
+    );
   align-items: center;
   gap: 10px;
 }
@@ -1490,7 +1502,9 @@ svg {
   min-height: 52px;
   padding: 7px 12px;
   border-top: 1px solid rgba(107, 164, 211, 0.08);
-  transition: background 150ms ease, box-shadow 150ms ease;
+  transition:
+    background 150ms ease,
+    box-shadow 150ms ease;
 }
 
 .catalog-row:hover,
@@ -1680,7 +1694,10 @@ svg {
 
   .catalog-head,
   .catalog-row {
-    grid-template-columns: minmax(150px, 1.1fr) minmax(68px, 0.42fr) minmax(120px, 0.8fr);
+    grid-template-columns: minmax(150px, 1.1fr) minmax(68px, 0.42fr) minmax(
+        120px,
+        0.8fr
+      );
     gap: 7px;
   }
 

@@ -2,20 +2,20 @@
    DEVELOPER SANDBOX — SHARED INNER APPLICATION SHELL
    Global structure first. Page-specific classes are limited to layout needs.
    ================================================== */
-
+/* 
 :root {
   --page-gutter: 38px;
   --app-gap: 12px;
   --app-radius: 22px;
   --app-scrollbar: rgba(95, 200, 255, 0.34);
-}
+} */
 
 .site-page {
   height: 100dvh;
   overflow: hidden;
   background:
     linear-gradient(rgba(2, 7, 20, 0.18), rgba(2, 7, 20, 0.34)),
-    url("img/bginnerPg.png") center / cover no-repeat,
+    url("img/bg-owlscreen1.png") center bottom / cover no-repeat,
     var(--bg);
 }
 
@@ -28,8 +28,17 @@
   padding: 14px var(--page-gutter) 8px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 10%, rgba(49, 132, 220, 0.045), transparent 34%),
-    linear-gradient(180deg, rgba(1, 6, 20, 0.12), transparent 28%, rgba(1, 6, 20, 0.16));
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(49, 132, 220, 0.045),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(1, 6, 20, 0.12),
+      transparent 28%,
+      rgba(1, 6, 20, 0.16)
+    );
 }
 
 .full-frame,
@@ -426,7 +435,7 @@
   overflow: hidden;
   background:
     linear-gradient(rgba(2, 7, 20, 0.18), rgba(2, 7, 20, 0.34)),
-    url("img/bginnerPg.png") center / cover no-repeat,
+    url("img/bg-owlscreen1.png") center bottom/ cover no-repeat,
     var(--bg);
 }
 
@@ -513,7 +522,10 @@
 .catalog-head,
 .catalog-row {
   display: grid;
-  grid-template-columns: minmax(180px, 1.18fr) minmax(78px, 0.4fr) minmax(160px, 0.9fr);
+  grid-template-columns: minmax(180px, 1.18fr) minmax(78px, 0.4fr) minmax(
+      160px,
+      0.9fr
+    );
   align-items: center;
   gap: 10px;
 }
@@ -532,7 +544,9 @@
   min-height: 52px;
   padding: 7px 12px;
   border-top: 1px solid rgba(107, 164, 211, 0.08);
-  transition: background 150ms ease, box-shadow 150ms ease;
+  transition:
+    background 150ms ease,
+    box-shadow 150ms ease;
 }
 
 .catalog-row:hover,
@@ -588,9 +602,18 @@
   font-weight: 600;
 }
 
-.blue { color: #8ecbff; border-color: rgba(85, 173, 255, 0.38); }
-.cyan { color: #a8efff; border-color: rgba(105, 220, 255, 0.38); }
-.rose { color: #f0add7; border-color: rgba(229, 139, 198, 0.38); }
+.blue {
+  color: #8ecbff;
+  border-color: rgba(85, 173, 255, 0.38);
+}
+.cyan {
+  color: #a8efff;
+  border-color: rgba(105, 220, 255, 0.38);
+}
+.rose {
+  color: #f0add7;
+  border-color: rgba(229, 139, 198, 0.38);
+}
 .complete {
   color: #bcefc9;
   border-color: rgba(130, 221, 160, 0.34);
@@ -629,7 +652,9 @@
   font-weight: 600;
 }
 
-.status-stack { justify-content: flex-end; }
+.status-stack {
+  justify-content: flex-end;
+}
 
 .inspector-grid {
   display: grid;
@@ -641,7 +666,9 @@
   overflow: hidden;
 }
 
-.inspector-grid .preview-frame { height: 100%; }
+.inspector-grid .preview-frame {
+  height: 100%;
+}
 
 .project-details {
   display: grid;
@@ -653,7 +680,10 @@
 }
 
 .detail-block,
-.detail-card { display: grid; gap: 6px; }
+.detail-card {
+  display: grid;
+  gap: 6px;
+}
 
 .detail-columns {
   display: grid;
@@ -676,8 +706,12 @@
   line-height: 1.45;
 }
 
-.action-row { justify-content: flex-end; }
-.library-workspace .panel-bottom { display: none; }
+.action-row {
+  justify-content: flex-end;
+}
+.library-workspace .panel-bottom {
+  display: none;
+}
 
 /* Reference Guide catalog: no preview panel */
 .catalog-workspace {
@@ -732,7 +766,10 @@
   min-height: 58px;
   padding: 8px 11px;
   border-radius: 12px;
-  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+  transition:
+    border-color 150ms ease,
+    background 150ms ease,
+    box-shadow 150ms ease;
 }
 
 .guide-row:hover,
@@ -789,4 +826,6 @@
   margin-bottom: 10px;
 }
 
-.library-rotate { display: none; }
+.library-rotate {
+  display: none;
+}
