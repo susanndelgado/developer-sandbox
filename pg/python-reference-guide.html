@@ -15,444 +15,209 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="reference">
-    <header>
-  <a class="brand" href="index.html">
+  <body id="pg" class="site-page app-shell" data-section="reference">
+    <header class="home-header page-frame full-frame">
+  <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
-
-    <span>
+    <span class="brand-copy">
       <strong>DEVELOPER SANDBOX</strong>
       <small>Academy of Mastery</small>
     </span>
   </a>
 
-  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button
-      type="button"
-      data-nav-section="home"
-      onclick="window.location.href = 'index.html'"
-    >
-      <span aria-hidden="true">⌂</span>
+  <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
+    <a class="nav-link" data-nav-section="home" href="index.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
+      </svg>
       Home
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="projects"
-      onclick="window.location.href = 'library.html'"
-    >
-      <span aria-hidden="true">▱</span>
+    </a>
+    <a class="nav-link" data-nav-section="projects" href="library.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+      </svg>
       Projects
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="reference"
-      onclick="window.location.href = 'pg/angular-reference-guide.html'"
-    >
-      <span aria-hidden="true">▤</span>
+    </a>
+    <a class="nav-link" data-nav-section="reference" href="reference-guides.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
       Reference Guides
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="labs"
-      onclick="window.location.href = 'labs.html'"
-    >
-      <span aria-hidden="true">✦</span>
+    </a>
+    <a class="nav-link" data-nav-section="labs" href="labs.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+      </svg>
       Labs
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="system"
-      onclick="window.location.href = 'system-guide.html'"
-    >
-      <span aria-hidden="true">⊙</span>
+    </a>
+    <a class="nav-link" data-nav-section="system" href="system-guide.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.4" />
+        <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
+      </svg>
       System Guide
-    </button>
+    </a>
   </nav>
 
-  <div class="top-tools">
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="primary-nav"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="help">
-  <button
-    type="button"
-    aria-label="Read page information"
-  ></button>
-
-  <div>
-    <strong>Python Reference Guide</strong>
-    <p>Compact Python reference covering syntax, types, strings, collections, control flow, functions, type hints, classes, modules, exceptions, and input.</p>
-  </div>
-</div>
-
-    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
-
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      onclick="window.location.href = 'https://sdelgado.com/work.html'"
-    >
-      ×
-    </button>
+  <div class="header-meta">
+    <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="5.5" />
+        <path d="m15.2 15.2 4.3 4.3" />
+      </svg>
+    </a>
+    <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
+    <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
   </div>
 </header>
 
 
-    <main class="view-all-page">
+    <main class="view-all-page app-main page-frame full-frame">
       
-<aside class="type-menu">
-  <header>
-    <h1>
-      Reference Guides
-    </h1>
-
-    <p>
-      Technical documentation, commands,
-      workflows, and development references.
-    </p>
-  </header>
-
-  <nav
-    class="project-types"
-    aria-label="Reference guides"
-  >
-    
-<button
-  type="button"
-  onclick="window.location.href = 'pg/angular-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<aside class="type-menu app-sidebar glass">
+  <header><h1>Reference Guides</h1><p>Technical documentation, commands, workflows, and development references.</p></header>
+  <nav class="project-types" aria-label="Reference guides">
+<a href="pg/angular-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Angular
-    </strong>
-
+    <strong>Angular</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/cross-device-web-testing.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Cross-Device Web Testing
-    </strong>
-
+    <strong>Cross-Device Web Testing</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/full-stack-developer-terminal-commands.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Terminal Commands
-    </strong>
-
+    <strong>Terminal Commands</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/nodejs-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Node.js
-    </strong>
-
+    <strong>Node.js</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/typescript-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      TypeScript
-    </strong>
-
+    <strong>TypeScript</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/php-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/php-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      PHP
-    </strong>
-
-    
-    <small>
-      macOS / PHP 8.x
-    </small>
+    <strong>PHP</strong>
+    <small>macOS / PHP 8.x</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-windows-terminal-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      macOS / Windows
-    </strong>
-
-    
-    <small>
-      PowerShell ↔ zsh
-    </small>
+    <strong>macOS / Windows</strong>
+    <small>PowerShell ↔ zsh</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/linux-command-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/linux-command-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Linux
-    </strong>
-
-    
-    <small>
-      Linux shell / CLI
-    </small>
+    <strong>Linux</strong>
+    <small>Linux shell / CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL
-    </strong>
-
-    
-    <small>
-      Relational SQL
-    </small>
+    <strong>SQL</strong>
+    <small>Relational SQL</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-vs-postgresql-psql-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL / PostgreSQL
-    </strong>
-
-    
-    <small>
-      Language ↔ DBMS ↔ CLI
-    </small>
+    <strong>SQL / PostgreSQL</strong>
+    <small>Language ↔ DBMS ↔ CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/java-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/java-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Java
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>Java</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-vm-cross-device-testing-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      VM / Device Testing
-    </strong>
-
-    
-    <small>
-      Virtual machines, browsers &amp; device testing
-    </small>
+    <strong>VM / Device Testing</strong>
+    <small>Virtual machines, browsers &amp; device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/modern-frontend-cross-device-testing-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Modern Front-End
-    </strong>
-
-    
-    <small>
-      jQuery alternatives • modern UI • cross-device testing
-    </small>
+    <strong>Modern Front-End</strong>
+    <small>jQuery alternatives • modern UI • cross-device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/csharp-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      C#
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>C#</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button" aria-current="true"
-  onclick="window.location.href = 'pg/python-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/python-reference-guide.html" aria-current="true">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Python
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Collections • Control Flow • Functions • Objects
-    </small>
+    <strong>Python</strong>
+    <small>Syntax • Types • Collections • Control Flow • Functions • Objects</small>
   </span>
-</button>
-  </nav>
+</a></nav>
 </aside>
 
-      <section class="project-content">
+      <section class="project-content app-content glass">
         <div id="preview" class="preview">
 
 <header>
   <div>
-    <small>
-      REFERENCE GUIDE
-    </small>
-
-    <h2>
-      Python Reference Guide
-    </h2>
+    <small>REFERENCE GUIDE</small>
+    <h2>Python Reference Guide</h2>
   </div>
-
   <p>
-    
-    <strong>
-      Syntax • Types • Collections • Control Flow • Functions • Objects
-    </strong>
-
-    <br />
-
+    <strong>Syntax • Types • Collections • Control Flow • Functions • Objects</strong><br />
     Compact Python reference covering syntax, types, strings, collections, control flow, functions, type hints, classes, modules, exceptions, and input.
   </p>
 </header>
-        
-<nav
+        <nav
   id="node-python-ref-nav"
   class="project-doc-nav node-01 uid-python-ref-nav python-reference-nav" aria-label="Guide Navigation"
 >
 
 </nav>
-
-<article class="project-doc">
-  <div
+<article class="project-doc"><div
   id="node-python-ref-section-01"
   class="project-display node-02 uid-python-ref-section-01 python-reference-section"
 >
@@ -689,53 +454,35 @@ def function_name(parameters):
 </header>
     
   </div>
-</div>
-</article>
+</div></article>
 </div>
       </section>
     </main>
 
-    <footer>
-  <nav aria-label="Developer tools">
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado/developer-sandbox',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    <footer class="home-footer page-frame full-frame">
+  <nav class="footer-links" aria-label="Developer Sandbox resources">
+    <a href="https://github.com/susanndelgado/developer-sandbox">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" />
+      </svg>
       Sandbox Repo
-    </button>
-
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    </a>
+    <a href="https://github.com/susanndelgado">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" />
+      </svg>
       GitHub
-    </button>
-
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
-      <span aria-hidden="true">⊙</span>
-      System Guide
-    </button>
-
-    <button type="button" onclick="window.location.href = 'database.html'">
-      <span aria-hidden="true">◉</span>
-      Database
-    </button>
+    </a>
+    <a href="system-guide.html">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
+      Documentation
+    </a>
   </nav>
+
+  <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
+  <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
-  <script src="assets/script.js"></script>
-  </body>
-</html>
+

@@ -15,206 +15,85 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="projects">
-    <header>
-  <a class="brand" href="index.html">
+  <body id="pg" class="site-page app-shell" data-section="projects">
+    <header class="home-header page-frame full-frame">
+  <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
-
-    <span>
+    <span class="brand-copy">
       <strong>DEVELOPER SANDBOX</strong>
       <small>Academy of Mastery</small>
     </span>
   </a>
 
-  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button
-      type="button"
-      data-nav-section="home"
-      onclick="window.location.href = 'index.html'"
-    >
-      <span aria-hidden="true">⌂</span>
+  <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
+    <a class="nav-link" data-nav-section="home" href="index.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
+      </svg>
       Home
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="projects"
-      onclick="window.location.href = 'library.html'"
-    >
-      <span aria-hidden="true">▱</span>
+    </a>
+    <a class="nav-link" data-nav-section="projects" href="library.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+      </svg>
       Projects
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="reference"
-      onclick="window.location.href = 'pg/angular-reference-guide.html'"
-    >
-      <span aria-hidden="true">▤</span>
+    </a>
+    <a class="nav-link" data-nav-section="reference" href="reference-guides.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
       Reference Guides
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="labs"
-      onclick="window.location.href = 'labs.html'"
-    >
-      <span aria-hidden="true">✦</span>
+    </a>
+    <a class="nav-link" data-nav-section="labs" href="labs.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+      </svg>
       Labs
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="system"
-      onclick="window.location.href = 'system-guide.html'"
-    >
-      <span aria-hidden="true">⊙</span>
+    </a>
+    <a class="nav-link" data-nav-section="system" href="system-guide.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.4" />
+        <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
+      </svg>
       System Guide
-    </button>
+    </a>
   </nav>
 
-  <div class="top-tools">
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="primary-nav"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="help">
-  <button
-    type="button"
-    aria-label="Read page information"
-  ></button>
-
-  <div>
-    <strong>Modern Agenda</strong>
-    <p>One conference agenda application rebuilt across modern technologies.</p>
-  </div>
-</div>
-
-    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
-
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      onclick="window.location.href = 'https://sdelgado.com/work.html'"
-    >
-      ×
-    </button>
+  <div class="header-meta">
+    <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="5.5" />
+        <path d="m15.2 15.2 4.3 4.3" />
+      </svg>
+    </a>
+    <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
+    <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
   </div>
 </header>
 
 
-    <main class="view-all-page">
+    <main class="view-all-page app-main page-frame full-frame">
       
-<aside class="type-menu">
-  <header>
-    <h1>
-      Rosetta Stones
-    </h1>
-
-    <p>
-      Compare development concepts across
-      languages and technologies.
-    </p>
-  </header>
-
-  <nav
-    class="project-types"
-    aria-label="Rosetta Stones"
-  >
-    <button
-      type="button"
-      onclick="window.location.href = 'rosetta-stones.html'"
-    >
-      <span aria-hidden="true">
-        ◇
-      </span>
-
-      <span>
-        <strong>
-          All Rosetta Stones
-        </strong>
-      </span>
-    </button>
-
-    
-<button
-  type="button"
-  onclick="window.location.href = 'rosetta-stones.html#group-developer-tooling'"
->
-  <span aria-hidden="true">
-    ◇
-  </span>
-
-  <span>
-    <strong>
-      Developer Tooling
-    </strong>
-  </span>
-</button>
-
-<button
-  type="button"
-  onclick="window.location.href = 'rosetta-stones.html#group-rosetta-comparisons'"
->
-  <span aria-hidden="true">
-    ◇
-  </span>
-
-  <span>
-    <strong>
-      Rosetta Comparisons
-    </strong>
-  </span>
-</button>
-
-<button
-  type="button" aria-current="true"
-  onclick="window.location.href = 'rosetta-stones.html#group-modern-agenda'"
->
-  <span aria-hidden="true">
-    ◇
-  </span>
-
-  <span>
-    <strong>
-      Modern Agenda
-    </strong>
-  </span>
-</button>
+<aside class="type-menu app-sidebar glass">
+  <header><h1>Rosetta Stones</h1><p>Compare development concepts across languages and technologies.</p></header>
+  <nav class="project-types" aria-label="Rosetta Stones">
+    <a href="rosetta-stones.html"><span aria-hidden="true">◇</span><span><strong>All Rosetta Stones</strong></span></a>
+    <a href="rosetta-stones.html#group-developer-tooling"><span aria-hidden="true">◇</span><span><strong>Developer Tooling</strong></span></a>
+<a href="rosetta-stones.html#group-rosetta-comparisons"><span aria-hidden="true">◇</span><span><strong>Rosetta Comparisons</strong></span></a>
+<a href="rosetta-stones.html#group-modern-agenda" aria-current="true"><span aria-hidden="true">◇</span><span><strong>Modern Agenda</strong></span></a>
   </nav>
 </aside>
 
-      <section class="project-content">
+      <section class="project-content app-content glass">
         <div id="preview" class="preview">
 
 <header class="project-detail-header">
   <div>
-    <small>
-      ROSETTA STONE
-    </small>
-
-    <h2>
-      Modern Agenda
-    </h2>
+    <small>ROSETTA STONE</small>
+    <h2>Modern Agenda</h2>
   </div>
-
   <p>
-    
-    <strong>
-      Rosetta Stone · Multi-Technology Application
-    </strong>
-
-    <br />
-
+    <strong>Rosetta Stone · Multi-Technology Application</strong><br />
     One conference agenda application rebuilt across modern technologies.
   </p>
 </header>
@@ -259,18 +138,10 @@
 </p>
 
 
-  <div class="project-command-list">
-<div id="child-child-purpose-goal-252b8314b6" class="project-command child-01 uid-child-purpose-goal-252b8314b6 is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Purpose & Goal
-</div></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-modern-agenda-modern-agenda-purpose-child-purpose-goal-252b8314b6" aria-expanded="false" aria-controls="panel-modern-agenda-modern-agenda-purpose-child-purpose-goal-252b8314b6" aria-label="Expand Purpose &amp; Goal"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-modern-agenda-modern-agenda-purpose-child-purpose-goal-252b8314b6" class="project-command-panel" hidden>
-    <p>
+  <div class="project-command-list"><div id="child-child-purpose-goal-252b8314b6" class="project-command child-01 uid-child-purpose-goal-252b8314b6 is-collapsible">
+  <div class="project-command-summary"><div class="project-command-title">Purpose & Goal</div></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-modern-agenda-modern-agenda-purpose-child-purpose-goal-252b8314b6" aria-expanded="false" aria-controls="panel-modern-agenda-modern-agenda-purpose-child-purpose-goal-252b8314b6" aria-label="Expand Purpose &amp; Goal"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-modern-agenda-modern-agenda-purpose-child-purpose-goal-252b8314b6" class="project-command-panel" hidden><p>
   Modernize an agenda application based on the conference agenda system you previously built.
 </p>
 <p>
@@ -284,10 +155,8 @@ Rebuild it with current languages and frameworks so the differences between tech
 <p>
 Compare syntax, structure, typing, rendering, state, requests, architecture and tooling.
   
-</p>
-  </div>
-</div>
-  </div>
+</p></div>
+</div></div>
 </section>
 <section
   id="node-modern-agenda-legacy"
@@ -302,64 +171,14 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
 </p>
 </header>
   
-  <div class="project-command-list">
-<div id="child-modern-agenda-legacy-01" class="project-command child-01 uid-modern-agenda-legacy-01">
-  
-<div class="project-command-title">
-  Original conference-style agenda
-</div>
-  The baseline is the real conference-program problem rather than a tutorial task list.
-</div>
-<div id="child-modern-agenda-legacy-02" class="project-command child-02 uid-modern-agenda-legacy-02">
-  
-<div class="project-command-title">
-  Structured corporate-style data
-</div>
-  The shared data resembles the nested agenda output used by corporate conference systems.
-</div>
-<div id="child-modern-agenda-legacy-03" class="project-command child-03 uid-modern-agenda-legacy-03">
-  
-<div class="project-command-title">
-  Days → sessions → sections / presentations
-</div>
-  The hierarchy preserves scheduled sessions with nested presentation-level content.
-</div>
-<div id="child-modern-agenda-legacy-04" class="project-command child-04 uid-modern-agenda-legacy-04">
-  
-<div class="project-command-title">
-  Speakers / moderators
-</div>
-  Faculty-style people data remains part of the application model.
-</div>
-<div id="child-modern-agenda-legacy-05" class="project-command child-05 uid-modern-agenda-legacy-05">
-  
-<div class="project-command-title">
-  Locations / venues
-</div>
-  Sessions retain location and venue information used for display and filtering.
-</div>
-<div id="child-modern-agenda-legacy-06" class="project-command child-06 uid-modern-agenda-legacy-06">
-  
-<div class="project-command-title">
-  Session types / categories
-</div>
-  Sessions can be grouped and filtered by program type and category.
-</div>
-<div id="child-modern-agenda-legacy-07" class="project-command child-07 uid-modern-agenda-legacy-07">
-  
-<div class="project-command-title">
-  Accreditation
-</div>
-  The model preserves accreditation as conference-program metadata.
-</div>
-<div id="child-modern-agenda-legacy-08" class="project-command child-08 uid-modern-agenda-legacy-08">
-  
-<div class="project-command-title">
-  Legacy implementation
-</div>
-  Historical baseline: JavaScript, PHP, cURL, jQuery and related legacy frontend/server techniques.
-</div>
-  </div>
+  <div class="project-command-list"><div id="child-modern-agenda-legacy-01" class="project-command child-01 uid-modern-agenda-legacy-01"><div class="project-command-title">Original conference-style agenda</div>The baseline is the real conference-program problem rather than a tutorial task list.</div>
+<div id="child-modern-agenda-legacy-02" class="project-command child-02 uid-modern-agenda-legacy-02"><div class="project-command-title">Structured corporate-style data</div>The shared data resembles the nested agenda output used by corporate conference systems.</div>
+<div id="child-modern-agenda-legacy-03" class="project-command child-03 uid-modern-agenda-legacy-03"><div class="project-command-title">Days → sessions → sections / presentations</div>The hierarchy preserves scheduled sessions with nested presentation-level content.</div>
+<div id="child-modern-agenda-legacy-04" class="project-command child-04 uid-modern-agenda-legacy-04"><div class="project-command-title">Speakers / moderators</div>Faculty-style people data remains part of the application model.</div>
+<div id="child-modern-agenda-legacy-05" class="project-command child-05 uid-modern-agenda-legacy-05"><div class="project-command-title">Locations / venues</div>Sessions retain location and venue information used for display and filtering.</div>
+<div id="child-modern-agenda-legacy-06" class="project-command child-06 uid-modern-agenda-legacy-06"><div class="project-command-title">Session types / categories</div>Sessions can be grouped and filtered by program type and category.</div>
+<div id="child-modern-agenda-legacy-07" class="project-command child-07 uid-modern-agenda-legacy-07"><div class="project-command-title">Accreditation</div>The model preserves accreditation as conference-program metadata.</div>
+<div id="child-modern-agenda-legacy-08" class="project-command child-08 uid-modern-agenda-legacy-08"><div class="project-command-title">Legacy implementation</div>Historical baseline: JavaScript, PHP, cURL, jQuery and related legacy frontend/server techniques.</div></div>
 </section>
 <section
   id="node-modern-agenda-contract"
@@ -374,93 +193,51 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
 </p>
 </header>
   
-  <div class="project-command-list">
-<div id="child-modern-agenda-contract-01" class="project-command child-01 uid-modern-agenda-contract-01">
+  <div class="project-command-list"><div id="child-modern-agenda-contract-01" class="project-command child-01 uid-modern-agenda-contract-01">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <p>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><p>
   Same corporate conference data
-</p>
-  
-</div>
-<div class="project-split-cell">
-  <p>
+</p></div>
+<div class="project-split-cell"><p>
   Every phase starts from the same canonical agenda dataset.
-</p>
-  
-</div>
-  </div>
+</p></div></div>
 </div>
 <div id="child-modern-agenda-contract-02" class="project-command child-02 uid-modern-agenda-contract-02">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <p>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><p>
   Same major agenda behaviors
-</p>
-  
-</div>
-<div class="project-split-cell">
-  <p>
+</p></div>
+<div class="project-split-cell"><p>
   Search, filtering, nested sessions, presentations and interaction remain recognizable.
-</p>
-  
-</div>
-  </div>
+</p></div></div>
 </div>
 <div id="child-modern-agenda-contract-03" class="project-command child-03 uid-modern-agenda-contract-03">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <p>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><p>
   Same visual design
-</p>
-  
-</div>
-<div class="project-split-cell">
-  <p>
+</p></div>
+<div class="project-split-cell"><p>
   The visible design target stays consistent so implementation differences are easier to compare.
-</p>
-  
-</div>
-  </div>
+</p></div></div>
 </div>
 <div id="child-modern-agenda-contract-04" class="project-command child-04 uid-modern-agenda-contract-04">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <p>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><p>
   Same expected output
-</p>
-  
-</div>
-<div class="project-split-cell">
-  <p>
+</p></div>
+<div class="project-split-cell"><p>
   Each phase is judged against the same user-facing result.
-</p>
-  
-</div>
-  </div>
+</p></div></div>
 </div>
 <div id="child-modern-agenda-contract-05" class="project-command child-05 uid-modern-agenda-contract-05">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <p>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><p>
   Technology changes; project problem does not
-</p>
-  
-</div>
-<div class="project-split-cell">
-  <p>
+</p></div>
+<div class="project-split-cell"><p>
   Architecture and syntax may change; the application requirement stays stable.
-</p>
-  
-</div>
-  </div>
-</div>
-  </div>
+</p></div></div>
+</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-01-javascript"
@@ -473,9 +250,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Framework-free browser implementation establishing the modern JavaScript baseline.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-01-javascript-technologies"
@@ -488,57 +263,13 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the JavaScript / ECMAScript implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-01-javascript-technologies-01" class="child-01 uid-modern-agenda-phase-01-javascript-technologies-01">
-  
-<div class="project-command-title">
-  JavaScript / modern ECMAScript
-</div>
-  Core language for data processing, rendering and interaction.
-</div>
-<div id="child-modern-agenda-phase-01-javascript-technologies-02" class="child-02 uid-modern-agenda-phase-01-javascript-technologies-02">
-  
-<div class="project-command-title">
-  HTML
-</div>
-  Semantic application structure.
-</div>
-<div id="child-modern-agenda-phase-01-javascript-technologies-03" class="child-03 uid-modern-agenda-phase-01-javascript-technologies-03">
-  
-<div class="project-command-title">
-  CSS
-</div>
-  Shared visual system reused across implementations.
-</div>
-<div id="child-modern-agenda-phase-01-javascript-technologies-04" class="child-04 uid-modern-agenda-phase-01-javascript-technologies-04">
-  
-<div class="project-command-title">
-  ES Modules
-</div>
-  Organizes browser code into explicit modules.
-</div>
-<div id="child-modern-agenda-phase-01-javascript-technologies-05" class="child-05 uid-modern-agenda-phase-01-javascript-technologies-05">
-  
-<div class="project-command-title">
-  Fetch API
-</div>
-  Loads the shared agenda data.
-</div>
-<div id="child-modern-agenda-phase-01-javascript-technologies-06" class="child-06 uid-modern-agenda-phase-01-javascript-technologies-06">
-  
-<div class="project-command-title">
-  async / await
-</div>
-  Handles asynchronous data loading clearly.
-</div>
-<div id="child-modern-agenda-phase-01-javascript-technologies-07" class="child-07 uid-modern-agenda-phase-01-javascript-technologies-07">
-  
-<div class="project-command-title">
-  JSON
-</div>
-  Canonical shared corporate-style conference data.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-01-javascript-technologies-01" class="child-01 uid-modern-agenda-phase-01-javascript-technologies-01"><div class="project-command-title">JavaScript / modern ECMAScript</div>Core language for data processing, rendering and interaction.</div>
+<div id="child-modern-agenda-phase-01-javascript-technologies-02" class="child-02 uid-modern-agenda-phase-01-javascript-technologies-02"><div class="project-command-title">HTML</div>Semantic application structure.</div>
+<div id="child-modern-agenda-phase-01-javascript-technologies-03" class="child-03 uid-modern-agenda-phase-01-javascript-technologies-03"><div class="project-command-title">CSS</div>Shared visual system reused across implementations.</div>
+<div id="child-modern-agenda-phase-01-javascript-technologies-04" class="child-04 uid-modern-agenda-phase-01-javascript-technologies-04"><div class="project-command-title">ES Modules</div>Organizes browser code into explicit modules.</div>
+<div id="child-modern-agenda-phase-01-javascript-technologies-05" class="child-05 uid-modern-agenda-phase-01-javascript-technologies-05"><div class="project-command-title">Fetch API</div>Loads the shared agenda data.</div>
+<div id="child-modern-agenda-phase-01-javascript-technologies-06" class="child-06 uid-modern-agenda-phase-01-javascript-technologies-06"><div class="project-command-title">async / await</div>Handles asynchronous data loading clearly.</div>
+<div id="child-modern-agenda-phase-01-javascript-technologies-07" class="child-07 uid-modern-agenda-phase-01-javascript-technologies-07"><div class="project-command-title">JSON</div>Canonical shared corporate-style conference data.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-01-javascript-applied"
@@ -551,9 +282,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Load the shared conference data.</li><li>Work with nested session and presentation data.</li><li>Filter and search agenda records.</li><li>Render the agenda with browser DOM APIs.</li><li>Manage expanded and collapsed session state.</li><li>Establish the framework-free baseline.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-01-javascript-structure"
@@ -582,9 +311,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
         ├── data.js
         ├── render.js
         └── filters.js</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-01-javascript-difference"
@@ -597,9 +324,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>No framework layer yet. Rendering, state management, data lookup and DOM updates are explicit JavaScript.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-02-typescript"
@@ -612,9 +337,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Typed browser implementation that keeps the JavaScript behavior while adding compile-time models and checks.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-02-typescript-technologies"
@@ -627,71 +350,15 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the TypeScript implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-02-typescript-technologies-01" class="child-01 uid-modern-agenda-phase-02-typescript-technologies-01">
-  
-<div class="project-command-title">
-  TypeScript
-</div>
-  Adds static typing to the JavaScript implementation.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-02" class="child-02 uid-modern-agenda-phase-02-typescript-technologies-02">
-  
-<div class="project-command-title">
-  HTML
-</div>
-  Uses the same semantic visual target.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-03" class="child-03 uid-modern-agenda-phase-02-typescript-technologies-03">
-  
-<div class="project-command-title">
-  CSS
-</div>
-  Reuses the shared visual system.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-04" class="child-04 uid-modern-agenda-phase-02-typescript-technologies-04">
-  
-<div class="project-command-title">
-  ES Modules
-</div>
-  Keeps application code modular.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-05" class="child-05 uid-modern-agenda-phase-02-typescript-technologies-05">
-  
-<div class="project-command-title">
-  Fetch API
-</div>
-  Loads the same shared agenda JSON.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-06" class="child-06 uid-modern-agenda-phase-02-typescript-technologies-06">
-  
-<div class="project-command-title">
-  async / await
-</div>
-  Handles asynchronous requests.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-07" class="child-07 uid-modern-agenda-phase-02-typescript-technologies-07">
-  
-<div class="project-command-title">
-  JSON
-</div>
-  Uses the identical conference dataset.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-08" class="child-08 uid-modern-agenda-phase-02-typescript-technologies-08">
-  
-<div class="project-command-title">
-  TypeScript compiler
-</div>
-  Checks types and compiles TypeScript to JavaScript.
-</div>
-<div id="child-modern-agenda-phase-02-typescript-technologies-09" class="child-09 uid-modern-agenda-phase-02-typescript-technologies-09">
-  
-<div class="project-command-title">
-  npm
-</div>
-  Manages the local TypeScript toolchain.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-02-typescript-technologies-01" class="child-01 uid-modern-agenda-phase-02-typescript-technologies-01"><div class="project-command-title">TypeScript</div>Adds static typing to the JavaScript implementation.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-02" class="child-02 uid-modern-agenda-phase-02-typescript-technologies-02"><div class="project-command-title">HTML</div>Uses the same semantic visual target.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-03" class="child-03 uid-modern-agenda-phase-02-typescript-technologies-03"><div class="project-command-title">CSS</div>Reuses the shared visual system.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-04" class="child-04 uid-modern-agenda-phase-02-typescript-technologies-04"><div class="project-command-title">ES Modules</div>Keeps application code modular.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-05" class="child-05 uid-modern-agenda-phase-02-typescript-technologies-05"><div class="project-command-title">Fetch API</div>Loads the same shared agenda JSON.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-06" class="child-06 uid-modern-agenda-phase-02-typescript-technologies-06"><div class="project-command-title">async / await</div>Handles asynchronous requests.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-07" class="child-07 uid-modern-agenda-phase-02-typescript-technologies-07"><div class="project-command-title">JSON</div>Uses the identical conference dataset.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-08" class="child-08 uid-modern-agenda-phase-02-typescript-technologies-08"><div class="project-command-title">TypeScript compiler</div>Checks types and compiles TypeScript to JavaScript.</div>
+<div id="child-modern-agenda-phase-02-typescript-technologies-09" class="child-09 uid-modern-agenda-phase-02-typescript-technologies-09"><div class="project-command-title">npm</div>Manages the local TypeScript toolchain.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-02-typescript-applied"
@@ -704,9 +371,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Model sessions, presentations, speakers, moderators, locations and metadata with types or interfaces.</li><li>Type the shared conference response instead of treating nested data as unstructured objects.</li><li>Use typed functions for filtering, searching and rendering.</li><li>Handle optional and nullable corporate-data fields safely.</li><li>Compile TypeScript to browser JavaScript.</li><li>Compare the typed implementation directly with Phase 01.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-02-typescript-structure"
@@ -732,9 +397,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
         ├── data.ts
         ├── render.ts
         └── filters.ts</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-02-typescript-difference"
@@ -747,9 +410,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>The browser still runs JavaScript, but the source now has an explicit type system. The main architectural change is compile-time modeling and validation rather than a new rendering framework.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-03-angular"
@@ -762,9 +423,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Component-based Angular implementation using TypeScript, services and modern Angular state/template patterns.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-03-angular-technologies"
@@ -777,71 +436,15 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the Angular implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-03-angular-technologies-01" class="child-01 uid-modern-agenda-phase-03-angular-technologies-01">
-  
-<div class="project-command-title">
-  Angular
-</div>
-  Application framework and component architecture.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-02" class="child-02 uid-modern-agenda-phase-03-angular-technologies-02">
-  
-<div class="project-command-title">
-  TypeScript
-</div>
-  Primary implementation language.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-03" class="child-03 uid-modern-agenda-phase-03-angular-technologies-03">
-  
-<div class="project-command-title">
-  Standalone components
-</div>
-  Break the agenda interface into focused UI components.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-04" class="child-04 uid-modern-agenda-phase-03-angular-technologies-04">
-  
-<div class="project-command-title">
-  Angular services
-</div>
-  Centralize agenda data access and application logic.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-05" class="child-05 uid-modern-agenda-phase-03-angular-technologies-05">
-  
-<div class="project-command-title">
-  Signals
-</div>
-  Represent reactive agenda state where appropriate.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-06" class="child-06 uid-modern-agenda-phase-03-angular-technologies-06">
-  
-<div class="project-command-title">
-  Angular template control flow
-</div>
-  Renders sessions and presentations declaratively.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-07" class="child-07 uid-modern-agenda-phase-03-angular-technologies-07">
-  
-<div class="project-command-title">
-  HttpClient
-</div>
-  Loads the shared agenda data through Angular's HTTP layer.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-08" class="child-08 uid-modern-agenda-phase-03-angular-technologies-08">
-  
-<div class="project-command-title">
-  CSS
-</div>
-  Reuses the same visual target and class vocabulary.
-</div>
-<div id="child-modern-agenda-phase-03-angular-technologies-09" class="child-09 uid-modern-agenda-phase-03-angular-technologies-09">
-  
-<div class="project-command-title">
-  JSON
-</div>
-  Uses the same canonical conference dataset.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-03-angular-technologies-01" class="child-01 uid-modern-agenda-phase-03-angular-technologies-01"><div class="project-command-title">Angular</div>Application framework and component architecture.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-02" class="child-02 uid-modern-agenda-phase-03-angular-technologies-02"><div class="project-command-title">TypeScript</div>Primary implementation language.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-03" class="child-03 uid-modern-agenda-phase-03-angular-technologies-03"><div class="project-command-title">Standalone components</div>Break the agenda interface into focused UI components.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-04" class="child-04 uid-modern-agenda-phase-03-angular-technologies-04"><div class="project-command-title">Angular services</div>Centralize agenda data access and application logic.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-05" class="child-05 uid-modern-agenda-phase-03-angular-technologies-05"><div class="project-command-title">Signals</div>Represent reactive agenda state where appropriate.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-06" class="child-06 uid-modern-agenda-phase-03-angular-technologies-06"><div class="project-command-title">Angular template control flow</div>Renders sessions and presentations declaratively.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-07" class="child-07 uid-modern-agenda-phase-03-angular-technologies-07"><div class="project-command-title">HttpClient</div>Loads the shared agenda data through Angular's HTTP layer.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-08" class="child-08 uid-modern-agenda-phase-03-angular-technologies-08"><div class="project-command-title">CSS</div>Reuses the same visual target and class vocabulary.</div>
+<div id="child-modern-agenda-phase-03-angular-technologies-09" class="child-09 uid-modern-agenda-phase-03-angular-technologies-09"><div class="project-command-title">JSON</div>Uses the same canonical conference dataset.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-03-angular-applied"
@@ -854,9 +457,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Break the agenda into components such as controls, session lists, sessions and presentations.</li><li>Move data access out of the view into an Angular service.</li><li>Represent selected filters and expanded-session state reactively.</li><li>Render nested corporate conference records through Angular templates.</li><li>Preserve the same search, filtering and agenda behavior.</li><li>Compare Angular architecture with the explicit browser code from Phases 01 and 02.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-03-angular-structure"
@@ -882,9 +483,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
             ├── presentation/
             ├── agenda.service.ts
             └── app.component.ts</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-03-angular-difference"
@@ -897,9 +496,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>Rendering moves from explicit DOM construction to Angular templates and components. Shared state and data access move into Angular services/signals rather than ad hoc browser variables.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-04-react"
@@ -912,9 +509,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Component-based React implementation focused on props, state, composition and predictable rendering.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-04-react-technologies"
@@ -927,64 +522,14 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the React implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-04-react-technologies-01" class="child-01 uid-modern-agenda-phase-04-react-technologies-01">
-  
-<div class="project-command-title">
-  React
-</div>
-  Component and rendering library.
-</div>
-<div id="child-modern-agenda-phase-04-react-technologies-02" class="child-02 uid-modern-agenda-phase-04-react-technologies-02">
-  
-<div class="project-command-title">
-  TypeScript
-</div>
-  Types component props and agenda data.
-</div>
-<div id="child-modern-agenda-phase-04-react-technologies-03" class="child-03 uid-modern-agenda-phase-04-react-technologies-03">
-  
-<div class="project-command-title">
-  TSX
-</div>
-  Combines component structure and rendering expressions.
-</div>
-<div id="child-modern-agenda-phase-04-react-technologies-04" class="child-04 uid-modern-agenda-phase-04-react-technologies-04">
-  
-<div class="project-command-title">
-  Hooks
-</div>
-  Manage local state and lifecycle behavior.
-</div>
-<div id="child-modern-agenda-phase-04-react-technologies-05" class="child-05 uid-modern-agenda-phase-04-react-technologies-05">
-  
-<div class="project-command-title">
-  Vite
-</div>
-  Provides the modern development/build toolchain.
-</div>
-<div id="child-modern-agenda-phase-04-react-technologies-06" class="child-06 uid-modern-agenda-phase-04-react-technologies-06">
-  
-<div class="project-command-title">
-  Fetch API
-</div>
-  Loads the shared conference dataset.
-</div>
-<div id="child-modern-agenda-phase-04-react-technologies-07" class="child-07 uid-modern-agenda-phase-04-react-technologies-07">
-  
-<div class="project-command-title">
-  CSS
-</div>
-  Reuses the same visual system.
-</div>
-<div id="child-modern-agenda-phase-04-react-technologies-08" class="child-08 uid-modern-agenda-phase-04-react-technologies-08">
-  
-<div class="project-command-title">
-  JSON
-</div>
-  Uses the same canonical agenda data.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-04-react-technologies-01" class="child-01 uid-modern-agenda-phase-04-react-technologies-01"><div class="project-command-title">React</div>Component and rendering library.</div>
+<div id="child-modern-agenda-phase-04-react-technologies-02" class="child-02 uid-modern-agenda-phase-04-react-technologies-02"><div class="project-command-title">TypeScript</div>Types component props and agenda data.</div>
+<div id="child-modern-agenda-phase-04-react-technologies-03" class="child-03 uid-modern-agenda-phase-04-react-technologies-03"><div class="project-command-title">TSX</div>Combines component structure and rendering expressions.</div>
+<div id="child-modern-agenda-phase-04-react-technologies-04" class="child-04 uid-modern-agenda-phase-04-react-technologies-04"><div class="project-command-title">Hooks</div>Manage local state and lifecycle behavior.</div>
+<div id="child-modern-agenda-phase-04-react-technologies-05" class="child-05 uid-modern-agenda-phase-04-react-technologies-05"><div class="project-command-title">Vite</div>Provides the modern development/build toolchain.</div>
+<div id="child-modern-agenda-phase-04-react-technologies-06" class="child-06 uid-modern-agenda-phase-04-react-technologies-06"><div class="project-command-title">Fetch API</div>Loads the shared conference dataset.</div>
+<div id="child-modern-agenda-phase-04-react-technologies-07" class="child-07 uid-modern-agenda-phase-04-react-technologies-07"><div class="project-command-title">CSS</div>Reuses the same visual system.</div>
+<div id="child-modern-agenda-phase-04-react-technologies-08" class="child-08 uid-modern-agenda-phase-04-react-technologies-08"><div class="project-command-title">JSON</div>Uses the same canonical agenda data.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-04-react-applied"
@@ -997,9 +542,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Break the same agenda into reusable React components.</li><li>Pass session, presentation and faculty data through typed props.</li><li>Manage filters, search and expanded-session state with hooks.</li><li>Derive visible agenda results from state rather than manipulating the DOM directly.</li><li>Load the same shared JSON and render the same expected output.</li><li>Compare React composition with Angular&#x27;s framework structure.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-04-react-structure"
@@ -1025,9 +568,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
         │   ├── Session.tsx
         │   └── Presentation.tsx
         └── types.ts</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-04-react-difference"
@@ -1040,9 +581,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>React expresses the interface as component functions driven by props and state. Unlike Angular, it supplies the rendering/component layer without imposing the same full application framework structure.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-05-python-fastapi"
@@ -1055,9 +594,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Backend/API implementation that models, filters and serves the same agenda output with Python.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-05-python-fastapi-technologies"
@@ -1070,57 +607,13 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the Python / FastAPI implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-05-python-fastapi-technologies-01" class="child-01 uid-modern-agenda-phase-05-python-fastapi-technologies-01">
-  
-<div class="project-command-title">
-  Python
-</div>
-  Server-side implementation language.
-</div>
-<div id="child-modern-agenda-phase-05-python-fastapi-technologies-02" class="child-02 uid-modern-agenda-phase-05-python-fastapi-technologies-02">
-  
-<div class="project-command-title">
-  FastAPI
-</div>
-  HTTP API framework.
-</div>
-<div id="child-modern-agenda-phase-05-python-fastapi-technologies-03" class="child-03 uid-modern-agenda-phase-05-python-fastapi-technologies-03">
-  
-<div class="project-command-title">
-  Pydantic
-</div>
-  Models and validates nested agenda response data.
-</div>
-<div id="child-modern-agenda-phase-05-python-fastapi-technologies-04" class="child-04 uid-modern-agenda-phase-05-python-fastapi-technologies-04">
-  
-<div class="project-command-title">
-  Uvicorn
-</div>
-  Runs the ASGI application locally.
-</div>
-<div id="child-modern-agenda-phase-05-python-fastapi-technologies-05" class="child-05 uid-modern-agenda-phase-05-python-fastapi-technologies-05">
-  
-<div class="project-command-title">
-  JSON
-</div>
-  Uses and returns the same conference-style data shape.
-</div>
-<div id="child-modern-agenda-phase-05-python-fastapi-technologies-06" class="child-06 uid-modern-agenda-phase-05-python-fastapi-technologies-06">
-  
-<div class="project-command-title">
-  HTTP / REST
-</div>
-  Exposes agenda data through application endpoints.
-</div>
-<div id="child-modern-agenda-phase-05-python-fastapi-technologies-07" class="child-07 uid-modern-agenda-phase-05-python-fastapi-technologies-07">
-  
-<div class="project-command-title">
-  Shared frontend
-</div>
-  The existing visual layer can consume the Python-produced response.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-05-python-fastapi-technologies-01" class="child-01 uid-modern-agenda-phase-05-python-fastapi-technologies-01"><div class="project-command-title">Python</div>Server-side implementation language.</div>
+<div id="child-modern-agenda-phase-05-python-fastapi-technologies-02" class="child-02 uid-modern-agenda-phase-05-python-fastapi-technologies-02"><div class="project-command-title">FastAPI</div>HTTP API framework.</div>
+<div id="child-modern-agenda-phase-05-python-fastapi-technologies-03" class="child-03 uid-modern-agenda-phase-05-python-fastapi-technologies-03"><div class="project-command-title">Pydantic</div>Models and validates nested agenda response data.</div>
+<div id="child-modern-agenda-phase-05-python-fastapi-technologies-04" class="child-04 uid-modern-agenda-phase-05-python-fastapi-technologies-04"><div class="project-command-title">Uvicorn</div>Runs the ASGI application locally.</div>
+<div id="child-modern-agenda-phase-05-python-fastapi-technologies-05" class="child-05 uid-modern-agenda-phase-05-python-fastapi-technologies-05"><div class="project-command-title">JSON</div>Uses and returns the same conference-style data shape.</div>
+<div id="child-modern-agenda-phase-05-python-fastapi-technologies-06" class="child-06 uid-modern-agenda-phase-05-python-fastapi-technologies-06"><div class="project-command-title">HTTP / REST</div>Exposes agenda data through application endpoints.</div>
+<div id="child-modern-agenda-phase-05-python-fastapi-technologies-07" class="child-07 uid-modern-agenda-phase-05-python-fastapi-technologies-07"><div class="project-command-title">Shared frontend</div>The existing visual layer can consume the Python-produced response.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-05-python-fastapi-applied"
@@ -1133,9 +626,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Represent the same nested agenda model with Python data models.</li><li>Load and validate the shared conference data.</li><li>Expose agenda and session data through API routes.</li><li>Apply search and filtering on the server where appropriate.</li><li>Return predictable JSON for the existing frontend.</li><li>Compare backend data modeling with the browser-side implementations.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-05-python-fastapi-structure"
@@ -1158,9 +649,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
         ├── services.py
         └── routes/
             └── agenda.py</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-05-python-fastapi-difference"
@@ -1173,9 +662,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>The primary implementation responsibility shifts to the server. Instead of directly rendering the interface, Python/FastAPI produces and processes the agenda response consumed by the shared frontend.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-06-java-spring"
@@ -1188,9 +675,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Java backend implementation using classes, services and Spring's application/API architecture.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-06-java-spring-technologies"
@@ -1203,57 +688,13 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the Java / Spring Boot implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-06-java-spring-technologies-01" class="child-01 uid-modern-agenda-phase-06-java-spring-technologies-01">
-  
-<div class="project-command-title">
-  Java
-</div>
-  Strongly typed server-side implementation language.
-</div>
-<div id="child-modern-agenda-phase-06-java-spring-technologies-02" class="child-02 uid-modern-agenda-phase-06-java-spring-technologies-02">
-  
-<div class="project-command-title">
-  Spring Boot
-</div>
-  Application and HTTP framework.
-</div>
-<div id="child-modern-agenda-phase-06-java-spring-technologies-03" class="child-03 uid-modern-agenda-phase-06-java-spring-technologies-03">
-  
-<div class="project-command-title">
-  Spring Web
-</div>
-  Provides REST controllers and request handling.
-</div>
-<div id="child-modern-agenda-phase-06-java-spring-technologies-04" class="child-04 uid-modern-agenda-phase-06-java-spring-technologies-04">
-  
-<div class="project-command-title">
-  Jackson
-</div>
-  Maps Java objects to and from JSON.
-</div>
-<div id="child-modern-agenda-phase-06-java-spring-technologies-05" class="child-05 uid-modern-agenda-phase-06-java-spring-technologies-05">
-  
-<div class="project-command-title">
-  Maven
-</div>
-  Build and dependency tooling.
-</div>
-<div id="child-modern-agenda-phase-06-java-spring-technologies-06" class="child-06 uid-modern-agenda-phase-06-java-spring-technologies-06">
-  
-<div class="project-command-title">
-  JSON
-</div>
-  Preserves the same agenda response contract.
-</div>
-<div id="child-modern-agenda-phase-06-java-spring-technologies-07" class="child-07 uid-modern-agenda-phase-06-java-spring-technologies-07">
-  
-<div class="project-command-title">
-  Shared frontend
-</div>
-  Consumes the same resulting agenda output.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-06-java-spring-technologies-01" class="child-01 uid-modern-agenda-phase-06-java-spring-technologies-01"><div class="project-command-title">Java</div>Strongly typed server-side implementation language.</div>
+<div id="child-modern-agenda-phase-06-java-spring-technologies-02" class="child-02 uid-modern-agenda-phase-06-java-spring-technologies-02"><div class="project-command-title">Spring Boot</div>Application and HTTP framework.</div>
+<div id="child-modern-agenda-phase-06-java-spring-technologies-03" class="child-03 uid-modern-agenda-phase-06-java-spring-technologies-03"><div class="project-command-title">Spring Web</div>Provides REST controllers and request handling.</div>
+<div id="child-modern-agenda-phase-06-java-spring-technologies-04" class="child-04 uid-modern-agenda-phase-06-java-spring-technologies-04"><div class="project-command-title">Jackson</div>Maps Java objects to and from JSON.</div>
+<div id="child-modern-agenda-phase-06-java-spring-technologies-05" class="child-05 uid-modern-agenda-phase-06-java-spring-technologies-05"><div class="project-command-title">Maven</div>Build and dependency tooling.</div>
+<div id="child-modern-agenda-phase-06-java-spring-technologies-06" class="child-06 uid-modern-agenda-phase-06-java-spring-technologies-06"><div class="project-command-title">JSON</div>Preserves the same agenda response contract.</div>
+<div id="child-modern-agenda-phase-06-java-spring-technologies-07" class="child-07 uid-modern-agenda-phase-06-java-spring-technologies-07"><div class="project-command-title">Shared frontend</div>Consumes the same resulting agenda output.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-06-java-spring-applied"
@@ -1266,9 +707,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Represent the corporate agenda structure with Java classes or records.</li><li>Separate controllers, services and data models.</li><li>Load the shared conference data.</li><li>Expose sessions and agenda results through HTTP endpoints.</li><li>Apply the same filtering and lookup requirements in Java.</li><li>Compare Java&#x27;s explicit object/application structure with Python and frontend implementations.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-06-java-spring-structure"
@@ -1293,9 +732,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
         │       └── model/
         └── resources/
             └── application.properties</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-06-java-spring-difference"
@@ -1308,9 +745,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>The same data/API problem is expressed through Java&#x27;s strongly typed class model and Spring&#x27;s controller/service conventions, making application structure and dependency management much more explicit.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-07-csharp-aspnet"
@@ -1323,9 +758,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   C# backend implementation using .NET models, dependency injection and ASP.NET Core HTTP endpoints.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-07-csharp-aspnet-technologies"
@@ -1338,57 +771,13 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the C# / ASP.NET Core implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-01" class="child-01 uid-modern-agenda-phase-07-csharp-aspnet-technologies-01">
-  
-<div class="project-command-title">
-  C#
-</div>
-  Strongly typed server-side implementation language.
-</div>
-<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-02" class="child-02 uid-modern-agenda-phase-07-csharp-aspnet-technologies-02">
-  
-<div class="project-command-title">
-  .NET
-</div>
-  Runtime and application platform.
-</div>
-<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-03" class="child-03 uid-modern-agenda-phase-07-csharp-aspnet-technologies-03">
-  
-<div class="project-command-title">
-  ASP.NET Core
-</div>
-  Web/API framework.
-</div>
-<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-04" class="child-04 uid-modern-agenda-phase-07-csharp-aspnet-technologies-04">
-  
-<div class="project-command-title">
-  Dependency injection
-</div>
-  Supplies services through the built-in application container.
-</div>
-<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-05" class="child-05 uid-modern-agenda-phase-07-csharp-aspnet-technologies-05">
-  
-<div class="project-command-title">
-  System.Text.Json
-</div>
-  Serializes and deserializes agenda JSON.
-</div>
-<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-06" class="child-06 uid-modern-agenda-phase-07-csharp-aspnet-technologies-06">
-  
-<div class="project-command-title">
-  HTTP / REST
-</div>
-  Exposes the same agenda contract.
-</div>
-<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-07" class="child-07 uid-modern-agenda-phase-07-csharp-aspnet-technologies-07">
-  
-<div class="project-command-title">
-  Shared frontend
-</div>
-  Consumes the resulting agenda response.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-01" class="child-01 uid-modern-agenda-phase-07-csharp-aspnet-technologies-01"><div class="project-command-title">C#</div>Strongly typed server-side implementation language.</div>
+<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-02" class="child-02 uid-modern-agenda-phase-07-csharp-aspnet-technologies-02"><div class="project-command-title">.NET</div>Runtime and application platform.</div>
+<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-03" class="child-03 uid-modern-agenda-phase-07-csharp-aspnet-technologies-03"><div class="project-command-title">ASP.NET Core</div>Web/API framework.</div>
+<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-04" class="child-04 uid-modern-agenda-phase-07-csharp-aspnet-technologies-04"><div class="project-command-title">Dependency injection</div>Supplies services through the built-in application container.</div>
+<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-05" class="child-05 uid-modern-agenda-phase-07-csharp-aspnet-technologies-05"><div class="project-command-title">System.Text.Json</div>Serializes and deserializes agenda JSON.</div>
+<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-06" class="child-06 uid-modern-agenda-phase-07-csharp-aspnet-technologies-06"><div class="project-command-title">HTTP / REST</div>Exposes the same agenda contract.</div>
+<div id="child-modern-agenda-phase-07-csharp-aspnet-technologies-07" class="child-07 uid-modern-agenda-phase-07-csharp-aspnet-technologies-07"><div class="project-command-title">Shared frontend</div>Consumes the resulting agenda response.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-07-csharp-aspnet-applied"
@@ -1401,9 +790,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Model sessions, presentations and related conference data with C# types.</li><li>Load and deserialize the shared agenda JSON.</li><li>Separate endpoint/controller behavior from agenda services.</li><li>Use dependency injection for application services.</li><li>Implement the same filtering and lookup requirements.</li><li>Compare C#/.NET conventions directly with Java/Spring and Python/FastAPI.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-07-csharp-aspnet-structure"
@@ -1424,9 +811,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
     ├── Models/
     ├── Services/
     └── Controllers/</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-07-csharp-aspnet-difference"
@@ -1439,9 +824,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>The server-side problem is expressed through C#/.NET&#x27;s type system and built-in dependency-injection/application conventions. It provides a direct comparison with Java/Spring while keeping the response contract constant.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-08-php"
@@ -1454,9 +837,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Modern PHP implementation revisiting the language used in the legacy system with contemporary structure and practices.
 </header>
   
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-08-php-technologies"
@@ -1469,57 +850,13 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   Primary technologies and tooling used in the PHP implementation.
 </header>
   
-  <div class="project-meta">
-<div id="child-modern-agenda-phase-08-php-technologies-01" class="child-01 uid-modern-agenda-phase-08-php-technologies-01">
-  
-<div class="project-command-title">
-  PHP
-</div>
-  Server-side implementation language.
-</div>
-<div id="child-modern-agenda-phase-08-php-technologies-02" class="child-02 uid-modern-agenda-phase-08-php-technologies-02">
-  
-<div class="project-command-title">
-  Modern PHP
-</div>
-  Uses current language features instead of recreating the legacy style.
-</div>
-<div id="child-modern-agenda-phase-08-php-technologies-03" class="child-03 uid-modern-agenda-phase-08-php-technologies-03">
-  
-<div class="project-command-title">
-  Composer
-</div>
-  Dependency and project tooling when a package is genuinely useful.
-</div>
-<div id="child-modern-agenda-phase-08-php-technologies-04" class="child-04 uid-modern-agenda-phase-08-php-technologies-04">
-  
-<div class="project-command-title">
-  JSON
-</div>
-  Loads or returns the shared conference data.
-</div>
-<div id="child-modern-agenda-phase-08-php-technologies-05" class="child-05 uid-modern-agenda-phase-08-php-technologies-05">
-  
-<div class="project-command-title">
-  HTTP
-</div>
-  Handles requests and agenda responses.
-</div>
-<div id="child-modern-agenda-phase-08-php-technologies-06" class="child-06 uid-modern-agenda-phase-08-php-technologies-06">
-  
-<div class="project-command-title">
-  HTML / CSS
-</div>
-  Can render or serve the same visible agenda target.
-</div>
-<div id="child-modern-agenda-phase-08-php-technologies-07" class="child-07 uid-modern-agenda-phase-08-php-technologies-07">
-  
-<div class="project-command-title">
-  cURL / HTTP client comparison
-</div>
-  Provides a direct bridge back to the original CRF-era request pattern where relevant.
-</div>
-  </div>
+  <div class="project-meta"><div id="child-modern-agenda-phase-08-php-technologies-01" class="child-01 uid-modern-agenda-phase-08-php-technologies-01"><div class="project-command-title">PHP</div>Server-side implementation language.</div>
+<div id="child-modern-agenda-phase-08-php-technologies-02" class="child-02 uid-modern-agenda-phase-08-php-technologies-02"><div class="project-command-title">Modern PHP</div>Uses current language features instead of recreating the legacy style.</div>
+<div id="child-modern-agenda-phase-08-php-technologies-03" class="child-03 uid-modern-agenda-phase-08-php-technologies-03"><div class="project-command-title">Composer</div>Dependency and project tooling when a package is genuinely useful.</div>
+<div id="child-modern-agenda-phase-08-php-technologies-04" class="child-04 uid-modern-agenda-phase-08-php-technologies-04"><div class="project-command-title">JSON</div>Loads or returns the shared conference data.</div>
+<div id="child-modern-agenda-phase-08-php-technologies-05" class="child-05 uid-modern-agenda-phase-08-php-technologies-05"><div class="project-command-title">HTTP</div>Handles requests and agenda responses.</div>
+<div id="child-modern-agenda-phase-08-php-technologies-06" class="child-06 uid-modern-agenda-phase-08-php-technologies-06"><div class="project-command-title">HTML / CSS</div>Can render or serve the same visible agenda target.</div>
+<div id="child-modern-agenda-phase-08-php-technologies-07" class="child-07 uid-modern-agenda-phase-08-php-technologies-07"><div class="project-command-title">cURL / HTTP client comparison</div>Provides a direct bridge back to the original CRF-era request pattern where relevant.</div></div>
 </section>
 <section
   id="node-modern-agenda-phase-08-php-applied"
@@ -1532,9 +869,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   What this implementation is responsible for demonstrating.
 </header>
   <ul><li>Rebuild the agenda data flow with modern PHP structure.</li><li>Parse and work with the same nested corporate conference data.</li><li>Implement the same search and filtering requirements.</li><li>Separate data/request logic from rendered output more clearly than the legacy baseline.</li><li>Return JSON or render the shared interface where appropriate.</li><li>Compare modern PHP directly with the original PHP/cURL implementation.</li></ul>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-08-php-structure"
@@ -1557,9 +892,7 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
     └── src/
         ├── AgendaService.php
         └── AgendaController.php</code></pre>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 <section
   id="node-modern-agenda-phase-08-php-difference"
@@ -1572,55 +905,36 @@ Compare syntax, structure, typing, rendering, state, requests, architecture and 
   The main architectural difference introduced by this technology.
 </header>
   <p>PHP returns to a technology from the original system, but with a cleaner separation of concerns and modern project structure. This phase makes the legacy-to-modern comparison especially visible.</p>
-  <div class="project-command-list">
-
-  </div>
+  <div class="project-command-list"></div>
 </section>
 </div>
       </section>
     </main>
 
-    <footer>
-  <nav aria-label="Developer tools">
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado/developer-sandbox',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    <footer class="home-footer page-frame full-frame">
+  <nav class="footer-links" aria-label="Developer Sandbox resources">
+    <a href="https://github.com/susanndelgado/developer-sandbox">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" />
+      </svg>
       Sandbox Repo
-    </button>
-
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    </a>
+    <a href="https://github.com/susanndelgado">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" />
+      </svg>
       GitHub
-    </button>
-
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
-      <span aria-hidden="true">⊙</span>
-      System Guide
-    </button>
-
-    <button type="button" onclick="window.location.href = 'database.html'">
-      <span aria-hidden="true">◉</span>
-      Database
-    </button>
+    </a>
+    <a href="system-guide.html">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
+      Documentation
+    </a>
   </nav>
+
+  <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
+  <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
-  <script src="assets/script.js"></script>
-  </body>
-</html>
+

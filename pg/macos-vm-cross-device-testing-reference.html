@@ -15,436 +15,203 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="reference">
-    <header>
-  <a class="brand" href="index.html">
+  <body id="pg" class="site-page app-shell" data-section="reference">
+    <header class="home-header page-frame full-frame">
+  <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
-
-    <span>
+    <span class="brand-copy">
       <strong>DEVELOPER SANDBOX</strong>
       <small>Academy of Mastery</small>
     </span>
   </a>
 
-  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button
-      type="button"
-      data-nav-section="home"
-      onclick="window.location.href = 'index.html'"
-    >
-      <span aria-hidden="true">⌂</span>
+  <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
+    <a class="nav-link" data-nav-section="home" href="index.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
+      </svg>
       Home
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="projects"
-      onclick="window.location.href = 'library.html'"
-    >
-      <span aria-hidden="true">▱</span>
+    </a>
+    <a class="nav-link" data-nav-section="projects" href="library.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+      </svg>
       Projects
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="reference"
-      onclick="window.location.href = 'pg/angular-reference-guide.html'"
-    >
-      <span aria-hidden="true">▤</span>
+    </a>
+    <a class="nav-link" data-nav-section="reference" href="reference-guides.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
       Reference Guides
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="labs"
-      onclick="window.location.href = 'labs.html'"
-    >
-      <span aria-hidden="true">✦</span>
+    </a>
+    <a class="nav-link" data-nav-section="labs" href="labs.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+      </svg>
       Labs
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="system"
-      onclick="window.location.href = 'system-guide.html'"
-    >
-      <span aria-hidden="true">⊙</span>
+    </a>
+    <a class="nav-link" data-nav-section="system" href="system-guide.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.4" />
+        <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
+      </svg>
       System Guide
-    </button>
+    </a>
   </nav>
 
-  <div class="top-tools">
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="primary-nav"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="help">
-  <button
-    type="button"
-    aria-label="Read page information"
-  ></button>
-
-  <div>
-    <strong>macOS VM &amp; Cross-Device Testing Reference</strong>
-    <p>Device testing</p>
-  </div>
-</div>
-
-    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
-
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      onclick="window.location.href = 'https://sdelgado.com/work.html'"
-    >
-      ×
-    </button>
+  <div class="header-meta">
+    <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="5.5" />
+        <path d="m15.2 15.2 4.3 4.3" />
+      </svg>
+    </a>
+    <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
+    <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
   </div>
 </header>
 
 
-    <main class="view-all-page">
+    <main class="view-all-page app-main page-frame full-frame">
       
-<aside class="type-menu">
-  <header>
-    <h1>
-      Reference Guides
-    </h1>
-
-    <p>
-      Technical documentation, commands,
-      workflows, and development references.
-    </p>
-  </header>
-
-  <nav
-    class="project-types"
-    aria-label="Reference guides"
-  >
-    
-<button
-  type="button"
-  onclick="window.location.href = 'pg/angular-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<aside class="type-menu app-sidebar glass">
+  <header><h1>Reference Guides</h1><p>Technical documentation, commands, workflows, and development references.</p></header>
+  <nav class="project-types" aria-label="Reference guides">
+<a href="pg/angular-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Angular
-    </strong>
-
+    <strong>Angular</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/cross-device-web-testing.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Cross-Device Web Testing
-    </strong>
-
+    <strong>Cross-Device Web Testing</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/full-stack-developer-terminal-commands.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Terminal Commands
-    </strong>
-
+    <strong>Terminal Commands</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/nodejs-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Node.js
-    </strong>
-
+    <strong>Node.js</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/typescript-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      TypeScript
-    </strong>
-
+    <strong>TypeScript</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/php-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/php-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      PHP
-    </strong>
-
-    
-    <small>
-      macOS / PHP 8.x
-    </small>
+    <strong>PHP</strong>
+    <small>macOS / PHP 8.x</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-windows-terminal-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      macOS / Windows
-    </strong>
-
-    
-    <small>
-      PowerShell ↔ zsh
-    </small>
+    <strong>macOS / Windows</strong>
+    <small>PowerShell ↔ zsh</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/linux-command-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/linux-command-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Linux
-    </strong>
-
-    
-    <small>
-      Linux shell / CLI
-    </small>
+    <strong>Linux</strong>
+    <small>Linux shell / CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL
-    </strong>
-
-    
-    <small>
-      Relational SQL
-    </small>
+    <strong>SQL</strong>
+    <small>Relational SQL</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-vs-postgresql-psql-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL / PostgreSQL
-    </strong>
-
-    
-    <small>
-      Language ↔ DBMS ↔ CLI
-    </small>
+    <strong>SQL / PostgreSQL</strong>
+    <small>Language ↔ DBMS ↔ CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/java-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/java-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Java
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>Java</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button" aria-current="true"
-  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-vm-cross-device-testing-reference.html" aria-current="true">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      VM / Device Testing
-    </strong>
-
-    
-    <small>
-      Virtual machines, browsers &amp; device testing
-    </small>
+    <strong>VM / Device Testing</strong>
+    <small>Virtual machines, browsers &amp; device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/modern-frontend-cross-device-testing-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Modern Front-End
-    </strong>
-
-    
-    <small>
-      jQuery alternatives • modern UI • cross-device testing
-    </small>
+    <strong>Modern Front-End</strong>
+    <small>jQuery alternatives • modern UI • cross-device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/csharp-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      C#
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>C#</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/python-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/python-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Python
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Collections • Control Flow • Functions • Objects
-    </small>
+    <strong>Python</strong>
+    <small>Syntax • Types • Collections • Control Flow • Functions • Objects</small>
   </span>
-</button>
-  </nav>
+</a></nav>
 </aside>
 
-      <section class="project-content">
+      <section class="project-content app-content glass">
         <div id="preview" class="preview">
 
 <header>
   <div>
-    <small>
-      REFERENCE GUIDE
-    </small>
-
-    <h2>
-      macOS VM &amp; Cross-Device Testing Reference
-    </h2>
+    <small>REFERENCE GUIDE</small>
+    <h2>macOS VM &amp; Cross-Device Testing Reference</h2>
   </div>
-
   <p>
-    
-    <strong>
-      Virtual machines, browsers &amp; device testing
-    </strong>
-
-    <br />
-
+    <strong>Virtual machines, browsers &amp; device testing</strong><br />
     Device testing
   </p>
 </header>
-        
-<nav
+        <nav
   id="node-vmtest-ref-nav"
   class="project-doc-nav node-01 uid-vmtest-ref-nav vmtest-reference-nav" aria-label="Guide Navigation"
 >
@@ -479,9 +246,7 @@
   href="pg/macos-vm-cross-device-testing-reference.html#node-vmtest-ref-section-06-practical-testing-matrix-workflow"
 >Practical Testing Matrix & Workflow</a>
 </nav>
-
-<article class="project-doc">
-  <div
+<article class="project-doc"><div
   id="node-vmtest-ref-section-01-choose-the-right-testing-layer"
   class="project-display node-02 uid-vmtest-ref-section-01-choose-the-right-testing-layer vmtest-reference-section vmtest-reference-section-01"
 >
@@ -507,110 +272,42 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-01-vm-emulator-simulator-or-browser-r01" class="project-command child-01 uid-vmtest-ref-01-vm-emulator-simulator-or-browser-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-01-vm-emulator-simulator-or-browser-r01" class="project-command child-01 uid-vmtest-ref-01-vm-emulator-simulator-or-browser-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Virtual machine</strong>
-  
-</div>
-<div class="project-split-cell">
-  Runs a complete guest operating system with virtualized hardware.
-  
-</div>
-<div class="project-split-cell">
-  Best for Windows/Linux/macOS OS behavior, installers, shells, browsers, services, and environment differences.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Virtual machine</strong></div>
+<div class="project-split-cell">Runs a complete guest operating system with virtualized hardware.</div>
+<div class="project-split-cell">Best for Windows/Linux/macOS OS behavior, installers, shells, browsers, services, and environment differences.</div></div>
 </div>
 <div id="child-vmtest-ref-01-vm-emulator-simulator-or-browser-r02" class="project-command child-02 uid-vmtest-ref-01-vm-emulator-simulator-or-browser-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>CPU emulation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Translates one processor architecture into another.
-  
-</div>
-<div class="project-split-cell">
-  Useful for x86/x64 guests on Apple Silicon, but slower than same-architecture virtualization.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>CPU emulation</strong></div>
+<div class="project-split-cell">Translates one processor architecture into another.</div>
+<div class="project-split-cell">Useful for x86/x64 guests on Apple Silicon, but slower than same-architecture virtualization.</div></div>
 </div>
 <div id="child-vmtest-ref-01-vm-emulator-simulator-or-browser-r03" class="project-command child-03 uid-vmtest-ref-01-vm-emulator-simulator-or-browser-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Device simulator</strong>
-  
-</div>
-<div class="project-split-cell">
-  Models an OS/device environment without reproducing all physical hardware.
-  
-</div>
-<div class="project-split-cell">
-  Useful for iOS/iPadOS and Android application testing; confirm hardware-specific behavior on real devices.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Device simulator</strong></div>
+<div class="project-split-cell">Models an OS/device environment without reproducing all physical hardware.</div>
+<div class="project-split-cell">Useful for iOS/iPadOS and Android application testing; confirm hardware-specific behavior on real devices.</div></div>
 </div>
 <div id="child-vmtest-ref-01-vm-emulator-simulator-or-browser-r04" class="project-command child-04 uid-vmtest-ref-01-vm-emulator-simulator-or-browser-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Browser emulation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Changes viewport, user agent, touch, locale, geolocation, and related browser context.
-  
-</div>
-<div class="project-split-cell">
-  Fastest for responsive web checks, but not a replacement for the actual OS/browser/device.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Browser emulation</strong></div>
+<div class="project-split-cell">Changes viewport, user agent, touch, locale, geolocation, and related browser context.</div>
+<div class="project-split-cell">Fastest for responsive web checks, but not a replacement for the actual OS/browser/device.</div></div>
 </div>
 <div id="child-vmtest-ref-01-vm-emulator-simulator-or-browser-r05" class="project-command child-05 uid-vmtest-ref-01-vm-emulator-simulator-or-browser-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Browser automation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Runs repeatable tests against browsers locally or remotely.
-  
-</div>
-<div class="project-split-cell">
-  Use Playwright or Selenium for regression and multi-browser checks.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Browser automation</strong></div>
+<div class="project-split-cell">Runs repeatable tests against browsers locally or remotely.</div>
+<div class="project-split-cell">Use Playwright or Selenium for regression and multi-browser checks.</div></div>
 </div>
 <div id="child-vmtest-ref-01-vm-emulator-simulator-or-browser-r06" class="project-command child-06 uid-vmtest-ref-01-vm-emulator-simulator-or-browser-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Container</strong>
-  
-</div>
-<div class="project-split-cell">
-  Isolates processes while sharing the host kernel.
-  
-</div>
-<div class="project-split-cell">
-  Great for services and dependencies; not a Windows/Linux desktop VM replacement on macOS.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Container</strong></div>
+<div class="project-split-cell">Isolates processes while sharing the host kernel.</div>
+<div class="project-split-cell">Great for services and dependencies; not a Windows/Linux desktop VM replacement on macOS.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-01-macos-tool-chooser"
@@ -623,110 +320,42 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-01-macos-tool-chooser-r01" class="project-command child-01 uid-vmtest-ref-01-macos-tool-chooser-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-01-macos-tool-chooser-r01" class="project-command child-01 uid-vmtest-ref-01-macos-tool-chooser-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>UTM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Best general open-source GUI VM choice for macOS, especially Apple Silicon.
-  
-</div>
-<div class="project-split-cell">
-  Uses QEMU and can use Apple Virtualization; supports virtualization and cross-architecture emulation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>UTM</strong></div>
+<div class="project-split-cell">Best general open-source GUI VM choice for macOS, especially Apple Silicon.</div>
+<div class="project-split-cell">Uses QEMU and can use Apple Virtualization; supports virtualization and cross-architecture emulation.</div></div>
 </div>
 <div id="child-vmtest-ref-01-macos-tool-chooser-r02" class="project-command child-02 uid-vmtest-ref-01-macos-tool-chooser-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>VirtualBox</strong>
-  
-</div>
-<div class="project-split-cell">
-  Popular cross-platform VM manager with a GPL base package.
-  
-</div>
-<div class="project-split-cell">
-  On Apple Silicon use Arm64 guests; Extension Pack has separate licensing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>VirtualBox</strong></div>
+<div class="project-split-cell">Popular cross-platform VM manager with a GPL base package.</div>
+<div class="project-split-cell">On Apple Silicon use Arm64 guests; Extension Pack has separate licensing.</div></div>
 </div>
 <div id="child-vmtest-ref-01-macos-tool-chooser-r03" class="project-command child-03 uid-vmtest-ref-01-macos-tool-chooser-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>QEMU</strong>
-  
-</div>
-<div class="project-split-cell">
-  Best for maximum low-level control, unusual architectures, and automation.
-  
-</div>
-<div class="project-split-cell">
-  Powerful but command-heavy; UTM provides a friendlier Mac interface over QEMU capabilities.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>QEMU</strong></div>
+<div class="project-split-cell">Best for maximum low-level control, unusual architectures, and automation.</div>
+<div class="project-split-cell">Powerful but command-heavy; UTM provides a friendlier Mac interface over QEMU capabilities.</div></div>
 </div>
 <div id="child-vmtest-ref-01-macos-tool-chooser-r04" class="project-command child-04 uid-vmtest-ref-01-macos-tool-chooser-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Lima</strong>
-  
-</div>
-<div class="project-split-cell">
-  Best for lightweight Linux VMs used as development environments.
-  
-</div>
-<div class="project-split-cell">
-  Automatic file sharing and port forwarding; popular in container/dev tooling.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Lima</strong></div>
+<div class="project-split-cell">Best for lightweight Linux VMs used as development environments.</div>
+<div class="project-split-cell">Automatic file sharing and port forwarding; popular in container/dev tooling.</div></div>
 </div>
 <div id="child-vmtest-ref-01-macos-tool-chooser-r05" class="project-command child-05 uid-vmtest-ref-01-macos-tool-chooser-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Playwright</strong>
-  
-</div>
-<div class="project-split-cell">
-  Best open-source browser automation and device/browser emulation for web projects.
-  
-</div>
-<div class="project-split-cell">
-  Chromium, Firefox, and WebKit; emulation is not the same as physical-device testing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Playwright</strong></div>
+<div class="project-split-cell">Best open-source browser automation and device/browser emulation for web projects.</div>
+<div class="project-split-cell">Chromium, Firefox, and WebKit; emulation is not the same as physical-device testing.</div></div>
 </div>
 <div id="child-vmtest-ref-01-macos-tool-chooser-r06" class="project-command child-06 uid-vmtest-ref-01-macos-tool-chooser-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Selenium Grid</strong>
-  
-</div>
-<div class="project-split-cell">
-  Best open-source distributed browser testing across real machines/OS/browser combinations.
-  
-</div>
-<div class="project-split-cell">
-  Useful when you need genuine Safari, Windows browsers, or multiple remote nodes.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Selenium Grid</strong></div>
+<div class="project-split-cell">Best open-source distributed browser testing across real machines/OS/browser combinations.</div>
+<div class="project-split-cell">Useful when you need genuine Safari, Windows browsers, or multiple remote nodes.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-01-what-requires-a-real-environment"
@@ -739,86 +368,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-01-what-requires-a-real-environment-r01" class="project-command child-01 uid-vmtest-ref-01-what-requires-a-real-environment-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-01-what-requires-a-real-environment-r01" class="project-command child-01 uid-vmtest-ref-01-what-requires-a-real-environment-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Responsive layout</strong>
-  
-</div>
-<div class="project-split-cell">
-  Browser responsive mode or Playwright emulation is usually enough for the first pass.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Responsive layout</strong></div>
+<div class="project-split-cell">Browser responsive mode or Playwright emulation is usually enough for the first pass.</div></div>
 </div>
 <div id="child-vmtest-ref-01-what-requires-a-real-environment-r02" class="project-command child-02 uid-vmtest-ref-01-what-requires-a-real-environment-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Safari engine behavior</strong>
-  
-</div>
-<div class="project-split-cell">
-  Test Safari itself on macOS/iOS; Playwright WebKit is useful but is not the Safari application.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Safari engine behavior</strong></div>
+<div class="project-split-cell">Test Safari itself on macOS/iOS; Playwright WebKit is useful but is not the Safari application.</div></div>
 </div>
 <div id="child-vmtest-ref-01-what-requires-a-real-environment-r03" class="project-command child-03 uid-vmtest-ref-01-what-requires-a-real-environment-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Windows browser/system behavior</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use a Windows VM or physical Windows machine.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Windows browser/system behavior</strong></div>
+<div class="project-split-cell">Use a Windows VM or physical Windows machine.</div></div>
 </div>
 <div id="child-vmtest-ref-01-what-requires-a-real-environment-r04" class="project-command child-04 uid-vmtest-ref-01-what-requires-a-real-environment-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Linux desktop/browser behavior</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use an ARM64 Linux VM on Apple Silicon or a remote Linux machine.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Linux desktop/browser behavior</strong></div>
+<div class="project-split-cell">Use an ARM64 Linux VM on Apple Silicon or a remote Linux machine.</div></div>
 </div>
 <div id="child-vmtest-ref-01-what-requires-a-real-environment-r05" class="project-command child-05 uid-vmtest-ref-01-what-requires-a-real-environment-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Touch, sensors, camera, Bluetooth</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use a simulator/emulator for development, then verify important behavior on physical devices.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Touch, sensors, camera, Bluetooth</strong></div>
+<div class="project-split-cell">Use a simulator/emulator for development, then verify important behavior on physical devices.</div></div>
 </div>
 <div id="child-vmtest-ref-01-what-requires-a-real-environment-r06" class="project-command child-06 uid-vmtest-ref-01-what-requires-a-real-environment-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Performance</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use physical devices or representative hardware for final performance conclusions.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Performance</strong></div>
+<div class="project-split-cell">Use physical devices or representative hardware for final performance conclusions.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-01-recommended-web-testing-stack"
@@ -831,86 +410,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-01-recommended-web-testing-stack-r01" class="project-command child-01 uid-vmtest-ref-01-recommended-web-testing-stack-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-01-recommended-web-testing-stack-r01" class="project-command child-01 uid-vmtest-ref-01-recommended-web-testing-stack-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Daily layout check</strong>
-  
-</div>
-<div class="project-split-cell">
-  Chrome/Firefox responsive tools plus actual Safari on the Mac.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Daily layout check</strong></div>
+<div class="project-split-cell">Chrome/Firefox responsive tools plus actual Safari on the Mac.</div></div>
 </div>
 <div id="child-vmtest-ref-01-recommended-web-testing-stack-r02" class="project-command child-02 uid-vmtest-ref-01-recommended-web-testing-stack-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Automated regression</strong>
-  
-</div>
-<div class="project-split-cell">
-  Playwright across Chromium, Firefox, and WebKit.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Automated regression</strong></div>
+<div class="project-split-cell">Playwright across Chromium, Firefox, and WebKit.</div></div>
 </div>
 <div id="child-vmtest-ref-01-recommended-web-testing-stack-r03" class="project-command child-03 uid-vmtest-ref-01-recommended-web-testing-stack-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Real Safari automation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Selenium/WebDriver with Apple's built-in safaridriver.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Real Safari automation</strong></div>
+<div class="project-split-cell">Selenium/WebDriver with Apple's built-in safaridriver.</div></div>
 </div>
 <div id="child-vmtest-ref-01-recommended-web-testing-stack-r04" class="project-command child-04 uid-vmtest-ref-01-recommended-web-testing-stack-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Windows verification</strong>
-  
-</div>
-<div class="project-split-cell">
-  Windows 11 ARM VM on Apple Silicon, then Edge/Chrome/Firefox inside the guest.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Windows verification</strong></div>
+<div class="project-split-cell">Windows 11 ARM VM on Apple Silicon, then Edge/Chrome/Firefox inside the guest.</div></div>
 </div>
 <div id="child-vmtest-ref-01-recommended-web-testing-stack-r05" class="project-command child-05 uid-vmtest-ref-01-recommended-web-testing-stack-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Linux verification</strong>
-  
-</div>
-<div class="project-split-cell">
-  Ubuntu/Fedora ARM64 VM or Lima environment.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Linux verification</strong></div>
+<div class="project-split-cell">Ubuntu/Fedora ARM64 VM or Lima environment.</div></div>
 </div>
 <div id="child-vmtest-ref-01-recommended-web-testing-stack-r06" class="project-command child-06 uid-vmtest-ref-01-recommended-web-testing-stack-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Final confidence</strong>
-  
-</div>
-<div class="project-split-cell">
-  At least one physical phone/tablet and any business-critical desktop OS/browser combination.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Final confidence</strong></div>
+<div class="project-split-cell">At least one physical phone/tablet and any business-critical desktop OS/browser combination.</div></div>
+</div></div>
 </section>
 <div
   id="node-vmtest-ref-section-02-macos-vm-setup"
@@ -938,76 +467,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-02-apple-silicon-vs-intel-r01" class="project-command child-01 uid-vmtest-ref-02-apple-silicon-vs-intel-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-02-apple-silicon-vs-intel-r01" class="project-command child-01 uid-vmtest-ref-02-apple-silicon-vs-intel-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Apple Silicon Mac</strong>
-  
-</div>
-<div class="project-split-cell">
-  Arm64 host architecture.
-  
-</div>
-<div class="project-split-cell">
-  Prefer Arm64 Windows/Linux guests for fast virtualization.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Apple Silicon Mac</strong></div>
+<div class="project-split-cell">Arm64 host architecture.</div>
+<div class="project-split-cell">Prefer Arm64 Windows/Linux guests for fast virtualization.</div></div>
 </div>
 <div id="child-vmtest-ref-02-apple-silicon-vs-intel-r02" class="project-command child-02 uid-vmtest-ref-02-apple-silicon-vs-intel-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Intel Mac</strong>
-  
-</div>
-<div class="project-split-cell">
-  x86_64 host architecture.
-  
-</div>
-<div class="project-split-cell">
-  Prefer x86_64 Windows/Linux guests.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Intel Mac</strong></div>
+<div class="project-split-cell">x86_64 host architecture.</div>
+<div class="project-split-cell">Prefer x86_64 Windows/Linux guests.</div></div>
 </div>
 <div id="child-vmtest-ref-02-apple-silicon-vs-intel-r03" class="project-command child-03 uid-vmtest-ref-02-apple-silicon-vs-intel-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Apple Silicon + x86 guest</strong>
-  
-</div>
-<div class="project-split-cell">
-  Architecture does not match.
-  
-</div>
-<div class="project-split-cell">
-  Requires emulation such as QEMU/UTM and is slower.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Apple Silicon + x86 guest</strong></div>
+<div class="project-split-cell">Architecture does not match.</div>
+<div class="project-split-cell">Requires emulation such as QEMU/UTM and is slower.</div></div>
 </div>
 <div id="child-vmtest-ref-02-apple-silicon-vs-intel-r04" class="project-command child-04 uid-vmtest-ref-02-apple-silicon-vs-intel-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Intel + Arm guest</strong>
-  
-</div>
-<div class="project-split-cell">
-  Architecture does not match.
-  
-</div>
-<div class="project-split-cell">
-  Requires emulation; usually unnecessary for ordinary web testing.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Intel + Arm guest</strong></div>
+<div class="project-split-cell">Architecture does not match.</div>
+<div class="project-split-cell">Requires emulation; usually unnecessary for ordinary web testing.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-02-utm-setup-workflow"
@@ -1020,138 +503,56 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-02-utm-setup-workflow-r01" class="project-command child-01 uid-vmtest-ref-02-utm-setup-workflow-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-02-utm-setup-workflow-r01" class="project-command child-01 uid-vmtest-ref-02-utm-setup-workflow-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>1. Install UTM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Download from the <a href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer">official UTM site</a> or its linked GitHub release.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>1. Install UTM</strong></div>
+<div class="project-split-cell">Download from the <a href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer">official UTM site</a> or its linked GitHub release.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r02" class="project-command child-02 uid-vmtest-ref-02-utm-setup-workflow-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>2. Choose Virtualize</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use when guest architecture matches the Mac architecture.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>2. Choose Virtualize</strong></div>
+<div class="project-split-cell">Use when guest architecture matches the Mac architecture.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r03" class="project-command child-03 uid-vmtest-ref-02-utm-setup-workflow-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>3. Choose Emulate</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use only when you need a different CPU architecture.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>3. Choose Emulate</strong></div>
+<div class="project-split-cell">Use only when you need a different CPU architecture.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r04" class="project-command child-04 uid-vmtest-ref-02-utm-setup-workflow-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>4. Select OS image</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use an official Windows/Linux ISO or supported macOS recovery source.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>4. Select OS image</strong></div>
+<div class="project-split-cell">Use an official Windows/Linux ISO or supported macOS recovery source.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r05" class="project-command child-05 uid-vmtest-ref-02-utm-setup-workflow-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>5. Allocate CPU/RAM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Start modestly; leave enough CPU and memory for macOS and development tools.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>5. Allocate CPU/RAM</strong></div>
+<div class="project-split-cell">Start modestly; leave enough CPU and memory for macOS and development tools.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r06" class="project-command child-06 uid-vmtest-ref-02-utm-setup-workflow-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>6. Create virtual disk</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use dynamically allocated storage when appropriate and leave headroom for updates.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>6. Create virtual disk</strong></div>
+<div class="project-split-cell">Use dynamically allocated storage when appropriate and leave headroom for updates.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r07" class="project-command child-07 uid-vmtest-ref-02-utm-setup-workflow-r07 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>7. Configure networking</strong>
-  
-</div>
-<div class="project-split-cell">
-  NAT/shared networking is the safest default for most development testing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>7. Configure networking</strong></div>
+<div class="project-split-cell">NAT/shared networking is the safest default for most development testing.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r08" class="project-command child-08 uid-vmtest-ref-02-utm-setup-workflow-r08 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>8. Install guest tools</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use UTM guest/SPICE tools when supported for better pointer, clipboard, display, and file integration.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>8. Install guest tools</strong></div>
+<div class="project-split-cell">Use UTM guest/SPICE tools when supported for better pointer, clipboard, display, and file integration.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r09" class="project-command child-09 uid-vmtest-ref-02-utm-setup-workflow-r09 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>9. Update guest OS</strong>
-  
-</div>
-<div class="project-split-cell">
-  Patch the guest before using it as a testing baseline.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>9. Update guest OS</strong></div>
+<div class="project-split-cell">Patch the guest before using it as a testing baseline.</div></div>
 </div>
 <div id="child-vmtest-ref-02-utm-setup-workflow-r10" class="project-command child-10 uid-vmtest-ref-02-utm-setup-workflow-r10 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>10. Snapshot/clone baseline</strong>
-  
-</div>
-<div class="project-split-cell">
-  Keep a clean known-good state before adding browsers, SDKs, and test data.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>10. Snapshot/clone baseline</strong></div>
+<div class="project-split-cell">Keep a clean known-good state before adding browsers, SDKs, and test data.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-02-virtualbox-setup-workflow"
@@ -1164,112 +565,46 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-02-virtualbox-setup-workflow-r01" class="project-command child-01 uid-vmtest-ref-02-virtualbox-setup-workflow-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-02-virtualbox-setup-workflow-r01" class="project-command child-01 uid-vmtest-ref-02-virtualbox-setup-workflow-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>1. Install platform package</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use the <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">official VirtualBox downloads page</a>.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>1. Install platform package</strong></div>
+<div class="project-split-cell">Use the <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">official VirtualBox downloads page</a>.</div></div>
 </div>
 <div id="child-vmtest-ref-02-virtualbox-setup-workflow-r02" class="project-command child-02 uid-vmtest-ref-02-virtualbox-setup-workflow-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>2. Match architecture</strong>
-  
-</div>
-<div class="project-split-cell">
-  Apple Silicon hosts should use supported Arm64 guests; x86 guests are not the normal virtualization path.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>2. Match architecture</strong></div>
+<div class="project-split-cell">Apple Silicon hosts should use supported Arm64 guests; x86 guests are not the normal virtualization path.</div></div>
 </div>
 <div id="child-vmtest-ref-02-virtualbox-setup-workflow-r03" class="project-command child-03 uid-vmtest-ref-02-virtualbox-setup-workflow-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>3. Create VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Choose guest type, memory, processors, and virtual disk.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>3. Create VM</strong></div>
+<div class="project-split-cell">Choose guest type, memory, processors, and virtual disk.</div></div>
 </div>
 <div id="child-vmtest-ref-02-virtualbox-setup-workflow-r04" class="project-command child-04 uid-vmtest-ref-02-virtualbox-setup-workflow-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>4. Attach ISO</strong>
-  
-</div>
-<div class="project-split-cell">
-  Mount the official installer image as virtual optical media.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>4. Attach ISO</strong></div>
+<div class="project-split-cell">Mount the official installer image as virtual optical media.</div></div>
 </div>
 <div id="child-vmtest-ref-02-virtualbox-setup-workflow-r05" class="project-command child-05 uid-vmtest-ref-02-virtualbox-setup-workflow-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>5. Install guest</strong>
-  
-</div>
-<div class="project-split-cell">
-  Complete normal OS installation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>5. Install guest</strong></div>
+<div class="project-split-cell">Complete normal OS installation.</div></div>
 </div>
 <div id="child-vmtest-ref-02-virtualbox-setup-workflow-r06" class="project-command child-06 uid-vmtest-ref-02-virtualbox-setup-workflow-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>6. Install Guest Additions</strong>
-  
-</div>
-<div class="project-split-cell">
-  Where supported, improve display, clipboard, pointer, and shared-folder integration.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>6. Install Guest Additions</strong></div>
+<div class="project-split-cell">Where supported, improve display, clipboard, pointer, and shared-folder integration.</div></div>
 </div>
 <div id="child-vmtest-ref-02-virtualbox-setup-workflow-r07" class="project-command child-07 uid-vmtest-ref-02-virtualbox-setup-workflow-r07 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>7. Review Extension Pack</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install only if needed and review its separate license before use.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>7. Review Extension Pack</strong></div>
+<div class="project-split-cell">Install only if needed and review its separate license before use.</div></div>
 </div>
 <div id="child-vmtest-ref-02-virtualbox-setup-workflow-r08" class="project-command child-08 uid-vmtest-ref-02-virtualbox-setup-workflow-r08 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>8. Snapshot clean state</strong>
-  
-</div>
-<div class="project-split-cell">
-  Preserve a post-update baseline for repeatable testing.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>8. Snapshot clean state</strong></div>
+<div class="project-split-cell">Preserve a post-update baseline for repeatable testing.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-02-qemu-lima"
@@ -1282,110 +617,42 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-02-qemu-lima-r01" class="project-command child-01 uid-vmtest-ref-02-qemu-lima-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-02-qemu-lima-r01" class="project-command child-01 uid-vmtest-ref-02-qemu-lima-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>QEMU</strong>
-  
-</div>
-<div class="project-split-cell">
-  Download/build from <a href="https://www.qemu.org/download/" target="_blank" rel="noopener noreferrer">qemu.org</a>.
-  
-</div>
-<div class="project-split-cell">
-  Use directly when you need architecture control, scripting, or unsupported/legacy guest combinations.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>QEMU</strong></div>
+<div class="project-split-cell">Download/build from <a href="https://www.qemu.org/download/" target="_blank" rel="noopener noreferrer">qemu.org</a>.</div>
+<div class="project-split-cell">Use directly when you need architecture control, scripting, or unsupported/legacy guest combinations.</div></div>
 </div>
 <div id="child-vmtest-ref-02-qemu-lima-r02" class="project-command child-02 uid-vmtest-ref-02-qemu-lima-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Lima</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install with <code>brew install lima</code> or from <a href="https://lima-vm.io/docs/installation/" target="_blank" rel="noopener noreferrer">official Lima installation docs</a>.
-  
-</div>
-<div class="project-split-cell">
-  Designed for Linux VMs with automatic sharing and port forwarding.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Lima</strong></div>
+<div class="project-split-cell">Install with <code>brew install lima</code> or from <a href="https://lima-vm.io/docs/installation/" target="_blank" rel="noopener noreferrer">official Lima installation docs</a>.</div>
+<div class="project-split-cell">Designed for Linux VMs with automatic sharing and port forwarding.</div></div>
 </div>
 <div id="child-vmtest-ref-02-qemu-lima-r03" class="project-command child-03 uid-vmtest-ref-02-qemu-lima-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Lima start</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>limactl start</code>
-  
-</div>
-<div class="project-split-cell">
-  Creates/starts a Linux VM from defaults or a selected template.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Lima start</strong></div>
+<div class="project-split-cell"><code>limactl start</code></div>
+<div class="project-split-cell">Creates/starts a Linux VM from defaults or a selected template.</div></div>
 </div>
 <div id="child-vmtest-ref-02-qemu-lima-r04" class="project-command child-04 uid-vmtest-ref-02-qemu-lima-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Lima shell</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>limactl shell default</code>
-  
-</div>
-<div class="project-split-cell">
-  Open a shell inside the VM.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Lima shell</strong></div>
+<div class="project-split-cell"><code>limactl shell default</code></div>
+<div class="project-split-cell">Open a shell inside the VM.</div></div>
 </div>
 <div id="child-vmtest-ref-02-qemu-lima-r05" class="project-command child-05 uid-vmtest-ref-02-qemu-lima-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Lima stop</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>limactl stop default</code>
-  
-</div>
-<div class="project-split-cell">
-  Stop the VM.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Lima stop</strong></div>
+<div class="project-split-cell"><code>limactl stop default</code></div>
+<div class="project-split-cell">Stop the VM.</div></div>
 </div>
 <div id="child-vmtest-ref-02-qemu-lima-r06" class="project-command child-06 uid-vmtest-ref-02-qemu-lima-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Lima delete</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>limactl delete default</code>
-  
-</div>
-<div class="project-split-cell">
-  Delete a VM instance when no longer needed.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Lima delete</strong></div>
+<div class="project-split-cell"><code>limactl delete default</code></div>
+<div class="project-split-cell">Delete a VM instance when no longer needed.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-02-resource-starting-points"
@@ -1398,76 +665,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-02-resource-starting-points-r01" class="project-command child-01 uid-vmtest-ref-02-resource-starting-points-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-02-resource-starting-points-r01" class="project-command child-01 uid-vmtest-ref-02-resource-starting-points-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Light Linux CLI VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  2 CPU / 2–4 GB RAM / 20–30 GB disk.
-  
-</div>
-<div class="project-split-cell">
-  Good for shell/server/database checks.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Light Linux CLI VM</strong></div>
+<div class="project-split-cell">2 CPU / 2–4 GB RAM / 20–30 GB disk.</div>
+<div class="project-split-cell">Good for shell/server/database checks.</div></div>
 </div>
 <div id="child-vmtest-ref-02-resource-starting-points-r02" class="project-command child-02 uid-vmtest-ref-02-resource-starting-points-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Linux desktop VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  2–4 CPU / 4–8 GB RAM / 30–60 GB disk.
-  
-</div>
-<div class="project-split-cell">
-  Increase only if desktop/browser workload requires it.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Linux desktop VM</strong></div>
+<div class="project-split-cell">2–4 CPU / 4–8 GB RAM / 30–60 GB disk.</div>
+<div class="project-split-cell">Increase only if desktop/browser workload requires it.</div></div>
 </div>
 <div id="child-vmtest-ref-02-resource-starting-points-r03" class="project-command child-03 uid-vmtest-ref-02-resource-starting-points-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Windows 11 ARM VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  4 CPU / 6–8+ GB RAM / 64+ GB disk.
-  
-</div>
-<div class="project-split-cell">
-  Keep enough host memory free for macOS, browser, editor, and Docker.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Windows 11 ARM VM</strong></div>
+<div class="project-split-cell">4 CPU / 6–8+ GB RAM / 64+ GB disk.</div>
+<div class="project-split-cell">Keep enough host memory free for macOS, browser, editor, and Docker.</div></div>
 </div>
 <div id="child-vmtest-ref-02-resource-starting-points-r04" class="project-command child-04 uid-vmtest-ref-02-resource-starting-points-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Rule</strong>
-  
-</div>
-<div class="project-split-cell">
-  Do not assign every host core or most host RAM to a VM.
-  
-</div>
-<div class="project-split-cell">
-  Host swapping can make both macOS and the guest slower.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Rule</strong></div>
+<div class="project-split-cell">Do not assign every host core or most host RAM to a VM.</div>
+<div class="project-split-cell">Host swapping can make both macOS and the guest slower.</div></div>
+</div></div>
 </section>
 <div
   id="node-vmtest-ref-section-03-official-downloads-vm-images"
@@ -1495,76 +716,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-03-virtualization-software-r01" class="project-command child-01 uid-vmtest-ref-03-virtualization-software-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-03-virtualization-software-r01" class="project-command child-01 uid-vmtest-ref-03-virtualization-software-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>UTM</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer">mac.getutm.app</a>
-  
-</div>
-<div class="project-split-cell">
-  Free and open source; designed specifically for Apple platforms.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>UTM</strong></div>
+<div class="project-split-cell"><a href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer">mac.getutm.app</a></div>
+<div class="project-split-cell">Free and open source; designed specifically for Apple platforms.</div></div>
 </div>
 <div id="child-vmtest-ref-03-virtualization-software-r02" class="project-command child-02 uid-vmtest-ref-03-virtualization-software-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>QEMU</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.qemu.org/download/" target="_blank" rel="noopener noreferrer">qemu.org/download</a>
-  
-</div>
-<div class="project-split-cell">
-  Free/open-source emulator and virtualizer; UTM uses QEMU capabilities.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>QEMU</strong></div>
+<div class="project-split-cell"><a href="https://www.qemu.org/download/" target="_blank" rel="noopener noreferrer">qemu.org/download</a></div>
+<div class="project-split-cell">Free/open-source emulator and virtualizer; UTM uses QEMU capabilities.</div></div>
 </div>
 <div id="child-vmtest-ref-03-virtualization-software-r03" class="project-command child-03 uid-vmtest-ref-03-virtualization-software-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>VirtualBox</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">virtualbox.org Downloads</a>
-  
-</div>
-<div class="project-split-cell">
-  GPL base package; Extension Pack is separately licensed.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>VirtualBox</strong></div>
+<div class="project-split-cell"><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">virtualbox.org Downloads</a></div>
+<div class="project-split-cell">GPL base package; Extension Pack is separately licensed.</div></div>
 </div>
 <div id="child-vmtest-ref-03-virtualization-software-r04" class="project-command child-04 uid-vmtest-ref-03-virtualization-software-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Lima</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://lima-vm.io/" target="_blank" rel="noopener noreferrer">lima-vm.io</a>
-  
-</div>
-<div class="project-split-cell">
-  Open-source Linux VM tooling; CNCF incubating project.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Lima</strong></div>
+<div class="project-split-cell"><a href="https://lima-vm.io/" target="_blank" rel="noopener noreferrer">lima-vm.io</a></div>
+<div class="project-split-cell">Open-source Linux VM tooling; CNCF incubating project.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-03-windows"
@@ -1577,59 +752,24 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-03-windows-r01" class="project-command child-01 uid-vmtest-ref-03-windows-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-03-windows-r01" class="project-command child-01 uid-vmtest-ref-03-windows-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Windows 11 Arm64 ISO</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://learn.microsoft.com/windows/arm/iso" target="_blank" rel="noopener noreferrer">Microsoft Windows 11 Arm ISO information</a>
-  
-</div>
-<div class="project-split-cell">
-  Best Windows guest architecture for Apple Silicon.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Windows 11 Arm64 ISO</strong></div>
+<div class="project-split-cell"><a href="https://learn.microsoft.com/windows/arm/iso" target="_blank" rel="noopener noreferrer">Microsoft Windows 11 Arm ISO information</a></div>
+<div class="project-split-cell">Best Windows guest architecture for Apple Silicon.</div></div>
 </div>
 <div id="child-vmtest-ref-03-windows-r02" class="project-command child-02 uid-vmtest-ref-03-windows-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Browser compatibility, PowerShell, Windows tooling, Edge, installer behavior.
-  
-</div>
-<div class="project-split-cell">
-  A Windows license/activation may still be required for continued licensed use.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Browser compatibility, PowerShell, Windows tooling, Edge, installer behavior.</div>
+<div class="project-split-cell">A Windows license/activation may still be required for continued licensed use.</div></div>
 </div>
 <div id="child-vmtest-ref-03-windows-r03" class="project-command child-03 uid-vmtest-ref-03-windows-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Avoid</strong>
-  
-</div>
-<div class="project-split-cell">
-  Unofficial modified Windows images.
-  
-</div>
-<div class="project-split-cell">
-  Use Microsoft-provided media whenever possible.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Avoid</strong></div>
+<div class="project-split-cell">Unofficial modified Windows images.</div>
+<div class="project-split-cell">Use Microsoft-provided media whenever possible.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-03-ubuntu"
@@ -1642,76 +782,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-03-ubuntu-r01" class="project-command child-01 uid-vmtest-ref-03-ubuntu-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-03-ubuntu-r01" class="project-command child-01 uid-vmtest-ref-03-ubuntu-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Ubuntu Desktop ARM64</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener noreferrer">Ubuntu Desktop downloads</a>
-  
-</div>
-<div class="project-split-cell">
-  Official page provides ARM64 and x86_64 images.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Ubuntu Desktop ARM64</strong></div>
+<div class="project-split-cell"><a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener noreferrer">Ubuntu Desktop downloads</a></div>
+<div class="project-split-cell">Official page provides ARM64 and x86_64 images.</div></div>
 </div>
 <div id="child-vmtest-ref-03-ubuntu-r02" class="project-command child-02 uid-vmtest-ref-03-ubuntu-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Apple Silicon</strong>
-  
-</div>
-<div class="project-split-cell">
-  Choose ARM64.
-  
-</div>
-<div class="project-split-cell">
-  Matches the host CPU for virtualization.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Apple Silicon</strong></div>
+<div class="project-split-cell">Choose ARM64.</div>
+<div class="project-split-cell">Matches the host CPU for virtualization.</div></div>
 </div>
 <div id="child-vmtest-ref-03-ubuntu-r03" class="project-command child-03 uid-vmtest-ref-03-ubuntu-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Intel Mac</strong>
-  
-</div>
-<div class="project-split-cell">
-  Choose Intel/AMD 64-bit.
-  
-</div>
-<div class="project-split-cell">
-  Matches x86_64 Intel architecture.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Intel Mac</strong></div>
+<div class="project-split-cell">Choose Intel/AMD 64-bit.</div>
+<div class="project-split-cell">Matches x86_64 Intel architecture.</div></div>
 </div>
 <div id="child-vmtest-ref-03-ubuntu-r04" class="project-command child-04 uid-vmtest-ref-03-ubuntu-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Mainstream Linux desktop, browser checks, web/server tooling, package testing.
-  
-</div>
-<div class="project-split-cell">
-  LTS releases are useful for a stable long-lived test VM.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Mainstream Linux desktop, browser checks, web/server tooling, package testing.</div>
+<div class="project-split-cell">LTS releases are useful for a stable long-lived test VM.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-03-fedora"
@@ -1724,59 +818,24 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-03-fedora-r01" class="project-command child-01 uid-vmtest-ref-03-fedora-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-03-fedora-r01" class="project-command child-01 uid-vmtest-ref-03-fedora-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Fedora Workstation</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.fedoraproject.org/workstation/download/" target="_blank" rel="noopener noreferrer">Fedora Workstation downloads</a>
-  
-</div>
-<div class="project-split-cell">
-  Official page provides x86_64 and aarch64 images.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Fedora Workstation</strong></div>
+<div class="project-split-cell"><a href="https://www.fedoraproject.org/workstation/download/" target="_blank" rel="noopener noreferrer">Fedora Workstation downloads</a></div>
+<div class="project-split-cell">Official page provides x86_64 and aarch64 images.</div></div>
 </div>
 <div id="child-vmtest-ref-03-fedora-r02" class="project-command child-02 uid-vmtest-ref-03-fedora-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Apple Silicon</strong>
-  
-</div>
-<div class="project-split-cell">
-  Choose ARM aarch64.
-  
-</div>
-<div class="project-split-cell">
-  Good match for Apple Silicon virtualization.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Apple Silicon</strong></div>
+<div class="project-split-cell">Choose ARM aarch64.</div>
+<div class="project-split-cell">Good match for Apple Silicon virtualization.</div></div>
 </div>
 <div id="child-vmtest-ref-03-fedora-r03" class="project-command child-03 uid-vmtest-ref-03-fedora-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Current Linux desktop stack, newer kernels/toolchains, GNOME browser testing.
-  
-</div>
-<div class="project-split-cell">
-  Fedora publishes checksum/signature verification instructions.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Current Linux desktop stack, newer kernels/toolchains, GNOME browser testing.</div>
+<div class="project-split-cell">Fedora publishes checksum/signature verification instructions.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-03-debian"
@@ -1789,59 +848,24 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-03-debian-r01" class="project-command child-01 uid-vmtest-ref-03-debian-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-03-debian-r01" class="project-command child-01 uid-vmtest-ref-03-debian-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Debian installer media</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.debian.org/CD/" target="_blank" rel="noopener noreferrer">Debian installation media</a>
-  
-</div>
-<div class="project-split-cell">
-  Official Debian images include amd64 and arm64 installation media.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Debian installer media</strong></div>
+<div class="project-split-cell"><a href="https://www.debian.org/CD/" target="_blank" rel="noopener noreferrer">Debian installation media</a></div>
+<div class="project-split-cell">Official Debian images include amd64 and arm64 installation media.</div></div>
 </div>
 <div id="child-vmtest-ref-03-debian-r02" class="project-command child-02 uid-vmtest-ref-03-debian-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Apple Silicon</strong>
-  
-</div>
-<div class="project-split-cell">
-  Choose arm64 installer media.
-  
-</div>
-<div class="project-split-cell">
-  Good for lightweight/stable Linux VM environments.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Apple Silicon</strong></div>
+<div class="project-split-cell">Choose arm64 installer media.</div>
+<div class="project-split-cell">Good for lightweight/stable Linux VM environments.</div></div>
 </div>
 <div id="child-vmtest-ref-03-debian-r03" class="project-command child-03 uid-vmtest-ref-03-debian-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Server testing, package/systemd work, conservative Linux baseline.
-  
-</div>
-<div class="project-split-cell">
-  Official releases are signed; verify image authenticity when practical.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Server testing, package/systemd work, conservative Linux baseline.</div>
+<div class="project-split-cell">Official releases are signed; verify image authenticity when practical.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-03-macos-guests"
@@ -1854,60 +878,26 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-03-macos-guests-r01" class="project-command child-01 uid-vmtest-ref-03-macos-guests-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-03-macos-guests-r01" class="project-command child-01 uid-vmtest-ref-03-macos-guests-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Apple hardware rule</strong>
-  
-</div>
-<div class="project-split-cell">
-  Run macOS guests only in configurations allowed by Apple's licensing and technical requirements.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Apple hardware rule</strong></div>
+<div class="project-split-cell">Run macOS guests only in configurations allowed by Apple's licensing and technical requirements.</div></div>
 </div>
 <div id="child-vmtest-ref-03-macos-guests-r02" class="project-command child-02 uid-vmtest-ref-03-macos-guests-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>UTM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Supports macOS virtualization on Apple Silicon; UTM documents macOS VM support for ARM Macs.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>UTM</strong></div>
+<div class="project-split-cell">Supports macOS virtualization on Apple Silicon; UTM documents macOS VM support for ARM Macs.</div></div>
 </div>
 <div id="child-vmtest-ref-03-macos-guests-r03" class="project-command child-03 uid-vmtest-ref-03-macos-guests-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Version-specific Safari/macOS testing, clean development environments, and compatibility checks.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Version-specific Safari/macOS testing, clean development environments, and compatibility checks.</div></div>
 </div>
 <div id="child-vmtest-ref-03-macos-guests-r04" class="project-command child-04 uid-vmtest-ref-03-macos-guests-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Caution</strong>
-  
-</div>
-<div class="project-split-cell">
-  Do not treat random third-party macOS VM images as trustworthy or automatically licensed.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Caution</strong></div>
+<div class="project-split-cell">Do not treat random third-party macOS VM images as trustworthy or automatically licensed.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-03-image-verification"
@@ -1920,73 +910,31 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-03-image-verification-r01" class="project-command child-01 uid-vmtest-ref-03-image-verification-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-03-image-verification-r01" class="project-command child-01 uid-vmtest-ref-03-image-verification-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Checksum</strong>
-  
-</div>
-<div class="project-split-cell">
-  Compare SHA256/SHA512 with the publisher's official checksum.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Checksum</strong></div>
+<div class="project-split-cell">Compare SHA256/SHA512 with the publisher's official checksum.</div></div>
 </div>
 <div id="child-vmtest-ref-03-image-verification-r02" class="project-command child-02 uid-vmtest-ref-03-image-verification-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Signature</strong>
-  
-</div>
-<div class="project-split-cell">
-  Where the project signs releases, verify the signature/key as documented.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Signature</strong></div>
+<div class="project-split-cell">Where the project signs releases, verify the signature/key as documented.</div></div>
 </div>
 <div id="child-vmtest-ref-03-image-verification-r03" class="project-command child-03 uid-vmtest-ref-03-image-verification-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Source</strong>
-  
-</div>
-<div class="project-split-cell">
-  Prefer official vendor/project download pages over mirrors linked from forums or videos.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Source</strong></div>
+<div class="project-split-cell">Prefer official vendor/project download pages over mirrors linked from forums or videos.</div></div>
 </div>
 <div id="child-vmtest-ref-03-image-verification-r04" class="project-command child-04 uid-vmtest-ref-03-image-verification-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Filename/architecture</strong>
-  
-</div>
-<div class="project-split-cell">
-  Confirm arm64/aarch64 versus amd64/x86_64 before creating the VM.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Filename/architecture</strong></div>
+<div class="project-split-cell">Confirm arm64/aarch64 versus amd64/x86_64 before creating the VM.</div></div>
 </div>
 <div id="child-vmtest-ref-03-image-verification-r05" class="project-command child-05 uid-vmtest-ref-03-image-verification-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Archive integrity</strong>
-  
-</div>
-<div class="project-split-cell">
-  Keep the original installer image until the VM is installed and verified.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Archive integrity</strong></div>
+<div class="project-split-cell">Keep the original installer image until the VM is installed and verified.</div></div>
+</div></div>
 </section>
 <div
   id="node-vmtest-ref-section-04-cross-browser-device-testing"
@@ -2014,93 +962,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-04-playwright-r01" class="project-command child-01 uid-vmtest-ref-04-playwright-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-04-playwright-r01" class="project-command child-01 uid-vmtest-ref-04-playwright-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Install</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm init playwright@latest</code>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer">Official Playwright installation</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Install</strong></div>
+<div class="project-split-cell"><code>npm init playwright@latest</code></div>
+<div class="project-split-cell"><a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer">Official Playwright installation</a></div></div>
 </div>
 <div id="child-vmtest-ref-04-playwright-r02" class="project-command child-02 uid-vmtest-ref-04-playwright-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Browsers</strong>
-  
-</div>
-<div class="project-split-cell">
-  Chromium, Firefox, WebKit.
-  
-</div>
-<div class="project-split-cell">
-  Runs locally or in CI on macOS, Linux, and Windows.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Browsers</strong></div>
+<div class="project-split-cell">Chromium, Firefox, WebKit.</div>
+<div class="project-split-cell">Runs locally or in CI on macOS, Linux, and Windows.</div></div>
 </div>
 <div id="child-vmtest-ref-04-playwright-r03" class="project-command child-03 uid-vmtest-ref-04-playwright-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Device profiles</strong>
-  
-</div>
-<div class="project-split-cell">
-  Built-in device registry for selected phones/tablets.
-  
-</div>
-<div class="project-split-cell">
-  Changes viewport, user agent, touch and related browser context.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Device profiles</strong></div>
+<div class="project-split-cell">Built-in device registry for selected phones/tablets.</div>
+<div class="project-split-cell">Changes viewport, user agent, touch and related browser context.</div></div>
 </div>
 <div id="child-vmtest-ref-04-playwright-r04" class="project-command child-04 uid-vmtest-ref-04-playwright-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Other emulation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Locale, timezone, geolocation, permissions, color scheme.
-  
-</div>
-<div class="project-split-cell">
-  Useful for repeatable environmental checks.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Other emulation</strong></div>
+<div class="project-split-cell">Locale, timezone, geolocation, permissions, color scheme.</div>
+<div class="project-split-cell">Useful for repeatable environmental checks.</div></div>
 </div>
 <div id="child-vmtest-ref-04-playwright-r05" class="project-command child-05 uid-vmtest-ref-04-playwright-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Emulated Mobile Safari uses WebKit/browser parameters; it is not the same as testing the Safari app on a physical iPhone.
-  
-</div>
-<div class="project-split-cell">
-  Use actual Safari/iOS for release-critical Safari behavior.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Limit</strong></div>
+<div class="project-split-cell">Emulated Mobile Safari uses WebKit/browser parameters; it is not the same as testing the Safari app on a physical iPhone.</div>
+<div class="project-split-cell">Use actual Safari/iOS for release-critical Safari behavior.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-04-selenium-grid"
@@ -2113,76 +1004,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-04-selenium-grid-r01" class="project-command child-01 uid-vmtest-ref-04-selenium-grid-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-04-selenium-grid-r01" class="project-command child-01 uid-vmtest-ref-04-selenium-grid-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Selenium</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.selenium.dev/downloads/" target="_blank" rel="noopener noreferrer">Selenium downloads</a>
-  
-</div>
-<div class="project-split-cell">
-  Open-source WebDriver ecosystem for major browsers.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Selenium</strong></div>
+<div class="project-split-cell"><a href="https://www.selenium.dev/downloads/" target="_blank" rel="noopener noreferrer">Selenium downloads</a></div>
+<div class="project-split-cell">Open-source WebDriver ecosystem for major browsers.</div></div>
 </div>
 <div id="child-vmtest-ref-04-selenium-grid-r02" class="project-command child-02 uid-vmtest-ref-04-selenium-grid-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Grid</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.selenium.dev/documentation/grid/" target="_blank" rel="noopener noreferrer">Selenium Grid docs</a>
-  
-</div>
-<div class="project-split-cell">
-  Runs tests on remote machines and multiple browser/OS combinations.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Grid</strong></div>
+<div class="project-split-cell"><a href="https://www.selenium.dev/documentation/grid/" target="_blank" rel="noopener noreferrer">Selenium Grid docs</a></div>
+<div class="project-split-cell">Runs tests on remote machines and multiple browser/OS combinations.</div></div>
 </div>
 <div id="child-vmtest-ref-04-selenium-grid-r03" class="project-command child-03 uid-vmtest-ref-04-selenium-grid-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Best use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Real Windows/Linux/macOS nodes and genuine installed browsers.
-  
-</div>
-<div class="project-split-cell">
-  Useful when VM/browser emulation is not enough.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Best use</strong></div>
+<div class="project-split-cell">Real Windows/Linux/macOS nodes and genuine installed browsers.</div>
+<div class="project-split-cell">Useful when VM/browser emulation is not enough.</div></div>
 </div>
 <div id="child-vmtest-ref-04-selenium-grid-r04" class="project-command child-04 uid-vmtest-ref-04-selenium-grid-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Security</strong>
-  
-</div>
-<div class="project-split-cell">
-  Keep Grid private/firewalled.
-  
-</div>
-<div class="project-split-cell">
-  Selenium explicitly warns against exposing Grid to untrusted networks.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Security</strong></div>
+<div class="project-split-cell">Keep Grid private/firewalled.</div>
+<div class="project-split-cell">Selenium explicitly warns against exposing Grid to untrusted networks.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-04-safari-webdriver"
@@ -2195,86 +1040,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-04-safari-webdriver-r01" class="project-command child-01 uid-vmtest-ref-04-safari-webdriver-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-04-safari-webdriver-r01" class="project-command child-01 uid-vmtest-ref-04-safari-webdriver-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>safaridriver</strong>
-  
-</div>
-<div class="project-split-cell">
-  Safari includes Apple's WebDriver implementation at /usr/bin/safaridriver.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>safaridriver</strong></div>
+<div class="project-split-cell">Safari includes Apple's WebDriver implementation at /usr/bin/safaridriver.</div></div>
 </div>
 <div id="child-vmtest-ref-04-safari-webdriver-r02" class="project-command child-02 uid-vmtest-ref-04-safari-webdriver-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>safaridriver --enable</strong>
-  
-</div>
-<div class="project-split-cell">
-  Enable Safari WebDriver support once on supported macOS versions.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>safaridriver --enable</strong></div>
+<div class="project-split-cell">Enable Safari WebDriver support once on supported macOS versions.</div></div>
 </div>
 <div id="child-vmtest-ref-04-safari-webdriver-r03" class="project-command child-03 uid-vmtest-ref-04-safari-webdriver-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Selenium</strong>
-  
-</div>
-<div class="project-split-cell">
-  Most Selenium libraries can launch Safari's native driver.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Selenium</strong></div>
+<div class="project-split-cell">Most Selenium libraries can launch Safari's native driver.</div></div>
 </div>
 <div id="child-vmtest-ref-04-safari-webdriver-r04" class="project-command child-04 uid-vmtest-ref-04-safari-webdriver-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Safari Technology Preview</strong>
-  
-</div>
-<div class="project-split-cell">
-  Has its own associated safaridriver for preview-engine testing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Safari Technology Preview</strong></div>
+<div class="project-split-cell">Has its own associated safaridriver for preview-engine testing.</div></div>
 </div>
 <div id="child-vmtest-ref-04-safari-webdriver-r05" class="project-command child-05 uid-vmtest-ref-04-safari-webdriver-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Real Safari browser automation on macOS.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Real Safari browser automation on macOS.</div></div>
 </div>
 <div id="child-vmtest-ref-04-safari-webdriver-r06" class="project-command child-06 uid-vmtest-ref-04-safari-webdriver-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Safari allows one active WebDriver automation session at a time.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Limit</strong></div>
+<div class="project-split-cell">Safari allows one active WebDriver automation session at a time.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-04-firefox-responsive-design-mode"
@@ -2287,99 +1082,41 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-04-firefox-responsive-design-mode-r01" class="project-command child-01 uid-vmtest-ref-04-firefox-responsive-design-mode-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-04-firefox-responsive-design-mode-r01" class="project-command child-01 uid-vmtest-ref-04-firefox-responsive-design-mode-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Cmd+Opt+M</strong>
-  
-</div>
-<div class="project-split-cell">
-  Toggle Firefox Responsive Design Mode on macOS.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Cmd+Opt+M</strong></div>
+<div class="project-split-cell">Toggle Firefox Responsive Design Mode on macOS.</div></div>
 </div>
 <div id="child-vmtest-ref-04-firefox-responsive-design-mode-r02" class="project-command child-02 uid-vmtest-ref-04-firefox-responsive-design-mode-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Viewport</strong>
-  
-</div>
-<div class="project-split-cell">
-  Simulate different screen dimensions.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Viewport</strong></div>
+<div class="project-split-cell">Simulate different screen dimensions.</div></div>
 </div>
 <div id="child-vmtest-ref-04-firefox-responsive-design-mode-r03" class="project-command child-03 uid-vmtest-ref-04-firefox-responsive-design-mode-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>DPR</strong>
-  
-</div>
-<div class="project-split-cell">
-  Test selected/custom device pixel ratios.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>DPR</strong></div>
+<div class="project-split-cell">Test selected/custom device pixel ratios.</div></div>
 </div>
 <div id="child-vmtest-ref-04-firefox-responsive-design-mode-r04" class="project-command child-04 uid-vmtest-ref-04-firefox-responsive-design-mode-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Touch</strong>
-  
-</div>
-<div class="project-split-cell">
-  Simulate touch events.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Touch</strong></div>
+<div class="project-split-cell">Simulate touch events.</div></div>
 </div>
 <div id="child-vmtest-ref-04-firefox-responsive-design-mode-r05" class="project-command child-05 uid-vmtest-ref-04-firefox-responsive-design-mode-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>User agent</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use preset/custom device user-agent strings.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>User agent</strong></div>
+<div class="project-split-cell">Use preset/custom device user-agent strings.</div></div>
 </div>
 <div id="child-vmtest-ref-04-firefox-responsive-design-mode-r06" class="project-command child-06 uid-vmtest-ref-04-firefox-responsive-design-mode-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Network throttle</strong>
-  
-</div>
-<div class="project-split-cell">
-  Approximate slower connection profiles.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Network throttle</strong></div>
+<div class="project-split-cell">Approximate slower connection profiles.</div></div>
 </div>
 <div id="child-vmtest-ref-04-firefox-responsive-design-mode-r07" class="project-command child-07 uid-vmtest-ref-04-firefox-responsive-design-mode-r07 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Quick manual responsive-layout and input-behavior checks.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Quick manual responsive-layout and input-behavior checks.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-04-xcode-simulator"
@@ -2392,76 +1129,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-04-xcode-simulator-r01" class="project-command child-01 uid-vmtest-ref-04-xcode-simulator-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-04-xcode-simulator-r01" class="project-command child-01 uid-vmtest-ref-04-xcode-simulator-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Install</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener noreferrer">Xcode / Apple Developer</a>
-  
-</div>
-<div class="project-split-cell">
-  First-party Apple development environment.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Install</strong></div>
+<div class="project-split-cell"><a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener noreferrer">Xcode / Apple Developer</a></div>
+<div class="project-split-cell">First-party Apple development environment.</div></div>
 </div>
 <div id="child-vmtest-ref-04-xcode-simulator-r02" class="project-command child-02 uid-vmtest-ref-04-xcode-simulator-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Targets</strong>
-  
-</div>
-<div class="project-split-cell">
-  iOS, iPadOS, watchOS, tvOS, visionOS simulators as supported by installed Xcode runtimes.
-  
-</div>
-<div class="project-split-cell">
-  Useful for app and WebKit-oriented device environment checks.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Targets</strong></div>
+<div class="project-split-cell">iOS, iPadOS, watchOS, tvOS, visionOS simulators as supported by installed Xcode runtimes.</div>
+<div class="project-split-cell">Useful for app and WebKit-oriented device environment checks.</div></div>
 </div>
 <div id="child-vmtest-ref-04-xcode-simulator-r03" class="project-command child-03 uid-vmtest-ref-04-xcode-simulator-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Strength</strong>
-  
-</div>
-<div class="project-split-cell">
-  Fast Apple-platform debugging without owning every device.
-  
-</div>
-<div class="project-split-cell">
-  Multiple simulated hardware profiles.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Strength</strong></div>
+<div class="project-split-cell">Fast Apple-platform debugging without owning every device.</div>
+<div class="project-split-cell">Multiple simulated hardware profiles.</div></div>
 </div>
 <div id="child-vmtest-ref-04-xcode-simulator-r04" class="project-command child-04 uid-vmtest-ref-04-xcode-simulator-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Apple states simulators do not reproduce all performance or hardware-specific features.
-  
-</div>
-<div class="project-split-cell">
-  Verify important behavior on physical Apple devices.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Limit</strong></div>
+<div class="project-split-cell">Apple states simulators do not reproduce all performance or hardware-specific features.</div>
+<div class="project-split-cell">Verify important behavior on physical Apple devices.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-04-android-emulator"
@@ -2474,76 +1165,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-04-android-emulator-r01" class="project-command child-01 uid-vmtest-ref-04-android-emulator-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-04-android-emulator-r01" class="project-command child-01 uid-vmtest-ref-04-android-emulator-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Install</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://developer.android.com/studio/install" target="_blank" rel="noopener noreferrer">Android Studio</a>
-  
-</div>
-<div class="project-split-cell">
-  Setup Wizard installs the Android SDK components needed for development.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Install</strong></div>
+<div class="project-split-cell"><a href="https://developer.android.com/studio/install" target="_blank" rel="noopener noreferrer">Android Studio</a></div>
+<div class="project-split-cell">Setup Wizard installs the Android SDK components needed for development.</div></div>
 </div>
 <div id="child-vmtest-ref-04-android-emulator-r02" class="project-command child-02 uid-vmtest-ref-04-android-emulator-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>AVD</strong>
-  
-</div>
-<div class="project-split-cell">
-  Create Android Virtual Devices for phone/tablet/API-level combinations.
-  
-</div>
-<div class="project-split-cell">
-  Useful for Chrome/mobile-web and Android app testing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>AVD</strong></div>
+<div class="project-split-cell">Create Android Virtual Devices for phone/tablet/API-level combinations.</div>
+<div class="project-split-cell">Useful for Chrome/mobile-web and Android app testing.</div></div>
 </div>
 <div id="child-vmtest-ref-04-android-emulator-r03" class="project-command child-03 uid-vmtest-ref-04-android-emulator-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Apple Silicon</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use ARM-compatible emulator images.
-  
-</div>
-<div class="project-split-cell">
-  Avoid unnecessary cross-architecture emulation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Apple Silicon</strong></div>
+<div class="project-split-cell">Use ARM-compatible emulator images.</div>
+<div class="project-split-cell">Avoid unnecessary cross-architecture emulation.</div></div>
 </div>
 <div id="child-vmtest-ref-04-android-emulator-r04" class="project-command child-04 uid-vmtest-ref-04-android-emulator-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Emulator results still require physical-device validation for hardware/performance-sensitive behavior.
-  
-</div>
-<div class="project-split-cell">
-  Use USB/Wi-Fi connected Android devices for final checks.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Limit</strong></div>
+<div class="project-split-cell">Emulator results still require physical-device validation for hardware/performance-sensitive behavior.</div>
+<div class="project-split-cell">Use USB/Wi-Fi connected Android devices for final checks.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-04-physical-devices"
@@ -2556,73 +1201,31 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-04-physical-devices-r01" class="project-command child-01 uid-vmtest-ref-04-physical-devices-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-04-physical-devices-r01" class="project-command child-01 uid-vmtest-ref-04-physical-devices-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>iPhone/iPad</strong>
-  
-</div>
-<div class="project-split-cell">
-  Final Safari/touch/sensor/viewport validation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>iPhone/iPad</strong></div>
+<div class="project-split-cell">Final Safari/touch/sensor/viewport validation.</div></div>
 </div>
 <div id="child-vmtest-ref-04-physical-devices-r02" class="project-command child-02 uid-vmtest-ref-04-physical-devices-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Android phone/tablet</strong>
-  
-</div>
-<div class="project-split-cell">
-  Final Chrome/WebView/touch/device validation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Android phone/tablet</strong></div>
+<div class="project-split-cell">Final Chrome/WebView/touch/device validation.</div></div>
 </div>
 <div id="child-vmtest-ref-04-physical-devices-r03" class="project-command child-03 uid-vmtest-ref-04-physical-devices-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Windows PC</strong>
-  
-</div>
-<div class="project-split-cell">
-  Highest confidence for Windows font rendering, OS integration, and browser behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Windows PC</strong></div>
+<div class="project-split-cell">Highest confidence for Windows font rendering, OS integration, and browser behavior.</div></div>
 </div>
 <div id="child-vmtest-ref-04-physical-devices-r04" class="project-command child-04 uid-vmtest-ref-04-physical-devices-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Linux machine</strong>
-  
-</div>
-<div class="project-split-cell">
-  Useful when GPU, distribution, desktop environment, or kernel differences matter.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Linux machine</strong></div>
+<div class="project-split-cell">Useful when GPU, distribution, desktop environment, or kernel differences matter.</div></div>
 </div>
 <div id="child-vmtest-ref-04-physical-devices-r05" class="project-command child-05 uid-vmtest-ref-04-physical-devices-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Rule</strong>
-  
-</div>
-<div class="project-split-cell">
-  Do not buy every device: automate broad coverage, then keep a small representative physical-device set.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Rule</strong></div>
+<div class="project-split-cell">Do not buy every device: automate broad coverage, then keep a small representative physical-device set.</div></div>
+</div></div>
 </section>
 <div
   id="node-vmtest-ref-section-05-vm-test-lab-best-practices"
@@ -2650,73 +1253,31 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-05-clean-baselines-r01" class="project-command child-01 uid-vmtest-ref-05-clean-baselines-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-05-clean-baselines-r01" class="project-command child-01 uid-vmtest-ref-05-clean-baselines-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Patch first</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install current OS and browser security updates before creating a reusable baseline.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Patch first</strong></div>
+<div class="project-split-cell">Install current OS and browser security updates before creating a reusable baseline.</div></div>
 </div>
 <div id="child-vmtest-ref-05-clean-baselines-r02" class="project-command child-02 uid-vmtest-ref-05-clean-baselines-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Install minimum tools</strong>
-  
-</div>
-<div class="project-split-cell">
-  Keep baseline VMs lean; add only browsers, guest tools, certificates, and test dependencies you need.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Install minimum tools</strong></div>
+<div class="project-split-cell">Keep baseline VMs lean; add only browsers, guest tools, certificates, and test dependencies you need.</div></div>
 </div>
 <div id="child-vmtest-ref-05-clean-baselines-r03" class="project-command child-03 uid-vmtest-ref-05-clean-baselines-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Snapshot clean</strong>
-  
-</div>
-<div class="project-split-cell">
-  Create a clean snapshot before test data and experimental software.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Snapshot clean</strong></div>
+<div class="project-split-cell">Create a clean snapshot before test data and experimental software.</div></div>
 </div>
 <div id="child-vmtest-ref-05-clean-baselines-r04" class="project-command child-04 uid-vmtest-ref-05-clean-baselines-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Clone per purpose</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use separate clones for destructive testing, browser matrices, or different runtime versions.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Clone per purpose</strong></div>
+<div class="project-split-cell">Use separate clones for destructive testing, browser matrices, or different runtime versions.</div></div>
 </div>
 <div id="child-vmtest-ref-05-clean-baselines-r05" class="project-command child-05 uid-vmtest-ref-05-clean-baselines-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Reset after testing</strong>
-  
-</div>
-<div class="project-split-cell">
-  Return disposable VMs to a known state instead of accumulating unknown changes.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Reset after testing</strong></div>
+<div class="project-split-cell">Return disposable VMs to a known state instead of accumulating unknown changes.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-05-resources"
@@ -2729,73 +1290,31 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-05-resources-r01" class="project-command child-01 uid-vmtest-ref-05-resources-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-05-resources-r01" class="project-command child-01 uid-vmtest-ref-05-resources-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>CPU</strong>
-  
-</div>
-<div class="project-split-cell">
-  Assign enough virtual CPUs for the workload, but leave capacity for macOS.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>CPU</strong></div>
+<div class="project-split-cell">Assign enough virtual CPUs for the workload, but leave capacity for macOS.</div></div>
 </div>
 <div id="child-vmtest-ref-05-resources-r02" class="project-command child-02 uid-vmtest-ref-05-resources-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>RAM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Avoid memory pressure on the host; macOS swapping can make VM/browser tests misleadingly slow.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>RAM</strong></div>
+<div class="project-split-cell">Avoid memory pressure on the host; macOS swapping can make VM/browser tests misleadingly slow.</div></div>
 </div>
 <div id="child-vmtest-ref-05-resources-r03" class="project-command child-03 uid-vmtest-ref-05-resources-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Disk</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use enough headroom for OS updates, browser caches, SDKs, and snapshots.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Disk</strong></div>
+<div class="project-split-cell">Use enough headroom for OS updates, browser caches, SDKs, and snapshots.</div></div>
 </div>
 <div id="child-vmtest-ref-05-resources-r04" class="project-command child-04 uid-vmtest-ref-05-resources-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>GPU</strong>
-  
-</div>
-<div class="project-split-cell">
-  Know whether the VM product supports the graphics acceleration your workload requires.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>GPU</strong></div>
+<div class="project-split-cell">Know whether the VM product supports the graphics acceleration your workload requires.</div></div>
 </div>
 <div id="child-vmtest-ref-05-resources-r05" class="project-command child-05 uid-vmtest-ref-05-resources-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Battery</strong>
-  
-</div>
-<div class="project-split-cell">
-  Expect VMs and emulators to increase CPU use and battery drain on laptops.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Battery</strong></div>
+<div class="project-split-cell">Expect VMs and emulators to increase CPU use and battery drain on laptops.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-05-networking-modes"
@@ -2808,76 +1327,30 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-05-networking-modes-r01" class="project-command child-01 uid-vmtest-ref-05-networking-modes-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-05-networking-modes-r01" class="project-command child-01 uid-vmtest-ref-05-networking-modes-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>NAT/shared</strong>
-  
-</div>
-<div class="project-split-cell">
-  Guest reaches the network through the host.
-  
-</div>
-<div class="project-split-cell">
-  Safest/default choice for most web-development VMs.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>NAT/shared</strong></div>
+<div class="project-split-cell">Guest reaches the network through the host.</div>
+<div class="project-split-cell">Safest/default choice for most web-development VMs.</div></div>
 </div>
 <div id="child-vmtest-ref-05-networking-modes-r02" class="project-command child-02 uid-vmtest-ref-05-networking-modes-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Bridged</strong>
-  
-</div>
-<div class="project-split-cell">
-  Guest appears as another machine on the LAN.
-  
-</div>
-<div class="project-split-cell">
-  Useful for device-to-VM access; increases network exposure.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Bridged</strong></div>
+<div class="project-split-cell">Guest appears as another machine on the LAN.</div>
+<div class="project-split-cell">Useful for device-to-VM access; increases network exposure.</div></div>
 </div>
 <div id="child-vmtest-ref-05-networking-modes-r03" class="project-command child-03 uid-vmtest-ref-05-networking-modes-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Host-only</strong>
-  
-</div>
-<div class="project-split-cell">
-  Guest communicates with host/private VM network without normal outside exposure.
-  
-</div>
-<div class="project-split-cell">
-  Useful for isolated labs and local services.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Host-only</strong></div>
+<div class="project-split-cell">Guest communicates with host/private VM network without normal outside exposure.</div>
+<div class="project-split-cell">Useful for isolated labs and local services.</div></div>
 </div>
 <div id="child-vmtest-ref-05-networking-modes-r04" class="project-command child-04 uid-vmtest-ref-05-networking-modes-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Port forwarding</strong>
-  
-</div>
-<div class="project-split-cell">
-  Expose selected guest ports through the host.
-  
-</div>
-<div class="project-split-cell">
-  Prefer explicit ports over broad bridged exposure when possible.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Port forwarding</strong></div>
+<div class="project-split-cell">Expose selected guest ports through the host.</div>
+<div class="project-split-cell">Prefer explicit ports over broad bridged exposure when possible.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-05-security"
@@ -2890,99 +1363,41 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-05-security-r01" class="project-command child-01 uid-vmtest-ref-05-security-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-05-security-r01" class="project-command child-01 uid-vmtest-ref-05-security-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Untrusted images</strong>
-  
-</div>
-<div class="project-split-cell">
-  Do not run random prebuilt VMs from unknown sources.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Untrusted images</strong></div>
+<div class="project-split-cell">Do not run random prebuilt VMs from unknown sources.</div></div>
 </div>
 <div id="child-vmtest-ref-05-security-r02" class="project-command child-02 uid-vmtest-ref-05-security-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Credentials</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use test accounts and disposable tokens rather than production secrets.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Credentials</strong></div>
+<div class="project-split-cell">Use test accounts and disposable tokens rather than production secrets.</div></div>
 </div>
 <div id="child-vmtest-ref-05-security-r03" class="project-command child-03 uid-vmtest-ref-05-security-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Shared folders</strong>
-  
-</div>
-<div class="project-split-cell">
-  Share only directories required for testing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Shared folders</strong></div>
+<div class="project-split-cell">Share only directories required for testing.</div></div>
 </div>
 <div id="child-vmtest-ref-05-security-r04" class="project-command child-04 uid-vmtest-ref-05-security-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Clipboard</strong>
-  
-</div>
-<div class="project-split-cell">
-  Disable shared clipboard for untrusted guests.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Clipboard</strong></div>
+<div class="project-split-cell">Disable shared clipboard for untrusted guests.</div></div>
 </div>
 <div id="child-vmtest-ref-05-security-r05" class="project-command child-05 uid-vmtest-ref-05-security-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Network</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use NAT/host-only when the guest does not need LAN exposure.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Network</strong></div>
+<div class="project-split-cell">Use NAT/host-only when the guest does not need LAN exposure.</div></div>
 </div>
 <div id="child-vmtest-ref-05-security-r06" class="project-command child-06 uid-vmtest-ref-05-security-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Snapshots</strong>
-  
-</div>
-<div class="project-split-cell">
-  A snapshot is not a substitute for a backup of important source/data.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Snapshots</strong></div>
+<div class="project-split-cell">A snapshot is not a substitute for a backup of important source/data.</div></div>
 </div>
 <div id="child-vmtest-ref-05-security-r07" class="project-command child-07 uid-vmtest-ref-05-security-r07 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Grid</strong>
-  
-</div>
-<div class="project-split-cell">
-  Do not expose Selenium Grid publicly.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Grid</strong></div>
+<div class="project-split-cell">Do not expose Selenium Grid publicly.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-05-reproducibility"
@@ -2995,86 +1410,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-05-reproducibility-r01" class="project-command child-01 uid-vmtest-ref-05-reproducibility-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-05-reproducibility-r01" class="project-command child-01 uid-vmtest-ref-05-reproducibility-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Record guest OS</strong>
-  
-</div>
-<div class="project-split-cell">
-  Document version and architecture.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Record guest OS</strong></div>
+<div class="project-split-cell">Document version and architecture.</div></div>
 </div>
 <div id="child-vmtest-ref-05-reproducibility-r02" class="project-command child-02 uid-vmtest-ref-05-reproducibility-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Record VM software</strong>
-  
-</div>
-<div class="project-split-cell">
-  Document UTM/VirtualBox/QEMU/Lima version when compatibility matters.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Record VM software</strong></div>
+<div class="project-split-cell">Document UTM/VirtualBox/QEMU/Lima version when compatibility matters.</div></div>
 </div>
 <div id="child-vmtest-ref-05-reproducibility-r03" class="project-command child-03 uid-vmtest-ref-05-reproducibility-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Record browsers</strong>
-  
-</div>
-<div class="project-split-cell">
-  Capture browser versions for reproduced defects.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Record browsers</strong></div>
+<div class="project-split-cell">Capture browser versions for reproduced defects.</div></div>
 </div>
 <div id="child-vmtest-ref-05-reproducibility-r04" class="project-command child-04 uid-vmtest-ref-05-reproducibility-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Automate setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use scripts/package manifests for dependencies where practical.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Automate setup</strong></div>
+<div class="project-split-cell">Use scripts/package manifests for dependencies where practical.</div></div>
 </div>
 <div id="child-vmtest-ref-05-reproducibility-r05" class="project-command child-05 uid-vmtest-ref-05-reproducibility-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Name snapshots</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use names such as clean-install, browsers-installed, pre-upgrade.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Name snapshots</strong></div>
+<div class="project-split-cell">Use names such as clean-install, browsers-installed, pre-upgrade.</div></div>
 </div>
 <div id="child-vmtest-ref-05-reproducibility-r06" class="project-command child-06 uid-vmtest-ref-05-reproducibility-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Keep test data</strong>
-  
-</div>
-<div class="project-split-cell">
-  Store fixtures outside disposable VMs or regenerate them automatically.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Keep test data</strong></div>
+<div class="project-split-cell">Store fixtures outside disposable VMs or regenerate them automatically.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-05-snapshots-vs-backups"
@@ -3087,73 +1452,31 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-05-snapshots-vs-backups-r01" class="project-command child-01 uid-vmtest-ref-05-snapshots-vs-backups-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-05-snapshots-vs-backups-r01" class="project-command child-01 uid-vmtest-ref-05-snapshots-vs-backups-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Snapshot</strong>
-  
-</div>
-<div class="project-split-cell">
-  Fast rollback point tied to the VM's virtual disks/configuration.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Snapshot</strong></div>
+<div class="project-split-cell">Fast rollback point tied to the VM's virtual disks/configuration.</div></div>
 </div>
 <div id="child-vmtest-ref-05-snapshots-vs-backups-r02" class="project-command child-02 uid-vmtest-ref-05-snapshots-vs-backups-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Clone</strong>
-  
-</div>
-<div class="project-split-cell">
-  Separate VM derived from another VM.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Clone</strong></div>
+<div class="project-split-cell">Separate VM derived from another VM.</div></div>
 </div>
 <div id="child-vmtest-ref-05-snapshots-vs-backups-r03" class="project-command child-03 uid-vmtest-ref-05-snapshots-vs-backups-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Export/archive</strong>
-  
-</div>
-<div class="project-split-cell">
-  Portable copy for longer-term storage or transfer when the VM product supports it.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Export/archive</strong></div>
+<div class="project-split-cell">Portable copy for longer-term storage or transfer when the VM product supports it.</div></div>
 </div>
 <div id="child-vmtest-ref-05-snapshots-vs-backups-r04" class="project-command child-04 uid-vmtest-ref-05-snapshots-vs-backups-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Source backup</strong>
-  
-</div>
-<div class="project-split-cell">
-  Keep project source in Git/normal backups, not solely inside a VM.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Source backup</strong></div>
+<div class="project-split-cell">Keep project source in Git/normal backups, not solely inside a VM.</div></div>
 </div>
 <div id="child-vmtest-ref-05-snapshots-vs-backups-r05" class="project-command child-05 uid-vmtest-ref-05-snapshots-vs-backups-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Database backup</strong>
-  
-</div>
-<div class="project-split-cell">
-  Export important databases separately before destructive environment testing.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Database backup</strong></div>
+<div class="project-split-cell">Export important databases separately before destructive environment testing.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-05-licensing"
@@ -3166,60 +1489,26 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-05-licensing-r01" class="project-command child-01 uid-vmtest-ref-05-licensing-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-05-licensing-r01" class="project-command child-01 uid-vmtest-ref-05-licensing-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Windows</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use official installation media and comply with Microsoft licensing/activation requirements.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Windows</strong></div>
+<div class="project-split-cell">Use official installation media and comply with Microsoft licensing/activation requirements.</div></div>
 </div>
 <div id="child-vmtest-ref-05-licensing-r02" class="project-command child-02 uid-vmtest-ref-05-licensing-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>macOS</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use macOS virtualization only on permitted Apple hardware/configurations.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>macOS</strong></div>
+<div class="project-split-cell">Use macOS virtualization only on permitted Apple hardware/configurations.</div></div>
 </div>
 <div id="child-vmtest-ref-05-licensing-r03" class="project-command child-03 uid-vmtest-ref-05-licensing-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>VirtualBox</strong>
-  
-</div>
-<div class="project-split-cell">
-  Base package is GPL; Extension Pack has separate Oracle licensing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>VirtualBox</strong></div>
+<div class="project-split-cell">Base package is GPL; Extension Pack has separate Oracle licensing.</div></div>
 </div>
 <div id="child-vmtest-ref-05-licensing-r04" class="project-command child-04 uid-vmtest-ref-05-licensing-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Open-source tools</strong>
-  
-</div>
-<div class="project-split-cell">
-  Open-source virtualization software does not make proprietary guest operating systems freely licensed.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Open-source tools</strong></div>
+<div class="project-split-cell">Open-source virtualization software does not make proprietary guest operating systems freely licensed.</div></div>
+</div></div>
 </section>
 <div
   id="node-vmtest-ref-section-06-practical-testing-matrix-workflow"
@@ -3247,86 +1536,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-06-fast-daily-web-loop-r01" class="project-command child-01 uid-vmtest-ref-06-fast-daily-web-loop-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-06-fast-daily-web-loop-r01" class="project-command child-01 uid-vmtest-ref-06-fast-daily-web-loop-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>1. Responsive</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check desktop/tablet/mobile breakpoints in browser responsive tools.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>1. Responsive</strong></div>
+<div class="project-split-cell">Check desktop/tablet/mobile breakpoints in browser responsive tools.</div></div>
 </div>
 <div id="child-vmtest-ref-06-fast-daily-web-loop-r02" class="project-command child-02 uid-vmtest-ref-06-fast-daily-web-loop-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>2. Browser trio</strong>
-  
-</div>
-<div class="project-split-cell">
-  Run Playwright Chromium + Firefox + WebKit.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>2. Browser trio</strong></div>
+<div class="project-split-cell">Run Playwright Chromium + Firefox + WebKit.</div></div>
 </div>
 <div id="child-vmtest-ref-06-fast-daily-web-loop-r03" class="project-command child-03 uid-vmtest-ref-06-fast-daily-web-loop-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>3. Safari</strong>
-  
-</div>
-<div class="project-split-cell">
-  Open the page in actual Safari on macOS.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>3. Safari</strong></div>
+<div class="project-split-cell">Open the page in actual Safari on macOS.</div></div>
 </div>
 <div id="child-vmtest-ref-06-fast-daily-web-loop-r04" class="project-command child-04 uid-vmtest-ref-06-fast-daily-web-loop-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>4. Accessibility</strong>
-  
-</div>
-<div class="project-split-cell">
-  Run automated checks and inspect keyboard/focus behavior manually.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>4. Accessibility</strong></div>
+<div class="project-split-cell">Run automated checks and inspect keyboard/focus behavior manually.</div></div>
 </div>
 <div id="child-vmtest-ref-06-fast-daily-web-loop-r05" class="project-command child-05 uid-vmtest-ref-06-fast-daily-web-loop-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>5. Network</strong>
-  
-</div>
-<div class="project-split-cell">
-  Test at least one throttled/slow-network profile.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>5. Network</strong></div>
+<div class="project-split-cell">Test at least one throttled/slow-network profile.</div></div>
 </div>
 <div id="child-vmtest-ref-06-fast-daily-web-loop-r06" class="project-command child-06 uid-vmtest-ref-06-fast-daily-web-loop-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>6. Errors</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check console, network failures, failed assets, and layout overflow.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>6. Errors</strong></div>
+<div class="project-split-cell">Check console, network failures, failed assets, and layout overflow.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-06-before-release"
@@ -3339,86 +1578,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-06-before-release-r01" class="project-command child-01 uid-vmtest-ref-06-before-release-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-06-before-release-r01" class="project-command child-01 uid-vmtest-ref-06-before-release-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Windows VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Verify Edge/Chrome/Firefox and any Windows-specific font/layout issues.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Windows VM</strong></div>
+<div class="project-split-cell">Verify Edge/Chrome/Firefox and any Windows-specific font/layout issues.</div></div>
 </div>
 <div id="child-vmtest-ref-06-before-release-r02" class="project-command child-02 uid-vmtest-ref-06-before-release-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Linux VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Verify Firefox/Chrome and system-level behavior if Linux users matter.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Linux VM</strong></div>
+<div class="project-split-cell">Verify Firefox/Chrome and system-level behavior if Linux users matter.</div></div>
 </div>
 <div id="child-vmtest-ref-06-before-release-r03" class="project-command child-03 uid-vmtest-ref-06-before-release-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>iOS Simulator</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check Apple mobile layouts/app flows.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>iOS Simulator</strong></div>
+<div class="project-split-cell">Check Apple mobile layouts/app flows.</div></div>
 </div>
 <div id="child-vmtest-ref-06-before-release-r04" class="project-command child-04 uid-vmtest-ref-06-before-release-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Android Emulator</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check Android mobile layouts/app flows.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Android Emulator</strong></div>
+<div class="project-split-cell">Check Android mobile layouts/app flows.</div></div>
 </div>
 <div id="child-vmtest-ref-06-before-release-r05" class="project-command child-05 uid-vmtest-ref-06-before-release-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Physical iPhone/iPad</strong>
-  
-</div>
-<div class="project-split-cell">
-  Confirm real Safari/touch behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Physical iPhone/iPad</strong></div>
+<div class="project-split-cell">Confirm real Safari/touch behavior.</div></div>
 </div>
 <div id="child-vmtest-ref-06-before-release-r06" class="project-command child-06 uid-vmtest-ref-06-before-release-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Physical Android</strong>
-  
-</div>
-<div class="project-split-cell">
-  Confirm real Chrome/touch behavior.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Physical Android</strong></div>
+<div class="project-split-cell">Confirm real Chrome/touch behavior.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-06-what-each-layer-can-prove"
@@ -3431,93 +1620,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-06-what-each-layer-can-prove-r01" class="project-command child-01 uid-vmtest-ref-06-what-each-layer-can-prove-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-06-what-each-layer-can-prove-r01" class="project-command child-01 uid-vmtest-ref-06-what-each-layer-can-prove-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Responsive DevTools</strong>
-  
-</div>
-<div class="project-split-cell">
-  CSS/layout at simulated viewport/device parameters.
-  
-</div>
-<div class="project-split-cell">
-  Cannot prove actual mobile browser/OS/hardware behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Responsive DevTools</strong></div>
+<div class="project-split-cell">CSS/layout at simulated viewport/device parameters.</div>
+<div class="project-split-cell">Cannot prove actual mobile browser/OS/hardware behavior.</div></div>
 </div>
 <div id="child-vmtest-ref-06-what-each-layer-can-prove-r02" class="project-command child-02 uid-vmtest-ref-06-what-each-layer-can-prove-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Playwright emulation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Repeatable browser-context/device-profile behavior.
-  
-</div>
-<div class="project-split-cell">
-  Not a physical device.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Playwright emulation</strong></div>
+<div class="project-split-cell">Repeatable browser-context/device-profile behavior.</div>
+<div class="project-split-cell">Not a physical device.</div></div>
 </div>
 <div id="child-vmtest-ref-06-what-each-layer-can-prove-r03" class="project-command child-03 uid-vmtest-ref-06-what-each-layer-can-prove-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Simulator/emulator</strong>
-  
-</div>
-<div class="project-split-cell">
-  OS/API/device-profile behavior in a simulated/emulated environment.
-  
-</div>
-<div class="project-split-cell">
-  Hardware/performance may differ.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Simulator/emulator</strong></div>
+<div class="project-split-cell">OS/API/device-profile behavior in a simulated/emulated environment.</div>
+<div class="project-split-cell">Hardware/performance may differ.</div></div>
 </div>
 <div id="child-vmtest-ref-06-what-each-layer-can-prove-r04" class="project-command child-04 uid-vmtest-ref-06-what-each-layer-can-prove-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Real guest OS and installed desktop browsers/tools.
-  
-</div>
-<div class="project-split-cell">
-  Virtual hardware can differ from physical hardware.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>VM</strong></div>
+<div class="project-split-cell">Real guest OS and installed desktop browsers/tools.</div>
+<div class="project-split-cell">Virtual hardware can differ from physical hardware.</div></div>
 </div>
 <div id="child-vmtest-ref-06-what-each-layer-can-prove-r05" class="project-command child-05 uid-vmtest-ref-06-what-each-layer-can-prove-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Physical device</strong>
-  
-</div>
-<div class="project-split-cell">
-  Highest confidence for actual hardware/browser/OS interaction.
-  
-</div>
-<div class="project-split-cell">
-  Slowest and most expensive layer to scale.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Physical device</strong></div>
+<div class="project-split-cell">Highest confidence for actual hardware/browser/OS interaction.</div>
+<div class="project-split-cell">Slowest and most expensive layer to scale.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-06-suggested-macos-web-lab"
@@ -3530,110 +1662,42 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-06-suggested-macos-web-lab-r01" class="project-command child-01 uid-vmtest-ref-06-suggested-macos-web-lab-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-06-suggested-macos-web-lab-r01" class="project-command child-01 uid-vmtest-ref-06-suggested-macos-web-lab-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Host Mac</strong>
-  
-</div>
-<div class="project-split-cell">
-  Safari + Chrome + Firefox + Playwright.
-  
-</div>
-<div class="project-split-cell">
-  Primary daily development and automation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Host Mac</strong></div>
+<div class="project-split-cell">Safari + Chrome + Firefox + Playwright.</div>
+<div class="project-split-cell">Primary daily development and automation.</div></div>
 </div>
 <div id="child-vmtest-ref-06-suggested-macos-web-lab-r02" class="project-command child-02 uid-vmtest-ref-06-suggested-macos-web-lab-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Windows 11 ARM VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Edge + Chrome + Firefox.
-  
-</div>
-<div class="project-split-cell">
-  Desktop Windows compatibility.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Windows 11 ARM VM</strong></div>
+<div class="project-split-cell">Edge + Chrome + Firefox.</div>
+<div class="project-split-cell">Desktop Windows compatibility.</div></div>
 </div>
 <div id="child-vmtest-ref-06-suggested-macos-web-lab-r03" class="project-command child-03 uid-vmtest-ref-06-suggested-macos-web-lab-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Ubuntu/Fedora ARM64 VM</strong>
-  
-</div>
-<div class="project-split-cell">
-  Firefox + Chromium/Chrome.
-  
-</div>
-<div class="project-split-cell">
-  Linux desktop compatibility.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Ubuntu/Fedora ARM64 VM</strong></div>
+<div class="project-split-cell">Firefox + Chromium/Chrome.</div>
+<div class="project-split-cell">Linux desktop compatibility.</div></div>
 </div>
 <div id="child-vmtest-ref-06-suggested-macos-web-lab-r04" class="project-command child-04 uid-vmtest-ref-06-suggested-macos-web-lab-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Xcode Simulator</strong>
-  
-</div>
-<div class="project-split-cell">
-  iPhone/iPad profiles.
-  
-</div>
-<div class="project-split-cell">
-  Apple mobile environment.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Xcode Simulator</strong></div>
+<div class="project-split-cell">iPhone/iPad profiles.</div>
+<div class="project-split-cell">Apple mobile environment.</div></div>
 </div>
 <div id="child-vmtest-ref-06-suggested-macos-web-lab-r05" class="project-command child-05 uid-vmtest-ref-06-suggested-macos-web-lab-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Android Emulator</strong>
-  
-</div>
-<div class="project-split-cell">
-  Pixel/Android API profiles.
-  
-</div>
-<div class="project-split-cell">
-  Android mobile environment.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Android Emulator</strong></div>
+<div class="project-split-cell">Pixel/Android API profiles.</div>
+<div class="project-split-cell">Android mobile environment.</div></div>
 </div>
 <div id="child-vmtest-ref-06-suggested-macos-web-lab-r06" class="project-command child-06 uid-vmtest-ref-06-suggested-macos-web-lab-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <strong>Real devices</strong>
-  
-</div>
-<div class="project-split-cell">
-  One current iPhone/iPad and one representative Android device.
-  
-</div>
-<div class="project-split-cell">
-  Final physical validation.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><strong>Real devices</strong></div>
+<div class="project-split-cell">One current iPhone/iPad and one representative Android device.</div>
+<div class="project-split-cell">Final physical validation.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm"
@@ -3646,73 +1710,31 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r01" class="project-command child-01 uid-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r01" class="project-command child-01 uid-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>CLI/runtime testing</strong>
-  
-</div>
-<div class="project-split-cell">
-  Lima is excellent when you need Linux shell, packages, databases, build tools, or server processes.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>CLI/runtime testing</strong></div>
+<div class="project-split-cell">Lima is excellent when you need Linux shell, packages, databases, build tools, or server processes.</div></div>
 </div>
 <div id="child-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r02" class="project-command child-02 uid-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Container tooling</strong>
-  
-</div>
-<div class="project-split-cell">
-  Lima underpins/works with several container-oriented Mac workflows.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Container tooling</strong></div>
+<div class="project-split-cell">Lima underpins/works with several container-oriented Mac workflows.</div></div>
 </div>
 <div id="child-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r03" class="project-command child-03 uid-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>No desktop browser needed</strong>
-  
-</div>
-<div class="project-split-cell">
-  Avoid a full desktop VM when the test is purely server-side.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>No desktop browser needed</strong></div>
+<div class="project-split-cell">Avoid a full desktop VM when the test is purely server-side.</div></div>
 </div>
 <div id="child-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r04" class="project-command child-04 uid-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Port forwarding</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use automatically forwarded guest services from the Mac.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Port forwarding</strong></div>
+<div class="project-split-cell">Use automatically forwarded guest services from the Mac.</div></div>
 </div>
 <div id="child-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r05" class="project-command child-05 uid-vmtest-ref-06-when-to-use-lima-instead-of-desktop-vm-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>File sharing</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use host/guest shared development directories instead of duplicating repositories.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>File sharing</strong></div>
+<div class="project-split-cell">Use host/guest shared development directories instead of duplicating repositories.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-06-troubleshooting-vm-setup"
@@ -3725,99 +1747,41 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-06-troubleshooting-vm-setup-r01" class="project-command child-01 uid-vmtest-ref-06-troubleshooting-vm-setup-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-06-troubleshooting-vm-setup-r01" class="project-command child-01 uid-vmtest-ref-06-troubleshooting-vm-setup-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Guest will not boot</strong>
-  
-</div>
-<div class="project-split-cell">
-  Confirm installer architecture matches the VM architecture.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Guest will not boot</strong></div>
+<div class="project-split-cell">Confirm installer architecture matches the VM architecture.</div></div>
 </div>
 <div id="child-vmtest-ref-06-troubleshooting-vm-setup-r02" class="project-command child-02 uid-vmtest-ref-06-troubleshooting-vm-setup-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Very slow guest</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check whether you accidentally chose emulation instead of virtualization.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Very slow guest</strong></div>
+<div class="project-split-cell">Check whether you accidentally chose emulation instead of virtualization.</div></div>
 </div>
 <div id="child-vmtest-ref-06-troubleshooting-vm-setup-r03" class="project-command child-03 uid-vmtest-ref-06-troubleshooting-vm-setup-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>No network</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check VM network mode, DHCP/NAT, guest firewall, and DNS.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>No network</strong></div>
+<div class="project-split-cell">Check VM network mode, DHCP/NAT, guest firewall, and DNS.</div></div>
 </div>
 <div id="child-vmtest-ref-06-troubleshooting-vm-setup-r04" class="project-command child-04 uid-vmtest-ref-06-troubleshooting-vm-setup-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Cannot reach dev server</strong>
-  
-</div>
-<div class="project-split-cell">
-  Bind the server to an address reachable from the guest and configure port forwarding/network mode.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Cannot reach dev server</strong></div>
+<div class="project-split-cell">Bind the server to an address reachable from the guest and configure port forwarding/network mode.</div></div>
 </div>
 <div id="child-vmtest-ref-06-troubleshooting-vm-setup-r05" class="project-command child-05 uid-vmtest-ref-06-troubleshooting-vm-setup-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Clipboard/shared folder missing</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install/enable the VM product's guest integration tools.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Clipboard/shared folder missing</strong></div>
+<div class="project-split-cell">Install/enable the VM product's guest integration tools.</div></div>
 </div>
 <div id="child-vmtest-ref-06-troubleshooting-vm-setup-r06" class="project-command child-06 uid-vmtest-ref-06-troubleshooting-vm-setup-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Display poor</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check guest tools, resolution, graphics mode, and whether acceleration is supported.
-  
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Display poor</strong></div>
+<div class="project-split-cell">Check guest tools, resolution, graphics mode, and whether acceleration is supported.</div></div>
 </div>
 <div id="child-vmtest-ref-06-troubleshooting-vm-setup-r07" class="project-command child-07 uid-vmtest-ref-06-troubleshooting-vm-setup-r07 vmtest-reference-row">
   
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <strong>Disk full</strong>
-  
-</div>
-<div class="project-split-cell">
-  Expand virtual storage or clean caches/snapshots after backing up important data.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><strong>Disk full</strong></div>
+<div class="project-split-cell">Expand virtual storage or clean caches/snapshots after backing up important data.</div></div>
+</div></div>
 </section>
 <section
   id="node-vmtest-ref-06-official-reference-links"
@@ -3830,198 +1794,90 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-vmtest-ref-06-official-reference-links-r01" class="project-command child-01 uid-vmtest-ref-06-official-reference-links-r01 vmtest-reference-row">
+  <div class="project-command-list"><div id="child-vmtest-ref-06-official-reference-links-r01" class="project-command child-01 uid-vmtest-ref-06-official-reference-links-r01 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>UTM</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer">UTM</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>UTM</strong></div>
+<div class="project-split-cell"><a href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer">UTM</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r02" class="project-command child-02 uid-vmtest-ref-06-official-reference-links-r02 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>QEMU</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.qemu.org/download/" target="_blank" rel="noopener noreferrer">QEMU Downloads</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>QEMU</strong></div>
+<div class="project-split-cell"><a href="https://www.qemu.org/download/" target="_blank" rel="noopener noreferrer">QEMU Downloads</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r03" class="project-command child-03 uid-vmtest-ref-06-official-reference-links-r03 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>VirtualBox</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">VirtualBox Downloads</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>VirtualBox</strong></div>
+<div class="project-split-cell"><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer">VirtualBox Downloads</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r04" class="project-command child-04 uid-vmtest-ref-06-official-reference-links-r04 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Lima</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://lima-vm.io/" target="_blank" rel="noopener noreferrer">Lima</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Lima</strong></div>
+<div class="project-split-cell"><a href="https://lima-vm.io/" target="_blank" rel="noopener noreferrer">Lima</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r05" class="project-command child-05 uid-vmtest-ref-06-official-reference-links-r05 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Ubuntu</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener noreferrer">Ubuntu Desktop</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Ubuntu</strong></div>
+<div class="project-split-cell"><a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener noreferrer">Ubuntu Desktop</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r06" class="project-command child-06 uid-vmtest-ref-06-official-reference-links-r06 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Fedora</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.fedoraproject.org/workstation/download/" target="_blank" rel="noopener noreferrer">Fedora Workstation</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Fedora</strong></div>
+<div class="project-split-cell"><a href="https://www.fedoraproject.org/workstation/download/" target="_blank" rel="noopener noreferrer">Fedora Workstation</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r07" class="project-command child-07 uid-vmtest-ref-06-official-reference-links-r07 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Debian</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.debian.org/CD/" target="_blank" rel="noopener noreferrer">Debian Installation Media</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Debian</strong></div>
+<div class="project-split-cell"><a href="https://www.debian.org/CD/" target="_blank" rel="noopener noreferrer">Debian Installation Media</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r08" class="project-command child-08 uid-vmtest-ref-06-official-reference-links-r08 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Playwright</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer">Playwright</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Playwright</strong></div>
+<div class="project-split-cell"><a href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer">Playwright</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r09" class="project-command child-09 uid-vmtest-ref-06-official-reference-links-r09 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Selenium</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://www.selenium.dev/documentation/grid/" target="_blank" rel="noopener noreferrer">Selenium Grid</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Selenium</strong></div>
+<div class="project-split-cell"><a href="https://www.selenium.dev/documentation/grid/" target="_blank" rel="noopener noreferrer">Selenium Grid</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r10" class="project-command child-10 uid-vmtest-ref-06-official-reference-links-r10 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Xcode</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener noreferrer">Xcode</a>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Xcode</strong></div>
+<div class="project-split-cell"><a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener noreferrer">Xcode</a></div></div>
 </div>
 <div id="child-vmtest-ref-06-official-reference-links-r11" class="project-command child-11 uid-vmtest-ref-06-official-reference-links-r11 vmtest-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Android Studio</strong>
-  
-</div>
-<div class="project-split-cell">
-  <a href="https://developer.android.com/studio/install" target="_blank" rel="noopener noreferrer">Android Studio</a>
-  
-</div>
-  </div>
-</div>
-  </div>
-</section>
-</article>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Android Studio</strong></div>
+<div class="project-split-cell"><a href="https://developer.android.com/studio/install" target="_blank" rel="noopener noreferrer">Android Studio</a></div></div>
+</div></div>
+</section></article>
 </div>
       </section>
     </main>
 
-    <footer>
-  <nav aria-label="Developer tools">
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado/developer-sandbox',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    <footer class="home-footer page-frame full-frame">
+  <nav class="footer-links" aria-label="Developer Sandbox resources">
+    <a href="https://github.com/susanndelgado/developer-sandbox">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" />
+      </svg>
       Sandbox Repo
-    </button>
-
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    </a>
+    <a href="https://github.com/susanndelgado">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" />
+      </svg>
       GitHub
-    </button>
-
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
-      <span aria-hidden="true">⊙</span>
-      System Guide
-    </button>
-
-    <button type="button" onclick="window.location.href = 'database.html'">
-      <span aria-hidden="true">◉</span>
-      Database
-    </button>
+    </a>
+    <a href="system-guide.html">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
+      Documentation
+    </a>
   </nav>
+
+  <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
+  <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
-  <script src="assets/script.js"></script>
-  </body>
-</html>
+

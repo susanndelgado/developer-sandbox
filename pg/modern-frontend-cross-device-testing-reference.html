@@ -15,436 +15,203 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="reference">
-    <header>
-  <a class="brand" href="index.html">
+  <body id="pg" class="site-page app-shell" data-section="reference">
+    <header class="home-header page-frame full-frame">
+  <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
-
-    <span>
+    <span class="brand-copy">
       <strong>DEVELOPER SANDBOX</strong>
       <small>Academy of Mastery</small>
     </span>
   </a>
 
-  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button
-      type="button"
-      data-nav-section="home"
-      onclick="window.location.href = 'index.html'"
-    >
-      <span aria-hidden="true">⌂</span>
+  <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
+    <a class="nav-link" data-nav-section="home" href="index.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
+      </svg>
       Home
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="projects"
-      onclick="window.location.href = 'library.html'"
-    >
-      <span aria-hidden="true">▱</span>
+    </a>
+    <a class="nav-link" data-nav-section="projects" href="library.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+      </svg>
       Projects
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="reference"
-      onclick="window.location.href = 'pg/angular-reference-guide.html'"
-    >
-      <span aria-hidden="true">▤</span>
+    </a>
+    <a class="nav-link" data-nav-section="reference" href="reference-guides.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
       Reference Guides
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="labs"
-      onclick="window.location.href = 'labs.html'"
-    >
-      <span aria-hidden="true">✦</span>
+    </a>
+    <a class="nav-link" data-nav-section="labs" href="labs.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+      </svg>
       Labs
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="system"
-      onclick="window.location.href = 'system-guide.html'"
-    >
-      <span aria-hidden="true">⊙</span>
+    </a>
+    <a class="nav-link" data-nav-section="system" href="system-guide.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.4" />
+        <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
+      </svg>
       System Guide
-    </button>
+    </a>
   </nav>
 
-  <div class="top-tools">
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="primary-nav"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="help">
-  <button
-    type="button"
-    aria-label="Read page information"
-  ></button>
-
-  <div>
-    <strong>Modern Front-End &amp; Cross-Device Testing Reference</strong>
-    <p>Modern web</p>
-  </div>
-</div>
-
-    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
-
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      onclick="window.location.href = 'https://sdelgado.com/work.html'"
-    >
-      ×
-    </button>
+  <div class="header-meta">
+    <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="5.5" />
+        <path d="m15.2 15.2 4.3 4.3" />
+      </svg>
+    </a>
+    <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
+    <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
   </div>
 </header>
 
 
-    <main class="view-all-page">
+    <main class="view-all-page app-main page-frame full-frame">
       
-<aside class="type-menu">
-  <header>
-    <h1>
-      Reference Guides
-    </h1>
-
-    <p>
-      Technical documentation, commands,
-      workflows, and development references.
-    </p>
-  </header>
-
-  <nav
-    class="project-types"
-    aria-label="Reference guides"
-  >
-    
-<button
-  type="button"
-  onclick="window.location.href = 'pg/angular-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<aside class="type-menu app-sidebar glass">
+  <header><h1>Reference Guides</h1><p>Technical documentation, commands, workflows, and development references.</p></header>
+  <nav class="project-types" aria-label="Reference guides">
+<a href="pg/angular-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Angular
-    </strong>
-
+    <strong>Angular</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/cross-device-web-testing.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Cross-Device Web Testing
-    </strong>
-
+    <strong>Cross-Device Web Testing</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/full-stack-developer-terminal-commands.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Terminal Commands
-    </strong>
-
+    <strong>Terminal Commands</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/nodejs-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Node.js
-    </strong>
-
+    <strong>Node.js</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/typescript-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      TypeScript
-    </strong>
-
+    <strong>TypeScript</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/php-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/php-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      PHP
-    </strong>
-
-    
-    <small>
-      macOS / PHP 8.x
-    </small>
+    <strong>PHP</strong>
+    <small>macOS / PHP 8.x</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-windows-terminal-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      macOS / Windows
-    </strong>
-
-    
-    <small>
-      PowerShell ↔ zsh
-    </small>
+    <strong>macOS / Windows</strong>
+    <small>PowerShell ↔ zsh</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/linux-command-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/linux-command-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Linux
-    </strong>
-
-    
-    <small>
-      Linux shell / CLI
-    </small>
+    <strong>Linux</strong>
+    <small>Linux shell / CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL
-    </strong>
-
-    
-    <small>
-      Relational SQL
-    </small>
+    <strong>SQL</strong>
+    <small>Relational SQL</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-vs-postgresql-psql-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL / PostgreSQL
-    </strong>
-
-    
-    <small>
-      Language ↔ DBMS ↔ CLI
-    </small>
+    <strong>SQL / PostgreSQL</strong>
+    <small>Language ↔ DBMS ↔ CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/java-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/java-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Java
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>Java</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-vm-cross-device-testing-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      VM / Device Testing
-    </strong>
-
-    
-    <small>
-      Virtual machines, browsers &amp; device testing
-    </small>
+    <strong>VM / Device Testing</strong>
+    <small>Virtual machines, browsers &amp; device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button" aria-current="true"
-  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/modern-frontend-cross-device-testing-reference.html" aria-current="true">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Modern Front-End
-    </strong>
-
-    
-    <small>
-      jQuery alternatives • modern UI • cross-device testing
-    </small>
+    <strong>Modern Front-End</strong>
+    <small>jQuery alternatives • modern UI • cross-device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/csharp-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      C#
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>C#</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/python-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/python-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Python
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Collections • Control Flow • Functions • Objects
-    </small>
+    <strong>Python</strong>
+    <small>Syntax • Types • Collections • Control Flow • Functions • Objects</small>
   </span>
-</button>
-  </nav>
+</a></nav>
 </aside>
 
-      <section class="project-content">
+      <section class="project-content app-content glass">
         <div id="preview" class="preview">
 
 <header>
   <div>
-    <small>
-      REFERENCE GUIDE
-    </small>
-
-    <h2>
-      Modern Front-End &amp; Cross-Device Testing Reference
-    </h2>
+    <small>REFERENCE GUIDE</small>
+    <h2>Modern Front-End &amp; Cross-Device Testing Reference</h2>
   </div>
-
   <p>
-    
-    <strong>
-      jQuery alternatives • modern UI • cross-device testing
-    </strong>
-
-    <br />
-
+    <strong>jQuery alternatives • modern UI • cross-device testing</strong><br />
     Modern web
   </p>
 </header>
-        
-<nav
+        <nav
   id="node-mft-ref-nav"
   class="project-doc-nav node-01 uid-mft-ref-nav mft-reference-nav" aria-label="Guide Navigation"
 >
@@ -479,9 +246,7 @@
   href="pg/modern-frontend-cross-device-testing-reference.html#node-mft-ref-section-06-macos-device-simulator-vm-testing"
 >macOS Device, Simulator & VM Testing</a>
 </nav>
-
-<article class="project-doc">
-  <div
+<article class="project-doc"><div
   id="node-mft-ref-section-01-from-jquery-to-modern-browser-apis"
   class="project-display node-02 uid-mft-ref-section-01-from-jquery-to-modern-browser-apis mft-reference-section mft-reference-section-01"
 >
@@ -507,263 +272,96 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-01-jquery-native-javascript-r01" class="project-command child-01 uid-mft-ref-01-jquery-native-javascript-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-01-jquery-native-javascript-r01" class="project-command child-01 uid-mft-ref-01-jquery-native-javascript-r01 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$('.item')</code>
-  
-</div>
-<div class="project-split-cell">
-  Select matching elements.
-  
-</div>
-<div class="project-split-cell">
-  document.querySelectorAll('.item')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$('.item')</code></div>
+<div class="project-split-cell">Select matching elements.</div>
+<div class="project-split-cell">document.querySelectorAll('.item')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r02" class="project-command child-02 uid-mft-ref-01-jquery-native-javascript-r02 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$('#save')</code>
-  
-</div>
-<div class="project-split-cell">
-  Select one element by CSS selector.
-  
-</div>
-<div class="project-split-cell">
-  document.querySelector('#save')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$('#save')</code></div>
+<div class="project-split-cell">Select one element by CSS selector.</div>
+<div class="project-split-cell">document.querySelector('#save')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r03" class="project-command child-03 uid-mft-ref-01-jquery-native-javascript-r03 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).on('click', fn)</code>
-  
-</div>
-<div class="project-split-cell">
-  Register an event handler.
-  
-</div>
-<div class="project-split-cell">
-  el.addEventListener('click', fn)
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).on('click', fn)</code></div>
+<div class="project-split-cell">Register an event handler.</div>
+<div class="project-split-cell">el.addEventListener('click', fn)</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r04" class="project-command child-04 uid-mft-ref-01-jquery-native-javascript-r04 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).addClass('active')</code>
-  
-</div>
-<div class="project-split-cell">
-  Add a class.
-  
-</div>
-<div class="project-split-cell">
-  el.classList.add('active')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).addClass('active')</code></div>
+<div class="project-split-cell">Add a class.</div>
+<div class="project-split-cell">el.classList.add('active')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r05" class="project-command child-05 uid-mft-ref-01-jquery-native-javascript-r05 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).removeClass('active')</code>
-  
-</div>
-<div class="project-split-cell">
-  Remove a class.
-  
-</div>
-<div class="project-split-cell">
-  el.classList.remove('active')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).removeClass('active')</code></div>
+<div class="project-split-cell">Remove a class.</div>
+<div class="project-split-cell">el.classList.remove('active')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r06" class="project-command child-06 uid-mft-ref-01-jquery-native-javascript-r06 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).toggleClass('active')</code>
-  
-</div>
-<div class="project-split-cell">
-  Toggle a class.
-  
-</div>
-<div class="project-split-cell">
-  el.classList.toggle('active')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).toggleClass('active')</code></div>
+<div class="project-split-cell">Toggle a class.</div>
+<div class="project-split-cell">el.classList.toggle('active')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r07" class="project-command child-07 uid-mft-ref-01-jquery-native-javascript-r07 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).hasClass('active')</code>
-  
-</div>
-<div class="project-split-cell">
-  Check for a class.
-  
-</div>
-<div class="project-split-cell">
-  el.classList.contains('active')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).hasClass('active')</code></div>
+<div class="project-split-cell">Check for a class.</div>
+<div class="project-split-cell">el.classList.contains('active')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r08" class="project-command child-08 uid-mft-ref-01-jquery-native-javascript-r08 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).closest('.card')</code>
-  
-</div>
-<div class="project-split-cell">
-  Find the nearest matching ancestor.
-  
-</div>
-<div class="project-split-cell">
-  el.closest('.card')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).closest('.card')</code></div>
+<div class="project-split-cell">Find the nearest matching ancestor.</div>
+<div class="project-split-cell">el.closest('.card')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r09" class="project-command child-09 uid-mft-ref-01-jquery-native-javascript-r09 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).find('.child')</code>
-  
-</div>
-<div class="project-split-cell">
-  Find a descendant inside an element.
-  
-</div>
-<div class="project-split-cell">
-  el.querySelector('.child')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).find('.child')</code></div>
+<div class="project-split-cell">Find a descendant inside an element.</div>
+<div class="project-split-cell">el.querySelector('.child')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r10" class="project-command child-10 uid-mft-ref-01-jquery-native-javascript-r10 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).attr('data-id')</code>
-  
-</div>
-<div class="project-split-cell">
-  Read an attribute.
-  
-</div>
-<div class="project-split-cell">
-  el.getAttribute('data-id')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).attr('data-id')</code></div>
+<div class="project-split-cell">Read an attribute.</div>
+<div class="project-split-cell">el.getAttribute('data-id')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r11" class="project-command child-11 uid-mft-ref-01-jquery-native-javascript-r11 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).attr('data-id', '42')</code>
-  
-</div>
-<div class="project-split-cell">
-  Set an attribute.
-  
-</div>
-<div class="project-split-cell">
-  el.setAttribute('data-id', '42')
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).attr('data-id', '42')</code></div>
+<div class="project-split-cell">Set an attribute.</div>
+<div class="project-split-cell">el.setAttribute('data-id', '42')</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r12" class="project-command child-12 uid-mft-ref-01-jquery-native-javascript-r12 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).text('Saved')</code>
-  
-</div>
-<div class="project-split-cell">
-  Set plain text safely.
-  
-</div>
-<div class="project-split-cell">
-  el.textContent = 'Saved'
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).text('Saved')</code></div>
+<div class="project-split-cell">Set plain text safely.</div>
+<div class="project-split-cell">el.textContent = 'Saved'</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r13" class="project-command child-13 uid-mft-ref-01-jquery-native-javascript-r13 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).html(markup)</code>
-  
-</div>
-<div class="project-split-cell">
-  Set HTML markup.
-  
-</div>
-<div class="project-split-cell">
-  el.innerHTML = markup
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).html(markup)</code></div>
+<div class="project-split-cell">Set HTML markup.</div>
+<div class="project-split-cell">el.innerHTML = markup</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r14" class="project-command child-14 uid-mft-ref-01-jquery-native-javascript-r14 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$.ajax(...) / $.get(...)</code>
-  
-</div>
-<div class="project-split-cell">
-  Make an HTTP request.
-  
-</div>
-<div class="project-split-cell">
-  fetch(url, options)
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$.ajax(...) / $.get(...)</code></div>
+<div class="project-split-cell">Make an HTTP request.</div>
+<div class="project-split-cell">fetch(url, options)</div></div>
 </div>
 <div id="child-mft-ref-01-jquery-native-javascript-r15" class="project-command child-15 uid-mft-ref-01-jquery-native-javascript-r15 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>$(el).remove()</code>
-  
-</div>
-<div class="project-split-cell">
-  Remove a DOM node.
-  
-</div>
-<div class="project-split-cell">
-  el.remove()
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>$(el).remove()</code></div>
+<div class="project-split-cell">Remove a DOM node.</div>
+<div class="project-split-cell">el.remove()</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-01-native-dom-best-practices"
@@ -776,86 +374,36 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-01-native-dom-best-practices-r01" class="project-command child-01 uid-mft-ref-01-native-dom-best-practices-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-01-native-dom-best-practices-r01" class="project-command child-01 uid-mft-ref-01-native-dom-best-practices-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Prefer platform APIs first</strong>
-  
-</div>
-<div class="project-split-cell">
-  If the task is selectors, events, classes, forms, fetch, or basic DOM updates, native APIs usually remove a dependency without losing capability.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Prefer platform APIs first</strong></div>
+<div class="project-split-cell">If the task is selectors, events, classes, forms, fetch, or basic DOM updates, native APIs usually remove a dependency without losing capability.</div></div>
 </div>
 <div id="child-mft-ref-01-native-dom-best-practices-r02" class="project-command child-02 uid-mft-ref-01-native-dom-best-practices-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use event delegation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Attach one listener to a stable parent and inspect event.target/closest() when many dynamic children share behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use event delegation</strong></div>
+<div class="project-split-cell">Attach one listener to a stable parent and inspect event.target/closest() when many dynamic children share behavior.</div></div>
 </div>
 <div id="child-mft-ref-01-native-dom-best-practices-r03" class="project-command child-03 uid-mft-ref-01-native-dom-best-practices-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use textContent for text</strong>
-  
-</div>
-<div class="project-split-cell">
-  Prefer textContent when inserting plain text. Use innerHTML only when markup is intentional and trusted/sanitized.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use textContent for text</strong></div>
+<div class="project-split-cell">Prefer textContent when inserting plain text. Use innerHTML only when markup is intentional and trusted/sanitized.</div></div>
 </div>
 <div id="child-mft-ref-01-native-dom-best-practices-r04" class="project-command child-04 uid-mft-ref-01-native-dom-best-practices-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Check fetch status</strong>
-  
-</div>
-<div class="project-split-cell">
-  fetch() resolves for HTTP error responses; explicitly test response.ok or response.status before treating the request as successful.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Check fetch status</strong></div>
+<div class="project-split-cell">fetch() resolves for HTTP error responses; explicitly test response.ok or response.status before treating the request as successful.</div></div>
 </div>
 <div id="child-mft-ref-01-native-dom-best-practices-r05" class="project-command child-05 uid-mft-ref-01-native-dom-best-practices-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Keep state out of the DOM when it grows</strong>
-  
-</div>
-<div class="project-split-cell">
-  For complex interactive state, a component or reactive library can be clearer than manual DOM mutation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Keep state out of the DOM when it grows</strong></div>
+<div class="project-split-cell">For complex interactive state, a component or reactive library can be clearer than manual DOM mutation.</div></div>
 </div>
 <div id="child-mft-ref-01-native-dom-best-practices-r06" class="project-command child-06 uid-mft-ref-01-native-dom-best-practices-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Progressive enhancement</strong>
-  
-</div>
-<div class="project-split-cell">
-  Start with semantic HTML and working navigation/forms, then add JavaScript behavior where it improves the experience.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Progressive enhancement</strong></div>
+<div class="project-split-cell">Start with semantic HTML and working navigation/forms, then add JavaScript behavior where it improves the experience.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-01-native-example-toggle"
@@ -868,53 +416,27 @@
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-01-native-example-toggle-r01" class="project-command child-01 uid-mft-ref-01-native-example-toggle-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-01-native-example-toggle-r01" class="project-command child-01 uid-mft-ref-01-native-example-toggle-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>HTML</strong>
-  
-</div>
-<div class="project-split-cell">
-  <button id="menuButton" aria-expanded="false">Menu</button><nav id="menu" hidden>...</nav>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>HTML</strong></div>
+<div class="project-split-cell"><button id="menuButton" aria-expanded="false">Menu</button><nav id="menu" hidden>...</nav></div></div>
 </div>
 <div id="child-mft-ref-01-native-example-toggle-r02" class="project-command child-02 uid-mft-ref-01-native-example-toggle-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>JavaScript</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>const button = document.querySelector('#menuButton');
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>JavaScript</strong></div>
+<div class="project-split-cell"><pre><code>const button = document.querySelector('#menuButton');
 const menu = document.querySelector('#menu');
 button.addEventListener('click', () => {
   const open = button.getAttribute('aria-expanded') === 'true';
   button.setAttribute('aria-expanded', String(!open));
   menu.hidden = open;
-});</code></pre>
-  
-</div>
-  </div>
+});</code></pre></div></div>
 </div>
 <div id="child-mft-ref-01-native-example-toggle-r03" class="project-command child-03 uid-mft-ref-01-native-example-toggle-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Why this is preferred</strong>
-  
-</div>
-<div class="project-split-cell">
-  No library is required; state is reflected in an accessibility attribute and the native hidden property.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Why this is preferred</strong></div>
+<div class="project-split-cell">No library is required; state is reflected in an accessibility attribute and the native hidden property.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-01-native-example-get-json"
@@ -927,49 +449,23 @@ button.addEventListener('click', () => {
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-01-native-example-get-json-r01" class="project-command child-01 uid-mft-ref-01-native-example-get-json-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-01-native-example-get-json-r01" class="project-command child-01 uid-mft-ref-01-native-example-get-json-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Request</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>const response = await fetch('/api/users');
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Request</strong></div>
+<div class="project-split-cell"><pre><code>const response = await fetch('/api/users');
 if (!response.ok) throw new Error(`HTTP ${response.status}`);
-const users = await response.json();</code></pre>
-  
-</div>
-  </div>
+const users = await response.json();</code></pre></div></div>
 </div>
 <div id="child-mft-ref-01-native-example-get-json-r02" class="project-command child-02 uid-mft-ref-01-native-example-get-json-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  APIs, JSON endpoints, form workflows, and application data loading.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">APIs, JSON endpoints, form workflows, and application data loading.</div></div>
 </div>
 <div id="child-mft-ref-01-native-example-get-json-r03" class="project-command child-03 uid-mft-ref-01-native-example-get-json-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best practice</strong>
-  
-</div>
-<div class="project-split-cell">
-  Handle HTTP errors, abort stale requests when needed, and keep request code separate from rendering for larger applications.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best practice</strong></div>
+<div class="project-split-cell">Handle HTTP errors, abort stale requests when needed, and keep request code separate from rendering for larger applications.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-01-mdn-references"
@@ -982,88 +478,31 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-01-mdn-references-r01" class="project-command child-01 uid-mft-ref-01-mdn-references-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-01-mdn-references-r01" class="project-command child-01 uid-mft-ref-01-mdn-references-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>querySelector / querySelectorAll</strong>
-  
-</div>
-<div class="project-split-cell">
-  Modern CSS-selector DOM lookup.
-  <a
-  class="project-command-action"
-  href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>querySelector / querySelectorAll</strong></div>
+<div class="project-split-cell">Modern CSS-selector DOM lookup.<a class="project-command-action" href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-01-mdn-references-r02" class="project-command child-02 uid-mft-ref-01-mdn-references-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>addEventListener</strong>
-  
-</div>
-<div class="project-split-cell">
-  Recommended event registration pattern.
-  <a
-  class="project-command-action"
-  href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>addEventListener</strong></div>
+<div class="project-split-cell">Recommended event registration pattern.<a class="project-command-action" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-01-mdn-references-r03" class="project-command child-03 uid-mft-ref-01-mdn-references-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>classList</strong>
-  
-</div>
-<div class="project-split-cell">
-  Native class manipulation.
-  <a
-  class="project-command-action"
-  href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>classList</strong></div>
+<div class="project-split-cell">Native class manipulation.<a class="project-command-action" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-01-mdn-references-r04" class="project-command child-04 uid-mft-ref-01-mdn-references-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>closest</strong>
-  
-</div>
-<div class="project-split-cell">
-  Native ancestor traversal.
-  <a
-  class="project-command-action"
-  href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>closest</strong></div>
+<div class="project-split-cell">Native ancestor traversal.<a class="project-command-action" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-01-mdn-references-r05" class="project-command child-05 uid-mft-ref-01-mdn-references-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Fetch API</strong>
-  
-</div>
-<div class="project-split-cell">
-  Modern network request API.
-  <a
-  class="project-command-action"
-  href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Fetch API</strong></div>
+<div class="project-split-cell">Modern network request API.<a class="project-command-action" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
+</div></div>
 </section>
 <div
   id="node-mft-ref-section-02-lightweight-jquery-alternatives"
@@ -1091,89 +530,39 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-02-alpine-js-r01" class="project-command child-01 uid-mft-ref-02-alpine-js-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-02-alpine-js-r01" class="project-command child-01 uid-mft-ref-02-alpine-js-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  A lightweight declarative JavaScript framework that adds state and behavior directly to existing HTML.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">A lightweight declarative JavaScript framework that adds state and behavior directly to existing HTML.</div></div>
 </div>
 <div id="child-mft-ref-02-alpine-js-r02" class="project-command child-02 uid-mft-ref-02-alpine-js-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Dropdowns, tabs, counters, filters, menus, small interactive islands, server-rendered pages, and progressively enhanced sites.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Dropdowns, tabs, counters, filters, menus, small interactive islands, server-rendered pages, and progressively enhanced sites.</div></div>
 </div>
 <div id="child-mft-ref-02-alpine-js-r03" class="project-command child-03 uid-mft-ref-02-alpine-js-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm install alpinejs</code> or include Alpine with a deferred script tag.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell"><code>npm install alpinejs</code> or include Alpine with a deferred script tag.</div></div>
 </div>
 <div id="child-mft-ref-02-alpine-js-r04" class="project-command child-04 uid-mft-ref-02-alpine-js-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Core idea</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>x-data</code> defines local state; <code>x-on</code>/<code>@</code> handles events; <code>x-show</code>, <code>x-bind</code>, and <code>x-text</code> bind UI to state.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Core idea</strong></div>
+<div class="project-split-cell"><code>x-data</code> defines local state; <code>x-on</code>/<code>@</code> handles events; <code>x-show</code>, <code>x-bind</code>, and <code>x-text</code> bind UI to state.</div></div>
 </div>
 <div id="child-mft-ref-02-alpine-js-r05" class="project-command child-05 uid-mft-ref-02-alpine-js-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Example</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>&lt;div x-data="{ open: false }"&gt;
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Example</strong></div>
+<div class="project-split-cell"><pre><code>&lt;div x-data="{ open: false }"&gt;
   &lt;button @click="open = !open"&gt;Menu&lt;/button&gt;
   &lt;nav x-show="open"&gt;...&lt;/nav&gt;
-&lt;/div&gt;</code></pre>
-  
-</div>
-  </div>
+&lt;/div&gt;</code></pre></div></div>
 </div>
 <div id="child-mft-ref-02-alpine-js-r06" class="project-command child-06 uid-mft-ref-02-alpine-js-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Keep Alpine state local to the HTML feature it controls. When state becomes application-wide or heavily shared, move to a component/application architecture.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Keep Alpine state local to the HTML feature it controls. When state becomes application-wide or heavily shared, move to a component/application architecture.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-02-htmx"
@@ -1186,89 +575,39 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-02-htmx-r01" class="project-command child-01 uid-mft-ref-02-htmx-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-02-htmx-r01" class="project-command child-01 uid-mft-ref-02-htmx-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  A dependency-free browser library that extends HTML with attributes for HTTP requests, targets, swaps, triggers, history, and related hypermedia behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">A dependency-free browser library that extends HTML with attributes for HTTP requests, targets, swaps, triggers, history, and related hypermedia behavior.</div></div>
 </div>
 <div id="child-mft-ref-02-htmx-r02" class="project-command child-02 uid-mft-ref-02-htmx-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Server-rendered applications that want richer interactions without building a large client-side state layer.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Server-rendered applications that want richer interactions without building a large client-side state layer.</div></div>
 </div>
 <div id="child-mft-ref-02-htmx-r03" class="project-command child-03 uid-mft-ref-02-htmx-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm install htmx.org</code>, self-host the file, or load it from a CDN.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell"><code>npm install htmx.org</code>, self-host the file, or load it from a CDN.</div></div>
 </div>
 <div id="child-mft-ref-02-htmx-r04" class="project-command child-04 uid-mft-ref-02-htmx-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Core idea</strong>
-  
-</div>
-<div class="project-split-cell">
-  HTML declares the request and where returned HTML should be inserted.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Core idea</strong></div>
+<div class="project-split-cell">HTML declares the request and where returned HTML should be inserted.</div></div>
 </div>
 <div id="child-mft-ref-02-htmx-r05" class="project-command child-05 uid-mft-ref-02-htmx-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Example</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>&lt;button hx-get="/users" hx-target="#results" hx-swap="innerHTML"&gt;
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Example</strong></div>
+<div class="project-split-cell"><pre><code>&lt;button hx-get="/users" hx-target="#results" hx-swap="innerHTML"&gt;
   Load users
 &lt;/button&gt;
-&lt;div id="results"&gt;&lt;/div&gt;</code></pre>
-  
-</div>
-  </div>
+&lt;div id="results"&gt;&lt;/div&gt;</code></pre></div></div>
 </div>
 <div id="child-mft-ref-02-htmx-r06" class="project-command child-06 uid-mft-ref-02-htmx-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Return useful HTML fragments from the server, preserve normal HTTP semantics, and avoid recreating a client-side SPA inside htmx.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Return useful HTML fragments from the server, preserve normal HTTP semantics, and avoid recreating a client-side SPA inside htmx.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-02-stimulus"
@@ -1281,89 +620,39 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-02-stimulus-r01" class="project-command child-01 uid-mft-ref-02-stimulus-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-02-stimulus-r01" class="project-command child-01 uid-mft-ref-02-stimulus-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  A modest framework that augments HTML with controllers, targets, actions, values, and lifecycle behavior rather than owning rendering.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">A modest framework that augments HTML with controllers, targets, actions, values, and lifecycle behavior rather than owning rendering.</div></div>
 </div>
 <div id="child-mft-ref-02-stimulus-r02" class="project-command child-02 uid-mft-ref-02-stimulus-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Server-rendered HTML that needs organized JavaScript behavior without replacing the page architecture.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Server-rendered HTML that needs organized JavaScript behavior without replacing the page architecture.</div></div>
 </div>
 <div id="child-mft-ref-02-stimulus-r03" class="project-command child-03 uid-mft-ref-02-stimulus-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install through your JavaScript package setup, then register controllers.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell">Install through your JavaScript package setup, then register controllers.</div></div>
 </div>
 <div id="child-mft-ref-02-stimulus-r04" class="project-command child-04 uid-mft-ref-02-stimulus-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Core idea</strong>
-  
-</div>
-<div class="project-split-cell">
-  HTML points to controller classes through data-controller, data-action, and target attributes.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Core idea</strong></div>
+<div class="project-split-cell">HTML points to controller classes through data-controller, data-action, and target attributes.</div></div>
 </div>
 <div id="child-mft-ref-02-stimulus-r05" class="project-command child-05 uid-mft-ref-02-stimulus-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Example</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>&lt;div data-controller="hello"&gt;
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Example</strong></div>
+<div class="project-split-cell"><pre><code>&lt;div data-controller="hello"&gt;
   &lt;input data-hello-target="name"&gt;
   &lt;button data-action="click-&gt;hello#greet"&gt;Greet&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-  
-</div>
-  </div>
+&lt;/div&gt;</code></pre></div></div>
 </div>
 <div id="child-mft-ref-02-stimulus-r06" class="project-command child-06 uid-mft-ref-02-stimulus-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Make controllers small and behavior-focused. Let the server or templates continue to own HTML when that is already your architecture.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Make controllers small and behavior-focused. Let the server or templates continue to own HTML when that is already your architecture.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-02-cash"
@@ -1376,73 +665,31 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-02-cash-r01" class="project-command child-01 uid-mft-ref-02-cash-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-02-cash-r01" class="project-command child-01 uid-mft-ref-02-cash-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  A very small jQuery-style DOM library for modern browsers.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">A very small jQuery-style DOM library for modern browsers.</div></div>
 </div>
 <div id="child-mft-ref-02-cash-r02" class="project-command child-02 uid-mft-ref-02-cash-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Legacy code or teams that specifically want familiar jQuery-like chaining without carrying full jQuery.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Legacy code or teams that specifically want familiar jQuery-like chaining without carrying full jQuery.</div></div>
 </div>
 <div id="child-mft-ref-02-cash-r03" class="project-command child-03 uid-mft-ref-02-cash-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm install cash-dom</code> or use its distributed browser build.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell"><code>npm install cash-dom</code> or use its distributed browser build.</div></div>
 </div>
 <div id="child-mft-ref-02-cash-r04" class="project-command child-04 uid-mft-ref-02-cash-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use carefully</strong>
-  
-</div>
-<div class="project-split-cell">
-  It is a syntax-convenience layer, not a modern application architecture. Prefer native APIs for simple new code unless the chaining API gives a real maintenance benefit.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use carefully</strong></div>
+<div class="project-split-cell">It is a syntax-convenience layer, not a modern application architecture. Prefer native APIs for simple new code unless the chaining API gives a real maintenance benefit.</div></div>
 </div>
 <div id="child-mft-ref-02-cash-r05" class="project-command child-05 uid-mft-ref-02-cash-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Migration role</strong>
-  
-</div>
-<div class="project-split-cell">
-  Can reduce friction in staged migrations where rewriting every jQuery-style DOM call at once is not practical.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Migration role</strong></div>
+<div class="project-split-cell">Can reduce friction in staged migrations where rewriting every jQuery-style DOM call at once is not practical.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-02-when-to-choose-which"
@@ -1455,93 +702,36 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-02-when-to-choose-which-r01" class="project-command child-01 uid-mft-ref-02-when-to-choose-which-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-02-when-to-choose-which-r01" class="project-command child-01 uid-mft-ref-02-when-to-choose-which-r01 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Native JS</code>
-  
-</div>
-<div class="project-split-cell">
-  Default for simple DOM, events, classes, fetch, forms, and small widgets.
-  
-</div>
-<div class="project-split-cell">
-  No dependency; strongest portability.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Native JS</code></div>
+<div class="project-split-cell">Default for simple DOM, events, classes, fetch, forms, and small widgets.</div>
+<div class="project-split-cell">No dependency; strongest portability.</div></div>
 </div>
 <div id="child-mft-ref-02-when-to-choose-which-r02" class="project-command child-02 uid-mft-ref-02-when-to-choose-which-r02 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Alpine.js</code>
-  
-</div>
-<div class="project-split-cell">
-  Small reactive behaviors inside existing HTML.
-  
-</div>
-<div class="project-split-cell">
-  Use when declarative state makes native DOM code noticeably simpler.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Alpine.js</code></div>
+<div class="project-split-cell">Small reactive behaviors inside existing HTML.</div>
+<div class="project-split-cell">Use when declarative state makes native DOM code noticeably simpler.</div></div>
 </div>
 <div id="child-mft-ref-02-when-to-choose-which-r03" class="project-command child-03 uid-mft-ref-02-when-to-choose-which-r03 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>htmx</code>
-  
-</div>
-<div class="project-split-cell">
-  Server-driven interaction and partial HTML replacement.
-  
-</div>
-<div class="project-split-cell">
-  Use when the server should remain the primary application state/rendering authority.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>htmx</code></div>
+<div class="project-split-cell">Server-driven interaction and partial HTML replacement.</div>
+<div class="project-split-cell">Use when the server should remain the primary application state/rendering authority.</div></div>
 </div>
 <div id="child-mft-ref-02-when-to-choose-which-r04" class="project-command child-04 uid-mft-ref-02-when-to-choose-which-r04 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Stimulus</code>
-  
-</div>
-<div class="project-split-cell">
-  Organized behavior attached to server-rendered HTML.
-  
-</div>
-<div class="project-split-cell">
-  Use when you want controller structure without client-side rendering.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Stimulus</code></div>
+<div class="project-split-cell">Organized behavior attached to server-rendered HTML.</div>
+<div class="project-split-cell">Use when you want controller structure without client-side rendering.</div></div>
 </div>
 <div id="child-mft-ref-02-when-to-choose-which-r05" class="project-command child-05 uid-mft-ref-02-when-to-choose-which-r05 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Cash</code>
-  
-</div>
-<div class="project-split-cell">
-  jQuery-like syntax compatibility/convenience.
-  
-</div>
-<div class="project-split-cell">
-  Use mainly for migration or a deliberate tiny chaining API.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Cash</code></div>
+<div class="project-split-cell">jQuery-like syntax compatibility/convenience.</div>
+<div class="project-split-cell">Use mainly for migration or a deliberate tiny chaining API.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-02-official-downloads-docs"
@@ -1554,104 +744,36 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-02-official-downloads-docs-r01" class="project-command child-01 uid-mft-ref-02-official-downloads-docs-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-02-official-downloads-docs-r01" class="project-command child-01 uid-mft-ref-02-official-downloads-docs-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Alpine.js — Docs</strong>
-  
-</div>
-<div class="project-split-cell">
-  Start, installation, directives, state, events.
-  <a
-  class="project-command-action"
-  href="https://alpinejs.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Alpine.js — Docs</strong></div>
+<div class="project-split-cell">Start, installation, directives, state, events.<a class="project-command-action" href="https://alpinejs.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-02-official-downloads-docs-r02" class="project-command child-02 uid-mft-ref-02-official-downloads-docs-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Alpine.js — npm</strong>
-  
-</div>
-<div class="project-split-cell">
-  Package installation.
-  <a
-  class="project-command-action"
-  href="https://www.npmjs.com/package/alpinejs" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Alpine.js — npm</strong></div>
+<div class="project-split-cell">Package installation.<a class="project-command-action" href="https://www.npmjs.com/package/alpinejs" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-02-official-downloads-docs-r03" class="project-command child-03 uid-mft-ref-02-official-downloads-docs-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>htmx — Docs / Install</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official documentation and installation options.
-  <a
-  class="project-command-action"
-  href="https://htmx.org/docs/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>htmx — Docs / Install</strong></div>
+<div class="project-split-cell">Official documentation and installation options.<a class="project-command-action" href="https://htmx.org/docs/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-02-official-downloads-docs-r04" class="project-command child-04 uid-mft-ref-02-official-downloads-docs-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>htmx — npm</strong>
-  
-</div>
-<div class="project-split-cell">
-  Package distribution.
-  <a
-  class="project-command-action"
-  href="https://www.npmjs.com/package/htmx.org" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>htmx — npm</strong></div>
+<div class="project-split-cell">Package distribution.<a class="project-command-action" href="https://www.npmjs.com/package/htmx.org" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-02-official-downloads-docs-r05" class="project-command child-05 uid-mft-ref-02-official-downloads-docs-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Stimulus — Handbook / Docs</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official handbook, reference, and installation.
-  <a
-  class="project-command-action"
-  href="https://stimulus.hotwired.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Stimulus — Handbook / Docs</strong></div>
+<div class="project-split-cell">Official handbook, reference, and installation.<a class="project-command-action" href="https://stimulus.hotwired.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-02-official-downloads-docs-r06" class="project-command child-06 uid-mft-ref-02-official-downloads-docs-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Cash — Source / Docs</strong>
-  
-</div>
-<div class="project-split-cell">
-  Project source and usage documentation.
-  <a
-  class="project-command-action"
-  href="https://github.com/fabiospampinato/cash" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Cash — Source / Docs</strong></div>
+<div class="project-split-cell">Project source and usage documentation.<a class="project-command-action" href="https://github.com/fabiospampinato/cash" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
+</div></div>
 </section>
 <div
   id="node-mft-ref-section-03-component-application-alternatives"
@@ -1679,76 +801,34 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-03-react-r01" class="project-command child-01 uid-mft-ref-03-react-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-03-react-r01" class="project-command child-01 uid-mft-ref-03-react-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Role</strong>
-  
-</div>
-<div class="project-split-cell">
-  Component-based UI library widely encountered in modern front-end teams and application ecosystems.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Role</strong></div>
+<div class="project-split-cell">Component-based UI library widely encountered in modern front-end teams and application ecosystems.</div></div>
 </div>
 <div id="child-mft-ref-03-react-r02" class="project-command child-02 uid-mft-ref-03-react-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Large interactive applications, reusable component systems, complex shared state, and teams already invested in React tooling.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Large interactive applications, reusable component systems, complex shared state, and teams already invested in React tooling.</div></div>
 </div>
 <div id="child-mft-ref-03-react-r03" class="project-command child-03 uid-mft-ref-03-react-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup direction</strong>
-  
-</div>
-<div class="project-split-cell">
-  For a scratch client app, use a modern build setup such as Vite; React's docs recommend frameworks for many new full applications and note Create React App is deprecated.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup direction</strong></div>
+<div class="project-split-cell">For a scratch client app, use a modern build setup such as Vite; React's docs recommend frameworks for many new full applications and note Create React App is deprecated.</div></div>
 </div>
 <div id="child-mft-ref-03-react-r04" class="project-command child-04 uid-mft-ref-03-react-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Example</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>function Counter() {
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Example</strong></div>
+<div class="project-split-cell"><pre><code>function Counter() {
   const [count, setCount] = React.useState(0);
   return &lt;button onClick={() =&gt; setCount(count + 1)}&gt;{count}&lt;/button&gt;;
-}</code></pre>
-  
-</div>
-  </div>
+}</code></pre></div></div>
 </div>
 <div id="child-mft-ref-03-react-r05" class="project-command child-05 uid-mft-ref-03-react-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Think in components and state transitions rather than selecting elements and mutating them manually.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Think in components and state transitions rather than selecting elements and mutating them manually.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-03-vue"
@@ -1761,77 +841,35 @@ const users = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-03-vue-r01" class="project-command child-01 uid-mft-ref-03-vue-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-03-vue-r01" class="project-command child-01 uid-mft-ref-03-vue-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Role</strong>
-  
-</div>
-<div class="project-split-cell">
-  Progressive component framework with a template-oriented model and strong tooling.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Role</strong></div>
+<div class="project-split-cell">Progressive component framework with a template-oriented model and strong tooling.</div></div>
 </div>
 <div id="child-mft-ref-03-vue-r02" class="project-command child-02 uid-mft-ref-03-vue-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Interactive applications and component systems where approachable templates and incremental adoption are valuable.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Interactive applications and component systems where approachable templates and incremental adoption are valuable.</div></div>
 </div>
 <div id="child-mft-ref-03-vue-r03" class="project-command child-03 uid-mft-ref-03-vue-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup direction</strong>
-  
-</div>
-<div class="project-split-cell">
-  For a standard client-side Vue app, the official quick start uses a Vite-based setup; use a larger meta-framework only when its features are needed.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup direction</strong></div>
+<div class="project-split-cell">For a standard client-side Vue app, the official quick start uses a Vite-based setup; use a larger meta-framework only when its features are needed.</div></div>
 </div>
 <div id="child-mft-ref-03-vue-r04" class="project-command child-04 uid-mft-ref-03-vue-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Example</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>&lt;script setup&gt;
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Example</strong></div>
+<div class="project-split-cell"><pre><code>&lt;script setup&gt;
 import { ref } from 'vue';
 const count = ref(0);
 &lt;/script&gt;
-&lt;template&gt;&lt;button @click="count++"&gt;{{ count }}&lt;/button&gt;&lt;/template&gt;</code></pre>
-  
-</div>
-  </div>
+&lt;template&gt;&lt;button @click="count++"&gt;{{ count }}&lt;/button&gt;&lt;/template&gt;</code></pre></div></div>
 </div>
 <div id="child-mft-ref-03-vue-r05" class="project-command child-05 uid-mft-ref-03-vue-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use components and reactive state; avoid mixing heavy manual DOM manipulation into Vue-controlled UI.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Use components and reactive state; avoid mixing heavy manual DOM manipulation into Vue-controlled UI.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-03-svelte"
@@ -1844,76 +882,34 @@ const count = ref(0);
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-03-svelte-r01" class="project-command child-01 uid-mft-ref-03-svelte-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-03-svelte-r01" class="project-command child-01 uid-mft-ref-03-svelte-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Role</strong>
-  
-</div>
-<div class="project-split-cell">
-  UI framework that compiles declarative components written with HTML, CSS, and JavaScript into optimized JavaScript.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Role</strong></div>
+<div class="project-split-cell">UI framework that compiles declarative components written with HTML, CSS, and JavaScript into optimized JavaScript.</div></div>
 </div>
 <div id="child-mft-ref-03-svelte-r02" class="project-command child-02 uid-mft-ref-03-svelte-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Component-driven sites and apps where concise authoring and compile-time output are attractive.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Component-driven sites and apps where concise authoring and compile-time output are attractive.</div></div>
 </div>
 <div id="child-mft-ref-03-svelte-r03" class="project-command child-03 uid-mft-ref-03-svelte-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup direction</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use the official Svelte CLI/getting-started flow; SvelteKit is the companion application framework when routing/server/full-stack features are needed.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup direction</strong></div>
+<div class="project-split-cell">Use the official Svelte CLI/getting-started flow; SvelteKit is the companion application framework when routing/server/full-stack features are needed.</div></div>
 </div>
 <div id="child-mft-ref-03-svelte-r04" class="project-command child-04 uid-mft-ref-03-svelte-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Example</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>&lt;script&gt;
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Example</strong></div>
+<div class="project-split-cell"><pre><code>&lt;script&gt;
   let count = $state(0);
 &lt;/script&gt;
-&lt;button onclick={() =&gt; count++}&gt;{count}&lt;/button&gt;</code></pre>
-  
-</div>
-  </div>
+&lt;button onclick={() =&gt; count++}&gt;{count}&lt;/button&gt;</code></pre></div></div>
 </div>
 <div id="child-mft-ref-03-svelte-r05" class="project-command child-05 uid-mft-ref-03-svelte-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Let Svelte own reactive component state instead of manually synchronizing DOM nodes.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Let Svelte own reactive component state instead of manually synchronizing DOM nodes.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-03-lit"
@@ -1926,79 +922,37 @@ const count = ref(0);
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-03-lit-r01" class="project-command child-01 uid-mft-ref-03-lit-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-03-lit-r01" class="project-command child-01 uid-mft-ref-03-lit-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Role</strong>
-  
-</div>
-<div class="project-split-cell">
-  Small library built on Web Components standards, adding reactive properties and declarative templates.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Role</strong></div>
+<div class="project-split-cell">Small library built on Web Components standards, adding reactive properties and declarative templates.</div></div>
 </div>
 <div id="child-mft-ref-03-lit-r02" class="project-command child-02 uid-mft-ref-03-lit-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Shareable custom elements, design systems, components that must interoperate across frameworks, and progressive enhancement.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Shareable custom elements, design systems, components that must interoperate across frameworks, and progressive enhancement.</div></div>
 </div>
 <div id="child-mft-ref-03-lit-r03" class="project-command child-03 uid-mft-ref-03-lit-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm i lit</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell"><code>npm i lit</code></div></div>
 </div>
 <div id="child-mft-ref-03-lit-r04" class="project-command child-04 uid-mft-ref-03-lit-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Example</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>import {LitElement, html} from 'lit';
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Example</strong></div>
+<div class="project-split-cell"><pre><code>import {LitElement, html} from 'lit';
 class MyCounter extends LitElement {
   static properties = { count: {type: Number} };
   constructor(){ super(); this.count = 0; }
   render(){ return html`&lt;button @click=${() =&gt; this.count++}&gt;${this.count}&lt;/button&gt;`; }
 }
-customElements.define('my-counter', MyCounter);</code></pre>
-  
-</div>
-  </div>
+customElements.define('my-counter', MyCounter);</code></pre></div></div>
 </div>
 <div id="child-mft-ref-03-lit-r05" class="project-command child-05 uid-mft-ref-03-lit-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use Lit when standards-based custom elements and cross-framework interoperability matter more than adopting a full SPA ecosystem.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Use Lit when standards-based custom elements and cross-framework interoperability matter more than adopting a full SPA ecosystem.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-03-architecture-choice"
@@ -2011,76 +965,30 @@ customElements.define('my-counter', MyCounter);</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-03-architecture-choice-r01" class="project-command child-01 uid-mft-ref-03-architecture-choice-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-03-architecture-choice-r01" class="project-command child-01 uid-mft-ref-03-architecture-choice-r01 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Native / Alpine / Stimulus / htmx</code>
-  
-</div>
-<div class="project-split-cell">
-  Enhance existing HTML.
-  
-</div>
-<div class="project-split-cell">
-  Best when server-rendered pages remain central.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Native / Alpine / Stimulus / htmx</code></div>
+<div class="project-split-cell">Enhance existing HTML.</div>
+<div class="project-split-cell">Best when server-rendered pages remain central.</div></div>
 </div>
 <div id="child-mft-ref-03-architecture-choice-r02" class="project-command child-02 uid-mft-ref-03-architecture-choice-r02 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>React / Vue / Svelte</code>
-  
-</div>
-<div class="project-split-cell">
-  Own component rendering and application state.
-  
-</div>
-<div class="project-split-cell">
-  Best when UI state and reusable component composition dominate.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>React / Vue / Svelte</code></div>
+<div class="project-split-cell">Own component rendering and application state.</div>
+<div class="project-split-cell">Best when UI state and reusable component composition dominate.</div></div>
 </div>
 <div id="child-mft-ref-03-architecture-choice-r03" class="project-command child-03 uid-mft-ref-03-architecture-choice-r03 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Lit</code>
-  
-</div>
-<div class="project-split-cell">
-  Build standards-based Web Components.
-  
-</div>
-<div class="project-split-cell">
-  Best when components must travel across stacks/frameworks.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Lit</code></div>
+<div class="project-split-cell">Build standards-based Web Components.</div>
+<div class="project-split-cell">Best when components must travel across stacks/frameworks.</div></div>
 </div>
 <div id="child-mft-ref-03-architecture-choice-r04" class="project-command child-04 uid-mft-ref-03-architecture-choice-r04 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Avoid framework-by-default</code>
-  
-</div>
-<div class="project-split-cell">
-  Do not add an application framework just to replace a few selectors or click handlers.
-  
-</div>
-<div class="project-split-cell">
-  Choose the smallest architecture that remains clear as the feature grows.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Avoid framework-by-default</code></div>
+<div class="project-split-cell">Do not add an application framework just to replace a few selectors or click handlers.</div>
+<div class="project-split-cell">Choose the smallest architecture that remains clear as the feature grows.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-03-vite-as-modern-build-tooling"
@@ -2093,86 +1001,36 @@ customElements.define('my-counter', MyCounter);</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-03-vite-as-modern-build-tooling-r01" class="project-command child-01 uid-mft-ref-03-vite-as-modern-build-tooling-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-03-vite-as-modern-build-tooling-r01" class="project-command child-01 uid-mft-ref-03-vite-as-modern-build-tooling-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  A modern development/build tool with a fast dev server, HMR, and optimized production build pipeline.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">A modern development/build tool with a fast dev server, HMR, and optimized production build pipeline.</div></div>
 </div>
 <div id="child-mft-ref-03-vite-as-modern-build-tooling-r02" class="project-command child-02 uid-mft-ref-03-vite-as-modern-build-tooling-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Vanilla JavaScript/TypeScript, React, Vue, and other modern client projects that need modules, dependencies, bundling, and development tooling.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best use</strong></div>
+<div class="project-split-cell">Vanilla JavaScript/TypeScript, React, Vue, and other modern client projects that need modules, dependencies, bundling, and development tooling.</div></div>
 </div>
 <div id="child-mft-ref-03-vite-as-modern-build-tooling-r03" class="project-command child-03 uid-mft-ref-03-vite-as-modern-build-tooling-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Start</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm create vite@latest</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Start</strong></div>
+<div class="project-split-cell"><code>npm create vite@latest</code></div></div>
 </div>
 <div id="child-mft-ref-03-vite-as-modern-build-tooling-r04" class="project-command child-04 uid-mft-ref-03-vite-as-modern-build-tooling-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Development</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm run dev</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Development</strong></div>
+<div class="project-split-cell"><code>npm run dev</code></div></div>
 </div>
 <div id="child-mft-ref-03-vite-as-modern-build-tooling-r05" class="project-command child-05 uid-mft-ref-03-vite-as-modern-build-tooling-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Production</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm run build</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Production</strong></div>
+<div class="project-split-cell"><code>npm run build</code></div></div>
 </div>
 <div id="child-mft-ref-03-vite-as-modern-build-tooling-r06" class="project-command child-06 uid-mft-ref-03-vite-as-modern-build-tooling-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Cross-device local testing</strong>
-  
-</div>
-<div class="project-split-cell">
-  Expose the dev server to your LAN only when needed, then test from a phone/tablet on the same trusted network. Protect private APIs and do not expose a development server to the public internet.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Cross-device local testing</strong></div>
+<div class="project-split-cell">Expose the dev server to your LAN only when needed, then test from a phone/tablet on the same trusted network. Protect private APIs and do not expose a development server to the public internet.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-03-official-docs"
@@ -2185,88 +1043,31 @@ customElements.define('my-counter', MyCounter);</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-03-official-docs-r01" class="project-command child-01 uid-mft-ref-03-official-docs-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-03-official-docs-r01" class="project-command child-01 uid-mft-ref-03-official-docs-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>React</strong>
-  
-</div>
-<div class="project-split-cell">
-  Installation, setup, components, hooks, and current recommended app approaches.
-  <a
-  class="project-command-action"
-  href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>React</strong></div>
+<div class="project-split-cell">Installation, setup, components, hooks, and current recommended app approaches.<a class="project-command-action" href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-03-official-docs-r02" class="project-command child-02 uid-mft-ref-03-official-docs-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Vue</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official guide and quick start.
-  <a
-  class="project-command-action"
-  href="https://vuejs.org/guide/quick-start" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Vue</strong></div>
+<div class="project-split-cell">Official guide and quick start.<a class="project-command-action" href="https://vuejs.org/guide/quick-start" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-03-official-docs-r03" class="project-command child-03 uid-mft-ref-03-official-docs-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Svelte</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official Svelte documentation.
-  <a
-  class="project-command-action"
-  href="https://svelte.dev/docs/svelte/overview" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Svelte</strong></div>
+<div class="project-split-cell">Official Svelte documentation.<a class="project-command-action" href="https://svelte.dev/docs/svelte/overview" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-03-official-docs-r04" class="project-command child-04 uid-mft-ref-03-official-docs-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Lit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official Web Components library documentation.
-  <a
-  class="project-command-action"
-  href="https://lit.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Lit</strong></div>
+<div class="project-split-cell">Official Web Components library documentation.<a class="project-command-action" href="https://lit.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-03-official-docs-r05" class="project-command child-05 uid-mft-ref-03-official-docs-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Vite</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official development/build tooling guide.
-  <a
-  class="project-command-action"
-  href="https://vite.dev/guide/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Vite</strong></div>
+<div class="project-split-cell">Official development/build tooling guide.<a class="project-command-action" href="https://vite.dev/guide/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
+</div></div>
 </section>
 <div
   id="node-mft-ref-section-04-migration-best-implementation-patterns"
@@ -2294,110 +1095,42 @@ customElements.define('my-counter', MyCounter);</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-04-migration-decision-tree-r01" class="project-command child-01 uid-mft-ref-04-migration-decision-tree-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-04-migration-decision-tree-r01" class="project-command child-01 uid-mft-ref-04-migration-decision-tree-r01 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Simple selectors/events/classes?</code>
-  
-</div>
-<div class="project-split-cell">
-  Use native browser APIs.
-  
-</div>
-<div class="project-split-cell">
-  Do not replace one dependency with another without a reason.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Simple selectors/events/classes?</code></div>
+<div class="project-split-cell">Use native browser APIs.</div>
+<div class="project-split-cell">Do not replace one dependency with another without a reason.</div></div>
 </div>
 <div id="child-mft-ref-04-migration-decision-tree-r02" class="project-command child-02 uid-mft-ref-04-migration-decision-tree-r02 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Small local state?</code>
-  
-</div>
-<div class="project-split-cell">
-  Use native JS or Alpine.js.
-  
-</div>
-<div class="project-split-cell">
-  Keep behavior close to the component/HTML it controls.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Small local state?</code></div>
+<div class="project-split-cell">Use native JS or Alpine.js.</div>
+<div class="project-split-cell">Keep behavior close to the component/HTML it controls.</div></div>
 </div>
 <div id="child-mft-ref-04-migration-decision-tree-r03" class="project-command child-03 uid-mft-ref-04-migration-decision-tree-r03 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Server returns HTML?</code>
-  
-</div>
-<div class="project-split-cell">
-  Consider htmx or Stimulus-style enhancement.
-  
-</div>
-<div class="project-split-cell">
-  Keep routing, validation, and authoritative state on the server.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Server returns HTML?</code></div>
+<div class="project-split-cell">Consider htmx or Stimulus-style enhancement.</div>
+<div class="project-split-cell">Keep routing, validation, and authoritative state on the server.</div></div>
 </div>
 <div id="child-mft-ref-04-migration-decision-tree-r04" class="project-command child-04 uid-mft-ref-04-migration-decision-tree-r04 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Complex client state/components?</code>
-  
-</div>
-<div class="project-split-cell">
-  Use React, Vue, or Svelte.
-  
-</div>
-<div class="project-split-cell">
-  Let the chosen framework own its rendered subtree.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Complex client state/components?</code></div>
+<div class="project-split-cell">Use React, Vue, or Svelte.</div>
+<div class="project-split-cell">Let the chosen framework own its rendered subtree.</div></div>
 </div>
 <div id="child-mft-ref-04-migration-decision-tree-r05" class="project-command child-05 uid-mft-ref-04-migration-decision-tree-r05 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Reusable cross-framework component?</code>
-  
-</div>
-<div class="project-split-cell">
-  Consider Lit/Web Components.
-  
-</div>
-<div class="project-split-cell">
-  Define a stable custom-element API.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Reusable cross-framework component?</code></div>
+<div class="project-split-cell">Consider Lit/Web Components.</div>
+<div class="project-split-cell">Define a stable custom-element API.</div></div>
 </div>
 <div id="child-mft-ref-04-migration-decision-tree-r06" class="project-command child-06 uid-mft-ref-04-migration-decision-tree-r06 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Large jQuery legacy?</code>
-  
-</div>
-<div class="project-split-cell">
-  Migrate feature-by-feature.
-  
-</div>
-<div class="project-split-cell">
-  Avoid a risky all-at-once rewrite unless there is a strong business case.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Large jQuery legacy?</code></div>
+<div class="project-split-cell">Migrate feature-by-feature.</div>
+<div class="project-split-cell">Avoid a risky all-at-once rewrite unless there is a strong business case.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-04-replace-patterns-not-just-calls"
@@ -2410,86 +1143,36 @@ customElements.define('my-counter', MyCounter);</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-04-replace-patterns-not-just-calls-r01" class="project-command child-01 uid-mft-ref-04-replace-patterns-not-just-calls-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-04-replace-patterns-not-just-calls-r01" class="project-command child-01 uid-mft-ref-04-replace-patterns-not-just-calls-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Events</strong>
-  
-</div>
-<div class="project-split-cell">
-  Move .on() usage to addEventListener or framework event handlers; centralize delegated events where appropriate.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Events</strong></div>
+<div class="project-split-cell">Move .on() usage to addEventListener or framework event handlers; centralize delegated events where appropriate.</div></div>
 </div>
 <div id="child-mft-ref-04-replace-patterns-not-just-calls-r02" class="project-command child-02 uid-mft-ref-04-replace-patterns-not-just-calls-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Ajax</strong>
-  
-</div>
-<div class="project-split-cell">
-  Move $.ajax to fetch or a project HTTP client. Preserve aborting, retries, authentication, JSON handling, and error behavior intentionally.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Ajax</strong></div>
+<div class="project-split-cell">Move $.ajax to fetch or a project HTTP client. Preserve aborting, retries, authentication, JSON handling, and error behavior intentionally.</div></div>
 </div>
 <div id="child-mft-ref-04-replace-patterns-not-just-calls-r03" class="project-command child-03 uid-mft-ref-04-replace-patterns-not-just-calls-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>DOM mutation</strong>
-  
-</div>
-<div class="project-split-cell">
-  For simple code use DOM APIs; for component frameworks, update state and let the framework render.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>DOM mutation</strong></div>
+<div class="project-split-cell">For simple code use DOM APIs; for component frameworks, update state and let the framework render.</div></div>
 </div>
 <div id="child-mft-ref-04-replace-patterns-not-just-calls-r04" class="project-command child-04 uid-mft-ref-04-replace-patterns-not-just-calls-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Animation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Prefer CSS transitions/animations or the Web Animations API for straightforward effects; specialized animation libraries still have valid use cases.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Animation</strong></div>
+<div class="project-split-cell">Prefer CSS transitions/animations or the Web Animations API for straightforward effects; specialized animation libraries still have valid use cases.</div></div>
 </div>
 <div id="child-mft-ref-04-replace-patterns-not-just-calls-r05" class="project-command child-05 uid-mft-ref-04-replace-patterns-not-just-calls-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Forms</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use native FormData, Constraint Validation, and submit events before adding form libraries.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Forms</strong></div>
+<div class="project-split-cell">Use native FormData, Constraint Validation, and submit events before adding form libraries.</div></div>
 </div>
 <div id="child-mft-ref-04-replace-patterns-not-just-calls-r06" class="project-command child-06 uid-mft-ref-04-replace-patterns-not-just-calls-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Plugins</strong>
-  
-</div>
-<div class="project-split-cell">
-  Audit old jQuery plugins individually. Replace only the capability you still need.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Plugins</strong></div>
+<div class="project-split-cell">Audit old jQuery plugins individually. Replace only the capability you still need.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-04-event-delegation-example"
@@ -2502,53 +1185,27 @@ customElements.define('my-counter', MyCounter);</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-04-event-delegation-example-r01" class="project-command child-01 uid-mft-ref-04-event-delegation-example-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-04-event-delegation-example-r01" class="project-command child-01 uid-mft-ref-04-event-delegation-example-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>jQuery style</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>$(document).on('click', '[data-remove]', function () {
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>jQuery style</strong></div>
+<div class="project-split-cell"><pre><code>$(document).on('click', '[data-remove]', function () {
   $(this).closest('.item').remove();
-});</code></pre>
-  
-</div>
-  </div>
+});</code></pre></div></div>
 </div>
 <div id="child-mft-ref-04-event-delegation-example-r02" class="project-command child-02 uid-mft-ref-04-event-delegation-example-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Native equivalent</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>document.addEventListener('click', (event) =&gt; {
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Native equivalent</strong></div>
+<div class="project-split-cell"><pre><code>document.addEventListener('click', (event) =&gt; {
   const button = event.target.closest('[data-remove]');
   if (!button) return;
   button.closest('.item')?.remove();
-});</code></pre>
-  
-</div>
-  </div>
+});</code></pre></div></div>
 </div>
 <div id="child-mft-ref-04-event-delegation-example-r03" class="project-command child-03 uid-mft-ref-04-event-delegation-example-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Why it works</strong>
-  
-</div>
-<div class="project-split-cell">
-  One listener handles current and future matching children without attaching a listener to every button.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Why it works</strong></div>
+<div class="project-split-cell">One listener handles current and future matching children without attaching a listener to every button.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-04-fetch-post-example"
@@ -2561,40 +1218,22 @@ customElements.define('my-counter', MyCounter);</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-04-fetch-post-example-r01" class="project-command child-01 uid-mft-ref-04-fetch-post-example-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-04-fetch-post-example-r01" class="project-command child-01 uid-mft-ref-04-fetch-post-example-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Modern request</strong>
-  
-</div>
-<div class="project-split-cell">
-  <pre><code>const response = await fetch('/api/items', {
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Modern request</strong></div>
+<div class="project-split-cell"><pre><code>const response = await fetch('/api/items', {
   method: 'POST',
   headers: {'Content-Type': 'application/json'},
   body: JSON.stringify({name: 'Example'})
 });
 if (!response.ok) throw new Error(`HTTP ${response.status}`);
-const item = await response.json();</code></pre>
-  
-</div>
-  </div>
+const item = await response.json();</code></pre></div></div>
 </div>
 <div id="child-mft-ref-04-fetch-post-example-r02" class="project-command child-02 uid-mft-ref-04-fetch-post-example-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best practice</strong>
-  
-</div>
-<div class="project-split-cell">
-  Validate server-side, handle non-2xx responses explicitly, avoid embedding secrets in client code, and use AbortController when cancelling stale requests matters.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best practice</strong></div>
+<div class="project-split-cell">Validate server-side, handle non-2xx responses explicitly, avoid embedding secrets in client code, and use AbortController when cancelling stale requests matters.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-04-dependency-selection-rules"
@@ -2607,86 +1246,36 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-04-dependency-selection-rules-r01" class="project-command child-01 uid-mft-ref-04-dependency-selection-rules-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-04-dependency-selection-rules-r01" class="project-command child-01 uid-mft-ref-04-dependency-selection-rules-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Need</strong>
-  
-</div>
-<div class="project-split-cell">
-  Write down the exact problem before choosing a library.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Need</strong></div>
+<div class="project-split-cell">Write down the exact problem before choosing a library.</div></div>
 </div>
 <div id="child-mft-ref-04-dependency-selection-rules-r02" class="project-command child-02 uid-mft-ref-04-dependency-selection-rules-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Maintenance</strong>
-  
-</div>
-<div class="project-split-cell">
-  Check current releases, documentation quality, issue activity, security posture, and ownership.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Maintenance</strong></div>
+<div class="project-split-cell">Check current releases, documentation quality, issue activity, security posture, and ownership.</div></div>
 </div>
 <div id="child-mft-ref-04-dependency-selection-rules-r03" class="project-command child-03 uid-mft-ref-04-dependency-selection-rules-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Scope</strong>
-  
-</div>
-<div class="project-split-cell">
-  Prefer a focused dependency for a focused problem; avoid adding a large framework for one widget.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Scope</strong></div>
+<div class="project-split-cell">Prefer a focused dependency for a focused problem; avoid adding a large framework for one widget.</div></div>
 </div>
 <div id="child-mft-ref-04-dependency-selection-rules-r04" class="project-command child-04 uid-mft-ref-04-dependency-selection-rules-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Standards</strong>
-  
-</div>
-<div class="project-split-cell">
-  Prefer tools that work with semantic HTML, accessibility, browser standards, and ordinary HTTP.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Standards</strong></div>
+<div class="project-split-cell">Prefer tools that work with semantic HTML, accessibility, browser standards, and ordinary HTTP.</div></div>
 </div>
 <div id="child-mft-ref-04-dependency-selection-rules-r05" class="project-command child-05 uid-mft-ref-04-dependency-selection-rules-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Exit cost</strong>
-  
-</div>
-<div class="project-split-cell">
-  Favor APIs and architectures that can be replaced incrementally rather than locking the whole page into one mechanism.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Exit cost</strong></div>
+<div class="project-split-cell">Favor APIs and architectures that can be replaced incrementally rather than locking the whole page into one mechanism.</div></div>
 </div>
 <div id="child-mft-ref-04-dependency-selection-rules-r06" class="project-command child-06 uid-mft-ref-04-dependency-selection-rules-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Team consistency</strong>
-  
-</div>
-<div class="project-split-cell">
-  A slightly larger standard already used by the team can be better than a theoretically smaller one-off dependency.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Team consistency</strong></div>
+<div class="project-split-cell">A slightly larger standard already used by the team can be better than a theoretically smaller one-off dependency.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-04-accessibility-resilience"
@@ -2699,73 +1288,31 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-04-accessibility-resilience-r01" class="project-command child-01 uid-mft-ref-04-accessibility-resilience-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-04-accessibility-resilience-r01" class="project-command child-01 uid-mft-ref-04-accessibility-resilience-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Semantic HTML first</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use real buttons, links, labels, forms, headings, dialogs, and landmarks before scripting custom behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Semantic HTML first</strong></div>
+<div class="project-split-cell">Use real buttons, links, labels, forms, headings, dialogs, and landmarks before scripting custom behavior.</div></div>
 </div>
 <div id="child-mft-ref-04-accessibility-resilience-r02" class="project-command child-02 uid-mft-ref-04-accessibility-resilience-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Keyboard</strong>
-  
-</div>
-<div class="project-split-cell">
-  Test all interactive features without a mouse.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Keyboard</strong></div>
+<div class="project-split-cell">Test all interactive features without a mouse.</div></div>
 </div>
 <div id="child-mft-ref-04-accessibility-resilience-r03" class="project-command child-03 uid-mft-ref-04-accessibility-resilience-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>ARIA</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use ARIA to express states/relationships that native HTML does not already provide; do not duplicate or contradict native semantics.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>ARIA</strong></div>
+<div class="project-split-cell">Use ARIA to express states/relationships that native HTML does not already provide; do not duplicate or contradict native semantics.</div></div>
 </div>
 <div id="child-mft-ref-04-accessibility-resilience-r04" class="project-command child-04 uid-mft-ref-04-accessibility-resilience-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Reduced motion</strong>
-  
-</div>
-<div class="project-split-cell">
-  Respect prefers-reduced-motion for nonessential animation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Reduced motion</strong></div>
+<div class="project-split-cell">Respect prefers-reduced-motion for nonessential animation.</div></div>
 </div>
 <div id="child-mft-ref-04-accessibility-resilience-r05" class="project-command child-05 uid-mft-ref-04-accessibility-resilience-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <code>No-JS / failure mode</code>
-  
-</div>
-<div class="project-split-cell">
-  For server-driven sites, important navigation and form flows should degrade gracefully when practical.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><code>No-JS / failure mode</code></div>
+<div class="project-split-cell">For server-driven sites, important navigation and form flows should degrade gracefully when practical.</div></div>
+</div></div>
 </section>
 <div
   id="node-mft-ref-section-05-cross-browser-cross-device-automation"
@@ -2793,112 +1340,46 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-05-playwright-recommended-default-r01" class="project-command child-01 uid-mft-ref-05-playwright-recommended-default-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-05-playwright-recommended-default-r01" class="project-command child-01 uid-mft-ref-05-playwright-recommended-default-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it tests</strong>
-  
-</div>
-<div class="project-split-cell">
-  Modern end-to-end browser workflows across Chromium, Firefox, and WebKit, locally or in CI.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it tests</strong></div>
+<div class="project-split-cell">Modern end-to-end browser workflows across Chromium, Firefox, and WebKit, locally or in CI.</div></div>
 </div>
 <div id="child-mft-ref-05-playwright-recommended-default-r02" class="project-command child-02 uid-mft-ref-05-playwright-recommended-default-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>macOS value</strong>
-  
-</div>
-<div class="project-split-cell">
-  WebKit runs locally on macOS; Playwright also provides device profiles for mobile-sized/browser contexts.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>macOS value</strong></div>
+<div class="project-split-cell">WebKit runs locally on macOS; Playwright also provides device profiles for mobile-sized/browser contexts.</div></div>
 </div>
 <div id="child-mft-ref-05-playwright-recommended-default-r03" class="project-command child-03 uid-mft-ref-05-playwright-recommended-default-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm init playwright@latest</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell"><code>npm init playwright@latest</code></div></div>
 </div>
 <div id="child-mft-ref-05-playwright-recommended-default-r04" class="project-command child-04 uid-mft-ref-05-playwright-recommended-default-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Install browsers</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npx playwright install</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Install browsers</strong></div>
+<div class="project-split-cell"><code>npx playwright install</code></div></div>
 </div>
 <div id="child-mft-ref-05-playwright-recommended-default-r05" class="project-command child-05 uid-mft-ref-05-playwright-recommended-default-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Run all</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npx playwright test</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Run all</strong></div>
+<div class="project-split-cell"><code>npx playwright test</code></div></div>
 </div>
 <div id="child-mft-ref-05-playwright-recommended-default-r06" class="project-command child-06 uid-mft-ref-05-playwright-recommended-default-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Run one browser</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npx playwright test --project=webkit</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Run one browser</strong></div>
+<div class="project-split-cell"><code>npx playwright test --project=webkit</code></div></div>
 </div>
 <div id="child-mft-ref-05-playwright-recommended-default-r07" class="project-command child-07 uid-mft-ref-05-playwright-recommended-default-r07 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Critical user journeys, form flows, navigation, auth, regression tests, browser compatibility, screenshots, and CI.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best use</strong></div>
+<div class="project-split-cell">Critical user journeys, form flows, navigation, auth, regression tests, browser compatibility, screenshots, and CI.</div></div>
 </div>
 <div id="child-mft-ref-05-playwright-recommended-default-r08" class="project-command child-08 uid-mft-ref-05-playwright-recommended-default-r08 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Important limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Playwright WebKit is based on WebKit; it is not the branded Safari application. Use Safari/WebDriver or Apple simulators/real devices for Safari-specific validation when needed.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Important limit</strong></div>
+<div class="project-split-cell">Playwright WebKit is based on WebKit; it is not the branded Safari application. Use Safari/WebDriver or Apple simulators/real devices for Safari-specific validation when needed.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-05-cypress"
@@ -2911,86 +1392,36 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-05-cypress-r01" class="project-command child-01 uid-mft-ref-05-cypress-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-05-cypress-r01" class="project-command child-01 uid-mft-ref-05-cypress-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it tests</strong>
-  
-</div>
-<div class="project-split-cell">
-  Interactive end-to-end and component tests with an excellent local debugging workflow.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it tests</strong></div>
+<div class="project-split-cell">Interactive end-to-end and component tests with an excellent local debugging workflow.</div></div>
 </div>
 <div id="child-mft-ref-05-cypress-r02" class="project-command child-02 uid-mft-ref-05-cypress-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm install cypress --save-dev</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell"><code>npm install cypress --save-dev</code></div></div>
 </div>
 <div id="child-mft-ref-05-cypress-r03" class="project-command child-03 uid-mft-ref-05-cypress-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Open UI</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npx cypress open</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Open UI</strong></div>
+<div class="project-split-cell"><code>npx cypress open</code></div></div>
 </div>
 <div id="child-mft-ref-05-cypress-r04" class="project-command child-04 uid-mft-ref-05-cypress-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Headless run</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npx cypress run</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Headless run</strong></div>
+<div class="project-split-cell"><code>npx cypress run</code></div></div>
 </div>
 <div id="child-mft-ref-05-cypress-r05" class="project-command child-05 uid-mft-ref-05-cypress-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Cross-browser</strong>
-  
-</div>
-<div class="project-split-cell">
-  Supports Chrome-family browsers and Firefox; current Cypress documentation also exposes WebKit support, with browser-launch documentation describing WebKit as experimental.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Cross-browser</strong></div>
+<div class="project-split-cell">Supports Chrome-family browsers and Firefox; current Cypress documentation also exposes WebKit support, with browser-launch documentation describing WebKit as experimental.</div></div>
 </div>
 <div id="child-mft-ref-05-cypress-r06" class="project-command child-06 uid-mft-ref-05-cypress-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Teams that value an interactive test runner, time-travel-style debugging, component testing, and browser-visible authoring.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best use</strong></div>
+<div class="project-split-cell">Teams that value an interactive test runner, time-travel-style debugging, component testing, and browser-visible authoring.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-05-selenium-webdriver"
@@ -3003,73 +1434,31 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-05-selenium-webdriver-r01" class="project-command child-01 uid-mft-ref-05-selenium-webdriver-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-05-selenium-webdriver-r01" class="project-command child-01 uid-mft-ref-05-selenium-webdriver-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  Mature WebDriver-based browser automation with language bindings and broad browser/platform support.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">Mature WebDriver-based browser automation with language bindings and broad browser/platform support.</div></div>
 </div>
 <div id="child-mft-ref-05-selenium-webdriver-r02" class="project-command child-02 uid-mft-ref-05-selenium-webdriver-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Organizations with existing Selenium infrastructure, multi-language test teams, standards-based WebDriver needs, and large cross-platform grids.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Organizations with existing Selenium infrastructure, multi-language test teams, standards-based WebDriver needs, and large cross-platform grids.</div></div>
 </div>
 <div id="child-mft-ref-05-selenium-webdriver-r03" class="project-command child-03 uid-mft-ref-05-selenium-webdriver-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup concept</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install the Selenium library for your language and use the appropriate browser/driver setup; modern Selenium includes tooling that reduces manual driver management.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup concept</strong></div>
+<div class="project-split-cell">Install the Selenium library for your language and use the appropriate browser/driver setup; modern Selenium includes tooling that reduces manual driver management.</div></div>
 </div>
 <div id="child-mft-ref-05-selenium-webdriver-r04" class="project-command child-04 uid-mft-ref-05-selenium-webdriver-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Scale</strong>
-  
-</div>
-<div class="project-split-cell">
-  Selenium Grid distributes browser sessions across machines/environments.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Scale</strong></div>
+<div class="project-split-cell">Selenium Grid distributes browser sessions across machines/environments.</div></div>
 </div>
 <div id="child-mft-ref-05-selenium-webdriver-r05" class="project-command child-05 uid-mft-ref-05-selenium-webdriver-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use instead of Playwright when</strong>
-  
-</div>
-<div class="project-split-cell">
-  Your organization already has mature Selenium/Grid infrastructure or needs its language/ecosystem compatibility.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use instead of Playwright when</strong></div>
+<div class="project-split-cell">Your organization already has mature Selenium/Grid infrastructure or needs its language/ecosystem compatibility.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-05-webdriverio"
@@ -3082,60 +1471,26 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-05-webdriverio-r01" class="project-command child-01 uid-mft-ref-05-webdriverio-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-05-webdriverio-r01" class="project-command child-01 uid-mft-ref-05-webdriverio-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  Node.js automation framework around WebDriver/WebDriver BiDi with integrations for browser, mobile/Appium, and desktop automation.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">Node.js automation framework around WebDriver/WebDriver BiDi with integrations for browser, mobile/Appium, and desktop automation.</div></div>
 </div>
 <div id="child-mft-ref-05-webdriverio-r02" class="project-command child-02 uid-mft-ref-05-webdriverio-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>npm create wdio@latest ./</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell"><code>npm create wdio@latest ./</code></div></div>
 </div>
 <div id="child-mft-ref-05-webdriverio-r03" class="project-command child-03 uid-mft-ref-05-webdriverio-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  JavaScript/TypeScript teams that want WebDriver/Appium ecosystems, mobile testing, or one Node-centric automation layer across several targets.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">JavaScript/TypeScript teams that want WebDriver/Appium ecosystems, mobile testing, or one Node-centric automation layer across several targets.</div></div>
 </div>
 <div id="child-mft-ref-05-webdriverio-r04" class="project-command child-04 uid-mft-ref-05-webdriverio-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>macOS desktop</strong>
-  
-</div>
-<div class="project-split-cell">
-  WebdriverIO documents macOS application automation through Appium's Mac2 driver.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>macOS desktop</strong></div>
+<div class="project-split-cell">WebdriverIO documents macOS application automation through Appium's Mac2 driver.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-05-testing-pyramid-for-front-end"
@@ -3148,93 +1503,36 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-05-testing-pyramid-for-front-end-r01" class="project-command child-01 uid-mft-ref-05-testing-pyramid-for-front-end-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-05-testing-pyramid-for-front-end-r01" class="project-command child-01 uid-mft-ref-05-testing-pyramid-for-front-end-r01 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Manual responsive pass</code>
-  
-</div>
-<div class="project-split-cell">
-  Fast layout and interaction checks while developing.
-  
-</div>
-<div class="project-split-cell">
-  Safari/Firefox/Chrome responsive tools.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Manual responsive pass</code></div>
+<div class="project-split-cell">Fast layout and interaction checks while developing.</div>
+<div class="project-split-cell">Safari/Firefox/Chrome responsive tools.</div></div>
 </div>
 <div id="child-mft-ref-05-testing-pyramid-for-front-end-r02" class="project-command child-02 uid-mft-ref-05-testing-pyramid-for-front-end-r02 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Component/unit tests</code>
-  
-</div>
-<div class="project-split-cell">
-  Fast checks for isolated logic/components.
-  
-</div>
-<div class="project-split-cell">
-  Framework test tools + Vitest/Jest as appropriate.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Component/unit tests</code></div>
+<div class="project-split-cell">Fast checks for isolated logic/components.</div>
+<div class="project-split-cell">Framework test tools + Vitest/Jest as appropriate.</div></div>
 </div>
 <div id="child-mft-ref-05-testing-pyramid-for-front-end-r03" class="project-command child-03 uid-mft-ref-05-testing-pyramid-for-front-end-r03 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>E2E automation</code>
-  
-</div>
-<div class="project-split-cell">
-  Repeat critical user flows in real browser engines.
-  
-</div>
-<div class="project-split-cell">
-  Playwright / Cypress / Selenium / WebdriverIO.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>E2E automation</code></div>
+<div class="project-split-cell">Repeat critical user flows in real browser engines.</div>
+<div class="project-split-cell">Playwright / Cypress / Selenium / WebdriverIO.</div></div>
 </div>
 <div id="child-mft-ref-05-testing-pyramid-for-front-end-r04" class="project-command child-04 uid-mft-ref-05-testing-pyramid-for-front-end-r04 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Simulator/VM</code>
-  
-</div>
-<div class="project-split-cell">
-  Check OS/browser combinations unavailable on the host.
-  
-</div>
-<div class="project-split-cell">
-  Xcode Simulator / UTM / VirtualBox.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Simulator/VM</code></div>
+<div class="project-split-cell">Check OS/browser combinations unavailable on the host.</div>
+<div class="project-split-cell">Xcode Simulator / UTM / VirtualBox.</div></div>
 </div>
 <div id="child-mft-ref-05-testing-pyramid-for-front-end-r05" class="project-command child-05 uid-mft-ref-05-testing-pyramid-for-front-end-r05 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Physical device</code>
-  
-</div>
-<div class="project-split-cell">
-  Validate real touch, keyboard, browser chrome, performance, codecs, camera, and device-specific behavior.
-  
-</div>
-<div class="project-split-cell">
-  Use before release for important supported devices.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Physical device</code></div>
+<div class="project-split-cell">Validate real touch, keyboard, browser chrome, performance, codecs, camera, and device-specific behavior.</div>
+<div class="project-split-cell">Use before release for important supported devices.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-05-official-downloads-docs"
@@ -3247,72 +1545,26 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-05-official-downloads-docs-r01" class="project-command child-01 uid-mft-ref-05-official-downloads-docs-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-05-official-downloads-docs-r01" class="project-command child-01 uid-mft-ref-05-official-downloads-docs-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Playwright</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install, browsers, device profiles, test runner.
-  <a
-  class="project-command-action"
-  href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Playwright</strong></div>
+<div class="project-split-cell">Install, browsers, device profiles, test runner.<a class="project-command-action" href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-05-official-downloads-docs-r02" class="project-command child-02 uid-mft-ref-05-official-downloads-docs-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Cypress</strong>
-  
-</div>
-<div class="project-split-cell">
-  Installation, E2E/component testing, browser support.
-  <a
-  class="project-command-action"
-  href="https://docs.cypress.io/app/get-started/install-cypress" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Cypress</strong></div>
+<div class="project-split-cell">Installation, E2E/component testing, browser support.<a class="project-command-action" href="https://docs.cypress.io/app/get-started/install-cypress" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-05-official-downloads-docs-r03" class="project-command child-03 uid-mft-ref-05-official-downloads-docs-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Selenium</strong>
-  
-</div>
-<div class="project-split-cell">
-  Downloads and official WebDriver documentation.
-  <a
-  class="project-command-action"
-  href="https://www.selenium.dev/downloads/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Selenium</strong></div>
+<div class="project-split-cell">Downloads and official WebDriver documentation.<a class="project-command-action" href="https://www.selenium.dev/downloads/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-05-official-downloads-docs-r04" class="project-command child-04 uid-mft-ref-05-official-downloads-docs-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>WebdriverIO</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official setup and automation documentation.
-  <a
-  class="project-command-action"
-  href="https://webdriver.io/docs/gettingstarted/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>WebdriverIO</strong></div>
+<div class="project-split-cell">Official setup and automation documentation.<a class="project-command-action" href="https://webdriver.io/docs/gettingstarted/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
+</div></div>
 </section>
 <div
   id="node-mft-ref-section-06-macos-device-simulator-vm-testing"
@@ -3340,73 +1592,31 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-safari-responsive-design-mode-r01" class="project-command child-01 uid-mft-ref-06-safari-responsive-design-mode-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-safari-responsive-design-mode-r01" class="project-command child-01 uid-mft-ref-06-safari-responsive-design-mode-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  Enable Safari developer features, then use Develop → Enter Responsive Design Mode.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell">Enable Safari developer features, then use Develop → Enter Responsive Design Mode.</div></div>
 </div>
 <div id="child-mft-ref-06-safari-responsive-design-mode-r02" class="project-command child-02 uid-mft-ref-06-safari-responsive-design-mode-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Resize viewports, change pixel ratio, rotate dimensions, and quickly inspect responsive CSS/layout.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Resize viewports, change pixel ratio, rotate dimensions, and quickly inspect responsive CSS/layout.</div></div>
 </div>
 <div id="child-mft-ref-06-safari-responsive-design-mode-r03" class="project-command child-03 uid-mft-ref-06-safari-responsive-design-mode-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use it during ordinary front-end development, then move important Apple-device checks into Simulator or a physical device.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Use it during ordinary front-end development, then move important Apple-device checks into Simulator or a physical device.</div></div>
 </div>
 <div id="child-mft-ref-06-safari-responsive-design-mode-r04" class="project-command child-04 uid-mft-ref-06-safari-responsive-design-mode-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Apple explicitly notes viewport presets are approximations and do not reproduce every real-device behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Limit</strong></div>
+<div class="project-split-cell">Apple explicitly notes viewport presets are approximations and do not reproduce every real-device behavior.</div></div>
 </div>
 <div id="child-mft-ref-06-safari-responsive-design-mode-r05" class="project-command child-05 uid-mft-ref-06-safari-responsive-design-mode-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Simulator bridge</strong>
-  
-</div>
-<div class="project-split-cell">
-  Safari Responsive Design Mode can open pages in installed iOS/iPadOS/visionOS simulators for more accurate platform behavior.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Simulator bridge</strong></div>
+<div class="project-split-cell">Safari Responsive Design Mode can open pages in installed iOS/iPadOS/visionOS simulators for more accurate platform behavior.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-06-xcode-simulator-free-not-open-source"
@@ -3419,73 +1629,31 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-xcode-simulator-free-not-open-source-r01" class="project-command child-01 uid-mft-ref-06-xcode-simulator-free-not-open-source-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-xcode-simulator-free-not-open-source-r01" class="project-command child-01 uid-mft-ref-06-xcode-simulator-free-not-open-source-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it gives you</strong>
-  
-</div>
-<div class="project-split-cell">
-  Apple's iPhone/iPad/visionOS simulators and Safari environment from a Mac.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it gives you</strong></div>
+<div class="project-split-cell">Apple's iPhone/iPad/visionOS simulators and Safari environment from a Mac.</div></div>
 </div>
 <div id="child-mft-ref-06-xcode-simulator-free-not-open-source-r02" class="project-command child-02 uid-mft-ref-06-xcode-simulator-free-not-open-source-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  iOS/iPadOS Safari layout and interaction validation without owning every Apple device.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">iOS/iPadOS Safari layout and interaction validation without owning every Apple device.</div></div>
 </div>
 <div id="child-mft-ref-06-xcode-simulator-free-not-open-source-r03" class="project-command child-03 uid-mft-ref-06-xcode-simulator-free-not-open-source-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  Install Xcode and add the simulator runtimes/device types you need.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell">Install Xcode and add the simulator runtimes/device types you need.</div></div>
 </div>
 <div id="child-mft-ref-06-xcode-simulator-free-not-open-source-r04" class="project-command child-04 uid-mft-ref-06-xcode-simulator-free-not-open-source-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Why keep it in this guide</strong>
-  
-</div>
-<div class="project-split-cell">
-  It is not open source, but on macOS it is one of the highest-value first-party options for Apple-device web testing.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Why keep it in this guide</strong></div>
+<div class="project-split-cell">It is not open source, but on macOS it is one of the highest-value first-party options for Apple-device web testing.</div></div>
 </div>
 <div id="child-mft-ref-06-xcode-simulator-free-not-open-source-r05" class="project-command child-05 uid-mft-ref-06-xcode-simulator-free-not-open-source-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Still test hardware</strong>
-  
-</div>
-<div class="project-split-cell">
-  Simulators do not reproduce every hardware, performance, input, media, network, or browser-chrome condition.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Still test hardware</strong></div>
+<div class="project-split-cell">Simulators do not reproduce every hardware, performance, input, media, network, or browser-chrome condition.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-06-firefox-responsive-design-mode"
@@ -3498,60 +1666,26 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-firefox-responsive-design-mode-r01" class="project-command child-01 uid-mft-ref-06-firefox-responsive-design-mode-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-firefox-responsive-design-mode-r01" class="project-command child-01 uid-mft-ref-06-firefox-responsive-design-mode-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Open on macOS</strong>
-  
-</div>
-<div class="project-split-cell">
-  <code>Cmd + Option + M</code>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Open on macOS</strong></div>
+<div class="project-split-cell"><code>Cmd + Option + M</code></div></div>
 </div>
 <div id="child-mft-ref-06-firefox-responsive-design-mode-r02" class="project-command child-02 uid-mft-ref-06-firefox-responsive-design-mode-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Device sizes, DPR, touch simulation, orientation, user-agent/device presets, screenshots, and approximate network throttling.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Device sizes, DPR, touch simulation, orientation, user-agent/device presets, screenshots, and approximate network throttling.</div></div>
 </div>
 <div id="child-mft-ref-06-firefox-responsive-design-mode-r03" class="project-command child-03 uid-mft-ref-06-firefox-responsive-design-mode-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Fast Gecko/Firefox responsive checks and testing conditions different from Safari/Chromium.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Fast Gecko/Firefox responsive checks and testing conditions different from Safari/Chromium.</div></div>
 </div>
 <div id="child-mft-ref-06-firefox-responsive-design-mode-r04" class="project-command child-04 uid-mft-ref-06-firefox-responsive-design-mode-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Like other responsive modes, it simulates selected device characteristics rather than becoming the actual device/browser.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Limit</strong></div>
+<div class="project-split-cell">Like other responsive modes, it simulates selected device characteristics rather than becoming the actual device/browser.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-06-utm-open-source-vm-choice-for-mac"
@@ -3564,86 +1698,36 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-utm-open-source-vm-choice-for-mac-r01" class="project-command child-01 uid-mft-ref-06-utm-open-source-vm-choice-for-mac-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-utm-open-source-vm-choice-for-mac-r01" class="project-command child-01 uid-mft-ref-06-utm-open-source-vm-choice-for-mac-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>What it is</strong>
-  
-</div>
-<div class="project-split-cell">
-  Free/open-source VM and system-emulation app designed for macOS, built around QEMU plus Apple virtualization technologies.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>What it is</strong></div>
+<div class="project-split-cell">Free/open-source VM and system-emulation app designed for macOS, built around QEMU plus Apple virtualization technologies.</div></div>
 </div>
 <div id="child-mft-ref-06-utm-open-source-vm-choice-for-mac-r02" class="project-command child-02 uid-mft-ref-06-utm-open-source-vm-choice-for-mac-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Apple Silicon</strong>
-  
-</div>
-<div class="project-split-cell">
-  ARM64 operating systems can run with hardware virtualization; UTM can also emulate other architectures at lower performance.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Apple Silicon</strong></div>
+<div class="project-split-cell">ARM64 operating systems can run with hardware virtualization; UTM can also emulate other architectures at lower performance.</div></div>
 </div>
 <div id="child-mft-ref-06-utm-open-source-vm-choice-for-mac-r03" class="project-command child-03 uid-mft-ref-06-utm-open-source-vm-choice-for-mac-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Windows/Linux OS-level testing, isolated environments, older systems, architecture experiments, and browser tests that need another OS.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Windows/Linux OS-level testing, isolated environments, older systems, architecture experiments, and browser tests that need another OS.</div></div>
 </div>
 <div id="child-mft-ref-06-utm-open-source-vm-choice-for-mac-r04" class="project-command child-04 uid-mft-ref-06-utm-open-source-vm-choice-for-mac-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Setup</strong>
-  
-</div>
-<div class="project-split-cell">
-  Download UTM, create or import a VM, choose guest architecture carefully, install the guest OS/browser, then snapshot a clean testing state.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Setup</strong></div>
+<div class="project-split-cell">Download UTM, create or import a VM, choose guest architecture carefully, install the guest OS/browser, then snapshot a clean testing state.</div></div>
 </div>
 <div id="child-mft-ref-06-utm-open-source-vm-choice-for-mac-r05" class="project-command child-05 uid-mft-ref-06-utm-open-source-vm-choice-for-mac-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best implementation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Prefer same-architecture virtualization for performance. Use emulation only when an architecture mismatch is actually required.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best implementation</strong></div>
+<div class="project-split-cell">Prefer same-architecture virtualization for performance. Use emulation only when an architecture mismatch is actually required.</div></div>
 </div>
 <div id="child-mft-ref-06-utm-open-source-vm-choice-for-mac-r06" class="project-command child-06 uid-mft-ref-06-utm-open-source-vm-choice-for-mac-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Web testing tip</strong>
-  
-</div>
-<div class="project-split-cell">
-  Use a host-only/shared/NAT networking arrangement that lets the VM reach your development server without exposing it publicly.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Web testing tip</strong></div>
+<div class="project-split-cell">Use a host-only/shared/NAT networking arrangement that lets the VM reach your development server without exposing it publicly.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-06-virtualbox-secondary-open-vm-option"
@@ -3656,60 +1740,26 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-virtualbox-secondary-open-vm-option-r01" class="project-command child-01 uid-mft-ref-06-virtualbox-secondary-open-vm-option-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-virtualbox-secondary-open-vm-option-r01" class="project-command child-01 uid-mft-ref-06-virtualbox-secondary-open-vm-option-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Current macOS support</strong>
-  
-</div>
-<div class="project-split-cell">
-  VirtualBox 7.2 documentation supports Apple-silicon macOS hosts with Arm64 guests.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Current macOS support</strong></div>
+<div class="project-split-cell">VirtualBox 7.2 documentation supports Apple-silicon macOS hosts with Arm64 guests.</div></div>
 </div>
 <div id="child-mft-ref-06-virtualbox-secondary-open-vm-option-r02" class="project-command child-02 uid-mft-ref-06-virtualbox-secondary-open-vm-option-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Apple Silicon limit</strong>
-  
-</div>
-<div class="project-split-cell">
-  x86-based guests do not run on Arm64 macOS hosts in the documented Arm64 host mode; use Arm64 Linux/Windows guests or choose an emulator such as UTM when x86 emulation is required.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Apple Silicon limit</strong></div>
+<div class="project-split-cell">x86-based guests do not run on Arm64 macOS hosts in the documented Arm64 host mode; use Arm64 Linux/Windows guests or choose an emulator such as UTM when x86 emulation is required.</div></div>
 </div>
 <div id="child-mft-ref-06-virtualbox-secondary-open-vm-option-r03" class="project-command child-03 uid-mft-ref-06-virtualbox-secondary-open-vm-option-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Best fit</strong>
-  
-</div>
-<div class="project-split-cell">
-  Teams already using VirtualBox, reproducible Arm64 guest environments, and test setups shared with non-Mac hosts.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Best fit</strong></div>
+<div class="project-split-cell">Teams already using VirtualBox, reproducible Arm64 guest environments, and test setups shared with non-Mac hosts.</div></div>
 </div>
 <div id="child-mft-ref-06-virtualbox-secondary-open-vm-option-r04" class="project-command child-04 uid-mft-ref-06-virtualbox-secondary-open-vm-option-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Licensing note</strong>
-  
-</div>
-<div class="project-split-cell">
-  The VirtualBox base package is open source; Oracle's Extension Pack is a separately licensed add-on and should not be assumed to have the same terms.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Licensing note</strong></div>
+<div class="project-split-cell">The VirtualBox base package is open source; Oracle's Extension Pack is a separately licensed add-on and should not be assumed to have the same terms.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-06-real-device-over-local-network"
@@ -3722,60 +1772,26 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-real-device-over-local-network-r01" class="project-command child-01 uid-mft-ref-06-real-device-over-local-network-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-real-device-over-local-network-r01" class="project-command child-01 uid-mft-ref-06-real-device-over-local-network-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Workflow</strong>
-  
-</div>
-<div class="project-split-cell">
-  Run your dev server on the Mac, bind it to a reachable LAN interface, and open the Mac's LAN IP and dev-server port from the phone/tablet on the same trusted network.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Workflow</strong></div>
+<div class="project-split-cell">Run your dev server on the Mac, bind it to a reachable LAN interface, and open the Mac's LAN IP and dev-server port from the phone/tablet on the same trusted network.</div></div>
 </div>
 <div id="child-mft-ref-06-real-device-over-local-network-r02" class="project-command child-02 uid-mft-ref-06-real-device-over-local-network-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Use</strong>
-  
-</div>
-<div class="project-split-cell">
-  Real touch input, browser UI, font rendering, viewport behavior, on-screen keyboard, device performance, and physical-network conditions.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Use</strong></div>
+<div class="project-split-cell">Real touch input, browser UI, font rendering, viewport behavior, on-screen keyboard, device performance, and physical-network conditions.</div></div>
 </div>
 <div id="child-mft-ref-06-real-device-over-local-network-r03" class="project-command child-03 uid-mft-ref-06-real-device-over-local-network-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Security</strong>
-  
-</div>
-<div class="project-split-cell">
-  Only expose development servers on trusted networks. Never expose private credentials, databases, debug/admin endpoints, or unrestricted development services to the public internet.
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Security</strong></div>
+<div class="project-split-cell">Only expose development servers on trusted networks. Never expose private credentials, databases, debug/admin endpoints, or unrestricted development services to the public internet.</div></div>
 </div>
 <div id="child-mft-ref-06-real-device-over-local-network-r04" class="project-command child-04 uid-mft-ref-06-real-device-over-local-network-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Final check</strong>
-  
-</div>
-<div class="project-split-cell">
-  For important releases, combine automation + simulator/VM + at least a small representative real-device matrix.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Final check</strong></div>
+<div class="project-split-cell">For important releases, combine automation + simulator/VM + at least a small representative real-device matrix.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-06-recommended-macos-stack"
@@ -3788,93 +1804,36 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-recommended-macos-stack-r01" class="project-command child-01 uid-mft-ref-06-recommended-macos-stack-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-recommended-macos-stack-r01" class="project-command child-01 uid-mft-ref-06-recommended-macos-stack-r01 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Daily responsive work</code>
-  
-</div>
-<div class="project-split-cell">
-  Safari + Firefox responsive tools.
-  
-</div>
-<div class="project-split-cell">
-  Fast manual feedback.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Daily responsive work</code></div>
+<div class="project-split-cell">Safari + Firefox responsive tools.</div>
+<div class="project-split-cell">Fast manual feedback.</div></div>
 </div>
 <div id="child-mft-ref-06-recommended-macos-stack-r02" class="project-command child-02 uid-mft-ref-06-recommended-macos-stack-r02 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Automated browser regression</code>
-  
-</div>
-<div class="project-split-cell">
-  Playwright.
-  
-</div>
-<div class="project-split-cell">
-  Chromium + Firefox + WebKit from one test suite.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Automated browser regression</code></div>
+<div class="project-split-cell">Playwright.</div>
+<div class="project-split-cell">Chromium + Firefox + WebKit from one test suite.</div></div>
 </div>
 <div id="child-mft-ref-06-recommended-macos-stack-r03" class="project-command child-03 uid-mft-ref-06-recommended-macos-stack-r03 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Apple platform validation</code>
-  
-</div>
-<div class="project-split-cell">
-  Xcode Simulator + Safari Web Inspector/WebDriver.
-  
-</div>
-<div class="project-split-cell">
-  Closer to real iPhone/iPad Safari behavior.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Apple platform validation</code></div>
+<div class="project-split-cell">Xcode Simulator + Safari Web Inspector/WebDriver.</div>
+<div class="project-split-cell">Closer to real iPhone/iPad Safari behavior.</div></div>
 </div>
 <div id="child-mft-ref-06-recommended-macos-stack-r04" class="project-command child-04 uid-mft-ref-06-recommended-macos-stack-r04 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Windows/Linux OS coverage</code>
-  
-</div>
-<div class="project-split-cell">
-  UTM first; VirtualBox where its Arm64 guest support fits.
-  
-</div>
-<div class="project-split-cell">
-  Use clean snapshots for repeatability.
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Windows/Linux OS coverage</code></div>
+<div class="project-split-cell">UTM first; VirtualBox where its Arm64 guest support fits.</div>
+<div class="project-split-cell">Use clean snapshots for repeatability.</div></div>
 </div>
 <div id="child-mft-ref-06-recommended-macos-stack-r05" class="project-command child-05 uid-mft-ref-06-recommended-macos-stack-r05 mft-reference-row">
   
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <code>Release confidence</code>
-  
-</div>
-<div class="project-split-cell">
-  Physical devices for key supported targets.
-  
-</div>
-<div class="project-split-cell">
-  Catches behaviors that emulation and desktop automation miss.
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><code>Release confidence</code></div>
+<div class="project-split-cell">Physical devices for key supported targets.</div>
+<div class="project-split-cell">Catches behaviors that emulation and desktop automation miss.</div></div>
+</div></div>
 </section>
 <section
   id="node-mft-ref-06-official-download-documentation"
@@ -3887,151 +1846,65 @@ const item = await response.json();</code></pre>
   
 </header>
   
-  <div class="project-command-list">
-<div id="child-mft-ref-06-official-download-documentation-r01" class="project-command child-01 uid-mft-ref-06-official-download-documentation-r01 mft-reference-row">
+  <div class="project-command-list"><div id="child-mft-ref-06-official-download-documentation-r01" class="project-command child-01 uid-mft-ref-06-official-download-documentation-r01 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Safari Developer Tools</strong>
-  
-</div>
-<div class="project-split-cell">
-  Responsive Design Mode, Web Inspector, devices, simulators, and WebDriver.
-  <a
-  class="project-command-action"
-  href="https://developer.apple.com/documentation/safari-developer-tools" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Safari Developer Tools</strong></div>
+<div class="project-split-cell">Responsive Design Mode, Web Inspector, devices, simulators, and WebDriver.<a class="project-command-action" href="https://developer.apple.com/documentation/safari-developer-tools" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-06-official-download-documentation-r02" class="project-command child-02 uid-mft-ref-06-official-download-documentation-r02 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>UTM — Download</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official macOS download page.
-  <a
-  class="project-command-action"
-  href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>UTM — Download</strong></div>
+<div class="project-split-cell">Official macOS download page.<a class="project-command-action" href="https://mac.getutm.app/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-06-official-download-documentation-r03" class="project-command child-03 uid-mft-ref-06-official-download-documentation-r03 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>UTM — Documentation</strong>
-  
-</div>
-<div class="project-split-cell">
-  Installation, VM settings, sharing, Windows/Linux guest guides.
-  <a
-  class="project-command-action"
-  href="https://docs.getutm.app/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>UTM — Documentation</strong></div>
+<div class="project-split-cell">Installation, VM settings, sharing, Windows/Linux guest guides.<a class="project-command-action" href="https://docs.getutm.app/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-06-official-download-documentation-r04" class="project-command child-04 uid-mft-ref-06-official-download-documentation-r04 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>VirtualBox — Downloads</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official Oracle VirtualBox distribution index/downloads.
-  <a
-  class="project-command-action"
-  href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>VirtualBox — Downloads</strong></div>
+<div class="project-split-cell">Official Oracle VirtualBox distribution index/downloads.<a class="project-command-action" href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-06-official-download-documentation-r05" class="project-command child-05 uid-mft-ref-06-official-download-documentation-r05 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>VirtualBox — User Manual</strong>
-  
-</div>
-<div class="project-split-cell">
-  Current platform and guest limitations.
-  <a
-  class="project-command-action"
-  href="https://www.virtualbox.org/manual/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>VirtualBox — User Manual</strong></div>
+<div class="project-split-cell">Current platform and guest limitations.<a class="project-command-action" href="https://www.virtualbox.org/manual/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
 </div>
 <div id="child-mft-ref-06-official-download-documentation-r06" class="project-command child-06 uid-mft-ref-06-official-download-documentation-r06 mft-reference-row">
   
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <strong>Firefox Responsive Design Mode</strong>
-  
-</div>
-<div class="project-split-cell">
-  Official Firefox developer documentation.
-  <a
-  class="project-command-action"
-  href="https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"
-><span aria-hidden="true">›</span></a>
-</div>
-  </div>
-</div>
-  </div>
-</section>
-</article>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><strong>Firefox Responsive Design Mode</strong></div>
+<div class="project-split-cell">Official Firefox developer documentation.<a class="project-command-action" href="https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/" target="_blank" rel="noopener noreferrer" aria-label="Open linked item"><span aria-hidden="true">›</span></a></div></div>
+</div></div>
+</section></article>
 </div>
       </section>
     </main>
 
-    <footer>
-  <nav aria-label="Developer tools">
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado/developer-sandbox',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    <footer class="home-footer page-frame full-frame">
+  <nav class="footer-links" aria-label="Developer Sandbox resources">
+    <a href="https://github.com/susanndelgado/developer-sandbox">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" />
+      </svg>
       Sandbox Repo
-    </button>
-
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    </a>
+    <a href="https://github.com/susanndelgado">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" />
+      </svg>
       GitHub
-    </button>
-
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
-      <span aria-hidden="true">⊙</span>
-      System Guide
-    </button>
-
-    <button type="button" onclick="window.location.href = 'database.html'">
-      <span aria-hidden="true">◉</span>
-      Database
-    </button>
+    </a>
+    <a href="system-guide.html">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
+      Documentation
+    </a>
   </nav>
+
+  <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
+  <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
-  <script src="assets/script.js"></script>
-  </body>
-</html>
+

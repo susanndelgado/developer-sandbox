@@ -15,431 +15,203 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="reference">
-    <header>
-  <a class="brand" href="index.html">
+  <body id="pg" class="site-page app-shell" data-section="reference">
+    <header class="home-header page-frame full-frame">
+  <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
-
-    <span>
+    <span class="brand-copy">
       <strong>DEVELOPER SANDBOX</strong>
       <small>Academy of Mastery</small>
     </span>
   </a>
 
-  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button
-      type="button"
-      data-nav-section="home"
-      onclick="window.location.href = 'index.html'"
-    >
-      <span aria-hidden="true">⌂</span>
+  <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
+    <a class="nav-link" data-nav-section="home" href="index.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
+      </svg>
       Home
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="projects"
-      onclick="window.location.href = 'library.html'"
-    >
-      <span aria-hidden="true">▱</span>
+    </a>
+    <a class="nav-link" data-nav-section="projects" href="library.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+      </svg>
       Projects
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="reference"
-      onclick="window.location.href = 'pg/angular-reference-guide.html'"
-    >
-      <span aria-hidden="true">▤</span>
+    </a>
+    <a class="nav-link" data-nav-section="reference" href="reference-guides.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
       Reference Guides
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="labs"
-      onclick="window.location.href = 'labs.html'"
-    >
-      <span aria-hidden="true">✦</span>
+    </a>
+    <a class="nav-link" data-nav-section="labs" href="labs.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+      </svg>
       Labs
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="system"
-      onclick="window.location.href = 'system-guide.html'"
-    >
-      <span aria-hidden="true">⊙</span>
+    </a>
+    <a class="nav-link" data-nav-section="system" href="system-guide.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.4" />
+        <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
+      </svg>
       System Guide
-    </button>
+    </a>
   </nav>
 
-  <div class="top-tools">
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="primary-nav"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="help">
-  <button
-    type="button"
-    aria-label="Read page information"
-  ></button>
-
-  <div>
-    <strong>Cross-Device Web Testing</strong>
-    <p>Device testing</p>
-  </div>
-</div>
-
-    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
-
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      onclick="window.location.href = 'https://sdelgado.com/work.html'"
-    >
-      ×
-    </button>
+  <div class="header-meta">
+    <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="5.5" />
+        <path d="m15.2 15.2 4.3 4.3" />
+      </svg>
+    </a>
+    <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
+    <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
   </div>
 </header>
 
 
-    <main class="view-all-page">
+    <main class="view-all-page app-main page-frame full-frame">
       
-<aside class="type-menu">
-  <header>
-    <h1>
-      Reference Guides
-    </h1>
-
-    <p>
-      Technical documentation, commands,
-      workflows, and development references.
-    </p>
-  </header>
-
-  <nav
-    class="project-types"
-    aria-label="Reference guides"
-  >
-    
-<button
-  type="button"
-  onclick="window.location.href = 'pg/angular-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<aside class="type-menu app-sidebar glass">
+  <header><h1>Reference Guides</h1><p>Technical documentation, commands, workflows, and development references.</p></header>
+  <nav class="project-types" aria-label="Reference guides">
+<a href="pg/angular-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Angular
-    </strong>
-
+    <strong>Angular</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button" aria-current="true"
-  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/cross-device-web-testing.html" aria-current="true">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Cross-Device Web Testing
-    </strong>
-
+    <strong>Cross-Device Web Testing</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/full-stack-developer-terminal-commands.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Terminal Commands
-    </strong>
-
+    <strong>Terminal Commands</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/nodejs-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Node.js
-    </strong>
-
+    <strong>Node.js</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/typescript-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      TypeScript
-    </strong>
-
+    <strong>TypeScript</strong>
     
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/php-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/php-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      PHP
-    </strong>
-
-    
-    <small>
-      macOS / PHP 8.x
-    </small>
+    <strong>PHP</strong>
+    <small>macOS / PHP 8.x</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-windows-terminal-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      macOS / Windows
-    </strong>
-
-    
-    <small>
-      PowerShell ↔ zsh
-    </small>
+    <strong>macOS / Windows</strong>
+    <small>PowerShell ↔ zsh</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/linux-command-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/linux-command-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Linux
-    </strong>
-
-    
-    <small>
-      Linux shell / CLI
-    </small>
+    <strong>Linux</strong>
+    <small>Linux shell / CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL
-    </strong>
-
-    
-    <small>
-      Relational SQL
-    </small>
+    <strong>SQL</strong>
+    <small>Relational SQL</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/sql-vs-postgresql-psql-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      SQL / PostgreSQL
-    </strong>
-
-    
-    <small>
-      Language ↔ DBMS ↔ CLI
-    </small>
+    <strong>SQL / PostgreSQL</strong>
+    <small>Language ↔ DBMS ↔ CLI</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/java-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/java-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Java
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>Java</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/macos-vm-cross-device-testing-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      VM / Device Testing
-    </strong>
-
-    
-    <small>
-      Virtual machines, browsers &amp; device testing
-    </small>
+    <strong>VM / Device Testing</strong>
+    <small>Virtual machines, browsers &amp; device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/modern-frontend-cross-device-testing-reference.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Modern Front-End
-    </strong>
-
-    
-    <small>
-      jQuery alternatives • modern UI • cross-device testing
-    </small>
+    <strong>Modern Front-End</strong>
+    <small>jQuery alternatives • modern UI • cross-device testing</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/csharp-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      C#
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Control Flow • Methods • Objects
-    </small>
+    <strong>C#</strong>
+    <small>Syntax • Types • Control Flow • Methods • Objects</small>
   </span>
-</button>
+</a>
 
-<button
-  type="button"
-  onclick="window.location.href = 'pg/python-reference-guide.html'"
->
-  <span aria-hidden="true">
-    ▤
-  </span>
-
+<a href="pg/python-reference-guide.html">
+  <span aria-hidden="true">▤</span>
   <span>
-    <strong>
-      Python
-    </strong>
-
-    
-    <small>
-      Syntax • Types • Collections • Control Flow • Functions • Objects
-    </small>
+    <strong>Python</strong>
+    <small>Syntax • Types • Collections • Control Flow • Functions • Objects</small>
   </span>
-</button>
-  </nav>
+</a></nav>
 </aside>
 
-      <section class="project-content">
+      <section class="project-content app-content glass">
         <div id="preview" class="preview">
 
 <header>
   <div>
-    <small>
-      REFERENCE GUIDE
-    </small>
-
-    <h2>
-      Cross-Device Web Testing
-    </h2>
+    <small>REFERENCE GUIDE</small>
+    <h2>Cross-Device Web Testing</h2>
   </div>
-
   <p>
     
-
     Device testing
   </p>
 </header>
-        
-<nav
+        <nav
   id="node-webtest-nav"
   class="project-doc-nav node-01 uid-webtest-nav" aria-label="Guide navigation"
 >
@@ -489,9 +261,7 @@
   href="pg/cross-device-web-testing.html#node-webtest-docs"
 >Official Docs</a>
 </nav>
-
-<article class="project-doc">
-  <section
+<article class="project-doc"><section
   id="node-webtest-start"
   class="project-detail node-02 uid-webtest-start"
 >
@@ -502,43 +272,11 @@
   <p>Use the fastest layer that can answer the question, then move to a more realistic environment only when needed.</p>
 </header>
   <p><strong>Recommended default:</strong> manual browser checks + Playwright automation + Safari/Xcode verification + at least one real-device pass before important releases.</p>
-  <div class="project-meta">
-<div id="child-webtest-start-1" class="child-01 uid-webtest-start-1">
-  
-<div class="project-command-title">
-  1 · Inspect quickly
-</div>
-  <p>Use Chrome, Firefox, and Safari responsive tools while building. Check layout, overflow, focus states, touch-sized controls, network requests, and console errors.</p>
-</div>
-<div id="child-webtest-start-2" class="child-02 uid-webtest-start-2">
-  
-<div class="project-command-title">
-  2 · Automate engines
-</div>
-  <p>Use <strong>Playwright Test</strong> as the modern default for repeatable Chromium, Firefox, and WebKit coverage. Add mobile device profiles as projects.</p>
-</div>
-<div id="child-webtest-start-3" class="child-03 uid-webtest-start-3">
-  
-<div class="project-command-title">
-  3 · Verify Apple
-</div>
-  <p>On macOS, use Safari Responsive Design Mode and Xcode Simulator for iPhone/iPad Safari behavior that desktop emulation cannot fully prove.</p>
-</div>
-<div id="child-webtest-start-4" class="child-04 uid-webtest-start-4">
-  
-<div class="project-command-title">
-  4 · Check physical devices
-</div>
-  <p>Use BrowserSync on the local network to load the same development site on phones, tablets, and extra browsers at the same time.</p>
-</div>
-<div id="child-webtest-start-5" class="child-05 uid-webtest-start-5">
-  
-<div class="project-command-title">
-  5 · Release on real hardware
-</div>
-  <p>Before a major release, test at least one physical iPhone/iPad and Android device, or use a real-device cloud such as BrowserStack.</p>
-</div>
-  </div>
+  <div class="project-meta"><div id="child-webtest-start-1" class="child-01 uid-webtest-start-1"><div class="project-command-title">1 · Inspect quickly</div><p>Use Chrome, Firefox, and Safari responsive tools while building. Check layout, overflow, focus states, touch-sized controls, network requests, and console errors.</p></div>
+<div id="child-webtest-start-2" class="child-02 uid-webtest-start-2"><div class="project-command-title">2 · Automate engines</div><p>Use <strong>Playwright Test</strong> as the modern default for repeatable Chromium, Firefox, and WebKit coverage. Add mobile device profiles as projects.</p></div>
+<div id="child-webtest-start-3" class="child-03 uid-webtest-start-3"><div class="project-command-title">3 · Verify Apple</div><p>On macOS, use Safari Responsive Design Mode and Xcode Simulator for iPhone/iPad Safari behavior that desktop emulation cannot fully prove.</p></div>
+<div id="child-webtest-start-4" class="child-04 uid-webtest-start-4"><div class="project-command-title">4 · Check physical devices</div><p>Use BrowserSync on the local network to load the same development site on phones, tablets, and extra browsers at the same time.</p></div>
+<div id="child-webtest-start-5" class="child-05 uid-webtest-start-5"><div class="project-command-title">5 · Release on real hardware</div><p>Before a major release, test at least one physical iPhone/iPad and Android device, or use a real-device cloud such as BrowserStack.</p></div></div>
 </section>
 <section
   id="node-webtest-picker"
@@ -551,64 +289,14 @@
   <p>These are complementary tools. The strongest workflow uses several layers instead of expecting one tool to prove everything.</p>
 </header>
   
-  <div class="project-meta">
-<div id="child-webtest-picker-playwright" class="child-01 uid-webtest-picker-playwright">
-  
-<div class="project-command-title">
-  Playwright
-</div>
-  <p><strong>Best modern default.</strong> Open source. E2E/browser automation across Chromium, Firefox, and WebKit; strong device emulation, traces, parallelism, and CI support.</p>
-</div>
-<div id="child-webtest-picker-cypress" class="child-02 uid-webtest-picker-cypress">
-  
-<div class="project-command-title">
-  Cypress
-</div>
-  <p><strong>Best for interactive JS/TS test authoring.</strong> Open-source runner with excellent local debugging and component testing. WebKit remains experimental, so do not treat it as complete Safari proof.</p>
-</div>
-<div id="child-webtest-picker-selenium" class="child-03 uid-webtest-picker-selenium">
-  
-<div class="project-command-title">
-  Selenium
-</div>
-  <p><strong>Best for broad enterprise or cross-language needs.</strong> Open source, W3C WebDriver based, large ecosystem, Selenium Grid, and modern automatic driver management.</p>
-</div>
-<div id="child-webtest-picker-safari" class="child-04 uid-webtest-picker-safari">
-  
-<div class="project-command-title">
-  Safari + Xcode
-</div>
-  <p><strong>Best Apple-platform check on a Mac.</strong> Built into macOS plus free Xcode simulators. Use Web Inspector, Responsive Design Mode, and iOS/iPadOS Simulator.</p>
-</div>
-<div id="child-webtest-picker-browsersync" class="child-05 uid-webtest-picker-browsersync">
-  
-<div class="project-command-title">
-  BrowserSync
-</div>
-  <p><strong>Best low-friction local device lab.</strong> Open source. Serves or proxies a local site, reloads connected browsers, and can mirror scrolling, clicks, and forms.</p>
-</div>
-<div id="child-webtest-picker-lighthouse" class="child-06 uid-webtest-picker-lighthouse">
-  
-<div class="project-command-title">
-  Lighthouse
-</div>
-  <p><strong>Best quick quality audit.</strong> Open source. Performance, accessibility, best-practice, and SEO audits from Chrome DevTools or the CLI.</p>
-</div>
-<div id="child-webtest-picker-axe" class="child-07 uid-webtest-picker-axe">
-  
-<div class="project-command-title">
-  axe-core
-</div>
-  <p><strong>Best automated accessibility layer.</strong> Open source. Add checks to Playwright, Selenium/WebDriver, React, or other test workflows; manual accessibility review is still required.</p>
-</div>
-<div id="child-webtest-picker-browserstack" class="child-08 uid-webtest-picker-browserstack">
-  
-<div class="project-command-title">
-  BrowserStack
-</div>
-  <p><strong>Best optional real-device cloud.</strong> Commercial, not open source. Useful for real iOS/Android hardware, many browser/OS combinations, and testing localhost through a secure tunnel.</p>
-</div>
-  </div>
+  <div class="project-meta"><div id="child-webtest-picker-playwright" class="child-01 uid-webtest-picker-playwright"><div class="project-command-title">Playwright</div><p><strong>Best modern default.</strong> Open source. E2E/browser automation across Chromium, Firefox, and WebKit; strong device emulation, traces, parallelism, and CI support.</p></div>
+<div id="child-webtest-picker-cypress" class="child-02 uid-webtest-picker-cypress"><div class="project-command-title">Cypress</div><p><strong>Best for interactive JS/TS test authoring.</strong> Open-source runner with excellent local debugging and component testing. WebKit remains experimental, so do not treat it as complete Safari proof.</p></div>
+<div id="child-webtest-picker-selenium" class="child-03 uid-webtest-picker-selenium"><div class="project-command-title">Selenium</div><p><strong>Best for broad enterprise or cross-language needs.</strong> Open source, W3C WebDriver based, large ecosystem, Selenium Grid, and modern automatic driver management.</p></div>
+<div id="child-webtest-picker-safari" class="child-04 uid-webtest-picker-safari"><div class="project-command-title">Safari + Xcode</div><p><strong>Best Apple-platform check on a Mac.</strong> Built into macOS plus free Xcode simulators. Use Web Inspector, Responsive Design Mode, and iOS/iPadOS Simulator.</p></div>
+<div id="child-webtest-picker-browsersync" class="child-05 uid-webtest-picker-browsersync"><div class="project-command-title">BrowserSync</div><p><strong>Best low-friction local device lab.</strong> Open source. Serves or proxies a local site, reloads connected browsers, and can mirror scrolling, clicks, and forms.</p></div>
+<div id="child-webtest-picker-lighthouse" class="child-06 uid-webtest-picker-lighthouse"><div class="project-command-title">Lighthouse</div><p><strong>Best quick quality audit.</strong> Open source. Performance, accessibility, best-practice, and SEO audits from Chrome DevTools or the CLI.</p></div>
+<div id="child-webtest-picker-axe" class="child-07 uid-webtest-picker-axe"><div class="project-command-title">axe-core</div><p><strong>Best automated accessibility layer.</strong> Open source. Add checks to Playwright, Selenium/WebDriver, React, or other test workflows; manual accessibility review is still required.</p></div>
+<div id="child-webtest-picker-browserstack" class="child-08 uid-webtest-picker-browserstack"><div class="project-command-title">BrowserStack</div><p><strong>Best optional real-device cloud.</strong> Commercial, not open source. Useful for real iOS/Android hardware, many browser/OS combinations, and testing localhost through a secure tunnel.</p></div></div>
 </section>
 <section
   id="node-webtest-manual"
@@ -621,76 +309,30 @@
   <p>Three columns show <strong>Use it for</strong> → <strong>macOS setup/open</strong> → <strong>best practice</strong>.</p>
 </header>
   <p>Do not confuse responsive emulation with real-device testing. Emulation is fast and valuable, but it cannot reproduce every CPU, GPU, keyboard, browser chrome, OS integration, memory, and touch behavior.</p>
-  <div class="project-command-list">
-<div id="child-webtest-manual-chrome" class="project-command child-01 uid-webtest-manual-chrome">
+  <div class="project-command-list"><div id="child-webtest-manual-chrome" class="project-command child-01 uid-webtest-manual-chrome">
   <div class="project-split-child-head">Chrome Device Mode</div>
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <p><strong>Use it for</strong><br>Viewport resizing, DPR presets, CPU/network throttling, geolocation, orientation, layout inspection.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Open on Mac</strong><br><code>⌥⌘I</code> for DevTools, then toggle the device toolbar. Chrome Device Mode is an approximation, not a real phone.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best use</strong><br>Fast first-pass responsive debugging. Follow failures or suspicious behavior with a physical device or simulator.</p>
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><p><strong>Use it for</strong><br>Viewport resizing, DPR presets, CPU/network throttling, geolocation, orientation, layout inspection.</p></div>
+<div class="project-split-cell"><p><strong>Open on Mac</strong><br><code>⌥⌘I</code> for DevTools, then toggle the device toolbar. Chrome Device Mode is an approximation, not a real phone.</p></div>
+<div class="project-split-cell"><p><strong>Best use</strong><br>Fast first-pass responsive debugging. Follow failures or suspicious behavior with a physical device or simulator.</p></div></div>
 </div>
 <div id="child-webtest-manual-firefox" class="project-command child-02 uid-webtest-manual-firefox">
   <div class="project-split-child-head">Firefox Responsive Design Mode</div>
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <p><strong>Use it for</strong><br>Responsive layout in Gecko, viewport size, touch simulation, DPR/device presets, and Firefox-specific CSS behavior.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Open on Mac</strong><br><code>⌘⌥M</code> or Firefox → Tools/Browser Tools → Responsive Design Mode.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best use</strong><br>Run after Chromium checks so Gecko-specific layout and standards differences are not missed.</p>
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><p><strong>Use it for</strong><br>Responsive layout in Gecko, viewport size, touch simulation, DPR/device presets, and Firefox-specific CSS behavior.</p></div>
+<div class="project-split-cell"><p><strong>Open on Mac</strong><br><code>⌘⌥M</code> or Firefox → Tools/Browser Tools → Responsive Design Mode.</p></div>
+<div class="project-split-cell"><p><strong>Best use</strong><br>Run after Chromium checks so Gecko-specific layout and standards differences are not missed.</p></div></div>
 </div>
 <div id="child-webtest-manual-safari" class="project-command child-03 uid-webtest-manual-safari">
   <div class="project-split-child-head">Safari Responsive Design Mode</div>
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <p><strong>Use it for</strong><br>WebKit/Safari layout, media queries, pixel ratio, Web Inspector, Apple-platform browser behavior.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Enable on Mac</strong><br>Safari → Settings → Advanced → <em>Show features for web developers</em>. Enter Responsive Design Mode with <code>⌃⌘R</code>; Web Inspector with <code>⌥⌘I</code>.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best use</strong><br>Required macOS check for Safari. Use Xcode Simulator or a physical iPhone/iPad when mobile Safari behavior matters.</p>
-  
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><p><strong>Use it for</strong><br>WebKit/Safari layout, media queries, pixel ratio, Web Inspector, Apple-platform browser behavior.</p></div>
+<div class="project-split-cell"><p><strong>Enable on Mac</strong><br>Safari → Settings → Advanced → <em>Show features for web developers</em>. Enter Responsive Design Mode with <code>⌃⌘R</code>; Web Inspector with <code>⌥⌘I</code>.</p></div>
+<div class="project-split-cell"><p><strong>Best use</strong><br>Required macOS check for Safari. Use Xcode Simulator or a physical iPhone/iPad when mobile Safari behavior matters.</p></div></div>
 </div>
 <div id="child-webtest-manual-xcode" class="project-command child-04 uid-webtest-manual-xcode">
   <div class="project-split-child-head">Xcode Simulator</div>
-  <div class="project-split project-split--three-column">
-    <div class="project-split-cell">
-  <p><strong>Use it for</strong><br>iPhone/iPad Safari in simulated iOS/iPadOS environments, different device sizes, OS versions, and Apple-specific behavior.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Install</strong><br>Install Xcode from the Mac App Store, launch it once, then add runtimes in Xcode → Settings → Components. Safari can open pages in installed simulators from the Develop menu.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best use</strong><br>Closer to iOS than desktop viewport emulation, but still not physical hardware. Keep one real-device pass for release confidence.</p>
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--three-column"><div class="project-split-cell"><p><strong>Use it for</strong><br>iPhone/iPad Safari in simulated iOS/iPadOS environments, different device sizes, OS versions, and Apple-specific behavior.</p></div>
+<div class="project-split-cell"><p><strong>Install</strong><br>Install Xcode from the Mac App Store, launch it once, then add runtimes in Xcode → Settings → Components. Safari can open pages in installed simulators from the Develop menu.</p></div>
+<div class="project-split-cell"><p><strong>Best use</strong><br>Closer to iOS than desktop viewport emulation, but still not physical hardware. Keep one real-device pass for release confidence.</p></div></div>
+</div></div>
 </section>
 <section
   id="node-webtest-automation"
@@ -703,80 +345,46 @@
   <p>Use automation for behaviors you need to verify repeatedly: navigation, forms, authentication, responsive menus, critical flows, and regressions.</p>
 </header>
   <p><strong>Do not automate every visual detail.</strong> Automate stable user outcomes and critical UI states; keep exploratory and visual judgment in manual testing.</p>
-  <div class="project-command-list">
-<div id="child-webtest-auto-playwright" class="project-command child-01 uid-webtest-auto-playwright is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Playwright — recommended default
-</div><p>Modern cross-engine E2E testing with a strong TypeScript/JavaScript workflow, automatic waiting, traces, screenshots, network control, projects, and device profiles.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-playwright" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-playwright" aria-label="Expand Playwright — recommended default"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-playwright" class="project-command-panel" hidden>
-    <p><strong>Install:</strong> run <code>npm init playwright@latest</code> in a project. The initializer can add TypeScript, tests, browsers, and a GitHub Actions workflow.</p>
+  <div class="project-command-list"><div id="child-webtest-auto-playwright" class="project-command child-01 uid-webtest-auto-playwright is-collapsible">
+  <div class="project-command-summary"><div class="project-command-title">Playwright — recommended default</div><p>Modern cross-engine E2E testing with a strong TypeScript/JavaScript workflow, automatic waiting, traces, screenshots, network control, projects, and device profiles.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-playwright" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-playwright" aria-label="Expand Playwright — recommended default"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-playwright" class="project-command-panel" hidden><p><strong>Install:</strong> run <code>npm init playwright@latest</code> in a project. The initializer can add TypeScript, tests, browsers, and a GitHub Actions workflow.</p>
 <ul>
 <li><strong>Use when:</strong> you want one test API for Chromium, Firefox, WebKit, desktop, and emulated mobile.</li>
 <li><strong>Best implementation:</strong> define browser/device <em>projects</em> in <code>playwright.config.ts</code>; keep locators user-facing; use web-first assertions; run a small smoke matrix on every change and the full matrix in CI.</li>
 <li><strong>Important:</strong> Playwright WebKit/mobile profiles are excellent engine/emulation coverage, but they are not a substitute for every branded Safari + real iPhone/iPad behavior.</li>
-</ul>
-  </div>
+</ul></div>
 </div>
 <div id="child-webtest-auto-cypress" class="project-command child-02 uid-webtest-auto-cypress is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Cypress — interactive JS/TS option
-</div><p>Open-source testing tool with an excellent interactive app, time-travel-style command debugging, network stubbing, E2E testing, and component testing.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-cypress" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-cypress" aria-label="Expand Cypress — interactive JS/TS option"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-cypress" class="project-command-panel" hidden>
-    <p><strong>Install:</strong> <code>npm install cypress --save-dev</code>, then <code>npx cypress open</code>.</p>
+  <div class="project-command-summary"><div class="project-command-title">Cypress — interactive JS/TS option</div><p>Open-source testing tool with an excellent interactive app, time-travel-style command debugging, network stubbing, E2E testing, and component testing.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-cypress" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-cypress" aria-label="Expand Cypress — interactive JS/TS option"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-cypress" class="project-command-panel" hidden><p><strong>Install:</strong> <code>npm install cypress --save-dev</code>, then <code>npx cypress open</code>.</p>
 <ul>
 <li><strong>Use when:</strong> the team is strongly JavaScript/TypeScript and values a highly visual local authoring/debugging loop or component testing.</li>
 <li><strong>Best implementation:</strong> use Chrome for Testing for deterministic Chromium runs; add Firefox; treat WebKit as experimental unless your release process also includes Safari/real-device validation.</li>
 <li><strong>Tradeoff:</strong> excellent developer workflow, but less straightforward as a single all-engine mobile-web answer than Playwright.</li>
-</ul>
-  </div>
+</ul></div>
 </div>
 <div id="child-webtest-auto-selenium" class="project-command child-03 uid-webtest-auto-selenium is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Selenium — enterprise & cross-language
-</div><p>Long-lived open-source browser automation built around W3C WebDriver, with language bindings, Selenium Grid, and broad browser/ecosystem support.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-selenium" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-selenium" aria-label="Expand Selenium — enterprise &amp; cross-language"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-selenium" class="project-command-panel" hidden>
-    <p><strong>Install for JavaScript:</strong> <code>npm install selenium-webdriver</code>. Current Selenium uses Selenium Manager automatically, so ordinary setups no longer need manual ChromeDriver/GeckoDriver downloads.</p>
+  <div class="project-command-summary"><div class="project-command-title">Selenium — enterprise & cross-language</div><p>Long-lived open-source browser automation built around W3C WebDriver, with language bindings, Selenium Grid, and broad browser/ecosystem support.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-selenium" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-selenium" aria-label="Expand Selenium — enterprise &amp; cross-language"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-selenium" class="project-command-panel" hidden><p><strong>Install for JavaScript:</strong> <code>npm install selenium-webdriver</code>. Current Selenium uses Selenium Manager automatically, so ordinary setups no longer need manual ChromeDriver/GeckoDriver downloads.</p>
 <ul>
 <li><strong>Use when:</strong> you need Java/Python/C#/Ruby/JS teams, existing Selenium infrastructure, remote grids, or broad/legacy browser coverage.</li>
 <li><strong>Best implementation:</strong> use current Selenium 4+, explicit user-focused waits/assertions, and WebDriver BiDi capabilities where needed; avoid old tutorials that instruct you to hand-maintain browser drivers.</li>
 <li><strong>Tradeoff:</strong> broader ecosystem and language reach, but usually more framework/infrastructure work than Playwright for a new JS/TS web project.</li>
-</ul>
-  </div>
+</ul></div>
 </div>
 <div id="child-webtest-auto-browsersync" class="project-command child-04 uid-webtest-auto-browsersync is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  BrowserSync — synchronized manual testing
-</div><p>BrowserSync is not an E2E assertion framework. It is an open-source local server/proxy and synchronization tool for testing the same page across several real browsers/devices at once.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-browsersync" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-browsersync" aria-label="Expand BrowserSync — synchronized manual testing"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-browsersync" class="project-command-panel" hidden>
-    <p><strong>Install locally:</strong> <code>npm install browser-sync --save-dev</code>. Local installation is preferred for project reproducibility.</p>
+  <div class="project-command-summary"><div class="project-command-title">BrowserSync — synchronized manual testing</div><p>BrowserSync is not an E2E assertion framework. It is an open-source local server/proxy and synchronization tool for testing the same page across several real browsers/devices at once.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-browsersync" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-browsersync" aria-label="Expand BrowserSync — synchronized manual testing"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-automation-webtest-auto-browsersync" class="project-command-panel" hidden><p><strong>Install locally:</strong> <code>npm install browser-sync --save-dev</code>. Local installation is preferred for project reproducibility.</p>
 <ul>
 <li><strong>Use when:</strong> you have phones/tablets on the same network and want one development URL, live reload, CSS injection, and optional scroll/click/form mirroring.</li>
 <li><strong>Best implementation:</strong> use server mode for static sites and proxy mode when a PHP/Node/etc. server already exists. Open BrowserSync's External URL on each physical device.</li>
 <li><strong>Tradeoff:</strong> excellent for visual/manual cross-device sweeps; it does not replace automated assertions or a real-device cloud.</li>
-</ul>
-  </div>
-</div>
-  </div>
+</ul></div>
+</div></div>
 </section>
 <section
   id="node-webtest-code"
@@ -789,18 +397,10 @@
   <p>These examples are macOS-friendly and assume a current Node.js project. Install project tooling locally unless there is a strong reason to install it globally.</p>
 </header>
   
-  <div class="project-command-list">
-<div id="child-webtest-code-pw-install" class="project-command child-01 uid-webtest-code-pw-install is-collapsible">
+  <div class="project-command-list"><div id="child-webtest-code-pw-install" class="project-command child-01 uid-webtest-code-pw-install is-collapsible">
   <div class="project-command-summary">Playwright — initialize and run</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-install" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-install" aria-label="Expand Playwright — initialize and run"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-install" class="project-command-panel" hidden>
-    <p>Scaffold Playwright Test, install browser binaries, run all projects, open UI mode, and show the report.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>npm init playwright@latest
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-install" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-install" aria-label="Expand Playwright — initialize and run"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-install" class="project-command-panel" hidden><p>Scaffold Playwright Test, install browser binaries, run all projects, open UI mode, and show the report.</p><div class="project-example"><small>Example</small><pre><code>npm init playwright@latest
 
 # If browsers were not installed during setup:
 npx playwright install
@@ -812,21 +412,12 @@ npx playwright test
 npx playwright test --ui
 
 # Open the last HTML report
-npx playwright show-report</code></pre>
-</div>
-  </div>
+npx playwright show-report</code></pre></div></div>
 </div>
 <div id="child-webtest-code-pw-config" class="project-command child-02 uid-webtest-code-pw-config is-collapsible">
   <div class="project-command-summary">Playwright — cross-engine + mobile projects</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-config" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-config" aria-label="Expand Playwright — cross-engine + mobile projects"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-config" class="project-command-panel" hidden>
-    <p>Run the same tests against the three major browser engines plus representative mobile profiles. Device names below are from Playwright's documented device registry.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>import { defineConfig, devices } from &#039;@playwright/test&#039;;
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-config" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-config" aria-label="Expand Playwright — cross-engine + mobile projects"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-config" class="project-command-panel" hidden><p>Run the same tests against the three major browser engines plus representative mobile profiles. Device names below are from Playwright's documented device registry.</p><div class="project-example"><small>Example</small><pre><code>import { defineConfig, devices } from &#039;@playwright/test&#039;;
 
 export default defineConfig({
   use: {
@@ -856,21 +447,12 @@ export default defineConfig({
       use: { ...devices[&#039;iPhone 12&#039;] }
     }
   ]
-});</code></pre>
-</div>
-  </div>
+});</code></pre></div></div>
 </div>
 <div id="child-webtest-code-pw-test" class="project-command child-03 uid-webtest-code-pw-test is-collapsible">
   <div class="project-command-summary">Playwright — responsive navigation test</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-test" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-test" aria-label="Expand Playwright — responsive navigation test"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-test" class="project-command-panel" hidden>
-    <p>Example of testing a user-visible responsive behavior instead of only checking a viewport size.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>import { test, expect } from &#039;@playwright/test&#039;;
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-test" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-test" aria-label="Expand Playwright — responsive navigation test"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-pw-test" class="project-command-panel" hidden><p>Example of testing a user-visible responsive behavior instead of only checking a viewport size.</p><div class="project-example"><small>Example</small><pre><code>import { test, expect } from &#039;@playwright/test&#039;;
 
 test(&#039;mobile navigation opens&#039;, async ({ page }) =&gt; {
   await page.goto(&#039;/&#039;);
@@ -883,21 +465,12 @@ test(&#039;mobile navigation opens&#039;, async ({ page }) =&gt; {
   await expect(
     page.getByRole(&#039;navigation&#039;)
   ).toBeVisible();
-});</code></pre>
-</div>
-  </div>
+});</code></pre></div></div>
 </div>
 <div id="child-webtest-code-cy-install" class="project-command child-04 uid-webtest-code-cy-install is-collapsible">
   <div class="project-command-summary">Cypress — install, open, run browsers</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-install" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-install" aria-label="Expand Cypress — install, open, run browsers"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-install" class="project-command-panel" hidden>
-    <p>Install locally, use the Cypress App while authoring, then run repeatable headless checks in chosen browsers.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>npm install cypress --save-dev
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-install" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-install" aria-label="Expand Cypress — install, open, run browsers"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-install" class="project-command-panel" hidden><p>Install locally, use the Cypress App while authoring, then run repeatable headless checks in chosen browsers.</p><div class="project-example"><small>Example</small><pre><code>npm install cypress --save-dev
 
 # Open the interactive Cypress App
 npx cypress open
@@ -906,21 +479,12 @@ npx cypress open
 npx cypress run --browser chrome
 
 # Headless run in Firefox
-npx cypress run --browser firefox</code></pre>
-</div>
-  </div>
+npx cypress run --browser firefox</code></pre></div></div>
 </div>
 <div id="child-webtest-code-cy-test" class="project-command child-05 uid-webtest-code-cy-test is-collapsible">
   <div class="project-command-summary">Cypress — simple responsive test</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-test" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-test" aria-label="Expand Cypress — simple responsive test"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-test" class="project-command-panel" hidden>
-    <p>Use viewport changes to exercise responsive behavior, then assert the outcome users actually need.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>describe(&#039;responsive navigation&#039;, () =&gt; {
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-test" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-test" aria-label="Expand Cypress — simple responsive test"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-cy-test" class="project-command-panel" hidden><p>Use viewport changes to exercise responsive behavior, then assert the outcome users actually need.</p><div class="project-example"><small>Example</small><pre><code>describe(&#039;responsive navigation&#039;, () =&gt; {
   it(&#039;opens the mobile menu&#039;, () =&gt; {
     cy.viewport(390, 844);
     cy.visit(&#039;/&#039;);
@@ -928,21 +492,12 @@ npx cypress run --browser firefox</code></pre>
     cy.findByRole(&#039;button&#039;, { name: /menu/i }).click();
     cy.findByRole(&#039;navigation&#039;).should(&#039;be.visible&#039;);
   });
-});</code></pre>
-</div>
-  </div>
+});</code></pre></div></div>
 </div>
 <div id="child-webtest-code-selenium" class="project-command child-06 uid-webtest-code-selenium is-collapsible">
   <div class="project-command-summary">Selenium — JavaScript quick start</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-selenium" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-selenium" aria-label="Expand Selenium — JavaScript quick start"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-selenium" class="project-command-panel" hidden>
-    <p>Selenium Manager handles the ordinary browser-driver setup automatically in current Selenium.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>npm install selenium-webdriver
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-selenium" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-selenium" aria-label="Expand Selenium — JavaScript quick start"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-selenium" class="project-command-panel" hidden><p>Selenium Manager handles the ordinary browser-driver setup automatically in current Selenium.</p><div class="project-example"><small>Example</small><pre><code>npm install selenium-webdriver
 
 # example.mjs
 import { Builder, Browser } from &#039;selenium-webdriver&#039;;
@@ -956,21 +511,12 @@ try {
   console.log(await driver.getTitle());
 } finally {
   await driver.quit();
-}</code></pre>
-</div>
-  </div>
+}</code></pre></div></div>
 </div>
 <div id="child-webtest-code-bs" class="project-command child-07 uid-webtest-code-bs is-collapsible">
   <div class="project-command-summary">BrowserSync — static and dynamic sites</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-bs" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-bs" aria-label="Expand BrowserSync — static and dynamic sites"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-bs" class="project-command-panel" hidden>
-    <p>Use the External URL printed by BrowserSync on other devices connected to the same local network.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>npm install browser-sync --save-dev
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-bs" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-bs" aria-label="Expand BrowserSync — static and dynamic sites"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-bs" class="project-command-panel" hidden><p>Use the External URL printed by BrowserSync on other devices connected to the same local network.</p><div class="project-example"><small>Example</small><pre><code>npm install browser-sync --save-dev
 
 # Static HTML/CSS/JS site
 npx browser-sync start --server --files &quot;css/*.css, js/*.js, *.html&quot;
@@ -979,41 +525,23 @@ npx browser-sync start --server --files &quot;css/*.css, js/*.js, *.html&quot;
 npx browser-sync start --proxy &quot;http://localhost:3000&quot; --files &quot;css/*.css, js/*.js, *.html&quot;
 
 # Show CLI help
-npx browser-sync start --help</code></pre>
-</div>
-  </div>
+npx browser-sync start --help</code></pre></div></div>
 </div>
 <div id="child-webtest-code-lighthouse" class="project-command child-08 uid-webtest-code-lighthouse is-collapsible">
   <div class="project-command-summary">Lighthouse — CLI audit</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-lighthouse" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-lighthouse" aria-label="Expand Lighthouse — CLI audit"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-lighthouse" class="project-command-panel" hidden>
-    <p>Chrome DevTools already includes Lighthouse. The CLI is useful for repeatable local or scripted audits.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>npm install -g lighthouse
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-lighthouse" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-lighthouse" aria-label="Expand Lighthouse — CLI audit"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-lighthouse" class="project-command-panel" hidden><p>Chrome DevTools already includes Lighthouse. The CLI is useful for repeatable local or scripted audits.</p><div class="project-example"><small>Example</small><pre><code>npm install -g lighthouse
 
 # Audit a running page
 lighthouse http://127.0.0.1:4173
 
 # See all CLI options
-lighthouse --help</code></pre>
-</div>
-  </div>
+lighthouse --help</code></pre></div></div>
 </div>
 <div id="child-webtest-code-axe" class="project-command child-09 uid-webtest-code-axe is-collapsible">
   <div class="project-command-summary">axe-core with Playwright</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-axe" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-axe" aria-label="Expand axe-core with Playwright"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-axe" class="project-command-panel" hidden>
-    <p>Add automated accessibility checks to a browser test. Automated checks catch only part of accessibility; continue keyboard, focus, zoom, contrast, and screen-reader review manually.</p>
-    <div class="project-example">
-  <small>Example</small>
-  <pre><code>npm install -D @axe-core/playwright
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-code-webtest-code-axe" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-code-webtest-code-axe" aria-label="Expand axe-core with Playwright"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-code-webtest-code-axe" class="project-command-panel" hidden><p>Add automated accessibility checks to a browser test. Automated checks catch only part of accessibility; continue keyboard, focus, zoom, contrast, and screen-reader review manually.</p><div class="project-example"><small>Example</small><pre><code>npm install -D @axe-core/playwright
 
 import { test, expect } from &#039;@playwright/test&#039;;
 import AxeBuilder from &#039;@axe-core/playwright&#039;;
@@ -1024,11 +552,8 @@ test(&#039;page has no automatically detectable a11y violations&#039;, async ({ 
   const results = await new AxeBuilder({ page }).analyze();
 
   expect(results.violations).toEqual([]);
-});</code></pre>
-</div>
-  </div>
-</div>
-  </div>
+});</code></pre></div></div>
+</div></div>
 </section>
 <section
   id="node-webtest-quality"
@@ -1041,60 +566,26 @@ test(&#039;page has no automatically detectable a11y violations&#039;, async ({ 
   <p>Cross-device quality includes more than width. Test performance, input methods, accessibility preferences, network behavior, and failure states.</p>
 </header>
   
-  <div class="project-command-list">
-<div id="child-webtest-quality-lighthouse" class="project-command child-01 uid-webtest-quality-lighthouse">
+  <div class="project-command-list"><div id="child-webtest-quality-lighthouse" class="project-command child-01 uid-webtest-quality-lighthouse">
   <div class="project-split-child-head">Lighthouse</div>
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <p><strong>Catches quickly</strong><br>Performance opportunities, accessibility signals, best-practice issues, and SEO basics.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best implementation</strong><br>Use Chrome DevTools while developing; use the CLI or CI tooling when you need repeatable audits. Treat scores as signals, not as a substitute for real-user performance data.</p>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><p><strong>Catches quickly</strong><br>Performance opportunities, accessibility signals, best-practice issues, and SEO basics.</p></div>
+<div class="project-split-cell"><p><strong>Best implementation</strong><br>Use Chrome DevTools while developing; use the CLI or CI tooling when you need repeatable audits. Treat scores as signals, not as a substitute for real-user performance data.</p></div></div>
 </div>
 <div id="child-webtest-quality-axe" class="project-command child-02 uid-webtest-quality-axe">
   <div class="project-split-child-head">axe-core</div>
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <p><strong>Catches quickly</strong><br>Many automatically detectable accessibility violations in rendered UI.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best implementation</strong><br>Run axe after important UI states become visible. Pair it with keyboard-only navigation, visible focus checks, zoom/reflow checks, labels, reading order, and manual assistive-technology review.</p>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><p><strong>Catches quickly</strong><br>Many automatically detectable accessibility violations in rendered UI.</p></div>
+<div class="project-split-cell"><p><strong>Best implementation</strong><br>Run axe after important UI states become visible. Pair it with keyboard-only navigation, visible focus checks, zoom/reflow checks, labels, reading order, and manual assistive-technology review.</p></div></div>
 </div>
 <div id="child-webtest-quality-network" class="project-command child-03 uid-webtest-quality-network">
   <div class="project-split-child-head">Network + CPU</div>
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <p><strong>Catches quickly</strong><br>Slow-loading assets, blocking requests, loading-state bugs, timeouts, and code that assumes desktop CPU/network speed.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best implementation</strong><br>Throttle network/CPU in Chrome DevTools and test slow-state UI. Real mobile hardware remains the stronger performance check because desktop throttling cannot reproduce every mobile processor/GPU condition.</p>
-  
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><p><strong>Catches quickly</strong><br>Slow-loading assets, blocking requests, loading-state bugs, timeouts, and code that assumes desktop CPU/network speed.</p></div>
+<div class="project-split-cell"><p><strong>Best implementation</strong><br>Throttle network/CPU in Chrome DevTools and test slow-state UI. Real mobile hardware remains the stronger performance check because desktop throttling cannot reproduce every mobile processor/GPU condition.</p></div></div>
 </div>
 <div id="child-webtest-quality-input" class="project-command child-04 uid-webtest-quality-input">
   <div class="project-split-child-head">Touch + user preferences</div>
-  <div class="project-split project-split--equal">
-    <div class="project-split-cell">
-  <p><strong>Catches quickly</strong><br>Controls too small for touch, hover-only interactions, motion problems, dark/light mode issues, and reduced-motion behavior.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Best implementation</strong><br>Use browser emulation and Playwright context options for touch/user preferences, then physically use the interface on a touch device. Every important action should remain keyboard accessible.</p>
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--equal"><div class="project-split-cell"><p><strong>Catches quickly</strong><br>Controls too small for touch, hover-only interactions, motion problems, dark/light mode issues, and reduced-motion behavior.</p></div>
+<div class="project-split-cell"><p><strong>Best implementation</strong><br>Use browser emulation and Playwright context options for touch/user preferences, then physically use the interface on a touch device. Every important action should remain keyboard accessible.</p></div></div>
+</div></div>
 </section>
 <section
   id="node-webtest-real-devices"
@@ -1107,60 +598,26 @@ test(&#039;page has no automatically detectable a11y violations&#039;, async ({ 
   <p>Use real hardware whenever the bug could depend on the operating system, browser chrome, touch, virtual keyboard, device performance, memory, or hardware integration.</p>
 </header>
   
-  <div class="project-command-list">
-<div id="child-webtest-real-xcode" class="project-command child-01 uid-webtest-real-xcode is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Xcode Simulator — free Apple coverage
-</div><p>Free with Xcode on macOS and far more realistic for iOS/iPadOS Safari behavior than simply shrinking a desktop browser window.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-xcode" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-xcode" aria-label="Expand Xcode Simulator — free Apple coverage"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-xcode" class="project-command-panel" hidden>
-    <p>Install Xcode from the Mac App Store, finish first-launch setup, then add simulator runtimes in Xcode → Settings → Components. Safari's Develop menu can open pages in installed simulators. Use several OS/runtime versions when compatibility matters.</p>
-  </div>
+  <div class="project-command-list"><div id="child-webtest-real-xcode" class="project-command child-01 uid-webtest-real-xcode is-collapsible">
+  <div class="project-command-summary"><div class="project-command-title">Xcode Simulator — free Apple coverage</div><p>Free with Xcode on macOS and far more realistic for iOS/iPadOS Safari behavior than simply shrinking a desktop browser window.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-xcode" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-xcode" aria-label="Expand Xcode Simulator — free Apple coverage"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-xcode" class="project-command-panel" hidden><p>Install Xcode from the Mac App Store, finish first-launch setup, then add simulator runtimes in Xcode → Settings → Components. Safari's Develop menu can open pages in installed simulators. Use several OS/runtime versions when compatibility matters.</p></div>
 </div>
 <div id="child-webtest-real-physical" class="project-command child-02 uid-webtest-real-physical is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Physical iPhone/iPad + Safari Web Inspector
-</div><p>Use a real Apple device for the highest-confidence Safari/touch/keyboard/performance check you can do locally.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-physical" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-physical" aria-label="Expand Physical iPhone/iPad + Safari Web Inspector"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-physical" class="project-command-panel" hidden>
-    <p>Enable Safari developer features on the Mac, connect/pair the iPhone or iPad, enable inspection on the device as required, then inspect the device's Safari page from the Mac Develop menu. This is the right escalation step for bugs that only appear on actual hardware.</p>
-  </div>
+  <div class="project-command-summary"><div class="project-command-title">Physical iPhone/iPad + Safari Web Inspector</div><p>Use a real Apple device for the highest-confidence Safari/touch/keyboard/performance check you can do locally.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-physical" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-physical" aria-label="Expand Physical iPhone/iPad + Safari Web Inspector"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-physical" class="project-command-panel" hidden><p>Enable Safari developer features on the Mac, connect/pair the iPhone or iPad, enable inspection on the device as required, then inspect the device's Safari page from the Mac Develop menu. This is the right escalation step for bugs that only appear on actual hardware.</p></div>
 </div>
 <div id="child-webtest-real-browsersync" class="project-command child-03 uid-webtest-real-browsersync is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Physical devices on the same Wi-Fi
-</div><p>BrowserSync gives a local development URL that other phones/tablets/computers can open, with synchronized reloads and optional mirrored interactions.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-browsersync" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-browsersync" aria-label="Expand Physical devices on the same Wi-Fi"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-browsersync" class="project-command-panel" hidden>
-    <p>Start BrowserSync in server or proxy mode. Copy the printed <strong>External</strong> URL into each device. Keep devices on the same trusted network. Disable Ghost Mode when mirrored clicks/scroll/forms would interfere with independent testing.</p>
-  </div>
+  <div class="project-command-summary"><div class="project-command-title">Physical devices on the same Wi-Fi</div><p>BrowserSync gives a local development URL that other phones/tablets/computers can open, with synchronized reloads and optional mirrored interactions.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-browsersync" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-browsersync" aria-label="Expand Physical devices on the same Wi-Fi"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-browsersync" class="project-command-panel" hidden><p>Start BrowserSync in server or proxy mode. Copy the printed <strong>External</strong> URL into each device. Keep devices on the same trusted network. Disable Ghost Mode when mirrored clicks/scroll/forms would interfere with independent testing.</p></div>
 </div>
 <div id="child-webtest-real-cloud" class="project-command child-04 uid-webtest-real-cloud is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Real-device cloud — BrowserStack or equivalent
-</div><p>Use a cloud service when you need device/OS combinations you do not own, remote team access, screenshots/video, or repeatable release checks across real hardware.</p></div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-cloud" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-cloud" aria-label="Expand Real-device cloud — BrowserStack or equivalent"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-cloud" class="project-command-panel" hidden>
-    <p>BrowserStack is commercial rather than open source, but it supports manual and automated testing on remote browsers/devices and can reach localhost/staging through BrowserStack Local. Comparable paid services include Sauce Labs and LambdaTest. Use cloud hardware strategically rather than replacing fast local checks with expensive remote sessions.</p>
-  </div>
-</div>
-  </div>
+  <div class="project-command-summary"><div class="project-command-title">Real-device cloud — BrowserStack or equivalent</div><p>Use a cloud service when you need device/OS combinations you do not own, remote team access, screenshots/video, or repeatable release checks across real hardware.</p></div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-cloud" aria-expanded="false" aria-controls="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-cloud" aria-label="Expand Real-device cloud — BrowserStack or equivalent"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-ref-cross-device-web-testing-webtest-real-devices-webtest-real-cloud" class="project-command-panel" hidden><p>BrowserStack is commercial rather than open source, but it supports manual and automated testing on remote browsers/devices and can reach localhost/staging through BrowserStack Local. Comparable paid services include Sauce Labs and LambdaTest. Use cloud hardware strategically rather than replacing fast local checks with expensive remote sessions.</p></div>
+</div></div>
 </section>
 <section
   id="node-webtest-release"
@@ -1173,50 +630,12 @@ test(&#039;page has no automatically detectable a11y violations&#039;, async ({ 
   <p>Adapt the matrix to your analytics and audience. The goal is representative coverage, not testing every device ever made.</p>
 </header>
   
-  <div class="project-meta">
-<div id="child-webtest-release-engine" class="child-01 uid-webtest-release-engine">
-  
-<div class="project-command-title">
-  Browser engines
-</div>
-  <p><strong>Chromium + Firefox + WebKit/Safari.</strong> Add branded Edge/Chrome only when enterprise policies or browser-specific behavior matter.</p>
-</div>
-<div id="child-webtest-release-width" class="child-02 uid-webtest-release-width">
-  
-<div class="project-command-title">
-  Responsive widths
-</div>
-  <p>Check narrow phone, common phone, tablet, laptop, and wide desktop ranges. Resize continuously too—bugs often appear between named device presets.</p>
-</div>
-<div id="child-webtest-release-state" class="child-03 uid-webtest-release-state">
-  
-<div class="project-command-title">
-  Critical UI states
-</div>
-  <p>Menus, forms, validation, modals, authentication, empty/loading/error states, keyboard focus, long text, zoom, and content overflow.</p>
-</div>
-<div id="child-webtest-release-pref" class="child-04 uid-webtest-release-pref">
-  
-<div class="project-command-title">
-  User preferences
-</div>
-  <p>Light/dark mode, reduced motion, increased text/zoom, keyboard-only use, and touch where applicable.</p>
-</div>
-<div id="child-webtest-release-network" class="child-05 uid-webtest-release-network">
-  
-<div class="project-command-title">
-  Slow conditions
-</div>
-  <p>Throttle network/CPU, reload uncached, inspect large assets, and make sure loading/error states remain usable.</p>
-</div>
-<div id="child-webtest-release-real" class="child-06 uid-webtest-release-real">
-  
-<div class="project-command-title">
-  Real hardware
-</div>
-  <p>At least one current iPhone/iPad Safari pass and one Android/Chrome pass for important public releases, using owned devices or a real-device cloud.</p>
-</div>
-  </div>
+  <div class="project-meta"><div id="child-webtest-release-engine" class="child-01 uid-webtest-release-engine"><div class="project-command-title">Browser engines</div><p><strong>Chromium + Firefox + WebKit/Safari.</strong> Add branded Edge/Chrome only when enterprise policies or browser-specific behavior matter.</p></div>
+<div id="child-webtest-release-width" class="child-02 uid-webtest-release-width"><div class="project-command-title">Responsive widths</div><p>Check narrow phone, common phone, tablet, laptop, and wide desktop ranges. Resize continuously too—bugs often appear between named device presets.</p></div>
+<div id="child-webtest-release-state" class="child-03 uid-webtest-release-state"><div class="project-command-title">Critical UI states</div><p>Menus, forms, validation, modals, authentication, empty/loading/error states, keyboard focus, long text, zoom, and content overflow.</p></div>
+<div id="child-webtest-release-pref" class="child-04 uid-webtest-release-pref"><div class="project-command-title">User preferences</div><p>Light/dark mode, reduced motion, increased text/zoom, keyboard-only use, and touch where applicable.</p></div>
+<div id="child-webtest-release-network" class="child-05 uid-webtest-release-network"><div class="project-command-title">Slow conditions</div><p>Throttle network/CPU, reload uncached, inspect large assets, and make sure loading/error states remain usable.</p></div>
+<div id="child-webtest-release-real" class="child-06 uid-webtest-release-real"><div class="project-command-title">Real hardware</div><p>At least one current iPhone/iPad Safari pass and one Android/Chrome pass for important public releases, using owned devices or a real-device cloud.</p></div></div>
 </section>
 <section
   id="node-webtest-docs"
@@ -1229,211 +648,83 @@ test(&#039;page has no automatically detectable a11y violations&#039;, async ({ 
   <p>Prefer official documentation and current install commands. Tooling changes quickly; old tutorials often preserve obsolete driver, browser, or configuration steps.</p>
 </header>
   
-  <div class="project-command-list">
-<div id="child-webtest-doc-playwright" class="project-command child-01 uid-webtest-doc-playwright">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Playwright
-</div>
-    <p><strong>Install:</strong> <code>npm init playwright@latest</code><br><a href="https://playwright.dev/docs/browsers">Browsers</a> · <a href="https://playwright.dev/docs/test-projects">Projects</a> · <a href="https://playwright.dev/docs/emulation">Device emulation</a></p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer" aria-label="Open Playwright docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-list"><div id="child-webtest-doc-playwright" class="project-command child-01 uid-webtest-doc-playwright">
+  <div class="project-command-content"><div class="project-command-title">Playwright</div><p><strong>Install:</strong> <code>npm init playwright@latest</code><br><a href="https://playwright.dev/docs/browsers">Browsers</a> · <a href="https://playwright.dev/docs/test-projects">Projects</a> · <a href="https://playwright.dev/docs/emulation">Device emulation</a></p></div>
+  <a class="project-command-action" href="https://playwright.dev/docs/intro" target="_blank" rel="noopener noreferrer" aria-label="Open Playwright docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-cypress" class="project-command child-02 uid-webtest-doc-cypress">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Cypress
-</div>
-    <p><strong>Install:</strong> <code>npm install cypress --save-dev</code><br><a href="https://docs.cypress.io/app/references/launching-browsers">Launching browsers</a> · <a href="https://docs.cypress.io/app/guides/cross-browser-testing">Cross-browser testing</a></p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://docs.cypress.io/app/get-started/install-cypress" target="_blank" rel="noopener noreferrer" aria-label="Open Cypress install docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">Cypress</div><p><strong>Install:</strong> <code>npm install cypress --save-dev</code><br><a href="https://docs.cypress.io/app/references/launching-browsers">Launching browsers</a> · <a href="https://docs.cypress.io/app/guides/cross-browser-testing">Cross-browser testing</a></p></div>
+  <a class="project-command-action" href="https://docs.cypress.io/app/get-started/install-cypress" target="_blank" rel="noopener noreferrer" aria-label="Open Cypress install docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-selenium" class="project-command child-03 uid-webtest-doc-selenium">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Selenium
-</div>
-    <p><strong>JS install:</strong> <code>npm install selenium-webdriver</code><br><a href="https://www.selenium.dev/selenium/docs/api/javascript/">JavaScript API</a> · <a href="https://www.selenium.dev/documentation/selenium_manager/">Selenium Manager</a></p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://www.selenium.dev/documentation/webdriver/" target="_blank" rel="noopener noreferrer" aria-label="Open Selenium WebDriver docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">Selenium</div><p><strong>JS install:</strong> <code>npm install selenium-webdriver</code><br><a href="https://www.selenium.dev/selenium/docs/api/javascript/">JavaScript API</a> · <a href="https://www.selenium.dev/documentation/selenium_manager/">Selenium Manager</a></p></div>
+  <a class="project-command-action" href="https://www.selenium.dev/documentation/webdriver/" target="_blank" rel="noopener noreferrer" aria-label="Open Selenium WebDriver docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-chrome" class="project-command child-04 uid-webtest-doc-chrome">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Chrome DevTools
-</div>
-    <p><a href="https://www.google.com/chrome/">Download Chrome</a> · Device Mode docs explain viewport simulation, CPU/network throttling, sensors, and the limitations of desktop emulation.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://developer.chrome.com/docs/devtools/device-mode/" target="_blank" rel="noopener noreferrer" aria-label="Open Device Mode docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">Chrome DevTools</div><p><a href="https://www.google.com/chrome/">Download Chrome</a> · Device Mode docs explain viewport simulation, CPU/network throttling, sensors, and the limitations of desktop emulation.</p></div>
+  <a class="project-command-action" href="https://developer.chrome.com/docs/devtools/device-mode/" target="_blank" rel="noopener noreferrer" aria-label="Open Device Mode docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-firefox" class="project-command child-05 uid-webtest-doc-firefox">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Firefox Developer Tools
-</div>
-    <p><a href="https://www.mozilla.org/firefox/new/">Download Firefox</a> · Responsive Design Mode is built into Firefox and opens on macOS with <code>⌘⌥M</code>.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/" target="_blank" rel="noopener noreferrer" aria-label="Open Responsive Design Mode docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">Firefox Developer Tools</div><p><a href="https://www.mozilla.org/firefox/new/">Download Firefox</a> · Responsive Design Mode is built into Firefox and opens on macOS with <code>⌘⌥M</code>.</p></div>
+  <a class="project-command-action" href="https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/" target="_blank" rel="noopener noreferrer" aria-label="Open Responsive Design Mode docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-safari" class="project-command child-06 uid-webtest-doc-safari">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Safari Developer Tools
-</div>
-    <p>Safari ships with macOS. Enable developer features at Safari → Settings → Advanced → <em>Show features for web developers</em>. <a href="https://developer.apple.com/documentation/safari-developer-tools/responsive-design-mode">Responsive Design Mode</a>.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://developer.apple.com/documentation/safari-developer-tools" target="_blank" rel="noopener noreferrer" aria-label="Open Safari Developer Tools docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">Safari Developer Tools</div><p>Safari ships with macOS. Enable developer features at Safari → Settings → Advanced → <em>Show features for web developers</em>. <a href="https://developer.apple.com/documentation/safari-developer-tools/responsive-design-mode">Responsive Design Mode</a>.</p></div>
+  <a class="project-command-action" href="https://developer.apple.com/documentation/safari-developer-tools" target="_blank" rel="noopener noreferrer" aria-label="Open Safari Developer Tools docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-xcode" class="project-command child-07 uid-webtest-doc-xcode">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Xcode Simulator
-</div>
-    <p>Xcode is free from the Mac App Store. After first launch, install additional iOS/iPadOS runtimes from Xcode → Settings → Components as needed.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://developer.apple.com/documentation/safari-developer-tools/installing-xcode-and-simulators" target="_blank" rel="noopener noreferrer" aria-label="Open Xcode simulator setup"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">Xcode Simulator</div><p>Xcode is free from the Mac App Store. After first launch, install additional iOS/iPadOS runtimes from Xcode → Settings → Components as needed.</p></div>
+  <a class="project-command-action" href="https://developer.apple.com/documentation/safari-developer-tools/installing-xcode-and-simulators" target="_blank" rel="noopener noreferrer" aria-label="Open Xcode simulator setup"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-browsersync" class="project-command child-08 uid-webtest-doc-browsersync">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  BrowserSync
-</div>
-    <p><strong>Preferred project install:</strong> <code>npm install browser-sync --save-dev</code><br><a href="https://browsersync.io/docs/command-line">CLI</a> · <a href="https://browsersync.io/docs/options">Options / Ghost Mode</a> · <a href="https://browsersync.io/docs/gulp">Gulp integration</a></p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://browsersync.io/docs/" target="_blank" rel="noopener noreferrer" aria-label="Open BrowserSync docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">BrowserSync</div><p><strong>Preferred project install:</strong> <code>npm install browser-sync --save-dev</code><br><a href="https://browsersync.io/docs/command-line">CLI</a> · <a href="https://browsersync.io/docs/options">Options / Ghost Mode</a> · <a href="https://browsersync.io/docs/gulp">Gulp integration</a></p></div>
+  <a class="project-command-action" href="https://browsersync.io/docs/" target="_blank" rel="noopener noreferrer" aria-label="Open BrowserSync docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-lighthouse" class="project-command child-09 uid-webtest-doc-lighthouse">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Lighthouse
-</div>
-    <p>Built into Chrome DevTools. Optional CLI: <code>npm install -g lighthouse</code>. Use it for repeatable performance/accessibility/best-practice/SEO audits.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://developer.chrome.com/docs/lighthouse/overview/" target="_blank" rel="noopener noreferrer" aria-label="Open Lighthouse docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">Lighthouse</div><p>Built into Chrome DevTools. Optional CLI: <code>npm install -g lighthouse</code>. Use it for repeatable performance/accessibility/best-practice/SEO audits.</p></div>
+  <a class="project-command-action" href="https://developer.chrome.com/docs/lighthouse/overview/" target="_blank" rel="noopener noreferrer" aria-label="Open Lighthouse docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-axe" class="project-command child-10 uid-webtest-doc-axe">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  axe-core
-</div>
-    <p>Open-source accessibility engine. Core install: <code>npm install axe-core --save-dev</code>. Playwright integration: <code>npm install -D @axe-core/playwright</code>.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://github.com/dequelabs/axe-core" target="_blank" rel="noopener noreferrer" aria-label="Open axe-core repository"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">axe-core</div><p>Open-source accessibility engine. Core install: <code>npm install axe-core --save-dev</code>. Playwright integration: <code>npm install -D @axe-core/playwright</code>.</p></div>
+  <a class="project-command-action" href="https://github.com/dequelabs/axe-core" target="_blank" rel="noopener noreferrer" aria-label="Open axe-core repository"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-browserstack" class="project-command child-11 uid-webtest-doc-browserstack">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  BrowserStack
-</div>
-    <p>Commercial real-device/browser service. BrowserStack Local creates a secure tunnel so remote sessions can reach localhost, staging, private networks, or VPN-only environments.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://www.browserstack.com/docs/local-testing" target="_blank" rel="noopener noreferrer" aria-label="Open BrowserStack Local docs"
-  ><span aria-hidden="true">›</span></a>
+  <div class="project-command-content"><div class="project-command-title">BrowserStack</div><p>Commercial real-device/browser service. BrowserStack Local creates a secure tunnel so remote sessions can reach localhost, staging, private networks, or VPN-only environments.</p></div>
+  <a class="project-command-action" href="https://www.browserstack.com/docs/local-testing" target="_blank" rel="noopener noreferrer" aria-label="Open BrowserStack Local docs"><span aria-hidden="true">›</span></a>
 </div>
 <div id="child-webtest-doc-stp" class="project-command child-12 uid-webtest-doc-stp">
-  <div class="project-command-content">
-    
-<div class="project-command-title">
-  Safari Technology Preview
-</div>
-    <p>Optional Apple browser build for checking upcoming Safari/WebKit features before they reach stable Safari. Keep stable Safari in the release matrix as the user-facing baseline.</p>
-  </div>
-  <a
-    class="project-command-action"
-    href="https://developer.apple.com/safari/technology-preview/" target="_blank" rel="noopener noreferrer" aria-label="Open Safari Technology Preview"
-  ><span aria-hidden="true">›</span></a>
-</div>
-  </div>
-</section>
-</article>
+  <div class="project-command-content"><div class="project-command-title">Safari Technology Preview</div><p>Optional Apple browser build for checking upcoming Safari/WebKit features before they reach stable Safari. Keep stable Safari in the release matrix as the user-facing baseline.</p></div>
+  <a class="project-command-action" href="https://developer.apple.com/safari/technology-preview/" target="_blank" rel="noopener noreferrer" aria-label="Open Safari Technology Preview"><span aria-hidden="true">›</span></a>
+</div></div>
+</section></article>
 </div>
       </section>
     </main>
 
-    <footer>
-  <nav aria-label="Developer tools">
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado/developer-sandbox',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    <footer class="home-footer page-frame full-frame">
+  <nav class="footer-links" aria-label="Developer Sandbox resources">
+    <a href="https://github.com/susanndelgado/developer-sandbox">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" />
+      </svg>
       Sandbox Repo
-    </button>
-
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    </a>
+    <a href="https://github.com/susanndelgado">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" />
+      </svg>
       GitHub
-    </button>
-
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
-      <span aria-hidden="true">⊙</span>
-      System Guide
-    </button>
-
-    <button type="button" onclick="window.location.href = 'database.html'">
-      <span aria-hidden="true">◉</span>
-      Database
-    </button>
+    </a>
+    <a href="system-guide.html">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
+      Documentation
+    </a>
   </nav>
+
+  <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
+  <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
-  <script src="assets/script.js"></script>
-  </body>
-</html>
+

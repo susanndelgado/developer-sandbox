@@ -15,206 +15,85 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" data-section="projects">
-    <header>
-  <a class="brand" href="index.html">
+  <body id="pg" class="site-page app-shell" data-section="projects">
+    <header class="home-header page-frame full-frame">
+  <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
-
-    <span>
+    <span class="brand-copy">
       <strong>DEVELOPER SANDBOX</strong>
       <small>Academy of Mastery</small>
     </span>
   </a>
 
-  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
-    <button
-      type="button"
-      data-nav-section="home"
-      onclick="window.location.href = 'index.html'"
-    >
-      <span aria-hidden="true">⌂</span>
+  <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
+    <a class="nav-link" data-nav-section="home" href="index.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
+      </svg>
       Home
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="projects"
-      onclick="window.location.href = 'library.html'"
-    >
-      <span aria-hidden="true">▱</span>
+    </a>
+    <a class="nav-link" data-nav-section="projects" href="library.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+      </svg>
       Projects
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="reference"
-      onclick="window.location.href = 'pg/angular-reference-guide.html'"
-    >
-      <span aria-hidden="true">▤</span>
+    </a>
+    <a class="nav-link" data-nav-section="reference" href="reference-guides.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
       Reference Guides
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="labs"
-      onclick="window.location.href = 'labs.html'"
-    >
-      <span aria-hidden="true">✦</span>
+    </a>
+    <a class="nav-link" data-nav-section="labs" href="labs.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+      </svg>
       Labs
-    </button>
-
-    <button
-      type="button"
-      data-nav-section="system"
-      onclick="window.location.href = 'system-guide.html'"
-    >
-      <span aria-hidden="true">⊙</span>
+    </a>
+    <a class="nav-link" data-nav-section="system" href="system-guide.html">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.4" />
+        <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
+      </svg>
       System Guide
-    </button>
+    </a>
   </nav>
 
-  <div class="top-tools">
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-controls="primary-nav"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="help">
-  <button
-    type="button"
-    aria-label="Read page information"
-  ></button>
-
-  <div>
-    <strong>Slug Generator: TypeScript</strong>
-    <p>Compare title-to-slug transformation across languages.</p>
-  </div>
-</div>
-
-    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
-
-    <button
-      type="button"
-      class="close"
-      aria-label="Close"
-      onclick="window.location.href = 'https://sdelgado.com/work.html'"
-    >
-      ×
-    </button>
+  <div class="header-meta">
+    <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
+      <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="5.5" />
+        <path d="m15.2 15.2 4.3 4.3" />
+      </svg>
+    </a>
+    <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
+    <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
   </div>
 </header>
 
 
-    <main class="view-all-page">
+    <main class="view-all-page app-main page-frame full-frame">
       
-<aside class="type-menu">
-  <header>
-    <h1>
-      Rosetta Stones
-    </h1>
-
-    <p>
-      Compare development concepts across
-      languages and technologies.
-    </p>
-  </header>
-
-  <nav
-    class="project-types"
-    aria-label="Rosetta Stones"
-  >
-    <button
-      type="button"
-      onclick="window.location.href = 'rosetta-stones.html'"
-    >
-      <span aria-hidden="true">
-        ◇
-      </span>
-
-      <span>
-        <strong>
-          All Rosetta Stones
-        </strong>
-      </span>
-    </button>
-
-    
-<button
-  type="button"
-  onclick="window.location.href = 'rosetta-stones.html#group-developer-tooling'"
->
-  <span aria-hidden="true">
-    ◇
-  </span>
-
-  <span>
-    <strong>
-      Developer Tooling
-    </strong>
-  </span>
-</button>
-
-<button
-  type="button" aria-current="true"
-  onclick="window.location.href = 'rosetta-stones.html#group-rosetta-comparisons'"
->
-  <span aria-hidden="true">
-    ◇
-  </span>
-
-  <span>
-    <strong>
-      Rosetta Comparisons
-    </strong>
-  </span>
-</button>
-
-<button
-  type="button"
-  onclick="window.location.href = 'rosetta-stones.html#group-modern-agenda'"
->
-  <span aria-hidden="true">
-    ◇
-  </span>
-
-  <span>
-    <strong>
-      Modern Agenda
-    </strong>
-  </span>
-</button>
+<aside class="type-menu app-sidebar glass">
+  <header><h1>Rosetta Stones</h1><p>Compare development concepts across languages and technologies.</p></header>
+  <nav class="project-types" aria-label="Rosetta Stones">
+    <a href="rosetta-stones.html"><span aria-hidden="true">◇</span><span><strong>All Rosetta Stones</strong></span></a>
+    <a href="rosetta-stones.html#group-developer-tooling"><span aria-hidden="true">◇</span><span><strong>Developer Tooling</strong></span></a>
+<a href="rosetta-stones.html#group-rosetta-comparisons" aria-current="true"><span aria-hidden="true">◇</span><span><strong>Rosetta Comparisons</strong></span></a>
+<a href="rosetta-stones.html#group-modern-agenda"><span aria-hidden="true">◇</span><span><strong>Modern Agenda</strong></span></a>
   </nav>
 </aside>
 
-      <section class="project-content">
+      <section class="project-content app-content glass">
         <div id="preview" class="preview">
 
 <header class="project-detail-header">
   <div>
-    <small>
-      ROSETTA STONE
-    </small>
-
-    <h2>
-      Slug Generator: TypeScript
-    </h2>
+    <small>ROSETTA STONE</small>
+    <h2>Slug Generator: TypeScript</h2>
   </div>
-
   <p>
-    
-    <strong>
-      ROSETTA 08 — TypeScript Implementation
-    </strong>
-
-    <br />
-
+    <strong>ROSETTA 08 — TypeScript Implementation</strong><br />
     Compare title-to-slug transformation across languages.
   </p>
 </header>
@@ -244,21 +123,11 @@
   Build the TypeScript implementation without changing the shared behavior or visual target.
 </header>
   
-  <div class="project-command-list">
-<div id="child-node-rosetta-008-typescript-objective-core" class="project-command child-01 uid-node-rosetta-008-typescript-objective-core">
+  <div class="project-command-list"><div id="child-node-rosetta-008-typescript-objective-core" class="project-command child-01 uid-node-rosetta-008-typescript-objective-core">
   <div class="project-split-child-head">Rosetta Contract</div>
-  <div class="project-split project-split--small-left">
-    <div class="project-split-cell">
-  <p><strong>Objective</strong></p><p>Compare title-to-slug transformation across languages.</p>
-  
-</div>
-<div class="project-split-cell">
-  <p><strong>Comparison Rule</strong></p><p>Normalization, lowercase conversion, regular expressions, trimming, and return values.</p><p>Keep equivalent input, behavior, and visible output in every later language version.</p>
-  
-</div>
-  </div>
-</div>
-  </div>
+  <div class="project-split project-split--small-left"><div class="project-split-cell"><p><strong>Objective</strong></p><p>Compare title-to-slug transformation across languages.</p></div>
+<div class="project-split-cell"><p><strong>Comparison Rule</strong></p><p>Normalization, lowercase conversion, regular expressions, trimming, and return values.</p><p>Keep equivalent input, behavior, and visible output in every later language version.</p></div></div>
+</div></div>
 </section>
 <section
   id="node-node-rosetta-008-typescript-plan"
@@ -271,13 +140,7 @@
   Keep the comparison surface fixed while language syntax and runtime details change.
 </header>
   
-  <div class="project-meta">
-<div id="child-node-rosetta-008-typescript-plan-structure" class="child-01 uid-node-rosetta-008-typescript-plan-structure">
-  
-<div class="project-command-title">
-  Structure
-</div>
-  <pre><code>project/
+  <div class="project-meta"><div id="child-node-rosetta-008-typescript-plan-structure" class="child-01 uid-node-rosetta-008-typescript-plan-structure"><div class="project-command-title">Structure</div><pre><code>project/
 ├── input/
 │   └── fixture.json
 ├── expected/
@@ -287,30 +150,10 @@
 ├── index.html
 ├── styles.css
 └── src/
-    └── app.ts</code></pre>
-</div>
-<div id="child-node-rosetta-008-typescript-plan-tech" class="child-02 uid-node-rosetta-008-typescript-plan-tech">
-  
-<div class="project-command-title">
-  Current Implementation
-</div>
-  <ul><li>TypeScript</li><li>HTML</li><li>CSS</li></ul>
-</div>
-<div id="child-node-rosetta-008-typescript-plan-languages" class="child-03 uid-node-rosetta-008-typescript-plan-languages">
-  
-<div class="project-command-title">
-  Comparison Languages
-</div>
-  <ul><li>JavaScript</li><li>TypeScript</li><li>Python</li><li>Java</li><li>C#</li><li>PHP</li></ul>
-</div>
-<div id="child-node-rosetta-008-typescript-plan-source" class="child-04 uid-node-rosetta-008-typescript-plan-source">
-  
-<div class="project-command-title">
-  Source Learning Project
-</div>
-  <p>TypeScript Lab: Slug Factory</p><p>src/generator/generate.ts → slugify()</p>
-</div>
-  </div>
+    └── app.ts</code></pre></div>
+<div id="child-node-rosetta-008-typescript-plan-tech" class="child-02 uid-node-rosetta-008-typescript-plan-tech"><div class="project-command-title">Current Implementation</div><ul><li>TypeScript</li><li>HTML</li><li>CSS</li></ul></div>
+<div id="child-node-rosetta-008-typescript-plan-languages" class="child-03 uid-node-rosetta-008-typescript-plan-languages"><div class="project-command-title">Comparison Languages</div><ul><li>JavaScript</li><li>TypeScript</li><li>Python</li><li>Java</li><li>C#</li><li>PHP</li></ul></div>
+<div id="child-node-rosetta-008-typescript-plan-source" class="child-04 uid-node-rosetta-008-typescript-plan-source"><div class="project-command-title">Source Learning Project</div><p>TypeScript Lab: Slug Factory</p><p>src/generator/generate.ts → slugify()</p></div></div>
 </section>
 <section
   id="node-node-rosetta-008-typescript-build"
@@ -323,47 +166,21 @@
   Create the TypeScript reference implementation before reproducing it in another language.
 </header>
   
-  <div class="project-command-list">
-<div id="child-node-rosetta-008-typescript-build-contract" class="project-command child-01 uid-node-rosetta-008-typescript-build-contract is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Freeze the Contract
-</div>Define the exact input, visible behavior, and expected output.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-contract" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-contract" aria-label="Expand Freeze the Contract"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-contract" class="project-command-panel" hidden>
-    <p>Normalization, lowercase conversion, regular expressions, trimming, and return values.</p>
-  </div>
+  <div class="project-command-list"><div id="child-node-rosetta-008-typescript-build-contract" class="project-command child-01 uid-node-rosetta-008-typescript-build-contract is-collapsible">
+  <div class="project-command-summary"><div class="project-command-title">Freeze the Contract</div>Define the exact input, visible behavior, and expected output.</div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-contract" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-contract" aria-label="Expand Freeze the Contract"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-contract" class="project-command-panel" hidden><p>Normalization, lowercase conversion, regular expressions, trimming, and return values.</p></div>
 </div>
 <div id="child-node-rosetta-008-typescript-build-ts" class="project-command child-02 uid-node-rosetta-008-typescript-build-ts is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Build TypeScript
-</div>Implement the reference version with the same standalone visual layer.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-ts" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-ts" aria-label="Expand Build TypeScript"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-ts" class="project-command-panel" hidden>
-    <p>Compile with TypeScript, run the project, and save the visible expected result.</p>
-  </div>
+  <div class="project-command-summary"><div class="project-command-title">Build TypeScript</div>Implement the reference version with the same standalone visual layer.</div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-ts" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-ts" aria-label="Expand Build TypeScript"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-ts" class="project-command-panel" hidden><p>Compile with TypeScript, run the project, and save the visible expected result.</p></div>
 </div>
 <div id="child-node-rosetta-008-typescript-build-compare" class="project-command child-03 uid-node-rosetta-008-typescript-build-compare is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Later Comparison
-</div>Rebuild without changing the contract.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-compare" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-compare" aria-label="Expand Later Comparison"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-compare" class="project-command-panel" hidden>
-    <p>Compare syntax, typing, modules, runtime, standard library, data handling, and implementation size.</p>
-  </div>
-</div>
-  </div>
+  <div class="project-command-summary"><div class="project-command-title">Later Comparison</div>Rebuild without changing the contract.</div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-compare" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-compare" aria-label="Expand Later Comparison"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-build-node-rosetta-008-typescript-build-compare" class="project-command-panel" hidden><p>Compare syntax, typing, modules, runtime, standard library, data handling, and implementation size.</p></div>
+</div></div>
 </section>
 <section
   id="node-node-rosetta-008-typescript-code"
@@ -376,18 +193,10 @@
   This implementation becomes the first concrete Rosetta comparison point.
 </header>
   
-  <div class="project-command-list">
-<div id="child-node-rosetta-008-typescript-code-example" class="project-command child-01 uid-node-rosetta-008-typescript-code-example is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  Reference Code
-</div>Use the same input when building later language versions.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-example" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-example" aria-label="Expand Reference Code"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-example" class="project-command-panel" hidden>
-    <pre><code>function slugify(value: string): string {
+  <div class="project-command-list"><div id="child-node-rosetta-008-typescript-code-example" class="project-command child-01 uid-node-rosetta-008-typescript-code-example is-collapsible">
+  <div class="project-command-summary"><div class="project-command-title">Reference Code</div>Use the same input when building later language versions.</div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-example" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-example" aria-label="Expand Reference Code"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-example" class="project-command-panel" hidden><pre><code>function slugify(value: string): string {
   return value
     .trim()
     .toLowerCase()
@@ -395,20 +204,12 @@
     .replace(/^-+|-+$/g, &quot;&quot;);
 }
 
-slugify(&quot;Modern Agenda: Angular&quot;);</code></pre>
-  </div>
+slugify(&quot;Modern Agenda: Angular&quot;);</code></pre></div>
 </div>
 <div id="child-node-rosetta-008-typescript-code-config" class="project-command child-02 uid-node-rosetta-008-typescript-code-config is-collapsible">
-  <div class="project-command-summary">
-<div class="project-command-title">
-  TypeScript Configuration
-</div>Keep the TypeScript implementation independently buildable.</div>
-  <button
-    class="project-command-action collapse-toggle"
-    type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-config" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-config" aria-label="Expand TypeScript Configuration"
-  ><span aria-hidden="true">⌄</span></button>
-  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-config" class="project-command-panel" hidden>
-    <p><strong>package.json</strong></p><pre><code>{
+  <div class="project-command-summary"><div class="project-command-title">TypeScript Configuration</div>Keep the TypeScript implementation independently buildable.</div>
+  <button class="project-command-action collapse-toggle" type="button" data-collapse-target="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-config" aria-expanded="false" aria-controls="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-config" aria-label="Expand TypeScript Configuration"><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-rosetta-008-slug-generator-typescript-node-rosetta-008-typescript-code-node-rosetta-008-typescript-code-config" class="project-command-panel" hidden><p><strong>package.json</strong></p><pre><code>{
   &quot;type&quot;: &quot;module&quot;,
   &quot;scripts&quot;: { &quot;build&quot;: &quot;tsc&quot; },
   &quot;devDependencies&quot;: { &quot;typescript&quot;: &quot;^7.0.2&quot; }
@@ -423,10 +224,8 @@ slugify(&quot;Modern Agenda: Angular&quot;);</code></pre>
     &quot;sourceMap&quot;: true
   },
   &quot;include&quot;: [&quot;src/**/*.ts&quot;]
-}</code></pre>
-  </div>
-</div>
-  </div>
+}</code></pre></div>
+</div></div>
 </section>
 <section
   id="node-node-rosetta-008-typescript-compare"
@@ -439,61 +238,36 @@ slugify(&quot;Modern Agenda: Angular&quot;);</code></pre>
   Record differences that teach language and runtime behavior rather than cosmetic syntax.
 </header>
   
-  <div class="project-command-list">
-<div id="child-node-rosetta-008-typescript-compare-output" class="project-command child-01 uid-node-rosetta-008-typescript-compare-output">
-  
-<div class="project-command-title">
-  Compare
-</div>
-  <ul><li>Syntax and data declarations</li><li>Typing and validation</li><li>Collections and standard-library operations</li><li>Modules and file organization</li><li>Runtime and build requirements</li><li>Database or HTTP APIs when applicable</li><li>Visible output and behavioral equivalence</li></ul>
-</div>
-  </div>
+  <div class="project-command-list"><div id="child-node-rosetta-008-typescript-compare-output" class="project-command child-01 uid-node-rosetta-008-typescript-compare-output"><div class="project-command-title">Compare</div><ul><li>Syntax and data declarations</li><li>Typing and validation</li><li>Collections and standard-library operations</li><li>Modules and file organization</li><li>Runtime and build requirements</li><li>Database or HTTP APIs when applicable</li><li>Visible output and behavioral equivalence</li></ul></div></div>
 </section>
 </div>
       </section>
     </main>
 
-    <footer>
-  <nav aria-label="Developer tools">
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado/developer-sandbox',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    <footer class="home-footer page-frame full-frame">
+  <nav class="footer-links" aria-label="Developer Sandbox resources">
+    <a href="https://github.com/susanndelgado/developer-sandbox">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" />
+      </svg>
       Sandbox Repo
-    </button>
-
-    <button
-      type="button"
-      onclick="
-        window.open(
-          'https://github.com/susanndelgado',
-          '_blank',
-          'noopener,noreferrer',
-        )
-      "
-    >
-      <span aria-hidden="true">⑂</span>
+    </a>
+    <a href="https://github.com/susanndelgado">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" />
+      </svg>
       GitHub
-    </button>
-
-    <button type="button" onclick="window.location.href = 'system-guide.html'">
-      <span aria-hidden="true">⊙</span>
-      System Guide
-    </button>
-
-    <button type="button" onclick="window.location.href = 'database.html'">
-      <span aria-hidden="true">◉</span>
-      Database
-    </button>
+    </a>
+    <a href="system-guide.html">
+      <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
+      </svg>
+      Documentation
+    </a>
   </nav>
+
+  <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
+  <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
 </footer>
-  <script src="assets/script.js"></script>
-  </body>
-</html>
+
