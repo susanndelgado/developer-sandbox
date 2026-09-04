@@ -1,7 +1,8 @@
 /* ==================================================
    DEVELOPER SANDBOX — RESPONSIVE RULES
    All media queries for the site live in this file.
-   Base component definitions live in styles.css / inner.css.
+   Global shell/main/component definitions live in styles.css.
+   Inner content definitions live in inner.css.
    ================================================== */
 
 @media (min-width: 900px) {
@@ -9,6 +10,7 @@
     --page-gutter: 18px;
   }
 }
+
 @media (min-width: 1180px) {
   :root {
     --page-gutter: 38px;
@@ -26,6 +28,7 @@
   .hologram {
     padding-bottom: 70%;
   }
+
   .home-header {
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 12px;
@@ -106,18 +109,22 @@
   .detail-columns {
     grid-template-columns: 1fr;
   }
+
   .featured-copy {
     .panel-copy {
       font-size: 0.5rem;
     }
+
     h2 {
       font-size: 1rem;
     }
+
     .tag {
       font-size: 0.5rem;
       padding: 0 3px;
     }
   }
+
   .mini-card {
     font-size: 0.4rem;
   }
@@ -190,12 +197,21 @@
 
 /* ==================================================
    LANDSCAPE MOBILE — BELOW 900px
-   Homepage and inner applications share the same shell/header/footer.
+   All pages share the same outer shell/main/header/footer.
    ================================================== */
 
 @media (orientation: landscape) and (max-width: 899px) {
   .app-shell {
+    grid-template-rows: clamp(44px, 12vh, 58px) minmax(0, 1fr) clamp(
+        18px,
+        5vh,
+        24px
+      );
     padding: 5px var(--page-gutter) 4px;
+  }
+
+  main {
+    padding: 6px 0 4px;
   }
 
   .home-header {
@@ -267,21 +283,13 @@
     gap: 10px;
   }
 
-  /* Homepage composition. */
+  /* Homepage composition inside the shared main region. */
 
   #hm {
     background:
       linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.2)),
       url("img/bg-mobile-landscape1.png") center / cover no-repeat,
       var(--bg);
-  }
-
-  .home-shell {
-    grid-template-rows: clamp(44px, 12vh, 58px) minmax(0, 1fr) clamp(
-        18px,
-        5vh,
-        24px
-      );
   }
 
   .hero,
@@ -294,8 +302,6 @@
 
   .home-main {
     display: block;
-    min-height: 0;
-    padding: 0;
   }
 
   .dashboard-grid {
@@ -393,11 +399,6 @@
   }
 
   /* Inner application content. */
-
-  .app-main,
-  .library-main {
-    padding: 6px 0 4px;
-  }
 
   .view-all-page {
     grid-template-columns: minmax(145px, 0.28fr) minmax(0, 1fr);
@@ -545,7 +546,7 @@
       #020817;
   }
 
-  #hm .home-shell {
+  #hm .app-shell {
     display: none;
   }
 
@@ -653,7 +654,7 @@
       var(--bg);
   }
 
-  .library-shell {
+  .library-page .app-shell {
     display: none;
   }
 
