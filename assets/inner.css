@@ -13,6 +13,11 @@
     var(--bg);
 }
 
+.site-page.app-shell,
+.library-page .app-shell {
+  height: 100dvh;
+}
+
 .app-main,
 .library-main {
   width: 100%;
@@ -98,6 +103,10 @@
   min-height: 0;
   margin: 0;
   padding: 0;
+}
+
+.view-all-page .app-content:only-child {
+  grid-column: 1 / -1;
 }
 
 .app-sidebar,
