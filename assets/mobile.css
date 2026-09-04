@@ -7,6 +7,20 @@
   z-index: 2;
 }
 
+#hm.scaled-home {
+  display: block;
+  position: relative;
+}
+
+#hm.scaled-home .home-shell {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%) scale(var(--home-scale, 1));
+  transform-origin: center;
+}
+
 #hm.scaled-home .panel {
   min-width: 480px;
   min-height: 280px;
