@@ -45,6 +45,8 @@
   /* ==================================================
      PROJECT LIBRARY
      All catalog rows and inspector panels already exist in HTML.
+     Desktop switches the existing preview panel.
+     Mobile follows the catalog row's normal project-page link.
      ================================================== */
 
   const librarySearch = document.querySelector("#library-search")
@@ -52,6 +54,7 @@
   const libraryDetails = Array.from(document.querySelectorAll("[data-library-detail]"))
   const libraryFilters = Array.from(document.querySelectorAll("[data-library-filter]"))
   const libraryEmpty = document.querySelector("#library-empty")
+  const libraryMobile = window.matchMedia("(max-width: 899px)")
 
   if (libraryRows.length && libraryDetails.length) {
     let activeFilter = "all"
@@ -98,6 +101,8 @@
         libraryEmpty.hidden = visibleCount !== 0
       }
 
+      if (libraryMobile.matches) return
+
       const currentRow = libraryRows.find(
         (row) => row.dataset.libraryRecord === currentRecord,
       )
@@ -117,6 +122,8 @@
 
     libraryRows.forEach((row) => {
       row.addEventListener("click", (event) => {
+        if (libraryMobile.matches) return
+
         event.preventDefault()
 
         const recordKey = row.dataset.libraryRecord
@@ -147,20 +154,22 @@
       applyLibraryFilters()
     }
 
-    const requestedDetail = window.location.hash.replace(/^#library-detail-/, "")
-    const requestedRow = libraryRows.find(
-      (row) => row.dataset.libraryRecord === requestedDetail,
-    )
-
-    if (requestedRow?.dataset.libraryRecord && !requestedRow.hidden) {
-      showLibraryProject(requestedRow.dataset.libraryRecord)
-    } else if (currentRecord) {
-      const currentRow = libraryRows.find(
-        (row) => row.dataset.libraryRecord === currentRecord,
+    if (!libraryMobile.matches) {
+      const requestedDetail = window.location.hash.replace(/^#library-detail-/, "")
+      const requestedRow = libraryRows.find(
+        (row) => row.dataset.libraryRecord === requestedDetail,
       )
 
-      if (currentRow && !currentRow.hidden) {
-        showLibraryProject(currentRecord)
+      if (requestedRow?.dataset.libraryRecord && !requestedRow.hidden) {
+        showLibraryProject(requestedRow.dataset.libraryRecord)
+      } else if (currentRecord) {
+        const currentRow = libraryRows.find(
+          (row) => row.dataset.libraryRecord === currentRecord,
+        )
+
+        if (currentRow && !currentRow.hidden) {
+          showLibraryProject(currentRecord)
+        }
       }
     }
   }
