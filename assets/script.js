@@ -23,6 +23,39 @@
   }
 
   /* ==================================================
+     LABS SLIDER
+     Markup is generated in HTML. JavaScript only changes
+     which existing slide is visible.
+     ================================================== */
+
+  const labSlides = Array.from(document.querySelectorAll("[data-lab-slide]"))
+
+  if (labSlides.length) {
+    let currentLab = Math.max(
+      0,
+      labSlides.findIndex((slide) => !slide.hidden),
+    )
+
+    const showLab = (index) => {
+      currentLab = (index + labSlides.length) % labSlides.length
+
+      labSlides.forEach((slide, slideIndex) => {
+        const active = slideIndex === currentLab
+        slide.hidden = !active
+        slide.setAttribute("aria-hidden", String(!active))
+      })
+    }
+
+    document.querySelectorAll("[data-lab-prev]").forEach((button) => {
+      button.addEventListener("click", () => showLab(currentLab - 1))
+    })
+
+    document.querySelectorAll("[data-lab-next]").forEach((button) => {
+      button.addEventListener("click", () => showLab(currentLab + 1))
+    })
+  }
+
+  /* ==================================================
      SHARED INTERFACE BEHAVIOR
      ================================================== */
 
