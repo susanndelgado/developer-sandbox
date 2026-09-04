@@ -1834,48 +1834,57 @@ function generateLabs(): void {
    ENTRY ASIDES
    ========================================================= */
 
-function renderProjectEntryAside(record: RecordRow): string {
-  const groups = groupRecordsByCategory(getPublicProjectLibraryRecords());
-  const currentCategory = primaryCategoryForRecord(record);
-  const links = groups
-    .map((group) => {
-      const current = currentCategory?.id === group.id ? ' aria-current="true"' : "";
-      return `<a href="library.html#group-${attr(group.slug)}"${current}><span aria-hidden="true">◇</span><span><strong>${escapeHtml(group.name)}</strong></span></a>`;
-    })
-    .join("\n");
-
-  return `
-<aside class="type-menu app-sidebar glass">
-  <header>
-    <h1>Project Library</h1>
-    <p>Development projects, applications, tools, experiments, and technical work.</p>
-  </header>
-  <nav class="project-types" aria-label="Project Library">
-    <a href="library.html"><span aria-hidden="true">◇</span><span><strong>All Projects</strong></span></a>
-    ${links}
-  </nav>
-</aside>`;
+function projectEntryReturnLink(record: RecordRow): {
+  url: string;
+  label: string;
+} {
+  switch (classificationOf(record)) {
+    case "rosetta-stone":
+      return { url: "rosetta-stones.html", label: "Back to Rosetta Stones" };
+    case "lab-exploration":
+      return { url: "labs.html", label: "Back to Labs" };
+    case "general-project":
+    default:
+      return { url: "library.html", label: "Back to Library" };
+  }
 }
 
-function renderRosettaEntryAside(record: RecordRow): string {
-  const groups = groupRecordsByCategory(getPublicRosettaStones());
-  const currentCategory = primaryCategoryForRecord(record);
-  const links = groups
-    .map((group) => {
-      const current = currentCategory?.id === group.id ? ' aria-current="true"' : "";
-      return `<a href="rosetta-stones.html#group-${attr(group.slug)}"${current}><span aria-hidden="true">◇</span><span><strong>${escapeHtml(group.name)}</strong></span></a>`;
+function projectEntryContentNodes(record: RecordRow): NodeRow[] {
+  return topNodes(getNodes(record.id)).filter((node) => {
+    const type = normalizedNodeType(node);
+    const label = plainText(node.nav_label || node.title || node.subtitle);
+
+    return type !== "display" && type !== "nav" && Boolean(label);
+  });
+}
+
+function renderProjectEntryAside(record: RecordRow): string {
+  const returnLink = projectEntryReturnLink(record);
+  const overviewUrl = `${entryUrl(record)}#preview`;
+  const sectionLinks = projectEntryContentNodes(record)
+    .map((node) => {
+      const label = plainText(node.nav_label || node.title || node.subtitle);
+      const subtitle = plainText(node.subtitle);
+      const context =
+        subtitle && subtitle.toLowerCase() !== label.toLowerCase()
+          ? `<small>${escapeHtml(subtitle)}</small>`
+          : "";
+      const url = `${entryUrl(record)}#node-${slugify(node.id)}`;
+
+      return `<a href="${attr(url)}"><span aria-hidden="true">◇</span><span><strong>${escapeHtml(label)}</strong>${context}</span></a>`;
     })
     .join("\n");
 
   return `
 <aside class="type-menu app-sidebar glass">
   <header>
-    <h1>Rosetta Stones</h1>
-    <p>Compare development concepts across languages and technologies.</p>
+    <h1>${escapeHtml(record.title)}</h1>
+    <p>${escapeHtml(classificationDisplayLabel(record))} · Project contents</p>
   </header>
-  <nav class="project-types" aria-label="Rosetta Stones">
-    <a href="rosetta-stones.html"><span aria-hidden="true">◇</span><span><strong>All Rosetta Stones</strong></span></a>
-    ${links}
+  <nav class="project-types" aria-label="${attr(record.title)} project contents">
+    <a href="${attr(returnLink.url)}"><span aria-hidden="true">←</span><span><strong>${escapeHtml(returnLink.label)}</strong></span></a>
+    <a href="${attr(overviewUrl)}"><span aria-hidden="true">◇</span><span><strong>Project Overview</strong></span></a>
+    ${sectionLinks}
   </nav>
 </aside>`;
 }
@@ -1912,11 +1921,8 @@ function renderReferenceAside(
 function renderEntryAside(record: RecordRow, allRecords: RecordRow[]): string {
   switch (classificationOf(record)) {
     case "general-project":
-      return renderProjectEntryAside(record);
     case "rosetta-stone":
-      return renderRosettaEntryAside(record);
     case "lab-exploration":
-      /* Specific Labs are discovered through the Project Library. */
       return renderProjectEntryAside(record);
     case "reference-guide":
       return renderReferenceAside(record, allRecords);
