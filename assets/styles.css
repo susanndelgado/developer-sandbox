@@ -813,7 +813,7 @@ main {
 .featured-copy {
   display: grid;
   align-content: center;
-  gap: 7px;
+  gap: 5px;
 }
 
 .featured-copy h2 {
