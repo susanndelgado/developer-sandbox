@@ -29,7 +29,7 @@
       <p class="rotate-quote">“Dreams are the Foundation of Reality.”<br />— Susan Delgado</p>
     </section>
 
-    <div class="library-shell">
+    <div class="library-shell app-shell">
       <header class="home-header page-frame">
         <a class="brand" href="index.html" aria-label="Developer Sandbox home">
           <img src="assets/img/logo-blue.png" alt="" />
@@ -41,44 +41,30 @@
 
         <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
           <a class="nav-link" href="index.html">
-            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
-            </svg>
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" /></svg>
             Home
           </a>
           <a class="nav-link active" href="library.html">
-            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
-            </svg>
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" /></svg>
             Projects
           </a>
-          <a class="nav-link" href="pg/angular-reference-guide.html">
-            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" />
-            </svg>
+          <a class="nav-link" href="reference-guides.html">
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" /></svg>
             Reference Guides
           </a>
           <a class="nav-link" href="labs.html">
-            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
-            </svg>
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" /></svg>
             Labs
           </a>
           <a class="nav-link" href="system-guide.html">
-            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="3.4" />
-              <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
-            </svg>
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.4" /><path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" /></svg>
             System Guide
           </a>
         </nav>
 
         <div class="header-meta">
           <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
-            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="11" cy="11" r="5.5" />
-              <path d="m15.2 15.2 4.3 4.3" />
-            </svg>
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="5.5" /><path d="m15.2 15.2 4.3 4.3" /></svg>
           </a>
           <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
           <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
@@ -95,14 +81,7 @@
             </div>
 
             <div class="library-tabs" aria-label="Project search and filters">
-              <input
-                class="panel-link glass-soft"
-                id="library-search"
-                type="search"
-                placeholder="Search projects or technologies"
-                aria-label="Search projects or technologies"
-                autocomplete="off"
-              />
+              <input class="panel-link glass-soft" id="library-search" type="search" placeholder="Search projects or technologies" aria-label="Search projects or technologies" autocomplete="off" />
               <button class="tag active" type="button" data-library-filter="all" aria-pressed="true">All</button>
               <button class="tag" type="button" data-library-filter="project" aria-pressed="false">Projects</button>
               <button class="tag" type="button" data-library-filter="rosetta" aria-pressed="false">Rosetta</button>
@@ -113,242 +92,51 @@
           <div class="catalog-scroll">
             <section class="panel glass library-panel-block" id="catalog" aria-labelledby="catalog-title">
               <header class="panel-header library-panel-header">
-                <span class="panel-icon" aria-hidden="true">
-                  <svg class="icon-large icon-glow" viewBox="0 0 24 24">
-                    <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
-                  </svg>
-                </span>
-                <div class="library-panel-heading">
-                  <p class="eyebrow">Catalog</p>
-                  <h2 class="panel-title" id="catalog-title">All Projects</h2>
-                </div>
+                <span class="panel-icon" aria-hidden="true"><svg class="icon-large icon-glow" viewBox="0 0 24 24"><path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" /></svg></span>
+                <div class="library-panel-heading"><p class="eyebrow">Catalog</p><h2 class="panel-title" id="catalog-title">All Projects</h2></div>
                 <span class="muted">Select a project to preview</span>
               </header>
 
-              <div class="catalog-head" aria-hidden="true">
-                <span>Project</span>
-                <span>Type</span>
-                <span>Technology</span>
-              </div>
+              <div class="catalog-head" aria-hidden="true"><span>Project</span><span>Type</span><span>Technology</span></div>
 
-              <a
-                class="catalog-row selected"
-                href="#selected-project"
-                data-classification="rosetta"
-                data-title="Modern Agenda"
-                data-type="Rosetta Stone"
-                data-tech="Angular|TypeScript|Java|PHP|Python|React"
-                data-description="A comparative application project used to revisit the same agenda concepts across languages and frameworks while making implementation differences visible."
-                data-built="A working agenda application and its related implementations."
-                data-learning="Application structure, data flow, typed models, framework differences, and repeated implementation practice."
-                data-image="assets/img/agenda-preview.png"
-                data-url="pg/modern-agenda.html"
-                data-search="modern agenda angular typescript java php python react rosetta comparative application"
-              >
-                <span class="catalog-copy">
-                  <strong>Modern Agenda</strong>
-                  <small>Comparative application series</small>
-                </span>
-                <span class="badge rose">Rosetta</span>
-                <span class="technology">Angular · TypeScript · Java · PHP · Python · React</span>
+              <a class="catalog-row selected" href="#selected-project" data-classification="rosetta" data-title="Modern Agenda" data-type="Rosetta Stone" data-tech="Angular|TypeScript|Java|PHP|Python|React" data-description="A comparative application project used to revisit the same agenda concepts across languages and frameworks while making implementation differences visible." data-built="A working agenda application and its related implementations." data-learning="Application structure, data flow, typed models, framework differences, and repeated implementation practice." data-image="assets/img/agenda-preview.png" data-url="pg/modern-agenda.html" data-search="modern agenda angular typescript java php python react rosetta comparative application">
+                <span class="catalog-copy"><strong>Modern Agenda</strong><small>Comparative application series</small></span><span class="badge rose">Rosetta</span><span class="technology">Angular · TypeScript · Java · PHP · Python · React</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="rosetta"
-                data-title="Color Decision Engine"
-                data-type="Rosetta Stone"
-                data-tech="JavaScript|TypeScript"
-                data-description="A compact decision-engine project used to compare how the same rule-driven behavior is expressed in JavaScript and TypeScript."
-                data-built="A small color decision tool driven by visible input values and reusable decision rules."
-                data-learning="Typed parameters, decision logic, DOM values, narrowing, and comparing JavaScript with TypeScript."
-                data-image="assets/img/desktop.png"
-                data-url="pg/rosetta-stone-color-decision-engine-typescript.html"
-                data-search="color decision engine javascript typescript rosetta decision logic"
-              >
-                <span class="catalog-copy">
-                  <strong>Color Decision Engine</strong>
-                  <small>Decision logic across technologies</small>
-                </span>
-                <span class="badge violet">Rosetta</span>
-                <span class="technology">JavaScript · TypeScript</span>
+              <a class="catalog-row" href="#selected-project" data-classification="rosetta" data-title="Color Decision Engine" data-type="Rosetta Stone" data-tech="JavaScript|TypeScript" data-description="A compact decision-engine project used to compare how the same rule-driven behavior is expressed in JavaScript and TypeScript." data-built="A small color decision tool driven by visible input values and reusable decision rules." data-learning="Typed parameters, decision logic, DOM values, narrowing, and comparing JavaScript with TypeScript." data-image="assets/img/desktop.png" data-url="pg/rosetta-stone-color-decision-engine-typescript.html" data-search="color decision engine javascript typescript rosetta decision logic">
+                <span class="catalog-copy"><strong>Color Decision Engine</strong><small>Decision logic across technologies</small></span><span class="badge violet">Rosetta</span><span class="technology">JavaScript · TypeScript</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="project"
-                data-title="Developer Sandbox"
-                data-type="General Project"
-                data-tech="HTML|CSS|JavaScript|TypeScript|Node.js|SQLite"
-                data-description="The static generation and learning system that organizes projects, reference material, experiments, and generated documentation from a SQLite datastore."
-                data-built="A database-backed local editor and TypeScript static-site generator."
-                data-learning="SQLite relationships, TypeScript generation, content modeling, editor tooling, and static deployment."
-                data-image="assets/img/Editor-preview.png"
-                data-url="pg/developer-sandbox.html"
-                data-search="developer sandbox html css javascript typescript node sqlite static generation editor database"
-              >
-                <span class="catalog-copy">
-                  <strong>Developer Sandbox</strong>
-                  <small>Learning and generation platform</small>
-                </span>
-                <span class="badge cyan">Project</span>
-                <span class="technology">HTML · CSS · JavaScript · TypeScript · Node.js · SQLite</span>
+              <a class="catalog-row" href="#selected-project" data-classification="project" data-title="Developer Sandbox" data-type="General Project" data-tech="HTML|CSS|JavaScript|TypeScript|Node.js|SQLite" data-description="The static generation and learning system that organizes projects, reference material, experiments, and generated documentation from a SQLite datastore." data-built="A database-backed local editor and TypeScript static-site generator." data-learning="SQLite relationships, TypeScript generation, content modeling, editor tooling, and static deployment." data-image="assets/img/Editor-preview.png" data-url="pg/developer-sandbox.html" data-search="developer sandbox html css javascript typescript node sqlite static generation editor database">
+                <span class="catalog-copy"><strong>Developer Sandbox</strong><small>Learning and generation platform</small></span><span class="badge cyan">Project</span><span class="technology">HTML · CSS · JavaScript · TypeScript · Node.js · SQLite</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="lab"
-                data-title="Rebuilding Fetch with XMLHttpRequest"
-                data-type="Lab / Exploration"
-                data-tech="JavaScript|Browser APIs|XMLHttpRequest"
-                data-description="A focused browser experiment that rebuilds familiar request behavior with XMLHttpRequest to expose what higher-level request APIs are doing."
-                data-built="A small request experiment using the older browser API directly."
-                data-learning="Request lifecycle, callbacks, response handling, and the relationship between browser networking APIs."
-                data-image="assets/img/fetchJSPreview.png"
-                data-url="pg/rebuilding-fetch-xmlhttprequest.html"
-                data-search="rebuilding fetch xmlhttprequest javascript browser api lab request http"
-              >
-                <span class="catalog-copy">
-                  <strong>Rebuilding Fetch with XMLHttpRequest</strong>
-                  <small>Browser API experiment</small>
-                </span>
-                <span class="badge teal">Lab</span>
-                <span class="technology">JavaScript · Browser APIs · XMLHttpRequest</span>
+              <a class="catalog-row" href="#selected-project" data-classification="lab" data-title="Rebuilding Fetch with XMLHttpRequest" data-type="Lab / Exploration" data-tech="JavaScript|Browser APIs|XMLHttpRequest" data-description="A focused browser experiment that rebuilds familiar request behavior with XMLHttpRequest to expose what higher-level request APIs are doing." data-built="A small request experiment using the older browser API directly." data-learning="Request lifecycle, callbacks, response handling, and the relationship between browser networking APIs." data-image="assets/img/fetchJSPreview.png" data-url="pg/rebuilding-fetch-xmlhttprequest.html" data-search="rebuilding fetch xmlhttprequest javascript browser api lab request http">
+                <span class="catalog-copy"><strong>Rebuilding Fetch with XMLHttpRequest</strong><small>Browser API experiment</small></span><span class="badge teal">Lab</span><span class="technology">JavaScript · Browser APIs · XMLHttpRequest</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="project"
-                data-title="Week at a Glance Component"
-                data-type="General Project"
-                data-tech="Data-Driven UI|JavaScript|HTML|CSS"
-                data-description="A compact interface component for turning structured weekly information into a visible, scannable layout."
-                data-built="A reusable week-at-a-glance interface component."
-                data-learning="Data-driven rendering, component structure, and information hierarchy."
-                data-image="assets/img/desktop.png"
-                data-url="pg/week-at-a-glance-component.html"
-                data-search="week at a glance component data driven ui javascript html css"
-              >
-                <span class="catalog-copy">
-                  <strong>Week at a Glance Component</strong>
-                  <small>Data-driven interface</small>
-                </span>
-                <span class="badge violet">Project</span>
-                <span class="technology">Data-Driven UI · JavaScript · HTML · CSS</span>
+              <a class="catalog-row" href="#selected-project" data-classification="project" data-title="Week at a Glance Component" data-type="General Project" data-tech="Data-Driven UI|JavaScript|HTML|CSS" data-description="A compact interface component for turning structured weekly information into a visible, scannable layout." data-built="A reusable week-at-a-glance interface component." data-learning="Data-driven rendering, component structure, and information hierarchy." data-image="assets/img/desktop.png" data-url="pg/week-at-a-glance-component.html" data-search="week at a glance component data driven ui javascript html css">
+                <span class="catalog-copy"><strong>Week at a Glance Component</strong><small>Data-driven interface</small></span><span class="badge violet">Project</span><span class="technology">Data-Driven UI · JavaScript · HTML · CSS</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="project"
-                data-title="TypeScript API Service"
-                data-type="General Project"
-                data-tech="TypeScript|Node.js|REST|JSON|SQLite"
-                data-description="A service-oriented TypeScript project centered on HTTP behavior, typed data boundaries, persistence, and API structure."
-                data-built="A typed API service project with persistent data."
-                data-learning="HTTP services, REST structure, TypeScript contracts, validation, and persistence."
-                data-image="assets/img/desktop.png"
-                data-url="pg/typescript-api-service.html"
-                data-search="typescript api service node rest json sqlite http backend"
-              >
-                <span class="catalog-copy">
-                  <strong>TypeScript API Service</strong>
-                  <small>Backend service project</small>
-                </span>
-                <span class="badge blue">Project</span>
-                <span class="technology">TypeScript · Node.js · REST · JSON · SQLite</span>
+              <a class="catalog-row" href="#selected-project" data-classification="project" data-title="TypeScript API Service" data-type="General Project" data-tech="TypeScript|Node.js|REST|JSON|SQLite" data-description="A service-oriented TypeScript project centered on HTTP behavior, typed data boundaries, persistence, and API structure." data-built="A typed API service project with persistent data." data-learning="HTTP services, REST structure, TypeScript contracts, validation, and persistence." data-image="assets/img/desktop.png" data-url="pg/typescript-api-service.html" data-search="typescript api service node rest json sqlite http backend">
+                <span class="catalog-copy"><strong>TypeScript API Service</strong><small>Backend service project</small></span><span class="badge blue">Project</span><span class="technology">TypeScript · Node.js · REST · JSON · SQLite</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="project"
-                data-title="TypeScript Library / Package"
-                data-type="General Project"
-                data-tech="TypeScript|npm|ES Modules|Vitest"
-                data-description="A package-focused TypeScript project for understanding compilation, exports, modules, package structure, and reusable code distribution."
-                data-built="A reusable TypeScript package structure."
-                data-learning="Compilation, ES modules, package metadata, exports, tests, and library organization."
-                data-image="assets/img/desktop.png"
-                data-url="pg/typescript-library-package.html"
-                data-search="typescript library package npm es modules vitest compiler"
-              >
-                <span class="catalog-copy">
-                  <strong>TypeScript Library / Package</strong>
-                  <small>Toolchain and package structure</small>
-                </span>
-                <span class="badge blue">Project</span>
-                <span class="technology">TypeScript · npm · ES Modules · Vitest</span>
+              <a class="catalog-row" href="#selected-project" data-classification="project" data-title="TypeScript Library / Package" data-type="General Project" data-tech="TypeScript|npm|ES Modules|Vitest" data-description="A package-focused TypeScript project for understanding compilation, exports, modules, package structure, and reusable code distribution." data-built="A reusable TypeScript package structure." data-learning="Compilation, ES modules, package metadata, exports, tests, and library organization." data-image="assets/img/desktop.png" data-url="pg/typescript-library-package.html" data-search="typescript library package npm es modules vitest compiler">
+                <span class="catalog-copy"><strong>TypeScript Library / Package</strong><small>Toolchain and package structure</small></span><span class="badge blue">Project</span><span class="technology">TypeScript · npm · ES Modules · Vitest</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="project"
-                data-title="AI Sandbox"
-                data-type="General Project"
-                data-tech="TypeScript|Node.js|AI API|JSON|Fetch API|SQLite"
-                data-description="A contained development area for learning how AI requests, structured responses, local data, and application logic connect."
-                data-built="A TypeScript and Node-based AI experimentation project."
-                data-learning="API calls, JSON, request handling, local persistence, and application integration."
-                data-image="assets/img/desktop.png"
-                data-url="pg/ai-sandbox.html"
-                data-search="ai sandbox typescript node ai api json fetch sqlite"
-              >
-                <span class="catalog-copy">
-                  <strong>AI Sandbox</strong>
-                  <small>API integration project</small>
-                </span>
-                <span class="badge cyan">Project</span>
-                <span class="technology">TypeScript · Node.js · AI API · JSON · SQLite</span>
+              <a class="catalog-row" href="#selected-project" data-classification="project" data-title="AI Sandbox" data-type="General Project" data-tech="TypeScript|Node.js|AI API|JSON|Fetch API|SQLite" data-description="A contained development area for learning how AI requests, structured responses, local data, and application logic connect." data-built="A TypeScript and Node-based AI experimentation project." data-learning="API calls, JSON, request handling, local persistence, and application integration." data-image="assets/img/desktop.png" data-url="pg/ai-sandbox.html" data-search="ai sandbox typescript node ai api json fetch sqlite">
+                <span class="catalog-copy"><strong>AI Sandbox</strong><small>API integration project</small></span><span class="badge cyan">Project</span><span class="technology">TypeScript · Node.js · AI API · JSON · SQLite</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="project"
-                data-title="Portfolio Engine"
-                data-type="General Project"
-                data-tech="TypeScript|Node.js|SQLite|Static Site Generation"
-                data-description="A structured-content project exploring how stored portfolio data can be transformed into generated static web output."
-                data-built="A data-to-static-page portfolio generation workflow."
-                data-learning="Content modeling, generation, SQLite, templates, and separation of data from presentation."
-                data-image="assets/img/desktop.png"
-                data-url="pg/portfolio-engine.html"
-                data-search="portfolio engine typescript node sqlite static site generation html css javascript"
-              >
-                <span class="catalog-copy">
-                  <strong>Portfolio Engine</strong>
-                  <small>Static generation project</small>
-                </span>
-                <span class="badge rose">Project</span>
-                <span class="technology">TypeScript · Node.js · SQLite · Static Site Generation</span>
+              <a class="catalog-row" href="#selected-project" data-classification="project" data-title="Portfolio Engine" data-type="General Project" data-tech="TypeScript|Node.js|SQLite|Static Site Generation" data-description="A structured-content project exploring how stored portfolio data can be transformed into generated static web output." data-built="A data-to-static-page portfolio generation workflow." data-learning="Content modeling, generation, SQLite, templates, and separation of data from presentation." data-image="assets/img/desktop.png" data-url="pg/portfolio-engine.html" data-search="portfolio engine typescript node sqlite static site generation html css javascript">
+                <span class="catalog-copy"><strong>Portfolio Engine</strong><small>Static generation project</small></span><span class="badge rose">Project</span><span class="technology">TypeScript · Node.js · SQLite · Static Site Generation</span>
               </a>
 
-              <a
-                class="catalog-row"
-                href="#selected-project"
-                data-classification="lab"
-                data-title="Game Framework"
-                data-type="Lab / Exploration"
-                data-tech="TypeScript|Canvas 2D|Phaser|JavaScript|Web Audio API"
-                data-description="A game-development learning project focused on the systems beneath interactive scenes, rendering, state, input, and sound."
-                data-built="A framework-oriented browser game project."
-                data-learning="Rendering loops, state, input, assets, Canvas, and browser game architecture."
-                data-image="assets/img/desktop.png"
-                data-url="pg/game-framework.html"
-                data-search="game framework typescript canvas phaser javascript web audio api simulation"
-              >
-                <span class="catalog-copy">
-                  <strong>Game Framework</strong>
-                  <small>Interactive systems project</small>
-                </span>
-                <span class="badge green">Lab</span>
-                <span class="technology">TypeScript · Canvas 2D · Phaser · Web Audio API</span>
+              <a class="catalog-row" href="#selected-project" data-classification="lab" data-title="Game Framework" data-type="Lab / Exploration" data-tech="TypeScript|Canvas 2D|Phaser|JavaScript|Web Audio API" data-description="A game-development learning project focused on the systems beneath interactive scenes, rendering, state, input, and sound." data-built="A framework-oriented browser game project." data-learning="Rendering loops, state, input, assets, Canvas, and browser game architecture." data-image="assets/img/desktop.png" data-url="pg/game-framework.html" data-search="game framework typescript canvas phaser javascript web audio api simulation">
+                <span class="catalog-copy"><strong>Game Framework</strong><small>Interactive systems project</small></span><span class="badge green">Lab</span><span class="technology">TypeScript · Canvas 2D · Phaser · Web Audio API</span>
               </a>
 
               <p id="library-empty" class="panel-copy" hidden>No projects match this search.</p>
@@ -364,45 +152,21 @@
                   <h2 class="panel-title" id="detail-title">Modern Agenda</h2>
                   <p class="panel-copy library-copy" id="detail-description">A comparative application project used to revisit the same agenda concepts across languages and frameworks while making implementation differences visible.</p>
                 </div>
-                <div class="status-stack">
-                  <span class="badge rose" id="detail-type">Rosetta Stone</span>
-                  <span class="status complete">Preview</span>
-                </div>
+                <div class="status-stack"><span class="badge rose" id="detail-type">Rosetta Stone</span><span class="status complete">Preview</span></div>
               </header>
 
               <div class="inspector-grid">
-                <figure class="preview-frame">
-                  <img id="detail-image" src="assets/img/agenda-preview.png" alt="Modern Agenda project preview" />
-                </figure>
+                <figure class="preview-frame"><img id="detail-image" src="assets/img/agenda-preview.png" alt="Modern Agenda project preview" /></figure>
 
                 <div class="project-details">
-                  <section class="detail-block">
-                    <p class="label">Technologies</p>
-                    <div class="tag-list" id="detail-tech">
-                      <span class="tag">Angular</span>
-                      <span class="tag">TypeScript</span>
-                      <span class="tag">Java</span>
-                      <span class="tag">PHP</span>
-                      <span class="tag">Python</span>
-                      <span class="tag">React</span>
-                    </div>
-                  </section>
+                  <section class="detail-block"><p class="label">Technologies</p><div class="tag-list" id="detail-tech"><span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">PHP</span><span class="tag">Python</span><span class="tag">React</span></div></section>
 
                   <div class="detail-columns">
-                    <section class="detail-card glass-soft">
-                      <p class="label">What I Built</p>
-                      <p id="detail-built">A working agenda application and its related implementations.</p>
-                    </section>
-
-                    <section class="detail-card glass-soft">
-                      <p class="label">What I Was Learning</p>
-                      <p id="detail-learning">Application structure, data flow, typed models, framework differences, and repeated implementation practice.</p>
-                    </section>
+                    <section class="detail-card glass-soft"><p class="label">What I Built</p><p id="detail-built">A working agenda application and its related implementations.</p></section>
+                    <section class="detail-card glass-soft"><p class="label">What I Was Learning</p><p id="detail-learning">Application structure, data flow, typed models, framework differences, and repeated implementation practice.</p></section>
                   </div>
 
-                  <div class="action-row">
-                    <a class="panel-link" id="detail-open" href="pg/modern-agenda.html">Open Full Project →</a>
-                  </div>
+                  <div class="action-row"><a class="panel-link" id="detail-open" href="pg/modern-agenda.html">Open Full Project →</a></div>
                 </div>
               </div>
             </section>
@@ -412,18 +176,9 @@
 
       <footer class="home-footer page-frame">
         <nav class="footer-links" aria-label="Developer Sandbox resources">
-          <a href="https://github.com/susanndelgado/developer-sandbox">
-            <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" /></svg>
-            Sandbox Repo
-          </a>
-          <a href="https://github.com/susanndelgado">
-            <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" /></svg>
-            GitHub
-          </a>
-          <a href="system-guide.html">
-            <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" /></svg>
-            Documentation
-          </a>
+          <a href="https://github.com/susanndelgado/developer-sandbox"><svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" /></svg>Sandbox Repo</a>
+          <a href="https://github.com/susanndelgado"><svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" /></svg>GitHub</a>
+          <a href="system-guide.html"><svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2-.8-2-2-2H20Z" /></svg>Documentation</a>
         </nav>
 
         <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
