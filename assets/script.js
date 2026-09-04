@@ -140,15 +140,28 @@
 
     librarySearch?.addEventListener("input", applyLibraryFilters)
 
+    const requestedSearch = new URLSearchParams(window.location.search).get("search")
+
+    if (librarySearch && requestedSearch) {
+      librarySearch.value = requestedSearch
+      applyLibraryFilters()
+    }
+
     const requestedDetail = window.location.hash.replace(/^#library-detail-/, "")
     const requestedRow = libraryRows.find(
       (row) => row.dataset.libraryRecord === requestedDetail,
     )
 
-    if (requestedRow?.dataset.libraryRecord) {
+    if (requestedRow?.dataset.libraryRecord && !requestedRow.hidden) {
       showLibraryProject(requestedRow.dataset.libraryRecord)
     } else if (currentRecord) {
-      showLibraryProject(currentRecord)
+      const currentRow = libraryRows.find(
+        (row) => row.dataset.libraryRecord === currentRecord,
+      )
+
+      if (currentRow && !currentRow.hidden) {
+        showLibraryProject(currentRecord)
+      }
     }
   }
 
@@ -210,6 +223,17 @@
 
     if (button.hasAttribute("aria-expanded")) {
       button.setAttribute("aria-expanded", String(!expanded))
+    }
+
+    if (button.hasAttribute("aria-label")) {
+      const label = button.getAttribute("aria-label") || ""
+      button.setAttribute(
+        "aria-label",
+        label.replace(
+          expanded ? /^Collapse / : /^Expand /,
+          expanded ? "Expand " : "Collapse ",
+        ),
+      )
     }
   })
 
