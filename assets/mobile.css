@@ -105,16 +105,6 @@
     border-radius: 13px;
   }
 
-  .glass::before {
-    background:
-      linear-gradient(90deg, rgba(198, 240, 255, 0.86), transparent) left top / 38px 1px no-repeat,
-      linear-gradient(180deg, rgba(198, 240, 255, 0.8), transparent) left top / 1px 38px no-repeat,
-      linear-gradient(270deg, rgba(157, 210, 255, 0.64), transparent) right top / 34px 1px no-repeat,
-      linear-gradient(180deg, rgba(157, 210, 255, 0.6), transparent) right top / 1px 34px no-repeat,
-      linear-gradient(90deg, rgba(79, 174, 255, 0.48), transparent) left bottom / 32px 1px no-repeat,
-      linear-gradient(0deg, rgba(79, 174, 255, 0.45), transparent) left bottom / 1px 32px no-repeat;
-  }
-
   .panel-header {
     gap: 5px;
     margin-bottom: 6px;
