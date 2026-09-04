@@ -110,6 +110,11 @@
     grid-template-columns: 1fr;
   }
 
+  .lab-slide {
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 10px;
+  }
+
   .featured-copy {
     .panel-copy {
       font-size: 0.5rem;
@@ -192,6 +197,22 @@
 
   .labs-panel {
     gap: 12px;
+  }
+
+  .lab-slider {
+    padding: 8px;
+  }
+
+  .lab-copy {
+    gap: 8px;
+  }
+
+  .lab-copy h1 {
+    font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+  }
+
+  .lab-summary {
+    font-size: 0.66rem;
   }
 }
 
@@ -532,6 +553,45 @@
     height: 31px;
     font-size: 0.52rem;
   }
+
+  .lab-slider {
+    padding: 6px;
+  }
+
+  .lab-slide {
+    grid-template-columns: minmax(0, 1.18fr) minmax(220px, 0.82fr);
+    gap: 7px;
+  }
+
+  .lab-copy {
+    gap: 5px;
+    padding: 2px;
+  }
+
+  .lab-copy h1 {
+    font-size: clamp(1.2rem, 3.2vw, 1.55rem);
+  }
+
+  .lab-summary {
+    font-size: 0.56rem;
+    line-height: 1.35;
+  }
+
+  .lab-copy .detail-card {
+    padding: 6px;
+  }
+
+  .lab-copy .tag {
+    min-height: 18px;
+    padding-inline: 5px;
+    font-size: 0.48rem;
+  }
+
+  .lab-controls .panel-link {
+    min-height: 28px;
+    padding-inline: 8px;
+    font-size: 0.56rem;
+  }
 }
 
 /* ==================================================
@@ -660,6 +720,20 @@
 
   .library-rotate {
     display: block;
+  }
+
+  .lab-slider {
+    padding: 8px;
+  }
+
+  .lab-slide {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(220px, 42vh) minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .lab-copy h1 {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
   }
 }
 
