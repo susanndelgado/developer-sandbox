@@ -3,21 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#020817" />
     <title>Project Library — Developer Sandbox</title>
-    <link rel="stylesheet" href="assets/lib.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
 
-  <body id="lib">
-    <div class="rotate-screen" aria-hidden="true">
-      <img class="rotate-logo" src="assets/img/logo-blue.png" alt="" />
-      <span class="eyebrow">Developer Sandbox</span>
-      <h1>Rotate your device</h1>
-      <p>This workspace is designed for landscape viewing.</p>
-      <span class="rotate-icon" aria-hidden="true">↻</span>
-    </div>
+  <body class="library-page">
+    <section class="rotate-screen library-rotate" aria-label="Rotate device notice">
+      <div class="rotate-brand">
+        <img src="assets/img/logo-blue.png" alt="" />
+        <span class="brand-copy">
+          <strong>DEVELOPER SANDBOX</strong>
+          <small>Academy of Mastery</small>
+        </span>
+      </div>
 
-    <div class="app-shell">
-      <header class="site-header glass">
+      <div class="rotate-copy">
+        <span class="phone-icon" aria-hidden="true"></span>
+        <h1>Rotate Your Device</h1>
+        <p>This workspace is designed for landscape viewing.</p>
+      </div>
+
+      <p class="rotate-quote">“Dreams are the Foundation of Reality.”<br />— Susan Delgado</p>
+    </section>
+
+    <div class="library-shell">
+      <header class="home-header page-frame">
         <a class="brand" href="index.html" aria-label="Developer Sandbox home">
           <img src="assets/img/logo-blue.png" alt="" />
           <span class="brand-copy">
@@ -26,43 +37,80 @@
           </span>
         </a>
 
-        <nav class="site-nav" aria-label="Developer Sandbox navigation">
-          <a class="nav-link" href="index.html"><span aria-hidden="true">⌂</span>Home</a>
-          <a class="nav-link active" href="library.html"><span aria-hidden="true">▱</span>Projects</a>
-          <a class="nav-link" href="pg/angular-reference-guide.html"><span aria-hidden="true">▤</span>Reference Guides</a>
-          <a class="nav-link" href="labs.html"><span aria-hidden="true">✦</span>Labs</a>
-          <a class="nav-link" href="system-guide.html"><span aria-hidden="true">⊙</span>System Guide</a>
+        <nav class="site-nav glass glass-compact" aria-label="Developer Sandbox navigation">
+          <a class="nav-link" href="index.html">
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.5 10.5 12 3l8.5 7.5M5.5 9v11h5v-6h3v6h5V9" />
+            </svg>
+            Home
+          </a>
+          <a class="nav-link active" href="library.html">
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+            </svg>
+            Projects
+          </a>
+          <a class="nav-link" href="pg/angular-reference-guide.html">
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2.8-2 2-2H20Z" />
+            </svg>
+            Reference Guides
+          </a>
+          <a class="nav-link" href="labs.html">
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3M7.5 16h9" />
+            </svg>
+            Labs
+          </a>
+          <a class="nav-link" href="system-guide.html">
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.4" />
+              <path d="M12 2.8v2.1M12 19.1v2.1M21.2 12h-2.1M4.9 12H2.8M18.5 5.5 17 7M7 17l-1.5 1.5M18.5 18.5 17 17M7 7 5.5 5.5" />
+            </svg>
+            System Guide
+          </a>
         </nav>
 
-        <div class="header-actions">
-          <a class="return-link" href="https://sdelgado.com/work.html">Return to sdelgado</a>
-          <a class="icon-button" href="https://sdelgado.com/work.html" aria-label="Close Developer Sandbox">×</a>
+        <div class="header-meta">
+          <a class="nav-orb glass-soft" href="system-guide.html" aria-label="Open System Guide">
+            <svg class="icon icon-glow" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="5.5" />
+              <path d="m15.2 15.2 4.3 4.3" />
+            </svg>
+          </a>
+          <span class="welcome">Welcome<small>Build · Explore · Create</small></span>
+          <a class="avatar glass-soft" href="https://sdelgado.com/work.html" aria-label="Return to sdelgado">SD</a>
         </div>
       </header>
 
-      <main class="workspace">
-        <section class="workspace-panel glass">
-          <header class="workspace-header">
-            <div class="title-group">
-              <span class="eyebrow">Project Library</span>
-              <h1>Development Work</h1>
-              <p>Browse projects, comparative builds, and focused experiments.</p>
+      <main class="library-main page-frame">
+        <section class="library-workspace glass" aria-labelledby="library-title">
+          <header class="library-toolbar">
+            <div class="library-heading">
+              <p class="eyebrow">Project Library</p>
+              <h1 id="library-title">Development Work</h1>
+              <p class="panel-copy library-copy">Browse projects, comparative builds, and focused experiments.</p>
             </div>
 
-            <nav class="section-nav" aria-label="Browse project groups">
-              <a class="chip active" href="#catalog">All</a>
-              <a class="chip" href="#projects">Projects</a>
-              <a class="chip" href="#rosetta">Rosetta</a>
-              <a class="chip" href="#labs">Labs</a>
+            <nav class="library-tabs" aria-label="Browse project groups">
+              <a class="tag active" href="#catalog">All</a>
+              <a class="tag" href="#projects">Projects</a>
+              <a class="tag" href="#rosetta">Rosetta</a>
+              <a class="tag" href="#labs">Labs</a>
             </nav>
           </header>
 
-          <div class="workspace-body">
-            <section class="catalog panel" id="catalog" aria-labelledby="catalog-title">
-              <header class="panel-header">
-                <div>
-                  <span class="eyebrow">Catalog</span>
-                  <h2 id="catalog-title">All Projects</h2>
+          <div class="library-grid">
+            <section class="panel glass library-panel-block catalog" id="catalog" aria-labelledby="catalog-title">
+              <header class="panel-header library-panel-header">
+                <span class="panel-icon" aria-hidden="true">
+                  <svg class="icon-large icon-glow" viewBox="0 0 24 24">
+                    <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+                  </svg>
+                </span>
+                <div class="library-panel-heading">
+                  <p class="eyebrow">Catalog</p>
+                  <h2 class="panel-title" id="catalog-title">All Projects</h2>
                 </div>
                 <span class="muted">Scroll to browse</span>
               </header>
@@ -73,13 +121,12 @@
                 <span>Technology</span>
               </div>
 
-              <div class="scroll-area">
+              <div class="catalog-scroll">
                 <section class="catalog-group" id="rosetta">
                   <h3 class="group-title">Rosetta Stones</h3>
 
                   <a class="catalog-row selected" href="#selected-project">
-                    <span class="project-mark rose">MA</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>Modern Agenda</strong>
                       <small>Comparative application series</small>
                     </span>
@@ -87,9 +134,8 @@
                     <span class="technology">Angular · TypeScript · Java · PHP · Python</span>
                   </a>
 
-                  <a class="catalog-row" href="pg/color-decision-engine-typescript.html">
-                    <span class="project-mark violet">CD</span>
-                    <span class="project-copy">
+                  <a class="catalog-row" href="pg/rosetta-stone-color-decision-engine-typescript.html">
+                    <span class="catalog-copy">
                       <strong>Color Decision Engine</strong>
                       <small>Decision logic across technologies</small>
                     </span>
@@ -102,8 +148,7 @@
                   <h3 class="group-title">Projects</h3>
 
                   <a class="catalog-row" href="pg/developer-sandbox.html">
-                    <span class="project-mark cyan">DS</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>Developer Sandbox</strong>
                       <small>Learning and generation platform</small>
                     </span>
@@ -112,8 +157,7 @@
                   </a>
 
                   <a class="catalog-row" href="pg/typescript-api-service.html">
-                    <span class="project-mark blue">TA</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>TypeScript API Service</strong>
                       <small>Backend service project</small>
                     </span>
@@ -122,8 +166,7 @@
                   </a>
 
                   <a class="catalog-row" href="pg/typescript-library-package.html">
-                    <span class="project-mark blue">TL</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>TypeScript Library / Package</strong>
                       <small>Toolchain and package structure</small>
                     </span>
@@ -132,18 +175,16 @@
                   </a>
 
                   <a class="catalog-row" href="pg/portfolio-engine.html">
-                    <span class="project-mark pink">PE</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>Portfolio Engine</strong>
                       <small>Static generation project</small>
                     </span>
-                    <span class="badge pink">Project</span>
+                    <span class="badge rose">Project</span>
                     <span class="technology">TypeScript · SQLite · Static Generation</span>
                   </a>
 
                   <a class="catalog-row" href="pg/week-at-a-glance-component.html">
-                    <span class="project-mark violet">WA</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>Week at a Glance Component</strong>
                       <small>Data-driven interface</small>
                     </span>
@@ -156,8 +197,7 @@
                   <h3 class="group-title">Labs &amp; Explorations</h3>
 
                   <a class="catalog-row" href="pg/rebuilding-fetch-xmlhttprequest.html">
-                    <span class="project-mark teal">RF</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>Rebuilding Fetch with XMLHttpRequest</strong>
                       <small>Browser API experiment</small>
                     </span>
@@ -166,8 +206,7 @@
                   </a>
 
                   <a class="catalog-row" href="pg/game-framework.html">
-                    <span class="project-mark green">GF</span>
-                    <span class="project-copy">
+                    <span class="catalog-copy">
                       <strong>Game Framework</strong>
                       <small>Interactive systems project</small>
                     </span>
@@ -178,13 +217,13 @@
               </div>
             </section>
 
-            <section class="inspector panel" id="selected-project" aria-labelledby="selected-title">
+            <section class="panel glass library-panel-block inspector" id="selected-project" aria-labelledby="selected-title">
               <header class="inspector-header">
                 <div class="project-number">01</div>
                 <div class="project-heading">
-                  <span class="eyebrow">Selected Project</span>
-                  <h2 id="selected-title">Modern Agenda</h2>
-                  <p>One application rebuilt across modern technologies to make implementation differences visible.</p>
+                  <p class="eyebrow">Selected Project</p>
+                  <h2 class="panel-title" id="selected-title">Modern Agenda</h2>
+                  <p class="panel-copy library-copy">One application rebuilt across modern technologies to make implementation differences visible.</p>
                 </div>
                 <div class="status-stack">
                   <span class="badge rose">Rosetta Stone</span>
@@ -199,7 +238,7 @@
 
                 <div class="project-details">
                   <section class="detail-block">
-                    <span class="label">Technologies</span>
+                    <p class="label">Technologies</p>
                     <div class="tag-list">
                       <span class="tag">Angular</span>
                       <span class="tag">TypeScript</span>
@@ -211,20 +250,20 @@
                   </section>
 
                   <div class="detail-columns">
-                    <section class="detail-card">
-                      <span class="label">What I Built</span>
+                    <section class="detail-card glass-soft">
+                      <p class="label">What I Built</p>
                       <p>A working conference agenda application and related implementations that repeat the same product structure across technologies.</p>
                     </section>
 
-                    <section class="detail-card">
-                      <span class="label">What I Was Learning</span>
+                    <section class="detail-card glass-soft">
+                      <p class="label">What I Was Learning</p>
                       <p>Application structure, data flow, typed models, framework differences, and repeated implementation practice.</p>
                     </section>
                   </div>
 
                   <div class="action-row">
-                    <a class="button primary" href="pg/modern-agenda.html">Open Full Project</a>
-                    <a class="button" href="rosetta-stones.html">View Rosetta Stones</a>
+                    <a class="panel-link" href="pg/modern-agenda.html">Open Full Project →</a>
+                    <a class="panel-link" href="rosetta-stones.html">View Rosetta Stones →</a>
                   </div>
                 </div>
               </div>
@@ -233,13 +272,24 @@
         </section>
       </main>
 
-      <footer class="site-footer glass">
-        <nav class="footer-nav" aria-label="Developer tools">
-          <a href="https://github.com/susanndelgado/developer-sandbox">⑂ Sandbox Repo</a>
-          <a href="https://github.com/susanndelgado">⑂ GitHub</a>
-          <a href="system-guide.html">⊙ System Guide</a>
-          <a href="database.html">◉ Database</a>
+      <footer class="home-footer page-frame">
+        <nav class="footer-links" aria-label="Developer Sandbox resources">
+          <a href="https://github.com/susanndelgado/developer-sandbox">
+            <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v4m0 0a2 2 0 1 0 0 4v4m10-8V4m0 4a2 2 0 1 1 0 4v4M9 10h6" /></svg>
+            Sandbox Repo
+          </a>
+          <a href="https://github.com/susanndelgado">
+            <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M8 18v-2.2c-1.8-.2-2.7-.9-3.4-2M16 18v-2.2c1.7-.6 2.5-2 2.5-4 0-1-.3-1.9-.8-2.6.2-.9.1-1.7-.2-2.4-1-.2-2 .2-2.8.8a8 8 0 0 0-5.4 0C8.5 7 7.5 6.6 6.5 6.8c-.3.7-.4 1.5-.2 2.4a4.3 4.3 0 0 0-.8 2.6c0 2 1 3.4 2.5 4" /></svg>
+            GitHub
+          </a>
+          <a href="system-guide.html">
+            <svg class="footer-icon icon-glow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4.5h6.5c1.2 0 2 .8 2 2v13c0-1.2-.8-2-2-2H4Zm16 0h-6.5c-1.2 0-2 .8-2 2v13c0-1.2.8-2 2-2H20Z" /></svg>
+            Documentation
+          </a>
         </nav>
+
+        <p class="footer-quote">“Dreams are the Foundation of Reality.” — Susan Delgado</p>
+        <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>
       </footer>
     </div>
   </body>
