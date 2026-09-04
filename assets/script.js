@@ -26,7 +26,7 @@
      SHARED INTERFACE BEHAVIOR
      ================================================== */
 
-  import("./assets/script-core.js");
+  import("./script-core.js");
 
   /* ==================================================
      ROSETTA DISPLAY LABEL CLEANUP
