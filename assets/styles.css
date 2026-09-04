@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap");
 
 :root {
   --bg: #020817;
@@ -32,7 +32,7 @@ body {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--text);
 }
 
@@ -78,7 +78,7 @@ svg {
 }
 
 .glass::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 2;
   inset: 0;
@@ -101,7 +101,7 @@ svg {
 }
 
 .glass::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 2;
   inset: 0;
@@ -109,8 +109,16 @@ svg {
   pointer-events: none;
   background:
     radial-gradient(circle at 0 0, rgba(210, 245, 255, 0.7), transparent 12%),
-    radial-gradient(circle at 100% 0, rgba(120, 220, 255, 0.78), transparent 12%),
-    radial-gradient(circle at 0 100%, rgba(100, 120, 255, 0.42), transparent 14%);
+    radial-gradient(
+      circle at 100% 0,
+      rgba(120, 220, 255, 0.78),
+      transparent 12%
+    ),
+    radial-gradient(
+      circle at 0 100%,
+      rgba(100, 120, 255, 0.42),
+      transparent 14%
+    );
   opacity: 0.9;
 }
 
@@ -169,7 +177,7 @@ svg {
   overflow: hidden;
   background:
     linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.22)),
-    url('img/Bg-platform-light.png') center / cover no-repeat,
+    url("img/Bg-platform-light.png") center / cover no-repeat,
     var(--bg);
 }
 
@@ -180,8 +188,17 @@ svg {
   height: 100dvh;
   padding: 14px clamp(18px, 3vw, 58px) 8px;
   background:
-    radial-gradient(circle at 50% 10%, rgba(49, 132, 220, 0.055), transparent 34%),
-    linear-gradient(180deg, rgba(1, 6, 20, 0.17), transparent 28%, rgba(1, 6, 20, 0.2));
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(49, 132, 220, 0.055),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(1, 6, 20, 0.17),
+      transparent 28%,
+      rgba(1, 6, 20, 0.2)
+    );
 }
 
 .brand {
@@ -219,7 +236,10 @@ svg {
 
 .home-header {
   display: grid;
-  grid-template-columns: minmax(230px, 0.8fr) minmax(540px, auto) minmax(230px, 0.8fr);
+  grid-template-columns: minmax(230px, 0.8fr) minmax(540px, auto) minmax(
+      230px,
+      0.8fr
+    );
   align-items: center;
   gap: clamp(14px, 2vw, 30px);
   min-height: 60px;
@@ -241,7 +261,10 @@ svg {
   border-left: 1px solid rgba(117, 185, 246, 0.1);
   color: #c9dae9;
   font-size: 0.8rem;
-  transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .nav-link:first-child {
@@ -252,8 +275,11 @@ svg {
 .nav-link:focus-visible,
 .nav-link.active {
   color: white;
-  background:
-    linear-gradient(180deg, rgba(71, 158, 255, 0.27), rgba(25, 76, 137, 0.13));
+  background: linear-gradient(
+    180deg,
+    rgba(71, 158, 255, 0.27),
+    rgba(25, 76, 137, 0.13)
+  );
 }
 
 .nav-link.active {
@@ -323,13 +349,20 @@ svg {
 }
 
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(3.35rem, 4.65vw, 5.35rem);
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: 0.025em;
   text-transform: uppercase;
-  background: linear-gradient(96deg, #efb978 4%, #ffe1ac 27%, #f8fbff 57%, #b9e5ff 78%, #7bd4ff 100%);
+  background: linear-gradient(
+    96deg,
+    #efb978 4%,
+    #ffe1ac 27%,
+    #f8fbff 57%,
+    #b9e5ff 78%,
+    #7bd4ff 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -348,7 +381,7 @@ svg {
 
 .academy-line::before,
 .academy-line::after {
-  content: '';
+  content: "";
   width: clamp(54px, 7vw, 112px);
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(159, 218, 255, 0.72));
@@ -359,7 +392,7 @@ svg {
 }
 
 .hero-tagline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   color: #bfe0ee;
   font-size: clamp(0.88rem, 1.15vw, 1.18rem);
   font-style: italic;
@@ -368,7 +401,10 @@ svg {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: minmax(340px, 1fr) minmax(245px, 0.56fr) minmax(340px, 1fr);
+  grid-template-columns: minmax(340px, 1fr) minmax(245px, 0.56fr) minmax(
+      340px,
+      1fr
+    );
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(100px, 0.54fr);
   gap: clamp(12px, 1vw, 17px);
   min-height: 0;
@@ -377,8 +413,8 @@ svg {
 }
 
 .panel {
-  min-width: 0;
-  min-height: 0;
+  min-width: 480px;
+  min-height: 215px;
   overflow: hidden;
   border-radius: var(--radius);
   padding: clamp(12px, 0.9vw, 16px) clamp(14px, 1.05vw, 18px);
@@ -401,7 +437,11 @@ svg {
   border-radius: 10px;
   color: var(--cyan);
   background:
-    radial-gradient(circle at 50% 45%, rgba(54, 174, 255, 0.18), transparent 72%),
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(54, 174, 255, 0.18),
+      transparent 72%
+    ),
     rgba(12, 45, 83, 0.32);
   box-shadow:
     inset 0 0 18px rgba(53, 161, 255, 0.06),
@@ -413,7 +453,13 @@ svg {
   font-weight: 600;
   letter-spacing: 0.065em;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #f8fdff 0%, #d8f5ff 24%, #8de4ff 60%, #8faeff 100%);
+  background: linear-gradient(
+    90deg,
+    #f8fdff 0%,
+    #d8f5ff 24%,
+    #8de4ff 60%,
+    #8faeff 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -436,20 +482,29 @@ svg {
   border: 1px solid rgba(89, 190, 255, 0.33);
   border-radius: 9px;
   color: #e0f6ff;
-  background:
-    linear-gradient(180deg, rgba(43, 121, 189, 0.38), rgba(19, 66, 116, 0.38));
+  background: linear-gradient(
+    180deg,
+    rgba(43, 121, 189, 0.38),
+    rgba(19, 66, 116, 0.38)
+  );
   box-shadow:
     inset 0 1px rgba(255, 255, 255, 0.05),
     0 0 13px rgba(57, 169, 255, 0.06);
   font-size: 0.68rem;
-  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .panel-link:hover,
 .panel-link:focus-visible {
   border-color: var(--line-bright);
-  background:
-    linear-gradient(180deg, rgba(54, 145, 220, 0.48), rgba(23, 79, 136, 0.46));
+  background: linear-gradient(
+    180deg,
+    rgba(54, 145, 220, 0.48),
+    rgba(23, 79, 136, 0.46)
+  );
   box-shadow:
     inset 0 1px rgba(255, 255, 255, 0.08),
     0 0 16px rgba(63, 185, 255, 0.14);
@@ -565,7 +620,10 @@ svg {
     rgba(4, 17, 40, 0.43);
   text-align: center;
   font-size: clamp(0.51rem, 0.49vw, 0.61rem);
-  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .mini-card:hover,
@@ -633,8 +691,7 @@ svg {
   width: min(94%, 365px);
   max-height: 94%;
   object-fit: contain;
-  filter:
-    drop-shadow(0 0 15px rgba(65, 190, 255, 0.24))
+  filter: drop-shadow(0 0 15px rgba(65, 190, 255, 0.24))
     drop-shadow(0 0 28px rgba(65, 190, 255, 0.12));
 }
 
@@ -690,7 +747,7 @@ svg {
 }
 
 .footer-quote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   color: #c8d7e5;
   font-size: 0.81rem;
   font-style: italic;
@@ -753,7 +810,10 @@ svg {
   }
 
   .dashboard-grid {
-    grid-template-columns: minmax(285px, 1fr) minmax(190px, 0.48fr) minmax(285px, 1fr);
+    grid-template-columns: minmax(285px, 1fr) minmax(190px, 0.48fr) minmax(
+        285px,
+        1fr
+      );
   }
 }
 
@@ -761,7 +821,7 @@ svg {
   #hm {
     background:
       linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.2)),
-      url('img/bg-mobile-landscape1.png') center / cover no-repeat,
+      url("img/bg-mobile-landscape1.png") center / cover no-repeat,
       var(--bg);
   }
 
@@ -916,7 +976,7 @@ svg {
     font-size: 0.46rem;
   }
 
-  .mini-card:nth-child(n+3) {
+  .mini-card:nth-child(n + 3) {
     display: none;
   }
 
@@ -960,7 +1020,7 @@ svg {
   #hm {
     background:
       linear-gradient(rgba(1, 6, 20, 0.06), rgba(1, 6, 20, 0.16)),
-      url('img/bg-mobile-bg.png') center / cover no-repeat,
+      url("img/bg-mobile-bg.png") center / cover no-repeat,
       #020817;
   }
 
@@ -1006,7 +1066,7 @@ svg {
   }
 
   .phone-icon::after {
-    content: '↻';
+    content: "↻";
     position: absolute;
     right: -30px;
     top: 17px;
@@ -1028,7 +1088,7 @@ svg {
   }
 
   .rotate-quote {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
     color: #b9ccdf;
     font-size: 1rem;
     font-style: italic;
@@ -1054,7 +1114,10 @@ svg {
 }
 
 #hm.scaled-home .home-header {
-  grid-template-columns: minmax(230px, 0.8fr) minmax(540px, auto) minmax(230px, 0.8fr);
+  grid-template-columns: minmax(230px, 0.8fr) minmax(540px, auto) minmax(
+      230px,
+      0.8fr
+    );
   gap: 30px;
   min-height: 60px;
 }
@@ -1112,7 +1175,10 @@ svg {
 }
 
 #hm.scaled-home .dashboard-grid {
-  grid-template-columns: minmax(340px, 1fr) minmax(245px, 0.56fr) minmax(340px, 1fr);
+  grid-template-columns: minmax(340px, 1fr) minmax(245px, 0.56fr) minmax(
+      340px,
+      1fr
+    );
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(100px, 0.54fr);
   gap: 17px;
   width: 1530px;
@@ -1200,7 +1266,7 @@ svg {
   font-size: 0.61rem;
 }
 
-#hm.scaled-home .mini-card:nth-child(n+3) {
+#hm.scaled-home .mini-card:nth-child(n + 3) {
   display: grid;
 }
 

@@ -22,8 +22,8 @@
 }
 
 #hm.scaled-home .panel {
-  min-width: 480px;
-  min-height: 280px;
+  min-width: 0;
+  min-height: 0;
 }
 
 .hologram {
@@ -35,12 +35,16 @@
   #hm {
     background:
       linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.2)),
-      url('img/bg-mobile-landscape1.png') center / cover no-repeat,
+      url("img/bg-mobile-landscape1.png") center / cover no-repeat,
       var(--bg);
   }
 
   .home-shell {
-    grid-template-rows: clamp(44px, 12vh, 58px) minmax(0, 1fr) clamp(18px, 5vh, 24px);
+    grid-template-rows: clamp(44px, 12vh, 58px) minmax(0, 1fr) clamp(
+        18px,
+        5vh,
+        24px
+      );
     padding: clamp(4px, 1vh, 8px) clamp(8px, 1.8vw, 16px) 4px;
   }
 
@@ -192,7 +196,7 @@
     font-size: clamp(0.42rem, 0.82vw, 0.5rem);
   }
 
-  .mini-card:nth-child(n+3) {
+  .mini-card:nth-child(n + 3) {
     display: none;
   }
 
@@ -236,7 +240,7 @@
   #hm {
     background:
       linear-gradient(rgba(1, 6, 20, 0.04), rgba(1, 6, 20, 0.12)),
-      url('img/bg-mobile-bg.png') center / cover no-repeat,
+      url("img/bg-mobile-bg.png") center bottom/ cover no-repeat,
       #020817;
   }
 
