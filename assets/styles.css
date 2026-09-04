@@ -81,31 +81,37 @@ svg {
   content: '';
   position: absolute;
   z-index: 2;
-  inset: -1px;
+  inset: 0;
+  padding: 1px;
   border-radius: inherit;
   pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(198, 240, 255, 0.92), transparent) left top / 72px 1px no-repeat,
-    linear-gradient(180deg, rgba(198, 240, 255, 0.86), transparent) left top / 1px 72px no-repeat,
-    linear-gradient(270deg, rgba(157, 210, 255, 0.76), transparent) right top / 62px 1px no-repeat,
-    linear-gradient(180deg, rgba(157, 210, 255, 0.7), transparent) right top / 1px 62px no-repeat,
-    linear-gradient(90deg, rgba(79, 174, 255, 0.55), transparent) left bottom / 58px 1px no-repeat,
-    linear-gradient(0deg, rgba(79, 174, 255, 0.52), transparent) left bottom / 1px 58px no-repeat,
-    linear-gradient(270deg, rgba(160, 107, 255, 0.4), transparent) right bottom / 70px 1px no-repeat,
-    linear-gradient(0deg, rgba(160, 107, 255, 0.38), transparent) right bottom / 1px 70px no-repeat;
-  filter: drop-shadow(0 0 5px rgba(80, 196, 255, 0.42));
+  background: linear-gradient(
+    135deg,
+    rgba(190, 235, 255, 0.92),
+    rgba(90, 170, 255, 0.2) 30%,
+    rgba(140, 90, 255, 0.24) 70%,
+    rgba(120, 210, 255, 0.88)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 5px rgba(80, 196, 255, 0.46));
 }
 
 .glass::after {
   content: '';
   position: absolute;
-  z-index: -1;
+  z-index: 2;
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow:
-    inset 14px 14px 32px rgba(84, 185, 255, 0.025),
-    inset -14px -14px 34px rgba(119, 73, 255, 0.035);
+  background:
+    radial-gradient(circle at 0 0, rgba(210, 245, 255, 0.7), transparent 12%),
+    radial-gradient(circle at 100% 0, rgba(120, 220, 255, 0.78), transparent 12%),
+    radial-gradient(circle at 0 100%, rgba(100, 120, 255, 0.42), transparent 14%);
+  opacity: 0.9;
 }
 
 .glass-soft {
@@ -403,12 +409,16 @@ svg {
 }
 
 .panel-title {
-  color: #c9edff;
   font-size: clamp(0.78rem, 0.72vw, 0.88rem);
   font-weight: 600;
   letter-spacing: 0.065em;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(87, 205, 255, 0.12);
+  background: linear-gradient(90deg, #f8fdff 0%, #d8f5ff 24%, #8de4ff 60%, #8faeff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 5px rgba(105, 220, 255, 0.38));
 }
 
 .panel-copy {
@@ -615,7 +625,7 @@ svg {
   display: grid;
   place-items: end center;
   min-height: 0;
-  padding-bottom: 2%;
+  padding-bottom: 50%;
   pointer-events: none;
 }
 
@@ -849,11 +859,13 @@ svg {
   }
 
   .glass::before {
-    background:
-      linear-gradient(90deg, rgba(198, 240, 255, 0.86), transparent) left top / 38px 1px no-repeat,
-      linear-gradient(180deg, rgba(198, 240, 255, 0.8), transparent) left top / 1px 38px no-repeat,
-      linear-gradient(270deg, rgba(157, 210, 255, 0.64), transparent) right top / 34px 1px no-repeat,
-      linear-gradient(180deg, rgba(157, 210, 255, 0.6), transparent) right top / 1px 34px no-repeat;
+    background: linear-gradient(
+      135deg,
+      rgba(190, 235, 255, 0.9),
+      rgba(90, 170, 255, 0.18) 30%,
+      rgba(140, 90, 255, 0.22) 70%,
+      rgba(120, 210, 255, 0.85)
+    );
   }
 
   .panel-header {
