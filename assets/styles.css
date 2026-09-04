@@ -348,7 +348,11 @@ svg {
 
   background:
     radial-gradient(circle at 0 0, rgba(210, 245, 255, 0.65), transparent 12%),
-    radial-gradient(circle at 100% 0, rgba(120, 220, 255, 0.75), transparent 12%),
+    radial-gradient(
+      circle at 100% 0,
+      rgba(120, 220, 255, 0.75),
+      transparent 12%
+    ),
     radial-gradient(circle at 0 100%, rgba(100, 120, 255, 0.4), transparent 14%);
   opacity: 0.9;
 }
@@ -572,7 +576,7 @@ svg {
   justify-items: center;
   align-content: center;
   gap: 5px;
-  min-width: 54px;
+  min-width: 68px;
   min-height: clamp(50px, 7vh, 64px);
   padding: 5px;
   border: 1px solid rgba(119, 189, 245, 0.17);
@@ -599,8 +603,8 @@ svg {
 .mini-mark {
   display: grid;
   place-items: center;
-  width: clamp(42px, 3.5vw, 68px);
-  height: clamp(42px, 3.5vw, 68px);
+  width: clamp(42px, 2.5vw, 68px);
+  height: clamp(42px, 2.5vw, 68px);
   border-radius: 8px;
   color: var(--cyan);
   font-size: 0.68rem;
