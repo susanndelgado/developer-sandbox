@@ -3,30 +3,30 @@
    Shared Interface Behavior
    ================================================== */
 
-(() => {
+;(() => {
   /* ==================================================
      REFERENCE GUIDE CATALOG SEARCH
      ================================================== */
 
-  const referenceSearch = document.querySelector("#reference-search");
-  const guideRows = Array.from(document.querySelectorAll(".guide-row"));
+  const referenceSearch = document.querySelector("#reference-search")
+  const guideRows = Array.from(document.querySelectorAll(".guide-row"))
 
   if (referenceSearch && guideRows.length) {
     referenceSearch.addEventListener("input", () => {
-      const query = referenceSearch.value.trim().toLowerCase();
+      const query = referenceSearch.value.trim().toLowerCase()
 
       guideRows.forEach((row) => {
-        const searchText = row.dataset.search || row.textContent || "";
-        row.hidden = Boolean(query) && !searchText.toLowerCase().includes(query);
-      });
-    });
+        const searchText = row.dataset.search || row.textContent || ""
+        row.hidden = Boolean(query) && !searchText.toLowerCase().includes(query)
+      })
+    })
   }
 
   /* ==================================================
      SHARED INTERFACE BEHAVIOR
      ================================================== */
 
-  import("./script-core.js");
+  import("./script-core.js")
 
   /* ==================================================
      ROSETTA DISPLAY LABEL CLEANUP
@@ -36,16 +36,16 @@
     const destination = [
       entry.getAttribute("href") ?? "",
       entry.getAttribute("onclick") ?? "",
-    ].join(" ");
+    ].join(" ")
 
-    if (!destination.includes("rosetta-stone")) return;
+    if (!destination.includes("rosetta-stone")) return
 
     entry.querySelectorAll("strong, small").forEach((title) => {
-      const text = title.textContent?.trim() ?? "";
+      const text = title.textContent?.trim() ?? ""
 
-      if (!text.startsWith("Rosetta Stone ")) return;
+      if (!text.startsWith("Rosetta Stone ")) return
 
-      title.textContent = text.replace(/^Rosetta Stone\s+/, "");
-    });
-  });
-})();
+      title.textContent = text.replace(/^Rosetta Stone\s+/, "")
+    })
+  })
+})()

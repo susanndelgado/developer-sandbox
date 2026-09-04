@@ -67,6 +67,10 @@ svg {
   width: 100%;
   max-width: none;
   margin-inline: auto;
+  display: grid;
+  grid-template-rows: clamp(150px, 24vh) minmax(0, 1fr);
+  min-height: 0;
+  padding-top: 2px;
 }
 
 /* ==================================================
@@ -521,6 +525,7 @@ svg {
 .mini-grid {
   flex-wrap: nowrap;
   min-height: 0;
+  overflow: scroll;
 }
 
 .mini-card {
@@ -529,7 +534,7 @@ svg {
   justify-items: center;
   align-content: center;
   gap: 5px;
-  min-width: 0;
+  min-width: 54px;
   min-height: clamp(50px, 7vh, 64px);
   padding: 5px;
   border: 1px solid rgba(119, 189, 245, 0.17);

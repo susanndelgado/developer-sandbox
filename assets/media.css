@@ -6,6 +6,11 @@
 
 @media (min-width: 900px) {
   :root {
+    --page-gutter: 18px;
+  }
+}
+@media (min-width: 1180px) {
+  :root {
     --page-gutter: 38px;
   }
 }
@@ -97,6 +102,21 @@
 
   .detail-columns {
     grid-template-columns: 1fr;
+  }
+  .featured-copy {
+    .panel-copy {
+      font-size: 0.5rem;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    .tag {
+      font-size: 0.5rem;
+      padding: 0 3px;
+    }
+  }
+  .mini-card {
+    font-size: 0.4rem;
   }
 }
 
@@ -282,8 +302,7 @@
     width: 100%;
     height: 100%;
     gap: clamp(5px, 0.9vw, 9px);
-    padding: clamp(24px, 10vh, 70px) clamp(5px, 1vw, 12px)
-      clamp(8px, 2vh, 16px);
+    padding: clamp(24px, 10vh, 70px) clamp(5px, 1vw, 12px) clamp(8px, 2vh, 16px);
   }
 
   .featured-panel,
