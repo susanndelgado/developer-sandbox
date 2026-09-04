@@ -1,0 +1,36 @@
+{{HTML_HEAD}}
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" class="site-page app-shell" data-section="reference">
+    {{HEADER}}
+
+    <main class="app-main page-frame full-frame">
+      <section class="catalog-workspace glass" aria-labelledby="reference-title">
+        <header class="catalog-toolbar">
+          <div class="catalog-heading">
+            <p class="eyebrow">Reference Library</p>
+            <h1 id="reference-title">Reference Guides</h1>
+            <p class="panel-copy">Quick technical references organized as one viewport-fit catalog.</p>
+          </div>
+
+          <input
+            class="catalog-search"
+            id="reference-search"
+            type="search"
+            placeholder="Search guides or technologies"
+            aria-label="Search reference guides"
+            autocomplete="off"
+          />
+        </header>
+
+        <div class="guide-catalog">
+          {{REFERENCE_GUIDE_CATALOG}}
+        </div>
+      </section>
+    </main>
+
+    {{FOOTER}}
