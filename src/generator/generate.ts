@@ -119,6 +119,8 @@ type CollectionGroup = {
   records: RecordRow[];
 };
 
+type ProjectStatus = "planned" | "in-progress" | "complete" | "inactive";
+
 /* =========================================================
    PATHS / CONVENTIONS
    ========================================================= */
@@ -714,10 +716,12 @@ function renderTechnologyTags(record: RecordRow, limit = 8): string {
    ========================================================= */
 
 function renderHomeMiniCard(record: RecordRow): string {
+  const label = record.nav_label || record.title;
+
   return `
-<a class="mini-card" href="${attr(entryUrl(record))}">
+<a class="mini-card" href="${attr(entryUrl(record))}" title="${attr(label)}">
   <span class="${attr(classes("mini-mark", homeColorClass(record)))}">${escapeHtml(homeShortLabel(record))}</span>
-  ${escapeHtml(record.nav_label || record.title)}
+  <span class="mini-title">${escapeHtml(label)}</span>
 </a>`;
 }
 
@@ -861,10 +865,18 @@ function librarySearchText(record: RecordRow): string {
     .toLowerCase();
 }
 
-function libraryProgressState(
-  record: RecordRow,
-): "planned" | "in-progress" | "complete" {
+function projectStatusState(record: RecordRow): ProjectStatus {
   const status = slugify(record.status);
+
+  if (
+    status.includes("inactive") ||
+    status.includes("paused") ||
+    status.includes("archived") ||
+    status.includes("cancelled") ||
+    status.includes("canceled")
+  ) {
+    return "inactive";
+  }
 
   if (
     status.includes("complete") ||
@@ -888,6 +900,26 @@ function libraryProgressState(
   return "planned";
 }
 
+function projectStatusLabel(record: RecordRow): string {
+  switch (projectStatusState(record)) {
+    case "in-progress": return "In Progress";
+    case "complete": return "Complete";
+    case "inactive": return "Inactive";
+    case "planned":
+    default: return "Planned";
+  }
+}
+
+function projectStatusClass(record: RecordRow): string {
+  switch (projectStatusState(record)) {
+    case "in-progress": return "status cyan";
+    case "complete": return "status complete";
+    case "inactive": return "status rose";
+    case "planned":
+    default: return "status blue";
+  }
+}
+
 function renderLibraryProgress(records: RecordRow[]): string {
   const counts = {
     planned: 0,
@@ -896,7 +928,12 @@ function renderLibraryProgress(records: RecordRow[]): string {
   };
 
   for (const record of records) {
-    counts[libraryProgressState(record)] += 1;
+    switch (projectStatusState(record)) {
+      case "planned": counts.planned += 1; break;
+      case "in-progress": counts["in-progress"] += 1; break;
+      case "complete": counts.complete += 1; break;
+      case "inactive": break;
+    }
   }
 
   return `
@@ -976,8 +1013,6 @@ function renderLibraryInspector(record: RecordRow, index: number): string {
   const titleId = `library-title-${key}`;
   const built = libraryBuiltSummary(record);
   const learning = libraryLearningSummary(record);
-  const status = record.status?.trim() || "Preview";
-  const statusClass = slugify(status).includes("complete") ? "status complete" : "status";
 
   return `
 <section
@@ -995,7 +1030,7 @@ function renderLibraryInspector(record: RecordRow, index: number): string {
     </div>
     <div class="status-stack">
       <span class="badge ${attr(libraryBadgeClass(record))}">${escapeHtml(classificationDisplayLabel(record))}</span>
-      <span class="${attr(statusClass)}">${escapeHtml(status)}</span>
+      <span class="${attr(projectStatusClass(record))}">${escapeHtml(projectStatusLabel(record))}</span>
     </div>
   </header>
 
@@ -1796,7 +1831,6 @@ function renderLabSlide(
   total: number,
 ): string {
   const category = primaryCategoryForRecord(record)?.name ?? "Miscellaneous";
-  const status = record.status?.trim() || "Not specified";
   const actions = renderLabActionLinks(record);
   const disabled = total <= 1 ? " disabled" : "";
 
@@ -1825,7 +1859,7 @@ function renderLabSlide(
       </div>
       <div class="detail-card">
         <span class="label">Status</span>
-        <p>${escapeHtml(status)}</p>
+        <p>${escapeHtml(projectStatusLabel(record))}</p>
       </div>
     </div>
 
@@ -1984,12 +2018,16 @@ function renderEntryIdentity(record: RecordRow): string {
   const headerClass = isReferenceGuide(record)
     ? ""
     : ' class="project-detail-header"';
+  const status = belongsInProjectLibrary(record)
+    ? `<span class="${attr(projectStatusClass(record))}">${escapeHtml(projectStatusLabel(record))}</span>`
+    : "";
 
   return `
 <header${headerClass}>
   <div>
     <small>${escapeHtml(classificationLabel(record))}</small>
     <h2>${escapeHtml(record.title)}</h2>
+    ${status}
   </div>
   <p>
     ${record.subtitle ? `<strong>${escapeHtml(record.subtitle)}</strong><br />` : ""}
