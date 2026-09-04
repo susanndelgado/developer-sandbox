@@ -5,26 +5,89 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg lib" data-section="projects">
-    {{HEADER}}
+  <body class="library-page" data-section="projects">
+    <section class="rotate-screen library-rotate" aria-label="Rotate device notice">
+      <div class="rotate-brand">
+        <img src="assets/img/logo-blue.png" alt="" />
+        <span class="brand-copy">
+          <strong>DEVELOPER SANDBOX</strong>
+          <small>Academy of Mastery</small>
+        </span>
+      </div>
 
-    <main class="view-all-page">
-      {{LIBRARY_ASIDE}}
+      <div class="rotate-copy">
+        <span class="phone-icon" aria-hidden="true"></span>
+        <h1>Rotate Your Device</h1>
+        <p>This workspace is designed for landscape viewing.</p>
+      </div>
 
-      <section class="project-content">
-        <header>
-          <div>
-            <small>{{LIBRARY_LABEL}}</small>
-            <h2>{{LIBRARY_TITLE}}</h2>
+      <p class="rotate-quote">“Dreams are the Foundation of Reality.”<br />— Susan Delgado</p>
+    </section>
+
+    <div class="library-shell app-shell">
+      {{HEADER}}
+
+      <main class="library-main page-frame full-frame">
+        <section class="library-workspace glass" aria-labelledby="library-title">
+          <header class="library-toolbar">
+            <div class="library-heading">
+              <p class="eyebrow">Project Library</p>
+              <h1 id="library-title">Development Work</h1>
+              <p class="panel-copy library-copy">Search the catalog, select a project, and review its preview without leaving the Library.</p>
+            </div>
+
+            <div class="library-tabs" aria-label="Project search and filters">
+              <input
+                class="panel-link glass-soft"
+                id="library-search"
+                type="search"
+                placeholder="Search projects or technologies"
+                aria-label="Search projects or technologies"
+                autocomplete="off"
+              />
+              <button class="tag active" type="button" data-library-filter="all" aria-pressed="true">All</button>
+              <button class="tag" type="button" data-library-filter="project" aria-pressed="false">Projects</button>
+              <button class="tag" type="button" data-library-filter="rosetta" aria-pressed="false">Rosetta</button>
+              <button class="tag" type="button" data-library-filter="lab" aria-pressed="false">Labs</button>
+            </div>
+          </header>
+
+          <div class="catalog-scroll">
+            <section class="panel glass library-panel-block" id="catalog" aria-labelledby="catalog-title">
+              <header class="panel-header library-panel-header">
+                <span class="panel-icon" aria-hidden="true">
+                  <svg class="icon-large icon-glow" viewBox="0 0 24 24">
+                    <path d="M3 7h6l2-2h10v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
+                  </svg>
+                </span>
+                <div class="library-panel-heading">
+                  <p class="eyebrow">Catalog</p>
+                  <h2 class="panel-title" id="catalog-title">All Projects</h2>
+                </div>
+                <span class="muted">Select a project to preview</span>
+              </header>
+
+              <div class="catalog-head" aria-hidden="true">
+                <span>Project</span>
+                <span>Type</span>
+                <span>Technology</span>
+              </div>
+
+              {{LIBRARY_CATALOG_ROWS}}
+
+              <p id="library-empty" class="panel-copy" hidden>No projects match this search.</p>
+            </section>
+
+            <div class="panel-bottom" aria-hidden="true"></div>
+
+            {{LIBRARY_INSPECTORS}}
           </div>
+        </section>
+      </main>
 
-          <p>{{LIBRARY_DESCRIPTION}}</p>
-        </header>
+      {{FOOTER}}
+    </div>
 
-        {{LIBRARY_CONTENT}}
-      </section>
-    </main>
-
-    {{FOOTER}}
-
-  
+    <script src="assets/script.js"></script>
+  </body>
+</html>
