@@ -80,7 +80,8 @@
     <p class="footer-signature">Art × Code × Education × A More Creative Tomorrow</p>`;
 
   const normalizeInnerPage = () => {
-    if (body.id !== "pg") return;
+    const legacyIds = body.id.split(/\s+/).filter(Boolean);
+    if (!legacyIds.includes("pg")) return;
 
     const section = getSection();
     body.dataset.section = section;
