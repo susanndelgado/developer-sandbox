@@ -1,0 +1,179 @@
+name: Rosetta nine-stage source patch
+
+on:
+  push:
+    branches:
+      - work/rosetta-nine-stage-map
+    paths:
+      - .github/workflows/rosetta-nine-stage-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/rosetta-nine-stage-map
+
+      - name: Apply Rosetta nine-stage source changes
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          generator = Path('src/generator/generate.ts')
+          text = generator.read_text()
+
+          old_stages = '''  return parent ? childrenOf(nodes, parent.id) : [];'''
+          new_stages = '''  return parent
+    ? childrenOf(nodes, parent.id).filter((stage) =>
+        ROSETTA_STAGE_STATUS_CLASSES.some((className) =>
+          nodeHasClassName(stage, className),
+        ),
+      )
+    : [];'''
+          if old_stages not in text:
+              raise SystemExit('Could not find Rosetta stage collection source.')
+          text = text.replace(old_stages, new_stages, 1)
+
+          if 'if (stages.length > 6)' not in text:
+              raise SystemExit('Could not find six-stage Rosetta limit.')
+          text = text.replace('if (stages.length > 6)', 'if (stages.length > 9)', 1)
+          text = text.replace(
+              'Rosetta maps support up to six stages so the route remains readable across desktop and landscape mobile.',
+              'Rosetta maps support up to nine stages so the route remains readable across desktop and landscape mobile.',
+              1,
+          )
+          generator.write_text(text)
+
+          css = Path('assets/inner.css')
+          styles = css.read_text()
+
+          old_positions = '''.rs-stage-6 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.rs-stage-2::before,
+.rs-stage-3::before,
+.rs-stage-4::before,
+.rs-stage-5::before,
+.rs-stage-6::before {'''
+          new_positions = '''.rs-stage-6 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.rs-stage-7 {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.rs-stage-8 {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.rs-stage-9 {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.rs-stage-2::before,
+.rs-stage-3::before,
+.rs-stage-4::before,
+.rs-stage-5::before,
+.rs-stage-6::before,
+.rs-stage-7::before,
+.rs-stage-8::before,
+.rs-stage-9::before {'''
+          if old_positions not in styles:
+              raise SystemExit('Could not find Rosetta stage position block.')
+          styles = styles.replace(old_positions, new_positions, 1)
+
+          old_vertical = '''.rs-stage-4::before {
+  bottom: 100%;
+  left: 50%;
+  width: 2px;
+  height: var(--rs-route-gap-y);
+  background: linear-gradient(180deg, rgba(95, 200, 255, 0.62), var(--rs-state));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-5::before,
+.rs-stage-6::before {'''
+          new_vertical = '''.rs-stage-4::before,
+.rs-stage-7::before {
+  bottom: 100%;
+  left: 50%;
+  width: 2px;
+  height: var(--rs-route-gap-y);
+  background: linear-gradient(180deg, rgba(95, 200, 255, 0.62), var(--rs-state));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-5::before,
+.rs-stage-6::before {'''
+          if old_vertical not in styles:
+              raise SystemExit('Could not find Rosetta vertical connector block.')
+          styles = styles.replace(old_vertical, new_vertical, 1)
+
+          old_reverse = '''.rs-stage-5::before,
+.rs-stage-6::before {
+  top: 50%;
+  left: 100%;
+  width: var(--rs-route-gap-x);
+  height: 2px;
+  background: linear-gradient(90deg, var(--rs-state), rgba(95, 200, 255, 0.62));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-topline {'''
+          new_reverse = '''.rs-stage-5::before,
+.rs-stage-6::before {
+  top: 50%;
+  left: 100%;
+  width: var(--rs-route-gap-x);
+  height: 2px;
+  background: linear-gradient(90deg, var(--rs-state), rgba(95, 200, 255, 0.62));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-8::before,
+.rs-stage-9::before {
+  top: 50%;
+  right: 100%;
+  width: var(--rs-route-gap-x);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(95, 200, 255, 0.62), var(--rs-state));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-topline {'''
+          if old_reverse not in styles:
+              raise SystemExit('Could not find Rosetta reverse connector block.')
+          styles = styles.replace(old_reverse, new_reverse, 1)
+          css.write_text(styles)
+          PY
+
+      - name: Commit source patch
+        shell: bash
+        run: |
+          git config user.name "Susan Delgado"
+          git config user.email "susanndelgado@gmail.com"
+          git add src/generator/generate.ts assets/inner.css
+          git commit -m "Support up to nine Rosetta stages"
+          git push origin HEAD:work/rosetta-nine-stage-map
