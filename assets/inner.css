@@ -13,11 +13,6 @@
     var(--bg);
 }
 
-.site-page.app-shell,
-.library-page .app-shell {
-  height: 100dvh;
-}
-
 .app-main,
 .library-main {
   width: 100%;

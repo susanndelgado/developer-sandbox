@@ -878,6 +878,11 @@ svg {
   margin: 0;
   transform: translate(-50%, -50%) scale(var(--home-scale, 1));
   transform-origin: center;
+  height: 100dvh;
+}
+
+.app-shell {
+  height: 100dvh;
 }
 
 #hm.scaled-home .mini-grid {
