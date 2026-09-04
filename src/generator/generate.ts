@@ -756,7 +756,7 @@ function renderHomeFeaturedProject(): string {
     <small>Developer Sandbox</small>
     <h2>Projects in Progress</h2>
     <p class="panel-copy">New project previews will appear here as they are published.</p>
-    <a class="panel-link" href="library.html">View Library →</a>
+    <a class="home-panel-link" href="library.html">View Library →</a>
   </div>
 </div>`;
   }
@@ -771,7 +771,7 @@ function renderHomeFeaturedProject(): string {
     <div class="tag-row" aria-label="${attr(record.title)} technologies">
       ${renderTechnologyTags(record, 4)}
     </div>
-    <a class="panel-link" href="${attr(entryUrl(record))}">View Project →</a>
+    <a class="home-panel-link" href="${attr(entryUrl(record))}">View Project →</a>
   </div>
 </div>`;
 }
@@ -798,7 +798,8 @@ function generateIndex(): void {
 /* =========================================================
    LIBRARY
    Catalog + pre-rendered inspector panels.
-   JavaScript only switches existing panels.
+   JavaScript only switches existing panels on desktop.
+   Mobile follows the generated project links directly.
    ========================================================= */
 
 function libraryClassification(record: RecordRow): "project" | "rosetta" | "lab" {
@@ -860,6 +861,52 @@ function librarySearchText(record: RecordRow): string {
     .toLowerCase();
 }
 
+function libraryProgressState(
+  record: RecordRow,
+): "planned" | "in-progress" | "complete" {
+  const status = slugify(record.status);
+
+  if (
+    status.includes("complete") ||
+    status.includes("done") ||
+    status.includes("finished")
+  ) {
+    return "complete";
+  }
+
+  if (
+    status.includes("progress") ||
+    status.includes("active") ||
+    status.includes("started") ||
+    status.includes("building") ||
+    status.includes("working") ||
+    status.includes("development")
+  ) {
+    return "in-progress";
+  }
+
+  return "planned";
+}
+
+function renderLibraryProgress(records: RecordRow[]): string {
+  const counts = {
+    planned: 0,
+    "in-progress": 0,
+    complete: 0,
+  };
+
+  for (const record of records) {
+    counts[libraryProgressState(record)] += 1;
+  }
+
+  return `
+<div class="tag-row" aria-label="Project progress">
+  <span class="status blue"><strong>${counts.planned}</strong>&nbsp; Planned</span>
+  <span class="status cyan"><strong>${counts["in-progress"]}</strong>&nbsp; In Progress</span>
+  <span class="status complete"><strong>${counts.complete}</strong>&nbsp; Complete</span>
+</div>`;
+}
+
 function recordNodeSummary(
   record: RecordRow,
   classHints: string[],
@@ -910,7 +957,7 @@ function renderLibraryCatalogRow(record: RecordRow, index: number): string {
   return `
 <a
   class="catalog-row${index === 0 ? " selected" : ""}"
-  href="#library-detail-${attr(key)}"
+  href="${attr(entryUrl(record))}"
   data-library-record="${attr(key)}"
   data-classification="${attr(libraryClassification(record))}"
   data-search="${attr(librarySearchText(record))}"
@@ -989,6 +1036,7 @@ function generateLibrary(): void {
       "Project Library",
       "Search the catalog, select a project, and review its preview without leaving the Library.",
     ),
+    LIBRARY_PROGRESS: renderLibraryProgress(records),
     LIBRARY_CATALOG_ROWS: records
       .map((record, index) => renderLibraryCatalogRow(record, index))
       .join("\n"),
@@ -1834,57 +1882,54 @@ function generateLabs(): void {
    ENTRY ASIDES
    ========================================================= */
 
-function projectEntryReturnLink(record: RecordRow): {
-  url: string;
-  label: string;
-} {
-  switch (classificationOf(record)) {
-    case "rosetta-stone":
-      return { url: "rosetta-stones.html", label: "Back to Rosetta Stones" };
-    case "lab-exploration":
-      return { url: "labs.html", label: "Back to Labs" };
-    case "general-project":
-    default:
-      return { url: "library.html", label: "Back to Library" };
-  }
+function relatedProjectRecords(
+  record: RecordRow,
+  allRecords: RecordRow[],
+  limit = 8,
+): RecordRow[] {
+  const currentCategoryId = primaryCategoryForRecord(record)?.id ?? "";
+  const currentClassification = classificationOf(record);
+
+  const relevance = (item: RecordRow): number => {
+    let score = 0;
+    const categoryId = primaryCategoryForRecord(item)?.id ?? "";
+
+    if (currentCategoryId && categoryId === currentCategoryId) score += 2;
+    if (classificationOf(item) === currentClassification) score += 1;
+
+    return score;
+  };
+
+  return allRecords
+    .filter((item) => item.id !== record.id && belongsInProjectLibrary(item))
+    .sort((a, b) => {
+      const score = relevance(b) - relevance(a);
+      return score !== 0 ? score : recordSort(a, b);
+    })
+    .slice(0, limit);
 }
 
-function projectEntryContentNodes(record: RecordRow): NodeRow[] {
-  return topNodes(getNodes(record.id)).filter((node) => {
-    const type = normalizedNodeType(node);
-    const label = plainText(node.nav_label || node.title || node.subtitle);
+function renderProjectEntryAside(
+  record: RecordRow,
+  allRecords: RecordRow[],
+): string {
+  const links = relatedProjectRecords(record, allRecords)
+    .map((item) => {
+      const context = item.subtitle || classificationDisplayLabel(item);
 
-    return type !== "display" && type !== "nav" && Boolean(label);
-  });
-}
-
-function renderProjectEntryAside(record: RecordRow): string {
-  const returnLink = projectEntryReturnLink(record);
-  const overviewUrl = `${entryUrl(record)}#preview`;
-  const sectionLinks = projectEntryContentNodes(record)
-    .map((node) => {
-      const label = plainText(node.nav_label || node.title || node.subtitle);
-      const subtitle = plainText(node.subtitle);
-      const context =
-        subtitle && subtitle.toLowerCase() !== label.toLowerCase()
-          ? `<small>${escapeHtml(subtitle)}</small>`
-          : "";
-      const url = `${entryUrl(record)}#node-${slugify(node.id)}`;
-
-      return `<a href="${attr(url)}"><span aria-hidden="true">◇</span><span><strong>${escapeHtml(label)}</strong>${context}</span></a>`;
+      return `<a href="${attr(entryUrl(item))}"><span aria-hidden="true">◇</span><span><strong>${escapeHtml(item.title)}</strong><small>${escapeHtml(context)}</small></span></a>`;
     })
     .join("\n");
 
   return `
 <aside class="type-menu app-sidebar glass">
   <header>
-    <h1>${escapeHtml(record.title)}</h1>
-    <p>${escapeHtml(classificationDisplayLabel(record))} · Project contents</p>
+    <h1>Other Projects</h1>
+    <p>Explore more work from the Developer Sandbox.</p>
   </header>
-  <nav class="project-types" aria-label="${attr(record.title)} project contents">
-    <a href="${attr(returnLink.url)}"><span aria-hidden="true">←</span><span><strong>${escapeHtml(returnLink.label)}</strong></span></a>
-    <a href="${attr(overviewUrl)}"><span aria-hidden="true">◇</span><span><strong>Project Overview</strong></span></a>
-    ${sectionLinks}
+  <nav class="project-types" aria-label="Other projects">
+    <a href="library.html"><span aria-hidden="true">←</span><span><strong>Browse Project Library</strong><small>Search all projects, Rosetta Stones, and Labs.</small></span></a>
+    ${links}
   </nav>
 </aside>`;
 }
@@ -1923,7 +1968,7 @@ function renderEntryAside(record: RecordRow, allRecords: RecordRow[]): string {
     case "general-project":
     case "rosetta-stone":
     case "lab-exploration":
-      return renderProjectEntryAside(record);
+      return renderProjectEntryAside(record, allRecords);
     case "reference-guide":
       return renderReferenceAside(record, allRecords);
     default:
