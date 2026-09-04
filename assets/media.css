@@ -308,7 +308,7 @@
   }
 
   .library-heading h1 {
-    font-size: 1.2rem;
+    font-size: 0.68rem;
   }
 
   .library-tabs {
@@ -326,8 +326,12 @@
     min-height: 26px;
     padding-inline: 8px;
     font-size: 0.52rem;
+    display: none;
   }
-
+  .tag-row,
+  .mini-grid {
+    display: none;
+  }
   .library-workspace .catalog-scroll {
     grid-template-rows: minmax(0, 1fr);
     gap: 0;

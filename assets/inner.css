@@ -380,13 +380,18 @@
   overflow: hidden;
   border: 1px solid rgba(137, 201, 246, 0.16);
   border-radius: 12px;
-  background: rgba(2, 9, 22, 0.52);
+  background: #000b18;
+  position: relative;
+  text-align: center;
 }
 
 .project-preview img {
   width: 100%;
+  width: auto;
   height: auto;
   object-fit: cover;
+  max-height: 460px;
+  display: inline-block;
 }
 
 .project-display-details {
@@ -969,7 +974,11 @@
   min-height: 220px;
   color: var(--muted);
   background:
-    radial-gradient(circle at 50% 45%, rgba(76, 171, 255, 0.12), transparent 34%),
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(76, 171, 255, 0.12),
+      transparent 34%
+    ),
     rgba(2, 9, 22, 0.48);
   text-align: center;
 }
