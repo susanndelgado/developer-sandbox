@@ -591,11 +591,11 @@
 }
 
 /* ==================================================
-   PORTRAIT MOBILE — HOME ROTATE EXPERIENCE
-   Aspect ratio is used instead of orientation for iOS Safari reliability.
+   PORTRAIT MOBILE — ROTATE EXPERIENCE
+   Left unchanged for the separate iPhone rotation pass.
    ================================================== */
 
-@media (max-width: 900px) and (max-aspect-ratio: 1/1) {
+@media (orientation: portrait) and (max-width: 900px) {
   #hm {
     background:
       linear-gradient(rgba(1, 6, 20, 0.04), rgba(1, 6, 20, 0.12)),
@@ -607,15 +607,11 @@
     display: none;
   }
 
-  #hm .rotate-screen {
-    position: fixed;
-    z-index: 20;
-    inset: 0;
+  .rotate-screen {
+    position: relative;
     display: block;
     width: 100%;
-    min-height: 100vh;
     min-height: 100svh;
-    height: 100vh;
     height: 100dvh;
     padding: 0;
     text-align: center;
@@ -624,8 +620,8 @@
   .rotate-brand {
     position: absolute;
     top: max(20px, env(safe-area-inset-top));
-    left: max(22px, env(safe-area-inset-left));
-    right: max(22px, env(safe-area-inset-right));
+    left: 22px;
+    right: 22px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -696,8 +692,8 @@
   .rotate-quote {
     position: absolute;
     top: 72%;
-    left: max(28px, env(safe-area-inset-left));
-    right: max(28px, env(safe-area-inset-right));
+    left: 28px;
+    right: 28px;
     margin: 0;
     font-family: "Cormorant Garamond", serif;
     color: #c6d8e8;
@@ -723,7 +719,7 @@
   }
 }
 
-@media (max-width: 900px) and (max-aspect-ratio: 1/1) and (max-height: 700px) {
+@media (orientation: portrait) and (max-width: 900px) and (max-height: 700px) {
   .rotate-brand {
     top: max(14px, env(safe-area-inset-top));
   }
