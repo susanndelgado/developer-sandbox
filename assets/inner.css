@@ -1,12 +1,11 @@
 /* ==================================================
    DEVELOPER SANDBOX — INNER APPLICATION CONTENT
-   Structural rules for viewport-fit inner pages.
-   Shared wrapper/header/footer/navigation live in styles.css.
+   Structural rules for content inside the global app shell.
+   Shared shell/header/footer/navigation live in styles.css.
    ================================================== */
 
 .site-page,
 .library-page {
-  min-height: 100dvh;
   background:
     linear-gradient(rgba(2, 7, 20, 0.18), rgba(2, 7, 20, 0.34)),
     url("img/bg-owlscreen1.png") center bottom / cover no-repeat,
