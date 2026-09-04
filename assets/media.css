@@ -389,6 +389,7 @@
     min-height: clamp(44px, 11vh, 58px);
     padding: 4px 3px;
     font-size: clamp(0.42rem, 0.82vw, 0.5rem);
+    min-width: 38px;
   }
 
   .mini-card:nth-child(n + 3) {
