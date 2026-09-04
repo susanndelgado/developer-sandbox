@@ -327,6 +327,17 @@
             node assigned to another Parent Node is a Child Node.
           </div>
 
+          <div class="node-help">
+            <strong>Rosetta map class reminder:</strong>
+            Put <code>rs-status</code> on the parent node that owns the route.
+            Give each direct child stage exactly one status class:
+            <code>rs-planned</code> (not started),
+            <code>rs-started</code> (current / in progress),
+            <code>rs-complete</code> (complete), or
+            <code>rs-inactive</code> (inactive). The Rosetta map ignores other
+            classes when deciding stage status.
+          </div>
+
           <div class="structure-actions" aria-label="Page structure actions">
             <button id="add-node" type="button">+ Add Parent Node</button>
           </div>
