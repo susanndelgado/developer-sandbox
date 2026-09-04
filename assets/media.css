@@ -8,19 +8,11 @@
   :root {
     --page-gutter: 38px;
   }
-
-  #hm.scaled-home .home-shell {
-    padding: 14px 38px 8px;
-  }
 }
 
 @media (min-width: 1080px) {
   :root {
     --page-gutter: 58px;
-  }
-
-  #hm.scaled-home .home-shell {
-    padding: 14px 58px 8px;
   }
 }
 
