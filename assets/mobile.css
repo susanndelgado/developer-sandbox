@@ -31,7 +31,24 @@
   z-index: 0;
 }
 
-@media (orientation: landscape) and (max-width: 1180px) and (max-height: 820px) {
+@media (min-width: 1080px) {
+  #hm.scaled-home .home-shell {
+    padding: 14px 38px 8px;
+  }
+
+  #hm.scaled-home .page-frame,
+  #hm.scaled-home .dashboard-grid {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  #hm.scaled-home .home-shell {
+    padding: 14px 58px 8px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1080px) and (max-height: 820px) {
   #hm {
     background:
       linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.2)),
