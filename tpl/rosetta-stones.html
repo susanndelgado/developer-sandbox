@@ -5,26 +5,28 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" class="site-page app-shell special-catalog" data-section="projects">
+  <body id="pg" class="site-page app-shell rosetta-page" data-section="projects">
     {{HEADER}}
 
-    <main class="view-all-page app-main page-frame full-frame">
-      {{ROSETTA_ASIDE}}
+    <main class="rosetta-main page-frame full-frame">
+      <section class="rosetta-workspace" aria-labelledby="rosetta-title">
+        <div class="rosetta-intro">
+          <header class="rosetta-heading">
+            <p class="eyebrow">Rosetta Stones</p>
+            <h1 id="rosetta-title">All Rosetta Stones</h1>
+            <p class="rosetta-lead">Compare the same recognizable programming problem across changing languages, frameworks, and runtime environments.</p>
+          </header>
 
-      <section class="project-content app-content glass app-scroll">
-        <header class="content-header">
-          <div>
-            <small>ROSETTA STONES</small>
-            <h2>All Rosetta Stones</h2>
-          </div>
+          <aside class="rosetta-explainer glass-soft" aria-labelledby="rosetta-about-title">
+            <p class="eyebrow" id="rosetta-about-title">What is a Rosetta Stone?</p>
+            <p class="rosetta-explainer-long">Rosetta Stones is a comparative programming-learning system modeled on the idea of using the same recognizable source to understand multiple languages. A shared programming problem is rebuilt in different languages, frameworks, and runtime environments so the problem itself stays familiar while syntax, typing, libraries, architecture, data handling, and conventions change. By keeping the problem constant, the differences between technologies become easier to see, compare, and retain.</p>
+            <p class="rosetta-explainer-short">Rebuild the same programming problem across different technologies so the problem stays familiar while the language, framework, and conventions change.</p>
+          </aside>
+        </div>
 
-          <p>
-            Compare common programming concepts, patterns, and tasks across
-            languages and technologies.
-          </p>
-        </header>
-
-        {{ROSETTA_CONTENT}}
+        <div class="rosetta-scroll app-scroll" aria-label="Rosetta Stone project maps">
+          {{ROSETTA_CONTENT}}
+        </div>
       </section>
     </main>
 
