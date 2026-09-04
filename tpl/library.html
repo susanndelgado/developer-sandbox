@@ -6,24 +6,6 @@
   </head>
 
   <body class="library-page" data-section="projects">
-    <section class="rotate-screen library-rotate" aria-label="Rotate device notice">
-      <div class="rotate-brand">
-        <img src="assets/img/logo-blue.png" alt="" />
-        <span class="brand-copy">
-          <strong>DEVELOPER SANDBOX</strong>
-          <small>Academy of Mastery</small>
-        </span>
-      </div>
-
-      <div class="rotate-copy">
-        <span class="phone-icon" aria-hidden="true"></span>
-        <h1>Rotate Your Device</h1>
-        <p>This workspace is designed for landscape viewing.</p>
-      </div>
-
-      <p class="rotate-quote">“Dreams are the Foundation of Reality.”<br />— Susan Delgado</p>
-    </section>
-
     <div class="library-shell app-shell">
       {{HEADER}}
 
@@ -35,6 +17,8 @@
               <h1 id="library-title">Development Work</h1>
               <p class="panel-copy library-copy">Search the catalog, select a project, and review its preview without leaving the Library.</p>
             </div>
+
+            {{LIBRARY_PROGRESS}}
 
             <div class="library-tabs" aria-label="Project search and filters">
               <input
@@ -64,7 +48,7 @@
                   <p class="eyebrow">Catalog</p>
                   <h2 class="panel-title" id="catalog-title">All Projects</h2>
                 </div>
-                <span class="muted">Select a project to preview</span>
+                <span class="muted">Select a project</span>
               </header>
 
               <div class="catalog-head" aria-hidden="true">
