@@ -3,9 +3,6 @@
 
   if (!page) return;
 
-  const referenceLink = page.querySelector('a[href="pg/angular-reference-guide.html"]');
-  referenceLink?.setAttribute('href', 'reference-guides.html');
-
   const guideLinks = page.querySelectorAll('.guides-panel .mini-card');
   const guideTargets = {
     Angular: 'pg/angular-reference-guide.html',
@@ -22,11 +19,6 @@
     }
   });
 
-  page.querySelector('.guides-panel .panel-bottom .panel-link')?.setAttribute(
-    'href',
-    'reference-guides.html',
-  );
-
   const stageWidth = 1920;
   const stageHeight = 1024;
 
@@ -34,7 +26,7 @@
     window.matchMedia('(orientation: portrait) and (max-width: 900px)').matches;
 
   const isPhoneLandscape = () =>
-    window.matchMedia('(orientation: landscape) and (max-width: 899px) and (max-height: 820px)').matches;
+    window.matchMedia('(orientation: landscape) and (max-width: 899px)').matches;
 
   const fitHome = () => {
     if (isPhonePortrait() || isPhoneLandscape()) {
