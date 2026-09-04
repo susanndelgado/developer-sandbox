@@ -3,6 +3,9 @@
 
   if (!page) return;
 
+  const referenceLink = page.querySelector('a[href="pg/angular-reference-guide.html"]');
+  referenceLink?.setAttribute('href', 'reference-guides.html');
+
   const stageWidth = 1920;
   const stageHeight = 1024;
 
