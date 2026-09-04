@@ -6,6 +6,59 @@
   :root {
     --page-gutter: 38px;
   }
+
+  .app-shell .home-header,
+  .library-shell .home-header {
+    grid-template-columns: minmax(230px, 0.8fr) minmax(540px, auto) minmax(230px, 0.8fr);
+    gap: 30px;
+    min-height: 60px;
+  }
+
+  .app-shell .brand,
+  .library-shell .brand {
+    min-width: 235px;
+  }
+
+  .app-shell .brand-copy,
+  .library-shell .brand-copy,
+  .app-shell .welcome,
+  .library-shell .welcome {
+    display: grid;
+  }
+
+  .app-shell .site-nav,
+  .library-shell .site-nav {
+    justify-self: center;
+  }
+
+  .app-shell .nav-link,
+  .library-shell .nav-link {
+    flex: 0 0 auto;
+    min-height: 47px;
+    padding: 0 24px;
+    font-size: 0.8rem;
+  }
+
+  .app-shell .home-footer,
+  .library-shell .home-footer {
+    grid-template-columns: 1fr auto 1fr;
+    min-height: 33px;
+    font-size: 0.61rem;
+  }
+
+  .app-shell .footer-links,
+  .library-shell .footer-links {
+    justify-content: flex-start;
+    gap: 17px;
+    font-size: 0.61rem;
+  }
+
+  .app-shell .footer-quote,
+  .app-shell .footer-signature,
+  .library-shell .footer-quote,
+  .library-shell .footer-signature {
+    display: block;
+  }
 }
 
 @media (min-width: 1080px) {
