@@ -80,9 +80,9 @@ svg {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   width: 100%;
-  height: 100dvh;
+  /* height: 100dvh; */
   padding: 14px var(--page-gutter) 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
   background:
     radial-gradient(
       circle at 50% 10%,
@@ -144,7 +144,7 @@ svg {
 .site-nav {
   display: flex;
   justify-self: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .nav-link {
@@ -393,7 +393,7 @@ svg {
   z-index: 2;
   min-width: 0;
   min-height: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: var(--radius);
   padding: 16px 18px;
 }
@@ -490,7 +490,7 @@ svg {
 
 .preview-frame {
   min-height: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   border: 1px solid rgba(137, 201, 246, 0.2);
   border-radius: var(--radius-small);
   background: rgba(3, 11, 28, 0.68);
@@ -609,8 +609,8 @@ svg {
    ================================================== */
 
 #hm {
-  height: 100dvh;
-  overflow: hidden;
+  /* height: 100dvh; */
+  /* overflow: hidden; */
   background:
     linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.22)),
     url("img/Bg-platform-light.png") center / cover no-repeat,
@@ -818,7 +818,7 @@ svg {
 
 #hm.scaled-home .mini-grid {
   overflow-x: auto;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   overscroll-behavior-x: contain;
   scrollbar-width: thin;
   scrollbar-color: var(--app-scrollbar) transparent;
