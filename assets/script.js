@@ -122,11 +122,6 @@
 
     libraryRows.forEach((row) => {
       const recordKey = row.dataset.libraryRecord
-      const href = row.getAttribute("href") || ""
-
-      if (recordKey && href.startsWith("#library-detail-")) {
-        row.setAttribute("href", `pg/${recordKey}.html`)
-      }
 
       row.addEventListener("click", (event) => {
         if (libraryMobile.matches) return
