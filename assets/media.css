@@ -67,6 +67,19 @@
     letter-spacing: 0.07em;
   }
 
+  .dashboard-grid {
+    grid-template-columns: minmax(260px, 1fr) minmax(170px, 0.52fr) minmax(
+        260px,
+        1fr
+      );
+    gap: 10px;
+  }
+
+  .labs-panel {
+    grid-template-columns: minmax(170px, 0.5fr) minmax(0, 1.5fr) auto;
+    gap: 10px;
+  }
+
   .view-all-page {
     grid-template-columns: minmax(185px, 0.24fr) minmax(0, 1fr);
     gap: 10px;
