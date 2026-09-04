@@ -1,63 +1,16 @@
-:root {
-  --page-gutter: 10px;
-}
+/* ==================================================
+   DEVELOPER SANDBOX — RESPONSIVE RULES
+   All media queries for the site live in this file.
+   Base component definitions live in styles.css / inner.css.
+   ================================================== */
 
 @media (min-width: 900px) {
   :root {
     --page-gutter: 38px;
   }
 
-  .app-shell .home-header,
-  .library-shell .home-header {
-    grid-template-columns: minmax(230px, 0.8fr) minmax(540px, auto) minmax(230px, 0.8fr);
-    gap: 30px;
-    min-height: 60px;
-  }
-
-  .app-shell .brand,
-  .library-shell .brand {
-    min-width: 235px;
-  }
-
-  .app-shell .brand-copy,
-  .library-shell .brand-copy,
-  .app-shell .welcome,
-  .library-shell .welcome {
-    display: grid;
-  }
-
-  .app-shell .site-nav,
-  .library-shell .site-nav {
-    justify-self: center;
-  }
-
-  .app-shell .nav-link,
-  .library-shell .nav-link {
-    flex: 0 0 auto;
-    min-height: 47px;
-    padding: 0 24px;
-    font-size: 0.8rem;
-  }
-
-  .app-shell .home-footer,
-  .library-shell .home-footer {
-    grid-template-columns: 1fr auto 1fr;
-    min-height: 33px;
-    font-size: 0.61rem;
-  }
-
-  .app-shell .footer-links,
-  .library-shell .footer-links {
-    justify-content: flex-start;
-    gap: 17px;
-    font-size: 0.61rem;
-  }
-
-  .app-shell .footer-quote,
-  .app-shell .footer-signature,
-  .library-shell .footer-quote,
-  .library-shell .footer-signature {
-    display: block;
+  #hm.scaled-home .home-shell {
+    padding: 14px 38px 8px;
   }
 }
 
@@ -65,8 +18,13 @@
   :root {
     --page-gutter: 58px;
   }
+
+  #hm.scaled-home .home-shell {
+    padding: 14px 58px 8px;
+  }
 }
 
+/* Compact desktop / tablet-width inner workspaces. */
 @media (max-width: 1180px) {
   .view-all-page {
     grid-template-columns: minmax(185px, 0.24fr) minmax(0, 1fr);
@@ -88,15 +46,16 @@
   }
 }
 
+/* ==================================================
+   LANDSCAPE MOBILE — BELOW 900px
+   Homepage and inner applications share the same shell/header/footer.
+   ================================================== */
+
 @media (orientation: landscape) and (max-width: 899px) {
+  .home-shell,
   .app-shell,
   .library-shell {
     padding: 5px var(--page-gutter) 4px;
-  }
-
-  .app-main,
-  .library-main {
-    padding: 6px 0 4px;
   }
 
   .home-header {
@@ -153,6 +112,7 @@
   }
 
   .home-footer {
+    grid-template-columns: 1fr;
     min-height: 18px;
     font-size: 0.48rem;
   }
@@ -165,6 +125,140 @@
   .footer-links {
     justify-content: center;
     gap: 10px;
+  }
+
+  /* Homepage composition. */
+
+  #hm {
+    background:
+      linear-gradient(rgba(2, 7, 20, 0.08), rgba(2, 7, 20, 0.2)),
+      url("img/bg-mobile-landscape1.png") center / cover no-repeat,
+      var(--bg);
+  }
+
+  .home-shell {
+    grid-template-rows: clamp(44px, 12vh, 58px) minmax(0, 1fr) clamp(
+        18px,
+        5vh,
+        24px
+      );
+  }
+
+  .hero,
+  .hologram,
+  .panel-copy,
+  .panel-bottom,
+  .labs-heading .panel-copy {
+    display: none;
+  }
+
+  .home-main {
+    display: block;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    align-items: end;
+    width: 100%;
+    height: 100%;
+    gap: clamp(5px, 0.9vw, 9px);
+    padding: clamp(24px, 10vh, 70px) clamp(5px, 1vw, 12px)
+      clamp(8px, 2vh, 16px);
+  }
+
+  .featured-panel,
+  .library-panel,
+  .rosetta-panel,
+  .guides-panel,
+  .labs-panel {
+    grid-column: auto;
+    grid-row: 1;
+    height: clamp(156px, 46vh, 250px);
+    padding: clamp(7px, 1.5vh, 10px);
+    border-radius: 13px;
+  }
+
+  .panel-header {
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+
+  .panel-icon {
+    width: clamp(25px, 6vh, 29px);
+    height: clamp(25px, 6vh, 29px);
+    border-radius: 8px;
+  }
+
+  .icon-large {
+    width: clamp(18px, 4.3vh, 21px);
+    height: clamp(18px, 4.3vh, 21px);
+  }
+
+  .panel-title {
+    font-size: clamp(0.56rem, 1.15vw, 0.7rem);
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  .featured-body {
+    grid-template-columns: 1fr;
+    height: calc(100% - 32px);
+  }
+
+  .featured-copy {
+    display: none;
+  }
+
+  .mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(3px, 0.6vw, 5px);
+    margin-bottom: 8px;
+    overflow: visible;
+  }
+
+  .mini-card {
+    min-height: clamp(44px, 11vh, 58px);
+    padding: 4px 3px;
+    font-size: clamp(0.42rem, 0.82vw, 0.5rem);
+  }
+
+  .mini-card:nth-child(n + 3) {
+    display: none;
+  }
+
+  .mini-mark {
+    width: clamp(24px, 6vh, 28px);
+    height: clamp(24px, 6vh, 28px);
+    font-size: clamp(0.5rem, 1vw, 0.6rem);
+  }
+
+  .mini-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .labs-panel {
+    display: block;
+  }
+
+  .labs-panel .mini-grid {
+    margin-top: 7px;
+  }
+
+  .footer-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Inner application content. */
+
+  .app-main,
+  .library-main {
+    padding: 6px 0 4px;
   }
 
   .view-all-page {
@@ -298,5 +392,150 @@
     width: 31px;
     height: 31px;
     font-size: 0.52rem;
+  }
+}
+
+/* ==================================================
+   PORTRAIT MOBILE — ROTATE EXPERIENCES
+   ================================================== */
+
+@media (orientation: portrait) and (max-width: 900px) {
+  #hm {
+    background:
+      linear-gradient(rgba(1, 6, 20, 0.04), rgba(1, 6, 20, 0.12)),
+      url("img/bg-mobile-bg.png") center bottom / cover no-repeat,
+      #020817;
+  }
+
+  #hm .home-shell {
+    display: none;
+  }
+
+  .rotate-screen {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100svh;
+    height: 100dvh;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+  }
+
+  .rotate-brand {
+    position: absolute;
+    top: max(20px, env(safe-area-inset-top));
+    left: 22px;
+    right: 22px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 9px;
+    text-align: left;
+  }
+
+  .rotate-brand .brand-copy {
+    display: grid;
+  }
+
+  .rotate-brand img {
+    width: clamp(38px, 10vw, 46px);
+    height: clamp(38px, 10vw, 46px);
+  }
+
+  .rotate-brand strong {
+    font-size: clamp(0.82rem, 3.8vw, 1rem);
+  }
+
+  .rotate-brand small {
+    font-size: clamp(0.56rem, 2.6vw, 0.7rem);
+  }
+
+  .rotate-copy {
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    display: grid;
+    justify-items: center;
+    width: min(84%, 320px);
+    gap: clamp(10px, 2vh, 15px);
+    transform: translate(-50%, -50%);
+  }
+
+  .phone-icon {
+    position: relative;
+    width: clamp(40px, 11vw, 48px);
+    height: clamp(64px, 17vw, 76px);
+    border: 2px solid var(--cyan);
+    border-radius: 9px;
+    box-shadow: 0 0 18px rgba(69, 195, 255, 0.22);
+  }
+
+  .phone-icon::after {
+    content: "↻";
+    position: absolute;
+    right: clamp(-32px, -8vw, -26px);
+    top: 24%;
+    color: var(--cyan);
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+    text-shadow: 0 0 8px rgba(105, 220, 255, 0.42);
+  }
+
+  .rotate-copy h1 {
+    font-size: clamp(1.45rem, 6vw, 1.9rem);
+    font-weight: 500;
+    line-height: 1.08;
+  }
+
+  .rotate-copy p {
+    max-width: 280px;
+    color: #b7c6d7;
+    font-size: clamp(0.82rem, 3.6vw, 0.98rem);
+    line-height: 1.45;
+  }
+
+  .rotate-quote {
+    position: absolute;
+    top: 72%;
+    left: 28px;
+    right: 28px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    color: #c6d8e8;
+    font-size: clamp(1.12rem, 5vw, 1.48rem);
+    font-style: italic;
+    line-height: 1.08;
+    text-shadow: 0 0 14px rgba(97, 177, 237, 0.2);
+    transform: translateY(-50%);
+  }
+
+  .library-page {
+    background:
+      linear-gradient(rgba(1, 6, 20, 0.04), rgba(1, 6, 20, 0.12)),
+      url("img/bg-mobile-bg.png") center bottom / cover no-repeat,
+      var(--bg);
+  }
+
+  .library-shell {
+    display: none;
+  }
+
+  .library-rotate {
+    display: block;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 900px) and (max-height: 700px) {
+  .rotate-brand {
+    top: max(14px, env(safe-area-inset-top));
+  }
+
+  .rotate-copy {
+    top: 37%;
+  }
+
+  .rotate-quote {
+    top: 68%;
+    font-size: clamp(1rem, 4.6vw, 1.25rem);
   }
 }
