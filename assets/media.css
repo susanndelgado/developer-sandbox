@@ -96,7 +96,8 @@
     gap: 10px;
   }
 
-  .content-header {
+  .content-header,
+  .project-detail-header {
     grid-template-columns: minmax(0, 1fr) minmax(190px, 0.5fr);
     gap: 12px;
   }
@@ -115,19 +116,17 @@
     gap: 10px;
   }
 
-  .featured-copy {
-    .panel-copy {
-      font-size: 0.5rem;
-    }
+  .featured-copy .panel-copy {
+    font-size: 0.5rem;
+  }
 
-    h2 {
-      font-size: 1rem;
-    }
+  .featured-copy h2 {
+    font-size: 1rem;
+  }
 
-    .tag {
-      font-size: 0.5rem;
-      padding: 0 3px;
-    }
+  .featured-copy .tag {
+    padding: 0 3px;
+    font-size: 0.5rem;
   }
 
   .mini-card {
@@ -217,17 +216,13 @@
 }
 
 /* ==================================================
-   LANDSCAPE MOBILE — BELOW 900px
-   All pages share the same outer shell/main/header/footer.
+   MOBILE — BELOW 900px
+   Shared shell plus Library list-only behavior.
    ================================================== */
 
-@media (orientation: landscape) and (max-width: 899px) {
+@media (max-width: 899px) {
   .app-shell {
-    grid-template-rows: clamp(44px, 12vh, 58px) minmax(0, 1fr) clamp(
-        18px,
-        5vh,
-        24px
-      );
+    grid-template-rows: auto minmax(0, 1fr) auto;
     padding: 5px var(--page-gutter) 4px;
   }
 
@@ -238,7 +233,7 @@
   .home-header {
     grid-template-columns: auto minmax(0, 1fr) auto;
     min-height: 46px;
-    gap: 7px;
+    gap: 6px;
   }
 
   .brand {
@@ -251,15 +246,7 @@
   }
 
   .brand-copy {
-    display: grid;
-  }
-
-  .brand-copy strong {
-    font-size: 0.64rem;
-  }
-
-  .brand-copy small {
-    font-size: 0.48rem;
+    display: none;
   }
 
   .site-nav {
@@ -269,23 +256,25 @@
 
   .nav-link {
     flex: 1 1 auto;
+    min-width: 0;
     min-height: 38px;
-    padding: 0 7px;
-    font-size: 0.56rem;
+    gap: 4px;
+    padding: 0 5px;
+    font-size: 0.52rem;
   }
 
   .header-meta {
-    gap: 5px;
+    gap: 4px;
   }
 
   .nav-orb,
+  .welcome {
+    display: none;
+  }
+
   .avatar {
     width: 34px;
     height: 34px;
-  }
-
-  .welcome {
-    display: none;
   }
 
   .home-footer {
@@ -304,6 +293,83 @@
     gap: 10px;
   }
 
+  .footer-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Library becomes a direct project list on mobile. */
+
+  .library-toolbar {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .library-heading h1 {
+    font-size: 1.2rem;
+  }
+
+  .library-tabs {
+    justify-content: flex-start;
+  }
+
+  .library-tabs input {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    min-height: 32px;
+  }
+
+  .library-tabs .tag {
+    min-height: 26px;
+    padding-inline: 8px;
+    font-size: 0.52rem;
+  }
+
+  .library-workspace .catalog-scroll {
+    grid-template-rows: minmax(0, 1fr);
+    gap: 0;
+    padding: 7px;
+  }
+
+  .library-panel-block {
+    height: 100%;
+    padding: 8px;
+  }
+
+  .library-workspace .inspector,
+  .library-workspace .panel-bottom,
+  .catalog-head {
+    display: none;
+  }
+
+  .catalog-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 58px;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .catalog-copy strong {
+    font-size: 0.72rem;
+  }
+
+  .catalog-copy small {
+    font-size: 0.58rem;
+  }
+
+  .catalog-row .technology {
+    display: none;
+  }
+}
+
+/* ==================================================
+   LANDSCAPE MOBILE — BELOW 900px
+   ================================================== */
+
+@media (orientation: landscape) and (max-width: 899px) {
   /* Homepage composition inside the shared main region. */
 
   #hm {
@@ -317,6 +383,7 @@
   .hologram,
   .panel-copy,
   .panel-bottom,
+  .home-panel-link,
   .labs-heading .panel-copy {
     display: none;
   }
@@ -386,10 +453,10 @@
   }
 
   .mini-card {
+    min-width: 38px;
     min-height: clamp(44px, 11vh, 58px);
     padding: 4px 3px;
     font-size: clamp(0.42rem, 0.82vw, 0.5rem);
-    min-width: 38px;
   }
 
   .mini-card:nth-child(n + 3) {
@@ -415,11 +482,6 @@
     margin-top: 7px;
   }
 
-  .footer-icon {
-    width: 12px;
-    height: 12px;
-  }
-
   /* Inner application content. */
 
   .view-all-page {
@@ -436,13 +498,15 @@
     padding: 8px;
   }
 
-  .content-header {
+  .content-header,
+  .project-detail-header {
     grid-template-columns: 1fr;
     gap: 4px;
     padding-bottom: 6px;
   }
 
-  .content-header p {
+  .content-header p,
+  .project-detail-header p {
     display: none;
   }
 
@@ -454,88 +518,19 @@
     display: none;
   }
 
-  .library-toolbar,
   .catalog-toolbar {
     gap: 8px;
     padding: 7px 9px;
   }
 
-  .library-heading h1,
   .catalog-heading h1 {
     font-size: 1.15rem;
   }
 
-  .library-tabs input,
   .catalog-search {
     min-width: 180px;
     width: 180px;
     min-height: 30px;
-  }
-
-  .library-tabs .tag {
-    min-height: 24px;
-    padding-inline: 7px;
-    font-size: 0.5rem;
-  }
-
-  .library-workspace .catalog-scroll {
-    grid-template-rows: minmax(115px, 0.65fr) minmax(190px, 1.35fr);
-    gap: 7px;
-    padding: 7px;
-  }
-
-  .library-panel-block {
-    padding: 8px;
-  }
-
-  .catalog-head,
-  .catalog-row {
-    grid-template-columns: minmax(115px, 1.05fr) 58px minmax(92px, 0.82fr);
-    gap: 5px;
-  }
-
-  .catalog-row {
-    min-height: 42px;
-    padding: 5px 8px;
-  }
-
-  .catalog-copy strong {
-    font-size: 0.62rem;
-  }
-
-  .catalog-copy small,
-  .technology {
-    font-size: 0.5rem;
-  }
-
-  .inspector-header {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 7px;
-  }
-
-  .status-stack {
-    display: none;
-  }
-
-  .project-number {
-    width: 31px;
-    height: 31px;
-    border-radius: 9px;
-    font-size: 0.75rem;
-  }
-
-  .inspector-grid {
-    grid-template-columns: minmax(150px, 0.78fr) minmax(0, 1.22fr);
-    gap: 8px;
-    padding-top: 8px;
-  }
-
-  .detail-card {
-    padding: 7px;
-  }
-
-  .detail-card p {
-    font-size: 0.54rem;
   }
 
   .guide-catalog {
@@ -596,10 +591,11 @@
 }
 
 /* ==================================================
-   PORTRAIT MOBILE — ROTATE EXPERIENCES
+   PORTRAIT MOBILE — HOME ROTATE EXPERIENCE
+   Aspect ratio is used instead of orientation for iOS Safari reliability.
    ================================================== */
 
-@media (orientation: portrait) and (max-width: 900px) {
+@media (max-width: 900px) and (max-aspect-ratio: 1/1) {
   #hm {
     background:
       linear-gradient(rgba(1, 6, 20, 0.04), rgba(1, 6, 20, 0.12)),
@@ -611,11 +607,15 @@
     display: none;
   }
 
-  .rotate-screen {
-    position: relative;
+  #hm .rotate-screen {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
     display: block;
     width: 100%;
+    min-height: 100vh;
     min-height: 100svh;
+    height: 100vh;
     height: 100dvh;
     padding: 0;
     text-align: center;
@@ -624,8 +624,8 @@
   .rotate-brand {
     position: absolute;
     top: max(20px, env(safe-area-inset-top));
-    left: 22px;
-    right: 22px;
+    left: max(22px, env(safe-area-inset-left));
+    right: max(22px, env(safe-area-inset-right));
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -696,8 +696,8 @@
   .rotate-quote {
     position: absolute;
     top: 72%;
-    left: 28px;
-    right: 28px;
+    left: max(28px, env(safe-area-inset-left));
+    right: max(28px, env(safe-area-inset-right));
     margin: 0;
     font-family: "Cormorant Garamond", serif;
     color: #c6d8e8;
@@ -706,21 +706,6 @@
     line-height: 1.08;
     text-shadow: 0 0 14px rgba(97, 177, 237, 0.2);
     transform: translateY(-50%);
-  }
-
-  .library-page {
-    background:
-      linear-gradient(rgba(1, 6, 20, 0.04), rgba(1, 6, 20, 0.12)),
-      url("img/bg-mobile-bg.png") center bottom / cover no-repeat,
-      var(--bg);
-  }
-
-  .library-page .app-shell {
-    display: none;
-  }
-
-  .library-rotate {
-    display: block;
   }
 
   .lab-slider {
@@ -738,7 +723,7 @@
   }
 }
 
-@media (orientation: portrait) and (max-width: 900px) and (max-height: 700px) {
+@media (max-width: 900px) and (max-aspect-ratio: 1/1) and (max-height: 700px) {
   .rotate-brand {
     top: max(14px, env(safe-area-inset-top));
   }
