@@ -67,10 +67,12 @@ svg {
   width: 100%;
   max-width: none;
   margin-inline: auto;
+  /* Accidental homepage sizing removed from the shared page frame:
   display: grid;
   grid-template-rows: clamp(150px, 24vh) minmax(0, 1fr);
   min-height: 0;
   padding-top: 2px;
+  */
 }
 
 /* ==================================================
@@ -268,6 +270,8 @@ svg {
 .glass {
   position: relative;
   isolation: isolate;
+
+  /* Previous glass treatment:
   border: 1px solid var(--line);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.085), transparent 24%),
@@ -281,6 +285,16 @@ svg {
     0 0 0 1px rgba(55, 142, 224, 0.055),
     0 0 22px rgba(41, 151, 255, 0.075),
     var(--shadow);
+  */
+
+  border: 1px solid rgba(120, 190, 255, 0.2);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.05), transparent 25%),
+    rgba(5, 18, 43, 0.75);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.08),
+    0 0 20px rgba(60, 150, 255, 0.08);
 }
 
 .glass::before {
@@ -291,6 +305,8 @@ svg {
   padding: 1px;
   border-radius: inherit;
   pointer-events: none;
+
+  /* Previous edge treatment:
   background: linear-gradient(
     135deg,
     rgba(190, 235, 255, 0.92),
@@ -298,12 +314,21 @@ svg {
     rgba(140, 90, 255, 0.24) 70%,
     rgba(120, 210, 255, 0.88)
   );
+  filter: drop-shadow(0 0 5px rgba(80, 196, 255, 0.46));
+  */
+
+  background: linear-gradient(
+    135deg,
+    rgba(190, 235, 255, 0.9),
+    rgba(90, 170, 255, 0.18) 30%,
+    rgba(140, 90, 255, 0.22) 70%,
+    rgba(120, 210, 255, 0.85)
+  );
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  filter: drop-shadow(0 0 5px rgba(80, 196, 255, 0.46));
 }
 
 .glass::after {
@@ -313,18 +338,18 @@ svg {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
+
+  /* Previous corner values:
   background:
     radial-gradient(circle at 0 0, rgba(210, 245, 255, 0.7), transparent 12%),
-    radial-gradient(
-      circle at 100% 0,
-      rgba(120, 220, 255, 0.78),
-      transparent 12%
-    ),
-    radial-gradient(
-      circle at 0 100%,
-      rgba(100, 120, 255, 0.42),
-      transparent 14%
-    );
+    radial-gradient(circle at 100% 0, rgba(120, 220, 255, 0.78), transparent 12%),
+    radial-gradient(circle at 0 100%, rgba(100, 120, 255, 0.42), transparent 14%);
+  */
+
+  background:
+    radial-gradient(circle at 0 0, rgba(210, 245, 255, 0.65), transparent 12%),
+    radial-gradient(circle at 100% 0, rgba(120, 220, 255, 0.75), transparent 12%),
+    radial-gradient(circle at 0 100%, rgba(100, 120, 255, 0.4), transparent 14%);
   opacity: 0.9;
 }
 
@@ -375,7 +400,9 @@ svg {
 }
 
 .icon-glow {
-  filter: drop-shadow(0 0 3px currentColor);
+  /* filter: drop-shadow(0 0 3px currentColor); */
+  filter: drop-shadow(0 0 2px currentColor)
+    drop-shadow(0 0 5px color-mix(in srgb, currentColor 45%, transparent));
 }
 
 /* ==================================================
@@ -408,19 +435,29 @@ svg {
   flex: 0 0 auto;
   width: 35px;
   height: 35px;
-  border: 1px solid rgba(113, 213, 255, 0.28);
   border-radius: 10px;
   color: var(--cyan);
+
+  /* Previous icon-tile treatment:
+  border: 1px solid rgba(113, 213, 255, 0.28);
   background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(54, 174, 255, 0.18),
-      transparent 72%
-    ),
+    radial-gradient(circle at 50% 45%, rgba(54, 174, 255, 0.18), transparent 72%),
     rgba(12, 45, 83, 0.32);
   box-shadow:
     inset 0 0 18px rgba(53, 161, 255, 0.06),
     0 0 11px rgba(52, 183, 255, 0.1);
+  */
+
+  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, currentColor 16%, transparent),
+    rgba(5, 15, 35, 0.9) 72%
+  );
+  text-shadow: 0 0 6px currentColor;
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, currentColor 10%, transparent),
+    0 0 8px color-mix(in srgb, currentColor 18%, transparent);
 }
 
 .panel-title {
@@ -525,7 +562,8 @@ svg {
 .mini-grid {
   flex-wrap: nowrap;
   min-height: 0;
-  overflow: scroll;
+  /* overflow: scroll; */
+  overflow-x: auto;
 }
 
 .mini-card {
@@ -563,17 +601,31 @@ svg {
   place-items: center;
   width: clamp(42px, 3.5vw, 68px);
   height: clamp(42px, 3.5vw, 68px);
-  border: 1px solid rgba(103, 211, 255, 0.3);
   border-radius: 8px;
   color: var(--cyan);
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  /* Previous mini icon-tile treatment:
+  border: 1px solid rgba(103, 211, 255, 0.3);
   background:
     radial-gradient(circle, rgba(43, 153, 255, 0.18), transparent 72%),
     rgba(21, 59, 103, 0.32);
   box-shadow:
     inset 0 0 13px rgba(52, 161, 255, 0.07),
     0 0 8px rgba(51, 188, 255, 0.08);
-  font-size: 0.68rem;
-  font-weight: 600;
+  */
+
+  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, currentColor 16%, transparent),
+    rgba(5, 15, 35, 0.9) 72%
+  );
+  text-shadow: 0 0 6px currentColor;
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, currentColor 10%, transparent),
+    0 0 8px color-mix(in srgb, currentColor 18%, transparent);
 }
 
 .gold {
@@ -616,7 +668,8 @@ svg {
 
 .home-main {
   display: grid;
-  grid-template-rows: clamp(150px, 27vh, 250px) minmax(0, 1fr);
+  /* grid-template-rows: clamp(150px, 27vh, 250px) minmax(0, 1fr); */
+  grid-template-rows: clamp(140px, 24vh, 225px) minmax(0, 1fr);
   min-height: 0;
   padding-top: 2px;
 }
@@ -638,7 +691,8 @@ svg {
 
 .hero-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3.2rem, 5vw, 5.35rem);
+  /* font-size: clamp(3.2rem, 5vw, 5.35rem); */
+  font-size: clamp(3rem, 4.6vw, 4.9rem);
   font-weight: 600;
   line-height: 0.9;
   letter-spacing: 0.025em;
