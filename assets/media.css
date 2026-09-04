@@ -1,5 +1,5 @@
 :root {
-  --page-gutter: clamp(8px, 1.8vw, 16px);
+  --page-gutter: 10px;
 }
 
 @media (min-width: 900px) {
@@ -11,5 +11,239 @@
 @media (min-width: 1080px) {
   :root {
     --page-gutter: 58px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .view-all-page {
+    grid-template-columns: minmax(185px, 0.24fr) minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .content-header {
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 0.5fr);
+    gap: 12px;
+  }
+
+  .inspector-grid {
+    grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.2fr);
+    gap: 10px;
+  }
+
+  .detail-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 899px) {
+  .app-shell,
+  .library-shell {
+    padding: 5px var(--page-gutter) 4px;
+  }
+
+  .app-main,
+  .library-main {
+    padding: 6px 0 4px;
+  }
+
+  .home-header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    min-height: 46px;
+    gap: 7px;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-copy {
+    display: grid;
+  }
+
+  .brand-copy strong {
+    font-size: 0.64rem;
+  }
+
+  .brand-copy small {
+    font-size: 0.48rem;
+  }
+
+  .site-nav {
+    justify-self: stretch;
+    border-radius: 12px;
+  }
+
+  .nav-link {
+    flex: 1 1 auto;
+    min-height: 38px;
+    padding: 0 7px;
+    font-size: 0.56rem;
+  }
+
+  .header-meta {
+    gap: 5px;
+  }
+
+  .nav-orb,
+  .avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .welcome {
+    display: none;
+  }
+
+  .home-footer {
+    min-height: 18px;
+    font-size: 0.48rem;
+  }
+
+  .footer-quote,
+  .footer-signature {
+    display: none;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .view-all-page {
+    grid-template-columns: minmax(145px, 0.28fr) minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  .app-sidebar {
+    padding: 8px;
+  }
+
+  .app-content {
+    gap: 7px;
+    padding: 8px;
+  }
+
+  .content-header {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding-bottom: 6px;
+  }
+
+  .content-header p {
+    display: none;
+  }
+
+  .project-doc-nav {
+    min-height: 24px;
+  }
+
+  .project-actions {
+    display: none;
+  }
+
+  .library-toolbar,
+  .catalog-toolbar {
+    gap: 8px;
+    padding: 7px 9px;
+  }
+
+  .library-heading h1,
+  .catalog-heading h1 {
+    font-size: 1.15rem;
+  }
+
+  .library-tabs input,
+  .catalog-search {
+    min-width: 180px;
+    width: 180px;
+    min-height: 30px;
+  }
+
+  .library-tabs .tag {
+    min-height: 24px;
+    padding-inline: 7px;
+    font-size: 0.5rem;
+  }
+
+  .library-workspace .catalog-scroll {
+    grid-template-rows: minmax(115px, 0.65fr) minmax(190px, 1.35fr);
+    gap: 7px;
+    padding: 7px;
+  }
+
+  .library-panel-block {
+    padding: 8px;
+  }
+
+  .catalog-head,
+  .catalog-row {
+    grid-template-columns: minmax(115px, 1.05fr) 58px minmax(92px, 0.82fr);
+    gap: 5px;
+  }
+
+  .catalog-row {
+    min-height: 42px;
+    padding: 5px 8px;
+  }
+
+  .catalog-copy strong {
+    font-size: 0.62rem;
+  }
+
+  .catalog-copy small,
+  .technology {
+    font-size: 0.5rem;
+  }
+
+  .inspector-header {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 7px;
+  }
+
+  .status-stack {
+    display: none;
+  }
+
+  .project-number {
+    width: 31px;
+    height: 31px;
+    border-radius: 9px;
+    font-size: 0.75rem;
+  }
+
+  .inspector-grid {
+    grid-template-columns: minmax(150px, 0.78fr) minmax(0, 1.22fr);
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .detail-card {
+    padding: 7px;
+  }
+
+  .detail-card p {
+    font-size: 0.54rem;
+  }
+
+  .guide-catalog {
+    gap: 7px;
+    padding: 7px;
+  }
+
+  .guide-row {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    min-height: 46px;
+    padding: 6px 8px;
+  }
+
+  .guide-mark {
+    width: 31px;
+    height: 31px;
+    font-size: 0.52rem;
   }
 }
