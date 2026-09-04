@@ -771,7 +771,97 @@
   white-space: nowrap;
 }
 
-/* Rosetta and Labs retain specialized content inside the shared shell. */
+/* ==================================================
+   LABS — VIEWPORT SHOWCASE SLIDER
+   ================================================== */
+
+.lab-slider {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(10px, 1vw, 16px);
+  border-radius: var(--app-radius);
+}
+
+.lab-slide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(320px, 0.58fr);
+  gap: clamp(12px, 1.2vw, 20px);
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.lab-visual {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+}
+
+.lab-visual .preview-frame {
+  height: 100%;
+}
+
+.lab-copy {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-width: 0;
+  min-height: 0;
+  padding: 6px 4px 6px 2px;
+}
+
+.lab-copy h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.lab-summary {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.lab-placeholder {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  height: 100%;
+  min-height: 220px;
+  color: var(--muted);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(76, 171, 255, 0.12), transparent 34%),
+    rgba(2, 9, 22, 0.48);
+  text-align: center;
+}
+
+.lab-placeholder strong {
+  color: var(--cyan);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 18px rgba(105, 220, 255, 0.3);
+}
+
+.lab-actions {
+  justify-content: flex-start;
+}
+
+.lab-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+/* Rosetta retains specialized catalog content inside the shared shell. */
 
 .special-catalog .project-content .project-group {
   margin-bottom: 10px;
