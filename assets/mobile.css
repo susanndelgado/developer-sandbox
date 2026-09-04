@@ -42,7 +42,7 @@
   }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1366px) {
   #hm.scaled-home .home-shell {
     padding: 14px 58px 8px;
   }
