@@ -229,6 +229,44 @@
   }
 
   /* ==================================================
+     ROSETTA STONE ACCORDION MAP
+     The generator renders every project panel and route in HTML.
+     JavaScript only opens one existing route at a time.
+     ================================================== */
+
+  const rosettaToggles = Array.from(
+    document.querySelectorAll("[data-rosetta-toggle]"),
+  )
+
+  if (rosettaToggles.length) {
+    const setRosettaRoute = (toggle, expanded) => {
+      const routeId = toggle.getAttribute("aria-controls")
+      if (!routeId) return
+
+      const route = document.getElementById(routeId)
+      if (!route) return
+
+      route.hidden = !expanded
+      toggle.setAttribute("aria-expanded", expanded ? "true" : "false")
+      toggle
+        .closest("[data-rosetta-project]")
+        ?.classList.toggle("expanded", expanded)
+    }
+
+    rosettaToggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const willOpen = toggle.getAttribute("aria-expanded") !== "true"
+
+        rosettaToggles.forEach((item) => setRosettaRoute(item, false))
+
+        if (willOpen) {
+          setRosettaRoute(toggle, true)
+        }
+      })
+    })
+  }
+
+  /* ==================================================
      LABS SLIDER
      All slides already exist in HTML.
      ================================================== */
