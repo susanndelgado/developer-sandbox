@@ -4,8 +4,6 @@
    ================================================== */
 
 (() => {
-  const currentScript = document.currentScript;
-
   /* ==================================================
      REFERENCE GUIDE CATALOG SEARCH
      ================================================== */
@@ -28,12 +26,7 @@
      SHARED INTERFACE BEHAVIOR
      ================================================== */
 
-  if (currentScript?.src) {
-    const coreScript = document.createElement("script");
-    coreScript.src = new URL("script-core.js", currentScript.src).href;
-    coreScript.async = false;
-    document.head.append(coreScript);
-  }
+  import("./assets/script-core.js");
 
   /* ==================================================
      ROSETTA DISPLAY LABEL CLEANUP
