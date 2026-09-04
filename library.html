@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#020817" />
     <title>Project Library — Developer Sandbox</title>
     <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
   </head>
 
   <body class="library-page">
@@ -490,7 +492,6 @@
           row.addEventListener("click", (event) => {
             event.preventDefault();
             showProject(row);
-            document.querySelector("#selected-project")?.scrollIntoView({ behavior: "smooth", block: "start" });
           });
         });
 
