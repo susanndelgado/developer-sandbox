@@ -120,6 +120,12 @@ type CollectionGroup = {
 };
 
 type ProjectStatus = "planned" | "in-progress" | "complete" | "inactive";
+type RosettaStageStatus =
+  | "rs-planned"
+  | "rs-started"
+  | "rs-complete"
+  | "rs-inactive"
+  | "rs-unset";
 
 /* =========================================================
    PATHS / CONVENTIONS
@@ -143,6 +149,20 @@ const ENTRY_OUTPUT_PATH = "pg";
  * preview-nav are surfaced in the Labs slider.
  */
 const LAB_PREVIEW_NAV_CLASS = "preview-nav";
+
+/*
+ * Rosetta route maps are also user-authored conventions. The generator looks
+ * only for rs-status on the parent and the four rs-* status classes below on
+ * its direct children. Node types and unrelated custom classes do not affect
+ * the route map.
+ */
+const ROSETTA_STATUS_CLASS = "rs-status";
+const ROSETTA_STAGE_STATUS_CLASSES = [
+  "rs-planned",
+  "rs-started",
+  "rs-complete",
+  "rs-inactive",
+] as const;
 
 const database = new DatabaseSync(DATABASE_PATH);
 database.exec("PRAGMA foreign_keys = ON");
@@ -1156,92 +1176,153 @@ function generateReferenceGuides(): void {
 }
 
 /* =========================================================
-   GENERIC COLLECTION OUTPUT — ROSETTA ROOT
+   ROSETTA ROOT — ACCORDION ROUTE MAP
    ========================================================= */
 
-function renderCollectionCard(record: RecordRow): string {
-  return `
-<a href="${attr(entryUrl(record))}">
-  <span class="${attr(classes("project-icon", homeColorClass(record)))}">${escapeHtml(recordInitials(record))}</span>
-  <div>
-    <strong>${escapeHtml(record.title)}</strong>
-    <small>${escapeHtml(projectCardDetail(record))}</small>
-  </div>
-</a>`;
+function rosettaStageStatus(node: NodeRow): RosettaStageStatus {
+  const matches = ROSETTA_STAGE_STATUS_CLASSES.filter((className) =>
+    nodeHasClassName(node, className),
+  );
+
+  return matches.length === 1 ? matches[0] : "rs-unset";
 }
 
-function renderCollectionAside(
-  title: string,
-  description: string,
-  allLabel: string,
-  allDescription: string,
-  currentPage: string,
-  groups: CollectionGroup[],
+function rosettaStageStatusLabel(status: RosettaStageStatus): string {
+  switch (status) {
+    case "rs-planned": return "Planned";
+    case "rs-started": return "In Progress";
+    case "rs-complete": return "Complete";
+    case "rs-inactive": return "Inactive";
+    case "rs-unset":
+    default: return "Stage";
+  }
+}
+
+function rosettaStatusStages(record: RecordRow): NodeRow[] {
+  const nodes = getNodes(record.id);
+  const parent = nodes.find(
+    (node) =>
+      !Boolean(node.hidden) &&
+      nodeHasClassName(node, ROSETTA_STATUS_CLASS),
+  );
+
+  return parent ? childrenOf(nodes, parent.id) : [];
+}
+
+function renderRosettaStage(
+  record: RecordRow,
+  stage: NodeRow,
+  index: number,
 ): string {
-  const links = groups
-    .map(
-      (group) => `
-<a href="#group-${attr(group.slug)}" data-filter="${attr(group.slug)}">
-  <span aria-hidden="true">◇</span>
-  <span>
-    <strong>${escapeHtml(group.name)}</strong>
-    ${group.description ? `<small>${escapeHtml(group.description)}</small>` : ""}
+  const status = rosettaStageStatus(stage);
+  const title =
+    plainText(stage.nav_label || stage.title || stage.subtitle) ||
+    `Stage ${index + 1}`;
+  const detail = plainText(stage.subtitle || stage.description || "");
+  const rawUrl = metaString(stage, "url").trim();
+  const url = rawUrl ? generatedEntryLink(record, rawUrl) : "";
+  const stageClasses = classes(
+    "rs-stage-card",
+    `rs-stage-${index + 1}`,
+    status,
+  );
+  const body = `
+  <span class="rs-stage-topline">
+    <span class="rs-stage-index">${String(index + 1).padStart(2, "0")}</span>
+    <span class="rs-stage-state">${escapeHtml(rosettaStageStatusLabel(status))}</span>
   </span>
-</a>`,
-    )
-    .join("\n");
+  <strong>${escapeHtml(title)}</strong>
+  ${detail ? `<small>${escapeHtml(detail)}</small>` : ""}
+  ${url ? `<span class="rs-stage-open">Open stage ↗</span>` : ""}`;
 
-  return `
-<aside class="type-menu app-sidebar glass">
-  <header>
-    <h1>${escapeHtml(title)}</h1>
-    <p>${escapeHtml(description)}</p>
-  </header>
-  <nav class="project-types" aria-label="${attr(title)}">
-    <a class="active" href="${attr(currentPage)}" data-filter="all" aria-current="page">
-      <span aria-hidden="true">◇</span>
-      <span>
-        <strong>${escapeHtml(allLabel)}</strong>
-        <small>${escapeHtml(allDescription)}</small>
-      </span>
-    </a>
-    ${links}
-  </nav>
-</aside>`;
+  if (!url) {
+    return `<div class="${attr(stageClasses)}">${body}\n</div>`;
+  }
+
+  return `<a class="${attr(stageClasses)}" href="${attr(url)}"${generatedLinkAttributes(
+    stage,
+    url,
+    title,
+    true,
+  )}>${body}\n</a>`;
 }
 
-function renderCollectionGroup(group: CollectionGroup): string {
+function renderRosettaRoute(record: RecordRow, stages: NodeRow[]): string {
+  if (!stages.length) {
+    return `<div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>`;
+  }
+
+  if (stages.length > 6) {
+    return `<div class="rosetta-route-empty">This route has ${stages.length} stages. Rosetta maps support up to six stages so the route remains readable across desktop and landscape mobile.</div>`;
+  }
+
+  return `<div class="rosetta-map rs-count-${stages.length}">${stages
+    .map((stage, index) => renderRosettaStage(record, stage, index))
+    .join("\n")}</div>`;
+}
+
+function renderRosettaProject(record: RecordRow, index: number): string {
+  const stages = rosettaStatusStages(record);
+  const routeId = `rosetta-route-${entrySlug(record)}`;
+  const projectState = projectStatusState(record);
+  const stageText = stages.length
+    ? `${stages.length} ${stages.length === 1 ? "stage" : "stages"}`
+    : "Route pending";
+  const description = record.description || record.subtitle || "";
+
   return `
-<section class="project-group" id="group-${attr(group.slug)}">
-  <header>
-    <span aria-hidden="true">◇</span>
-    <div>
-      <h3>${escapeHtml(group.name)}</h3>
-      ${group.description ? `<small>${escapeHtml(group.description)}</small>` : ""}
-    </div>
-  </header>
-  <div class="project-grid">${group.records.map(renderCollectionCard).join("\n")}</div>
-</section>`;
+<article
+  class="rosetta-project rosetta-project--${attr(projectState)}"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="${attr(routeId)}"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">${escapeHtml(recordInitials(record))}</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone ${String(index + 1).padStart(2, "0")}</span>
+        <strong>${escapeHtml(record.title)}</strong>
+        ${description ? `<small>${escapeHtml(description)}</small>` : ""}
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="${attr(projectStatusClass(record))}">${escapeHtml(projectStatusLabel(record))}</span>
+        <span class="rs-stage-count">${escapeHtml(stageText)}</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="${attr(entryUrl(record))}">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="${attr(routeId)}" hidden>
+    ${renderRosettaRoute(record, stages)}
+  </div>
+</article>`;
+}
+
+function renderRosettaProjects(records: RecordRow[]): string {
+  if (!records.length) {
+    return `<div class="rosetta-empty">No public Rosetta Stone projects are available yet.</div>`;
+  }
+
+  return records
+    .map((record, index) => renderRosettaProject(record, index))
+    .join("\n");
 }
 
 function generateRosettaStones(): void {
   const records = getPublicRosettaStones();
-  const groups = groupRecordsByCategory(records);
   const description =
     "Compare common programming concepts, patterns, and tasks across languages and technologies.";
 
   const html = replaceTemplateValues(readTemplate("rosetta-stones.html"), {
     HTML_HEAD: renderHtmlHead("Rosetta Stones — Developer Sandbox"),
     HEADER: renderSharedHeader("Rosetta Stones", description),
-    ROSETTA_ASIDE: renderCollectionAside(
-      "Rosetta Stones",
-      description,
-      "All Rosetta Stones",
-      "View every Rosetta Stone project.",
-      "rosetta-stones.html",
-      groups,
-    ),
-    ROSETTA_CONTENT: groups.map(renderCollectionGroup).join("\n"),
+    ROSETTA_CONTENT: renderRosettaProjects(records),
     FOOTER: renderSharedFooter(),
   });
 
