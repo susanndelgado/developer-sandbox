@@ -231,14 +231,25 @@
   /* ==================================================
      ROSETTA STONE ACCORDION MAP
      The generator renders every project panel and route in HTML.
-     JavaScript only opens one existing route at a time.
+     JavaScript only opens one existing route at a time and filters the
+     existing project panels. No map markup is created here.
      ================================================== */
 
   const rosettaToggles = Array.from(
     document.querySelectorAll("[data-rosetta-toggle]"),
   )
+  const rosettaProjects = Array.from(
+    document.querySelectorAll("[data-rosetta-project]"),
+  )
+  const rosettaSearch = document.querySelector("#rosetta-search")
+  const rosettaFilters = Array.from(
+    document.querySelectorAll("[data-rosetta-filter]"),
+  )
+  const rosettaFilterEmpty = document.querySelector("#rosetta-filter-empty")
 
   if (rosettaToggles.length) {
+    let activeRosettaFilter = "all"
+
     const setRosettaRoute = (toggle, expanded) => {
       const routeId = toggle.getAttribute("aria-controls")
       if (!routeId) return
@@ -253,6 +264,48 @@
         ?.classList.toggle("expanded", expanded)
     }
 
+    const rosettaProjectStatus = (project) => {
+      if (project.classList.contains("rosetta-project--in-progress")) {
+        return "in-progress"
+      }
+
+      if (project.classList.contains("rosetta-project--complete")) {
+        return "complete"
+      }
+
+      if (project.classList.contains("rosetta-project--inactive")) {
+        return "inactive"
+      }
+
+      return "planned"
+    }
+
+    const applyRosettaFilters = () => {
+      const query = (rosettaSearch?.value || "").trim().toLowerCase()
+      let visibleCount = 0
+
+      rosettaProjects.forEach((project) => {
+        const status = rosettaProjectStatus(project)
+        const searchText = (project.textContent || "").toLowerCase()
+        const matchesStatus =
+          activeRosettaFilter === "all" || status === activeRosettaFilter
+        const matchesSearch = !query || searchText.includes(query)
+        const visible = matchesStatus && matchesSearch
+
+        if (!visible) {
+          const toggle = project.querySelector("[data-rosetta-toggle]")
+          if (toggle) setRosettaRoute(toggle, false)
+        }
+
+        project.hidden = !visible
+        if (visible) visibleCount += 1
+      })
+
+      if (rosettaFilterEmpty) {
+        rosettaFilterEmpty.hidden = visibleCount !== 0
+      }
+    }
+
     rosettaToggles.forEach((toggle) => {
       toggle.addEventListener("click", () => {
         const willOpen = toggle.getAttribute("aria-expanded") !== "true"
@@ -264,6 +317,22 @@
         }
       })
     })
+
+    rosettaFilters.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeRosettaFilter = button.dataset.rosettaFilter || "all"
+
+        rosettaFilters.forEach((item) => {
+          const active = item === button
+          item.classList.toggle("active", active)
+          item.setAttribute("aria-pressed", active ? "true" : "false")
+        })
+
+        applyRosettaFilters()
+      })
+    })
+
+    rosettaSearch?.addEventListener("input", applyRosettaFilters)
   }
 
   /* ==================================================
