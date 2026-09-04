@@ -23,6 +23,9 @@
 
 /* Compact desktop / tablet-width workspaces. */
 @media (max-width: 1180px) {
+  .hologram {
+    padding-bottom: 70%;
+  }
   .home-header {
     grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 12px;
