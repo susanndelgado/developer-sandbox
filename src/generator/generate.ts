@@ -1136,7 +1136,7 @@ function renderReferenceGuideRow(record: RecordRow): string {
 
   return `
 <a class="guide-row glass-soft" href="${attr(entryUrl(record))}" data-search="${attr(search)}">
-  <span class="guide-mark">${escapeHtml(homeShortLabel(record))}</span>
+  <span class="mini-mark">${escapeHtml(homeShortLabel(record))}</span>
   <span class="guide-copy">
     <strong>${escapeHtml(record.title)}</strong>
     <small>${escapeHtml(record.subtitle ?? record.description ?? category)}</small>
@@ -1222,9 +1222,9 @@ function renderRosettaStage(
 ): string {
   const status = rosettaStageStatus(stage);
   const title =
-    plainText(stage.nav_label || stage.title || stage.subtitle) ||
+    plainText(stage.title || stage.nav_label) ||
     `Stage ${index + 1}`;
-  const detail = plainText(stage.subtitle || stage.description || "");
+  const detail = plainText(stage.content || "");
   const rawUrl = metaString(stage, "url").trim();
   const url = rawUrl ? generatedEntryLink(record, rawUrl) : "";
   const stageClasses = classes(
@@ -1289,7 +1289,7 @@ function renderRosettaProject(record: RecordRow, index: number): string {
       aria-expanded="false"
       aria-controls="${attr(routeId)}"
     >
-      <span class="rosetta-project-mark" aria-hidden="true">${escapeHtml(recordInitials(record))}</span>
+      <span class="mini-mark" aria-hidden="true">${escapeHtml(recordInitials(record))}</span>
       <span class="rosetta-project-copy">
         <span class="eyebrow">Rosetta Stone ${String(index + 1).padStart(2, "0")}</span>
         <strong>${escapeHtml(record.title)}</strong>
