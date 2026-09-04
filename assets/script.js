@@ -46,7 +46,7 @@
      PROJECT LIBRARY
      All catalog rows and inspector panels already exist in HTML.
      Desktop switches the existing preview panel.
-     Mobile follows the catalog row's normal project-page link.
+     Mobile follows the catalog row's project-page link.
      ================================================== */
 
   const librarySearch = document.querySelector("#library-search")
@@ -121,12 +121,18 @@
     }
 
     libraryRows.forEach((row) => {
+      const recordKey = row.dataset.libraryRecord
+      const href = row.getAttribute("href") || ""
+
+      if (recordKey && href.startsWith("#library-detail-")) {
+        row.setAttribute("href", `pg/${recordKey}.html`)
+      }
+
       row.addEventListener("click", (event) => {
         if (libraryMobile.matches) return
 
         event.preventDefault()
 
-        const recordKey = row.dataset.libraryRecord
         if (recordKey) showLibraryProject(recordKey)
       })
     })
