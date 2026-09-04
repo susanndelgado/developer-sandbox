@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/media.css" />
   </head>
 
-  <body id="pg" class="site-page app-shell special-catalog" data-section="projects">
+  <body id="pg" class="site-page app-shell rosetta-page" data-section="projects">
     <header class="home-header page-frame full-frame">
   <a class="brand" href="index.html" aria-label="Developer Sandbox home">
     <img src="assets/img/logo-blue.png" alt="" />
@@ -70,371 +70,1144 @@
 </header>
 
 
-    <main class="view-all-page app-main page-frame full-frame">
-      
-<aside class="type-menu app-sidebar glass">
-  <header>
-    <h1>Rosetta Stones</h1>
-    <p>Compare common programming concepts, patterns, and tasks across languages and technologies.</p>
-  </header>
-  <nav class="project-types" aria-label="Rosetta Stones">
-    <a class="active" href="rosetta-stones.html" data-filter="all" aria-current="page">
-      <span aria-hidden="true">◇</span>
-      <span>
-        <strong>All Rosetta Stones</strong>
-        <small>View every Rosetta Stone project.</small>
+    <main class="rosetta-main page-frame full-frame">
+      <section class="rosetta-workspace" aria-labelledby="rosetta-title">
+        <div class="rosetta-intro">
+          <header class="rosetta-heading">
+            <p class="eyebrow">Rosetta Stones</p>
+            <h1 id="rosetta-title">All Rosetta Stones</h1>
+            <p class="rosetta-lead">Compare the same recognizable programming problem across changing languages, frameworks, and runtime environments.</p>
+          </header>
+
+          <aside class="rosetta-explainer glass-soft" aria-labelledby="rosetta-about-title">
+            <p class="eyebrow" id="rosetta-about-title">What is a Rosetta Stone?</p>
+            <p class="rosetta-explainer-long">Rosetta Stones is a comparative programming-learning system modeled on the idea of using the same recognizable source to understand multiple languages. A shared programming problem is rebuilt in different languages, frameworks, and runtime environments so the problem itself stays familiar while syntax, typing, libraries, architecture, data handling, and conventions change. By keeping the problem constant, the differences between technologies become easier to see, compare, and retain.</p>
+            <p class="rosetta-explainer-short">Rebuild the same programming problem across different technologies so the problem stays familiar while the language, framework, and conventions change.</p>
+          </aside>
+        </div>
+
+        <div class="rosetta-scroll app-scroll" aria-label="Rosetta Stone project maps">
+          
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-arrays-and-collections-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">AA</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 01</span>
+        <strong>Arrays and Collections: TypeScript</strong>
+        <small>Compare typed collections and iteration across languages.</small>
       </span>
-    </a>
-    
-<a href="#group-developer-tooling" data-filter="developer-tooling">
-  <span aria-hidden="true">◇</span>
-  <span>
-    <strong>Developer Tooling</strong>
-    
-  </span>
-</a>
-
-<a href="#group-rosetta-comparisons" data-filter="rosetta-comparisons">
-  <span aria-hidden="true">◇</span>
-  <span>
-    <strong>Rosetta Comparisons</strong>
-    <small>Same-use-case implementations compared across languages and frameworks.</small>
-  </span>
-</a>
-
-<a href="#group-modern-agenda" data-filter="modern-agenda">
-  <span aria-hidden="true">◇</span>
-  <span>
-    <strong>Modern Agenda</strong>
-    <small>Modern Agenda Rosetta Stone implementations.</small>
-  </span>
-</a>
-  </nav>
-</aside>
-
-      <section class="project-content app-content glass app-scroll">
-        <header class="content-header">
-          <div>
-            <small>ROSETTA STONES</small>
-            <h2>All Rosetta Stones</h2>
-          </div>
-
-          <p>
-            Compare common programming concepts, patterns, and tasks across
-            languages and technologies.
-          </p>
-        </header>
-
-        
-<section class="project-group" id="group-developer-tooling">
-  <header>
-    <span aria-hidden="true">◇</span>
-    <div>
-      <h3>Developer Tooling</h3>
-      
-    </div>
-  </header>
-  <div class="project-grid">
-<a href="pg/rosetta-core.html">
-  <span class="project-icon rose">RC</span>
-  <div>
-    <strong>Rosetta Core</strong>
-    <small>JavaScript / TypeScript / Python / PHP / Java / C# / SQL / HTML / CSS</small>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-arrays-and-collections-typescript.html">View Project →</a>
   </div>
-</a></div>
-</section>
 
-<section class="project-group" id="group-rosetta-comparisons">
-  <header>
-    <span aria-hidden="true">◇</span>
-    <div>
-      <h3>Rosetta Comparisons</h3>
-      <small>Same-use-case implementations compared across languages and frameworks.</small>
-    </div>
-  </header>
-  <div class="project-grid">
-<a href="pg/rosetta-stone-arrays-and-collections-typescript.html">
-  <span class="project-icon blue">AA</span>
-  <div>
-    <strong>Arrays and Collections: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-arrays-and-collections-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-classification-machine-typescript.html">
-  <span class="project-icon blue">CM</span>
-  <div>
-    <strong>Classification Machine: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-classification-machine-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">CM</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 02</span>
+        <strong>Classification Machine: TypeScript</strong>
+        <small>Compare canonical classification rules across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-classification-machine-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-collection-renderer-typescript.html">
-  <span class="project-icon blue">CR</span>
-  <div>
-    <strong>Collection Renderer: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-classification-machine-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-color-decision-engine-typescript.html">
-  <span class="project-icon blue">CD</span>
-  <div>
-    <strong>Color Decision Engine: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-collection-renderer-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">CR</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 03</span>
+        <strong>Collection Renderer: TypeScript</strong>
+        <small>Compare collection rendering across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-collection-renderer-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-crud-typescript.html">
-  <span class="project-icon blue">CT</span>
-  <div>
-    <strong>CRUD: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-collection-renderer-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-data-to-html-card-typescript.html">
-  <span class="project-icon blue">DT</span>
-  <div>
-    <strong>Data to HTML Card: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-color-decision-engine-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">CD</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 04</span>
+        <strong>Color Decision Engine: TypeScript</strong>
+        <small>Compare ordered decision rules across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-color-decision-engine-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-data-transformation-typescript.html">
-  <span class="project-icon blue">DT</span>
-  <div>
-    <strong>Data Transformation: TypeScript</strong>
-    <small>TypeScript / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-color-decision-engine-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-deduplication-typescript.html">
-  <span class="project-icon blue">DT</span>
-  <div>
-    <strong>Deduplication: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-crud-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">CT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 05</span>
+        <strong>CRUD: TypeScript</strong>
+        <small>Compare complete create, read, update, and delete workflows.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-crud-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-delete-typescript.html">
-  <span class="project-icon blue">DT</span>
-  <div>
-    <strong>DELETE: TypeScript</strong>
-    <small>TypeScript / Node.js / HTTP / HTML / CSS / JSON</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-crud-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-filter-map-sort-typescript.html">
-  <span class="project-icon blue">FM</span>
-  <div>
-    <strong>Filter Map Sort: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-data-to-html-card-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">DT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 06</span>
+        <strong>Data to HTML Card: TypeScript</strong>
+        <small>Compare structured data rendering across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-data-to-html-card-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-get-all-records-typescript.html">
-  <span class="project-icon blue">GA</span>
-  <div>
-    <strong>Get All Records: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-data-to-html-card-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-get-record-by-id-typescript.html">
-  <span class="project-icon blue">GR</span>
-  <div>
-    <strong>Get Record By ID: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-data-transformation-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">DT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 07</span>
+        <strong>Data Transformation: TypeScript</strong>
+        <small>Compare pure input-to-output transformations across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-data-transformation-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-get-typescript.html">
-  <span class="project-icon blue">GT</span>
-  <div>
-    <strong>GET: TypeScript</strong>
-    <small>TypeScript / Node.js / HTTP / HTML / CSS / JSON</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-data-transformation-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-group-by-category-typescript.html">
-  <span class="project-icon blue">GB</span>
-  <div>
-    <strong>Group By Category: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-deduplication-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">DT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 08</span>
+        <strong>Deduplication: TypeScript</strong>
+        <small>Compare duplicate removal across collection types.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-deduplication-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-http-status-handling-typescript.html">
-  <span class="project-icon blue">HS</span>
-  <div>
-    <strong>HTTP Status Handling: TypeScript</strong>
-    <small>TypeScript / Node.js / HTTP / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-deduplication-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-json-request-typescript.html">
-  <span class="project-icon blue">JR</span>
-  <div>
-    <strong>JSON Request: TypeScript</strong>
-    <small>TypeScript / Node.js / HTTP / HTML / CSS</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-delete-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">DT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 09</span>
+        <strong>DELETE: TypeScript</strong>
+        <small>Compare DELETE request handling across server frameworks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-delete-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-json-response-typescript.html">
-  <span class="project-icon blue">JR</span>
-  <div>
-    <strong>JSON Response: TypeScript</strong>
-    <small>TypeScript / Node.js / HTTP / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-delete-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-nested-data-typescript.html">
-  <span class="project-icon blue">ND</span>
-  <div>
-    <strong>Nested Data: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-filter-map-sort-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">FM</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 10</span>
+        <strong>Filter Map Sort: TypeScript</strong>
+        <small>Compare collection pipelines across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-filter-map-sort-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-object-record-builder-typescript.html">
-  <span class="project-icon blue">OR</span>
-  <div>
-    <strong>Object Record Builder: TypeScript</strong>
-    <small>TypeScript / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-filter-map-sort-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-status-validation-typescript.html">
-  <span class="project-icon blue">SV</span>
-  <div>
-    <strong>Status Validation: TypeScript</strong>
-    <small>TypeScript / HTML / CSS</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-get-all-records-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">GA</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 11</span>
+        <strong>Get All Records: TypeScript</strong>
+        <small>Compare reading complete record collections across data stacks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-get-all-records-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-slug-generator-typescript.html">
-  <span class="project-icon blue">SG</span>
-  <div>
-    <strong>Slug Generator: TypeScript</strong>
-    <small>TypeScript / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-get-all-records-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-sql-parameter-typescript.html">
-  <span class="project-icon blue">SP</span>
-  <div>
-    <strong>SQL Parameter: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-get-record-by-id-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">GR</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 12</span>
+        <strong>Get Record By ID: TypeScript</strong>
+        <small>Compare parameterized single-record lookups across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-get-record-by-id-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-sql-join-typescript.html">
-  <span class="project-icon blue">SJ</span>
-  <div>
-    <strong>SQL JOIN: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-get-record-by-id-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-search-typescript.html">
-  <span class="project-icon blue">ST</span>
-  <div>
-    <strong>Search: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-get-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">GT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 13</span>
+        <strong>GET: TypeScript</strong>
+        <small>Compare GET request handling across server frameworks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-get-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-sort-order-typescript.html">
-  <span class="project-icon blue">SO</span>
-  <div>
-    <strong>Sort Order: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-get-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-parent-child-tree-typescript.html">
-  <span class="project-icon blue">PC</span>
-  <div>
-    <strong>Parent Child Tree: TypeScript</strong>
-    <small>TypeScript / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-group-by-category-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">GB</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 14</span>
+        <strong>Group By Category: TypeScript</strong>
+        <small>Compare grouping algorithms using the same project data.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-group-by-category-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-reorder-typescript.html">
-  <span class="project-icon blue">RT</span>
-  <div>
-    <strong>Reorder: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-group-by-category-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-reparent-typescript.html">
-  <span class="project-icon blue">RT</span>
-  <div>
-    <strong>Reparent: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-http-status-handling-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">HS</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 15</span>
+        <strong>HTTP Status Handling: TypeScript</strong>
+        <small>Compare HTTP status handling across server frameworks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-http-status-handling-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-validation-typescript.html">
-  <span class="project-icon blue">VT</span>
-  <div>
-    <strong>Validation: TypeScript</strong>
-    <small>TypeScript / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-http-status-handling-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-post-typescript.html">
-  <span class="project-icon blue">PT</span>
-  <div>
-    <strong>POST: TypeScript</strong>
-    <small>TypeScript / Node.js / HTTP / HTML / CSS / JSON</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-json-request-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">JR</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 16</span>
+        <strong>JSON Request: TypeScript</strong>
+        <small>Compare sending JSON request bodies across web stacks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-json-request-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-put-typescript.html">
-  <span class="project-icon blue">PT</span>
-  <div>
-    <strong>PUT: TypeScript</strong>
-    <small>TypeScript / Node.js / HTTP / HTML / CSS / JSON</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-json-request-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a>
+</article>
 
-<a href="pg/rosetta-stone-template-replacement-typescript.html">
-  <span class="project-icon blue">TR</span>
-  <div>
-    <strong>Template Replacement: TypeScript</strong>
-    <small>TypeScript / HTML / CSS</small>
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-json-response-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">JR</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 17</span>
+        <strong>JSON Response: TypeScript</strong>
+        <small>Compare returning JSON responses across web stacks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-json-response-typescript.html">View Project →</a>
   </div>
-</a>
 
-<a href="pg/rosetta-stone-static-page-generator-typescript.html">
-  <span class="project-icon blue">SP</span>
-  <div>
-    <strong>Static Page Generator: TypeScript</strong>
-    <small>TypeScript / Node.js / SQLite / HTML / CSS</small>
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-json-response-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
   </div>
-</a></div>
-</section>
+</article>
 
-<section class="project-group" id="group-modern-agenda">
-  <header>
-    <span aria-hidden="true">◇</span>
-    <div>
-      <h3>Modern Agenda</h3>
-      <small>Modern Agenda Rosetta Stone implementations.</small>
-    </div>
-  </header>
-  <div class="project-grid">
-<a href="pg/modern-agenda.html">
-  <span class="project-icon rose">MA</span>
-  <div>
-    <strong>Modern Agenda</strong>
-    <small>Angular / C# / Java / PHP / Python / React / TypeScript / ASP.NET Core / Composer / ECMAScript / FastAPI / Spring Boot / JSON / Vite / AngularJS 1.x / Bootstrap 3 / jQuery / cURL / JSON / JavaScript / ES2015 / ECMAScript 2026 / TypeScript / Angular / React / PHP / Python</small>
+<article
+  class="rosetta-project rosetta-project--inactive"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-modern-agenda"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">MA</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 18</span>
+        <strong>Modern Agenda</strong>
+        <small>One conference agenda application rebuilt across modern technologies.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status rose">Inactive</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/modern-agenda.html">View Project →</a>
   </div>
-</a></div>
-</section>
+
+  <div class="rosetta-route" id="rosetta-route-modern-agenda" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-nested-data-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">ND</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 19</span>
+        <strong>Nested Data: TypeScript</strong>
+        <small>Compare nested record structures across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-nested-data-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-nested-data-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-core"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">RC</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 20</span>
+        <strong>Rosetta Core</strong>
+        <small>Reusable comparison framework for implementing identical programming tasks across multiple languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-core.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-core" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-object-record-builder-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">OR</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 21</span>
+        <strong>Object Record Builder: TypeScript</strong>
+        <small>Build the same structured record object across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-object-record-builder-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-object-record-builder-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-status-validation-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">SV</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 22</span>
+        <strong>Status Validation: TypeScript</strong>
+        <small>Compare restricted status values across language type systems.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-status-validation-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-status-validation-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-slug-generator-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">SG</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 23</span>
+        <strong>Slug Generator: TypeScript</strong>
+        <small>Compare title-to-slug transformation across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-slug-generator-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-slug-generator-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-sql-parameter-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">SP</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 24</span>
+        <strong>SQL Parameter: TypeScript</strong>
+        <small>Compare parameterized query APIs across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-sql-parameter-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-sql-parameter-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-sql-join-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">SJ</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 25</span>
+        <strong>SQL JOIN: TypeScript</strong>
+        <small>Compare many-to-many JOIN handling across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-sql-join-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-sql-join-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-search-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">ST</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 26</span>
+        <strong>Search: TypeScript</strong>
+        <small>Compare record search workflows across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-search-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-search-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-sort-order-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">SO</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 27</span>
+        <strong>Sort Order: TypeScript</strong>
+        <small>Compare deterministic ordering across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-sort-order-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-sort-order-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-parent-child-tree-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">PC</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 28</span>
+        <strong>Parent Child Tree: TypeScript</strong>
+        <small>Compare hierarchical data modeling across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-parent-child-tree-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-parent-child-tree-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-reorder-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">RT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 29</span>
+        <strong>Reorder: TypeScript</strong>
+        <small>Compare sibling reordering across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-reorder-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-reorder-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-reparent-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">RT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 30</span>
+        <strong>Reparent: TypeScript</strong>
+        <small>Compare parent reassignment across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-reparent-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-reparent-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-validation-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">VT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 31</span>
+        <strong>Validation: TypeScript</strong>
+        <small>Compare defensive validation and fallback behavior across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-validation-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-validation-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-post-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">PT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 32</span>
+        <strong>POST: TypeScript</strong>
+        <small>Compare POST request handling across server frameworks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-post-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-post-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-put-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">PT</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 33</span>
+        <strong>PUT: TypeScript</strong>
+        <small>Compare PUT request handling across server frameworks.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-put-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-put-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-template-replacement-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">TR</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 34</span>
+        <strong>Template Replacement: TypeScript</strong>
+        <small>Compare template-value replacement across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-template-replacement-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-template-replacement-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+
+<article
+  class="rosetta-project rosetta-project--planned"
+  data-rosetta-project
+>
+  <div class="rosetta-project-panel glass">
+    <button
+      class="rosetta-project-toggle"
+      type="button"
+      data-rosetta-toggle
+      aria-expanded="false"
+      aria-controls="rosetta-route-rosetta-stone-static-page-generator-typescript"
+    >
+      <span class="rosetta-project-mark" aria-hidden="true">SP</span>
+      <span class="rosetta-project-copy">
+        <span class="eyebrow">Rosetta Stone 35</span>
+        <strong>Static Page Generator: TypeScript</strong>
+        <small>Compare static page generation across languages.</small>
+      </span>
+      <span class="rosetta-project-progress">
+        <span class="status blue">Planned</span>
+        <span class="rs-stage-count">Route pending</span>
+        <span class="rosetta-project-chevron" aria-hidden="true">⌄</span>
+      </span>
+    </button>
+    <a class="rosetta-project-link" href="pg/rosetta-stone-static-page-generator-typescript.html">View Project →</a>
+  </div>
+
+  <div class="rosetta-route" id="rosetta-route-rosetta-stone-static-page-generator-typescript" hidden>
+    <div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>
+  </div>
+</article>
+        </div>
       </section>
     </main>
 
