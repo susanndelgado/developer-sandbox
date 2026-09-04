@@ -1184,7 +1184,7 @@ function rosettaStageStatus(node: NodeRow): RosettaStageStatus {
     nodeHasClassName(node, className),
   );
 
-  return matches.length === 1 ? matches[0] : "rs-unset";
+  return matches.length === 1 ? matches[0]! : "rs-unset";
 }
 
 function rosettaStageStatusLabel(status: RosettaStageStatus): string {
