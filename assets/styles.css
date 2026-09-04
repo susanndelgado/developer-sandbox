@@ -77,7 +77,7 @@ svg {
 
 /* ==================================================
    SHARED APPLICATION FRAME
-   One wrapper, header, navigation and footer system.
+   One global shell, header, navigation and footer system.
    ================================================== */
 
 .app-shell {
@@ -85,6 +85,7 @@ svg {
   grid-template-rows: auto minmax(0, 1fr) auto;
   width: 100%;
   min-height: 100dvh;
+  height: 100dvh;
   padding: 14px var(--page-gutter) 8px;
   background:
     radial-gradient(
@@ -869,7 +870,7 @@ svg {
   position: relative;
 }
 
-#hm.scaled-home .home-shell {
+#hm.scaled-home .app-shell {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -878,11 +879,6 @@ svg {
   margin: 0;
   transform: translate(-50%, -50%) scale(var(--home-scale, 1));
   transform-origin: center;
-  height: 100dvh;
-}
-
-.app-shell {
-  height: 100dvh;
 }
 
 #hm.scaled-home .mini-grid {
