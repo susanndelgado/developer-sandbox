@@ -10,7 +10,7 @@
     window.matchMedia('(orientation: portrait) and (max-width: 900px)').matches;
 
   const isPhoneLandscape = () =>
-    window.matchMedia('(orientation: landscape) and (max-width: 1080px) and (max-height: 820px)').matches;
+    window.matchMedia('(orientation: landscape) and (max-width: 899px) and (max-height: 820px)').matches;
 
   const fitHome = () => {
     if (isPhonePortrait() || isPhoneLandscape()) {
