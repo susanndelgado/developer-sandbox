@@ -1206,7 +1206,13 @@ function rosettaStatusStages(record: RecordRow): NodeRow[] {
       nodeHasClassName(node, ROSETTA_STATUS_CLASS),
   );
 
-  return parent ? childrenOf(nodes, parent.id) : [];
+  return parent
+    ? childrenOf(nodes, parent.id).filter((stage) =>
+        ROSETTA_STAGE_STATUS_CLASSES.some((className) =>
+          nodeHasClassName(stage, className),
+        ),
+      )
+    : [];
 }
 
 function renderRosettaStage(
@@ -1252,8 +1258,8 @@ function renderRosettaRoute(record: RecordRow, stages: NodeRow[]): string {
     return `<div class="rosetta-route-empty">Progress route not configured yet. Add an <code>rs-status</code> node with direct stage children to map this Rosetta Stone.</div>`;
   }
 
-  if (stages.length > 6) {
-    return `<div class="rosetta-route-empty">This route has ${stages.length} stages. Rosetta maps support up to six stages so the route remains readable across desktop and landscape mobile.</div>`;
+  if (stages.length > 9) {
+    return `<div class="rosetta-route-empty">This route has ${stages.length} stages. Rosetta maps support up to nine stages so the route remains readable across desktop and landscape mobile.</div>`;
   }
 
   return `<div class="rosetta-map rs-count-${stages.length}">${stages
