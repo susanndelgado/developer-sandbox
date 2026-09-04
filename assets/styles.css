@@ -67,17 +67,11 @@ svg {
   width: 100%;
   max-width: none;
   margin-inline: auto;
-  /* Accidental homepage sizing removed from the shared page frame:
-  display: grid;
-  grid-template-rows: clamp(150px, 24vh) minmax(0, 1fr);
-  min-height: 0;
-  padding-top: 2px;
-  */
 }
 
 /* ==================================================
    SHARED APPLICATION FRAME
-   One global shell, header, navigation and footer system.
+   Everything through the main region is global.
    ================================================== */
 
 .app-shell {
@@ -99,6 +93,14 @@ svg {
       transparent 28%,
       rgba(1, 6, 20, 0.18)
     );
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 10px 0 8px;
 }
 
 .home-header {
@@ -262,6 +264,14 @@ svg {
   font-size: 0.81rem;
   font-style: italic;
   text-align: center;
+}
+
+.site-page,
+.library-page {
+  background:
+    linear-gradient(rgba(2, 7, 20, 0.18), rgba(2, 7, 20, 0.34)),
+    url("img/bg-owlscreen1.png") center bottom / cover no-repeat,
+    var(--bg);
 }
 
 /* ==================================================
@@ -684,8 +694,6 @@ svg {
   display: grid;
   /* grid-template-rows: clamp(150px, 27vh, 250px) minmax(0, 1fr); */
   grid-template-rows: clamp(140px, 24vh, 225px) minmax(0, 1fr);
-  min-height: 0;
-  padding-top: 2px;
 }
 
 .hero {
@@ -892,7 +900,6 @@ svg {
   flex: 0 0 auto;
 }
 
-/* The Library uses the shared inner-page styles from inner.css. */
 .library-rotate {
   display: none;
 }
