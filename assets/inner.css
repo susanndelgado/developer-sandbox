@@ -6,7 +6,8 @@
 
 .app-workspace,
 .library-workspace,
-.catalog-workspace {
+.catalog-workspace,
+.rosetta-workspace {
   width: 100%;
   height: 100%;
   min-width: 0;
@@ -911,6 +912,484 @@
 }
 
 /* ==================================================
+   ROSETTA STONES — FLOATING ACCORDION ROUTE MAP
+   ================================================== */
+
+.rosetta-main {
+  display: grid;
+  min-height: 0;
+}
+
+.rosetta-workspace {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+}
+
+.rosetta-intro {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(420px, 1.28fr);
+  align-items: stretch;
+  gap: 14px;
+  min-width: 0;
+  padding: 2px 2px 0;
+}
+
+.rosetta-heading {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px 8px;
+}
+
+.rosetta-heading h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.rosetta-lead,
+.rosetta-explainer-long,
+.rosetta-explainer-short {
+  color: #a9bed1;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.rosetta-lead {
+  max-width: 56ch;
+}
+
+.rosetta-explainer {
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  min-width: 0;
+  padding: 12px 16px;
+  border-radius: 15px;
+}
+
+.rosetta-explainer-short {
+  display: none;
+}
+
+.rosetta-scroll {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-width: 0;
+  min-height: 0;
+  padding: 2px 5px 24px;
+}
+
+.rosetta-project {
+  --rs-project-accent: #79cfff;
+  display: grid;
+  gap: 0;
+  min-width: 0;
+}
+
+.rosetta-project--planned {
+  --rs-project-accent: #8297ad;
+}
+
+.rosetta-project--in-progress {
+  --rs-project-accent: #69dcff;
+}
+
+.rosetta-project--complete {
+  --rs-project-accent: #82dda0;
+}
+
+.rosetta-project--inactive {
+  --rs-project-accent: #657181;
+}
+
+.rosetta-project-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 82px;
+  border-left: 2px solid var(--rs-project-accent);
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--rs-project-accent) 12%, transparent),
+      transparent 48%
+    ),
+    rgba(5, 18, 43, 0.78);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.rosetta-project.expanded .rosetta-project-panel {
+  border-color: color-mix(in srgb, var(--rs-project-accent) 78%, white);
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.22),
+    0 0 22px color-mix(in srgb, var(--rs-project-accent) 17%, transparent);
+}
+
+.rosetta-project-toggle {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 15px;
+  border: 0;
+  outline: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rosetta-project-toggle:focus-visible {
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--rs-project-accent) 58%, transparent);
+}
+
+.rosetta-project-mark {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid color-mix(in srgb, var(--rs-project-accent) 52%, transparent);
+  border-radius: 12px;
+  color: var(--rs-project-accent);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--rs-project-accent) 18%, transparent),
+    rgba(4, 16, 37, 0.92) 72%
+  );
+  box-shadow:
+    inset 0 0 12px color-mix(in srgb, var(--rs-project-accent) 12%, transparent),
+    0 0 12px color-mix(in srgb, var(--rs-project-accent) 24%, transparent);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.rosetta-project-copy {
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+.rosetta-project-copy strong {
+  overflow: hidden;
+  color: #f1f8ff;
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rosetta-project-copy small {
+  overflow: hidden;
+  max-width: 78ch;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rosetta-project-progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.rs-stage-count {
+  color: #9fb3c7;
+  font-size: 0.6rem;
+}
+
+.rosetta-project-chevron {
+  color: var(--rs-project-accent);
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 160ms ease;
+}
+
+.rosetta-project-toggle[aria-expanded="true"] .rosetta-project-chevron {
+  transform: rotate(180deg);
+}
+
+.rosetta-project-link {
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+  min-width: 112px;
+  padding: 0 16px;
+  border-left: 1px solid rgba(128, 202, 255, 0.11);
+  color: #5fc8ff;
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-align: center;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    text-shadow 160ms ease;
+}
+
+.rosetta-project-link:hover,
+.rosetta-project-link:focus-visible {
+  color: #c4efff;
+  background: rgba(34, 101, 151, 0.14);
+  text-shadow: 0 0 10px rgba(95, 200, 255, 0.38);
+}
+
+.rosetta-route {
+  min-width: 0;
+  padding: 18px clamp(12px, 3vw, 42px) 14px;
+  background: radial-gradient(
+    ellipse at 50% 42%,
+    rgba(70, 165, 255, 0.08),
+    transparent 68%
+  );
+}
+
+.rosetta-map {
+  --rs-route-gap-x: clamp(40px, 4.5vw, 72px);
+  --rs-route-gap-y: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(104px, auto));
+  gap: var(--rs-route-gap-y) var(--rs-route-gap-x);
+  min-width: 0;
+  padding: 4px;
+}
+
+.rosetta-map.rs-count-1 {
+  grid-template-columns: minmax(0, 0.5fr);
+  grid-template-rows: auto;
+}
+
+.rosetta-map.rs-count-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+}
+
+.rosetta-map.rs-count-3 {
+  grid-template-rows: auto;
+}
+
+.rs-stage-card {
+  --rs-state: #8297ad;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-width: 0;
+  min-height: 110px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--rs-state) 46%, rgba(120, 190, 255, 0.16));
+  border-radius: 14px;
+  color: #eaf6ff;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--rs-state) 12%, transparent),
+      transparent 44%
+    ),
+    rgba(4, 16, 39, 0.9);
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.22),
+    0 0 16px color-mix(in srgb, var(--rs-state) 13%, transparent),
+    inset 0 1px rgba(255, 255, 255, 0.05);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.rs-stage-card:hover,
+.rs-stage-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--rs-state) 74%, white);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.25),
+    0 0 20px color-mix(in srgb, var(--rs-state) 24%, transparent),
+    inset 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.rs-stage-card.rs-planned {
+  --rs-state: #8297ad;
+}
+
+.rs-stage-card.rs-started {
+  --rs-state: #f0add7;
+}
+
+.rs-stage-card.rs-complete {
+  --rs-state: #82dda0;
+}
+
+.rs-stage-card.rs-inactive {
+  --rs-state: #5f6978;
+  opacity: 0.68;
+}
+
+.rs-stage-card.rs-unset {
+  --rs-state: #69dcff;
+}
+
+.rs-stage-1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.rs-stage-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.rs-stage-3 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.rs-stage-4 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.rs-stage-5 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.rs-stage-6 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.rs-stage-2::before,
+.rs-stage-3::before,
+.rs-stage-4::before,
+.rs-stage-5::before,
+.rs-stage-6::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.rs-stage-2::before,
+.rs-stage-3::before {
+  top: 50%;
+  right: 100%;
+  width: var(--rs-route-gap-x);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(95, 200, 255, 0.62), var(--rs-state));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-4::before {
+  bottom: 100%;
+  left: 50%;
+  width: 2px;
+  height: var(--rs-route-gap-y);
+  background: linear-gradient(180deg, rgba(95, 200, 255, 0.62), var(--rs-state));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-5::before,
+.rs-stage-6::before {
+  top: 50%;
+  left: 100%;
+  width: var(--rs-route-gap-x);
+  height: 2px;
+  background: linear-gradient(90deg, var(--rs-state), rgba(95, 200, 255, 0.62));
+  box-shadow:
+    0 0 5px color-mix(in srgb, var(--rs-state) 52%, transparent),
+    0 0 12px rgba(95, 200, 255, 0.18);
+}
+
+.rs-stage-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.rs-stage-index {
+  color: #738ba1;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.rs-stage-state {
+  color: var(--rs-state);
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px color-mix(in srgb, var(--rs-state) 34%, transparent);
+}
+
+.rs-stage-card strong {
+  overflow: hidden;
+  color: #f2f8fd;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rs-stage-card small {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #9eb2c5;
+  font-size: 0.64rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.rs-stage-open {
+  align-self: end;
+  margin-top: auto;
+  color: #5fc8ff;
+  font-size: 0.58rem;
+}
+
+.rosetta-route-empty,
+.rosetta-empty {
+  padding: 20px;
+  border: 1px dashed rgba(105, 190, 245, 0.18);
+  border-radius: 12px;
+  color: #8fa6bc;
+  background: rgba(4, 15, 36, 0.28);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ==================================================
    LABS — VIEWPORT SHOWCASE SLIDER
    ================================================== */
 
@@ -1002,10 +1481,4 @@
   gap: 10px;
   margin-top: auto;
   padding-top: 4px;
-}
-
-/* Rosetta retains specialized catalog content inside the shared shell. */
-
-.special-catalog .project-content .project-group {
-  margin-bottom: 10px;
 }
