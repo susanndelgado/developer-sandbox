@@ -6,6 +6,27 @@
   const referenceLink = page.querySelector('a[href="pg/angular-reference-guide.html"]');
   referenceLink?.setAttribute('href', 'reference-guides.html');
 
+  const guideLinks = page.querySelectorAll('.guides-panel .mini-card');
+  const guideTargets = {
+    Angular: 'pg/angular-reference-guide.html',
+    TypeScript: 'pg/typescript-reference-guide.html',
+    'Node.js': 'pg/nodejs-reference-guide.html',
+    Terminal: 'pg/macos-windows-terminal-reference.html',
+    'Web Dev': 'reference-guides.html',
+  };
+
+  guideLinks.forEach((link) => {
+    const label = link.textContent?.trim();
+    if (label && guideTargets[label]) {
+      link.setAttribute('href', guideTargets[label]);
+    }
+  });
+
+  page.querySelector('.guides-panel .panel-bottom .panel-link')?.setAttribute(
+    'href',
+    'reference-guides.html',
+  );
+
   const stageWidth = 1920;
   const stageHeight = 1024;
 
