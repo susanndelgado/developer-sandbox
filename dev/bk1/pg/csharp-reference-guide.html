@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>C# Reference Guide — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>C# Reference Guide</strong>
+    <p>Compact C# language reference covering program structure, console output, variables, common value types, strings, operators, arrays, lists, control flow, methods, classes, properties, objects, constructors, casting, null handling, and common syntax rules.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/angular-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Angular
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Cross-Device Web Testing
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Node.js
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      TypeScript
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/java-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Java
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      C#
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/python-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Python
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      C# Reference Guide
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      Syntax • Types • Control Flow • Methods • Objects
+    </strong>
+
+    <br />
+
+    Compact C# language reference covering program structure, console output, variables, common value types, strings, operators, arrays, lists, control flow, methods, classes, properties, objects, constructors, casting, null handling, and common syntax rules.
+  </p>
+</header>
+        
+<nav
+  id="node-csharp-ref-nav"
+  class="project-doc-nav node-01 uid-csharp-ref-nav csharp-reference-nav" aria-label="Guide Navigation"
+>
+<a
+  id="child-csharp-ref-nav-01"
+  class="child-01 uid-csharp-ref-nav-01"
+  href="pg/csharp-reference-guide.html#node-csharp-ref-section-01"
+>Program Structure & Output</a>
+<a
+  id="child-csharp-ref-nav-02"
+  class="child-02 uid-csharp-ref-nav-02"
+  href="pg/csharp-reference-guide.html#node-csharp-ref-section-02"
+>Variables & Types</a>
+<a
+  id="child-csharp-ref-nav-03"
+  class="child-03 uid-csharp-ref-nav-03"
+  href="pg/csharp-reference-guide.html#node-csharp-ref-section-03"
+>Operators & Strings</a>
+<a
+  id="child-csharp-ref-nav-04"
+  class="child-04 uid-csharp-ref-nav-04"
+  href="pg/csharp-reference-guide.html#node-csharp-ref-section-04"
+>Arrays, Lists & Control Flow</a>
+<a
+  id="child-csharp-ref-nav-05"
+  class="child-05 uid-csharp-ref-nav-05"
+  href="pg/csharp-reference-guide.html#node-csharp-ref-section-05"
+>Methods & Conversion</a>
+<a
+  id="child-csharp-ref-nav-06"
+  class="child-06 uid-csharp-ref-nav-06"
+  href="pg/csharp-reference-guide.html#node-csharp-ref-section-06"
+>Classes, Properties & Objects</a>
+<a
+  id="child-csharp-ref-nav-07"
+  class="child-07 uid-csharp-ref-nav-07"
+  href="pg/csharp-reference-guide.html#node-csharp-ref-section-07"
+>Nulls, Conventions & Memory Card</a>
+</nav>
+
+<article class="project-doc">
+  <div
+  id="node-csharp-ref-section-01"
+  class="project-display node-02 uid-csharp-ref-section-01 csharp-reference-section csharp-reference-section-01"
+>
+  <div class="project-preview"><p>Modern C# supports top-level statements, while traditional applications commonly place execution inside a <code>Main()</code> method. Statements usually end with semicolons and blocks use braces.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Foundation</span>
+  <h2>01 — Program Structure & Output</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-csharp-ref-01-program"
+  class="project-detail node-03 uid-csharp-ref-01-program csharp-reference-code-block"
+>
+  
+<header>
+  <span>Program Structure & Output</span>
+  <h3>Basic Program</h3>
+  
+</header>
+  <pre><code>// Modern top-level statement
+Console.WriteLine("Hello, world!");
+
+// Traditional structure
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, world!");
+    }
+}</code></pre><p><code>using System;</code> makes common .NET types convenient to access. <code>Main()</code> is the traditional program entry point.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-01-print"
+  class="project-detail node-04 uid-csharp-ref-01-print csharp-reference-code-block"
+>
+  
+<header>
+  <span>Program Structure & Output</span>
+  <h3>Console Output & Interpolation</h3>
+  
+</header>
+  <pre><code>Console.WriteLine("Hello"); // print + newline
+Console.Write("Hello ");    // print, no newline
+
+string bird = "Heron";
+int count = 3;
+
+Console.WriteLine("I painted " + count + " " + bird + " paintings.");
+Console.WriteLine($"I painted {count} {bird} paintings.");</code></pre><p>The <code>$</code> prefix enables string interpolation. Expressions inside <code>{ }</code> are inserted into the string.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<div
+  id="node-csharp-ref-section-02"
+  class="project-display node-05 uid-csharp-ref-section-02 csharp-reference-section csharp-reference-section-02"
+>
+  <div class="project-preview"><p>C# is statically typed. Variables can state their type explicitly or use <code>var</code> when the compiler can infer the type from the initial value.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>TYPE name = value;</span>
+  <h2>02 — Variables & Types</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-csharp-ref-02-pattern"
+  class="project-detail node-06 uid-csharp-ref-02-pattern csharp-reference-code-block"
+>
+  
+<header>
+  <span>Variables & Types</span>
+  <h3>Declaration, Assignment & var</h3>
+  
+</header>
+  <pre><code>int quantity = 5;
+
+int paintings;
+paintings = 12;
+paintings = 13;
+
+var count = 5;       // inferred as int
+var name = "Susan";  // inferred as string</code></pre><p><code>var</code> does not make a variable dynamically typed. Once inferred, its type remains fixed.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-02-types"
+  class="project-detail node-07 uid-csharp-ref-02-types csharp-reference-code-block"
+>
+  
+<header>
+  <span>Variables & Types</span>
+  <h3>Common Built-In Types</h3>
+  
+</header>
+  <pre><code>byte smallNumber = 10;
+short mediumNumber = 1000;
+int number = 25;
+long hugeNumber = 5000000000L;
+
+float decimal1 = 3.14F;
+double decimal2 = 3.14159;
+decimal money = 29.95M;
+
+char letter = 'A';
+bool active = true;
+string name = "Susan";</code></pre><p><code>int</code> is the normal whole-number type. <code>double</code> is common for floating-point values. <code>decimal</code> is useful for decimal-sensitive calculations such as money and uses an <code>M</code> suffix. <code>bool</code> holds <code>true</code> or <code>false</code>.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-02-constants"
+  class="project-detail node-08 uid-csharp-ref-02-constants csharp-reference-code-block"
+>
+  
+<header>
+  <span>Variables & Types</span>
+  <h3>Constants & readonly</h3>
+  
+</header>
+  <pre><code>const double TaxRate = 0.06625;
+const int MaxStudents = 10;
+
+class Example
+{
+    private readonly string id;
+
+    public Example(string id)
+    {
+        this.id = id;
+    }
+}</code></pre><p><code>const</code> represents a compile-time constant. <code>readonly</code> fields can be assigned when declared or during construction, then cannot be freely reassigned.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<div
+  id="node-csharp-ref-section-03"
+  class="project-display node-09 uid-csharp-ref-section-03 csharp-reference-section csharp-reference-section-03"
+>
+  <div class="project-preview"><p>C# uses familiar arithmetic, assignment, comparison, and Boolean operators. Strings provide properties and methods for common text operations.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Math • Comparison • Text</span>
+  <h2>03 — Operators & Strings</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-csharp-ref-03-math"
+  class="project-detail node-10 uid-csharp-ref-03-math csharp-reference-code-block"
+>
+  
+<header>
+  <span>Operators & Strings</span>
+  <h3>Arithmetic & Assignment</h3>
+  
+</header>
+  <pre><code>+   -   *   /   %
+
+score += 5;
+score -= 5;
+score *= 2;
+score /= 2;
+score++;
+score--;</code></pre><p>Integer division drops the fractional remainder: <code>10 / 3</code> is <code>3</code>. Decimal operands such as <code>10.0 / 3.0</code> produce a floating-point result.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-03-logic"
+  class="project-detail node-11 uid-csharp-ref-03-logic csharp-reference-code-block"
+>
+  
+<header>
+  <span>Operators & Strings</span>
+  <h3>Comparison & Boolean Logic</h3>
+  
+</header>
+  <pre><code>==   !=   &gt;   &lt;   &gt;=   &lt;=
+&amp;&amp;   // AND
+||   // OR
+!    // NOT
+
+if (age &gt;= 18 &amp;&amp; member)
+{
+    Console.WriteLine("Access granted");
+}</code></pre><p><code>=</code> assigns a value. <code>==</code> tests equality.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-03-string"
+  class="project-detail node-12 uid-csharp-ref-03-string csharp-reference-code-block"
+>
+  
+<header>
+  <span>Operators & Strings</span>
+  <h3>String Properties, Methods & Equality</h3>
+  
+</header>
+  <pre><code>string animal = "Great Blue Heron";
+
+Console.WriteLine(animal.Length);
+Console.WriteLine(animal.ToUpper());
+Console.WriteLine(animal.ToLower());
+Console.WriteLine(animal.Contains("Heron"));
+
+if (animal == "Great Blue Heron")
+{
+    Console.WriteLine("Match");
+}</code></pre><p><code>Length</code> is a property, so it has no parentheses. C# overloads <code>==</code> for strings to compare their text values.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<div
+  id="node-csharp-ref-section-04"
+  class="project-display node-13 uid-csharp-ref-section-04 csharp-reference-section csharp-reference-section-04"
+>
+  <div class="project-preview"><p>Arrays have fixed length. <code>List&lt;T&gt;</code> is a flexible generic collection. Conditions and loops control program execution.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Store • Decide • Repeat</span>
+  <h2>04 — Arrays, Lists & Control Flow</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-csharp-ref-04-arrays"
+  class="project-detail node-14 uid-csharp-ref-04-arrays csharp-reference-code-block"
+>
+  
+<header>
+  <span>Arrays, Lists & Control Flow</span>
+  <h3>Arrays & Lists</h3>
+  
+</header>
+  <pre><code>string[] birds = { "Heron", "Egret", "Pelican" };
+Console.WriteLine(birds[0]);
+Console.WriteLine(birds.Length);
+
+List&lt;string&gt; birdList = new()
+{
+    "Heron",
+    "Egret",
+    "Pelican"
+};
+
+birdList.Add("Osprey");
+Console.WriteLine(birdList[0]);
+Console.WriteLine(birdList.Count);</code></pre><p>Indexes begin at <code>0</code>. Arrays use <code>Length</code>. Lists use <code>Count</code>.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-04-if"
+  class="project-detail node-15 uid-csharp-ref-04-if csharp-reference-code-block"
+>
+  
+<header>
+  <span>Arrays, Lists & Control Flow</span>
+  <h3>if / else</h3>
+  
+</header>
+  <pre><code>if (paintings &gt; 10)
+{
+    Console.WriteLine("Large inventory");
+}
+else if (paintings &gt; 5)
+{
+    Console.WriteLine("Medium inventory");
+}
+else
+{
+    Console.WriteLine("Low inventory");
+}</code></pre>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-04-loops"
+  class="project-detail node-16 uid-csharp-ref-04-loops csharp-reference-code-block"
+>
+  
+<header>
+  <span>Arrays, Lists & Control Flow</span>
+  <h3>for, foreach & while</h3>
+  
+</header>
+  <pre><code>for (int i = 0; i &lt; 5; i++)
+{
+    Console.WriteLine(i);
+}
+
+foreach (string bird in birds)
+{
+    Console.WriteLine(bird);
+}
+
+int count = 0;
+while (count &lt; 5)
+{
+    Console.WriteLine(count);
+    count++;
+}</code></pre><p><code>foreach</code> is especially common for iterating arrays and collections.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-04-switch"
+  class="project-detail node-17 uid-csharp-ref-04-switch csharp-reference-code-block"
+>
+  
+<header>
+  <span>Arrays, Lists & Control Flow</span>
+  <h3>switch</h3>
+  
+</header>
+  <pre><code>switch (status)
+{
+    case "available":
+        Console.WriteLine("For sale");
+        break;
+    case "sold":
+        Console.WriteLine("Sold");
+        break;
+    default:
+        Console.WriteLine("Unknown");
+        break;
+}
+
+string message = status switch
+{
+    "available" =&gt; "For sale",
+    "sold" =&gt; "Sold",
+    _ =&gt; "Unknown"
+};</code></pre><p>The second form is a switch expression. <code>_</code> acts as the fallback pattern.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<div
+  id="node-csharp-ref-section-05"
+  class="project-display node-18 uid-csharp-ref-section-05 csharp-reference-section csharp-reference-section-05"
+>
+  <div class="project-preview"><p>Methods declare a return type and typed parameters. C# supports explicit casts, conversion helpers, parsing, and safe parsing.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Return Type • Parameters • Casting</span>
+  <h2>05 — Methods & Conversion</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-csharp-ref-05-methods"
+  class="project-detail node-19 uid-csharp-ref-05-methods csharp-reference-code-block"
+>
+  
+<header>
+  <span>Methods & Conversion</span>
+  <h3>Methods, void & Arguments</h3>
+  
+</header>
+  <pre><code>static int Add(int a, int b)
+{
+    return a + b;
+}
+
+static void Greet(string name)
+{
+    Console.WriteLine($"Hello {name}");
+}
+
+int answer = Add(5, 10);
+Greet("Susan");</code></pre><p>Pattern: <code>returnType MethodName(parameters)</code>. <code>void</code> means no value is returned. Values supplied during the call are arguments.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-05-conversion"
+  class="project-detail node-20 uid-csharp-ref-05-conversion csharp-reference-code-block"
+>
+  
+<header>
+  <span>Methods & Conversion</span>
+  <h3>Casting, Convert, Parse & TryParse</h3>
+  
+</header>
+  <pre><code>double price = 29.95;
+int wholePrice = (int)price;
+
+string value = "25";
+
+int a = Convert.ToInt32(value);
+int b = int.Parse(value);
+
+bool success = int.TryParse(value, out int number);</code></pre><p>An explicit cast such as <code>(int)</code> may discard information. <code>TryParse</code> is useful when input may be invalid because it reports success without requiring an exception for ordinary parse failure.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<div
+  id="node-csharp-ref-section-06"
+  class="project-display node-21 uid-csharp-ref-section-06 csharp-reference-section csharp-reference-section-06"
+>
+  <div class="project-preview"><p>Classes define types. C# commonly exposes data through properties rather than public fields. Constructors and object initializers provide convenient ways to create objects.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Create Your Own Types</span>
+  <h2>06 — Classes, Properties & Objects</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-csharp-ref-06-properties"
+  class="project-detail node-22 uid-csharp-ref-06-properties csharp-reference-code-block"
+>
+  
+<header>
+  <span>Classes, Properties & Objects</span>
+  <h3>Class, Properties & Object</h3>
+  
+</header>
+  <pre><code>class Painting
+{
+    public string Title { get; set; }
+    public decimal Price { get; set; }
+    public bool Sold { get; set; }
+}
+
+Painting painting = new();
+painting.Title = "Blue Heron";
+painting.Price = 125.00M;
+painting.Sold = false;</code></pre><p><code>{ get; set; }</code> defines an automatically implemented property that can be read and changed.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-06-constructor"
+  class="project-detail node-23 uid-csharp-ref-06-constructor csharp-reference-code-block"
+>
+  
+<header>
+  <span>Classes, Properties & Objects</span>
+  <h3>Constructors & Object Initializers</h3>
+  
+</header>
+  <pre><code>class Painting
+{
+    public string Title { get; set; }
+    public decimal Price { get; set; }
+
+    public Painting(string title, decimal price)
+    {
+        Title = title;
+        Price = price;
+    }
+}
+
+Painting first = new Painting("Blue Heron", 125.00M);
+
+// Object initializer style
+Painting second = new()
+{
+    Title = "Egret",
+    Price = 95.00M
+};</code></pre>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-06-access"
+  class="project-detail node-24 uid-csharp-ref-06-access csharp-reference-code-block"
+>
+  
+<header>
+  <span>Classes, Properties & Objects</span>
+  <h3>Access Modifiers</h3>
+  
+</header>
+  <pre><code>public class Painting
+{
+    private decimal price;
+    protected string category;
+    internal bool IsLoaded;
+}</code></pre><p><code>public</code> = broadly accessible. <code>private</code> = within the containing type. <code>protected</code> = containing type and derived types. <code>internal</code> = within the same assembly.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<div
+  id="node-csharp-ref-section-07"
+  class="project-display node-25 uid-csharp-ref-section-07 csharp-reference-section csharp-reference-section-07"
+>
+  <div class="project-preview"><p>Modern C# provides nullable annotations and concise null-handling operators. Standard naming conventions make C# code visually distinctive.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Fast Recall</span>
+  <h2>07 — Nulls, Conventions & Memory Card</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-csharp-ref-07-null"
+  class="project-detail node-26 uid-csharp-ref-07-null csharp-reference-code-block"
+>
+  
+<header>
+  <span>Nulls, Conventions & Memory Card</span>
+  <h3>Nullable References & Null Operators</h3>
+  
+</header>
+  <pre><code>string? name = null;
+
+if (name != null)
+{
+    Console.WriteLine(name.Length);
+}
+
+Console.WriteLine(name?.Length);
+
+string displayName = name ?? "Unknown";</code></pre><p><code>?</code> can mark a reference as nullable. <code>?.</code> performs null-conditional access. <code>??</code> supplies a fallback when the left side is null.</p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-07-comments"
+  class="project-detail node-27 uid-csharp-ref-07-comments csharp-reference-code-block"
+>
+  
+<header>
+  <span>Nulls, Conventions & Memory Card</span>
+  <h3>Comments & Naming</h3>
+  
+</header>
+  <pre><code>// single-line comment
+
+/*
+   multi-line comment
+*/
+
+/// &lt;summary&gt;
+/// XML documentation comment
+/// &lt;/summary&gt;
+
+int paintingCount;              // local: camelCase
+void CalculatePrice() { }       // method: PascalCase
+class StudentRecord { }         // class: PascalCase
+public string Title { get; set; } // property: PascalCase</code></pre>
+  <div class="project-command-list">
+
+  </div>
+</section>
+<section
+  id="node-csharp-ref-07-memory"
+  class="project-detail node-28 uid-csharp-ref-07-memory csharp-reference-code-block"
+>
+  
+<header>
+  <span>Nulls, Conventions & Memory Card</span>
+  <h3>Core Memory Card</h3>
+  
+</header>
+  <pre><code>// VARIABLES
+int count = 10;
+decimal price = 12.50M;
+bool active = true;
+char grade = 'A';
+string name = "Susan";
+var quantity = 5;
+
+// PRINT + INTERPOLATION
+Console.WriteLine(name);
+Console.WriteLine($"Hello {name}");
+
+// CONDITION
+if (count &gt; 5)
+{
+    Console.WriteLine("Yes");
+}
+
+// ARRAY + FOREACH
+string[] birds = { "Heron", "Egret" };
+
+foreach (string bird in birds)
+{
+    Console.WriteLine(bird);
+}
+
+// LIST
+List&lt;string&gt; birdList = new();
+
+// METHOD
+static int Add(int a, int b)
+{
+    return a + b;
+}
+
+// PROPERTY
+public string Title { get; set; }
+
+// OBJECT
+Painting painting = new();</code></pre><p><strong>Five patterns:</strong> <code>TYPE name = value;</code> · <code>Console.WriteLine(...);</code> · <code>if (condition) { ... }</code> · <code>foreach (TYPE item in collection) { ... }</code> · <code>returnType MethodName(parameters) { ... }</code></p>
+  <div class="project-command-list">
+
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

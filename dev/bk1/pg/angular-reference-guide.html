@@ -1,0 +1,2831 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Angular Reference Guide — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>Angular Reference Guide</strong>
+    <p>Angular setup, syntax, CLI, components, routing, forms, HTTP, testing, and macOS reference.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/angular-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Angular
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Cross-Device Web Testing
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Node.js
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      TypeScript
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/java-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Java
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      C#
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/python-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Python
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      Angular Reference Guide
+    </h2>
+  </div>
+
+  <p>
+    
+
+    Angular setup, syntax, CLI, components, routing, forms, HTTP, testing, and macOS reference.
+  </p>
+</header>
+        
+<div class="project-nav-content"><strong>Quick jump:</strong></div>
+<nav
+  id="node-angular-nav"
+  class="project-doc-nav node-01 uid-angular-nav" aria-label="Section navigation"
+>
+<a
+  id="child-angular-nav-1"
+  class="child-01 uid-angular-nav-1"
+  href="pg/angular-reference-guide.html#node-angular-glance"
+>At a Glance</a>
+<a
+  id="child-angular-nav-2"
+  class="child-02 uid-angular-nav-2"
+  href="pg/angular-reference-guide.html#node-angular-install"
+>macOS Setup</a>
+<a
+  id="child-angular-nav-3"
+  class="child-03 uid-angular-nav-3"
+  href="pg/angular-reference-guide.html#node-angular-project"
+>Create Project</a>
+<a
+  id="child-angular-nav-4"
+  class="child-04 uid-angular-nav-4"
+  href="pg/angular-reference-guide.html#node-angular-cli"
+>CLI</a>
+<a
+  id="child-angular-nav-5"
+  class="child-05 uid-angular-nav-5"
+  href="pg/angular-reference-guide.html#node-angular-components"
+>Components</a>
+<a
+  id="child-angular-nav-6"
+  class="child-06 uid-angular-nav-6"
+  href="pg/angular-reference-guide.html#node-angular-templates"
+>Templates</a>
+<a
+  id="child-angular-nav-7"
+  class="child-07 uid-angular-nav-7"
+  href="pg/angular-reference-guide.html#node-angular-signals"
+>Signals</a>
+<a
+  id="child-angular-nav-8"
+  class="child-08 uid-angular-nav-8"
+  href="pg/angular-reference-guide.html#node-angular-routing"
+>Routing</a>
+<a
+  id="child-angular-nav-9"
+  class="child-09 uid-angular-nav-9"
+  href="pg/angular-reference-guide.html#node-angular-forms"
+>Forms</a>
+<a
+  id="child-angular-nav-10"
+  class="child-10 uid-angular-nav-10"
+  href="pg/angular-reference-guide.html#node-angular-http"
+>HTTP</a>
+<a
+  id="child-angular-nav-11"
+  class="child-11 uid-angular-nav-11"
+  href="pg/angular-reference-guide.html#node-angular-testing"
+>Testing</a>
+<a
+  id="child-angular-nav-12"
+  class="child-12 uid-angular-nav-12"
+  href="pg/angular-reference-guide.html#node-angular-docs"
+>Docs</a>
+</nav>
+
+<article class="project-doc">
+  <section
+  id="node-angular-glance"
+  class="project-detail node-02 uid-angular-glance"
+>
+  
+<header>
+  
+  <h3>Angular at a Glance</h3>
+  <p><strong>Angular</strong> is a TypeScript web application framework with components, templates, dependency injection, routing, forms, HTTP, reactive state, testing, and a first-party CLI.</p><p>This guide targets Angular 22.1-era standalone applications.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-angular-glance-version" class="child-01 uid-angular-glance-version">
+  
+<div class="project-command-title">
+  Current Major
+</div>
+  <p>Angular 22 is active. Current angular.dev pages are built with Angular <strong>22.1.4</strong>.</p>
+</div>
+<div id="child-angular-glance-node" class="child-02 uid-angular-glance-node">
+  
+<div class="project-command-title">
+  Node Compatibility
+</div>
+  <p>Angular 22 supports Node <code>^22.22.3</code>, <code>^24.15.0</code>, or <code>^26.0.0</code>. Node 24 LTS is a strong macOS baseline.</p>
+</div>
+<div id="child-angular-glance-ts" class="child-03 uid-angular-glance-ts">
+  
+<div class="project-command-title">
+  TypeScript
+</div>
+  <p>Angular 22 requires TypeScript <code>&gt;=6.0.0 &lt;6.1.0</code>.</p>
+</div>
+<div id="child-angular-glance-standalone" class="child-04 uid-angular-glance-standalone">
+  
+<div class="project-command-title">
+  Standalone-first
+</div>
+  <p>New components are standalone by default and import template dependencies directly.</p>
+</div>
+<div id="child-angular-glance-signals" class="child-05 uid-angular-glance-signals">
+  
+<div class="project-command-title">
+  Signals
+</div>
+  <p><code>signal()</code> stores state; <code>computed()</code> derives values.</p>
+</div>
+<div id="child-angular-glance-flow" class="child-06 uid-angular-glance-flow">
+  
+<div class="project-command-title">
+  Control Flow
+</div>
+  <p>Use <code>@if</code>, <code>@for</code>, and <code>@switch</code> in modern templates.</p>
+</div>
+<div id="child-angular-glance-zone" class="child-07 uid-angular-glance-zone">
+  
+<div class="project-command-title">
+  Zoneless
+</div>
+  <p>Zoneless change detection is the default in Angular 21+.</p>
+</div>
+<div id="child-angular-glance-test" class="child-08 uid-angular-glance-test">
+  
+<div class="project-command-title">
+  Testing
+</div>
+  <p>New CLI projects use Vitest. Run with <code>ng test</code>.</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-install"
+  class="project-doc-section node-03 uid-angular-install"
+>
+  
+<header>
+  
+  <h3>macOS Setup & Installation</h3>
+  <p>Use a Node version manager on a development Mac so projects can target supported Node versions cleanly.</p>
+</header>
+  <p>Columns: <strong>Purpose / Commands / Notes</strong>.</p>
+  <div class="project-command-list">
+<div id="child-angular-install-node" class="project-command child-01 uid-angular-install-node">
+  <div class="project-split-child-head">Node + npm</div>
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <p><strong>Purpose:</strong> Angular CLI runs on Node and npm.</p>
+  
+</div>
+<div class="project-split-cell">
+  <pre><code>nvm install 24\nnvm use 24\nnode -v\nnpm -v</code></pre>
+  
+</div>
+<div class="project-split-cell">
+  <p><strong>Notes:</strong> Node 24.15+ satisfies Angular 22. Use a project .nvmrc when a team standardizes on one Node major.</p>
+  
+</div>
+  </div>
+</div>
+<div id="child-angular-install-cli" class="project-command child-02 uid-angular-install-cli">
+  <div class="project-split-child-head">Angular CLI</div>
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <p><strong>Purpose:</strong> install the <code>ng</code> command.</p>
+  
+</div>
+<div class="project-split-cell">
+  <pre><code>npm install -g @angular/cli\nng version\nwhich ng</code></pre>
+  
+</div>
+<div class="project-split-cell">
+  <p><strong>Notes:</strong> with nvm, routine sudo npm installs should not be necessary.</p>
+  
+</div>
+  </div>
+</div>
+<div id="child-angular-install-tools" class="project-command child-03 uid-angular-install-tools">
+  <div class="project-split-child-head">Editor Tooling</div>
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <p><strong>Purpose:</strong> completion, diagnostics, navigation, and refactoring.</p>
+  
+</div>
+<div class="project-split-cell">
+  <ul><li>VS Code or WebStorm</li><li>Angular Language Service</li><li>Browser DevTools</li></ul>
+  
+</div>
+<div class="project-split-cell">
+  <p>Use <code>ng completion</code> for CLI shell completion.</p>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-project"
+  class="project-doc-section node-04 uid-angular-project"
+>
+  
+<header>
+  
+  <h3>Create & Run a Project</h3>
+  <p><code>ng new</code> creates an Angular workspace and starter application.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-project-new" class="project-command child-01 uid-angular-project-new">
+  <div class="project-split-child-head">Create Workspace</div>
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <p>Create the workspace and initial application.</p>
+  
+</div>
+<div class="project-split-cell">
+  <pre><code>ng new my-app\ncd my-app</code></pre>
+  
+</div>
+  </div>
+</div>
+<div id="child-angular-project-options" class="project-command child-02 uid-angular-project-options">
+  <div class="project-split-child-head">Routing + SCSS</div>
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <p>Set common options explicitly.</p>
+  
+</div>
+<div class="project-split-cell">
+  <pre><code>ng new my-app --routing --style=scss</code></pre>
+  
+</div>
+  </div>
+</div>
+<div id="child-angular-project-serve" class="project-command child-03 uid-angular-project-serve">
+  <div class="project-split-child-head">Development Server</div>
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <p>Build, watch, serve, and reload during development.</p>
+  
+</div>
+<div class="project-split-cell">
+  <pre><code>ng serve\nng serve --open\nng serve -o</code></pre>
+  
+</div>
+  </div>
+</div>
+<div id="child-angular-project-url" class="project-command child-04 uid-angular-project-url">
+  <div class="project-split-child-head">Default URL</div>
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <p>Default CLI development address.</p>
+  
+</div>
+<div class="project-split-cell">
+  <pre><code>http://localhost:4200/</code></pre>
+  
+</div>
+  </div>
+</div>
+<div id="child-angular-project-port" class="project-command child-05 uid-angular-project-port">
+  <div class="project-split-child-head">Different Port</div>
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <p>Use another port when 4200 is occupied.</p>
+  
+</div>
+<div class="project-split-cell">
+  <pre><code>ng serve --port 4300</code></pre>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-cli"
+  class="project-detail node-05 uid-angular-cli"
+>
+  
+<header>
+  
+  <h3>Angular CLI Commands</h3>
+  <p>The CLI executable is <code>ng</code>. Common aliases include <code>g</code>, <code>s</code>, <code>b</code>, and <code>t</code>.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-cli-version" class="project-command child-01 uid-angular-cli-version is-collapsible">
+  <div class="project-command-summary">ng version</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-version" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-version" aria-label="Expand ng version"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-version" class="project-command-panel" hidden>
+    <p>Show framework, CLI, Node, npm, and platform versions.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng version</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-help" class="project-command child-02 uid-angular-cli-help is-collapsible">
+  <div class="project-command-summary">Help</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-help" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-help" aria-label="Expand Help"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-help" class="project-command-panel" hidden>
+    <p>Inspect commands and options.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng help
+ng generate component --help</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-new" class="project-command child-03 uid-angular-cli-new is-collapsible">
+  <div class="project-command-summary">New Workspace</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-new" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-new" aria-label="Expand New Workspace"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-new" class="project-command-panel" hidden>
+    <p>Create a workspace and starter app.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng new my-app</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-serve" class="project-command child-04 uid-angular-cli-serve is-collapsible">
+  <div class="project-command-summary">Serve</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-serve" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-serve" aria-label="Expand Serve"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-serve" class="project-command-panel" hidden>
+    <p>Development server and watcher.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng serve
+ng serve -o
+ng serve --port 4300</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-build" class="project-command child-05 uid-angular-cli-build is-collapsible">
+  <div class="project-command-summary">Build</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-build" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-build" aria-label="Expand Build"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-build" class="project-command-panel" hidden>
+    <p>Create build output.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng build
+ng build --configuration production</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-component" class="project-command child-06 uid-angular-cli-component is-collapsible">
+  <div class="project-command-summary">Generate Component</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-component" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-component" aria-label="Expand Generate Component"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-component" class="project-command-panel" hidden>
+    <p>Scaffold a component.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng generate component features/dashboard
+ng g c features/dashboard</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-service" class="project-command child-07 uid-angular-cli-service is-collapsible">
+  <div class="project-command-summary">Generate Service</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-service" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-service" aria-label="Expand Generate Service"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-service" class="project-command-panel" hidden>
+    <p>Scaffold a service.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng generate service core/api
+ng g s core/api</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-directive" class="project-command child-08 uid-angular-cli-directive is-collapsible">
+  <div class="project-command-summary">Generate Directive</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-directive" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-directive" aria-label="Expand Generate Directive"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-directive" class="project-command-panel" hidden>
+    <p>Scaffold reusable host behavior.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng g directive shared/autofocus</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-pipe" class="project-command child-09 uid-angular-cli-pipe is-collapsible">
+  <div class="project-command-summary">Generate Pipe</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-pipe" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-pipe" aria-label="Expand Generate Pipe"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-pipe" class="project-command-panel" hidden>
+    <p>Scaffold a template transformation.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng g pipe shared/initials</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-guard" class="project-command child-10 uid-angular-cli-guard is-collapsible">
+  <div class="project-command-summary">Generate Guard</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-guard" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-guard" aria-label="Expand Generate Guard"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-guard" class="project-command-panel" hidden>
+    <p>Scaffold a route guard.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng g guard auth/auth</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-interceptor" class="project-command child-11 uid-angular-cli-interceptor is-collapsible">
+  <div class="project-command-summary">Generate Interceptor</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-interceptor" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-interceptor" aria-label="Expand Generate Interceptor"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-interceptor" class="project-command-panel" hidden>
+    <p>Scaffold an HTTP interceptor.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng g interceptor core/auth</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-test" class="project-command child-12 uid-angular-cli-test is-collapsible">
+  <div class="project-command-summary">Test</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-test" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-test" aria-label="Expand Test"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-test" class="project-command-panel" hidden>
+    <p>Run unit tests.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng test</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-add" class="project-command child-13 uid-angular-cli-add is-collapsible">
+  <div class="project-command-summary">ng add</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-add" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-add" aria-label="Expand ng add"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-add" class="project-command-panel" hidden>
+    <p>Install and configure a package with Angular schematics.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng add @angular/material</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-update" class="project-command child-14 uid-angular-cli-update is-collapsible">
+  <div class="project-command-summary">Update</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-update" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-update" aria-label="Expand Update"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-update" class="project-command-panel" hidden>
+    <p>Show updates or run migrations.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng update
+ng update @angular/core @angular/cli</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-config" class="project-command child-15 uid-angular-cli-config is-collapsible">
+  <div class="project-command-summary">Config</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-config" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-config" aria-label="Expand Config"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-config" class="project-command-panel" hidden>
+    <p>Read or set workspace configuration.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng config
+ng config cli.analytics false</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-cli-completion" class="project-command child-16 uid-angular-cli-completion is-collapsible">
+  <div class="project-command-summary">Completion</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-cli-angular-cli-completion" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-cli-angular-cli-completion" aria-label="Expand Completion"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-cli-angular-cli-completion" class="project-command-panel" hidden>
+    <p>Set up shell completion.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng completion</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-workspace"
+  class="project-detail node-06 uid-angular-workspace"
+>
+  
+<header>
+  
+  <h3>Workspace & File Map</h3>
+  <p>Common files in a current standalone Angular application.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-angular-file-angularjson" class="child-01 uid-angular-file-angularjson">
+  
+<div class="project-command-title">
+  angular.json
+</div>
+  <p>Workspace build, serve, test, assets, styles, budgets, and target configuration.</p>
+</div>
+<div id="child-angular-file-package" class="child-02 uid-angular-file-package">
+  
+<div class="project-command-title">
+  package.json
+</div>
+  <p>npm dependencies and scripts. Angular packages use the <code>@angular/*</code> namespace.</p>
+</div>
+<div id="child-angular-file-tsconfig" class="child-03 uid-angular-file-tsconfig">
+  
+<div class="project-command-title">
+  tsconfig.json
+</div>
+  <p>TypeScript compiler configuration.</p>
+</div>
+<div id="child-angular-file-main" class="child-04 uid-angular-file-main">
+  
+<div class="project-command-title">
+  src/main.ts
+</div>
+  <p>Browser entry point. Standalone apps bootstrap with <code>bootstrapApplication()</code>.</p>
+</div>
+<div id="child-angular-file-config" class="child-05 uid-angular-file-config">
+  
+<div class="project-command-title">
+  app.config.ts
+</div>
+  <p>Application-level providers such as router and HTTP configuration.</p>
+</div>
+<div id="child-angular-file-routes" class="child-06 uid-angular-file-routes">
+  
+<div class="project-command-title">
+  app.routes.ts
+</div>
+  <p>Route definitions when routing is enabled.</p>
+</div>
+<div id="child-angular-file-app" class="child-07 uid-angular-file-app">
+  
+<div class="project-command-title">
+  app.ts
+</div>
+  <p>Current CLI root component naming. Older workspaces often use <code>app.component.ts</code>.</p>
+</div>
+<div id="child-angular-file-dist" class="child-08 uid-angular-file-dist">
+  
+<div class="project-command-title">
+  dist/
+</div>
+  <p>Generated build output. Do not hand-edit it.</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-components"
+  class="project-detail node-07 uid-angular-components"
+>
+  
+<header>
+  
+  <h3>Components & Directives</h3>
+  <p>Components define UI with a template. Directives package reusable behavior on existing hosts.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-component-min" class="project-command child-01 uid-angular-component-min is-collapsible">
+  <div class="project-command-summary">Minimal Component</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-components-angular-component-min" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-components-angular-component-min" aria-label="Expand Minimal Component"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-components-angular-component-min" class="project-command-panel" hidden>
+    <p>Component metadata defines selector and template.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>import { Component } from &quot;@angular/core&quot;;
+
+@Component({
+  selector: &quot;app-greeting&quot;,
+  template: `&lt;h2&gt;Hello Angular&lt;/h2&gt;`,
+})
+export class Greeting {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-component-files" class="project-command child-02 uid-angular-component-files is-collapsible">
+  <div class="project-command-summary">External Template / Style</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-components-angular-component-files" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-components-angular-component-files" aria-label="Expand External Template / Style"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-components-angular-component-files" class="project-command-panel" hidden>
+    <p>Split larger markup and styles into matching files.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Component({
+  selector: &quot;app-profile&quot;,
+  templateUrl: &quot;./profile.html&quot;,
+  styleUrl: &quot;./profile.css&quot;,
+})
+export class Profile {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-component-imports" class="project-command child-03 uid-angular-component-imports is-collapsible">
+  <div class="project-command-summary">Standalone Imports</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-components-angular-component-imports" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-components-angular-component-imports" aria-label="Expand Standalone Imports"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-components-angular-component-imports" class="project-command-panel" hidden>
+    <p>Import what the template uses.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>import { RouterLink } from &quot;@angular/router&quot;;
+
+@Component({
+  selector: &quot;app-nav&quot;,
+  imports: [RouterLink],
+  template: `&lt;a routerLink=&quot;/about&quot;&gt;About&lt;/a&gt;`,
+})
+export class Nav {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-component-child" class="project-command child-04 uid-angular-component-child is-collapsible">
+  <div class="project-command-summary">Use a Child Component</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-components-angular-component-child" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-components-angular-component-child" aria-label="Expand Use a Child Component"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-components-angular-component-child" class="project-command-panel" hidden>
+    <p>Import the child class and use its selector.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Component({
+  selector: &quot;app-page&quot;,
+  imports: [UserCard],
+  template: `&lt;app-user-card /&gt;`,
+})
+export class Page {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-component-directive" class="project-command child-05 uid-angular-component-directive is-collapsible">
+  <div class="project-command-summary">Attribute Directive</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-components-angular-component-directive" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-components-angular-component-directive" aria-label="Expand Attribute Directive"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-components-angular-component-directive" class="project-command-panel" hidden>
+    <p>Package reusable behavior on an existing host element.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Directive({
+  selector: &quot;[appHighlight]&quot;,
+  host: {
+    &quot;(mouseenter)&quot;: &quot;active.set(true)&quot;,
+    &quot;(mouseleave)&quot;: &quot;active.set(false)&quot;,
+    &quot;[class.highlight]&quot;: &quot;active()&quot;,
+  },
+})
+export class Highlight {
+  active = signal(false);
+}</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-templates"
+  class="project-detail node-08 uid-angular-templates"
+>
+  
+<header>
+  
+  <h3>Template Syntax</h3>
+  <p>Angular templates are HTML plus expression, binding, control-flow, variable, and pipe syntax.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-template-interp" class="project-command child-01 uid-angular-template-interp is-collapsible">
+  <div class="project-command-summary">Interpolation</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-interp" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-interp" aria-label="Expand Interpolation"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-interp" class="project-command-panel" hidden>
+    <p>Render an expression as text.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>{{ user.name }}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-template-property" class="project-command child-02 uid-angular-template-property is-collapsible">
+  <div class="project-command-summary">Property Binding</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-property" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-property" aria-label="Expand Property Binding"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-property" class="project-command-panel" hidden>
+    <p>Bind a DOM or component property.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>&lt;img [src]=&quot;photoUrl&quot; [alt]=&quot;name&quot;&gt;</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-template-event" class="project-command child-03 uid-angular-template-event is-collapsible">
+  <div class="project-command-summary">Event Binding</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-event" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-event" aria-label="Expand Event Binding"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-event" class="project-command-panel" hidden>
+    <p>Listen for a DOM event or component output.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>&lt;button (click)=&quot;save()&quot;&gt;Save&lt;/button&gt;
+&lt;button (click)=&quot;select($event)&quot;&gt;Select&lt;/button&gt;</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-template-class" class="project-command child-04 uid-angular-template-class is-collapsible">
+  <div class="project-command-summary">Class / Style Binding</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-class" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-class" aria-label="Expand Class / Style Binding"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-class" class="project-command-panel" hidden>
+    <p>Bind classes and styles directly.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>&lt;div [class.active]=&quot;isActive&quot; [style.width.px]=&quot;width&quot;&gt;&lt;/div&gt;</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-template-if" class="project-command child-05 uid-angular-template-if is-collapsible">
+  <div class="project-command-summary">@if</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-if" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-if" aria-label="Expand @if"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-if" class="project-command-panel" hidden>
+    <p>Built-in conditional rendering.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@if (user()) {
+  &lt;p&gt;Hello {{ user()!.name }}&lt;/p&gt;
+} @else {
+  &lt;p&gt;Please sign in.&lt;/p&gt;
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-template-for" class="project-command child-06 uid-angular-template-for is-collapsible">
+  <div class="project-command-summary">@for</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-for" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-for" aria-label="Expand @for"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-for" class="project-command-panel" hidden>
+    <p>Repeat values and track stable identity.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@for (item of items(); track item.id) {
+  &lt;li&gt;{{ item.name }}&lt;/li&gt;
+} @empty {
+  &lt;li&gt;No items&lt;/li&gt;
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-template-switch" class="project-command child-07 uid-angular-template-switch is-collapsible">
+  <div class="project-command-summary">@switch</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-switch" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-switch" aria-label="Expand @switch"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-switch" class="project-command-panel" hidden>
+    <p>Choose among cases; no fallthrough.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@switch (role()) {
+  @case (&quot;admin&quot;) { &lt;app-admin /&gt; }
+  @case (&quot;editor&quot;) { &lt;app-editor /&gt; }
+  @default { &lt;app-viewer /&gt; }
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-template-pipe" class="project-command child-08 uid-angular-template-pipe is-collapsible">
+  <div class="project-command-summary">Pipes</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-templates-angular-template-pipe" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-templates-angular-template-pipe" aria-label="Expand Pipes"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-templates-angular-template-pipe" class="project-command-panel" hidden>
+    <p>Transform values for display. Import standalone pipes used by the template.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>{{ total | currency }}
+{{ createdAt | date:&quot;medium&quot; }}</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-signals"
+  class="project-detail node-09 uid-angular-signals"
+>
+  
+<header>
+  
+  <h3>Signals & Reactive State</h3>
+  <p>Signals are synchronous reactive primitives. Read a signal by calling it as a function.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-signal-create" class="project-command child-01 uid-angular-signal-create is-collapsible">
+  <div class="project-command-summary">signal()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-signals-angular-signal-create" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-signals-angular-signal-create" aria-label="Expand signal()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-signals-angular-signal-create" class="project-command-panel" hidden>
+    <p>Create writable reactive state and read it by calling the signal.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>count = signal(0);
+console.log(this.count());</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-signal-set" class="project-command child-02 uid-angular-signal-set is-collapsible">
+  <div class="project-command-summary">set()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-signals-angular-signal-set" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-signals-angular-signal-set" aria-label="Expand set()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-signals-angular-signal-set" class="project-command-panel" hidden>
+    <p>Replace a writable signal value.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>this.count.set(5);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-signal-update" class="project-command child-03 uid-angular-signal-update is-collapsible">
+  <div class="project-command-summary">update()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-signals-angular-signal-update" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-signals-angular-signal-update" aria-label="Expand update()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-signals-angular-signal-update" class="project-command-panel" hidden>
+    <p>Calculate the next value from the previous value.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>this.count.update(value =&gt; value + 1);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-signal-computed" class="project-command child-04 uid-angular-signal-computed is-collapsible">
+  <div class="project-command-summary">computed()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-signals-angular-signal-computed" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-signals-angular-signal-computed" aria-label="Expand computed()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-signals-angular-signal-computed" class="project-command-panel" hidden>
+    <p>Create read-only memoized derived state.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>first = signal(&quot;Susan&quot;);
+last = signal(&quot;Nicole&quot;);
+fullName = computed(() =&gt; `${this.first()} ${this.last()}`);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-signal-effect" class="project-command child-05 uid-angular-signal-effect is-collapsible">
+  <div class="project-command-summary">effect()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-signals-angular-signal-effect" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-signals-angular-signal-effect" aria-label="Expand effect()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-signals-angular-signal-effect" class="project-command-panel" hidden>
+    <p>Use effects for appropriate imperative side effects. Prefer <code>computed()</code> for derived state.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>logCount = effect(() =&gt; {
+  console.log(this.count());
+});</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-io"
+  class="project-detail node-10 uid-angular-io"
+>
+  
+<header>
+  
+  <h3>Inputs & Outputs</h3>
+  <p>Inputs pass data into components. Outputs emit custom events to consumers.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-io-input" class="project-command child-01 uid-angular-io-input is-collapsible">
+  <div class="project-command-summary">input()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-io-angular-io-input" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-io-angular-io-input" aria-label="Expand input()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-io-angular-io-input" class="project-command-panel" hidden>
+    <p>Declare an optional signal-based input.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>name = input(&quot;Guest&quot;);
+// template reads: {{ name() }}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-io-required" class="project-command child-02 uid-angular-io-required is-collapsible">
+  <div class="project-command-summary">input.required()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-io-angular-io-required" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-io-angular-io-required" aria-label="Expand input.required()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-io-angular-io-required" class="project-command-panel" hidden>
+    <p>Require the consumer to supply a value.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>user = input.required&lt;User&gt;();
+
+&lt;app-user-card [user]=&quot;selectedUser()&quot; /&gt;</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-io-output" class="project-command child-03 uid-angular-io-output is-collapsible">
+  <div class="project-command-summary">output()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-io-angular-io-output" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-io-angular-io-output" aria-label="Expand output()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-io-angular-io-output" class="project-command-panel" hidden>
+    <p>Declare and emit a typed custom event.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>saved = output&lt;User&gt;();
+
+save(user: User) {
+  this.saved.emit(user);
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-io-listen" class="project-command child-04 uid-angular-io-listen is-collapsible">
+  <div class="project-command-summary">Listen to Output</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-io-angular-io-listen" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-io-angular-io-listen" aria-label="Expand Listen to Output"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-io-angular-io-listen" class="project-command-panel" hidden>
+    <p>The parent receives emitted data as <code>$event</code>.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>&lt;app-user-form (saved)=&quot;handleSaved($event)&quot; /&gt;</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-io-old" class="project-command child-05 uid-angular-io-old is-collapsible">
+  <div class="project-command-summary">Older Compatibility APIs</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-io-angular-io-old" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-io-angular-io-old" aria-label="Expand Older Compatibility APIs"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-io-angular-io-old" class="project-command-panel" hidden>
+    <p><code>@Input()</code>, <code>@Output()</code>, and <code>EventEmitter</code> remain supported in existing projects.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Input() user!: User;
+@Output() saved = new EventEmitter&lt;User&gt;();</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-di"
+  class="project-detail node-11 uid-angular-di"
+>
+  
+<header>
+  
+  <h3>Services & Dependency Injection</h3>
+  <p>Dependency injection lets classes request collaborators rather than constructing them directly.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-di-service" class="project-command child-01 uid-angular-di-service is-collapsible">
+  <div class="project-command-summary">Root Service</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-di-angular-di-service" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-di-angular-di-service" aria-label="Expand Root Service"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-di-angular-di-service" class="project-command-panel" hidden>
+    <p><code>providedIn: root</code> is the standard global singleton pattern.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Injectable({ providedIn: &quot;root&quot; })
+export class UserService {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-di-inject" class="project-command child-02 uid-angular-di-inject is-collapsible">
+  <div class="project-command-summary">inject()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-di-angular-di-inject" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-di-angular-di-inject" aria-label="Expand inject()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-di-angular-di-inject" class="project-command-panel" hidden>
+    <p>Current Angular style guidance prefers <code>inject()</code> for new code.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>private users = inject(UserService);
+private router = inject(Router);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-di-component" class="project-command child-03 uid-angular-di-component is-collapsible">
+  <div class="project-command-summary">Component Provider</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-di-angular-di-component" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-di-angular-di-component" aria-label="Expand Component Provider"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-di-angular-di-component" class="project-command-panel" hidden>
+    <p>Create a service instance scoped to the component subtree.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Component({
+  providers: [DraftService],
+  template: `...`,
+})
+export class Editor {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-di-token" class="project-command child-04 uid-angular-di-token is-collapsible">
+  <div class="project-command-summary">InjectionToken</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-di-angular-di-token" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-di-angular-di-token" aria-label="Expand InjectionToken"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-di-angular-di-token" class="project-command-panel" hidden>
+    <p>Provide typed configuration or another non-class dependency.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>export const API_URL = new InjectionToken&lt;string&gt;(&quot;API_URL&quot;);
+
+providers: [{ provide: API_URL, useValue: &quot;/api&quot; }]</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-routing"
+  class="project-detail node-12 uid-angular-routing"
+>
+  
+<header>
+  
+  <h3>Router Quick Reference</h3>
+  <p>Routes map URLs to components. Angular uses first-match wins.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-route-array" class="project-command child-01 uid-angular-route-array is-collapsible">
+  <div class="project-command-summary">Define Routes</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-routing-angular-route-array" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-routing-angular-route-array" aria-label="Expand Define Routes"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-routing-angular-route-array" class="project-command-panel" hidden>
+    <p>CLI routing projects normally use <code>src/app/app.routes.ts</code>.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>export const routes: Routes = [
+  { path: &quot;&quot;, component: Home, title: &quot;Home&quot; },
+  { path: &quot;users/:id&quot;, component: UserDetail },
+  { path: &quot;**&quot;, component: NotFound },
+];</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-route-provider" class="project-command child-02 uid-angular-route-provider is-collapsible">
+  <div class="project-command-summary">provideRouter()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-routing-angular-route-provider" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-routing-angular-route-provider" aria-label="Expand provideRouter()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-routing-angular-route-provider" class="project-command-panel" hidden>
+    <p>Add the router through application providers.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>export const appConfig = {
+  providers: [provideRouter(routes)],
+};</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-route-outlet" class="project-command child-03 uid-angular-route-outlet is-collapsible">
+  <div class="project-command-summary">RouterOutlet</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-routing-angular-route-outlet" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-routing-angular-route-outlet" aria-label="Expand RouterOutlet"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-routing-angular-route-outlet" class="project-command-panel" hidden>
+    <p>The active route component renders at the outlet.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Component({
+  imports: [RouterOutlet],
+  template: `&lt;router-outlet /&gt;`,
+})
+export class App {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-route-link" class="project-command child-04 uid-angular-route-link is-collapsible">
+  <div class="project-command-summary">RouterLink</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-routing-angular-route-link" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-routing-angular-route-link" aria-label="Expand RouterLink"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-routing-angular-route-link" class="project-command-panel" hidden>
+    <p>Use Angular client-side navigation for internal links.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@Component({
+  imports: [RouterLink],
+  template: `&lt;a routerLink=&quot;/users&quot;&gt;Users&lt;/a&gt;`,
+})
+export class Nav {}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-route-lazy" class="project-command child-05 uid-angular-route-lazy is-collapsible">
+  <div class="project-command-summary">Lazy Route</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-routing-angular-route-lazy" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-routing-angular-route-lazy" aria-label="Expand Lazy Route"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-routing-angular-route-lazy" class="project-command-panel" hidden>
+    <p>Use dynamic import to split non-primary route code.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>{
+  path: &quot;settings&quot;,
+  loadComponent: () =&gt; import(&quot;./settings/settings&quot;).then(m =&gt; m.Settings)
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-route-nav" class="project-command child-06 uid-angular-route-nav is-collapsible">
+  <div class="project-command-summary">Programmatic Navigation</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-routing-angular-route-nav" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-routing-angular-route-nav" aria-label="Expand Programmatic Navigation"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-routing-angular-route-nav" class="project-command-panel" hidden>
+    <p>Inject Router for navigation triggered by application logic.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>private router = inject(Router);
+
+openUser(id: string) {
+  this.router.navigate([&quot;/users&quot;, id]);
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-route-guard" class="project-command child-07 uid-angular-route-guard is-collapsible">
+  <div class="project-command-summary">Guard</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-routing-angular-route-guard" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-routing-angular-route-guard" aria-label="Expand Guard"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-routing-angular-route-guard" class="project-command-panel" hidden>
+    <p>Client guards control navigation but must not be the only authorization layer.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>export const authGuard: CanActivateFn = () =&gt; {
+  const auth = inject(AuthService);
+  return auth.isLoggedIn() ? true : inject(Router).createUrlTree([&quot;/login&quot;]);
+};</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-forms"
+  class="project-detail node-13 uid-angular-forms"
+>
+  
+<header>
+  
+  <h3>Forms</h3>
+  <p>Reactive forms remain a strong stable default. Template-driven and Signal Forms are also available.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-form-control" class="project-command child-01 uid-angular-form-control is-collapsible">
+  <div class="project-command-summary">Reactive FormControl</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-forms-angular-form-control" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-forms-angular-form-control" aria-label="Expand Reactive FormControl"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-forms-angular-form-control" class="project-command-panel" hidden>
+    <p>Model-driven explicit form state.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>imports: [ReactiveFormsModule]
+
+name = new FormControl(&quot;&quot;, { nonNullable: true });
+
+&lt;input [formControl]=&quot;name&quot;&gt;</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-form-group" class="project-command child-02 uid-angular-form-group is-collapsible">
+  <div class="project-command-summary">FormGroup</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-forms-angular-form-group" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-forms-angular-form-group" aria-label="Expand FormGroup"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-forms-angular-form-group" class="project-command-panel" hidden>
+    <p>Group related controls.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>profile = new FormGroup({
+  name: new FormControl(&quot;&quot;, { nonNullable: true }),
+  email: new FormControl(&quot;&quot;, { nonNullable: true }),
+});</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-form-validator" class="project-command child-03 uid-angular-form-validator is-collapsible">
+  <div class="project-command-summary">Validators</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-forms-angular-form-validator" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-forms-angular-form-validator" aria-label="Expand Validators"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-forms-angular-form-validator" class="project-command-panel" hidden>
+    <p>Attach validation rules to controls.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>email = new FormControl(&quot;&quot;, {
+  nonNullable: true,
+  validators: [Validators.required, Validators.email],
+});</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-form-ngmodel" class="project-command child-04 uid-angular-form-ngmodel is-collapsible">
+  <div class="project-command-summary">Template-driven / ngModel</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-forms-angular-form-ngmodel" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-forms-angular-form-ngmodel" aria-label="Expand Template-driven / ngModel"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-forms-angular-form-ngmodel" class="project-command-panel" hidden>
+    <p>Useful for smaller forms. Import <code>FormsModule</code>.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>&lt;input [(ngModel)]=&quot;name&quot; name=&quot;name&quot;&gt;</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-form-signal" class="project-command child-05 uid-angular-form-signal is-collapsible">
+  <div class="project-command-summary">Signal Forms</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-forms-angular-form-signal" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-forms-angular-form-signal" aria-label="Expand Signal Forms"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-forms-angular-form-signal" class="project-command-panel" hidden>
+    <p>Angular 21+ signal-based field trees and validation. Evaluate current stability requirements before replacing established reactive forms.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>import { form, FormField } from &quot;@angular/forms/signals&quot;;
+
+model = signal({ email: &quot;&quot; });
+loginForm = form(this.model);</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-http"
+  class="project-detail node-14 uid-angular-http"
+>
+  
+<header>
+  
+  <h3>HTTP & API Calls</h3>
+  <p><code>HttpClient</code> is injectable by default in Angular 21+. Current Angular uses Fetch by default unless configured for XHR.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-http-inject" class="project-command child-01 uid-angular-http-inject is-collapsible">
+  <div class="project-command-summary">Inject HttpClient</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-http-angular-http-inject" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-http-angular-http-inject" aria-label="Expand Inject HttpClient"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-http-angular-http-inject" class="project-command-panel" hidden>
+    <p>Prefer a focused API or data service.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>private http = inject(HttpClient);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-http-get" class="project-command child-02 uid-angular-http-get is-collapsible">
+  <div class="project-command-summary">GET</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-http-angular-http-get" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-http-angular-http-get" aria-label="Expand GET"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-http-angular-http-get" class="project-command-panel" hidden>
+    <p>HttpClient methods return RxJS Observables.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>getUsers() {
+  return this.http.get&lt;User[]&gt;(&quot;/api/users&quot;);
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-http-params" class="project-command child-03 uid-angular-http-params is-collapsible">
+  <div class="project-command-summary">Query Parameters</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-http-angular-http-params" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-http-angular-http-params" aria-label="Expand Query Parameters"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-http-angular-http-params" class="project-command-panel" hidden>
+    <p>Pass query parameters through request options.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>return this.http.get&lt;User[]&gt;(&quot;/api/users&quot;, {
+  params: { q: term }
+});</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-http-post" class="project-command child-04 uid-angular-http-post is-collapsible">
+  <div class="project-command-summary">POST</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-http-angular-http-post" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-http-angular-http-post" aria-label="Expand POST"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-http-angular-http-post" class="project-command-panel" hidden>
+    <p>Send a typed request body.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>return this.http.post&lt;User&gt;(&quot;/api/users&quot;, user);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-http-methods" class="project-command child-05 uid-angular-http-methods is-collapsible">
+  <div class="project-command-summary">PUT / PATCH / DELETE</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-http-angular-http-methods" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-http-angular-http-methods" aria-label="Expand PUT / PATCH / DELETE"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-http-angular-http-methods" class="project-command-panel" hidden>
+    <p>Match the server API contract.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>this.http.put&lt;User&gt;(&quot;/api/users/42&quot;, user);
+this.http.patch&lt;User&gt;(&quot;/api/users/42&quot;, changes);
+this.http.delete&lt;void&gt;(&quot;/api/users/42&quot;);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-http-config" class="project-command child-06 uid-angular-http-config is-collapsible">
+  <div class="project-command-summary">Configure HttpClient</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-http-angular-http-config" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-http-angular-http-config" aria-label="Expand Configure HttpClient"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-http-angular-http-config" class="project-command-panel" hidden>
+    <p>Use <code>provideHttpClient()</code> for interceptors or other features.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>providers: [
+  provideHttpClient(withInterceptors([authInterceptor]))
+]</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-http-interceptor" class="project-command child-07 uid-angular-http-interceptor is-collapsible">
+  <div class="project-command-summary">Functional Interceptor</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-http-angular-http-interceptor" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-http-angular-http-interceptor" aria-label="Expand Functional Interceptor"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-http-angular-http-interceptor" class="project-command-panel" hidden>
+    <p>Clone immutable requests when adding headers.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>export const authInterceptor: HttpInterceptorFn = (req, next) =&gt; {
+  const token = inject(AuthService).token();
+  return next(req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }));
+};</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-rxjs"
+  class="project-detail node-15 uid-angular-rxjs"
+>
+  
+<header>
+  
+  <h3>RxJS Essentials</h3>
+  <p>Signals fit synchronous state; RxJS remains useful for asynchronous streams and HTTP pipelines.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-rx-observable" class="project-command child-01 uid-angular-rx-observable is-collapsible">
+  <div class="project-command-summary">Observable</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-observable" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-observable" aria-label="Expand Observable"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-observable" class="project-command-panel" hidden>
+    <p>A lazy stream that may emit values over time.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>users$ = this.http.get&lt;User[]&gt;(&quot;/api/users&quot;);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-rx-async" class="project-command child-02 uid-angular-rx-async is-collapsible">
+  <div class="project-command-summary">AsyncPipe</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-async" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-async" aria-label="Expand AsyncPipe"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-async" class="project-command-panel" hidden>
+    <p>Template subscription with Angular-managed teardown.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>@for (user of users$ | async; track user.id) {
+  &lt;p&gt;{{ user.name }}&lt;/p&gt;
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-rx-map" class="project-command child-03 uid-angular-rx-map is-collapsible">
+  <div class="project-command-summary">map()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-map" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-map" aria-label="Expand map()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-map" class="project-command-panel" hidden>
+    <p>Transform emitted values.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>activeUsers$ = this.users$.pipe(
+  map(users =&gt; users.filter(user =&gt; user.active))
+);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-rx-switch" class="project-command child-04 uid-angular-rx-switch is-collapsible">
+  <div class="project-command-summary">switchMap()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-switch" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-switch" aria-label="Expand switchMap()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-switch" class="project-command-panel" hidden>
+    <p>Switch to a new inner stream and cancel the previous one.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>results$ = this.query$.pipe(
+  debounceTime(250),
+  distinctUntilChanged(),
+  switchMap(q =&gt; this.http.get&lt;SearchResult[]&gt;(&quot;/api/search&quot;, { params: { q } }))
+);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-rx-signal" class="project-command child-05 uid-angular-rx-signal is-collapsible">
+  <div class="project-command-summary">toSignal()</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-signal" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-signal" aria-label="Expand toSignal()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-rxjs-angular-rx-signal" class="project-command-panel" hidden>
+    <p>Expose the latest Observable value as a signal.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>users = toSignal(this.users$, { initialValue: [] });</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-lifecycle"
+  class="project-detail node-16 uid-angular-lifecycle"
+>
+  
+<header>
+  
+  <h3>Lifecycle & Cleanup</h3>
+  <p>Use lifecycle hooks when timing matters and <code>DestroyRef</code> for explicit cleanup close to setup code.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-life-init" class="project-command child-01 uid-angular-life-init is-collapsible">
+  <div class="project-command-summary">ngOnInit</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-init" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-init" aria-label="Expand ngOnInit"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-init" class="project-command-panel" hidden>
+    <p>Runs once after Angular initializes component inputs.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ngOnInit() {
+  this.load();
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-life-changes" class="project-command child-02 uid-angular-life-changes is-collapsible">
+  <div class="project-command-summary">ngOnChanges</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-changes" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-changes" aria-label="Expand ngOnChanges"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-changes" class="project-command-panel" hidden>
+    <p>Runs when component inputs change.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ngOnChanges(changes: SimpleChanges) {
+  console.log(changes);
+}</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-life-render" class="project-command child-03 uid-angular-life-render is-collapsible">
+  <div class="project-command-summary">afterNextRender</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-render" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-render" aria-label="Expand afterNextRender"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-render" class="project-command-panel" hidden>
+    <p>Run DOM-dependent work after the next application render.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>afterNextRender(() =&gt; {
+  // DOM-dependent work
+});</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-life-destroy" class="project-command child-04 uid-angular-life-destroy is-collapsible">
+  <div class="project-command-summary">DestroyRef</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-destroy" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-destroy" aria-label="Expand DestroyRef"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-lifecycle-angular-life-destroy" class="project-command-panel" hidden>
+    <p>Register cleanup close to setup code.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>private destroyRef = inject(DestroyRef);
+
+constructor() {
+  this.destroyRef.onDestroy(() =&gt; cleanup());
+}</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-testing"
+  class="project-detail node-17 uid-angular-testing"
+>
+  
+<header>
+  
+  <h3>Testing</h3>
+  <p>New CLI projects use Vitest by default. TestBed remains the Angular-aware testing utility.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-test-run" class="project-command child-01 uid-angular-test-run is-collapsible">
+  <div class="project-command-summary">Run Tests</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-testing-angular-test-run" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-testing-angular-test-run" aria-label="Expand Run Tests"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-testing-angular-test-run" class="project-command-panel" hidden>
+    <p>Run the workspace test target.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng test</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-test-unit" class="project-command child-02 uid-angular-test-unit is-collapsible">
+  <div class="project-command-summary">Simple Unit Test</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-testing-angular-test-unit" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-testing-angular-test-unit" aria-label="Expand Simple Unit Test"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-testing-angular-test-unit" class="project-command-panel" hidden>
+    <p>Basic expectation syntax.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>describe(&quot;math&quot;, () =&gt; {
+  it(&quot;adds&quot;, () =&gt; {
+    expect(2 + 3).toBe(5);
+  });
+});</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-test-bed" class="project-command child-03 uid-angular-test-bed is-collapsible">
+  <div class="project-command-summary">TestBed Component</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-testing-angular-test-bed" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-testing-angular-test-bed" aria-label="Expand TestBed Component"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-testing-angular-test-bed" class="project-command-panel" hidden>
+    <p>Import a standalone component and create a fixture.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>await TestBed.configureTestingModule({
+  imports: [Profile],
+}).compileComponents();
+
+const fixture = TestBed.createComponent(Profile);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-test-dom" class="project-command child-04 uid-angular-test-dom is-collapsible">
+  <div class="project-command-summary">Rendered DOM</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-testing-angular-test-dom" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-testing-angular-test-dom" aria-label="Expand Rendered DOM"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-testing-angular-test-dom" class="project-command-panel" hidden>
+    <p>Wait for stability before asserting async rendering.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>const fixture = TestBed.createComponent(Profile);
+await fixture.whenStable();
+const el = fixture.nativeElement as HTMLElement;
+expect(el.querySelector(&quot;h1&quot;)?.textContent).toContain(&quot;Profile&quot;);</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-test-http" class="project-command child-05 uid-angular-test-http is-collapsible">
+  <div class="project-command-summary">HTTP Testing</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-testing-angular-test-http" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-testing-angular-test-http" aria-label="Expand HTTP Testing"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-testing-angular-test-http" class="project-command-panel" hidden>
+    <p>Mock the HTTP backend instead of calling a real service.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>TestBed.configureTestingModule({
+  providers: [provideHttpClient(), provideHttpClientTesting()],
+});
+
+const httpTesting = TestBed.inject(HttpTestingController);</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-build"
+  class="project-detail node-18 uid-angular-build"
+>
+  
+<header>
+  
+  <h3>Build, Update & Deploy</h3>
+  <p>Build optimized output for deployment; do not deploy the development server.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-build-prod" class="project-command child-01 uid-angular-build-prod is-collapsible">
+  <div class="project-command-summary">Production Build</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-build-angular-build-prod" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-build-angular-build-prod" aria-label="Expand Production Build"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-build-angular-build-prod" class="project-command-panel" hidden>
+    <p>Create optimized application output.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng build
+ng build --configuration production</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-build-dist" class="project-command child-02 uid-angular-build-dist is-collapsible">
+  <div class="project-command-summary">Inspect Output</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-build-angular-build-dist" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-build-angular-build-dist" aria-label="Expand Inspect Output"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-build-angular-build-dist" class="project-command-panel" hidden>
+    <p>Generated files normally live under <code>dist/</code>.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ls -la dist</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-build-update" class="project-command child-03 uid-angular-build-update is-collapsible">
+  <div class="project-command-summary">Check Updates</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-build-angular-build-update" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-build-angular-build-update" aria-label="Expand Check Updates"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-build-angular-build-update" class="project-command-panel" hidden>
+    <p>List Angular package updates and migrations.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng update</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-build-core" class="project-command child-04 uid-angular-build-core is-collapsible">
+  <div class="project-command-summary">Update Framework + CLI</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-build-angular-build-core" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-build-angular-build-core" aria-label="Expand Update Framework + CLI"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-build-angular-build-core" class="project-command-panel" hidden>
+    <p>Update Angular packages together and run migrations.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng update @angular/core @angular/cli</code></pre>
+</div>
+  </div>
+</div>
+<div id="child-angular-build-deploy" class="project-command child-05 uid-angular-build-deploy is-collapsible">
+  <div class="project-command-summary">ng deploy</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-build-angular-build-deploy" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-build-angular-build-deploy" aria-label="Expand ng deploy"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-build-angular-build-deploy" class="project-command-panel" hidden>
+    <p>Works after installing a deployment integration with a deploy builder.</p>
+    <div class="project-example">
+  <small>Example</small>
+  <pre><code>ng deploy</code></pre>
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-practices"
+  class="project-detail node-19 uid-angular-practices"
+>
+  
+<header>
+  
+  <h3>Modern Implementation Practices</h3>
+  <p>Current defaults for new Angular work plus compatibility guidance for existing projects.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-practice-standalone" class="project-command child-01 uid-angular-practice-standalone is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Standalone-first
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-standalone" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-standalone" aria-label="Expand Standalone-first"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-standalone" class="project-command-panel" hidden>
+    <p>Use standalone components and application providers for new work. Learn NgModules for maintenance and compatibility.</p>
+  </div>
+</div>
+<div id="child-angular-practice-inject" class="project-command child-02 uid-angular-practice-inject is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Prefer inject()
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-inject" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-inject" aria-label="Expand Prefer inject()"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-inject" class="project-command-panel" hidden>
+    <p>Current Angular style guidance prefers <code>inject()</code> for dependency injection in new code.</p>
+  </div>
+</div>
+<div id="child-angular-practice-signals" class="project-command child-03 uid-angular-practice-signals is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Signals for local state
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-signals" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-signals" aria-label="Expand Signals for local state"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-signals" class="project-command-panel" hidden>
+    <p>Use writable signals for local state and <code>computed()</code> for derived state.</p>
+  </div>
+</div>
+<div id="child-angular-practice-for" class="project-command child-04 uid-angular-practice-for is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Track @for items
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-for" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-for" aria-label="Expand Track @for items"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-for" class="project-command-panel" hidden>
+    <p>Track stable identity such as <code>track item.id</code> to minimize DOM replacement.</p>
+  </div>
+</div>
+<div id="child-angular-practice-components" class="project-command child-05 uid-angular-practice-components is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Keep components focused
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-components" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-components" aria-label="Expand Keep components focused"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-components" class="project-command-panel" hidden>
+    <p>Move reusable data and business behavior to services or plain TypeScript functions.</p>
+  </div>
+</div>
+<div id="child-angular-practice-lazy" class="project-command child-06 uid-angular-practice-lazy is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Lazy-load deliberately
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-lazy" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-lazy" aria-label="Expand Lazy-load deliberately"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-lazy" class="project-command-panel" hidden>
+    <p>Lazy-load routes when it improves initial load cost; measure before over-splitting.</p>
+  </div>
+</div>
+<div id="child-angular-practice-types" class="project-command child-07 uid-angular-practice-types is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Keep types strong
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-types" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-types" aria-label="Expand Keep types strong"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-types" class="project-command-panel" hidden>
+    <p>Use interfaces and types for API payloads, inputs, forms, and route data.</p>
+  </div>
+</div>
+<div id="child-angular-practice-security" class="project-command child-08 uid-angular-practice-security is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Respect security boundaries
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-security" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-security" aria-label="Expand Respect security boundaries"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-security" class="project-command-panel" hidden>
+    <p>Keep Angular current, do not build templates from user input, and be cautious with APIs that bypass sanitization.</p>
+  </div>
+</div>
+<div id="child-angular-practice-update" class="project-command child-09 uid-angular-practice-update is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Stay current
+</div></div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-angular-reference-guide-angular-practices-angular-practice-update" aria-expanded="false" aria-controls="panel-rec-angular-reference-guide-angular-practices-angular-practice-update" aria-label="Expand Stay current"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-angular-reference-guide-angular-practices-angular-practice-update" class="project-command-panel" hidden>
+    <p>Use <code>ng update</code>, release notes, and the Update Guide rather than skipping many major versions.</p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-troubleshoot"
+  class="project-detail node-20 uid-angular-troubleshoot"
+>
+  
+<header>
+  
+  <h3>Troubleshooting Fast Map</h3>
+  <p>Check runtime versions, imports, route order, and workspace context before reinstalling everything.</p>
+</header>
+  
+  <div class="project-meta">
+<div id="child-angular-trouble-ng" class="child-01 uid-angular-trouble-ng">
+  
+<div class="project-command-title">
+  ng not found
+</div>
+  <p>Check <code>which node</code>, <code>which npm</code>, and <code>npm prefix -g</code>. Install the CLI under the active nvm Node version.</p>
+</div>
+<div id="child-angular-trouble-node" class="child-02 uid-angular-trouble-node">
+  
+<div class="project-command-title">
+  Unsupported Node
+</div>
+  <p>Run <code>node -v</code> and <code>ng version</code>. Angular 22 needs Node 22.22.3+, 24.15+, or 26.x.</p>
+</div>
+<div id="child-angular-trouble-port" class="child-03 uid-angular-trouble-port">
+  
+<div class="project-command-title">
+  Port 4200 Used
+</div>
+  <p>Use <code>ng serve --port 4300</code>. On macOS inspect the owner with <code>lsof -i :4200</code>.</p>
+</div>
+<div id="child-angular-trouble-import" class="child-04 uid-angular-trouble-import">
+  
+<div class="project-command-title">
+  Unknown Element / Pipe
+</div>
+  <p>For standalone components, confirm the dependency appears in <code>imports</code>.</p>
+</div>
+<div id="child-angular-trouble-binding" class="child-05 uid-angular-trouble-binding">
+  
+<div class="project-command-title">
+  Cannot Bind Property
+</div>
+  <p>The component or directive input may not be imported, or the binding name may be wrong.</p>
+</div>
+<div id="child-angular-trouble-di" class="child-06 uid-angular-trouble-di">
+  
+<div class="project-command-title">
+  NullInjectorError
+</div>
+  <p>A requested dependency has no provider in the active injector hierarchy.</p>
+</div>
+<div id="child-angular-trouble-route" class="child-07 uid-angular-trouble-route">
+  
+<div class="project-command-title">
+  Route Never Reached
+</div>
+  <p>Router matching is first-match wins. Put specific routes first and <code>**</code> last.</p>
+</div>
+<div id="child-angular-trouble-cors" class="child-08 uid-angular-trouble-cors">
+  
+<div class="project-command-title">
+  CORS Error
+</div>
+  <p>CORS is a browser and server policy. Configure the backend or a development proxy.</p>
+</div>
+<div id="child-angular-trouble-view" class="child-09 uid-angular-trouble-view">
+  
+<div class="project-command-title">
+  View Not Updating
+</div>
+  <p>In zoneless Angular, state changes need an Angular-recognized notification path such as signals, input changes, or template events.</p>
+</div>
+<div id="child-angular-trouble-update" class="child-10 uid-angular-trouble-update">
+  
+<div class="project-command-title">
+  After an Update
+</div>
+  <p>Review migration output, reinstall from the lockfile, run <code>ng test</code>, then run <code>ng build</code>.</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-angular-docs"
+  class="project-detail node-21 uid-angular-docs"
+>
+  
+<header>
+  
+  <h3>Official Documentation & Downloads</h3>
+  <p>Use current official documentation whenever setup or API behavior is version-sensitive.</p>
+</header>
+  
+  <div class="project-command-list">
+<div id="child-angular-doc-home" class="project-command child-01 uid-angular-doc-home">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Angular Home
+</div>
+    <p>Current documentation, tutorials, guides, and APIs.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/" target="_blank" rel="noopener noreferrer" aria-label="Open Angular Home"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-install" class="project-command child-02 uid-angular-doc-install">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Installation
+</div>
+    <p>Node prerequisites, CLI installation, and first project.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/installation" target="_blank" rel="noopener noreferrer" aria-label="Open Installation"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-local" class="project-command child-03 uid-angular-doc-local">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Local Setup
+</div>
+    <p>Detailed CLI environment and workspace setup.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/tools/cli/setup-local" target="_blank" rel="noopener noreferrer" aria-label="Open Local Setup"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-cli" class="project-command child-04 uid-angular-doc-cli">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  CLI Reference
+</div>
+    <p>Complete <code>ng</code> command reference.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/cli" target="_blank" rel="noopener noreferrer" aria-label="Open CLI Reference"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-versions" class="project-command child-05 uid-angular-doc-versions">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Version Compatibility
+</div>
+    <p>Angular, Node.js, TypeScript, and RxJS compatibility.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/reference/versions" target="_blank" rel="noopener noreferrer" aria-label="Open Compatibility"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-release" class="project-command child-06 uid-angular-doc-release">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Releases
+</div>
+    <p>Supported versions and release schedule.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/reference/releases" target="_blank" rel="noopener noreferrer" aria-label="Open Releases"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-update" class="project-command child-07 uid-angular-doc-update">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Update Guide
+</div>
+    <p>Interactive version migration guidance.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/update-guide" target="_blank" rel="noopener noreferrer" aria-label="Open Update Guide"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-components" class="project-command child-08 uid-angular-doc-components">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Components
+</div>
+    <p>Component anatomy and authoring.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/components" target="_blank" rel="noopener noreferrer" aria-label="Open Components"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-inputs" class="project-command child-09 uid-angular-doc-inputs">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Inputs
+</div>
+    <p><code>input()</code>, required inputs, transforms, and compatibility APIs.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/components/inputs" target="_blank" rel="noopener noreferrer" aria-label="Open Inputs"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-outputs" class="project-command child-10 uid-angular-doc-outputs">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Outputs
+</div>
+    <p><code>output()</code>, emit, event binding, and compatibility APIs.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/components/outputs" target="_blank" rel="noopener noreferrer" aria-label="Open Outputs"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-templates" class="project-command child-11 uid-angular-doc-templates">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Templates
+</div>
+    <p>Template syntax and control flow.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/templates" target="_blank" rel="noopener noreferrer" aria-label="Open Templates"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-signals" class="project-command child-12 uid-angular-doc-signals">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Signals
+</div>
+    <p><code>signal()</code>, <code>computed()</code>, effects, and reactive contexts.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/signals" target="_blank" rel="noopener noreferrer" aria-label="Open Signals"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-di" class="project-command child-13 uid-angular-doc-di">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Dependency Injection
+</div>
+    <p>Providers, injectors, services, and <code>inject()</code>.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/di" target="_blank" rel="noopener noreferrer" aria-label="Open DI"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-routing" class="project-command child-14 uid-angular-doc-routing">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Routing
+</div>
+    <p>Routes, outlets, links, guards, and lazy loading.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/routing" target="_blank" rel="noopener noreferrer" aria-label="Open Routing"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-forms" class="project-command child-15 uid-angular-doc-forms">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Forms
+</div>
+    <p>Reactive and template-driven forms.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/forms" target="_blank" rel="noopener noreferrer" aria-label="Open Forms"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-signalforms" class="project-command child-16 uid-angular-doc-signalforms">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Signal Forms
+</div>
+    <p>Signal-based forms and current stability guidance.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/forms/signals/overview" target="_blank" rel="noopener noreferrer" aria-label="Open Signal Forms"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-http" class="project-command child-17 uid-angular-doc-http">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  HTTP
+</div>
+    <p>HttpClient, requests, interceptors, configuration, and testing.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/http" target="_blank" rel="noopener noreferrer" aria-label="Open HTTP"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-testing" class="project-command child-18 uid-angular-doc-testing">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Testing
+</div>
+    <p>Current Vitest-based default testing.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/testing" target="_blank" rel="noopener noreferrer" aria-label="Open Testing"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-zoneless" class="project-command child-19 uid-angular-doc-zoneless">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Zoneless
+</div>
+    <p>Default zoneless change detection model.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/guide/zoneless" target="_blank" rel="noopener noreferrer" aria-label="Open Zoneless"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-style" class="project-command child-20 uid-angular-doc-style">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Style Guide
+</div>
+    <p>Angular team naming, structure, and DI recommendations.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/style-guide" target="_blank" rel="noopener noreferrer" aria-label="Open Style Guide"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-security" class="project-command child-21 uid-angular-doc-security">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Security
+</div>
+    <p>Security model, sanitization, XSS protections, and security guidance.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/best-practices/security" target="_blank" rel="noopener noreferrer" aria-label="Open Security"
+  ><span aria-hidden="true">›</span></a>
+</div>
+<div id="child-angular-doc-language" class="project-command child-22 uid-angular-doc-language">
+  <div class="project-command-content">
+    
+<div class="project-command-title">
+  Angular Language Service
+</div>
+    <p>Editor completion and template diagnostics.</p>
+  </div>
+  <a
+    class="project-command-action"
+    href="https://angular.dev/tools/language-service" target="_blank" rel="noopener noreferrer" aria-label="Open Language Service"
+  ><span aria-hidden="true">›</span></a>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

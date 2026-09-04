@@ -1,0 +1,6510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Full-Stack Developer Terminal Commands — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>Full-Stack Developer Terminal Commands</strong>
+    <p>A practical developer reference for commonly used Terminal, shell, version-control, JavaScript tooling, framework, database, container, cloud, and troubleshooting commands.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/angular-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Angular
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Cross-Device Web Testing
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Node.js
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      TypeScript
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/java-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Java
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      C#
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/python-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Python
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      Full-Stack Developer Terminal Commands
+    </h2>
+  </div>
+
+  <p>
+    
+
+    A practical developer reference for commonly used Terminal, shell, version-control, JavaScript tooling, framework, database, container, cloud, and troubleshooting commands.
+  </p>
+</header>
+        
+<nav
+  id="node-fs-terminal-nav"
+  class="project-doc-nav node-01 uid-fs-terminal-nav terminal-guide-nav" aria-label="Guide Navigation"
+>
+<a
+  id="child-fs-terminal-nav-01"
+  class="child-01 uid-fs-terminal-nav-01"
+  href="pg/full-stack-developer-terminal-commands.html#node-fs-terminal-section-shell-essentials"
+>Shell Essentials</a>
+<a
+  id="child-fs-terminal-nav-02"
+  class="child-02 uid-fs-terminal-nav-02"
+  href="pg/full-stack-developer-terminal-commands.html#node-fs-terminal-section-git-github-developer-tools"
+>Git, GitHub & Developer Tools</a>
+<a
+  id="child-fs-terminal-nav-03"
+  class="child-03 uid-fs-terminal-nav-03"
+  href="pg/full-stack-developer-terminal-commands.html#node-fs-terminal-section-node-js-javascript-tooling"
+>Node.js & JavaScript Tooling</a>
+<a
+  id="child-fs-terminal-nav-04"
+  class="child-04 uid-fs-terminal-nav-04"
+  href="pg/full-stack-developer-terminal-commands.html#node-fs-terminal-section-frontend-full-stack-framework-clis"
+>Frontend & Full-Stack Framework CLIs</a>
+<a
+  id="child-fs-terminal-nav-05"
+  class="child-05 uid-fs-terminal-nav-05"
+  href="pg/full-stack-developer-terminal-commands.html#node-fs-terminal-section-databases-sql-shells-other-runtimes"
+>Databases, SQL Shells & Other Runtimes</a>
+<a
+  id="child-fs-terminal-nav-06"
+  class="child-06 uid-fs-terminal-nav-06"
+  href="pg/full-stack-developer-terminal-commands.html#node-fs-terminal-section-docker-cloud-troubleshooting"
+>Docker, Cloud & Troubleshooting</a>
+</nav>
+
+<article class="project-doc">
+  <div
+  id="node-fs-terminal-section-shell-essentials"
+  class="project-display node-02 uid-fs-terminal-section-shell-essentials terminal-section terminal-section-01"
+>
+  <div class="project-preview"><p>Shell, filesystem, filtering, permissions, package managers, PowerShell, and Command Prompt essentials.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>2026 Edition</span>
+  <h2>01 — Shell Essentials</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-fs-terminal-01-where-am-i-help"
+  class="project-doc-section node-03 uid-fs-terminal-01-where-am-i-help terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>Where Am I? / Help</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-where-am-i-help-r01" class="project-command child-01 uid-fs-terminal-01-where-am-i-help-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pwd</code>
+  
+</div>
+<div class="project-split-cell">
+  Print current directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-where-am-i-help-r02" class="project-command child-02 uid-fs-terminal-01-where-am-i-help-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>whoami</code>
+  
+</div>
+<div class="project-split-cell">
+  Show current user.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-where-am-i-help-r03" class="project-command child-03 uid-fs-terminal-01-where-am-i-help-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>echo $SHELL</code>
+  
+</div>
+<div class="project-split-cell">
+  Show active Unix shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-where-am-i-help-r04" class="project-command child-04 uid-fs-terminal-01-where-am-i-help-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>command -v node</code>
+  
+</div>
+<div class="project-split-cell">
+  Find an executable in PATH.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-where-am-i-help-r05" class="project-command child-05 uid-fs-terminal-01-where-am-i-help-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>man ls</code>
+  
+</div>
+<div class="project-split-cell">
+  Open Unix manual page.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-where-am-i-help-r06" class="project-command child-06 uid-fs-terminal-01-where-am-i-help-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cmd --help</code>
+  
+</div>
+<div class="project-split-cell">
+  Most CLIs: show built-in help.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-where-am-i-help-r07" class="project-command child-07 uid-fs-terminal-01-where-am-i-help-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>history</code>
+  
+</div>
+<div class="project-split-cell">
+  Recent shell commands.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-where-am-i-help-r08" class="project-command child-08 uid-fs-terminal-01-where-am-i-help-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>clear</code>
+  
+</div>
+<div class="project-split-cell">
+  Clear terminal screen.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-files-folders"
+  class="project-doc-section node-04 uid-fs-terminal-01-files-folders terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>Files & Folders</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-files-folders-r01" class="project-command child-01 uid-fs-terminal-01-files-folders-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -la</code>
+  
+</div>
+<div class="project-split-cell">
+  List all files with details.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r02" class="project-command child-02 uid-fs-terminal-01-files-folders-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cd path</code>
+  
+</div>
+<div class="project-split-cell">
+  Change directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r03" class="project-command child-03 uid-fs-terminal-01-files-folders-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cd ..</code>
+  
+</div>
+<div class="project-split-cell">
+  Move up one directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r04" class="project-command child-04 uid-fs-terminal-01-files-folders-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mkdir -p a/b</code>
+  
+</div>
+<div class="project-split-cell">
+  Create nested directories.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r05" class="project-command child-05 uid-fs-terminal-01-files-folders-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>touch file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Create empty file / update time.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r06" class="project-command child-06 uid-fs-terminal-01-files-folders-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cp file copy</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r07" class="project-command child-07 uid-fs-terminal-01-files-folders-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cp -R src dst</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy directory recursively.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r08" class="project-command child-08 uid-fs-terminal-01-files-folders-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mv old new</code>
+  
+</div>
+<div class="project-split-cell">
+  Move or rename.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r09" class="project-command child-09 uid-fs-terminal-01-files-folders-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm file</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-files-folders-r10" class="project-command child-10 uid-fs-terminal-01-files-folders-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm -rf folder</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>DOUBLE-CHECK path.</strong> Force-delete directory tree.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-read-inspect"
+  class="project-doc-section node-05 uid-fs-terminal-01-read-inspect terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>Read & Inspect</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-read-inspect-r01" class="project-command child-01 uid-fs-terminal-01-read-inspect-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cat file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print entire small file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-read-inspect-r02" class="project-command child-02 uid-fs-terminal-01-read-inspect-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>less file</code>
+  
+</div>
+<div class="project-split-cell">
+  Scrollable file viewer.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-read-inspect-r03" class="project-command child-03 uid-fs-terminal-01-read-inspect-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>head -n 20 file</code>
+  
+</div>
+<div class="project-split-cell">
+  First 20 lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-read-inspect-r04" class="project-command child-04 uid-fs-terminal-01-read-inspect-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tail -n 20 file</code>
+  
+</div>
+<div class="project-split-cell">
+  Last 20 lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-read-inspect-r05" class="project-command child-05 uid-fs-terminal-01-read-inspect-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tail -f app.log</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow a growing log.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-read-inspect-r06" class="project-command child-06 uid-fs-terminal-01-read-inspect-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>wc -l file</code>
+  
+</div>
+<div class="project-split-cell">
+  Count lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-read-inspect-r07" class="project-command child-07 uid-fs-terminal-01-read-inspect-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>du -sh folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Human-readable folder size.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-read-inspect-r08" class="project-command child-08 uid-fs-terminal-01-read-inspect-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>df -h</code>
+  
+</div>
+<div class="project-split-cell">
+  Disk free space.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-search-filter"
+  class="project-doc-section node-06 uid-fs-terminal-01-search-filter terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>Search & Filter</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-search-filter-r01" class="project-command child-01 uid-fs-terminal-01-search-filter-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -n "text" file</code>
+  
+</div>
+<div class="project-split-cell">
+  Find text + line numbers.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-search-filter-r02" class="project-command child-02 uid-fs-terminal-01-search-filter-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>grep -Rni "text" .</code>
+  
+</div>
+<div class="project-split-cell">
+  Recursive, case-insensitive search.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-search-filter-r03" class="project-command child-03 uid-fs-terminal-01-search-filter-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -name "*.js"</code>
+  
+</div>
+<div class="project-split-cell">
+  Find files by name pattern.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-search-filter-r04" class="project-command child-04 uid-fs-terminal-01-search-filter-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>find . -type f -mtime -1</code>
+  
+</div>
+<div class="project-split-cell">
+  Files modified in last day.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-search-filter-r05" class="project-command child-05 uid-fs-terminal-01-search-filter-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sort file</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-search-filter-r06" class="project-command child-06 uid-fs-terminal-01-search-filter-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>uniq -c</code>
+  
+</div>
+<div class="project-split-cell">
+  Count adjacent duplicate lines.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-search-filter-r07" class="project-command child-07 uid-fs-terminal-01-search-filter-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cut -d, -f1 file.csv</code>
+  
+</div>
+<div class="project-split-cell">
+  Select delimited field.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-search-filter-r08" class="project-command child-08 uid-fs-terminal-01-search-filter-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>xargs command</code>
+  
+</div>
+<div class="project-split-cell">
+  Build command args from stdin.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-pipes-operators"
+  class="project-doc-section node-07 uid-fs-terminal-01-pipes-operators terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>Pipes & Operators</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-pipes-operators-r01" class="project-command child-01 uid-fs-terminal-01-pipes-operators-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a | b</code>
+  
+</div>
+<div class="project-split-cell">
+  Pipe stdout of a into b.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r02" class="project-command child-02 uid-fs-terminal-01-pipes-operators-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a &gt; file</code>
+  
+</div>
+<div class="project-split-cell">
+  Overwrite file with stdout.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r03" class="project-command child-03 uid-fs-terminal-01-pipes-operators-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a &gt;&gt; file</code>
+  
+</div>
+<div class="project-split-cell">
+  Append stdout to file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r04" class="project-command child-04 uid-fs-terminal-01-pipes-operators-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a 2&gt; err.log</code>
+  
+</div>
+<div class="project-split-cell">
+  Redirect stderr.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r05" class="project-command child-05 uid-fs-terminal-01-pipes-operators-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a 2&gt;&amp;1</code>
+  
+</div>
+<div class="project-split-cell">
+  Send stderr to stdout.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r06" class="project-command child-06 uid-fs-terminal-01-pipes-operators-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a &amp;&amp; b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run b only if a succeeds.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r07" class="project-command child-07 uid-fs-terminal-01-pipes-operators-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a || b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run b only if a fails.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r08" class="project-command child-08 uid-fs-terminal-01-pipes-operators-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a ; b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run sequentially regardless.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r09" class="project-command child-09 uid-fs-terminal-01-pipes-operators-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$(command)</code>
+  
+</div>
+<div class="project-split-cell">
+  Substitute command output.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-pipes-operators-r10" class="project-command child-10 uid-fs-terminal-01-pipes-operators-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>VAR=value cmd</code>
+  
+</div>
+<div class="project-split-cell">
+  Set env var for one command.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-permissions-processes"
+  class="project-doc-section node-08 uid-fs-terminal-01-permissions-processes terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>Permissions & Processes</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-permissions-processes-r01" class="project-command child-01 uid-fs-terminal-01-permissions-processes-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ls -la</code>
+  
+</div>
+<div class="project-split-cell">
+  View permissions/owners.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r02" class="project-command child-02 uid-fs-terminal-01-permissions-processes-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod +x script.sh</code>
+  
+</div>
+<div class="project-split-cell">
+  Make script executable.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r03" class="project-command child-03 uid-fs-terminal-01-permissions-processes-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>chmod 755 file</code>
+  
+</div>
+<div class="project-split-cell">
+  Owner rwx; others r-x.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r04" class="project-command child-04 uid-fs-terminal-01-permissions-processes-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo command</code>
+  
+</div>
+<div class="project-split-cell">
+  Run command elevated.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r05" class="project-command child-05 uid-fs-terminal-01-permissions-processes-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ps aux</code>
+  
+</div>
+<div class="project-split-cell">
+  List processes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r06" class="project-command child-06 uid-fs-terminal-01-permissions-processes-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lsof -i :3000</code>
+  
+</div>
+<div class="project-split-cell">
+  Find process using port 3000.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r07" class="project-command child-07 uid-fs-terminal-01-permissions-processes-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kill PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Ask process to stop.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r08" class="project-command child-08 uid-fs-terminal-01-permissions-processes-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kill -9 PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Force kill; last resort.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r09" class="project-command child-09 uid-fs-terminal-01-permissions-processes-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>jobs / fg / bg</code>
+  
+</div>
+<div class="project-split-cell">
+  Manage shell jobs.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-permissions-processes-r10" class="project-command child-10 uid-fs-terminal-01-permissions-processes-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Ctrl+C / Ctrl+Z</code>
+  
+</div>
+<div class="project-split-cell">
+  Interrupt / suspend process.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-powershell-essentials"
+  class="project-doc-section node-09 uid-fs-terminal-01-powershell-essentials terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>PowerShell Essentials</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-powershell-essentials-r01" class="project-command child-01 uid-fs-terminal-01-powershell-essentials-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Get-Location</code>
+  
+</div>
+<div class="project-split-cell">
+  Current directory (pwd alias).
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r02" class="project-command child-02 uid-fs-terminal-01-powershell-essentials-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Get-ChildItem</code>
+  
+</div>
+<div class="project-split-cell">
+  List items (ls alias).
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r03" class="project-command child-03 uid-fs-terminal-01-powershell-essentials-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Set-Location path</code>
+  
+</div>
+<div class="project-split-cell">
+  Change directory (cd alias).
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r04" class="project-command child-04 uid-fs-terminal-01-powershell-essentials-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>New-Item -ItemType Directory x</code>
+  
+</div>
+<div class="project-split-cell">
+  Create folder.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r05" class="project-command child-05 uid-fs-terminal-01-powershell-essentials-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Copy-Item a b -Recurse</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy file/folder.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r06" class="project-command child-06 uid-fs-terminal-01-powershell-essentials-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Move-Item a b</code>
+  
+</div>
+<div class="project-split-cell">
+  Move / rename.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r07" class="project-command child-07 uid-fs-terminal-01-powershell-essentials-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Remove-Item x -Recurse</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete tree; inspect path first.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r08" class="project-command child-08 uid-fs-terminal-01-powershell-essentials-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Get-Content file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r09" class="project-command child-09 uid-fs-terminal-01-powershell-essentials-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Select-String "text" file</code>
+  
+</div>
+<div class="project-split-cell">
+  Search text.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r10" class="project-command child-10 uid-fs-terminal-01-powershell-essentials-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Get-Command node</code>
+  
+</div>
+<div class="project-split-cell">
+  Locate command.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r11" class="project-command child-11 uid-fs-terminal-01-powershell-essentials-r11">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Get-Process</code>
+  
+</div>
+<div class="project-split-cell">
+  List processes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r12" class="project-command child-12 uid-fs-terminal-01-powershell-essentials-r12">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Stop-Process -Id 1234</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop process by PID.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r13" class="project-command child-13 uid-fs-terminal-01-powershell-essentials-r13">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$env:NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Read env variable.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-powershell-essentials-r14" class="project-command child-14 uid-fs-terminal-01-powershell-essentials-r14">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$env:NAME="value"</code>
+  
+</div>
+<div class="project-split-cell">
+  Set env variable for session.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-os-package-managers"
+  class="project-doc-section node-10 uid-fs-terminal-01-os-package-managers terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>OS Package Managers</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-os-package-managers-r01" class="project-command child-01 uid-fs-terminal-01-os-package-managers-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>brew update</code>
+  
+</div>
+<div class="project-split-cell">
+  macOS: refresh Homebrew metadata.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-os-package-managers-r02" class="project-command child-02 uid-fs-terminal-01-os-package-managers-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>brew install git</code>
+  
+</div>
+<div class="project-split-cell">
+  macOS: install package.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-os-package-managers-r03" class="project-command child-03 uid-fs-terminal-01-os-package-managers-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>brew upgrade</code>
+  
+</div>
+<div class="project-split-cell">
+  macOS: upgrade installed formulae.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-os-package-managers-r04" class="project-command child-04 uid-fs-terminal-01-os-package-managers-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>brew list</code>
+  
+</div>
+<div class="project-split-cell">
+  macOS: list installed packages.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-os-package-managers-r05" class="project-command child-05 uid-fs-terminal-01-os-package-managers-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo apt update</code>
+  
+</div>
+<div class="project-split-cell">
+  Debian/Ubuntu: refresh indexes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-os-package-managers-r06" class="project-command child-06 uid-fs-terminal-01-os-package-managers-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo apt install git</code>
+  
+</div>
+<div class="project-split-cell">
+  Debian/Ubuntu: install package.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-os-package-managers-r07" class="project-command child-07 uid-fs-terminal-01-os-package-managers-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>winget search git</code>
+  
+</div>
+<div class="project-split-cell">
+  Windows: search packages.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-os-package-managers-r08" class="project-command child-08 uid-fs-terminal-01-os-package-managers-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>winget install Git.Git</code>
+  
+</div>
+<div class="project-split-cell">
+  Windows: install package.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-01-command-prompt-common-basics"
+  class="project-doc-section node-11 uid-fs-terminal-01-command-prompt-common-basics terminal-command-group"
+>
+  
+<header>
+  <span>Shell Essentials</span>
+  <h3>Command Prompt: Common Basics</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-01-command-prompt-common-basics-r01" class="project-command child-01 uid-fs-terminal-01-command-prompt-common-basics-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dir</code>
+  
+</div>
+<div class="project-split-cell">
+  List directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r02" class="project-command child-02 uid-fs-terminal-01-command-prompt-common-basics-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cd path</code>
+  
+</div>
+<div class="project-split-cell">
+  Change directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r03" class="project-command child-03 uid-fs-terminal-01-command-prompt-common-basics-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mkdir folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create folder.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r04" class="project-command child-04 uid-fs-terminal-01-command-prompt-common-basics-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>copy a b</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r05" class="project-command child-05 uid-fs-terminal-01-command-prompt-common-basics-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>move a b</code>
+  
+</div>
+<div class="project-split-cell">
+  Move/rename.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r06" class="project-command child-06 uid-fs-terminal-01-command-prompt-common-basics-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>del file</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r07" class="project-command child-07 uid-fs-terminal-01-command-prompt-common-basics-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>type file</code>
+  
+</div>
+<div class="project-split-cell">
+  Print file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r08" class="project-command child-08 uid-fs-terminal-01-command-prompt-common-basics-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>where node</code>
+  
+</div>
+<div class="project-split-cell">
+  Locate executable.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r09" class="project-command child-09 uid-fs-terminal-01-command-prompt-common-basics-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>set NAME=value</code>
+  
+</div>
+<div class="project-split-cell">
+  Set env var for session.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r10" class="project-command child-10 uid-fs-terminal-01-command-prompt-common-basics-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>cls</code>
+  
+</div>
+<div class="project-split-cell">
+  Clear screen.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-01-command-prompt-common-basics-r11" class="project-command child-11 uid-fs-terminal-01-command-prompt-common-basics-r11">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  For development on Windows, PowerShell or WSL usually gives a richer workflow than classic cmd.exe.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-fs-terminal-section-git-github-developer-tools"
+  class="project-display node-12 uid-fs-terminal-section-git-github-developer-tools terminal-section terminal-section-02"
+>
+  <div class="project-preview"><p>Version control, GitHub CLI, SSH, HTTP/network checks, and VS Code terminal commands.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>2026 Edition</span>
+  <h2>02 — Git, GitHub & Developer Tools</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-fs-terminal-02-git-start-config"
+  class="project-doc-section node-13 uid-fs-terminal-02-git-start-config terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>Git: Start & Config</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-git-start-config-r01" class="project-command child-01 uid-fs-terminal-02-git-start-config-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git --version</code>
+  
+</div>
+<div class="project-split-cell">
+  Check Git version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-git-start-config-r02" class="project-command child-02 uid-fs-terminal-02-git-start-config-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git config --global user.name "Name"</code>
+  
+</div>
+<div class="project-split-cell">
+  Set commit author name.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-git-start-config-r03" class="project-command child-03 uid-fs-terminal-02-git-start-config-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git config --global user.email "you@example.com"</code>
+  
+</div>
+<div class="project-split-cell">
+  Set commit email.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-git-start-config-r04" class="project-command child-04 uid-fs-terminal-02-git-start-config-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git init</code>
+  
+</div>
+<div class="project-split-cell">
+  Create repository in current folder.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-git-start-config-r05" class="project-command child-05 uid-fs-terminal-02-git-start-config-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git clone URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Clone remote repository.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-git-start-config-r06" class="project-command child-06 uid-fs-terminal-02-git-start-config-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git status</code>
+  
+</div>
+<div class="project-split-cell">
+  Show branch + working tree status.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-stage-commit"
+  class="project-doc-section node-14 uid-fs-terminal-02-stage-commit terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>Stage & Commit</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-stage-commit-r01" class="project-command child-01 uid-fs-terminal-02-stage-commit-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git add file</code>
+  
+</div>
+<div class="project-split-cell">
+  Stage one file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-stage-commit-r02" class="project-command child-02 uid-fs-terminal-02-stage-commit-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git add .</code>
+  
+</div>
+<div class="project-split-cell">
+  Stage changes under current directory.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-stage-commit-r03" class="project-command child-03 uid-fs-terminal-02-stage-commit-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git diff</code>
+  
+</div>
+<div class="project-split-cell">
+  Unstaged changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-stage-commit-r04" class="project-command child-04 uid-fs-terminal-02-stage-commit-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git diff --staged</code>
+  
+</div>
+<div class="project-split-cell">
+  Staged changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-stage-commit-r05" class="project-command child-05 uid-fs-terminal-02-stage-commit-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git commit -m "message"</code>
+  
+</div>
+<div class="project-split-cell">
+  Create commit.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-stage-commit-r06" class="project-command child-06 uid-fs-terminal-02-stage-commit-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git commit --amend</code>
+  
+</div>
+<div class="project-split-cell">
+  Replace most recent commit.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-branches"
+  class="project-doc-section node-15 uid-fs-terminal-02-branches terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>Branches</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-branches-r01" class="project-command child-01 uid-fs-terminal-02-branches-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git branch</code>
+  
+</div>
+<div class="project-split-cell">
+  List local branches.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-branches-r02" class="project-command child-02 uid-fs-terminal-02-branches-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git switch branch</code>
+  
+</div>
+<div class="project-split-cell">
+  Switch branch.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-branches-r03" class="project-command child-03 uid-fs-terminal-02-branches-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git switch -c feature</code>
+  
+</div>
+<div class="project-split-cell">
+  Create + switch branch.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-branches-r04" class="project-command child-04 uid-fs-terminal-02-branches-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git merge feature</code>
+  
+</div>
+<div class="project-split-cell">
+  Merge feature into current branch.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-branches-r05" class="project-command child-05 uid-fs-terminal-02-branches-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git branch -d feature</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete merged local branch.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-branches-r06" class="project-command child-06 uid-fs-terminal-02-branches-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git branch -D feature</code>
+  
+</div>
+<div class="project-split-cell">
+  Force-delete local branch.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-inspect-history"
+  class="project-doc-section node-16 uid-fs-terminal-02-inspect-history terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>Inspect History</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-inspect-history-r01" class="project-command child-01 uid-fs-terminal-02-inspect-history-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git log --oneline</code>
+  
+</div>
+<div class="project-split-cell">
+  Compact history.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-inspect-history-r02" class="project-command child-02 uid-fs-terminal-02-inspect-history-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git log --graph --decorate --all --oneline</code>
+  
+</div>
+<div class="project-split-cell">
+  Visual branch graph.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-inspect-history-r03" class="project-command child-03 uid-fs-terminal-02-inspect-history-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git show COMMIT</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect a commit.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-inspect-history-r04" class="project-command child-04 uid-fs-terminal-02-inspect-history-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git blame file</code>
+  
+</div>
+<div class="project-split-cell">
+  Show line-by-line authorship.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-remotes-sync"
+  class="project-doc-section node-17 uid-fs-terminal-02-remotes-sync terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>Remotes & Sync</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-remotes-sync-r01" class="project-command child-01 uid-fs-terminal-02-remotes-sync-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git remote -v</code>
+  
+</div>
+<div class="project-split-cell">
+  List remote URLs.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-remotes-sync-r02" class="project-command child-02 uid-fs-terminal-02-remotes-sync-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git fetch</code>
+  
+</div>
+<div class="project-split-cell">
+  Download remote refs; no merge.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-remotes-sync-r03" class="project-command child-03 uid-fs-terminal-02-remotes-sync-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git pull</code>
+  
+</div>
+<div class="project-split-cell">
+  Fetch + integrate current branch.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-remotes-sync-r04" class="project-command child-04 uid-fs-terminal-02-remotes-sync-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git push</code>
+  
+</div>
+<div class="project-split-cell">
+  Push current branch.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-remotes-sync-r05" class="project-command child-05 uid-fs-terminal-02-remotes-sync-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git push -u origin feature</code>
+  
+</div>
+<div class="project-split-cell">
+  Push + set upstream.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-remotes-sync-r06" class="project-command child-06 uid-fs-terminal-02-remotes-sync-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git push --tags</code>
+  
+</div>
+<div class="project-split-cell">
+  Push tags.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-remotes-sync-r07" class="project-command child-07 uid-fs-terminal-02-remotes-sync-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git tag -a v1.0.0 -m "release"</code>
+  
+</div>
+<div class="project-split-cell">
+  Create annotated tag.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-undo-safely"
+  class="project-doc-section node-18 uid-fs-terminal-02-undo-safely terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>Undo Safely</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-undo-safely-r01" class="project-command child-01 uid-fs-terminal-02-undo-safely-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git restore file</code>
+  
+</div>
+<div class="project-split-cell">
+  Discard unstaged file changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-undo-safely-r02" class="project-command child-02 uid-fs-terminal-02-undo-safely-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git restore --staged file</code>
+  
+</div>
+<div class="project-split-cell">
+  Unstage; keep file changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-undo-safely-r03" class="project-command child-03 uid-fs-terminal-02-undo-safely-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git revert COMMIT</code>
+  
+</div>
+<div class="project-split-cell">
+  New commit that reverses a commit.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-undo-safely-r04" class="project-command child-04 uid-fs-terminal-02-undo-safely-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git reset --soft HEAD~1</code>
+  
+</div>
+<div class="project-split-cell">
+  Move HEAD back; keep changes staged.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-undo-safely-r05" class="project-command child-05 uid-fs-terminal-02-undo-safely-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git reset --hard HEAD~1</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>Destructive:</strong> discard commit + local changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-undo-safely-r06" class="project-command child-06 uid-fs-terminal-02-undo-safely-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git stash</code>
+  
+</div>
+<div class="project-split-cell">
+  Temporarily shelve changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-undo-safely-r07" class="project-command child-07 uid-fs-terminal-02-undo-safely-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git stash list</code>
+  
+</div>
+<div class="project-split-cell">
+  List stashes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-undo-safely-r08" class="project-command child-08 uid-fs-terminal-02-undo-safely-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git stash pop</code>
+  
+</div>
+<div class="project-split-cell">
+  Reapply + remove latest stash.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-github-cli-gh"
+  class="project-doc-section node-19 uid-fs-terminal-02-github-cli-gh terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>GitHub CLI (gh)</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-github-cli-gh-r01" class="project-command child-01 uid-fs-terminal-02-github-cli-gh-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh auth login</code>
+  
+</div>
+<div class="project-split-cell">
+  Authenticate GitHub CLI.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r02" class="project-command child-02 uid-fs-terminal-02-github-cli-gh-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh repo clone OWNER/REPO</code>
+  
+</div>
+<div class="project-split-cell">
+  Clone GitHub repo.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r03" class="project-command child-03 uid-fs-terminal-02-github-cli-gh-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh repo create</code>
+  
+</div>
+<div class="project-split-cell">
+  Create repository interactively.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r04" class="project-command child-04 uid-fs-terminal-02-github-cli-gh-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh pr create</code>
+  
+</div>
+<div class="project-split-cell">
+  Open pull request.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r05" class="project-command child-05 uid-fs-terminal-02-github-cli-gh-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh pr checkout 123</code>
+  
+</div>
+<div class="project-split-cell">
+  Check out PR #123.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r06" class="project-command child-06 uid-fs-terminal-02-github-cli-gh-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh pr view --web</code>
+  
+</div>
+<div class="project-split-cell">
+  Open current PR in browser.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r07" class="project-command child-07 uid-fs-terminal-02-github-cli-gh-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh issue list</code>
+  
+</div>
+<div class="project-split-cell">
+  List issues.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r08" class="project-command child-08 uid-fs-terminal-02-github-cli-gh-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gh workflow list</code>
+  
+</div>
+<div class="project-split-cell">
+  List Actions workflows.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-github-cli-gh-r09" class="project-command child-09 uid-fs-terminal-02-github-cli-gh-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  GitHub CLI is a separate install. Run <code>gh help</code> or <code>gh &lt;command&gt; --help</code> for current options.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-ssh-file-transfer"
+  class="project-doc-section node-20 uid-fs-terminal-02-ssh-file-transfer terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>SSH & File Transfer</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-ssh-file-transfer-r01" class="project-command child-01 uid-fs-terminal-02-ssh-file-transfer-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh user@host</code>
+  
+</div>
+<div class="project-split-cell">
+  Open SSH session.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-ssh-file-transfer-r02" class="project-command child-02 uid-fs-terminal-02-ssh-file-transfer-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh-keygen -t ed25519 -C "email"</code>
+  
+</div>
+<div class="project-split-cell">
+  Create modern SSH key.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-ssh-file-transfer-r03" class="project-command child-03 uid-fs-terminal-02-ssh-file-transfer-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh-add ~/.ssh/id_ed25519</code>
+  
+</div>
+<div class="project-split-cell">
+  Add private key to agent.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-ssh-file-transfer-r04" class="project-command child-04 uid-fs-terminal-02-ssh-file-transfer-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>scp file user@host:/path</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy file over SSH.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-ssh-file-transfer-r05" class="project-command child-05 uid-fs-terminal-02-ssh-file-transfer-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>scp -r dir user@host:/path</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy directory recursively.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-ssh-file-transfer-r06" class="project-command child-06 uid-fs-terminal-02-ssh-file-transfer-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rsync -av src/ host:/dest/</code>
+  
+</div>
+<div class="project-split-cell">
+  Efficient recursive sync.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-ssh-file-transfer-r07" class="project-command child-07 uid-fs-terminal-02-ssh-file-transfer-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ssh -T git@github.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Test GitHub SSH auth.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-http-network-checks"
+  class="project-doc-section node-21 uid-fs-terminal-02-http-network-checks terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>HTTP / Network Checks</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-http-network-checks-r01" class="project-command child-01 uid-fs-terminal-02-http-network-checks-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl URL</code>
+  
+</div>
+<div class="project-split-cell">
+  GET a URL.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r02" class="project-command child-02 uid-fs-terminal-02-http-network-checks-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -I URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Headers only.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r03" class="project-command child-03 uid-fs-terminal-02-http-network-checks-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -L URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow redirects.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r04" class="project-command child-04 uid-fs-terminal-02-http-network-checks-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl -X POST URL -H "Content-Type: application/json" -d '{"x":1}'</code>
+  
+</div>
+<div class="project-split-cell">
+  POST JSON.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r05" class="project-command child-05 uid-fs-terminal-02-http-network-checks-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ping host</code>
+  
+</div>
+<div class="project-split-cell">
+  Basic reachability.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r06" class="project-command child-06 uid-fs-terminal-02-http-network-checks-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dig example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  DNS lookup (Unix).
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r07" class="project-command child-07 uid-fs-terminal-02-http-network-checks-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nslookup example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  DNS lookup (cross-platform).
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r08" class="project-command child-08 uid-fs-terminal-02-http-network-checks-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>lsof -i :5173</code>
+  
+</div>
+<div class="project-split-cell">
+  Find Unix process on port.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-http-network-checks-r09" class="project-command child-09 uid-fs-terminal-02-http-network-checks-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>curl localhost:3000</code>
+  
+</div>
+<div class="project-split-cell">
+  Quick local-server test.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-02-vs-code-terminal-cli"
+  class="project-doc-section node-22 uid-fs-terminal-02-vs-code-terminal-cli terminal-command-group"
+>
+  
+<header>
+  <span>Git, GitHub & Developer Tools</span>
+  <h3>VS Code Terminal CLI</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r01" class="project-command child-01 uid-fs-terminal-02-vs-code-terminal-cli-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>code .</code>
+  
+</div>
+<div class="project-split-cell">
+  Open current folder.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r02" class="project-command child-02 uid-fs-terminal-02-vs-code-terminal-cli-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>code file.js</code>
+  
+</div>
+<div class="project-split-cell">
+  Open file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r03" class="project-command child-03 uid-fs-terminal-02-vs-code-terminal-cli-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>code -n .</code>
+  
+</div>
+<div class="project-split-cell">
+  Open in new window.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r04" class="project-command child-04 uid-fs-terminal-02-vs-code-terminal-cli-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>code --version</code>
+  
+</div>
+<div class="project-split-cell">
+  Show VS Code version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r05" class="project-command child-05 uid-fs-terminal-02-vs-code-terminal-cli-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>code --list-extensions</code>
+  
+</div>
+<div class="project-split-cell">
+  List extensions.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r06" class="project-command child-06 uid-fs-terminal-02-vs-code-terminal-cli-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>code --install-extension ID</code>
+  
+</div>
+<div class="project-split-cell">
+  Install extension by ID.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r07" class="project-command child-07 uid-fs-terminal-02-vs-code-terminal-cli-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Ctrl+`</code>
+  
+</div>
+<div class="project-split-cell">
+  Toggle integrated terminal (Win/Linux).
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r08" class="project-command child-08 uid-fs-terminal-02-vs-code-terminal-cli-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Cmd+`</code>
+  
+</div>
+<div class="project-split-cell">
+  Toggle integrated terminal (macOS).
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-02-vs-code-terminal-cli-r09" class="project-command child-09 uid-fs-terminal-02-vs-code-terminal-cli-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Ctrl+Shift+P / Cmd+Shift+P</code>
+  
+</div>
+<div class="project-split-cell">
+  Command Palette.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-fs-terminal-section-node-js-javascript-tooling"
+  class="project-display node-23 uid-fs-terminal-section-node-js-javascript-tooling terminal-section terminal-section-03"
+>
+  <div class="project-preview"><p>Node.js, npm, package managers, TypeScript, linting, testing, semver, and dependency troubleshooting.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>2026 Edition</span>
+  <h2>03 — Node.js & JavaScript Tooling</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-fs-terminal-03-node-npm-basics"
+  class="project-doc-section node-24 uid-fs-terminal-03-node-npm-basics terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>Node & npm Basics</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-node-npm-basics-r01" class="project-command child-01 uid-fs-terminal-03-node-npm-basics-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>node -v</code>
+  
+</div>
+<div class="project-split-cell">
+  Node.js version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r02" class="project-command child-02 uid-fs-terminal-03-node-npm-basics-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm -v</code>
+  
+</div>
+<div class="project-split-cell">
+  npm CLI version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r03" class="project-command child-03 uid-fs-terminal-03-node-npm-basics-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>node file.js</code>
+  
+</div>
+<div class="project-split-cell">
+  Run JavaScript file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r04" class="project-command child-04 uid-fs-terminal-03-node-npm-basics-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>node --watch server.js</code>
+  
+</div>
+<div class="project-split-cell">
+  Restart on file changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r05" class="project-command child-05 uid-fs-terminal-03-node-npm-basics-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>node -e "console.log(1+1)"</code>
+  
+</div>
+<div class="project-split-cell">
+  Run one-line JavaScript.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r06" class="project-command child-06 uid-fs-terminal-03-node-npm-basics-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm init -y</code>
+  
+</div>
+<div class="project-split-cell">
+  Create package.json with defaults.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r07" class="project-command child-07 uid-fs-terminal-03-node-npm-basics-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm install</code>
+  
+</div>
+<div class="project-split-cell">
+  Install dependencies from package.json.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r08" class="project-command child-08 uid-fs-terminal-03-node-npm-basics-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm ci</code>
+  
+</div>
+<div class="project-split-cell">
+  Clean, lockfile-exact install; ideal CI.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r09" class="project-command child-09 uid-fs-terminal-03-node-npm-basics-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm install package</code>
+  
+</div>
+<div class="project-split-cell">
+  Add production dependency.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r10" class="project-command child-10 uid-fs-terminal-03-node-npm-basics-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm install -D package</code>
+  
+</div>
+<div class="project-split-cell">
+  Add devDependency.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-node-npm-basics-r11" class="project-command child-11 uid-fs-terminal-03-node-npm-basics-r11">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm uninstall package</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove dependency.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-npm-inspect-maintain"
+  class="project-doc-section node-25 uid-fs-terminal-03-npm-inspect-maintain terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>npm Inspect & Maintain</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-npm-inspect-maintain-r01" class="project-command child-01 uid-fs-terminal-03-npm-inspect-maintain-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm outdated</code>
+  
+</div>
+<div class="project-split-cell">
+  Show outdated dependencies.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-inspect-maintain-r02" class="project-command child-02 uid-fs-terminal-03-npm-inspect-maintain-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm update</code>
+  
+</div>
+<div class="project-split-cell">
+  Update within allowed semver ranges.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-inspect-maintain-r03" class="project-command child-03 uid-fs-terminal-03-npm-inspect-maintain-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm audit</code>
+  
+</div>
+<div class="project-split-cell">
+  Report known dependency issues.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-inspect-maintain-r04" class="project-command child-04 uid-fs-terminal-03-npm-inspect-maintain-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm audit fix</code>
+  
+</div>
+<div class="project-split-cell">
+  Apply compatible security updates.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-inspect-maintain-r05" class="project-command child-05 uid-fs-terminal-03-npm-inspect-maintain-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm ls</code>
+  
+</div>
+<div class="project-split-cell">
+  Show installed dependency tree.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-inspect-maintain-r06" class="project-command child-06 uid-fs-terminal-03-npm-inspect-maintain-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm explain package</code>
+  
+</div>
+<div class="project-split-cell">
+  Why a package is installed.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-inspect-maintain-r07" class="project-command child-07 uid-fs-terminal-03-npm-inspect-maintain-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm view package version</code>
+  
+</div>
+<div class="project-split-cell">
+  Registry package info.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-inspect-maintain-r08" class="project-command child-08 uid-fs-terminal-03-npm-inspect-maintain-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm cache verify</code>
+  
+</div>
+<div class="project-split-cell">
+  Verify/compact npm cache.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-npm-scripts"
+  class="project-doc-section node-26 uid-fs-terminal-03-npm-scripts terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>npm Scripts</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-npm-scripts-r01" class="project-command child-01 uid-fs-terminal-03-npm-scripts-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm run</code>
+  
+</div>
+<div class="project-split-cell">
+  List available package scripts.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-scripts-r02" class="project-command child-02 uid-fs-terminal-03-npm-scripts-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm run dev</code>
+  
+</div>
+<div class="project-split-cell">
+  Run dev script.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-scripts-r03" class="project-command child-03 uid-fs-terminal-03-npm-scripts-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm test</code>
+  
+</div>
+<div class="project-split-cell">
+  Run test script.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-scripts-r04" class="project-command child-04 uid-fs-terminal-03-npm-scripts-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm run build</code>
+  
+</div>
+<div class="project-split-cell">
+  Run build script.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-scripts-r05" class="project-command child-05 uid-fs-terminal-03-npm-scripts-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm start</code>
+  
+</div>
+<div class="project-split-cell">
+  Run start script.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-scripts-r06" class="project-command child-06 uid-fs-terminal-03-npm-scripts-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm run name -- --flag</code>
+  
+</div>
+<div class="project-split-cell">
+  Pass args through to script.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-scripts-r07" class="project-command child-07 uid-fs-terminal-03-npm-scripts-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm exec -- eslint .</code>
+  
+</div>
+<div class="project-split-cell">
+  Run package binary via npm.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-npm-scripts-r08" class="project-command child-08 uid-fs-terminal-03-npm-scripts-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx package args</code>
+  
+</div>
+<div class="project-split-cell">
+  Run local/temporary package binary.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-nvm-node-versions"
+  class="project-doc-section node-27 uid-fs-terminal-03-nvm-node-versions terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>NVM: Node Versions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-nvm-node-versions-r01" class="project-command child-01 uid-fs-terminal-03-nvm-node-versions-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nvm install --lts</code>
+  
+</div>
+<div class="project-split-cell">
+  Install latest LTS Node.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-nvm-node-versions-r02" class="project-command child-02 uid-fs-terminal-03-nvm-node-versions-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nvm use --lts</code>
+  
+</div>
+<div class="project-split-cell">
+  Use LTS Node in shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-nvm-node-versions-r03" class="project-command child-03 uid-fs-terminal-03-nvm-node-versions-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nvm install 22</code>
+  
+</div>
+<div class="project-split-cell">
+  Install a major version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-nvm-node-versions-r04" class="project-command child-04 uid-fs-terminal-03-nvm-node-versions-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nvm use 22</code>
+  
+</div>
+<div class="project-split-cell">
+  Switch active Node version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-nvm-node-versions-r05" class="project-command child-05 uid-fs-terminal-03-nvm-node-versions-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nvm ls</code>
+  
+</div>
+<div class="project-split-cell">
+  List installed Node versions.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-nvm-node-versions-r06" class="project-command child-06 uid-fs-terminal-03-nvm-node-versions-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>nvm alias default lts/*</code>
+  
+</div>
+<div class="project-split-cell">
+  Default future shells to LTS.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-nvm-node-versions-r07" class="project-command child-07 uid-fs-terminal-03-nvm-node-versions-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  nvm commands require nvm (or nvm-windows on Windows). The two projects differ slightly.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-package-manager-equivalents"
+  class="project-detail node-28 uid-fs-terminal-03-package-manager-equivalents terminal-reference-grid"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>Package Manager Equivalents</h3>
+  
+</header>
+  
+  <div class="project-meta">
+<div id="child-fs-terminal-03-package-manager-equivalents-c01" class="child-01 uid-fs-terminal-03-package-manager-equivalents-c01">
+  
+<div class="project-command-title">
+  npm
+</div>
+  <ul class="project-compact-list"><li><code>npm install</code><span>Install project dependencies.</span></li><li><code>npm install package</code><span>Add dependency.</span></li><li><code>npm install -D package</code><span>Add devDependency.</span></li><li><code>npm uninstall package</code><span>Remove dependency.</span></li><li><code>npm update</code><span>Update packages.</span></li></ul>
+</div>
+<div id="child-fs-terminal-03-package-manager-equivalents-c02" class="child-02 uid-fs-terminal-03-package-manager-equivalents-c02">
+  
+<div class="project-command-title">
+  pnpm
+</div>
+  <ul class="project-compact-list"><li><code>pnpm install</code><span>Install project dependencies.</span></li><li><code>pnpm add package</code><span>Add dependency.</span></li><li><code>pnpm add -D package</code><span>Add devDependency.</span></li><li><code>pnpm remove package</code><span>Remove dependency.</span></li><li><code>pnpm update</code><span>Update packages.</span></li><li><code>pnpm outdated</code><span>Show outdated packages.</span></li><li><code>pnpm run dev</code><span>Run package script.</span></li><li><code>pnpm exec eslint .</code><span>Run local binary.</span></li><li><code>pnpm dlx create-vite</code><span>Run one-off package.</span></li><li><code>pnpm store prune</code><span>Remove unreferenced store packages.</span></li></ul>
+</div>
+<div id="child-fs-terminal-03-package-manager-equivalents-c03" class="child-03 uid-fs-terminal-03-package-manager-equivalents-c03">
+  
+<div class="project-command-title">
+  Yarn
+</div>
+  <ul class="project-compact-list"><li><code>yarn install</code><span>Install dependencies.</span></li><li><code>yarn add package</code><span>Add dependency.</span></li><li><code>yarn add -D package</code><span>Add devDependency.</span></li><li><code>yarn remove package</code><span>Remove dependency.</span></li><li><code>yarn up package</code><span>Upgrade dependency.</span></li><li><code>yarn run dev</code><span>Run script.</span></li><li><code>yarn dlx package</code><span>Run one-off package.</span></li><li><code>yarn why package</code><span>Why package is present.</span></li></ul>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-typescript"
+  class="project-doc-section node-29 uid-fs-terminal-03-typescript terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>TypeScript</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-typescript-r01" class="project-command child-01 uid-fs-terminal-03-typescript-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx tsc --init</code>
+  
+</div>
+<div class="project-split-cell">
+  Create tsconfig.json.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-typescript-r02" class="project-command child-02 uid-fs-terminal-03-typescript-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx tsc</code>
+  
+</div>
+<div class="project-split-cell">
+  Compile project.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-typescript-r03" class="project-command child-03 uid-fs-terminal-03-typescript-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx tsc --noEmit</code>
+  
+</div>
+<div class="project-split-cell">
+  Type-check without output.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-typescript-r04" class="project-command child-04 uid-fs-terminal-03-typescript-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx tsc -w</code>
+  
+</div>
+<div class="project-split-cell">
+  Watch + recompile.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-typescript-r05" class="project-command child-05 uid-fs-terminal-03-typescript-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx tsx file.ts</code>
+  
+</div>
+<div class="project-split-cell">
+  Run TS directly when tsx is installed.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-lint-format"
+  class="project-doc-section node-30 uid-fs-terminal-03-lint-format terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>Lint & Format</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-lint-format-r01" class="project-command child-01 uid-fs-terminal-03-lint-format-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx eslint .</code>
+  
+</div>
+<div class="project-split-cell">
+  Lint project.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-lint-format-r02" class="project-command child-02 uid-fs-terminal-03-lint-format-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx eslint . --fix</code>
+  
+</div>
+<div class="project-split-cell">
+  Auto-fix safe lint issues.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-lint-format-r03" class="project-command child-03 uid-fs-terminal-03-lint-format-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prettier . --check</code>
+  
+</div>
+<div class="project-split-cell">
+  Check formatting.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-lint-format-r04" class="project-command child-04 uid-fs-terminal-03-lint-format-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prettier . --write</code>
+  
+</div>
+<div class="project-split-cell">
+  Rewrite files to formatter rules.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-testing"
+  class="project-doc-section node-31 uid-fs-terminal-03-testing terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>Testing</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-testing-r01" class="project-command child-01 uid-fs-terminal-03-testing-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx vitest</code>
+  
+</div>
+<div class="project-split-cell">
+  Run Vitest in watch mode.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-testing-r02" class="project-command child-02 uid-fs-terminal-03-testing-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx vitest run</code>
+  
+</div>
+<div class="project-split-cell">
+  Single Vitest run.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-testing-r03" class="project-command child-03 uid-fs-terminal-03-testing-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx jest</code>
+  
+</div>
+<div class="project-split-cell">
+  Run Jest.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-testing-r04" class="project-command child-04 uid-fs-terminal-03-testing-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx playwright test</code>
+  
+</div>
+<div class="project-split-cell">
+  Run Playwright tests.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-testing-r05" class="project-command child-05 uid-fs-terminal-03-testing-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx playwright test --ui</code>
+  
+</div>
+<div class="project-split-cell">
+  Open Playwright UI mode.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-testing-r06" class="project-command child-06 uid-fs-terminal-03-testing-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx playwright show-report</code>
+  
+</div>
+<div class="project-split-cell">
+  Open HTML report.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-semver-quick-read"
+  class="project-doc-section node-32 uid-fs-terminal-03-semver-quick-read terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>Semver Quick Read</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-semver-quick-read-r01" class="project-command child-01 uid-fs-terminal-03-semver-quick-read-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>1.2.3</code>
+  
+</div>
+<div class="project-split-cell">
+  major.minor.patch.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-semver-quick-read-r02" class="project-command child-02 uid-fs-terminal-03-semver-quick-read-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>^1.2.3</code>
+  
+</div>
+<div class="project-split-cell">
+  Allow compatible minor/patch updates.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-semver-quick-read-r03" class="project-command child-03 uid-fs-terminal-03-semver-quick-read-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>~1.2.3</code>
+  
+</div>
+<div class="project-split-cell">
+  Allow patch updates within 1.2.x.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-semver-quick-read-r04" class="project-command child-04 uid-fs-terminal-03-semver-quick-read-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>1.2.3</code>
+  
+</div>
+<div class="project-split-cell">
+  Exact version when no range operator.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-semver-quick-read-r05" class="project-command child-05 uid-fs-terminal-03-semver-quick-read-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>latest</code>
+  
+</div>
+<div class="project-split-cell">
+  Registry distribution tag; not a range.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-03-when-installs-are-weird"
+  class="project-doc-section node-33 uid-fs-terminal-03-when-installs-are-weird terminal-command-group"
+>
+  
+<header>
+  <span>Node.js & JavaScript Tooling</span>
+  <h3>When Installs Are Weird</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-03-when-installs-are-weird-r01" class="project-command child-01 uid-fs-terminal-03-when-installs-are-weird-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm ci</code>
+  
+</div>
+<div class="project-split-cell">
+  First choice when lockfile is valid.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-when-installs-are-weird-r02" class="project-command child-02 uid-fs-terminal-03-when-installs-are-weird-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm cache verify</code>
+  
+</div>
+<div class="project-split-cell">
+  Check cache before deleting things.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-when-installs-are-weird-r03" class="project-command child-03 uid-fs-terminal-03-when-installs-are-weird-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm -rf node_modules &amp;&amp; npm install</code>
+  
+</div>
+<div class="project-split-cell">
+  Rebuild local dependency tree.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-when-installs-are-weird-r04" class="project-command child-04 uid-fs-terminal-03-when-installs-are-weird-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm install package@latest</code>
+  
+</div>
+<div class="project-split-cell">
+  Explicitly request current latest tag.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-03-when-installs-are-weird-r05" class="project-command child-05 uid-fs-terminal-03-when-installs-are-weird-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  Avoid casually deleting lockfiles: they preserve reproducible dependency versions and often belong in source control.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-fs-terminal-section-frontend-full-stack-framework-clis"
+  class="project-display node-34 uid-fs-terminal-section-frontend-full-stack-framework-clis terminal-section terminal-section-04"
+>
+  <div class="project-preview"><p>Frontend and full-stack JavaScript framework CLIs, environment variables, project flow, and security habits.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>2026 Edition</span>
+  <h2>04 — Frontend & Full-Stack Framework CLIs</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-fs-terminal-04-frontend-framework-quick-starts"
+  class="project-detail node-35 uid-fs-terminal-04-frontend-framework-quick-starts terminal-reference-grid"
+>
+  
+<header>
+  <span>Frontend & Full-Stack Framework CLIs</span>
+  <h3>Frontend Framework Quick Starts</h3>
+  
+</header>
+  
+  <div class="project-meta">
+<div id="child-fs-terminal-04-frontend-framework-quick-starts-c01" class="child-01 uid-fs-terminal-04-frontend-framework-quick-starts-c01">
+  
+<div class="project-command-title">
+  Vite
+</div>
+  <ul class="project-compact-list"><li><code>npm create vite@latest</code><span>Interactive scaffold.</span></li><li><code>npm create vite@latest app -- --template react-ts</code><span>React + TypeScript scaffold.</span></li><li><code>cd app &amp;&amp; npm install</code><span>Install after scaffold if needed.</span></li><li><code>npm run dev</code><span>Start Vite dev server.</span></li><li><code>npm run build</code><span>Production build.</span></li><li><code>npm run preview</code><span>Preview production build locally.</span></li></ul>
+</div>
+<div id="child-fs-terminal-04-frontend-framework-quick-starts-c02" class="child-02 uid-fs-terminal-04-frontend-framework-quick-starts-c02">
+  
+<div class="project-command-title">
+  Next.js
+</div>
+  <ul class="project-compact-list"><li><code>npx create-next-app@latest</code><span>Scaffold a Next.js application.</span></li><li><code>npm run dev</code><span>Development server.</span></li><li><code>npm run build</code><span>Production build.</span></li><li><code>npm start</code><span>Run built production server.</span></li><li><code>npx next info</code><span>Print environment info for debugging.</span></li></ul>
+</div>
+<div id="child-fs-terminal-04-frontend-framework-quick-starts-c03" class="child-03 uid-fs-terminal-04-frontend-framework-quick-starts-c03">
+  
+<div class="project-command-title">
+  Vue
+</div>
+  <ul class="project-compact-list"><li><code>npm create vue@latest</code><span>Official Vue project scaffold.</span></li><li><code>npm install</code><span>Install dependencies.</span></li><li><code>npm run dev</code><span>Development server.</span></li><li><code>npm run build</code><span>Production build.</span></li></ul>
+</div>
+<div id="child-fs-terminal-04-frontend-framework-quick-starts-c04" class="child-04 uid-fs-terminal-04-frontend-framework-quick-starts-c04">
+  
+<div class="project-command-title">
+  Angular
+</div>
+  <ul class="project-compact-list"><li><code>npx @angular/cli@latest new app</code><span>Create Angular workspace/app.</span></li><li><code>cd app &amp;&amp; npm start</code><span>Start configured dev script.</span></li><li><code>npx ng serve</code><span>Run Angular dev server.</span></li><li><code>npx ng generate component name</code><span>Generate component.</span></li><li><code>npx ng build</code><span>Production build.</span></li><li><code>npx ng test</code><span>Run configured tests.</span></li></ul>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-04-express-node-api"
+  class="project-doc-section node-36 uid-fs-terminal-04-express-node-api terminal-command-group"
+>
+  
+<header>
+  <span>Frontend & Full-Stack Framework CLIs</span>
+  <h3>Express / Node API</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-04-express-node-api-r01" class="project-command child-01 uid-fs-terminal-04-express-node-api-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm init -y</code>
+  
+</div>
+<div class="project-split-cell">
+  Start package.json.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-express-node-api-r02" class="project-command child-02 uid-fs-terminal-04-express-node-api-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm install express</code>
+  
+</div>
+<div class="project-split-cell">
+  Install Express.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-express-node-api-r03" class="project-command child-03 uid-fs-terminal-04-express-node-api-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>node server.js</code>
+  
+</div>
+<div class="project-split-cell">
+  Run server entry file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-express-node-api-r04" class="project-command child-04 uid-fs-terminal-04-express-node-api-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>node --watch server.js</code>
+  
+</div>
+<div class="project-split-cell">
+  Built-in file watch restart.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-express-node-api-r05" class="project-command child-05 uid-fs-terminal-04-express-node-api-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx express-generator app</code>
+  
+</div>
+<div class="project-split-cell">
+  Optional Express generator scaffold.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-04-nestjs"
+  class="project-doc-section node-37 uid-fs-terminal-04-nestjs terminal-command-group"
+>
+  
+<header>
+  <span>Frontend & Full-Stack Framework CLIs</span>
+  <h3>NestJS</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-04-nestjs-r01" class="project-command child-01 uid-fs-terminal-04-nestjs-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx @nestjs/cli@latest new app</code>
+  
+</div>
+<div class="project-split-cell">
+  Scaffold Nest application.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-nestjs-r02" class="project-command child-02 uid-fs-terminal-04-nestjs-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm run start:dev</code>
+  
+</div>
+<div class="project-split-cell">
+  Watch-mode dev server.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-nestjs-r03" class="project-command child-03 uid-fs-terminal-04-nestjs-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx nest g module users</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate module.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-nestjs-r04" class="project-command child-04 uid-fs-terminal-04-nestjs-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx nest g controller users</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate controller.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-nestjs-r05" class="project-command child-05 uid-fs-terminal-04-nestjs-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx nest g service users</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate service.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-nestjs-r06" class="project-command child-06 uid-fs-terminal-04-nestjs-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx nest g resource users</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate CRUD resource workflow.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-04-prisma-orm"
+  class="project-doc-section node-38 uid-fs-terminal-04-prisma-orm terminal-command-group"
+>
+  
+<header>
+  <span>Frontend & Full-Stack Framework CLIs</span>
+  <h3>Prisma ORM</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-04-prisma-orm-r01" class="project-command child-01 uid-fs-terminal-04-prisma-orm-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prisma init</code>
+  
+</div>
+<div class="project-split-cell">
+  Initialize Prisma project.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-prisma-orm-r02" class="project-command child-02 uid-fs-terminal-04-prisma-orm-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prisma migrate dev --name init</code>
+  
+</div>
+<div class="project-split-cell">
+  Create + apply dev migration.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-prisma-orm-r03" class="project-command child-03 uid-fs-terminal-04-prisma-orm-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prisma generate</code>
+  
+</div>
+<div class="project-split-cell">
+  Generate Prisma Client.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-prisma-orm-r04" class="project-command child-04 uid-fs-terminal-04-prisma-orm-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prisma studio</code>
+  
+</div>
+<div class="project-split-cell">
+  Open database GUI.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-prisma-orm-r05" class="project-command child-05 uid-fs-terminal-04-prisma-orm-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prisma db pull</code>
+  
+</div>
+<div class="project-split-cell">
+  Introspect existing database.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-prisma-orm-r06" class="project-command child-06 uid-fs-terminal-04-prisma-orm-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prisma db push</code>
+  
+</div>
+<div class="project-split-cell">
+  Push schema without migration history.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-prisma-orm-r07" class="project-command child-07 uid-fs-terminal-04-prisma-orm-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npx prisma migrate deploy</code>
+  
+</div>
+<div class="project-split-cell">
+  Apply pending migrations in deploy.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-prisma-orm-r08" class="project-command child-08 uid-fs-terminal-04-prisma-orm-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  Prisma v7 no longer guarantees that migrate dev will also run prisma generate; run generate explicitly when needed.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-04-environment-variables"
+  class="project-doc-section node-39 uid-fs-terminal-04-environment-variables terminal-command-group"
+>
+  
+<header>
+  <span>Frontend & Full-Stack Framework CLIs</span>
+  <h3>Environment Variables</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-04-environment-variables-r01" class="project-command child-01 uid-fs-terminal-04-environment-variables-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>export API_URL=http://localhost:3000</code>
+  
+</div>
+<div class="project-split-cell">
+  Set Unix env var for shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-environment-variables-r02" class="project-command child-02 uid-fs-terminal-04-environment-variables-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>API_URL=x npm run dev</code>
+  
+</div>
+<div class="project-split-cell">
+  Set Unix env var for one command.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-environment-variables-r03" class="project-command child-03 uid-fs-terminal-04-environment-variables-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>$env:API_URL="x"</code>
+  
+</div>
+<div class="project-split-cell">
+  PowerShell: set for session.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-environment-variables-r04" class="project-command child-04 uid-fs-terminal-04-environment-variables-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>node --env-file=.env server.js</code>
+  
+</div>
+<div class="project-split-cell">
+  Node: load env file at runtime.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-environment-variables-r05" class="project-command child-05 uid-fs-terminal-04-environment-variables-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>printenv API_URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Unix: print one env var.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-environment-variables-r06" class="project-command child-06 uid-fs-terminal-04-environment-variables-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Get-ChildItem Env:</code>
+  
+</div>
+<div class="project-split-cell">
+  PowerShell: list env vars.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-04-common-javascript-project-flow"
+  class="project-detail node-40 uid-fs-terminal-04-common-javascript-project-flow terminal-code-examples"
+>
+  
+<header>
+  <span>Frontend & Full-Stack Framework CLIs</span>
+  <h3>Common JavaScript Project Flow</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-04-common-javascript-project-flow-e01" class="project-command child-01 uid-fs-terminal-04-common-javascript-project-flow-e01">
+  
+<div class="project-command-title">
+  Typical project start-up flow
+</div>
+  <p>Use this sequence when opening an existing JavaScript project with a valid lockfile and an environment template.</p>
+  <div class="project-example">
+  <small>Example</small>
+  <pre><code>git clone URL
+cd project
+npm ci
+cp .env.example .env
+npm run dev
+npm test
+npm run build
+git status</code></pre>
+</div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-04-security-habits"
+  class="project-doc-section node-41 uid-fs-terminal-04-security-habits terminal-command-group"
+>
+  
+<header>
+  <span>Frontend & Full-Stack Framework CLIs</span>
+  <h3>Security Habits</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-04-security-habits-r01" class="project-command child-01 uid-fs-terminal-04-security-habits-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.env</code>
+  
+</div>
+<div class="project-split-cell">
+  Keep secrets out of committed source.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-security-habits-r02" class="project-command child-02 uid-fs-terminal-04-security-habits-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.gitignore</code>
+  
+</div>
+<div class="project-split-cell">
+  Ignore local secrets/build artifacts.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-security-habits-r03" class="project-command child-03 uid-fs-terminal-04-security-habits-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>npm audit</code>
+  
+</div>
+<div class="project-split-cell">
+  Review dependency advisories.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-security-habits-r04" class="project-command child-04 uid-fs-terminal-04-security-habits-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>--help</code>
+  
+</div>
+<div class="project-split-cell">
+  Read current CLI options before destructive operations.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-04-security-habits-r05" class="project-command child-05 uid-fs-terminal-04-security-habits-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>tokens/keys</code>
+  
+</div>
+<div class="project-split-cell">
+  Use secret managers or environment variables; never paste into public repos.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-fs-terminal-section-databases-sql-shells-other-runtimes"
+  class="project-display node-42 uid-fs-terminal-section-databases-sql-shells-other-runtimes terminal-section terminal-section-05"
+>
+  <div class="project-preview"><p>Database shells and essential commands plus Python, .NET, and Java build/runtime tooling.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>2026 Edition</span>
+  <h2>05 — Databases, SQL Shells & Other Runtimes</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-fs-terminal-05-postgresql-psql"
+  class="project-doc-section node-43 uid-fs-terminal-05-postgresql-psql terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>PostgreSQL / psql</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-postgresql-psql-r01" class="project-command child-01 uid-fs-terminal-05-postgresql-psql-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>psql -U postgres</code>
+  
+</div>
+<div class="project-split-cell">
+  Connect as user postgres.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r02" class="project-command child-02 uid-fs-terminal-05-postgresql-psql-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>psql -d appdb</code>
+  
+</div>
+<div class="project-split-cell">
+  Connect to database.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r03" class="project-command child-03 uid-fs-terminal-05-postgresql-psql-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>\l</code>
+  
+</div>
+<div class="project-split-cell">
+  List databases.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r04" class="project-command child-04 uid-fs-terminal-05-postgresql-psql-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>\c appdb</code>
+  
+</div>
+<div class="project-split-cell">
+  Connect/switch database.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r05" class="project-command child-05 uid-fs-terminal-05-postgresql-psql-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>\dt</code>
+  
+</div>
+<div class="project-split-cell">
+  List tables.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r06" class="project-command child-06 uid-fs-terminal-05-postgresql-psql-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>\d users</code>
+  
+</div>
+<div class="project-split-cell">
+  Describe table.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r07" class="project-command child-07 uid-fs-terminal-05-postgresql-psql-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>\q</code>
+  
+</div>
+<div class="project-split-cell">
+  Quit psql.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r08" class="project-command child-08 uid-fs-terminal-05-postgresql-psql-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>createdb appdb</code>
+  
+</div>
+<div class="project-split-cell">
+  Create database from OS shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r09" class="project-command child-09 uid-fs-terminal-05-postgresql-psql-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dropdb appdb</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>DESTRUCTIVE.</strong> Drop database.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-postgresql-psql-r10" class="project-command child-10 uid-fs-terminal-05-postgresql-psql-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pg_dump appdb &gt; backup.sql</code>
+  
+</div>
+<div class="project-split-cell">
+  Plain SQL backup.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-mysql-client"
+  class="project-doc-section node-44 uid-fs-terminal-05-mysql-client terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>MySQL Client</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-mysql-client-r01" class="project-command child-01 uid-fs-terminal-05-mysql-client-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mysql -u root -p</code>
+  
+</div>
+<div class="project-split-cell">
+  Connect and prompt for password.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mysql-client-r02" class="project-command child-02 uid-fs-terminal-05-mysql-client-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SHOW DATABASES;</code>
+  
+</div>
+<div class="project-split-cell">
+  List databases.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mysql-client-r03" class="project-command child-03 uid-fs-terminal-05-mysql-client-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>USE appdb;</code>
+  
+</div>
+<div class="project-split-cell">
+  Select database.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mysql-client-r04" class="project-command child-04 uid-fs-terminal-05-mysql-client-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SHOW TABLES;</code>
+  
+</div>
+<div class="project-split-cell">
+  List tables.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mysql-client-r05" class="project-command child-05 uid-fs-terminal-05-mysql-client-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DESCRIBE users;</code>
+  
+</div>
+<div class="project-split-cell">
+  Describe table.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mysql-client-r06" class="project-command child-06 uid-fs-terminal-05-mysql-client-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>exit</code>
+  
+</div>
+<div class="project-split-cell">
+  Quit client.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mysql-client-r07" class="project-command child-07 uid-fs-terminal-05-mysql-client-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mysqldump -u root -p appdb &gt; backup.sql</code>
+  
+</div>
+<div class="project-split-cell">
+  SQL backup.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-sqlite"
+  class="project-doc-section node-45 uid-fs-terminal-05-sqlite terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>SQLite</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-sqlite-r01" class="project-command child-01 uid-fs-terminal-05-sqlite-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sqlite3 app.db</code>
+  
+</div>
+<div class="project-split-cell">
+  Open/create database file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sqlite-r02" class="project-command child-02 uid-fs-terminal-05-sqlite-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.tables</code>
+  
+</div>
+<div class="project-split-cell">
+  List tables.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sqlite-r03" class="project-command child-03 uid-fs-terminal-05-sqlite-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.schema users</code>
+  
+</div>
+<div class="project-split-cell">
+  Show table schema.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sqlite-r04" class="project-command child-04 uid-fs-terminal-05-sqlite-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.headers on</code>
+  
+</div>
+<div class="project-split-cell">
+  Show column headings.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sqlite-r05" class="project-command child-05 uid-fs-terminal-05-sqlite-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.mode column</code>
+  
+</div>
+<div class="project-split-cell">
+  Readable column output.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sqlite-r06" class="project-command child-06 uid-fs-terminal-05-sqlite-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.quit</code>
+  
+</div>
+<div class="project-split-cell">
+  Exit sqlite3.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-sql-essentials"
+  class="project-doc-section node-46 uid-fs-terminal-05-sql-essentials terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>SQL Essentials</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-sql-essentials-r01" class="project-command child-01 uid-fs-terminal-05-sql-essentials-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SELECT * FROM users;</code>
+  
+</div>
+<div class="project-split-cell">
+  Read rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r02" class="project-command child-02 uid-fs-terminal-05-sql-essentials-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SELECT ... WHERE ...;</code>
+  
+</div>
+<div class="project-split-cell">
+  Filter rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r03" class="project-command child-03 uid-fs-terminal-05-sql-essentials-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>INSERT INTO t (...) VALUES (...);</code>
+  
+</div>
+<div class="project-split-cell">
+  Create row.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r04" class="project-command child-04 uid-fs-terminal-05-sql-essentials-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>UPDATE t SET x=... WHERE ...;</code>
+  
+</div>
+<div class="project-split-cell">
+  Change rows; WHERE matters.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r05" class="project-command child-05 uid-fs-terminal-05-sql-essentials-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DELETE FROM t WHERE ...;</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete rows; WHERE matters.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r06" class="project-command child-06 uid-fs-terminal-05-sql-essentials-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CREATE TABLE ...;</code>
+  
+</div>
+<div class="project-split-cell">
+  Create table.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r07" class="project-command child-07 uid-fs-terminal-05-sql-essentials-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ALTER TABLE ...;</code>
+  
+</div>
+<div class="project-split-cell">
+  Change table structure.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r08" class="project-command child-08 uid-fs-terminal-05-sql-essentials-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DROP TABLE ...;</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>DESTRUCTIVE.</strong> Delete table.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r09" class="project-command child-09 uid-fs-terminal-05-sql-essentials-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>BEGIN; / COMMIT;</code>
+  
+</div>
+<div class="project-split-cell">
+  Start / save transaction.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-sql-essentials-r10" class="project-command child-10 uid-fs-terminal-05-sql-essentials-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ROLLBACK;</code>
+  
+</div>
+<div class="project-split-cell">
+  Undo uncommitted transaction.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-mongodb-shell"
+  class="project-doc-section node-47 uid-fs-terminal-05-mongodb-shell terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>MongoDB Shell</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-mongodb-shell-r01" class="project-command child-01 uid-fs-terminal-05-mongodb-shell-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mongosh</code>
+  
+</div>
+<div class="project-split-cell">
+  Open MongoDB shell.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mongodb-shell-r02" class="project-command child-02 uid-fs-terminal-05-mongodb-shell-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>show dbs</code>
+  
+</div>
+<div class="project-split-cell">
+  List databases.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mongodb-shell-r03" class="project-command child-03 uid-fs-terminal-05-mongodb-shell-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>use appdb</code>
+  
+</div>
+<div class="project-split-cell">
+  Switch/create-on-use database.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mongodb-shell-r04" class="project-command child-04 uid-fs-terminal-05-mongodb-shell-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>show collections</code>
+  
+</div>
+<div class="project-split-cell">
+  List collections.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mongodb-shell-r05" class="project-command child-05 uid-fs-terminal-05-mongodb-shell-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>db.users.find()</code>
+  
+</div>
+<div class="project-split-cell">
+  Query users collection.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mongodb-shell-r06" class="project-command child-06 uid-fs-terminal-05-mongodb-shell-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>db.users.findOne({email:"a@b.com"})</code>
+  
+</div>
+<div class="project-split-cell">
+  Find one matching document.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-mongodb-shell-r07" class="project-command child-07 uid-fs-terminal-05-mongodb-shell-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>db.users.countDocuments()</code>
+  
+</div>
+<div class="project-split-cell">
+  Count documents.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-redis-cli"
+  class="project-doc-section node-48 uid-fs-terminal-05-redis-cli terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>Redis CLI</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-redis-cli-r01" class="project-command child-01 uid-fs-terminal-05-redis-cli-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>redis-cli</code>
+  
+</div>
+<div class="project-split-cell">
+  Open Redis CLI.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-redis-cli-r02" class="project-command child-02 uid-fs-terminal-05-redis-cli-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PING</code>
+  
+</div>
+<div class="project-split-cell">
+  Server health check.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-redis-cli-r03" class="project-command child-03 uid-fs-terminal-05-redis-cli-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SET key value</code>
+  
+</div>
+<div class="project-split-cell">
+  Store string.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-redis-cli-r04" class="project-command child-04 uid-fs-terminal-05-redis-cli-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>GET key</code>
+  
+</div>
+<div class="project-split-cell">
+  Read string.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-redis-cli-r05" class="project-command child-05 uid-fs-terminal-05-redis-cli-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DEL key</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete key.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-redis-cli-r06" class="project-command child-06 uid-fs-terminal-05-redis-cli-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SCAN 0</code>
+  
+</div>
+<div class="project-split-cell">
+  Iterate keys safely.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-redis-cli-r07" class="project-command child-07 uid-fs-terminal-05-redis-cli-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>TTL key</code>
+  
+</div>
+<div class="project-split-cell">
+  Seconds until expiration.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-python-environments-pip"
+  class="project-doc-section node-49 uid-fs-terminal-05-python-environments-pip terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>Python Environments & pip</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-python-environments-pip-r01" class="project-command child-01 uid-fs-terminal-05-python-environments-pip-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python3 --version</code>
+  
+</div>
+<div class="project-split-cell">
+  Check Python version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r02" class="project-command child-02 uid-fs-terminal-05-python-environments-pip-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python3 -m venv .venv</code>
+  
+</div>
+<div class="project-split-cell">
+  Create virtual environment.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r03" class="project-command child-03 uid-fs-terminal-05-python-environments-pip-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>source .venv/bin/activate</code>
+  
+</div>
+<div class="project-split-cell">
+  Activate on macOS/Linux.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r04" class="project-command child-04 uid-fs-terminal-05-python-environments-pip-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>.venv\Scripts\Activate.ps1</code>
+  
+</div>
+<div class="project-split-cell">
+  Activate in PowerShell.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r05" class="project-command child-05 uid-fs-terminal-05-python-environments-pip-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python -m pip install -U pip</code>
+  
+</div>
+<div class="project-split-cell">
+  Upgrade pip in active Python.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r06" class="project-command child-06 uid-fs-terminal-05-python-environments-pip-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python -m pip install package</code>
+  
+</div>
+<div class="project-split-cell">
+  Install package.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r07" class="project-command child-07 uid-fs-terminal-05-python-environments-pip-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python -m pip install -r requirements.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Install pinned requirements.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r08" class="project-command child-08 uid-fs-terminal-05-python-environments-pip-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python -m pip freeze &gt; requirements.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Record environment packages.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-environments-pip-r09" class="project-command child-09 uid-fs-terminal-05-python-environments-pip-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>deactivate</code>
+  
+</div>
+<div class="project-split-cell">
+  Leave virtual environment.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-python-web-quick-starts"
+  class="project-doc-section node-50 uid-fs-terminal-05-python-web-quick-starts terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>Python Web Quick Starts</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-python-web-quick-starts-r01" class="project-command child-01 uid-fs-terminal-05-python-web-quick-starts-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python app.py</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a Python entry file.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-web-quick-starts-r02" class="project-command child-02 uid-fs-terminal-05-python-web-quick-starts-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>flask --app app run --debug</code>
+  
+</div>
+<div class="project-split-cell">
+  Flask dev server.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-web-quick-starts-r03" class="project-command child-03 uid-fs-terminal-05-python-web-quick-starts-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>django-admin startproject site</code>
+  
+</div>
+<div class="project-split-cell">
+  Create Django project.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-web-quick-starts-r04" class="project-command child-04 uid-fs-terminal-05-python-web-quick-starts-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python manage.py runserver</code>
+  
+</div>
+<div class="project-split-cell">
+  Django dev server.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-web-quick-starts-r05" class="project-command child-05 uid-fs-terminal-05-python-web-quick-starts-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python manage.py makemigrations</code>
+  
+</div>
+<div class="project-split-cell">
+  Create Django migrations.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-web-quick-starts-r06" class="project-command child-06 uid-fs-terminal-05-python-web-quick-starts-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>python manage.py migrate</code>
+  
+</div>
+<div class="project-split-cell">
+  Apply Django migrations.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-python-web-quick-starts-r07" class="project-command child-07 uid-fs-terminal-05-python-web-quick-starts-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>pytest</code>
+  
+</div>
+<div class="project-split-cell">
+  Run pytest suite.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-net-cli"
+  class="project-doc-section node-51 uid-fs-terminal-05-net-cli terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>.NET CLI</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-net-cli-r01" class="project-command child-01 uid-fs-terminal-05-net-cli-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet --info</code>
+  
+</div>
+<div class="project-split-cell">
+  SDK/runtime information.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-net-cli-r02" class="project-command child-02 uid-fs-terminal-05-net-cli-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet new webapi -n Api</code>
+  
+</div>
+<div class="project-split-cell">
+  Create Web API project.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-net-cli-r03" class="project-command child-03 uid-fs-terminal-05-net-cli-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet restore</code>
+  
+</div>
+<div class="project-split-cell">
+  Restore NuGet packages.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-net-cli-r04" class="project-command child-04 uid-fs-terminal-05-net-cli-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet build</code>
+  
+</div>
+<div class="project-split-cell">
+  Compile project.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-net-cli-r05" class="project-command child-05 uid-fs-terminal-05-net-cli-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet run</code>
+  
+</div>
+<div class="project-split-cell">
+  Run application.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-net-cli-r06" class="project-command child-06 uid-fs-terminal-05-net-cli-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet watch</code>
+  
+</div>
+<div class="project-split-cell">
+  Watch + rerun.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-net-cli-r07" class="project-command child-07 uid-fs-terminal-05-net-cli-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet test</code>
+  
+</div>
+<div class="project-split-cell">
+  Run tests.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-net-cli-r08" class="project-command child-08 uid-fs-terminal-05-net-cli-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>dotnet add package NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Add NuGet package.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-05-java-maven-gradle"
+  class="project-doc-section node-52 uid-fs-terminal-05-java-maven-gradle terminal-command-group"
+>
+  
+<header>
+  <span>Databases, SQL Shells & Other Runtimes</span>
+  <h3>Java / Maven / Gradle</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-05-java-maven-gradle-r01" class="project-command child-01 uid-fs-terminal-05-java-maven-gradle-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>java --version</code>
+  
+</div>
+<div class="project-split-cell">
+  Java runtime version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-java-maven-gradle-r02" class="project-command child-02 uid-fs-terminal-05-java-maven-gradle-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>javac File.java</code>
+  
+</div>
+<div class="project-split-cell">
+  Compile Java source.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-java-maven-gradle-r03" class="project-command child-03 uid-fs-terminal-05-java-maven-gradle-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mvn -v</code>
+  
+</div>
+<div class="project-split-cell">
+  Maven version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-java-maven-gradle-r04" class="project-command child-04 uid-fs-terminal-05-java-maven-gradle-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mvn clean test</code>
+  
+</div>
+<div class="project-split-cell">
+  Clean + run tests.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-java-maven-gradle-r05" class="project-command child-05 uid-fs-terminal-05-java-maven-gradle-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>mvn spring-boot:run</code>
+  
+</div>
+<div class="project-split-cell">
+  Run Spring Boot via Maven.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-java-maven-gradle-r06" class="project-command child-06 uid-fs-terminal-05-java-maven-gradle-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>./gradlew build</code>
+  
+</div>
+<div class="project-split-cell">
+  Gradle wrapper build.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-java-maven-gradle-r07" class="project-command child-07 uid-fs-terminal-05-java-maven-gradle-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>./gradlew test</code>
+  
+</div>
+<div class="project-split-cell">
+  Gradle wrapper tests.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-05-java-maven-gradle-r08" class="project-command child-08 uid-fs-terminal-05-java-maven-gradle-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>./gradlew bootRun</code>
+  
+</div>
+<div class="project-split-cell">
+  Run Spring Boot via Gradle.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-fs-terminal-section-docker-cloud-troubleshooting"
+  class="project-display node-53 uid-fs-terminal-section-docker-cloud-troubleshooting terminal-section terminal-section-06"
+>
+  <div class="project-preview"><p>Docker, Compose, Kubernetes, cloud CLI checks, common ports, troubleshooting, and high-risk commands.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>2026 Edition</span>
+  <h2>06 — Docker, Cloud & Troubleshooting</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-fs-terminal-06-docker-essentials"
+  class="project-doc-section node-54 uid-fs-terminal-06-docker-essentials terminal-command-group"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>Docker Essentials</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-06-docker-essentials-r01" class="project-command child-01 uid-fs-terminal-06-docker-essentials-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker --version</code>
+  
+</div>
+<div class="project-split-cell">
+  Docker CLI version.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r02" class="project-command child-02 uid-fs-terminal-06-docker-essentials-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker info</code>
+  
+</div>
+<div class="project-split-cell">
+  Engine/system information.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r03" class="project-command child-03 uid-fs-terminal-06-docker-essentials-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker pull image</code>
+  
+</div>
+<div class="project-split-cell">
+  Download image.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r04" class="project-command child-04 uid-fs-terminal-06-docker-essentials-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker images</code>
+  
+</div>
+<div class="project-split-cell">
+  List local images.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r05" class="project-command child-05 uid-fs-terminal-06-docker-essentials-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker ps</code>
+  
+</div>
+<div class="project-split-cell">
+  Running containers.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r06" class="project-command child-06 uid-fs-terminal-06-docker-essentials-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker ps -a</code>
+  
+</div>
+<div class="project-split-cell">
+  All containers.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r07" class="project-command child-07 uid-fs-terminal-06-docker-essentials-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker run --rm -it image sh</code>
+  
+</div>
+<div class="project-split-cell">
+  Temporary interactive container.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r08" class="project-command child-08 uid-fs-terminal-06-docker-essentials-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker run -p 3000:3000 image</code>
+  
+</div>
+<div class="project-split-cell">
+  Map host:container port.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r09" class="project-command child-09 uid-fs-terminal-06-docker-essentials-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker build -t app:dev .</code>
+  
+</div>
+<div class="project-split-cell">
+  Build image from Dockerfile.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r10" class="project-command child-10 uid-fs-terminal-06-docker-essentials-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker exec -it NAME sh</code>
+  
+</div>
+<div class="project-split-cell">
+  Shell inside running container.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r11" class="project-command child-11 uid-fs-terminal-06-docker-essentials-r11">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker logs -f NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow container logs.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r12" class="project-command child-12 uid-fs-terminal-06-docker-essentials-r12">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker stop NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop container.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-essentials-r13" class="project-command child-13 uid-fs-terminal-06-docker-essentials-r13">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker rm NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove stopped container.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-06-docker-cleanup"
+  class="project-doc-section node-55 uid-fs-terminal-06-docker-cleanup terminal-command-group"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>Docker Cleanup</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-06-docker-cleanup-r01" class="project-command child-01 uid-fs-terminal-06-docker-cleanup-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker volume ls</code>
+  
+</div>
+<div class="project-split-cell">
+  List volumes.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-cleanup-r02" class="project-command child-02 uid-fs-terminal-06-docker-cleanup-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker network ls</code>
+  
+</div>
+<div class="project-split-cell">
+  List networks.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-cleanup-r03" class="project-command child-03 uid-fs-terminal-06-docker-cleanup-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker system df</code>
+  
+</div>
+<div class="project-split-cell">
+  Disk used by Docker.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-cleanup-r04" class="project-command child-04 uid-fs-terminal-06-docker-cleanup-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker image prune</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove dangling images.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-cleanup-r05" class="project-command child-05 uid-fs-terminal-06-docker-cleanup-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker container prune</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove stopped containers.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-cleanup-r06" class="project-command child-06 uid-fs-terminal-06-docker-cleanup-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker system prune</code>
+  
+</div>
+<div class="project-split-cell">
+  Broad cleanup; review prompt carefully.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-06-docker-compose"
+  class="project-doc-section node-56 uid-fs-terminal-06-docker-compose terminal-command-group"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>Docker Compose</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-06-docker-compose-r01" class="project-command child-01 uid-fs-terminal-06-docker-compose-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose up</code>
+  
+</div>
+<div class="project-split-cell">
+  Create/start + attach.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r02" class="project-command child-02 uid-fs-terminal-06-docker-compose-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose up -d</code>
+  
+</div>
+<div class="project-split-cell">
+  Start in background.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r03" class="project-command child-03 uid-fs-terminal-06-docker-compose-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose up --build</code>
+  
+</div>
+<div class="project-split-cell">
+  Build then start.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r04" class="project-command child-04 uid-fs-terminal-06-docker-compose-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose ps</code>
+  
+</div>
+<div class="project-split-cell">
+  List project containers.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r05" class="project-command child-05 uid-fs-terminal-06-docker-compose-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose logs -f</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow service logs.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r06" class="project-command child-06 uid-fs-terminal-06-docker-compose-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose exec api sh</code>
+  
+</div>
+<div class="project-split-cell">
+  Shell in service container.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r07" class="project-command child-07 uid-fs-terminal-06-docker-compose-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose build</code>
+  
+</div>
+<div class="project-split-cell">
+  Build/rebuild services.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r08" class="project-command child-08 uid-fs-terminal-06-docker-compose-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose build --no-cache</code>
+  
+</div>
+<div class="project-split-cell">
+  Rebuild without cache.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r09" class="project-command child-09 uid-fs-terminal-06-docker-compose-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose pull</code>
+  
+</div>
+<div class="project-split-cell">
+  Pull service images.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r10" class="project-command child-10 uid-fs-terminal-06-docker-compose-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose down</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop/remove project containers/network.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-docker-compose-r11" class="project-command child-11 uid-fs-terminal-06-docker-compose-r11">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose down -v</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>High risk:</strong> also remove named volumes/data.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-06-kubernetes-basics"
+  class="project-doc-section node-57 uid-fs-terminal-06-kubernetes-basics terminal-command-group"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>Kubernetes Basics</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-06-kubernetes-basics-r01" class="project-command child-01 uid-fs-terminal-06-kubernetes-basics-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl config current-context</code>
+  
+</div>
+<div class="project-split-cell">
+  Show active cluster context.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r02" class="project-command child-02 uid-fs-terminal-06-kubernetes-basics-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl get pods</code>
+  
+</div>
+<div class="project-split-cell">
+  List pods.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r03" class="project-command child-03 uid-fs-terminal-06-kubernetes-basics-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl get all</code>
+  
+</div>
+<div class="project-split-cell">
+  Common workload/service objects.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r04" class="project-command child-04 uid-fs-terminal-06-kubernetes-basics-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl describe pod NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Detailed pod diagnostics.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r05" class="project-command child-05 uid-fs-terminal-06-kubernetes-basics-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl logs -f POD</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow pod logs.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r06" class="project-command child-06 uid-fs-terminal-06-kubernetes-basics-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl exec -it POD -- sh</code>
+  
+</div>
+<div class="project-split-cell">
+  Shell inside pod.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r07" class="project-command child-07 uid-fs-terminal-06-kubernetes-basics-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl apply -f file.yaml</code>
+  
+</div>
+<div class="project-split-cell">
+  Create/update resources.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r08" class="project-command child-08 uid-fs-terminal-06-kubernetes-basics-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl delete -f file.yaml</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete resources from manifest.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r09" class="project-command child-09 uid-fs-terminal-06-kubernetes-basics-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl rollout status deploy/APP</code>
+  
+</div>
+<div class="project-split-cell">
+  Watch deployment rollout.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-kubernetes-basics-r10" class="project-command child-10 uid-fs-terminal-06-kubernetes-basics-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>kubectl port-forward svc/app 8080:80</code>
+  
+</div>
+<div class="project-split-cell">
+  Forward local port to service.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-06-cloud-cli-identity-checks"
+  class="project-doc-section node-58 uid-fs-terminal-06-cloud-cli-identity-checks terminal-command-group"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>Cloud CLI Identity Checks</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r01" class="project-command child-01 uid-fs-terminal-06-cloud-cli-identity-checks-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>aws configure</code>
+  
+</div>
+<div class="project-split-cell">
+  Configure AWS CLI credentials/defaults.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r02" class="project-command child-02 uid-fs-terminal-06-cloud-cli-identity-checks-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>aws sts get-caller-identity</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm current AWS identity.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r03" class="project-command child-03 uid-fs-terminal-06-cloud-cli-identity-checks-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>aws s3 ls</code>
+  
+</div>
+<div class="project-split-cell">
+  List accessible S3 buckets.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r04" class="project-command child-04 uid-fs-terminal-06-cloud-cli-identity-checks-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>az login</code>
+  
+</div>
+<div class="project-split-cell">
+  Sign in to Azure CLI.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r05" class="project-command child-05 uid-fs-terminal-06-cloud-cli-identity-checks-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>az account show</code>
+  
+</div>
+<div class="project-split-cell">
+  Current Azure subscription/account.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r06" class="project-command child-06 uid-fs-terminal-06-cloud-cli-identity-checks-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>az group list -o table</code>
+  
+</div>
+<div class="project-split-cell">
+  List resource groups.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r07" class="project-command child-07 uid-fs-terminal-06-cloud-cli-identity-checks-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gcloud auth login</code>
+  
+</div>
+<div class="project-split-cell">
+  Sign in to Google Cloud CLI.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r08" class="project-command child-08 uid-fs-terminal-06-cloud-cli-identity-checks-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gcloud config get-value project</code>
+  
+</div>
+<div class="project-split-cell">
+  Show active GCP project.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r09" class="project-command child-09 uid-fs-terminal-06-cloud-cli-identity-checks-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>gcloud projects list</code>
+  
+</div>
+<div class="project-split-cell">
+  List accessible projects.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-cloud-cli-identity-checks-r10" class="project-command child-10 uid-fs-terminal-06-cloud-cli-identity-checks-r10">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  Cloud commands require the vendor CLI plus appropriate account permissions. Prefer SSO/short-lived credentials where your organization supports them.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-06-ports-developers-see-often"
+  class="project-detail node-59 uid-fs-terminal-06-ports-developers-see-often terminal-reference-grid"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>Ports Developers See Often</h3>
+  
+</header>
+  
+  <div class="project-meta">
+<div id="child-fs-terminal-06-ports-developers-see-often-c01" class="child-01 uid-fs-terminal-06-ports-developers-see-often-c01">
+  
+<div class="project-command-title">
+  3000
+</div>
+  <ul class="project-compact-list"><li><code>Node / Next</code><span>Common Node/Next dev server.</span></li></ul>
+</div>
+<div id="child-fs-terminal-06-ports-developers-see-often-c02" class="child-02 uid-fs-terminal-06-ports-developers-see-often-c02">
+  
+<div class="project-command-title">
+  5173
+</div>
+  <ul class="project-compact-list"><li><code>Vite</code><span>Common Vite dev server.</span></li></ul>
+</div>
+<div id="child-fs-terminal-06-ports-developers-see-often-c03" class="child-03 uid-fs-terminal-06-ports-developers-see-often-c03">
+  
+<div class="project-command-title">
+  8000
+</div>
+  <ul class="project-compact-list"><li><code>Python / dev HTTP</code><span>Common Python/dev HTTP port.</span></li></ul>
+</div>
+<div id="child-fs-terminal-06-ports-developers-see-often-c04" class="child-04 uid-fs-terminal-06-ports-developers-see-often-c04">
+  
+<div class="project-command-title">
+  8080
+</div>
+  <ul class="project-compact-list"><li><code>Alternate HTTP</code><span>Common alternate HTTP/app port.</span></li></ul>
+</div>
+<div id="child-fs-terminal-06-ports-developers-see-often-c05" class="child-05 uid-fs-terminal-06-ports-developers-see-often-c05">
+  
+<div class="project-command-title">
+  5432
+</div>
+  <ul class="project-compact-list"><li><code>PostgreSQL</code><span>PostgreSQL default port.</span></li></ul>
+</div>
+<div id="child-fs-terminal-06-ports-developers-see-often-c06" class="child-06 uid-fs-terminal-06-ports-developers-see-often-c06">
+  
+<div class="project-command-title">
+  3306
+</div>
+  <ul class="project-compact-list"><li><code>MySQL</code><span>MySQL default port.</span></li></ul>
+</div>
+<div id="child-fs-terminal-06-ports-developers-see-often-c07" class="child-07 uid-fs-terminal-06-ports-developers-see-often-c07">
+  
+<div class="project-command-title">
+  6379
+</div>
+  <ul class="project-compact-list"><li><code>Redis</code><span>Redis default port.</span></li></ul>
+</div>
+<div id="child-fs-terminal-06-ports-developers-see-often-c08" class="child-08 uid-fs-terminal-06-ports-developers-see-often-c08">
+  
+<div class="project-command-title">
+  27017
+</div>
+  <ul class="project-compact-list"><li><code>MongoDB</code><span>MongoDB default port.</span></li></ul>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-06-fast-troubleshooting-loop"
+  class="project-detail node-60 uid-fs-terminal-06-fast-troubleshooting-loop terminal-code-examples"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>Fast Troubleshooting Loop</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-06-fast-troubleshooting-loop-e01" class="project-command child-01 uid-fs-terminal-06-fast-troubleshooting-loop-e01">
+  
+<div class="project-command-title">
+  Fast troubleshooting sequence
+</div>
+  <p>Run these checks in order to confirm location, source state, runtime availability, dependencies, ports, containers, logs, and HTTP response.</p>
+  <div class="project-example">
+  <small>Example</small>
+  <pre><code>pwd &amp;&amp; ls -la
+git status
+node -v
+python --version
+npm -v
+docker --version
+npm ci
+printenv | sort
+lsof -i :PORT
+docker compose ps
+docker compose logs -f
+curl -I localhost:PORT</code></pre>
+</div>
+</div>
+  </div>
+</section>
+<section
+  id="node-fs-terminal-06-high-risk-commands-slow-down"
+  class="project-doc-section node-61 uid-fs-terminal-06-high-risk-commands-slow-down terminal-command-group"
+>
+  
+<header>
+  <span>Docker, Cloud & Troubleshooting</span>
+  <h3>High-Risk Commands: Slow Down</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r01" class="project-command child-01 uid-fs-terminal-06-high-risk-commands-slow-down-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>rm -rf PATH</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>Permanently removes files.</strong>
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r02" class="project-command child-02 uid-fs-terminal-06-high-risk-commands-slow-down-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git reset --hard</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>Discards uncommitted changes.</strong>
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r03" class="project-command child-03 uid-fs-terminal-06-high-risk-commands-slow-down-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>git clean -fd</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>Deletes untracked files/directories.</strong>
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r04" class="project-command child-04 uid-fs-terminal-06-high-risk-commands-slow-down-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>docker compose down -v</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>Can erase local database volumes.</strong>
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r05" class="project-command child-05 uid-fs-terminal-06-high-risk-commands-slow-down-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DROP DATABASE / DROP TABLE</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>Deletes database structures/data.</strong>
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r06" class="project-command child-06 uid-fs-terminal-06-high-risk-commands-slow-down-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DELETE / UPDATE without WHERE</code>
+  
+</div>
+<div class="project-split-cell">
+  <strong>Can affect every row.</strong>
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r07" class="project-command child-07 uid-fs-terminal-06-high-risk-commands-slow-down-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>sudo</code>
+  
+</div>
+<div class="project-split-cell">
+  Runs with elevated privileges.
+  
+</div>
+  </div>
+</div>
+<div id="child-fs-terminal-06-high-risk-commands-slow-down-r08" class="project-command child-08 uid-fs-terminal-06-high-risk-commands-slow-down-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOTE</code>
+  
+</div>
+<div class="project-split-cell">
+  Before destructive commands: verify <code>pwd</code>, inspect the exact path/resource, make a backup when data matters, and prefer reversible commands when possible.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

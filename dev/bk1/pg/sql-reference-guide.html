@@ -1,0 +1,4383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>SQL Reference Guide — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>SQL Reference Guide</strong>
+    <p>SQL essentials</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/angular-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Angular
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Cross-Device Web Testing
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Node.js
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      TypeScript
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/java-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Java
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      C#
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/python-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Python
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      SQL Reference Guide
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      Relational SQL
+    </strong>
+
+    <br />
+
+    SQL essentials
+  </p>
+</header>
+        
+<nav
+  id="node-sql-ref-nav"
+  class="project-doc-nav node-01 uid-sql-ref-nav sql-reference-nav" aria-label="Guide Navigation"
+>
+<a
+  id="child-sql-ref-nav-01"
+  class="child-01 uid-sql-ref-nav-01"
+  href="pg/sql-reference-guide.html#node-sql-ref-section-01-core-querying"
+>Core Querying</a>
+<a
+  id="child-sql-ref-nav-02"
+  class="child-02 uid-sql-ref-nav-02"
+  href="pg/sql-reference-guide.html#node-sql-ref-section-02-filtering-expressions-functions"
+>Filtering, Expressions & Functions</a>
+<a
+  id="child-sql-ref-nav-03"
+  class="child-03 uid-sql-ref-nav-03"
+  href="pg/sql-reference-guide.html#node-sql-ref-section-03-grouping-joins-result-sets"
+>Grouping, Joins & Result Sets</a>
+<a
+  id="child-sql-ref-nav-04"
+  class="child-04 uid-sql-ref-nav-04"
+  href="pg/sql-reference-guide.html#node-sql-ref-section-04-data-changes-schema"
+>Data Changes & Schema</a>
+<a
+  id="child-sql-ref-nav-05"
+  class="child-05 uid-sql-ref-nav-05"
+  href="pg/sql-reference-guide.html#node-sql-ref-section-05-design-integrity-performance"
+>Design, Integrity & Performance</a>
+<a
+  id="child-sql-ref-nav-06"
+  class="child-06 uid-sql-ref-nav-06"
+  href="pg/sql-reference-guide.html#node-sql-ref-section-06-transactions-advanced-sql-dialects"
+>Transactions, Advanced SQL & Dialects</a>
+</nav>
+
+<article class="project-doc">
+  <div
+  id="node-sql-ref-section-01-core-querying"
+  class="project-display node-02 uid-sql-ref-section-01-core-querying sql-reference-section sql-reference-section-01"
+>
+  <div class="project-preview"><p>SELECT structure, aliases, sorting, pagination, data types, and query-writing order.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 1 / 6</span>
+  <h2>01 — Core Querying</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-sql-ref-01-select-anatomy"
+  class="project-doc-section node-03 uid-sql-ref-01-select-anatomy sql-reference-command-group"
+>
+  
+<header>
+  <span>Core Querying</span>
+  <h3>SELECT Anatomy</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-01-select-anatomy-r01" class="project-command child-01 uid-sql-ref-01-select-anatomy-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SELECT column1, column2</code>
+  
+</div>
+<div class="project-split-cell">
+  Return selected columns.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-select-anatomy-r02" class="project-command child-02 uid-sql-ref-01-select-anatomy-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SELECT *</code>
+  
+</div>
+<div class="project-split-cell">
+  Return every column; useful for inspection, usually avoid in production APIs.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-select-anatomy-r03" class="project-command child-03 uid-sql-ref-01-select-anatomy-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>FROM table_name</code>
+  
+</div>
+<div class="project-split-cell">
+  Choose the source table or relation.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-select-anatomy-r04" class="project-command child-04 uid-sql-ref-01-select-anatomy-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SELECT DISTINCT column</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove duplicate result rows for the selected expression set.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-select-anatomy-r05" class="project-command child-05 uid-sql-ref-01-select-anatomy-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>AS alias</code>
+  
+</div>
+<div class="project-split-cell">
+  Rename an output column or table reference for the query.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-select-anatomy-r06" class="project-command child-06 uid-sql-ref-01-select-anatomy-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SELECT expression</code>
+  
+</div>
+<div class="project-split-cell">
+  Return calculations, literals, function results, or CASE expressions.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-01-aliases-qualification"
+  class="project-doc-section node-04 uid-sql-ref-01-aliases-qualification sql-reference-command-group"
+>
+  
+<header>
+  <span>Core Querying</span>
+  <h3>Aliases & Qualification</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-01-aliases-qualification-r01" class="project-command child-01 uid-sql-ref-01-aliases-qualification-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>users AS u</code>
+  
+</div>
+<div class="project-split-cell">
+  Give a table a shorter query alias.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-aliases-qualification-r02" class="project-command child-02 uid-sql-ref-01-aliases-qualification-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>u.id</code>
+  
+</div>
+<div class="project-split-cell">
+  Qualify a column with its table alias; important in joins.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-aliases-qualification-r03" class="project-command child-03 uid-sql-ref-01-aliases-qualification-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>total * tax_rate AS tax</code>
+  
+</div>
+<div class="project-split-cell">
+  Alias a calculated output column.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-aliases-qualification-r04" class="project-command child-04 uid-sql-ref-01-aliases-qualification-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>"Order" / `Order`</code>
+  
+</div>
+<div class="project-split-cell">
+  Quoted identifiers are dialect-specific; avoid reserved words for object names.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-01-sorting-pagination"
+  class="project-doc-section node-05 uid-sql-ref-01-sorting-pagination sql-reference-command-group"
+>
+  
+<header>
+  <span>Core Querying</span>
+  <h3>Sorting & Pagination</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-01-sorting-pagination-r01" class="project-command child-01 uid-sql-ref-01-sorting-pagination-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ORDER BY created_at ASC</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort from lowest/oldest to highest/newest.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-sorting-pagination-r02" class="project-command child-02 uid-sql-ref-01-sorting-pagination-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ORDER BY created_at DESC</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort from highest/newest to lowest/oldest.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-sorting-pagination-r03" class="project-command child-03 uid-sql-ref-01-sorting-pagination-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ORDER BY last_name, first_name</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort by multiple keys in sequence.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-sorting-pagination-r04" class="project-command child-04 uid-sql-ref-01-sorting-pagination-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LIMIT 25</code>
+  
+</div>
+<div class="project-split-cell">
+  Return at most 25 rows in PostgreSQL, MySQL, and SQLite.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-sorting-pagination-r05" class="project-command child-05 uid-sql-ref-01-sorting-pagination-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>OFFSET 50</code>
+  
+</div>
+<div class="project-split-cell">
+  Skip rows before returning the next page; large offsets can become expensive.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-sorting-pagination-r06" class="project-command child-06 uid-sql-ref-01-sorting-pagination-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>FETCH FIRST 25 ROWS ONLY</code>
+  
+</div>
+<div class="project-split-cell">
+  Standard-style row limiting supported by some systems.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-01-common-data-types"
+  class="project-doc-section node-06 uid-sql-ref-01-common-data-types sql-reference-command-group"
+>
+  
+<header>
+  <span>Core Querying</span>
+  <h3>Common Data Types</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-01-common-data-types-r01" class="project-command child-01 uid-sql-ref-01-common-data-types-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>INTEGER / INT</code>
+  
+</div>
+<div class="project-split-cell">
+  Whole numbers.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r02" class="project-command child-02 uid-sql-ref-01-common-data-types-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>BIGINT</code>
+  
+</div>
+<div class="project-split-cell">
+  Large whole numbers and large generated identifiers.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r03" class="project-command child-03 uid-sql-ref-01-common-data-types-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>DECIMAL(p,s) / NUMERIC(p,s)</code>
+  
+</div>
+<div class="project-split-cell">
+  Exact fixed-precision values; preferred for money-like calculations.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r04" class="project-command child-04 uid-sql-ref-01-common-data-types-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>REAL / FLOAT / DOUBLE</code>
+  
+</div>
+<div class="project-split-cell">
+  Approximate floating-point numeric values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r05" class="project-command child-05 uid-sql-ref-01-common-data-types-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CHAR(n) / VARCHAR(n) / TEXT</code>
+  
+</div>
+<div class="project-split-cell">
+  Character data; exact behavior and limits vary by database.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r06" class="project-command child-06 uid-sql-ref-01-common-data-types-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>BOOLEAN</code>
+  
+</div>
+<div class="project-split-cell">
+  True/false values; storage details vary by database.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r07" class="project-command child-07 uid-sql-ref-01-common-data-types-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>DATE</code>
+  
+</div>
+<div class="project-split-cell">
+  Calendar date without a time.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r08" class="project-command child-08 uid-sql-ref-01-common-data-types-r08">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>TIME</code>
+  
+</div>
+<div class="project-split-cell">
+  Time of day.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r09" class="project-command child-09 uid-sql-ref-01-common-data-types-r09">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>TIMESTAMP</code>
+  
+</div>
+<div class="project-split-cell">
+  Date and time; timezone behavior depends on type and database.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r10" class="project-command child-10 uid-sql-ref-01-common-data-types-r10">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>BLOB / BYTEA / BINARY</code>
+  
+</div>
+<div class="project-split-cell">
+  Binary data; names differ across engines.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-common-data-types-r11" class="project-command child-11 uid-sql-ref-01-common-data-types-r11">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>JSON / JSONB</code>
+  
+</div>
+<div class="project-split-cell">
+  Structured JSON where supported; PostgreSQL distinguishes JSON and JSONB.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-01-written-vs-logical-query-order"
+  class="project-doc-section node-07 uid-sql-ref-01-written-vs-logical-query-order sql-reference-command-group"
+>
+  
+<header>
+  <span>Core Querying</span>
+  <h3>Written vs Logical Query Order</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-01-written-vs-logical-query-order-r01" class="project-command child-01 uid-sql-ref-01-written-vs-logical-query-order-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Written</code>
+  
+</div>
+<div class="project-split-cell">
+  SELECT → FROM/JOIN → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT/FETCH.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-written-vs-logical-query-order-r02" class="project-command child-02 uid-sql-ref-01-written-vs-logical-query-order-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Logical processing</code>
+  
+</div>
+<div class="project-split-cell">
+  FROM/JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-01-written-vs-logical-query-order-r03" class="project-command child-03 uid-sql-ref-01-written-vs-logical-query-order-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Why it matters</code>
+  
+</div>
+<div class="project-split-cell">
+  A SELECT alias often cannot be referenced in WHERE because WHERE is logically evaluated earlier.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-sql-ref-section-02-filtering-expressions-functions"
+  class="project-display node-08 uid-sql-ref-section-02-filtering-expressions-functions sql-reference-section sql-reference-section-02"
+>
+  <div class="project-preview"><p>WHERE predicates, NULL handling, CASE expressions, pattern matching, and common scalar functions.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 2 / 6</span>
+  <h2>02 — Filtering, Expressions & Functions</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-sql-ref-02-comparison-boolean-logic"
+  class="project-doc-section node-09 uid-sql-ref-02-comparison-boolean-logic sql-reference-command-group"
+>
+  
+<header>
+  <span>Filtering, Expressions & Functions</span>
+  <h3>Comparison & Boolean Logic</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-02-comparison-boolean-logic-r01" class="project-command child-01 uid-sql-ref-02-comparison-boolean-logic-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>=</code>
+  
+</div>
+<div class="project-split-cell">
+  Equal.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-comparison-boolean-logic-r02" class="project-command child-02 uid-sql-ref-02-comparison-boolean-logic-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code><></code>
+  
+</div>
+<div class="project-split-cell">
+  Standard SQL not-equal operator.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-comparison-boolean-logic-r03" class="project-command child-03 uid-sql-ref-02-comparison-boolean-logic-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>!=</code>
+  
+</div>
+<div class="project-split-cell">
+  Common not-equal synonym; support is widespread but <> is standard.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-comparison-boolean-logic-r04" class="project-command child-04 uid-sql-ref-02-comparison-boolean-logic-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>>  <  >=  <=</code>
+  
+</div>
+<div class="project-split-cell">
+  Numeric, textual, or date comparisons when types are comparable.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-comparison-boolean-logic-r05" class="project-command child-05 uid-sql-ref-02-comparison-boolean-logic-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>AND</code>
+  
+</div>
+<div class="project-split-cell">
+  Require both predicates to be true.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-comparison-boolean-logic-r06" class="project-command child-06 uid-sql-ref-02-comparison-boolean-logic-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>OR</code>
+  
+</div>
+<div class="project-split-cell">
+  Require either predicate to be true.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-comparison-boolean-logic-r07" class="project-command child-07 uid-sql-ref-02-comparison-boolean-logic-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOT</code>
+  
+</div>
+<div class="project-split-cell">
+  Negate a predicate.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-comparison-boolean-logic-r08" class="project-command child-08 uid-sql-ref-02-comparison-boolean-logic-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>( ... )</code>
+  
+</div>
+<div class="project-split-cell">
+  Use parentheses to make mixed AND/OR logic explicit.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-02-where-patterns"
+  class="project-doc-section node-10 uid-sql-ref-02-where-patterns sql-reference-command-group"
+>
+  
+<header>
+  <span>Filtering, Expressions & Functions</span>
+  <h3>WHERE Patterns</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-02-where-patterns-r01" class="project-command child-01 uid-sql-ref-02-where-patterns-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE status = 'active'</code>
+  
+</div>
+<div class="project-split-cell">
+  Filter rows by an exact value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-where-patterns-r02" class="project-command child-02 uid-sql-ref-02-where-patterns-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE price BETWEEN 10 AND 50</code>
+  
+</div>
+<div class="project-split-cell">
+  Inclusive range test.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-where-patterns-r03" class="project-command child-03 uid-sql-ref-02-where-patterns-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE id IN (1, 2, 3)</code>
+  
+</div>
+<div class="project-split-cell">
+  Match any value in a list or subquery.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-where-patterns-r04" class="project-command child-04 uid-sql-ref-02-where-patterns-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE id NOT IN (...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Exclude listed values; NULLs in the list can create surprising results.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-where-patterns-r05" class="project-command child-05 uid-sql-ref-02-where-patterns-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE EXISTS (subquery)</code>
+  
+</div>
+<div class="project-split-cell">
+  True when the correlated or uncorrelated subquery returns a row.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-where-patterns-r06" class="project-command child-06 uid-sql-ref-02-where-patterns-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE NOT EXISTS (subquery)</code>
+  
+</div>
+<div class="project-split-cell">
+  True when the subquery returns no rows.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-02-pattern-matching"
+  class="project-doc-section node-11 uid-sql-ref-02-pattern-matching sql-reference-command-group"
+>
+  
+<header>
+  <span>Filtering, Expressions & Functions</span>
+  <h3>Pattern Matching</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-02-pattern-matching-r01" class="project-command child-01 uid-sql-ref-02-pattern-matching-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LIKE 'Ada%'</code>
+  
+</div>
+<div class="project-split-cell">
+  % matches zero or more characters.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-pattern-matching-r02" class="project-command child-02 uid-sql-ref-02-pattern-matching-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LIKE '_at'</code>
+  
+</div>
+<div class="project-split-cell">
+  _ matches exactly one character.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-pattern-matching-r03" class="project-command child-03 uid-sql-ref-02-pattern-matching-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOT LIKE pattern</code>
+  
+</div>
+<div class="project-split-cell">
+  Exclude matches.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-pattern-matching-r04" class="project-command child-04 uid-sql-ref-02-pattern-matching-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ILIKE pattern</code>
+  
+</div>
+<div class="project-split-cell">
+  PostgreSQL case-insensitive LIKE extension.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-pattern-matching-r05" class="project-command child-05 uid-sql-ref-02-pattern-matching-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LOWER(name) LIKE 'ada%'</code>
+  
+</div>
+<div class="project-split-cell">
+  Portable-style case folding, though function use can affect index use.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-02-null-rules"
+  class="project-doc-section node-12 uid-sql-ref-02-null-rules sql-reference-command-group"
+>
+  
+<header>
+  <span>Filtering, Expressions & Functions</span>
+  <h3>NULL Rules</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-02-null-rules-r01" class="project-command child-01 uid-sql-ref-02-null-rules-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>IS NULL</code>
+  
+</div>
+<div class="project-split-cell">
+  Correct test for a missing/unknown value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-null-rules-r02" class="project-command child-02 uid-sql-ref-02-null-rules-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>IS NOT NULL</code>
+  
+</div>
+<div class="project-split-cell">
+  Correct test for a non-NULL value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-null-rules-r03" class="project-command child-03 uid-sql-ref-02-null-rules-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>column = NULL</code>
+  
+</div>
+<div class="project-split-cell">
+  Do not use; comparisons with NULL evaluate to UNKNOWN rather than true.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-null-rules-r04" class="project-command child-04 uid-sql-ref-02-null-rules-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>COALESCE(a, b, c)</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the first non-NULL expression.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-null-rules-r05" class="project-command child-05 uid-sql-ref-02-null-rules-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NULLIF(a, b)</code>
+  
+</div>
+<div class="project-split-cell">
+  Return NULL when a equals b; otherwise return a.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-null-rules-r06" class="project-command child-06 uid-sql-ref-02-null-rules-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>COUNT(column)</code>
+  
+</div>
+<div class="project-split-cell">
+  Counts non-NULL values only.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-null-rules-r07" class="project-command child-07 uid-sql-ref-02-null-rules-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>COUNT(*)</code>
+  
+</div>
+<div class="project-split-cell">
+  Counts rows, regardless of NULL values.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-02-case-expressions"
+  class="project-doc-section node-13 uid-sql-ref-02-case-expressions sql-reference-command-group"
+>
+  
+<header>
+  <span>Filtering, Expressions & Functions</span>
+  <h3>CASE Expressions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-02-case-expressions-r01" class="project-command child-01 uid-sql-ref-02-case-expressions-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CASE WHEN condition THEN value ELSE other END</code>
+  
+</div>
+<div class="project-split-cell">
+  General conditional expression.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-case-expressions-r02" class="project-command child-02 uid-sql-ref-02-case-expressions-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CASE status WHEN 'A' THEN 'Active' ELSE 'Other' END</code>
+  
+</div>
+<div class="project-split-cell">
+  Simple CASE comparing one expression to several values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-case-expressions-r03" class="project-command child-03 uid-sql-ref-02-case-expressions-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ORDER BY CASE ... END</code>
+  
+</div>
+<div class="project-split-cell">
+  Use conditional logic to define a custom sort order.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-case-expressions-r04" class="project-command child-04 uid-sql-ref-02-case-expressions-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>SUM(CASE WHEN ... THEN 1 ELSE 0 END)</code>
+  
+</div>
+<div class="project-split-cell">
+  Portable conditional counting pattern.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-02-string-functions"
+  class="project-doc-section node-14 uid-sql-ref-02-string-functions sql-reference-command-group"
+>
+  
+<header>
+  <span>Filtering, Expressions & Functions</span>
+  <h3>String Functions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-02-string-functions-r01" class="project-command child-01 uid-sql-ref-02-string-functions-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LOWER(text)</code>
+  
+</div>
+<div class="project-split-cell">
+  Convert text to lowercase.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-string-functions-r02" class="project-command child-02 uid-sql-ref-02-string-functions-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>UPPER(text)</code>
+  
+</div>
+<div class="project-split-cell">
+  Convert text to uppercase.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-string-functions-r03" class="project-command child-03 uid-sql-ref-02-string-functions-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>TRIM(text)</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove surrounding whitespace or configured characters.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-string-functions-r04" class="project-command child-04 uid-sql-ref-02-string-functions-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LENGTH(text)</code>
+  
+</div>
+<div class="project-split-cell">
+  Return string length; byte/character semantics vary by database and function.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-string-functions-r05" class="project-command child-05 uid-sql-ref-02-string-functions-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SUBSTRING(text FROM start FOR count)</code>
+  
+</div>
+<div class="project-split-cell">
+  Standard-style substring syntax; dialect alternatives exist.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-string-functions-r06" class="project-command child-06 uid-sql-ref-02-string-functions-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>REPLACE(text, old, new)</code>
+  
+</div>
+<div class="project-split-cell">
+  Replace occurrences inside text.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-string-functions-r07" class="project-command child-07 uid-sql-ref-02-string-functions-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CONCAT(a, b)</code>
+  
+</div>
+<div class="project-split-cell">
+  Concatenate values where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-string-functions-r08" class="project-command child-08 uid-sql-ref-02-string-functions-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>a || b</code>
+  
+</div>
+<div class="project-split-cell">
+  Standard concatenation operator; MySQL behavior differs unless configured.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-02-numeric-date-time-functions"
+  class="project-doc-section node-15 uid-sql-ref-02-numeric-date-time-functions sql-reference-command-group"
+>
+  
+<header>
+  <span>Filtering, Expressions & Functions</span>
+  <h3>Numeric & Date/Time Functions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-02-numeric-date-time-functions-r01" class="project-command child-01 uid-sql-ref-02-numeric-date-time-functions-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ABS(n)</code>
+  
+</div>
+<div class="project-split-cell">
+  Absolute numeric value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r02" class="project-command child-02 uid-sql-ref-02-numeric-date-time-functions-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ROUND(n, digits)</code>
+  
+</div>
+<div class="project-split-cell">
+  Round a number.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r03" class="project-command child-03 uid-sql-ref-02-numeric-date-time-functions-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CEIL(n) / CEILING(n)</code>
+  
+</div>
+<div class="project-split-cell">
+  Round upward.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r04" class="project-command child-04 uid-sql-ref-02-numeric-date-time-functions-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>FLOOR(n)</code>
+  
+</div>
+<div class="project-split-cell">
+  Round downward.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r05" class="project-command child-05 uid-sql-ref-02-numeric-date-time-functions-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CURRENT_DATE</code>
+  
+</div>
+<div class="project-split-cell">
+  Current date.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r06" class="project-command child-06 uid-sql-ref-02-numeric-date-time-functions-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CURRENT_TIME</code>
+  
+</div>
+<div class="project-split-cell">
+  Current time.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r07" class="project-command child-07 uid-sql-ref-02-numeric-date-time-functions-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CURRENT_TIMESTAMP</code>
+  
+</div>
+<div class="project-split-cell">
+  Current date and time.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r08" class="project-command child-08 uid-sql-ref-02-numeric-date-time-functions-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>EXTRACT(YEAR FROM ts)</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a date/time field where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-02-numeric-date-time-functions-r09" class="project-command child-09 uid-sql-ref-02-numeric-date-time-functions-r09">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Date arithmetic</code>
+  
+</div>
+<div class="project-split-cell">
+  Intervals, date-add functions, and syntax vary significantly by database.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-sql-ref-section-03-grouping-joins-result-sets"
+  class="project-display node-16 uid-sql-ref-section-03-grouping-joins-result-sets sql-reference-section sql-reference-section-03"
+>
+  <div class="project-preview"><p>Aggregates, GROUP BY, joins, subqueries, set operators, CTEs, and window functions.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 3 / 6</span>
+  <h2>03 — Grouping, Joins & Result Sets</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-sql-ref-03-aggregate-functions"
+  class="project-doc-section node-17 uid-sql-ref-03-aggregate-functions sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>Aggregate Functions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-aggregate-functions-r01" class="project-command child-01 uid-sql-ref-03-aggregate-functions-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>COUNT(*)</code>
+  
+</div>
+<div class="project-split-cell">
+  Count rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-aggregate-functions-r02" class="project-command child-02 uid-sql-ref-03-aggregate-functions-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>COUNT(DISTINCT user_id)</code>
+  
+</div>
+<div class="project-split-cell">
+  Count distinct non-NULL values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-aggregate-functions-r03" class="project-command child-03 uid-sql-ref-03-aggregate-functions-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SUM(amount)</code>
+  
+</div>
+<div class="project-split-cell">
+  Total numeric values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-aggregate-functions-r04" class="project-command child-04 uid-sql-ref-03-aggregate-functions-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>AVG(amount)</code>
+  
+</div>
+<div class="project-split-cell">
+  Average non-NULL numeric values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-aggregate-functions-r05" class="project-command child-05 uid-sql-ref-03-aggregate-functions-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>MIN(value)</code>
+  
+</div>
+<div class="project-split-cell">
+  Smallest value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-aggregate-functions-r06" class="project-command child-06 uid-sql-ref-03-aggregate-functions-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>MAX(value)</code>
+  
+</div>
+<div class="project-split-cell">
+  Largest value.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-03-group-by-having"
+  class="project-doc-section node-18 uid-sql-ref-03-group-by-having sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>GROUP BY & HAVING</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-group-by-having-r01" class="project-command child-01 uid-sql-ref-03-group-by-having-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>GROUP BY department</code>
+  
+</div>
+<div class="project-split-cell">
+  Collapse rows into one result group per department.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-group-by-having-r02" class="project-command child-02 uid-sql-ref-03-group-by-having-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>GROUP BY department, status</code>
+  
+</div>
+<div class="project-split-cell">
+  Group by multiple expressions.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-group-by-having-r03" class="project-command child-03 uid-sql-ref-03-group-by-having-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>HAVING COUNT(*) > 5</code>
+  
+</div>
+<div class="project-split-cell">
+  Filter groups after aggregation.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-group-by-having-r04" class="project-command child-04 uid-sql-ref-03-group-by-having-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Filter individual rows before grouping.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-group-by-having-r05" class="project-command child-05 uid-sql-ref-03-group-by-having-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>HAVING ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Filter aggregate groups after GROUP BY.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-03-join-types"
+  class="project-doc-section node-19 uid-sql-ref-03-join-types sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>JOIN Types</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-join-types-r01" class="project-command child-01 uid-sql-ref-03-join-types-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>INNER JOIN</code>
+  
+</div>
+<div class="project-split-cell">
+  Return matching rows from both sides.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-types-r02" class="project-command child-02 uid-sql-ref-03-join-types-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>LEFT JOIN</code>
+  
+</div>
+<div class="project-split-cell">
+  Keep every left-side row and matching right-side rows; unmatched right values become NULL.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-types-r03" class="project-command child-03 uid-sql-ref-03-join-types-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>RIGHT JOIN</code>
+  
+</div>
+<div class="project-split-cell">
+  Keep every right-side row where the engine supports it.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-types-r04" class="project-command child-04 uid-sql-ref-03-join-types-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>FULL OUTER JOIN</code>
+  
+</div>
+<div class="project-split-cell">
+  Keep matched rows plus unmatched rows from both sides where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-types-r05" class="project-command child-05 uid-sql-ref-03-join-types-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CROSS JOIN</code>
+  
+</div>
+<div class="project-split-cell">
+  Cartesian product: every left row paired with every right row.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-types-r06" class="project-command child-06 uid-sql-ref-03-join-types-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>SELF JOIN</code>
+  
+</div>
+<div class="project-split-cell">
+  Join a table to itself using aliases; useful for hierarchies and comparisons.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-03-join-syntax-safety"
+  class="project-doc-section node-20 uid-sql-ref-03-join-syntax-safety sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>JOIN Syntax & Safety</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-join-syntax-safety-r01" class="project-command child-01 uid-sql-ref-03-join-syntax-safety-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>... JOIN orders o ON o.user_id = u.id</code>
+  
+</div>
+<div class="project-split-cell">
+  Put relationship conditions in ON.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-syntax-safety-r02" class="project-command child-02 uid-sql-ref-03-join-syntax-safety-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LEFT JOIN ... ON ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Filtering the right table in WHERE can unintentionally turn a LEFT JOIN into an inner-style result.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-syntax-safety-r03" class="project-command child-03 uid-sql-ref-03-join-syntax-safety-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>USING (id)</code>
+  
+</div>
+<div class="project-split-cell">
+  Concise join syntax when both sides share the same join-column name.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-syntax-safety-r04" class="project-command child-04 uid-sql-ref-03-join-syntax-safety-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Qualified columns</code>
+  
+</div>
+<div class="project-split-cell">
+  Use aliases such as u.id and o.id to avoid ambiguity.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-join-syntax-safety-r05" class="project-command child-05 uid-sql-ref-03-join-syntax-safety-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Many-to-many</code>
+  
+</div>
+<div class="project-split-cell">
+  Join through the relationship table rather than storing repeated lists in one column.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-03-subqueries"
+  class="project-doc-section node-21 uid-sql-ref-03-subqueries sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>Subqueries</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-subqueries-r01" class="project-command child-01 uid-sql-ref-03-subqueries-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE id IN (SELECT ...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Use a subquery as a set of candidate values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-subqueries-r02" class="project-command child-02 uid-sql-ref-03-subqueries-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE EXISTS (SELECT 1 ...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Efficient semantic pattern for existence checks.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-subqueries-r03" class="project-command child-03 uid-sql-ref-03-subqueries-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>FROM (SELECT ...) AS x</code>
+  
+</div>
+<div class="project-split-cell">
+  Use a derived table as a query source.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-subqueries-r04" class="project-command child-04 uid-sql-ref-03-subqueries-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SELECT (SELECT ...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Scalar subquery must return at most one value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-subqueries-r05" class="project-command child-05 uid-sql-ref-03-subqueries-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Correlated subquery</code>
+  
+</div>
+<div class="project-split-cell">
+  References the outer query; can be expressive but may need performance review.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-03-set-operators"
+  class="project-doc-section node-22 uid-sql-ref-03-set-operators sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>Set Operators</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-set-operators-r01" class="project-command child-01 uid-sql-ref-03-set-operators-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>UNION</code>
+  
+</div>
+<div class="project-split-cell">
+  Combine compatible result sets and remove duplicates.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-set-operators-r02" class="project-command child-02 uid-sql-ref-03-set-operators-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>UNION ALL</code>
+  
+</div>
+<div class="project-split-cell">
+  Combine compatible result sets without duplicate elimination; usually faster.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-set-operators-r03" class="project-command child-03 uid-sql-ref-03-set-operators-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>INTERSECT</code>
+  
+</div>
+<div class="project-split-cell">
+  Rows present in both result sets where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-set-operators-r04" class="project-command child-04 uid-sql-ref-03-set-operators-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>EXCEPT</code>
+  
+</div>
+<div class="project-split-cell">
+  Rows in the first result but not the second where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-set-operators-r05" class="project-command child-05 uid-sql-ref-03-set-operators-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Column compatibility</code>
+  
+</div>
+<div class="project-split-cell">
+  Each SELECT must return the same number of columns with compatible types.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-03-common-table-expressions"
+  class="project-doc-section node-23 uid-sql-ref-03-common-table-expressions sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>Common Table Expressions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-common-table-expressions-r01" class="project-command child-01 uid-sql-ref-03-common-table-expressions-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>WITH recent AS (SELECT ...) SELECT ... FROM recent</code>
+  
+</div>
+<div class="project-split-cell">
+  Name a query expression for readability and reuse in one statement.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-common-table-expressions-r02" class="project-command child-02 uid-sql-ref-03-common-table-expressions-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Multiple CTEs</code>
+  
+</div>
+<div class="project-split-cell">
+  Separate CTE definitions with commas.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-common-table-expressions-r03" class="project-command child-03 uid-sql-ref-03-common-table-expressions-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>WITH RECURSIVE</code>
+  
+</div>
+<div class="project-split-cell">
+  Express hierarchies, trees, graphs, and iterative relationships where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-common-table-expressions-r04" class="project-command child-04 uid-sql-ref-03-common-table-expressions-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CTE optimization</code>
+  
+</div>
+<div class="project-split-cell">
+  Materialization/inlining behavior differs by engine and version; inspect plans for performance-critical queries.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-03-window-functions"
+  class="project-doc-section node-24 uid-sql-ref-03-window-functions sql-reference-command-group"
+>
+  
+<header>
+  <span>Grouping, Joins & Result Sets</span>
+  <h3>Window Functions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-03-window-functions-r01" class="project-command child-01 uid-sql-ref-03-window-functions-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ROW_NUMBER() OVER (...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Assign a unique sequence within the window ordering.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-window-functions-r02" class="project-command child-02 uid-sql-ref-03-window-functions-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>RANK() OVER (...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Ranking with gaps after ties.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-window-functions-r03" class="project-command child-03 uid-sql-ref-03-window-functions-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DENSE_RANK() OVER (...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Ranking without gaps after ties.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-window-functions-r04" class="project-command child-04 uid-sql-ref-03-window-functions-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SUM(amount) OVER (...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Running or partitioned totals without collapsing rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-window-functions-r05" class="project-command child-05 uid-sql-ref-03-window-functions-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LAG(value) OVER (...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a previous row's value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-window-functions-r06" class="project-command child-06 uid-sql-ref-03-window-functions-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>LEAD(value) OVER (...)</code>
+  
+</div>
+<div class="project-split-cell">
+  Read a following row's value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-window-functions-r07" class="project-command child-07 uid-sql-ref-03-window-functions-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PARTITION BY department</code>
+  
+</div>
+<div class="project-split-cell">
+  Restart the window calculation for each partition.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-03-window-functions-r08" class="project-command child-08 uid-sql-ref-03-window-functions-r08">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ORDER BY created_at</code>
+  
+</div>
+<div class="project-split-cell">
+  Define order inside a window.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-sql-ref-section-04-data-changes-schema"
+  class="project-display node-25 uid-sql-ref-section-04-data-changes-schema sql-reference-section sql-reference-section-04"
+>
+  <div class="project-preview"><p>INSERT, UPDATE, DELETE, CREATE, ALTER, DROP, views, constraints, and safe change patterns.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 4 / 6</span>
+  <h2>04 — Data Changes & Schema</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-sql-ref-04-insert"
+  class="project-doc-section node-26 uid-sql-ref-04-insert sql-reference-command-group"
+>
+  
+<header>
+  <span>Data Changes & Schema</span>
+  <h3>INSERT</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-04-insert-r01" class="project-command child-01 uid-sql-ref-04-insert-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>INSERT INTO users (name,email) VALUES ('Ada','a@example.com');</code>
+  
+</div>
+<div class="project-split-cell">
+  Insert one row.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-insert-r02" class="project-command child-02 uid-sql-ref-04-insert-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>INSERT INTO t (a,b) VALUES (1,2), (3,4);</code>
+  
+</div>
+<div class="project-split-cell">
+  Insert multiple rows where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-insert-r03" class="project-command child-03 uid-sql-ref-04-insert-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>INSERT INTO archive (...) SELECT ...;</code>
+  
+</div>
+<div class="project-split-cell">
+  Insert rows produced by a query.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-insert-r04" class="project-command child-04 uid-sql-ref-04-insert-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DEFAULT</code>
+  
+</div>
+<div class="project-split-cell">
+  Use a column's configured default value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-insert-r05" class="project-command child-05 uid-sql-ref-04-insert-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>RETURNING ...</code>
+  
+</div>
+<div class="project-split-cell">
+  PostgreSQL and some other engines can return affected rows directly.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-04-update"
+  class="project-doc-section node-27 uid-sql-ref-04-update sql-reference-command-group"
+>
+  
+<header>
+  <span>Data Changes & Schema</span>
+  <h3>UPDATE</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-04-update-r01" class="project-command child-01 uid-sql-ref-04-update-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>UPDATE users SET active = 0 WHERE id = 42;</code>
+  
+</div>
+<div class="project-split-cell">
+  Change matching rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-update-r02" class="project-command child-02 uid-sql-ref-04-update-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SET a = 1, b = 2</code>
+  
+</div>
+<div class="project-split-cell">
+  Update multiple columns.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-update-r03" class="project-command child-03 uid-sql-ref-04-update-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Critical safety boundary; without it every row may be updated.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-update-r04" class="project-command child-04 uid-sql-ref-04-update-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>UPDATE ... FROM ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Join-style update syntax exists in PostgreSQL and some engines; details differ.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-update-r05" class="project-command child-05 uid-sql-ref-04-update-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Preview first</code>
+  
+</div>
+<div class="project-split-cell">
+  Run the equivalent SELECT with the same WHERE before a broad update.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-04-delete"
+  class="project-doc-section node-28 uid-sql-ref-04-delete sql-reference-command-group"
+>
+  
+<header>
+  <span>Data Changes & Schema</span>
+  <h3>DELETE</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-04-delete-r01" class="project-command child-01 uid-sql-ref-04-delete-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DELETE FROM users WHERE id = 42;</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete matching rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-delete-r02" class="project-command child-02 uid-sql-ref-04-delete-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DELETE FROM users;</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete every row while keeping the table.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-delete-r03" class="project-command child-03 uid-sql-ref-04-delete-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>WHERE ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Critical safety boundary for selective deletion.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-delete-r04" class="project-command child-04 uid-sql-ref-04-delete-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Foreign keys</code>
+  
+</div>
+<div class="project-split-cell">
+  Child references may block deletion or trigger configured referential actions.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-delete-r05" class="project-command child-05 uid-sql-ref-04-delete-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Preview first</code>
+  
+</div>
+<div class="project-split-cell">
+  Run SELECT with the same WHERE before a broad delete.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-04-upsert-patterns"
+  class="project-doc-section node-29 uid-sql-ref-04-upsert-patterns sql-reference-command-group"
+>
+  
+<header>
+  <span>Data Changes & Schema</span>
+  <h3>UPSERT Patterns</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-04-upsert-patterns-r01" class="project-command child-01 uid-sql-ref-04-upsert-patterns-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PostgreSQL / SQLite</code>
+  
+</div>
+<div class="project-split-cell">
+  INSERT ... ON CONFLICT (...) DO UPDATE / DO NOTHING.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-upsert-patterns-r02" class="project-command child-02 uid-sql-ref-04-upsert-patterns-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>MySQL</code>
+  
+</div>
+<div class="project-split-cell">
+  INSERT ... ON DUPLICATE KEY UPDATE ...
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-upsert-patterns-r03" class="project-command child-03 uid-sql-ref-04-upsert-patterns-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>MERGE</code>
+  
+</div>
+<div class="project-split-cell">
+  Standard-style matched/not-matched data-change statement; support and syntax vary.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-upsert-patterns-r04" class="project-command child-04 uid-sql-ref-04-upsert-patterns-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Rule</code>
+  
+</div>
+<div class="project-split-cell">
+  Choose the conflict key deliberately and understand which constraint triggers the alternative action.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-04-create-table"
+  class="project-doc-section node-30 uid-sql-ref-04-create-table sql-reference-command-group"
+>
+  
+<header>
+  <span>Data Changes & Schema</span>
+  <h3>CREATE TABLE</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-04-create-table-r01" class="project-command child-01 uid-sql-ref-04-create-table-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CREATE TABLE users (...);</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a table.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-create-table-r02" class="project-command child-02 uid-sql-ref-04-create-table-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>id INTEGER PRIMARY KEY</code>
+  
+</div>
+<div class="project-split-cell">
+  Define a primary key inline.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-create-table-r03" class="project-command child-03 uid-sql-ref-04-create-table-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>email TEXT NOT NULL UNIQUE</code>
+  
+</div>
+<div class="project-split-cell">
+  Combine required-value and uniqueness constraints.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-create-table-r04" class="project-command child-04 uid-sql-ref-04-create-table-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</code>
+  
+</div>
+<div class="project-split-cell">
+  Apply a default expression.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-create-table-r05" class="project-command child-05 uid-sql-ref-04-create-table-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>FOREIGN KEY (...) REFERENCES ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Define an inter-table relationship.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-04-alter-drop-truncate"
+  class="project-doc-section node-31 uid-sql-ref-04-alter-drop-truncate sql-reference-command-group"
+>
+  
+<header>
+  <span>Data Changes & Schema</span>
+  <h3>ALTER / DROP / TRUNCATE</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-04-alter-drop-truncate-r01" class="project-command child-01 uid-sql-ref-04-alter-drop-truncate-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ALTER TABLE t ADD COLUMN x ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Add a column.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-alter-drop-truncate-r02" class="project-command child-02 uid-sql-ref-04-alter-drop-truncate-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ALTER TABLE t DROP COLUMN x</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a column where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-alter-drop-truncate-r03" class="project-command child-03 uid-sql-ref-04-alter-drop-truncate-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ALTER TABLE t RENAME COLUMN a TO b</code>
+  
+</div>
+<div class="project-split-cell">
+  Rename a column where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-alter-drop-truncate-r04" class="project-command child-04 uid-sql-ref-04-alter-drop-truncate-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ALTER TABLE t ADD CONSTRAINT ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Add table-level constraints; support differs.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-alter-drop-truncate-r05" class="project-command child-05 uid-sql-ref-04-alter-drop-truncate-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DROP TABLE t</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove table structure and data.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-alter-drop-truncate-r06" class="project-command child-06 uid-sql-ref-04-alter-drop-truncate-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DROP TABLE IF EXISTS t</code>
+  
+</div>
+<div class="project-split-cell">
+  Conditionally remove a table.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-alter-drop-truncate-r07" class="project-command child-07 uid-sql-ref-04-alter-drop-truncate-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>TRUNCATE TABLE t</code>
+  
+</div>
+<div class="project-split-cell">
+  Quickly remove all rows where supported; transactional behavior differs by engine.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-04-views"
+  class="project-doc-section node-32 uid-sql-ref-04-views sql-reference-command-group"
+>
+  
+<header>
+  <span>Data Changes & Schema</span>
+  <h3>Views</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-04-views-r01" class="project-command child-01 uid-sql-ref-04-views-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>CREATE VIEW active_users AS SELECT ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Save a query as a virtual relation.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-views-r02" class="project-command child-02 uid-sql-ref-04-views-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>DROP VIEW active_users</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a view definition.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-views-r03" class="project-command child-03 uid-sql-ref-04-views-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Materialized view</code>
+  
+</div>
+<div class="project-split-cell">
+  Stores query results physically where supported; refresh semantics are engine-specific.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-04-views-r04" class="project-command child-04 uid-sql-ref-04-views-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Use cases</code>
+  
+</div>
+<div class="project-split-cell">
+  Simplify complex joins, centralize reusable query logic, and expose limited projections.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-sql-ref-section-05-design-integrity-performance"
+  class="project-display node-33 uid-sql-ref-section-05-design-integrity-performance sql-reference-section sql-reference-section-05"
+>
+  <div class="project-preview"><p>Keys, constraints, normalization, indexing, query plans, schema design, and secure application access.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 5 / 6</span>
+  <h2>05 — Design, Integrity & Performance</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-sql-ref-05-keys-constraints"
+  class="project-doc-section node-34 uid-sql-ref-05-keys-constraints sql-reference-command-group"
+>
+  
+<header>
+  <span>Design, Integrity & Performance</span>
+  <h3>Keys & Constraints</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-05-keys-constraints-r01" class="project-command child-01 uid-sql-ref-05-keys-constraints-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>PRIMARY KEY</code>
+  
+</div>
+<div class="project-split-cell">
+  Uniquely identifies each row; implies uniqueness and non-NULL semantics.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-keys-constraints-r02" class="project-command child-02 uid-sql-ref-05-keys-constraints-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>FOREIGN KEY</code>
+  
+</div>
+<div class="project-split-cell">
+  Requires referenced values to exist according to the relationship definition.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-keys-constraints-r03" class="project-command child-03 uid-sql-ref-05-keys-constraints-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>UNIQUE</code>
+  
+</div>
+<div class="project-split-cell">
+  Prevent duplicate values or duplicate column combinations.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-keys-constraints-r04" class="project-command child-04 uid-sql-ref-05-keys-constraints-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>NOT NULL</code>
+  
+</div>
+<div class="project-split-cell">
+  Require a value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-keys-constraints-r05" class="project-command child-05 uid-sql-ref-05-keys-constraints-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CHECK (condition)</code>
+  
+</div>
+<div class="project-split-cell">
+  Enforce a row-level business rule where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-keys-constraints-r06" class="project-command child-06 uid-sql-ref-05-keys-constraints-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DEFAULT expression</code>
+  
+</div>
+<div class="project-split-cell">
+  Provide a value when INSERT omits the column.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-keys-constraints-r07" class="project-command child-07 uid-sql-ref-05-keys-constraints-r07">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Composite key</code>
+  
+</div>
+<div class="project-split-cell">
+  A key or constraint defined across multiple columns.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-05-referential-actions"
+  class="project-doc-section node-35 uid-sql-ref-05-referential-actions sql-reference-command-group"
+>
+  
+<header>
+  <span>Design, Integrity & Performance</span>
+  <h3>Referential Actions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-05-referential-actions-r01" class="project-command child-01 uid-sql-ref-05-referential-actions-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ON DELETE CASCADE</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete referencing child rows automatically.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-referential-actions-r02" class="project-command child-02 uid-sql-ref-05-referential-actions-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ON DELETE SET NULL</code>
+  
+</div>
+<div class="project-split-cell">
+  Set the foreign-key column to NULL when the parent is deleted.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-referential-actions-r03" class="project-command child-03 uid-sql-ref-05-referential-actions-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ON DELETE RESTRICT / NO ACTION</code>
+  
+</div>
+<div class="project-split-cell">
+  Prevent parent deletion when references exist; timing details vary.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-referential-actions-r04" class="project-command child-04 uid-sql-ref-05-referential-actions-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ON UPDATE ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Control behavior when a referenced key changes; support and defaults vary.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-referential-actions-r05" class="project-command child-05 uid-sql-ref-05-referential-actions-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Rule</code>
+  
+</div>
+<div class="project-split-cell">
+  Choose cascading behavior based on ownership semantics, not convenience.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-05-normalization-quick-read"
+  class="project-doc-section node-36 uid-sql-ref-05-normalization-quick-read sql-reference-command-group"
+>
+  
+<header>
+  <span>Design, Integrity & Performance</span>
+  <h3>Normalization Quick Read</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-05-normalization-quick-read-r01" class="project-command child-01 uid-sql-ref-05-normalization-quick-read-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>1NF</code>
+  
+</div>
+<div class="project-split-cell">
+  Store atomic values and avoid repeating groups inside a row.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-normalization-quick-read-r02" class="project-command child-02 uid-sql-ref-05-normalization-quick-read-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>2NF</code>
+  
+</div>
+<div class="project-split-cell">
+  For composite keys, non-key attributes depend on the whole key.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-normalization-quick-read-r03" class="project-command child-03 uid-sql-ref-05-normalization-quick-read-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>3NF</code>
+  
+</div>
+<div class="project-split-cell">
+  Non-key attributes should not depend transitively on other non-key attributes.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-normalization-quick-read-r04" class="project-command child-04 uid-sql-ref-05-normalization-quick-read-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Junction table</code>
+  
+</div>
+<div class="project-split-cell">
+  Represent many-to-many relationships with a relationship table.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-normalization-quick-read-r05" class="project-command child-05 uid-sql-ref-05-normalization-quick-read-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Denormalization</code>
+  
+</div>
+<div class="project-split-cell">
+  Intentional duplication for performance/read models; document why it exists.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-05-indexes"
+  class="project-doc-section node-37 uid-sql-ref-05-indexes sql-reference-command-group"
+>
+  
+<header>
+  <span>Design, Integrity & Performance</span>
+  <h3>Indexes</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-05-indexes-r01" class="project-command child-01 uid-sql-ref-05-indexes-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CREATE INDEX idx_users_email ON users(email);</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a non-unique index.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-indexes-r02" class="project-command child-02 uid-sql-ref-05-indexes-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CREATE UNIQUE INDEX ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an index that also enforces uniqueness.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-indexes-r03" class="project-command child-03 uid-sql-ref-05-indexes-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>CREATE INDEX ... ON orders(user_id, created_at);</code>
+  
+</div>
+<div class="project-split-cell">
+  Composite index; column order matters.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-indexes-r04" class="project-command child-04 uid-sql-ref-05-indexes-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>DROP INDEX ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove an index; syntax varies by database.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-indexes-r05" class="project-command child-05 uid-sql-ref-05-indexes-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Good candidates</code>
+  
+</div>
+<div class="project-split-cell">
+  Frequently filtered, joined, sorted, or uniqueness-enforced columns.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-indexes-r06" class="project-command child-06 uid-sql-ref-05-indexes-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Tradeoff</code>
+  
+</div>
+<div class="project-split-cell">
+  Indexes improve many reads but consume storage and add write/update maintenance cost.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-05-query-plans"
+  class="project-doc-section node-38 uid-sql-ref-05-query-plans sql-reference-command-group"
+>
+  
+<header>
+  <span>Design, Integrity & Performance</span>
+  <h3>Query Plans</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-05-query-plans-r01" class="project-command child-01 uid-sql-ref-05-query-plans-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>EXPLAIN SELECT ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect the optimizer's planned operations.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-query-plans-r02" class="project-command child-02 uid-sql-ref-05-query-plans-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>EXPLAIN ANALYZE ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Execute and measure the query in supporting systems; use carefully on writes or expensive queries.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-query-plans-r03" class="project-command child-03 uid-sql-ref-05-query-plans-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Table/sequence scan</code>
+  
+</div>
+<div class="project-split-cell">
+  May be correct for small tables or broad result sets; not automatically a problem.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-query-plans-r04" class="project-command child-04 uid-sql-ref-05-query-plans-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Index scan/search</code>
+  
+</div>
+<div class="project-split-cell">
+  Uses an index to locate rows.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-query-plans-r05" class="project-command child-05 uid-sql-ref-05-query-plans-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Join strategy</code>
+  
+</div>
+<div class="project-split-cell">
+  Nested loop, hash, merge, and other strategies depend on engine and statistics.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-query-plans-r06" class="project-command child-06 uid-sql-ref-05-query-plans-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Statistics</code>
+  
+</div>
+<div class="project-split-cell">
+  Optimizers depend on current table/index statistics to estimate row counts and costs.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-05-sargability-query-habits"
+  class="project-doc-section node-39 uid-sql-ref-05-sargability-query-habits sql-reference-command-group"
+>
+  
+<header>
+  <span>Design, Integrity & Performance</span>
+  <h3>Sargability & Query Habits</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-05-sargability-query-habits-r01" class="project-command child-01 uid-sql-ref-05-sargability-query-habits-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Indexed column directly</code>
+  
+</div>
+<div class="project-split-cell">
+  WHERE email = ? can use a suitable index more easily.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-sargability-query-habits-r02" class="project-command child-02 uid-sql-ref-05-sargability-query-habits-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Function on indexed column</code>
+  
+</div>
+<div class="project-split-cell">
+  WHERE LOWER(email) = ? may require an expression/function index or prevent a normal index seek.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-sargability-query-habits-r03" class="project-command child-03 uid-sql-ref-05-sargability-query-habits-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Leading wildcard</code>
+  
+</div>
+<div class="project-split-cell">
+  LIKE '%term' often cannot use a normal B-tree prefix efficiently.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-sargability-query-habits-r04" class="project-command child-04 uid-sql-ref-05-sargability-query-habits-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Select needed columns</code>
+  
+</div>
+<div class="project-split-cell">
+  Avoid transferring unused data and reduce coupling to schema changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-sargability-query-habits-r05" class="project-command child-05 uid-sql-ref-05-sargability-query-habits-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Filter early</code>
+  
+</div>
+<div class="project-split-cell">
+  Reduce rows before expensive joins/aggregations when semantics permit.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-05-prepared-statements-injection-safety"
+  class="project-doc-section node-40 uid-sql-ref-05-prepared-statements-injection-safety sql-reference-command-group"
+>
+  
+<header>
+  <span>Design, Integrity & Performance</span>
+  <h3>Prepared Statements & Injection Safety</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-05-prepared-statements-injection-safety-r01" class="project-command child-01 uid-sql-ref-05-prepared-statements-injection-safety-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>SELECT ... WHERE id = ?</code>
+  
+</div>
+<div class="project-split-cell">
+  Use positional placeholders for data values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-prepared-statements-injection-safety-r02" class="project-command child-02 uid-sql-ref-05-prepared-statements-injection-safety-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>... WHERE email = :email</code>
+  
+</div>
+<div class="project-split-cell">
+  Use named placeholders when supported by the client library.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-prepared-statements-injection-safety-r03" class="project-command child-03 uid-sql-ref-05-prepared-statements-injection-safety-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Do not concatenate input</code>
+  
+</div>
+<div class="project-split-cell">
+  Never build executable SQL by directly inserting untrusted user values.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-prepared-statements-injection-safety-r04" class="project-command child-04 uid-sql-ref-05-prepared-statements-injection-safety-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Identifiers</code>
+  
+</div>
+<div class="project-split-cell">
+  Placeholders represent values, not arbitrary table/column names; whitelist dynamic identifiers.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-05-prepared-statements-injection-safety-r05" class="project-command child-05 uid-sql-ref-05-prepared-statements-injection-safety-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Least privilege</code>
+  
+</div>
+<div class="project-split-cell">
+  Application credentials should have only the database permissions the application needs.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-sql-ref-section-06-transactions-advanced-sql-dialects"
+  class="project-display node-41 uid-sql-ref-section-06-transactions-advanced-sql-dialects sql-reference-section sql-reference-section-06"
+>
+  <div class="project-preview"><p>Transactions, isolation, locking, permissions, metadata, dialect differences, and high-risk operations.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Panel 6 / 6</span>
+  <h2>06 — Transactions, Advanced SQL & Dialects</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-sql-ref-06-transaction-control"
+  class="project-doc-section node-42 uid-sql-ref-06-transaction-control sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>Transaction Control</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-transaction-control-r01" class="project-command child-01 uid-sql-ref-06-transaction-control-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>BEGIN / START TRANSACTION</code>
+  
+</div>
+<div class="project-split-cell">
+  Start an explicit transaction; exact syntax varies.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-transaction-control-r02" class="project-command child-02 uid-sql-ref-06-transaction-control-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>COMMIT</code>
+  
+</div>
+<div class="project-split-cell">
+  Make the transaction's changes durable.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-transaction-control-r03" class="project-command child-03 uid-sql-ref-06-transaction-control-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ROLLBACK</code>
+  
+</div>
+<div class="project-split-cell">
+  Undo uncommitted work.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-transaction-control-r04" class="project-command child-04 uid-sql-ref-06-transaction-control-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>SAVEPOINT name</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an intermediate rollback point.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-transaction-control-r05" class="project-command child-05 uid-sql-ref-06-transaction-control-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>ROLLBACK TO SAVEPOINT name</code>
+  
+</div>
+<div class="project-split-cell">
+  Undo work after the savepoint while keeping the transaction open.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-transaction-control-r06" class="project-command child-06 uid-sql-ref-06-transaction-control-r06">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>RELEASE SAVEPOINT name</code>
+  
+</div>
+<div class="project-split-cell">
+  Discard a savepoint where supported.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-acid"
+  class="project-doc-section node-43 uid-sql-ref-06-acid sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>ACID</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-acid-r01" class="project-command child-01 uid-sql-ref-06-acid-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Atomicity</code>
+  
+</div>
+<div class="project-split-cell">
+  A transaction succeeds as a unit or is rolled back.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-acid-r02" class="project-command child-02 uid-sql-ref-06-acid-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Consistency</code>
+  
+</div>
+<div class="project-split-cell">
+  Committed data obeys defined integrity rules.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-acid-r03" class="project-command child-03 uid-sql-ref-06-acid-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Isolation</code>
+  
+</div>
+<div class="project-split-cell">
+  Concurrent work is controlled so transactions do not interfere unpredictably.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-acid-r04" class="project-command child-04 uid-sql-ref-06-acid-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Durability</code>
+  
+</div>
+<div class="project-split-cell">
+  Committed changes survive normal failures according to the database's durability guarantees.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-isolation-levels"
+  class="project-doc-section node-44 uid-sql-ref-06-isolation-levels sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>Isolation Levels</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-isolation-levels-r01" class="project-command child-01 uid-sql-ref-06-isolation-levels-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>READ UNCOMMITTED</code>
+  
+</div>
+<div class="project-split-cell">
+  Weakest standard level; dirty reads may be possible in systems that implement it.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-isolation-levels-r02" class="project-command child-02 uid-sql-ref-06-isolation-levels-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>READ COMMITTED</code>
+  
+</div>
+<div class="project-split-cell">
+  Prevents dirty reads; repeated reads can still observe committed changes.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-isolation-levels-r03" class="project-command child-03 uid-sql-ref-06-isolation-levels-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>REPEATABLE READ</code>
+  
+</div>
+<div class="project-split-cell">
+  Stronger repeat-read guarantees; exact phantom behavior varies by database.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-isolation-levels-r04" class="project-command child-04 uid-sql-ref-06-isolation-levels-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>SERIALIZABLE</code>
+  
+</div>
+<div class="project-split-cell">
+  Strongest standard isolation; may reject/retry conflicting transactions.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-isolation-levels-r05" class="project-command child-05 uid-sql-ref-06-isolation-levels-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Reality</code>
+  
+</div>
+<div class="project-split-cell">
+  Engines implement isolation differently; verify your database's documentation.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-concurrency-locking"
+  class="project-doc-section node-45 uid-sql-ref-06-concurrency-locking sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>Concurrency & Locking</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-concurrency-locking-r01" class="project-command child-01 uid-sql-ref-06-concurrency-locking-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Short transactions</code>
+  
+</div>
+<div class="project-split-cell">
+  Reduce lock duration and contention.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-concurrency-locking-r02" class="project-command child-02 uid-sql-ref-06-concurrency-locking-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Consistent access order</code>
+  
+</div>
+<div class="project-split-cell">
+  Acquire/update shared resources in a consistent order to reduce deadlock risk.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-concurrency-locking-r03" class="project-command child-03 uid-sql-ref-06-concurrency-locking-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Deadlock</code>
+  
+</div>
+<div class="project-split-cell">
+  Database detects a dependency cycle and usually aborts one transaction.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-concurrency-locking-r04" class="project-command child-04 uid-sql-ref-06-concurrency-locking-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Retry policy</code>
+  
+</div>
+<div class="project-split-cell">
+  Applications may need bounded retries for serialization failures or deadlock victims.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-concurrency-locking-r05" class="project-command child-05 uid-sql-ref-06-concurrency-locking-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Long reports</code>
+  
+</div>
+<div class="project-split-cell">
+  Large reads can interact with vacuum/version storage/locks differently across engines.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-permissions"
+  class="project-doc-section node-46 uid-sql-ref-06-permissions sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>Permissions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-permissions-r01" class="project-command child-01 uid-sql-ref-06-permissions-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>GRANT SELECT ON table TO user;</code>
+  
+</div>
+<div class="project-split-cell">
+  Give a principal permission to read a table where supported.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-permissions-r02" class="project-command child-02 uid-sql-ref-06-permissions-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>GRANT INSERT, UPDATE ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Grant specific write capabilities.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-permissions-r03" class="project-command child-03 uid-sql-ref-06-permissions-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>REVOKE ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a granted privilege.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-permissions-r04" class="project-command child-04 uid-sql-ref-06-permissions-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Roles</code>
+  
+</div>
+<div class="project-split-cell">
+  Group privileges through roles where the database supports them.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-permissions-r05" class="project-command child-05 uid-sql-ref-06-permissions-r05">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Schema/database privileges</code>
+  
+</div>
+<div class="project-split-cell">
+  Object hierarchy and privilege syntax differ substantially among engines.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-metadata-introspection"
+  class="project-doc-section node-47 uid-sql-ref-06-metadata-introspection sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>Metadata & Introspection</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-metadata-introspection-r01" class="project-command child-01 uid-sql-ref-06-metadata-introspection-r01">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>INFORMATION_SCHEMA.TABLES</code>
+  
+</div>
+<div class="project-split-cell">
+  Portable metadata view available in many relational databases.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-metadata-introspection-r02" class="project-command child-02 uid-sql-ref-06-metadata-introspection-r02">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>INFORMATION_SCHEMA.COLUMNS</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect columns, types, defaults, and nullability where available.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-metadata-introspection-r03" class="project-command child-03 uid-sql-ref-06-metadata-introspection-r03">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Catalogs</code>
+  
+</div>
+<div class="project-split-cell">
+  PostgreSQL pg_catalog, MySQL INFORMATION_SCHEMA, and SQLite PRAGMA/sqlite_schema expose engine-specific metadata.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-metadata-introspection-r04" class="project-command child-04 uid-sql-ref-06-metadata-introspection-r04">
+  
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <code>Constraints/indexes</code>
+  
+</div>
+<div class="project-split-cell">
+  Metadata queries are dialect-specific beyond basic INFORMATION_SCHEMA coverage.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-postgresql-mysql-sqlite-quick-differences"
+  class="project-doc-section node-48 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>PostgreSQL / MySQL / SQLite Quick Differences</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r01" class="project-command child-01 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>PostgreSQL</code>
+  
+</div>
+<div class="project-split-cell">
+  Rich SQL feature set, RETURNING, ILIKE, schemas, arrays/JSONB, strong window/CTE support.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r02" class="project-command child-02 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>MySQL</code>
+  
+</div>
+<div class="project-split-cell">
+  Uses AUTO_INCREMENT, ON DUPLICATE KEY UPDATE, backtick identifiers, and engine-specific date/string functions.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r03" class="project-command child-03 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>SQLite</code>
+  
+</div>
+<div class="project-split-cell">
+  Embedded single-file database, dynamic type affinity, PRAGMA metadata/configuration, ON CONFLICT upserts.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r04" class="project-command child-04 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Identity columns</code>
+  
+</div>
+<div class="project-split-cell">
+  PostgreSQL IDENTITY/SERIAL, MySQL AUTO_INCREMENT, SQLite INTEGER PRIMARY KEY behavior differ.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r05" class="project-command child-05 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Boolean</code>
+  
+</div>
+<div class="project-split-cell">
+  Representation and native typing differ.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r06" class="project-command child-06 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Date/time</code>
+  
+</div>
+<div class="project-split-cell">
+  Storage types and arithmetic differ; never assume one engine's date functions are portable.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r07" class="project-command child-07 uid-sql-ref-06-postgresql-mysql-sqlite-quick-differences-r07">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Concatenation</code>
+  
+</div>
+<div class="project-split-cell">
+  PostgreSQL/SQLite commonly use ||; MySQL normally uses CONCAT().
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-high-risk-sql-slow-down"
+  class="project-doc-section node-49 uid-sql-ref-06-high-risk-sql-slow-down sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>High-Risk SQL: Slow Down</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-high-risk-sql-slow-down-r01" class="project-command child-01 uid-sql-ref-06-high-risk-sql-slow-down-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>UPDATE without WHERE</code>
+  
+</div>
+<div class="project-split-cell">
+  Can change every row.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-high-risk-sql-slow-down-r02" class="project-command child-02 uid-sql-ref-06-high-risk-sql-slow-down-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>DELETE without WHERE</code>
+  
+</div>
+<div class="project-split-cell">
+  Can delete every row.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-high-risk-sql-slow-down-r03" class="project-command child-03 uid-sql-ref-06-high-risk-sql-slow-down-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>DROP TABLE / DROP DATABASE</code>
+  
+</div>
+<div class="project-split-cell">
+  Removes database structures and data.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-high-risk-sql-slow-down-r04" class="project-command child-04 uid-sql-ref-06-high-risk-sql-slow-down-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>TRUNCATE</code>
+  
+</div>
+<div class="project-split-cell">
+  Removes all rows quickly and may have special transactional/identity behavior.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-high-risk-sql-slow-down-r05" class="project-command child-05 uid-sql-ref-06-high-risk-sql-slow-down-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>ALTER destructive changes</code>
+  
+</div>
+<div class="project-split-cell">
+  Dropping or changing columns/types can destroy or rewrite data.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-high-risk-sql-slow-down-r06" class="project-command child-06 uid-sql-ref-06-high-risk-sql-slow-down-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Before running</code>
+  
+</div>
+<div class="project-split-cell">
+  Verify environment/database/schema, preview affected rows, back up important data, and prefer reversible migrations.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-sql-ref-06-compact-query-pattern"
+  class="project-doc-section node-50 uid-sql-ref-06-compact-query-pattern sql-reference-command-group"
+>
+  
+<header>
+  <span>Transactions, Advanced SQL & Dialects</span>
+  <h3>Compact Query Pattern</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-sql-ref-06-compact-query-pattern-r01" class="project-command child-01 uid-sql-ref-06-compact-query-pattern-r01">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Read</code>
+  
+</div>
+<div class="project-split-cell">
+  SELECT columns FROM tables JOIN ... WHERE ... GROUP BY ... HAVING ... ORDER BY ... LIMIT ...
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-compact-query-pattern-r02" class="project-command child-02 uid-sql-ref-06-compact-query-pattern-r02">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Create</code>
+  
+</div>
+<div class="project-split-cell">
+  INSERT INTO table (columns) VALUES (values).
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-compact-query-pattern-r03" class="project-command child-03 uid-sql-ref-06-compact-query-pattern-r03">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Change</code>
+  
+</div>
+<div class="project-split-cell">
+  UPDATE table SET column = value WHERE key = value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-compact-query-pattern-r04" class="project-command child-04 uid-sql-ref-06-compact-query-pattern-r04">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Remove</code>
+  
+</div>
+<div class="project-split-cell">
+  DELETE FROM table WHERE key = value.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-compact-query-pattern-r05" class="project-command child-05 uid-sql-ref-06-compact-query-pattern-r05">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Define</code>
+  
+</div>
+<div class="project-split-cell">
+  CREATE / ALTER / DROP schema objects.
+  
+</div>
+  </div>
+</div>
+<div id="child-sql-ref-06-compact-query-pattern-r06" class="project-command child-06 uid-sql-ref-06-compact-query-pattern-r06">
+  
+  <div class="project-split project-split--equal">
+    <div class="project-split-cell">
+  <code>Protect</code>
+  
+</div>
+<div class="project-split-cell">
+  Constraints + transactions + prepared statements + least privilege + backups.
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

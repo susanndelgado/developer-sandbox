@@ -1,0 +1,240 @@
+{{HTML_HEAD}}
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="hm" data-section="home">
+    {{HEADER}}
+
+    <main>
+      <div class="sandbox-notice" role="status">
+        <span aria-hidden="true">⚠</span>
+
+        <div>
+          <strong>Sandbox in Progress</strong>
+          <small
+            >This developer sandbox is actively being built and updated.</small
+          >
+        </div>
+      </div>
+       <section class="glass-panel featured">
+  <h2>Featured Project</h2>
+
+  <div class="featured-content">
+    <button
+      class="arrow"
+      type="button"
+      data-featured-prev
+      aria-label="Previous project"
+    >
+      ‹
+    </button>
+
+    <div class="card-stack">
+      <span></span>
+      <span></span>
+
+      {{HOME_FEATURED_PROJECTS}}
+    </div>
+
+    <button
+      class="arrow"
+      type="button"
+      data-featured-next
+      aria-label="Next project"
+    >
+      ›
+    </button>
+  </div>
+
+  <div class="dots">
+    {{HOME_FEATURED_DOTS}}
+  </div>
+</section>
+
+      <section class="glass-panel rosetta">
+        <h2>Rosetta Stones</h2>
+
+        <div class="stones">
+          <!-- <button
+            type="button"
+            onclick="window.location.href = '/single-project.html'"
+          >
+            <span class="stone gold">
+              <span>JS</span>
+            </span>
+            <small>JavaScript</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/single-project.html'"
+          >
+            <span class="stone blue">
+              <span>TS</span>
+            </span>
+            <small>TypeScript</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/single-project.html'"
+          >
+            <span class="stone cyan">
+              <span>
+                <img src="assets/python.svg" alt="" />
+              </span>
+            </span>
+            <small>Python</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/single-project.html'"
+          >
+            <span class="stone purple">
+              <span>DB</span>
+            </span>
+            <small>Database</small>
+          </button>
+
+          <button
+            type="button"
+            onclick="window.location.href = '/single-project.html'"
+          >
+            <span class="stone">
+              <span>API</span>
+            </span>
+            <small>API</small>
+          </button> -->
+          {{HOME_ROSETTA_STONES}}
+        </div>
+
+        <a class="view-all" href="rosetta-stones.html"
+          >Core Languages &amp; Technologies ›</a
+        >
+      </section>
+
+      <section class="glass-panel library">
+        <h2>Project Library</h2>
+
+        <div class="projects">
+          <!-- <a href="single-project.html">
+            <span class="project-icon">RC</span>
+            <strong>Rosetta: Core</strong>
+            <small>WEB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon blue">MA</span>
+            <strong>Modern Agenda</strong>
+            <small>WEB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon cyan">MB</span>
+            <strong>Mini Browser</strong>
+            <small>EXPERIMENT</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon purple">DB</span>
+            <strong>Database Lab</strong>
+            <small>LAB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon gold">CP</span>
+            <strong>Canvas Playground</strong>
+            <small>EXPERIMENT</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon green">API</span>
+            <strong>API Explorer</strong>
+            <small>WEB</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon blue">AI</span>
+            <strong>AI Sandbox</strong>
+            <small>EXPERIMENT</small>
+          </a>
+
+          <a href="single-project.html">
+            <span class="project-icon cyan">PF</span>
+            <strong>Portfolio Engine</strong>
+            <small>WEB</small>
+          </a> -->
+          {{HOME_PROJECTS}}
+        </div>
+
+        <a class="view-all" href="library.html"
+          >View All Projects ›
+          <!-- links to a page with links to all projects in category "core" grouped by type and sidebar types maybe hide show group? --></a
+        >
+      </section>
+
+      <section class="glass-panel guides">
+        <h2>Reference Guides</h2>
+
+        <div class="guide-list">
+          <!-- <a href="reference-guide.html">
+            <span class="guide-icon">HTML</span>
+            <small>HTML / CSS</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon gold">JS</span>
+            <small>JavaScript</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon blue">TS</span>
+            <small>TypeScript</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon red">
+              <img src="assets/git.svg" alt="" />
+            </span>
+            <small>Git</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon purple">API</span>
+            <small>API Design</small>
+          </a>
+
+          <a href="reference-guide.html">
+            <span class="guide-icon cyan">PHP</span>
+            <small>PHP</small>
+          </a> -->
+          {{HOME_REFERENCE_GUIDES}}
+        </div>
+
+        <a class="view-all" href="pg/full-stack-developer-terminal-commands.html"
+          >Browse All Guides ›
+          <!-- links to a page with all projects and sidebar all reference guides --></a
+        >
+      </section>
+
+      <section class="glass-panel data">
+        <h2>LABS & EXPLORATIONS</h2>
+
+        <div class="data-list">{{HOME_LABS}}</div>
+
+        <a class="view-all" href="labs.html"
+          >Browse All Topics ›
+          <!-- links to a page with links to all projects and sidebar has all types under this category  maybe hide show group? -->
+        </a>
+      </section>
+      <!-- interface panels -->
+      <div class="logo-stage">
+        <button type="button" aria-label="Developer Sandbox logo">
+          <img src="assets/img/logo-blue.png" alt="Developer Sandbox logo" />
+        </button>
+      </div>
+    </main>
+ {{FOOTER}}

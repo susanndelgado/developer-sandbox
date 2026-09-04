@@ -1,0 +1,198 @@
+{{HTML_HEAD}}
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="home">
+    {{HEADER}}
+
+
+    <main class="view-all-page">
+      <section class="project-content" style="grid-column: 1 / -1">
+        <header>
+          <div>
+            <small>DATABASE</small>
+            <h2>Sandbox Datastore</h2>
+          </div>
+
+          <p>
+            A lightweight relational database used to organize and manage
+            structured content for the Developer Sandbox.
+          </p>
+        </header>
+
+        <nav
+          class="project-doc-nav"
+          aria-label="Database documentation sections"
+        >
+          <a href="#what-it-does">What It Does</a>
+          <a href="#technologies">Technologies</a>
+          <a href="#structure">Structure</a>
+          <a href="#why">Why It Is Used</a>
+        </nav>
+
+        <div class="project-actions">
+          <a
+            class="project-link"
+            href="https://github.com/susanndelgado/developer-sandbox/blob/main/database/schema.sql"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Schema ›
+          </a>
+
+          <a class="project-link" href="system-guide.html"> System Guide › </a>
+        </div>
+
+        <article class="project-doc">
+          <!-- =============================================
+               WHAT IT DOES
+               ============================================= -->
+
+          <section class="project-detail" id="what-it-does">
+            <header>
+              <span>01</span>
+              <h3>What It Does</h3>
+            </header>
+
+            <p>
+              The Sandbox database stores the structured information used by
+              projects, reference guides, experiments, Rosetta Stones, and other
+              content in the Developer Sandbox.
+            </p>
+
+            <p>
+              Instead of placing all project information directly inside
+              individual HTML pages, common data can be stored in one relational
+              system and managed through the local editing tools.
+            </p>
+
+            <section class="project-display">
+              <div class="project-preview">
+                <img
+                  src="assets/img/Database-Preview.png"
+                  alt="Sandbox database view showing records and related database tables"
+                />
+              </div>
+            </section>
+          </section>
+
+          <!-- =============================================
+               TECHNOLOGIES
+               ============================================= -->
+
+          <section class="project-detail" id="technologies">
+            <header>
+              <span>02</span>
+              <h3>Technologies Used</h3>
+            </header>
+
+            <p>
+              The datastore uses SQLite and SQL for relational data storage.
+              TypeScript is used for the application logic that works with the
+              stored data, while Node.js provides the local connection between
+              the browser-based editing interface and SQLite.
+            </p>
+
+            <div class="project-meta">
+              <div>
+                <small>DATABASE</small>
+                <strong>SQLite</strong>
+              </div>
+
+              <div>
+                <small>QUERY LANGUAGE</small>
+                <strong>SQL</strong>
+              </div>
+
+              <div>
+                <small>APPLICATION</small>
+                <strong>TypeScript</strong>
+              </div>
+
+              <div>
+                <small>RUNTIME</small>
+                <strong>Node.js</strong>
+              </div>
+            </div>
+          </section>
+
+          <!-- =============================================
+               STRUCTURE
+               ============================================= -->
+
+          <section class="project-detail" id="structure">
+            <header>
+              <span>03</span>
+              <h3>How It Is Structured</h3>
+            </header>
+
+            <p>
+              Records are the main entries in the Sandbox. Each record can be
+              connected to categories, tags, technologies, and Content Nodes.
+              Content Nodes contain the structured sections used to build the
+              detailed content for an entry.
+            </p>
+
+            <p>
+              Relationship tables allow multiple records to share categories,
+              tags, and technologies without storing the same information
+              repeatedly.
+            </p>
+            <section class="project-display">
+              <div class="project-preview">
+                <img
+                  src="assets/img/Editor-preview.png"
+                  alt="Sandbox database view showing records and related database tables"
+                />
+              </div>
+            </section>
+            <div class="project-example">
+              <small>SIMPLIFIED STRUCTURE</small>
+
+              <pre><code>records
+│
+├── categories
+├── tags
+├── technologies
+│
+└── content_nodes
+      │
+      └── parent / child page content</code></pre>
+            </div>
+          </section>
+
+          <!-- =============================================
+               WHY IT IS USED
+               ============================================= -->
+
+          <section class="project-detail" id="why">
+            <header>
+              <span>04</span>
+              <h3>Why It Is Used on This Website</h3>
+            </header>
+
+            <p>
+              The Developer Sandbox contains different kinds of technical
+              content, but much of that content shares the same basic
+              information. The database provides one consistent place to store
+              and organize that information instead of maintaining every
+              project, guide, and experiment separately.
+            </p>
+
+            <p>
+              SQLite keeps the system lightweight because the database can live
+              directly inside the project without requiring a separate database
+              service. The database supports the content-management side of the
+              Sandbox while the public website remains focused on displaying the
+              finished work.
+            </p>
+          </section>
+        </article>
+      </section>
+    </main>
+
+
+ {{FOOTER}}

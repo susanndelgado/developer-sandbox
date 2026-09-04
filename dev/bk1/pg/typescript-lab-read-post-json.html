@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TypeScript Lab: Read POST JSON — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="labs">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>TypeScript Lab: Read POST JSON</strong>
+    <p>Submit JSON and display what the server received.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Labs &amp; Explorations
+    </h1>
+
+    <p>
+      Experimental, interactive, and
+      subject-focused development projects.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Labs and Explorations"
+  >
+    <button
+      type="button"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">
+        ◇
+      </span>
+
+      <span>
+        <strong>
+          All Labs &amp; Explorations
+        </strong>
+      </span>
+    </button>
+
+    
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-browser-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Browser APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-developer-tooling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Developer Tooling
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-typescript-toolchain'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      TypeScript Toolchain
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-typescript-data-modeling'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      TypeScript Data Modeling
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-data-relationships'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data Relationships
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-data-transformation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data Transformation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-rendering-graphics'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Graphics
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-backend-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Backend &amp; APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-rendering-generation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Rendering &amp; Generation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-games-simulation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Games &amp; Simulation
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-sqlite-data-access'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      SQLite &amp; Data Access
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-browser-state'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Browser State
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-data-databases'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Data &amp; Databases
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-dom-async'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      DOM &amp; Async
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-semantic-html'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Semantic HTML
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'labs.html#group-node-http-apis'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Node HTTP &amp; APIs
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-crud-persistence'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      CRUD &amp; Persistence
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-tree-structures'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Tree Structures
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-validation-safety'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Validation &amp; Safety
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-database-transactions'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Database Transactions
+    </strong>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'labs.html#group-static-generation'"
+>
+  <span aria-hidden="true">
+    ◇
+  </span>
+
+  <span>
+    <strong>
+      Static Generation
+    </strong>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header class="project-detail-header">
+  <div>
+    <small>
+      LAB / EXPLORATION
+    </small>
+
+    <h2>
+      TypeScript Lab: Read POST JSON
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      LAB 085 — Node HTTP &amp; APIs
+    </strong>
+
+    <br />
+
+    Submit JSON and display what the server received.
+  </p>
+</header>
+        <div
+  id="node-node-ts-micro-085-display"
+  class="project-display node-01 uid-node-ts-micro-085-display project-overview"
+>
+  <div class="project-preview"><div><strong>LAB</strong><p>Read POST JSON</p><p>INPUT → TYPESCRIPT → VISIBLE OUTPUT</p><small>Request bodies arrive as chunks that must be combined and parsed.</small></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>LAB 085</span>
+  <h2>TypeScript Lab: Read POST JSON</h2>
+  <div><strong>Concept</strong><p>Request bodies arrive as chunks that must be combined and parsed.</p></div>
+</header>
+    <div class="project-display-details"><div><strong>Concept</strong><p>Request bodies arrive as chunks that must be combined and parsed.</p></div></div>
+  </div>
+</div>
+<section
+  id="node-node-ts-micro-085-objective"
+  class="project-doc-section node-02 uid-node-ts-micro-085-objective project-purpose"
+>
+  
+<header>
+  <span>01</span>
+  <h3>Objective & Explanation</h3>
+  What the project should make visible and why the concept matters.
+</header>
+  
+  <div class="project-command-list">
+<div id="child-node-ts-micro-085-objective-core" class="project-command child-01 uid-node-ts-micro-085-objective-core">
+  <div class="project-split-child-head">Learning Target</div>
+  <div class="project-split project-split--small-left">
+    <div class="project-split-cell">
+  <p><strong>Objective</strong></p><p>Submit JSON and display what the server received.</p>
+  
+</div>
+<div class="project-split-cell">
+  <p><strong>Explanation</strong></p><p>Request bodies arrive as chunks that must be combined and parsed.</p>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-ts-micro-085-plan"
+  class="project-detail node-03 uid-node-ts-micro-085-plan project-technologies"
+>
+  
+<header>
+  <span>02</span>
+  <h3>Project Plan</h3>
+  Structure, technologies, data boundary, and source connection.
+</header>
+  
+  <div class="project-meta">
+<div id="child-node-ts-micro-085-plan-structure" class="child-01 uid-node-ts-micro-085-plan-structure">
+  
+<div class="project-command-title">
+  Structure
+</div>
+  <pre><code>project/
+├── package.json
+├── tsconfig.json
+├── public/
+│   ├── index.html
+│   └── styles.css
+└── src/
+    └── server.ts</code></pre>
+</div>
+<div id="child-node-ts-micro-085-plan-tech" class="child-02 uid-node-ts-micro-085-plan-tech">
+  
+<div class="project-command-title">
+  Technologies
+</div>
+  <ul><li>TypeScript</li><li>Node.js</li><li>HTTP</li><li>HTML</li><li>CSS</li></ul>
+</div>
+<div id="child-node-ts-micro-085-plan-data" class="child-03 uid-node-ts-micro-085-plan-data">
+  
+<div class="project-command-title">
+  Data Layer
+</div>
+  <p>No persistent data layer. Keep all demonstration values inside the standalone project.</p>
+</div>
+<div id="child-node-ts-micro-085-plan-source" class="child-04 uid-node-ts-micro-085-plan-source">
+  
+<div class="project-command-title">
+  Sandbox Source
+</div>
+  <p>src/local-editor/server.ts → readJson()</p>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-ts-micro-085-build"
+  class="project-detail node-04 uid-node-ts-micro-085-build project-scope"
+>
+  
+<header>
+  <span>03</span>
+  <h3>Build Instructions</h3>
+  Build only the focused behavior, then use the visual layer to inspect it.
+</header>
+  
+  <div class="project-command-list">
+<div id="child-node-ts-micro-085-build-setup" class="project-command child-01 uid-node-ts-micro-085-build-setup is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Setup
+</div>Create the standalone project folder and listed files.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-setup" aria-expanded="false" aria-controls="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-setup" aria-label="Expand Setup"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-setup" class="project-command-panel" hidden>
+    <p>Install TypeScript locally and initialize the compiler configuration.</p>
+  </div>
+</div>
+<div id="child-node-ts-micro-085-build-implement" class="project-command child-02 uid-node-ts-micro-085-build-implement is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Implement
+</div>Implement the smallest version that demonstrates the concept.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-implement" aria-expanded="false" aria-controls="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-implement" aria-label="Expand Implement"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-implement" class="project-command-panel" hidden>
+    <ol><li>Implement the focused Node HTTP behavior in server.ts.</li><li>Run the compiled server and open the local browser page.</li></ol>
+  </div>
+</div>
+<div id="child-node-ts-micro-085-build-run" class="project-command child-03 uid-node-ts-micro-085-build-run is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Run & Inspect
+</div>Use the interface to trigger and inspect the request/response behavior.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-run" aria-expanded="false" aria-controls="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-run" aria-label="Expand Run &amp; Inspect"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-build-node-ts-micro-085-build-run" class="project-command-panel" hidden>
+    <p>Change one input or action and confirm the visible result changes for the expected reason.</p>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-ts-micro-085-code"
+  class="project-detail node-05 uid-node-ts-micro-085-code project-notes"
+>
+  
+<header>
+  <span>04</span>
+  <h3>Code & Configuration</h3>
+  Starter configuration plus the focused implementation example.
+</header>
+  
+  <div class="project-command-list">
+<div id="child-node-ts-micro-085-code-example" class="project-command child-01 uid-node-ts-micro-085-code-example is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Focused TypeScript
+</div>Implement this behavior first, then alter the input.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-code-node-ts-micro-085-code-example" aria-expanded="false" aria-controls="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-code-node-ts-micro-085-code-example" aria-label="Expand Focused TypeScript"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-code-node-ts-micro-085-code-example" class="project-command-panel" hidden>
+    <pre><code>async function readJson(req: IncomingMessage): Promise&lt;unknown&gt; {
+  const chunks: Buffer[] = [];
+
+  for await (const chunk of req) {
+    chunks.push(Buffer.from(chunk));
+  }
+
+  return JSON.parse(Buffer.concat(chunks).toString(&quot;utf8&quot;));
+}</code></pre>
+  </div>
+</div>
+<div id="child-node-ts-micro-085-code-config" class="project-command child-02 uid-node-ts-micro-085-code-config is-collapsible">
+  <div class="project-command-summary">
+<div class="project-command-title">
+  Starter Configuration
+</div>Keep the project independently buildable.</div>
+  <button
+    class="project-command-action collapse-toggle"
+    type="button" data-collapse-target="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-code-node-ts-micro-085-code-config" aria-expanded="false" aria-controls="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-code-node-ts-micro-085-code-config" aria-label="Expand Starter Configuration"
+  ><span aria-hidden="true">⌄</span></button>
+  <div id="panel-rec-ts-micro-085-read-post-json-node-ts-micro-085-code-node-ts-micro-085-code-config" class="project-command-panel" hidden>
+    <p><strong>package.json</strong></p><pre><code>{
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;tsc&quot;,
+    &quot;start&quot;: &quot;npm run build &amp;&amp; node --enable-source-maps dist/server.js&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@types/node&quot;: &quot;^26.4.0&quot;,
+    &quot;typescript&quot;: &quot;^7.0.2&quot;
+  }
+}</code></pre><p><strong>tsconfig.json</strong></p><pre><code>{
+  &quot;compilerOptions&quot;: {
+    &quot;rootDir&quot;: &quot;./src&quot;,
+    &quot;outDir&quot;: &quot;./dist&quot;,
+    &quot;target&quot;: &quot;ES2022&quot;,
+    &quot;module&quot;: &quot;ES2022&quot;,
+    &quot;lib&quot;: [&quot;ES2022&quot;, &quot;DOM&quot;],
+    &quot;types&quot;: [&quot;node&quot;],
+    &quot;strict&quot;: true,
+    &quot;sourceMap&quot;: true
+  },
+  &quot;include&quot;: [&quot;src/**/*.ts&quot;]
+}</code></pre>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-node-ts-micro-085-result"
+  class="project-detail node-06 uid-node-ts-micro-085-result project-result"
+>
+  
+<header>
+  <span>05</span>
+  <h3>Expected Visual Result</h3>
+  The output is the proof that the concept is working.
+</header>
+  
+  <div class="project-command-list">
+<div id="child-node-ts-micro-085-result-output" class="project-command child-01 uid-node-ts-micro-085-result-output">
+  
+<div class="project-command-title">
+  Visible Proof
+</div>
+  <p>The browser should visibly demonstrate: submit JSON and display what the server received.</p><p><strong>Data:</strong> None</p>
+</div>
+  </div>
+</section>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

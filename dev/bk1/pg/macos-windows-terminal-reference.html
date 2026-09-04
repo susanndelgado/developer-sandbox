@@ -1,0 +1,4175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>macOS / Windows Terminal Reference — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>macOS / Windows Terminal Reference</strong>
+    <p>Terminal cmds</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/angular-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Angular
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Cross-Device Web Testing
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Node.js
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      TypeScript
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/java-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Java
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      C#
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/python-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Python
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      macOS / Windows Terminal Reference
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      PowerShell ↔ zsh
+    </strong>
+
+    <br />
+
+    Terminal cmds
+  </p>
+</header>
+        
+<nav
+  id="node-os-terminal-nav"
+  class="project-doc-nav node-01 uid-os-terminal-nav os-terminal-reference-nav" aria-label="Guide Navigation"
+>
+<a
+  id="child-os-terminal-nav-01"
+  class="child-01 uid-os-terminal-nav-01"
+  href="pg/macos-windows-terminal-reference.html#node-os-terminal-section-01-orientation-navigation"
+>Orientation & Navigation</a>
+<a
+  id="child-os-terminal-nav-02"
+  class="child-02 uid-os-terminal-nav-02"
+  href="pg/macos-windows-terminal-reference.html#node-os-terminal-section-02-files-directories"
+>Files & Directories</a>
+<a
+  id="child-os-terminal-nav-03"
+  class="child-03 uid-os-terminal-nav-03"
+  href="pg/macos-windows-terminal-reference.html#node-os-terminal-section-03-read-search-transform-text"
+>Read, Search & Transform Text</a>
+<a
+  id="child-os-terminal-nav-04"
+  class="child-04 uid-os-terminal-nav-04"
+  href="pg/macos-windows-terminal-reference.html#node-os-terminal-section-04-processes-permissions-system"
+>Processes, Permissions & System</a>
+<a
+  id="child-os-terminal-nav-05"
+  class="child-05 uid-os-terminal-nav-05"
+  href="pg/macos-windows-terminal-reference.html#node-os-terminal-section-05-environment-shell-packages"
+>Environment, Shell & Packages</a>
+<a
+  id="child-os-terminal-nav-06"
+  class="child-06 uid-os-terminal-nav-06"
+  href="pg/macos-windows-terminal-reference.html#node-os-terminal-section-06-network-remote-archives-recovery"
+>Network, Remote, Archives & Recovery</a>
+</nav>
+
+<article class="project-doc">
+  <div
+  id="node-os-terminal-section-01-orientation-navigation"
+  class="project-display node-02 uid-os-terminal-section-01-orientation-navigation os-terminal-reference-section os-terminal-section-01"
+>
+  <div class="project-preview"><p>PowerShell on Windows and zsh on macOS: location, navigation, command discovery, history, and screen control.</p><div class="project-split project-split--three-column"><div class="project-split-cell"><strong>WINDOWS</strong><br><small>PowerShell-first</small></div><div class="project-split-cell"><strong>PURPOSE</strong><br><small>What the command does</small></div><div class="project-split-cell"><strong>macOS</strong><br><small>zsh / Terminal</small></div></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Windows | Purpose | macOS</span>
+  <h2>01 — Orientation & Navigation</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-os-terminal-01-location-navigation"
+  class="project-doc-section node-03 uid-os-terminal-01-location-navigation os-terminal-command-group"
+>
+  
+<header>
+  <span>Orientation & Navigation</span>
+  <h3>Location & Navigation</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-01-location-navigation-r01" class="project-command child-01 uid-os-terminal-01-location-navigation-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Location</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current working directory.
+  
+</div>
+<div class="project-split-cell">
+  <code>pwd</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-location-navigation-r02" class="project-command child-02 uid-os-terminal-01-location-navigation-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Set-Location path</code>
+  
+</div>
+<div class="project-split-cell">
+  Change to a directory.
+  
+</div>
+<div class="project-split-cell">
+  <code>cd path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-location-navigation-r03" class="project-command child-03 uid-os-terminal-01-location-navigation-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Set-Location ..</code>
+  
+</div>
+<div class="project-split-cell">
+  Move up one directory.
+  
+</div>
+<div class="project-split-cell">
+  <code>cd ..</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-location-navigation-r04" class="project-command child-04 uid-os-terminal-01-location-navigation-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Set-Location ~</code>
+  
+</div>
+<div class="project-split-cell">
+  Move to the current user's home directory.
+  
+</div>
+<div class="project-split-cell">
+  <code>cd ~</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-location-navigation-r05" class="project-command child-05 uid-os-terminal-01-location-navigation-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Set-Location -</code>
+  
+</div>
+<div class="project-split-cell">
+  PowerShell: return to the previous location.
+  
+</div>
+<div class="project-split-cell">
+  <code>cd -</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-location-navigation-r06" class="project-command child-06 uid-os-terminal-01-location-navigation-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Push-Location path</code>
+  
+</div>
+<div class="project-split-cell">
+  Save the current location and move elsewhere.
+  
+</div>
+<div class="project-split-cell">
+  <code>pushd path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-location-navigation-r07" class="project-command child-07 uid-os-terminal-01-location-navigation-r07 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Pop-Location</code>
+  
+</div>
+<div class="project-split-cell">
+  Return to the location saved by push.
+  
+</div>
+<div class="project-split-cell">
+  <code>popd</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-01-list-discover"
+  class="project-doc-section node-04 uid-os-terminal-01-list-discover os-terminal-command-group"
+>
+  
+<header>
+  <span>Orientation & Navigation</span>
+  <h3>List & Discover</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-01-list-discover-r01" class="project-command child-01 uid-os-terminal-01-list-discover-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem</code>
+  
+</div>
+<div class="project-split-cell">
+  List files and folders.
+  
+</div>
+<div class="project-split-cell">
+  <code>ls</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-list-discover-r02" class="project-command child-02 uid-os-terminal-01-list-discover-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -Force</code>
+  
+</div>
+<div class="project-split-cell">
+  Include hidden/system items.
+  
+</div>
+<div class="project-split-cell">
+  <code>ls -la</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-list-discover-r03" class="project-command child-03 uid-os-terminal-01-list-discover-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -Directory</code>
+  
+</div>
+<div class="project-split-cell">
+  List directories only.
+  
+</div>
+<div class="project-split-cell">
+  <code>find . -maxdepth 1 -type d</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-list-discover-r04" class="project-command child-04 uid-os-terminal-01-list-discover-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -File</code>
+  
+</div>
+<div class="project-split-cell">
+  List files only.
+  
+</div>
+<div class="project-split-cell">
+  <code>find . -maxdepth 1 -type f</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-list-discover-r05" class="project-command child-05 uid-os-terminal-01-list-discover-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Command node</code>
+  
+</div>
+<div class="project-split-cell">
+  Find the command PowerShell will run.
+  
+</div>
+<div class="project-split-cell">
+  <code>command -v node</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-list-discover-r06" class="project-command child-06 uid-os-terminal-01-list-discover-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Command node -All</code>
+  
+</div>
+<div class="project-split-cell">
+  Show all matching command definitions.
+  
+</div>
+<div class="project-split-cell">
+  <code>type -a node</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-list-discover-r07" class="project-command child-07 uid-os-terminal-01-list-discover-r07 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Help Get-ChildItem</code>
+  
+</div>
+<div class="project-split-cell">
+  Open built-in command help.
+  
+</div>
+<div class="project-split-cell">
+  <code>man ls</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-list-discover-r08" class="project-command child-08 uid-os-terminal-01-list-discover-r08 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Help command -Examples</code>
+  
+</div>
+<div class="project-split-cell">
+  Show command examples.
+  
+</div>
+<div class="project-split-cell">
+  <code>man command</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-01-history-screen"
+  class="project-doc-section node-05 uid-os-terminal-01-history-screen os-terminal-command-group"
+>
+  
+<header>
+  <span>Orientation & Navigation</span>
+  <h3>History & Screen</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-01-history-screen-r01" class="project-command child-01 uid-os-terminal-01-history-screen-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-History</code>
+  
+</div>
+<div class="project-split-cell">
+  Show commands from the current PowerShell session.
+  
+</div>
+<div class="project-split-cell">
+  <code>history</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-history-screen-r02" class="project-command child-02 uid-os-terminal-01-history-screen-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Clear-History</code>
+  
+</div>
+<div class="project-split-cell">
+  Clear PowerShell session history.
+  
+</div>
+<div class="project-split-cell">
+  <code>history -p</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-history-screen-r03" class="project-command child-03 uid-os-terminal-01-history-screen-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Clear-Host</code>
+  
+</div>
+<div class="project-split-cell">
+  Clear the terminal display.
+  
+</div>
+<div class="project-split-cell">
+  <code>clear</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-history-screen-r04" class="project-command child-04 uid-os-terminal-01-history-screen-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$PSVersionTable</code>
+  
+</div>
+<div class="project-split-cell">
+  Show PowerShell version and platform details.
+  
+</div>
+<div class="project-split-cell">
+  <code>zsh --version</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-history-screen-r05" class="project-command child-05 uid-os-terminal-01-history-screen-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$HOME</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the user's home-directory path.
+  
+</div>
+<div class="project-split-cell">
+  <code>echo $HOME</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-history-screen-r06" class="project-command child-06 uid-os-terminal-01-history-screen-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$PWD</code>
+  
+</div>
+<div class="project-split-cell">
+  Read the current PowerShell path object.
+  
+</div>
+<div class="project-split-cell">
+  <code>pwd</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-01-open-from-terminal"
+  class="project-doc-section node-06 uid-os-terminal-01-open-from-terminal os-terminal-command-group"
+>
+  
+<header>
+  <span>Orientation & Navigation</span>
+  <h3>Open from Terminal</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-01-open-from-terminal-r01" class="project-command child-01 uid-os-terminal-01-open-from-terminal-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Invoke-Item .</code>
+  
+</div>
+<div class="project-split-cell">
+  Open the current directory in the default file manager.
+  
+</div>
+<div class="project-split-cell">
+  <code>open .</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-open-from-terminal-r02" class="project-command child-02 uid-os-terminal-01-open-from-terminal-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Invoke-Item file.pdf</code>
+  
+</div>
+<div class="project-split-cell">
+  Open a file with its default application.
+  
+</div>
+<div class="project-split-cell">
+  <code>open file.pdf</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-open-from-terminal-r03" class="project-command child-03 uid-os-terminal-01-open-from-terminal-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Start-Process https://example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Open a URL with the default browser.
+  
+</div>
+<div class="project-split-cell">
+  <code>open https://example.com</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-01-open-from-terminal-r04" class="project-command child-04 uid-os-terminal-01-open-from-terminal-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Start-Process code -ArgumentList '.'</code>
+  
+</div>
+<div class="project-split-cell">
+  Launch an installed application/CLI with arguments.
+  
+</div>
+<div class="project-split-cell">
+  <code>code .</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-os-terminal-section-02-files-directories"
+  class="project-display node-07 uid-os-terminal-section-02-files-directories os-terminal-reference-section os-terminal-section-02"
+>
+  <div class="project-preview"><p>Create, copy, move, rename, remove, inspect, and compare filesystem objects without leaving the terminal.</p><div class="project-split project-split--three-column"><div class="project-split-cell"><strong>WINDOWS</strong><br><small>PowerShell-first</small></div><div class="project-split-cell"><strong>PURPOSE</strong><br><small>What the command does</small></div><div class="project-split-cell"><strong>macOS</strong><br><small>zsh / Terminal</small></div></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Windows | Purpose | macOS</span>
+  <h2>02 — Files & Directories</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-os-terminal-02-create"
+  class="project-doc-section node-08 uid-os-terminal-02-create os-terminal-command-group"
+>
+  
+<header>
+  <span>Files & Directories</span>
+  <h3>Create</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-02-create-r01" class="project-command child-01 uid-os-terminal-02-create-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>New-Item -ItemType Directory folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a directory.
+  
+</div>
+<div class="project-split-cell">
+  <code>mkdir folder</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-create-r02" class="project-command child-02 uid-os-terminal-02-create-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>New-Item -ItemType Directory a/b -Force</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a nested directory path.
+  
+</div>
+<div class="project-split-cell">
+  <code>mkdir -p a/b</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-create-r03" class="project-command child-03 uid-os-terminal-02-create-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>New-Item -ItemType File file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an empty file.
+  
+</div>
+<div class="project-split-cell">
+  <code>touch file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-create-r04" class="project-command child-04 uid-os-terminal-02-create-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Set-Content file.txt 'text'</code>
+  
+</div>
+<div class="project-split-cell">
+  Create or replace a text file with content.
+  
+</div>
+<div class="project-split-cell">
+  <code>printf '%s\n' 'text' > file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-create-r05" class="project-command child-05 uid-os-terminal-02-create-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Add-Content file.txt 'text'</code>
+  
+</div>
+<div class="project-split-cell">
+  Append text to a file.
+  
+</div>
+<div class="project-split-cell">
+  <code>printf '%s\n' 'text' >> file.txt</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-02-copy-move-rename"
+  class="project-doc-section node-09 uid-os-terminal-02-copy-move-rename os-terminal-command-group"
+>
+  
+<header>
+  <span>Files & Directories</span>
+  <h3>Copy, Move & Rename</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-02-copy-move-rename-r01" class="project-command child-01 uid-os-terminal-02-copy-move-rename-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Copy-Item file.txt copy.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy a file.
+  
+</div>
+<div class="project-split-cell">
+  <code>cp file.txt copy.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-copy-move-rename-r02" class="project-command child-02 uid-os-terminal-02-copy-move-rename-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Copy-Item folder dest -Recurse</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy a directory tree.
+  
+</div>
+<div class="project-split-cell">
+  <code>cp -R folder dest</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-copy-move-rename-r03" class="project-command child-03 uid-os-terminal-02-copy-move-rename-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Move-Item old new</code>
+  
+</div>
+<div class="project-split-cell">
+  Move a file or folder.
+  
+</div>
+<div class="project-split-cell">
+  <code>mv old new</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-copy-move-rename-r04" class="project-command child-04 uid-os-terminal-02-copy-move-rename-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Rename-Item old.txt new.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Rename an item.
+  
+</div>
+<div class="project-split-cell">
+  <code>mv old.txt new.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-copy-move-rename-r05" class="project-command child-05 uid-os-terminal-02-copy-move-rename-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Copy-Item *.txt dest</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy files matching a wildcard.
+  
+</div>
+<div class="project-split-cell">
+  <code>cp *.txt dest</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-02-remove-carefully"
+  class="project-doc-section node-10 uid-os-terminal-02-remove-carefully os-terminal-command-group"
+>
+  
+<header>
+  <span>Files & Directories</span>
+  <h3>Remove Carefully</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-02-remove-carefully-r01" class="project-command child-01 uid-os-terminal-02-remove-carefully-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Remove-Item file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete a file.
+  
+</div>
+<div class="project-split-cell">
+  <code>rm file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-remove-carefully-r02" class="project-command child-02 uid-os-terminal-02-remove-carefully-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Remove-Item folder -Recurse</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete a directory tree.
+  
+</div>
+<div class="project-split-cell">
+  <code>rm -r folder</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-remove-carefully-r03" class="project-command child-03 uid-os-terminal-02-remove-carefully-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Remove-Item folder -Recurse -Force</code>
+  
+</div>
+<div class="project-split-cell">
+  Force-remove a directory tree. Verify the path first.
+  
+</div>
+<div class="project-split-cell">
+  <code>rm -rf folder</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-remove-carefully-r04" class="project-command child-04 uid-os-terminal-02-remove-carefully-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Remove-Item *.tmp</code>
+  
+</div>
+<div class="project-split-cell">
+  Delete files matching a wildcard.
+  
+</div>
+<div class="project-split-cell">
+  <code>rm *.tmp</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-remove-carefully-r05" class="project-command child-05 uid-os-terminal-02-remove-carefully-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem path</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect the target before a destructive command.
+  
+</div>
+<div class="project-split-cell">
+  <code>ls -la path</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-02-paths-names"
+  class="project-doc-section node-11 uid-os-terminal-02-paths-names os-terminal-command-group"
+>
+  
+<header>
+  <span>Files & Directories</span>
+  <h3>Paths & Names</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-02-paths-names-r01" class="project-command child-01 uid-os-terminal-02-paths-names-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Split-Path path -Leaf</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the final file/folder name.
+  
+</div>
+<div class="project-split-cell">
+  <code>basename path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-paths-names-r02" class="project-command child-02 uid-os-terminal-02-paths-names-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Split-Path path -Parent</code>
+  
+</div>
+<div class="project-split-cell">
+  Return the parent-directory path.
+  
+</div>
+<div class="project-split-cell">
+  <code>dirname path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-paths-names-r03" class="project-command child-03 uid-os-terminal-02-paths-names-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Resolve-Path path</code>
+  
+</div>
+<div class="project-split-cell">
+  Resolve a path to its full provider path.
+  
+</div>
+<div class="project-split-cell">
+  <code>realpath path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-paths-names-r04" class="project-command child-04 uid-os-terminal-02-paths-names-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Test-Path path</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether a path exists.
+  
+</div>
+<div class="project-split-cell">
+  <code>test -e path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-paths-names-r05" class="project-command child-05 uid-os-terminal-02-paths-names-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Join-Path parent child</code>
+  
+</div>
+<div class="project-split-cell">
+  Build a path from components.
+  
+</div>
+<div class="project-split-cell">
+  <code>printf '%s/%s\n' "$parent" "$child"</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-02-file-metadata"
+  class="project-doc-section node-12 uid-os-terminal-02-file-metadata os-terminal-command-group"
+>
+  
+<header>
+  <span>Files & Directories</span>
+  <h3>File Metadata</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-02-file-metadata-r01" class="project-command child-01 uid-os-terminal-02-file-metadata-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Item file | Format-List *</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect detailed file metadata.
+  
+</div>
+<div class="project-split-cell">
+  <code>stat file</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-file-metadata-r02" class="project-command child-02 uid-os-terminal-02-file-metadata-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>(Get-Item file).Length</code>
+  
+</div>
+<div class="project-split-cell">
+  Get a file's size in bytes.
+  
+</div>
+<div class="project-split-cell">
+  <code>stat -f %z file</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-file-metadata-r03" class="project-command child-03 uid-os-terminal-02-file-metadata-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>(Get-Item file).LastWriteTime</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the last-modified time.
+  
+</div>
+<div class="project-split-cell">
+  <code>stat -f %Sm file</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-02-file-metadata-r04" class="project-command child-04 uid-os-terminal-02-file-metadata-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem | Sort-Object Length -Descending</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort directory items by size.
+  
+</div>
+<div class="project-split-cell">
+  <code>ls -lS</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-os-terminal-section-03-read-search-transform-text"
+  class="project-display node-13 uid-os-terminal-section-03-read-search-transform-text os-terminal-reference-section os-terminal-section-03"
+>
+  <div class="project-preview"><p>Inspect file content, search recursively, count and sort data, use pipelines, and redirect standard streams.</p><div class="project-split project-split--three-column"><div class="project-split-cell"><strong>WINDOWS</strong><br><small>PowerShell-first</small></div><div class="project-split-cell"><strong>PURPOSE</strong><br><small>What the command does</small></div><div class="project-split-cell"><strong>macOS</strong><br><small>zsh / Terminal</small></div></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Windows | Purpose | macOS</span>
+  <h2>03 — Read, Search & Transform Text</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-os-terminal-03-read-files"
+  class="project-doc-section node-14 uid-os-terminal-03-read-files os-terminal-command-group"
+>
+  
+<header>
+  <span>Read, Search & Transform Text</span>
+  <h3>Read Files</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-03-read-files-r01" class="project-command child-01 uid-os-terminal-03-read-files-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Print a text file.
+  
+</div>
+<div class="project-split-cell">
+  <code>cat file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-read-files-r02" class="project-command child-02 uid-os-terminal-03-read-files-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt -Head 20</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the first 20 lines.
+  
+</div>
+<div class="project-split-cell">
+  <code>head -n 20 file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-read-files-r03" class="project-command child-03 uid-os-terminal-03-read-files-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt -Tail 20</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the last 20 lines.
+  
+</div>
+<div class="project-split-cell">
+  <code>tail -n 20 file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-read-files-r04" class="project-command child-04 uid-os-terminal-03-read-files-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content app.log -Wait</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow a growing log file.
+  
+</div>
+<div class="project-split-cell">
+  <code>tail -f app.log</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-read-files-r05" class="project-command child-05 uid-os-terminal-03-read-files-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt -Raw</code>
+  
+</div>
+<div class="project-split-cell">
+  Read an entire text file as one string.
+  
+</div>
+<div class="project-split-cell">
+  <code>cat file.txt</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-03-search-text"
+  class="project-doc-section node-15 uid-os-terminal-03-search-text os-terminal-command-group"
+>
+  
+<header>
+  <span>Read, Search & Transform Text</span>
+  <h3>Search Text</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-03-search-text-r01" class="project-command child-01 uid-os-terminal-03-search-text-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Select-String 'text' file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Find matching text and line information.
+  
+</div>
+<div class="project-split-cell">
+  <code>grep -n 'text' file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-search-text-r02" class="project-command child-02 uid-os-terminal-03-search-text-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -Recurse -File | Select-String 'text'</code>
+  
+</div>
+<div class="project-split-cell">
+  Search text recursively through files.
+  
+</div>
+<div class="project-split-cell">
+  <code>grep -Rni 'text' .</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-search-text-r03" class="project-command child-03 uid-os-terminal-03-search-text-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Select-String 'error' *.log -CaseSensitive</code>
+  
+</div>
+<div class="project-split-cell">
+  Search matching files with case sensitivity.
+  
+</div>
+<div class="project-split-cell">
+  <code>grep -n 'error' *.log</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-search-text-r04" class="project-command child-04 uid-os-terminal-03-search-text-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Select-String '^TODO' file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Search with a regular expression.
+  
+</div>
+<div class="project-split-cell">
+  <code>grep -n '^TODO' file.txt</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-03-find-files"
+  class="project-doc-section node-16 uid-os-terminal-03-find-files os-terminal-command-group"
+>
+  
+<header>
+  <span>Read, Search & Transform Text</span>
+  <h3>Find Files</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-03-find-files-r01" class="project-command child-01 uid-os-terminal-03-find-files-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -Recurse -Filter *.js -File</code>
+  
+</div>
+<div class="project-split-cell">
+  Find files by name pattern.
+  
+</div>
+<div class="project-split-cell">
+  <code>find . -name '*.js' -type f</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-find-files-r02" class="project-command child-02 uid-os-terminal-03-find-files-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -Recurse -Directory</code>
+  
+</div>
+<div class="project-split-cell">
+  Find directories recursively.
+  
+</div>
+<div class="project-split-cell">
+  <code>find . -type d</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-find-files-r03" class="project-command child-03 uid-os-terminal-03-find-files-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -File | Where-Object LastWriteTime -gt (Get-Date).AddDays(-1)</code>
+  
+</div>
+<div class="project-split-cell">
+  Find files modified within the last day.
+  
+</div>
+<div class="project-split-cell">
+  <code>find . -type f -mtime -1</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-find-files-r04" class="project-command child-04 uid-os-terminal-03-find-files-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem -Recurse -File | Where-Object Length -gt 10MB</code>
+  
+</div>
+<div class="project-split-cell">
+  Find files larger than a size threshold.
+  
+</div>
+<div class="project-split-cell">
+  <code>find . -type f -size +10M</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-03-count-sort-group"
+  class="project-doc-section node-17 uid-os-terminal-03-count-sort-group os-terminal-command-group"
+>
+  
+<header>
+  <span>Read, Search & Transform Text</span>
+  <h3>Count, Sort & Group</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-03-count-sort-group-r01" class="project-command child-01 uid-os-terminal-03-count-sort-group-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>(Get-Content file.txt).Count</code>
+  
+</div>
+<div class="project-split-cell">
+  Count lines in a text file.
+  
+</div>
+<div class="project-split-cell">
+  <code>wc -l file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-count-sort-group-r02" class="project-command child-02 uid-os-terminal-03-count-sort-group-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem | Measure-Object</code>
+  
+</div>
+<div class="project-split-cell">
+  Count pipeline objects.
+  
+</div>
+<div class="project-split-cell">
+  <code>find . -maxdepth 1 | wc -l</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-count-sort-group-r03" class="project-command child-03 uid-os-terminal-03-count-sort-group-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt | Sort-Object</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort lines.
+  
+</div>
+<div class="project-split-cell">
+  <code>sort file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-count-sort-group-r04" class="project-command child-04 uid-os-terminal-03-count-sort-group-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt | Sort-Object -Unique</code>
+  
+</div>
+<div class="project-split-cell">
+  Sort and remove duplicate lines.
+  
+</div>
+<div class="project-split-cell">
+  <code>sort -u file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-count-sort-group-r05" class="project-command child-05 uid-os-terminal-03-count-sort-group-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt | Group-Object</code>
+  
+</div>
+<div class="project-split-cell">
+  Group equal lines and count occurrences.
+  
+</div>
+<div class="project-split-cell">
+  <code>sort file.txt | uniq -c</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-03-pipelines-redirection"
+  class="project-doc-section node-18 uid-os-terminal-03-pipelines-redirection os-terminal-command-group"
+>
+  
+<header>
+  <span>Read, Search & Transform Text</span>
+  <h3>Pipelines & Redirection</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-03-pipelines-redirection-r01" class="project-command child-01 uid-os-terminal-03-pipelines-redirection-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Process | Sort-Object CPU</code>
+  
+</div>
+<div class="project-split-cell">
+  Pipe objects from one command into another.
+  
+</div>
+<div class="project-split-cell">
+  <code>ps aux | sort</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-pipelines-redirection-r02" class="project-command child-02 uid-os-terminal-03-pipelines-redirection-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>command > file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Overwrite a file with standard output.
+  
+</div>
+<div class="project-split-cell">
+  <code>command > file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-pipelines-redirection-r03" class="project-command child-03 uid-os-terminal-03-pipelines-redirection-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>command >> file.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Append standard output to a file.
+  
+</div>
+<div class="project-split-cell">
+  <code>command >> file.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-pipelines-redirection-r04" class="project-command child-04 uid-os-terminal-03-pipelines-redirection-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>command 2> errors.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  Redirect the error stream.
+  
+</div>
+<div class="project-split-cell">
+  <code>command 2> errors.txt</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-pipelines-redirection-r05" class="project-command child-05 uid-os-terminal-03-pipelines-redirection-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>command *> all.txt</code>
+  
+</div>
+<div class="project-split-cell">
+  PowerShell: redirect all streams to one file.
+  
+</div>
+<div class="project-split-cell">
+  <code>command > all.txt 2>&1</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-pipelines-redirection-r06" class="project-command child-06 uid-os-terminal-03-pipelines-redirection-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>PowerShell 7: a && b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run the second command only if the first succeeds.
+  
+</div>
+<div class="project-split-cell">
+  <code>a && b</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-pipelines-redirection-r07" class="project-command child-07 uid-os-terminal-03-pipelines-redirection-r07 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>PowerShell 7: a || b</code>
+  
+</div>
+<div class="project-split-cell">
+  Run the second command only if the first fails.
+  
+</div>
+<div class="project-split-cell">
+  <code>a || b</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-03-clipboard"
+  class="project-doc-section node-19 uid-os-terminal-03-clipboard os-terminal-command-group"
+>
+  
+<header>
+  <span>Read, Search & Transform Text</span>
+  <h3>Clipboard</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-03-clipboard-r01" class="project-command child-01 uid-os-terminal-03-clipboard-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Clipboard</code>
+  
+</div>
+<div class="project-split-cell">
+  Read clipboard text.
+  
+</div>
+<div class="project-split-cell">
+  <code>pbpaste</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-clipboard-r02" class="project-command child-02 uid-os-terminal-03-clipboard-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>'text' | Set-Clipboard</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy pipeline text to the clipboard.
+  
+</div>
+<div class="project-split-cell">
+  <code>printf '%s' 'text' | pbcopy</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-03-clipboard-r03" class="project-command child-03 uid-os-terminal-03-clipboard-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Content file.txt | Set-Clipboard</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy file contents to the clipboard.
+  
+</div>
+<div class="project-split-cell">
+  <code>pbcopy < file.txt</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-os-terminal-section-04-processes-permissions-system"
+  class="project-display node-20 uid-os-terminal-section-04-processes-permissions-system os-terminal-reference-section os-terminal-section-04"
+>
+  <div class="project-preview"><p>Inspect and stop processes, identify port conflicts, check permissions, inspect system information, and manage disk usage.</p><div class="project-split project-split--three-column"><div class="project-split-cell"><strong>WINDOWS</strong><br><small>PowerShell-first</small></div><div class="project-split-cell"><strong>PURPOSE</strong><br><small>What the command does</small></div><div class="project-split-cell"><strong>macOS</strong><br><small>zsh / Terminal</small></div></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Windows | Purpose | macOS</span>
+  <h2>04 — Processes, Permissions & System</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-os-terminal-04-processes"
+  class="project-doc-section node-21 uid-os-terminal-04-processes os-terminal-command-group"
+>
+  
+<header>
+  <span>Processes, Permissions & System</span>
+  <h3>Processes</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-04-processes-r01" class="project-command child-01 uid-os-terminal-04-processes-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Process</code>
+  
+</div>
+<div class="project-split-cell">
+  List running processes.
+  
+</div>
+<div class="project-split-cell">
+  <code>ps aux</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-processes-r02" class="project-command child-02 uid-os-terminal-04-processes-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Process -Id 1234</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect one process by PID.
+  
+</div>
+<div class="project-split-cell">
+  <code>ps -p 1234</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-processes-r03" class="project-command child-03 uid-os-terminal-04-processes-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Process node</code>
+  
+</div>
+<div class="project-split-cell">
+  Find processes by executable/process name.
+  
+</div>
+<div class="project-split-cell">
+  <code>pgrep -fl node</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-processes-r04" class="project-command child-04 uid-os-terminal-04-processes-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Stop-Process -Id 1234</code>
+  
+</div>
+<div class="project-split-cell">
+  Request that a process stop.
+  
+</div>
+<div class="project-split-cell">
+  <code>kill 1234</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-processes-r05" class="project-command child-05 uid-os-terminal-04-processes-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Stop-Process -Id 1234 -Force</code>
+  
+</div>
+<div class="project-split-cell">
+  Force-stop a process; use as a last resort.
+  
+</div>
+<div class="project-split-cell">
+  <code>kill -9 1234</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-processes-r06" class="project-command child-06 uid-os-terminal-04-processes-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Start-Process app.exe</code>
+  
+</div>
+<div class="project-split-cell">
+  Start a process.
+  
+</div>
+<div class="project-split-cell">
+  <code>open -a 'App Name'</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-04-jobs-background-work"
+  class="project-doc-section node-22 uid-os-terminal-04-jobs-background-work os-terminal-command-group"
+>
+  
+<header>
+  <span>Processes, Permissions & System</span>
+  <h3>Jobs & Background Work</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-04-jobs-background-work-r01" class="project-command child-01 uid-os-terminal-04-jobs-background-work-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Start-Job { command }</code>
+  
+</div>
+<div class="project-split-cell">
+  Start a PowerShell background job.
+  
+</div>
+<div class="project-split-cell">
+  <code>command &</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-jobs-background-work-r02" class="project-command child-02 uid-os-terminal-04-jobs-background-work-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Job</code>
+  
+</div>
+<div class="project-split-cell">
+  List PowerShell background jobs.
+  
+</div>
+<div class="project-split-cell">
+  <code>jobs</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-jobs-background-work-r03" class="project-command child-03 uid-os-terminal-04-jobs-background-work-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Receive-Job id</code>
+  
+</div>
+<div class="project-split-cell">
+  Read output from a PowerShell job.
+  
+</div>
+<div class="project-split-cell">
+  <code>wait %job</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-jobs-background-work-r04" class="project-command child-04 uid-os-terminal-04-jobs-background-work-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Stop-Job id</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop a PowerShell background job.
+  
+</div>
+<div class="project-split-cell">
+  <code>kill %job</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-jobs-background-work-r05" class="project-command child-05 uid-os-terminal-04-jobs-background-work-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Ctrl+C</code>
+  
+</div>
+<div class="project-split-cell">
+  Interrupt the foreground command.
+  
+</div>
+<div class="project-split-cell">
+  <code>Ctrl+C</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-04-ports"
+  class="project-doc-section node-23 uid-os-terminal-04-ports os-terminal-command-group"
+>
+  
+<header>
+  <span>Processes, Permissions & System</span>
+  <h3>Ports</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-04-ports-r01" class="project-command child-01 uid-os-terminal-04-ports-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-NetTCPConnection -LocalPort 3000</code>
+  
+</div>
+<div class="project-split-cell">
+  Find TCP connections/listeners using a local port.
+  
+</div>
+<div class="project-split-cell">
+  <code>lsof -i :3000</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-ports-r02" class="project-command child-02 uid-os-terminal-04-ports-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-NetTCPConnection -State Listen</code>
+  
+</div>
+<div class="project-split-cell">
+  List listening TCP endpoints.
+  
+</div>
+<div class="project-split-cell">
+  <code>lsof -nP -iTCP -sTCP:LISTEN</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-ports-r03" class="project-command child-03 uid-os-terminal-04-ports-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Process -Id PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect the process after identifying its PID.
+  
+</div>
+<div class="project-split-cell">
+  <code>ps -p PID</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-ports-r04" class="project-command child-04 uid-os-terminal-04-ports-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Stop-Process -Id PID</code>
+  
+</div>
+<div class="project-split-cell">
+  Stop the process causing a local port conflict.
+  
+</div>
+<div class="project-split-cell">
+  <code>kill PID</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-04-permissions-ownership"
+  class="project-doc-section node-24 uid-os-terminal-04-permissions-ownership os-terminal-command-group"
+>
+  
+<header>
+  <span>Processes, Permissions & System</span>
+  <h3>Permissions & Ownership</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-04-permissions-ownership-r01" class="project-command child-01 uid-os-terminal-04-permissions-ownership-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Acl path</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect access-control information.
+  
+</div>
+<div class="project-split-cell">
+  <code>ls -le path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-permissions-ownership-r02" class="project-command child-02 uid-os-terminal-04-permissions-ownership-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>icacls path</code>
+  
+</div>
+<div class="project-split-cell">
+  Display Windows file/folder ACLs.
+  
+</div>
+<div class="project-split-cell">
+  <code>ls -l path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-permissions-ownership-r03" class="project-command child-03 uid-os-terminal-04-permissions-ownership-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>icacls path /grant USER:F</code>
+  
+</div>
+<div class="project-split-cell">
+  Grant a Windows user full control; use carefully.
+  
+</div>
+<div class="project-split-cell">
+  <code>chmod u+rwx path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-permissions-ownership-r04" class="project-command child-04 uid-os-terminal-04-permissions-ownership-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>icacls path /inheritance:e</code>
+  
+</div>
+<div class="project-split-cell">
+  Enable inherited Windows permissions.
+  
+</div>
+<div class="project-split-cell">
+  <code>chmod -- reference needed; macOS uses POSIX/ACL inheritance differently</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-permissions-ownership-r05" class="project-command child-05 uid-os-terminal-04-permissions-ownership-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Start-Process PowerShell -Verb RunAs</code>
+  
+</div>
+<div class="project-split-cell">
+  Open an elevated PowerShell session.
+  
+</div>
+<div class="project-split-cell">
+  <code>sudo command</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-permissions-ownership-r06" class="project-command child-06 uid-os-terminal-04-permissions-ownership-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>—</code>
+  
+</div>
+<div class="project-split-cell">
+  Change Unix executable permission; Windows executable permissions work differently.
+  
+</div>
+<div class="project-split-cell">
+  <code>chmod +x script.sh</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-permissions-ownership-r07" class="project-command child-07 uid-os-terminal-04-permissions-ownership-r07 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>—</code>
+  
+</div>
+<div class="project-split-cell">
+  Change Unix file owner; Windows uses ACL ownership tools instead.
+  
+</div>
+<div class="project-split-cell">
+  <code>sudo chown user file</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-04-system-information"
+  class="project-doc-section node-25 uid-os-terminal-04-system-information os-terminal-command-group"
+>
+  
+<header>
+  <span>Processes, Permissions & System</span>
+  <h3>System Information</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-04-system-information-r01" class="project-command child-01 uid-os-terminal-04-system-information-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ComputerInfo</code>
+  
+</div>
+<div class="project-split-cell">
+  Display broad operating-system and hardware information.
+  
+</div>
+<div class="project-split-cell">
+  <code>system_profiler SPSoftwareDataType SPHardwareDataType</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-system-information-r02" class="project-command child-02 uid-os-terminal-04-system-information-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>systeminfo</code>
+  
+</div>
+<div class="project-split-cell">
+  Show Windows OS, memory, boot, and system details.
+  
+</div>
+<div class="project-split-cell">
+  <code>sw_vers</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-system-information-r03" class="project-command child-03 uid-os-terminal-04-system-information-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$env:PROCESSOR_ARCHITECTURE</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the process architecture.
+  
+</div>
+<div class="project-split-cell">
+  <code>uname -m</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-system-information-r04" class="project-command child-04 uid-os-terminal-04-system-information-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Date</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current local date and time.
+  
+</div>
+<div class="project-split-cell">
+  <code>date</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-system-information-r05" class="project-command child-05 uid-os-terminal-04-system-information-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-TimeZone</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the configured time zone.
+  
+</div>
+<div class="project-split-cell">
+  <code>systemsetup -gettimezone</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-system-information-r06" class="project-command child-06 uid-os-terminal-04-system-information-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>hostname</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the machine hostname.
+  
+</div>
+<div class="project-split-cell">
+  <code>hostname</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-system-information-r07" class="project-command child-07 uid-os-terminal-04-system-information-r07 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>whoami</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current user identity.
+  
+</div>
+<div class="project-split-cell">
+  <code>whoami</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-04-disk-storage"
+  class="project-doc-section node-26 uid-os-terminal-04-disk-storage os-terminal-command-group"
+>
+  
+<header>
+  <span>Processes, Permissions & System</span>
+  <h3>Disk & Storage</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-04-disk-storage-r01" class="project-command child-01 uid-os-terminal-04-disk-storage-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-PSDrive -PSProvider FileSystem</code>
+  
+</div>
+<div class="project-split-cell">
+  Show filesystem drives and free/used space.
+  
+</div>
+<div class="project-split-cell">
+  <code>df -h</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-disk-storage-r02" class="project-command child-02 uid-os-terminal-04-disk-storage-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Volume</code>
+  
+</div>
+<div class="project-split-cell">
+  Show Windows volume information.
+  
+</div>
+<div class="project-split-cell">
+  <code>diskutil list</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-disk-storage-r03" class="project-command child-03 uid-os-terminal-04-disk-storage-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem folder -Recurse -File | Measure-Object Length -Sum</code>
+  
+</div>
+<div class="project-split-cell">
+  Calculate total file bytes under a folder.
+  
+</div>
+<div class="project-split-cell">
+  <code>du -sh folder</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-04-disk-storage-r04" class="project-command child-04 uid-os-terminal-04-disk-storage-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem folder | Sort-Object Length -Descending</code>
+  
+</div>
+<div class="project-split-cell">
+  Find larger items in a directory.
+  
+</div>
+<div class="project-split-cell">
+  <code>du -sh folder/* | sort -h</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-os-terminal-section-05-environment-shell-packages"
+  class="project-display node-27 uid-os-terminal-section-05-environment-shell-packages os-terminal-reference-section os-terminal-section-05"
+>
+  <div class="project-preview"><p>Work with environment variables, PATH, shell profiles, aliases, package managers, and terminal configuration.</p><div class="project-split project-split--three-column"><div class="project-split-cell"><strong>WINDOWS</strong><br><small>PowerShell-first</small></div><div class="project-split-cell"><strong>PURPOSE</strong><br><small>What the command does</small></div><div class="project-split-cell"><strong>macOS</strong><br><small>zsh / Terminal</small></div></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Windows | Purpose | macOS</span>
+  <h2>05 — Environment, Shell & Packages</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-os-terminal-05-environment-variables"
+  class="project-doc-section node-28 uid-os-terminal-05-environment-variables os-terminal-command-group"
+>
+  
+<header>
+  <span>Environment, Shell & Packages</span>
+  <h3>Environment Variables</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-05-environment-variables-r01" class="project-command child-01 uid-os-terminal-05-environment-variables-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$env:NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Read one environment variable.
+  
+</div>
+<div class="project-split-cell">
+  <code>printenv NAME</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-environment-variables-r02" class="project-command child-02 uid-os-terminal-05-environment-variables-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$env:NAME = 'value'</code>
+  
+</div>
+<div class="project-split-cell">
+  Set an environment variable for the current shell session.
+  
+</div>
+<div class="project-split-cell">
+  <code>export NAME=value</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-environment-variables-r03" class="project-command child-03 uid-os-terminal-05-environment-variables-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Remove-Item Env:NAME</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a session environment variable.
+  
+</div>
+<div class="project-split-cell">
+  <code>unset NAME</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-environment-variables-r04" class="project-command child-04 uid-os-terminal-05-environment-variables-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem Env:</code>
+  
+</div>
+<div class="project-split-cell">
+  List environment variables.
+  
+</div>
+<div class="project-split-cell">
+  <code>printenv | sort</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-environment-variables-r05" class="project-command child-05 uid-os-terminal-05-environment-variables-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$env:PATH</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the executable search path.
+  
+</div>
+<div class="project-split-cell">
+  <code>echo $PATH</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-environment-variables-r06" class="project-command child-06 uid-os-terminal-05-environment-variables-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$env:PATH -split ';'</code>
+  
+</div>
+<div class="project-split-cell">
+  Display Windows PATH entries individually.
+  
+</div>
+<div class="project-split-cell">
+  <code>printf '%s\n' ${PATH//:/ }</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-05-profiles-shell-configuration"
+  class="project-doc-section node-29 uid-os-terminal-05-profiles-shell-configuration os-terminal-command-group"
+>
+  
+<header>
+  <span>Environment, Shell & Packages</span>
+  <h3>Profiles & Shell Configuration</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-05-profiles-shell-configuration-r01" class="project-command child-01 uid-os-terminal-05-profiles-shell-configuration-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$PROFILE</code>
+  
+</div>
+<div class="project-split-cell">
+  Show the current PowerShell profile path.
+  
+</div>
+<div class="project-split-cell">
+  <code>echo ~/.zshrc</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-profiles-shell-configuration-r02" class="project-command child-02 uid-os-terminal-05-profiles-shell-configuration-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Test-Path $PROFILE</code>
+  
+</div>
+<div class="project-split-cell">
+  Check whether the PowerShell profile exists.
+  
+</div>
+<div class="project-split-cell">
+  <code>test -f ~/.zshrc</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-profiles-shell-configuration-r03" class="project-command child-03 uid-os-terminal-05-profiles-shell-configuration-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>notepad $PROFILE</code>
+  
+</div>
+<div class="project-split-cell">
+  Edit the PowerShell profile with Notepad.
+  
+</div>
+<div class="project-split-cell">
+  <code>nano ~/.zshrc</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-profiles-shell-configuration-r04" class="project-command child-04 uid-os-terminal-05-profiles-shell-configuration-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>. $PROFILE</code>
+  
+</div>
+<div class="project-split-cell">
+  Reload the PowerShell profile in the current session.
+  
+</div>
+<div class="project-split-cell">
+  <code>source ~/.zshrc</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-profiles-shell-configuration-r05" class="project-command child-05 uid-os-terminal-05-profiles-shell-configuration-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>pwsh</code>
+  
+</div>
+<div class="project-split-cell">
+  Start PowerShell 7 if installed.
+  
+</div>
+<div class="project-split-cell">
+  <code>exec zsh</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-05-aliases-functions"
+  class="project-doc-section node-30 uid-os-terminal-05-aliases-functions os-terminal-command-group"
+>
+  
+<header>
+  <span>Environment, Shell & Packages</span>
+  <h3>Aliases & Functions</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-05-aliases-functions-r01" class="project-command child-01 uid-os-terminal-05-aliases-functions-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Alias</code>
+  
+</div>
+<div class="project-split-cell">
+  List PowerShell aliases.
+  
+</div>
+<div class="project-split-cell">
+  <code>alias</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-aliases-functions-r02" class="project-command child-02 uid-os-terminal-05-aliases-functions-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Alias ls</code>
+  
+</div>
+<div class="project-split-cell">
+  See which command an alias resolves to.
+  
+</div>
+<div class="project-split-cell">
+  <code>type ls</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-aliases-functions-r03" class="project-command child-03 uid-os-terminal-05-aliases-functions-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Set-Alias ll Get-ChildItem</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a session alias.
+  
+</div>
+<div class="project-split-cell">
+  <code>alias ll='ls -lah'</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-aliases-functions-r04" class="project-command child-04 uid-os-terminal-05-aliases-functions-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Remove-Item Alias:ll</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a session alias.
+  
+</div>
+<div class="project-split-cell">
+  <code>unalias ll</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-aliases-functions-r05" class="project-command child-05 uid-os-terminal-05-aliases-functions-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>function Name { ... }</code>
+  
+</div>
+<div class="project-split-cell">
+  Define a reusable shell function.
+  
+</div>
+<div class="project-split-cell">
+  <code>Name() { ...; }</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-05-windows-package-manager-homebrew"
+  class="project-doc-section node-31 uid-os-terminal-05-windows-package-manager-homebrew os-terminal-command-group"
+>
+  
+<header>
+  <span>Environment, Shell & Packages</span>
+  <h3>Windows Package Manager / Homebrew</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-05-windows-package-manager-homebrew-r01" class="project-command child-01 uid-os-terminal-05-windows-package-manager-homebrew-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget search package</code>
+  
+</div>
+<div class="project-split-cell">
+  Search the OS package manager.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew search package</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-windows-package-manager-homebrew-r02" class="project-command child-02 uid-os-terminal-05-windows-package-manager-homebrew-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget install ID</code>
+  
+</div>
+<div class="project-split-cell">
+  Install a package.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew install package</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-windows-package-manager-homebrew-r03" class="project-command child-03 uid-os-terminal-05-windows-package-manager-homebrew-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget list</code>
+  
+</div>
+<div class="project-split-cell">
+  List installed packages known to the package manager.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew list</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-windows-package-manager-homebrew-r04" class="project-command child-04 uid-os-terminal-05-windows-package-manager-homebrew-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget upgrade</code>
+  
+</div>
+<div class="project-split-cell">
+  Show packages with upgrades available.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew outdated</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-windows-package-manager-homebrew-r05" class="project-command child-05 uid-os-terminal-05-windows-package-manager-homebrew-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget upgrade --all</code>
+  
+</div>
+<div class="project-split-cell">
+  Upgrade supported installed packages.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew upgrade</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-windows-package-manager-homebrew-r06" class="project-command child-06 uid-os-terminal-05-windows-package-manager-homebrew-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget uninstall ID</code>
+  
+</div>
+<div class="project-split-cell">
+  Remove a package.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew uninstall package</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-windows-package-manager-homebrew-r07" class="project-command child-07 uid-os-terminal-05-windows-package-manager-homebrew-r07 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget source update</code>
+  
+</div>
+<div class="project-split-cell">
+  Refresh package-source metadata.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew update</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-05-command-resolution"
+  class="project-doc-section node-32 uid-os-terminal-05-command-resolution os-terminal-command-group"
+>
+  
+<header>
+  <span>Environment, Shell & Packages</span>
+  <h3>Command Resolution</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-05-command-resolution-r01" class="project-command child-01 uid-os-terminal-05-command-resolution-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Command name</code>
+  
+</div>
+<div class="project-split-cell">
+  Show which executable/function/alias will run.
+  
+</div>
+<div class="project-split-cell">
+  <code>command -v name</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-command-resolution-r02" class="project-command child-02 uid-os-terminal-05-command-resolution-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Command name -All</code>
+  
+</div>
+<div class="project-split-cell">
+  Show all command matches PowerShell can resolve.
+  
+</div>
+<div class="project-split-cell">
+  <code>type -a name</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-command-resolution-r03" class="project-command child-03 uid-os-terminal-05-command-resolution-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>where.exe name</code>
+  
+</div>
+<div class="project-split-cell">
+  Search Windows PATH for matching executable files.
+  
+</div>
+<div class="project-split-cell">
+  <code>which -a name</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-05-command-resolution-r04" class="project-command child-04 uid-os-terminal-05-command-resolution-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Command name | Format-List *</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect command type, source, path, and metadata.
+  
+</div>
+<div class="project-split-cell">
+  <code>type name</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<div
+  id="node-os-terminal-section-06-network-remote-archives-recovery"
+  class="project-display node-33 uid-os-terminal-section-06-network-remote-archives-recovery os-terminal-reference-section os-terminal-section-06"
+>
+  <div class="project-preview"><p>Diagnose networking, test HTTP and ports, use SSH, compress files, and apply a fast terminal troubleshooting loop.</p><div class="project-split project-split--three-column"><div class="project-split-cell"><strong>WINDOWS</strong><br><small>PowerShell-first</small></div><div class="project-split-cell"><strong>PURPOSE</strong><br><small>What the command does</small></div><div class="project-split-cell"><strong>macOS</strong><br><small>zsh / Terminal</small></div></div></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Windows | Purpose | macOS</span>
+  <h2>06 — Network, Remote, Archives & Recovery</h2>
+  
+</header>
+    
+  </div>
+</div>
+<section
+  id="node-os-terminal-06-network-identity-dns"
+  class="project-doc-section node-34 uid-os-terminal-06-network-identity-dns os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>Network Identity & DNS</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-network-identity-dns-r01" class="project-command child-01 uid-os-terminal-06-network-identity-dns-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>ipconfig</code>
+  
+</div>
+<div class="project-split-cell">
+  Show Windows IP configuration.
+  
+</div>
+<div class="project-split-cell">
+  <code>ifconfig</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-network-identity-dns-r02" class="project-command child-02 uid-os-terminal-06-network-identity-dns-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-NetIPAddress</code>
+  
+</div>
+<div class="project-split-cell">
+  List Windows IP addresses and interfaces.
+  
+</div>
+<div class="project-split-cell">
+  <code>ipconfig getifaddr en0</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-network-identity-dns-r03" class="project-command child-03 uid-os-terminal-06-network-identity-dns-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Test-Connection host</code>
+  
+</div>
+<div class="project-split-cell">
+  Send ICMP echo requests.
+  
+</div>
+<div class="project-split-cell">
+  <code>ping host</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-network-identity-dns-r04" class="project-command child-04 uid-os-terminal-06-network-identity-dns-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Resolve-DnsName example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Resolve DNS records.
+  
+</div>
+<div class="project-split-cell">
+  <code>dig example.com</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-network-identity-dns-r05" class="project-command child-05 uid-os-terminal-06-network-identity-dns-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>nslookup example.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Run a traditional DNS lookup.
+  
+</div>
+<div class="project-split-cell">
+  <code>nslookup example.com</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-network-identity-dns-r06" class="project-command child-06 uid-os-terminal-06-network-identity-dns-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-NetRoute</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect the Windows routing table.
+  
+</div>
+<div class="project-split-cell">
+  <code>netstat -rn</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-06-ports-connectivity"
+  class="project-doc-section node-35 uid-os-terminal-06-ports-connectivity os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>Ports & Connectivity</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-ports-connectivity-r01" class="project-command child-01 uid-os-terminal-06-ports-connectivity-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Test-NetConnection host -Port 443</code>
+  
+</div>
+<div class="project-split-cell">
+  Test whether a TCP port is reachable.
+  
+</div>
+<div class="project-split-cell">
+  <code>nc -vz host 443</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ports-connectivity-r02" class="project-command child-02 uid-os-terminal-06-ports-connectivity-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-NetTCPConnection -LocalPort 5173</code>
+  
+</div>
+<div class="project-split-cell">
+  Find the process endpoint using a development port.
+  
+</div>
+<div class="project-split-cell">
+  <code>lsof -i :5173</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ports-connectivity-r03" class="project-command child-03 uid-os-terminal-06-ports-connectivity-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Test-NetConnection host -TraceRoute</code>
+  
+</div>
+<div class="project-split-cell">
+  Trace the network path where supported.
+  
+</div>
+<div class="project-split-cell">
+  <code>traceroute host</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ports-connectivity-r04" class="project-command child-04 uid-os-terminal-06-ports-connectivity-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-NetAdapter</code>
+  
+</div>
+<div class="project-split-cell">
+  List Windows network adapters.
+  
+</div>
+<div class="project-split-cell">
+  <code>networksetup -listallhardwareports</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-06-http"
+  class="project-doc-section node-36 uid-os-terminal-06-http os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>HTTP</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-http-r01" class="project-command child-01 uid-os-terminal-06-http-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>curl.exe URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Send a basic HTTP GET request using curl.
+  
+</div>
+<div class="project-split-cell">
+  <code>curl URL</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-http-r02" class="project-command child-02 uid-os-terminal-06-http-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>curl.exe -I URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Request response headers only.
+  
+</div>
+<div class="project-split-cell">
+  <code>curl -I URL</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-http-r03" class="project-command child-03 uid-os-terminal-06-http-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>curl.exe -L URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Follow HTTP redirects.
+  
+</div>
+<div class="project-split-cell">
+  <code>curl -L URL</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-http-r04" class="project-command child-04 uid-os-terminal-06-http-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>curl.exe -o file URL</code>
+  
+</div>
+<div class="project-split-cell">
+  Download response content to a file.
+  
+</div>
+<div class="project-split-cell">
+  <code>curl -o file URL</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-http-r05" class="project-command child-05 uid-os-terminal-06-http-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Invoke-WebRequest URL</code>
+  
+</div>
+<div class="project-split-cell">
+  PowerShell-native web request with structured response information.
+  
+</div>
+<div class="project-split-cell">
+  <code>curl -i URL</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-http-r06" class="project-command child-06 uid-os-terminal-06-http-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Invoke-RestMethod URL</code>
+  
+</div>
+<div class="project-split-cell">
+  PowerShell-native request that parses common structured API responses.
+  
+</div>
+<div class="project-split-cell">
+  <code>curl URL</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-06-ssh-secure-copy"
+  class="project-doc-section node-37 uid-os-terminal-06-ssh-secure-copy os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>SSH & Secure Copy</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-ssh-secure-copy-r01" class="project-command child-01 uid-os-terminal-06-ssh-secure-copy-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>ssh user@host</code>
+  
+</div>
+<div class="project-split-cell">
+  Open an SSH session when OpenSSH is installed.
+  
+</div>
+<div class="project-split-cell">
+  <code>ssh user@host</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ssh-secure-copy-r02" class="project-command child-02 uid-os-terminal-06-ssh-secure-copy-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>ssh-keygen -t ed25519</code>
+  
+</div>
+<div class="project-split-cell">
+  Create an Ed25519 SSH key pair.
+  
+</div>
+<div class="project-split-cell">
+  <code>ssh-keygen -t ed25519</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ssh-secure-copy-r03" class="project-command child-03 uid-os-terminal-06-ssh-secure-copy-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>ssh-add path\to\key</code>
+  
+</div>
+<div class="project-split-cell">
+  Add a private key to the SSH authentication agent.
+  
+</div>
+<div class="project-split-cell">
+  <code>ssh-add ~/.ssh/id_ed25519</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ssh-secure-copy-r04" class="project-command child-04 uid-os-terminal-06-ssh-secure-copy-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>scp file user@host:/path</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy a file over SSH.
+  
+</div>
+<div class="project-split-cell">
+  <code>scp file user@host:/path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ssh-secure-copy-r05" class="project-command child-05 uid-os-terminal-06-ssh-secure-copy-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>scp -r folder user@host:/path</code>
+  
+</div>
+<div class="project-split-cell">
+  Copy a directory recursively over SSH.
+  
+</div>
+<div class="project-split-cell">
+  <code>scp -r folder user@host:/path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-ssh-secure-copy-r06" class="project-command child-06 uid-os-terminal-06-ssh-secure-copy-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>ssh -T git@github.com</code>
+  
+</div>
+<div class="project-split-cell">
+  Test SSH authentication to GitHub.
+  
+</div>
+<div class="project-split-cell">
+  <code>ssh -T git@github.com</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-06-archives"
+  class="project-doc-section node-38 uid-os-terminal-06-archives os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>Archives</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-archives-r01" class="project-command child-01 uid-os-terminal-06-archives-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Compress-Archive -Path folder -DestinationPath archive.zip</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a ZIP archive.
+  
+</div>
+<div class="project-split-cell">
+  <code>zip -r archive.zip folder</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-archives-r02" class="project-command child-02 uid-os-terminal-06-archives-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Expand-Archive archive.zip -DestinationPath folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Extract a ZIP archive.
+  
+</div>
+<div class="project-split-cell">
+  <code>unzip archive.zip -d folder</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-archives-r03" class="project-command child-03 uid-os-terminal-06-archives-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>tar -czf archive.tar.gz folder</code>
+  
+</div>
+<div class="project-split-cell">
+  Create a gzip-compressed tar archive with modern Windows tar.
+  
+</div>
+<div class="project-split-cell">
+  <code>tar -czf archive.tar.gz folder</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-archives-r04" class="project-command child-04 uid-os-terminal-06-archives-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>tar -xzf archive.tar.gz</code>
+  
+</div>
+<div class="project-split-cell">
+  Extract a gzip-compressed tar archive.
+  
+</div>
+<div class="project-split-cell">
+  <code>tar -xzf archive.tar.gz</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-archives-r05" class="project-command child-05 uid-os-terminal-06-archives-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>tar -tf archive.tar.gz</code>
+  
+</div>
+<div class="project-split-cell">
+  List archive contents without extracting.
+  
+</div>
+<div class="project-split-cell">
+  <code>tar -tf archive.tar.gz</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-06-fast-troubleshooting-loop"
+  class="project-doc-section node-39 uid-os-terminal-06-fast-troubleshooting-loop os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>Fast Troubleshooting Loop</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-fast-troubleshooting-loop-r01" class="project-command child-01 uid-os-terminal-06-fast-troubleshooting-loop-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Location; Get-ChildItem -Force</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm the current project/location and visible files.
+  
+</div>
+<div class="project-split-cell">
+  <code>pwd && ls -la</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-fast-troubleshooting-loop-r02" class="project-command child-02 uid-os-terminal-06-fast-troubleshooting-loop-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-Command tool</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm a required command is installed and resolvable.
+  
+</div>
+<div class="project-split-cell">
+  <code>command -v tool</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-fast-troubleshooting-loop-r03" class="project-command child-03 uid-os-terminal-06-fast-troubleshooting-loop-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>$PSVersionTable</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm shell/runtime environment when shell behavior is unexpected.
+  
+</div>
+<div class="project-split-cell">
+  <code>echo $SHELL; zsh --version</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-fast-troubleshooting-loop-r04" class="project-command child-04 uid-os-terminal-06-fast-troubleshooting-loop-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-ChildItem Env:</code>
+  
+</div>
+<div class="project-split-cell">
+  Inspect environment configuration.
+  
+</div>
+<div class="project-split-cell">
+  <code>printenv | sort</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-fast-troubleshooting-loop-r05" class="project-command child-05 uid-os-terminal-06-fast-troubleshooting-loop-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Get-NetTCPConnection -LocalPort PORT</code>
+  
+</div>
+<div class="project-split-cell">
+  Check for a local port conflict.
+  
+</div>
+<div class="project-split-cell">
+  <code>lsof -i :PORT</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-fast-troubleshooting-loop-r06" class="project-command child-06 uid-os-terminal-06-fast-troubleshooting-loop-r06 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Test-NetConnection localhost -Port PORT</code>
+  
+</div>
+<div class="project-split-cell">
+  Test whether a local TCP service is reachable.
+  
+</div>
+<div class="project-split-cell">
+  <code>nc -vz localhost PORT</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-fast-troubleshooting-loop-r07" class="project-command child-07 uid-os-terminal-06-fast-troubleshooting-loop-r07 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>curl.exe -I http://localhost:PORT</code>
+  
+</div>
+<div class="project-split-cell">
+  Confirm that a local HTTP server responds.
+  
+</div>
+<div class="project-split-cell">
+  <code>curl -I http://localhost:PORT</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-06-high-risk-commands"
+  class="project-doc-section node-40 uid-os-terminal-06-high-risk-commands os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>High-Risk Commands</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-high-risk-commands-r01" class="project-command child-01 uid-os-terminal-06-high-risk-commands-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Remove-Item path -Recurse -Force</code>
+  
+</div>
+<div class="project-split-cell">
+  Can permanently delete a directory tree. Verify the exact path.
+  
+</div>
+<div class="project-split-cell">
+  <code>rm -rf path</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-high-risk-commands-r02" class="project-command child-02 uid-os-terminal-06-high-risk-commands-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Stop-Process -Id PID -Force</code>
+  
+</div>
+<div class="project-split-cell">
+  Force termination can lose unsaved state; use only when normal stop fails.
+  
+</div>
+<div class="project-split-cell">
+  <code>kill -9 PID</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-high-risk-commands-r03" class="project-command child-03 uid-os-terminal-06-high-risk-commands-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>icacls path /grant ...</code>
+  
+</div>
+<div class="project-split-cell">
+  Permission changes can expose or lock out files; inspect ACLs first.
+  
+</div>
+<div class="project-split-cell">
+  <code>chmod / chown</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-high-risk-commands-r04" class="project-command child-04 uid-os-terminal-06-high-risk-commands-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>winget upgrade --all</code>
+  
+</div>
+<div class="project-split-cell">
+  Bulk upgrades can change many installed tools; review before running.
+  
+</div>
+<div class="project-split-cell">
+  <code>brew upgrade</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-high-risk-commands-r05" class="project-command child-05 uid-os-terminal-06-high-risk-commands-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Elevated PowerShell</code>
+  
+</div>
+<div class="project-split-cell">
+  Administrator/root commands can alter the whole system.
+  
+</div>
+<div class="project-split-cell">
+  <code>sudo command</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+<section
+  id="node-os-terminal-06-keyboard-recall"
+  class="project-doc-section node-41 uid-os-terminal-06-keyboard-recall os-terminal-command-group"
+>
+  
+<header>
+  <span>Network, Remote, Archives & Recovery</span>
+  <h3>Keyboard Recall</h3>
+  
+</header>
+  
+  <div class="project-command-list">
+<div id="child-os-terminal-06-keyboard-recall-r01" class="project-command child-01 uid-os-terminal-06-keyboard-recall-r01 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Ctrl+C</code>
+  
+</div>
+<div class="project-split-cell">
+  Interrupt the foreground command.
+  
+</div>
+<div class="project-split-cell">
+  <code>Ctrl+C</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-keyboard-recall-r02" class="project-command child-02 uid-os-terminal-06-keyboard-recall-r02 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Tab</code>
+  
+</div>
+<div class="project-split-cell">
+  Complete commands and paths.
+  
+</div>
+<div class="project-split-cell">
+  <code>Tab</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-keyboard-recall-r03" class="project-command child-03 uid-os-terminal-06-keyboard-recall-r03 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Up / Down</code>
+  
+</div>
+<div class="project-split-cell">
+  Move through command history.
+  
+</div>
+<div class="project-split-cell">
+  <code>Up / Down</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-keyboard-recall-r04" class="project-command child-04 uid-os-terminal-06-keyboard-recall-r04 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Ctrl+L</code>
+  
+</div>
+<div class="project-split-cell">
+  Clear/redraw the screen in shells that support it.
+  
+</div>
+<div class="project-split-cell">
+  <code>Ctrl+L</code>
+  
+</div>
+  </div>
+</div>
+<div id="child-os-terminal-06-keyboard-recall-r05" class="project-command child-05 uid-os-terminal-06-keyboard-recall-r05 os-terminal-command-row">
+  
+  <div class="project-split project-split--three-column">
+    <div class="project-split-cell">
+  <code>Ctrl+R</code>
+  
+</div>
+<div class="project-split-cell">
+  Reverse-search history when PSReadLine/shell bindings support it.
+  
+</div>
+<div class="project-split-cell">
+  <code>Ctrl+R</code>
+  
+</div>
+  </div>
+</div>
+  </div>
+</section>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>

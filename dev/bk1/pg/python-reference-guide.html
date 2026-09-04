@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python Reference Guide — Developer Sandbox</title>
+
+
+
+    <base href="../" />
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/inner.css" />
+    <link rel="stylesheet" href="assets/media.css" />
+  </head>
+
+  <body id="pg" data-section="reference">
+    <header>
+  <a class="brand" href="index.html">
+    <img src="assets/img/logo-blue.png" alt="" />
+
+    <span>
+      <strong>DEVELOPER SANDBOX</strong>
+      <small>Academy of Mastery</small>
+    </span>
+  </a>
+
+  <nav id="primary-nav" aria-label="Developer Sandbox navigation">
+    <button
+      type="button"
+      data-nav-section="home"
+      onclick="window.location.href = 'index.html'"
+    >
+      <span aria-hidden="true">⌂</span>
+      Home
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="projects"
+      onclick="window.location.href = 'library.html'"
+    >
+      <span aria-hidden="true">▱</span>
+      Projects
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="reference"
+      onclick="window.location.href = 'pg/angular-reference-guide.html'"
+    >
+      <span aria-hidden="true">▤</span>
+      Reference Guides
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="labs"
+      onclick="window.location.href = 'labs.html'"
+    >
+      <span aria-hidden="true">✦</span>
+      Labs
+    </button>
+
+    <button
+      type="button"
+      data-nav-section="system"
+      onclick="window.location.href = 'system-guide.html'"
+    >
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+  </nav>
+
+  <div class="top-tools">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="help">
+  <button
+    type="button"
+    aria-label="Read page information"
+  ></button>
+
+  <div>
+    <strong>Python Reference Guide</strong>
+    <p>Compact Python reference covering syntax, types, strings, collections, control flow, functions, type hints, classes, modules, exceptions, and input.</p>
+  </div>
+</div>
+
+    <a href="https://sdelgado.com/work.html">Return to sdelgado</a>
+
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      onclick="window.location.href = 'https://sdelgado.com/work.html'"
+    >
+      ×
+    </button>
+  </div>
+</header>
+
+
+    <main class="view-all-page">
+      
+<aside class="type-menu">
+  <header>
+    <h1>
+      Reference Guides
+    </h1>
+
+    <p>
+      Technical documentation, commands,
+      workflows, and development references.
+    </p>
+  </header>
+
+  <nav
+    class="project-types"
+    aria-label="Reference guides"
+  >
+    
+<button
+  type="button"
+  onclick="window.location.href = 'pg/angular-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Angular
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/cross-device-web-testing.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Cross-Device Web Testing
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/full-stack-developer-terminal-commands.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Terminal Commands
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/nodejs-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Node.js
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/typescript-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      TypeScript
+    </strong>
+
+    
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/php-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      PHP
+    </strong>
+
+    
+    <small>
+      macOS / PHP 8.x
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-windows-terminal-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      macOS / Windows
+    </strong>
+
+    
+    <small>
+      PowerShell ↔ zsh
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/linux-command-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Linux
+    </strong>
+
+    
+    <small>
+      Linux shell / CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL
+    </strong>
+
+    
+    <small>
+      Relational SQL
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/sql-vs-postgresql-psql-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      SQL / PostgreSQL
+    </strong>
+
+    
+    <small>
+      Language ↔ DBMS ↔ CLI
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/java-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Java
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/macos-vm-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      VM / Device Testing
+    </strong>
+
+    
+    <small>
+      Virtual machines, browsers &amp; device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/modern-frontend-cross-device-testing-reference.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Modern Front-End
+    </strong>
+
+    
+    <small>
+      jQuery alternatives • modern UI • cross-device testing
+    </small>
+  </span>
+</button>
+
+<button
+  type="button"
+  onclick="window.location.href = 'pg/csharp-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      C#
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Control Flow • Methods • Objects
+    </small>
+  </span>
+</button>
+
+<button
+  type="button" aria-current="true"
+  onclick="window.location.href = 'pg/python-reference-guide.html'"
+>
+  <span aria-hidden="true">
+    ▤
+  </span>
+
+  <span>
+    <strong>
+      Python
+    </strong>
+
+    
+    <small>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </small>
+  </span>
+</button>
+  </nav>
+</aside>
+
+      <section class="project-content">
+        <div id="preview" class="preview">
+
+<header>
+  <div>
+    <small>
+      REFERENCE GUIDE
+    </small>
+
+    <h2>
+      Python Reference Guide
+    </h2>
+  </div>
+
+  <p>
+    
+    <strong>
+      Syntax • Types • Collections • Control Flow • Functions • Objects
+    </strong>
+
+    <br />
+
+    Compact Python reference covering syntax, types, strings, collections, control flow, functions, type hints, classes, modules, exceptions, and input.
+  </p>
+</header>
+        
+<nav
+  id="node-python-ref-nav"
+  class="project-doc-nav node-01 uid-python-ref-nav python-reference-nav" aria-label="Guide Navigation"
+>
+
+</nav>
+
+<article class="project-doc">
+  <div
+  id="node-python-ref-section-01"
+  class="project-display node-02 uid-python-ref-section-01 python-reference-section"
+>
+  <div class="project-preview"><p>Python uses indentation instead of braces. Statements normally need no semicolon.</p><pre><code>print("Hello, world!")
+name = "Susan"
+count = 3
+print(f"Hello {name}")
+print(f"Count: {count}")</code></pre></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Indentation Is Syntax</span>
+  <h2>01 — Structure & Output</h2>
+  
+</header>
+    
+  </div>
+</div>
+<div
+  id="node-python-ref-section-02"
+  class="project-display node-03 uid-python-ref-section-02 python-reference-section"
+>
+  <div class="project-preview"><pre><code>count = 10          # int
+price = 29.95       # float
+name = "Susan"      # str
+available = True    # bool
+painting = None     # no value
+
+number = int("25")
+price = float("29.95")
+text = str(25)
+
+TAX_RATE = 0.06625  # constant by convention</code></pre><p>Python is dynamically typed. Core types: <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code>, <code>None</code>. Boolean literals are <code>True</code>/<code>False</code>.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>name = value</span>
+  <h2>02 — Variables & Types</h2>
+  
+</header>
+    
+  </div>
+</div>
+<div
+  id="node-python-ref-section-03"
+  class="project-display node-04 uid-python-ref-section-03 python-reference-section"
+>
+  <div class="project-preview"><pre><code>+  -  *  /  %
+**  # exponent
+//  # floor division
+
+score += 1
+
+==  !=  &gt;  &lt;  &gt;=  &lt;=
+
+if age &gt;= 18 and member:
+    print("Access")
+
+if not member:
+    print("Not a member")
+
+animal = "Great Blue Heron"
+print(len(animal))
+print(animal.upper())
+print(animal.lower())
+print("Heron" in animal)
+print(f"${29.956:.2f}")</code></pre><p>Python uses <code>and</code>, <code>or</code>, <code>not</code>. It has no <code>++</code>/<code>--</code>.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Math • Logic • Text</span>
+  <h2>03 — Operators & Strings</h2>
+  
+</header>
+    
+  </div>
+</div>
+<div
+  id="node-python-ref-section-04"
+  class="project-display node-05 uid-python-ref-section-04 python-reference-section"
+>
+  <div class="project-preview"><pre><code># list
+birds = ["Heron", "Egret", "Pelican"]
+print(birds[0])
+print(birds[-1])
+birds.append("Osprey")
+
+# tuple
+coordinates = (10, 20)
+
+# dictionary
+painting = {"title": "Blue Heron", "price": 125, "sold": False}
+print(painting["title"])
+painting["price"] = 150
+
+# set
+tags = {"bird", "wildlife", "painting"}</code></pre><p><code>[]</code> list · <code>()</code> tuple · <code>{key: value}</code> dictionary · <code>{values}</code> set.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Lists • Tuples • Dictionaries • Sets</span>
+  <h2>04 — Collections</h2>
+  
+</header>
+    
+  </div>
+</div>
+<div
+  id="node-python-ref-section-05"
+  class="project-display node-06 uid-python-ref-section-05 python-reference-section"
+>
+  <div class="project-preview"><pre><code>if paintings &gt; 10:
+    print("Large")
+elif paintings &gt; 5:
+    print("Medium")
+else:
+    print("Low")
+
+for bird in birds:
+    print(bird)
+
+for i in range(5):
+    print(i)
+
+for i in range(0, 10, 2):
+    print(i)
+
+count = 0
+while count &lt; 5:
+    count += 1
+
+# loop controls
+break
+continue</code></pre><p><code>range(start, stop, step)</code> excludes the stop value. Python uses <code>elif</code>, not <code>else if</code>.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Decide • Repeat</span>
+  <h2>05 — Control Flow & Loops</h2>
+  
+</header>
+    
+  </div>
+</div>
+<div
+  id="node-python-ref-section-06"
+  class="project-display node-07 uid-python-ref-section-06 python-reference-section"
+>
+  <div class="project-preview"><pre><code>def add(a, b):
+    return a + b
+
+def greet(name="Guest"):
+    print(f"Hello {name}")
+
+def typed_add(a: int, b: int) -&gt; int:
+    return a + b
+
+count: int = 5
+birds: list[str] = ["Heron", "Egret"]</code></pre><p>Pattern: <code>def function_name(parameters):</code>. A function without an explicit return value returns <code>None</code>. Type hints aid readability and tooling.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>def • return • annotations</span>
+  <h2>06 — Functions & Type Hints</h2>
+  
+</header>
+    
+  </div>
+</div>
+<div
+  id="node-python-ref-section-07"
+  class="project-display node-08 uid-python-ref-section-07 python-reference-section"
+>
+  <div class="project-preview"><pre><code>class Painting:
+    def __init__(self, title, price):
+        self.title = title
+        self.price = price
+
+    def display(self):
+        print(f"{self.title}: ${self.price}")
+
+painting = Painting("Blue Heron", 125)
+painting.display()
+
+import math
+print(math.sqrt(25))
+
+from math import sqrt
+
+if __name__ == "__main__":
+    print("Run directly")</code></pre><p><code>__init__</code> initializes an instance. <code>self</code> refers to the current instance. Use <code>import</code> to load modules.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Objects • self • imports</span>
+  <h2>07 — Classes & Modules</h2>
+  
+</header>
+    
+  </div>
+</div>
+<div
+  id="node-python-ref-section-08"
+  class="project-display node-09 uid-python-ref-section-08 python-reference-section"
+>
+  <div class="project-preview"><pre><code>try:
+    number = int("hello")
+except ValueError:
+    print("Not a number")
+finally:
+    print("Always runs")
+
+name = input("Name: ")
+age = int(input("Age: "))
+
+# CORE PATTERNS
+name = value
+print(...)
+
+if condition:
+    ...
+
+for item in collection:
+    ...
+
+def function_name(parameters):
+    ...</code></pre><p><code>input()</code> returns a string. Convert it when numeric input is required.</p></div>
+  <div class="project-detail">
+    
+<header>
+  <span>Fast Recall</span>
+  <h2>08 — Exceptions, Input & Memory Card</h2>
+  
+</header>
+    
+  </div>
+</div>
+</article>
+</div>
+      </section>
+    </main>
+
+    <footer>
+  <nav aria-label="Developer tools">
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado/developer-sandbox',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      Sandbox Repo
+    </button>
+
+    <button
+      type="button"
+      onclick="
+        window.open(
+          'https://github.com/susanndelgado',
+          '_blank',
+          'noopener,noreferrer',
+        )
+      "
+    >
+      <span aria-hidden="true">⑂</span>
+      GitHub
+    </button>
+
+    <button type="button" onclick="window.location.href = 'system-guide.html'">
+      <span aria-hidden="true">⊙</span>
+      System Guide
+    </button>
+
+    <button type="button" onclick="window.location.href = 'database.html'">
+      <span aria-hidden="true">◉</span>
+      Database
+    </button>
+  </nav>
+</footer>
+  <script src="assets/script.js"></script>
+  </body>
+</html>
