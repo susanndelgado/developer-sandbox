@@ -19,9 +19,10 @@
       return;
     }
 
-    const width = document.documentElement.clientWidth;
-    const height = document.documentElement.clientHeight;
-    const scale = Math.min(width / stageWidth, height / stageHeight);
+    const viewport = window.visualViewport;
+    const width = viewport ? viewport.width : window.innerWidth;
+    const height = viewport ? viewport.height : window.innerHeight;
+    const scale = Math.min(width / stageWidth, height / stageHeight, 1);
 
     page.style.setProperty('--home-scale', scale.toFixed(4));
     page.classList.add('scaled-home');
@@ -29,4 +30,5 @@
 
   fitHome();
   window.addEventListener('resize', fitHome, { passive: true });
+  window.visualViewport?.addEventListener('resize', fitHome, { passive: true });
 })();
