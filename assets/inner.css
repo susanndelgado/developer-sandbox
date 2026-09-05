@@ -980,15 +980,15 @@
 }
 
 .rosetta-project--planned {
-  --rs-project-accent: #8297ad;
+  --rs-project-accent: var(--blue);
 }
 
 .rosetta-project--in-progress {
-  --rs-project-accent: #69dcff;
+  --rs-project-accent: var(--violet);
 }
 
 .rosetta-project--complete {
-  --rs-project-accent: #82dda0;
+  --rs-project-accent: var(--green);
 }
 
 .rosetta-project--inactive {
@@ -1202,15 +1202,15 @@
 }
 
 .rs-stage-card.rs-planned {
-  --rs-state: #8297ad;
+  --rs-state: var(--blue);
 }
 
 .rs-stage-card.rs-started {
-  --rs-state: #f0add7;
+  --rs-state: var(--violet);
 }
 
 .rs-stage-card.rs-complete {
-  --rs-state: #82dda0;
+  --rs-state: var(--green);
 }
 
 .rs-stage-card.rs-inactive {
