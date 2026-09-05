@@ -116,6 +116,14 @@
     gap: 10px;
   }
 
+  .featured-arrow-prev {
+    left: -12px;
+  }
+
+  .featured-arrow-next {
+    right: -12px;
+  }
+
   .featured-copy .panel-copy {
     font-size: 0.5rem;
   }
@@ -319,6 +327,21 @@
   .footer-icon {
     width: 12px;
     height: 12px;
+  }
+
+  .featured-arrow {
+    width: 28px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(3, 13, 31, 0.82);
+  }
+
+  .featured-arrow-prev {
+    left: 4px;
+  }
+
+  .featured-arrow-next {
+    right: 4px;
   }
 
   /* Library becomes a direct project list on mobile. */
@@ -604,9 +627,34 @@
     text-transform: none;
   }
 
+  .featured-slider {
+    height: calc(100% - 32px);
+  }
+
   .featured-body {
     grid-template-columns: 1fr;
-    height: calc(100% - 32px);
+    height: 100%;
+  }
+
+  .featured-arrow {
+    top: 50%;
+    width: clamp(20px, 4.8vh, 24px);
+    height: clamp(32px, 8vh, 40px);
+    border-color: rgba(105, 220, 255, 0.18);
+    border-radius: 7px;
+    background: rgba(2, 10, 26, 0.72);
+  }
+
+  .featured-arrow span {
+    font-size: clamp(1rem, 3vh, 1.25rem);
+  }
+
+  .featured-arrow-prev {
+    left: 3px;
+  }
+
+  .featured-arrow-next {
+    right: 3px;
   }
 
   .featured-copy {
