@@ -1,0 +1,18 @@
+name: Apply featured slider source patch
+on:
+  push:
+    branches:
+      - work/home-featured-slider
+    paths:
+      - tools/patch-home-featured.py
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python tools/patch-home-featured.py
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Make home featured entries a slider
