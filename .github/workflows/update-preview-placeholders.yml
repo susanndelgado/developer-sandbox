@@ -18,7 +18,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Update Display/Preview nodes in SQLite
+      - name: Update Display/Preview nodes without images in SQLite
         run: |
           python3 - <<'PY'
           import html
@@ -46,11 +46,12 @@ jobs:
               JOIN records AS r ON r.id = cn.record_id
               WHERE lower(cn.type) IN ('display', 'preview')
                 AND r.type IN ('rosetta-stone', 'lab-exploration', 'general-project')
+                AND lower(COALESCE(cn.content, '')) NOT LIKE '%<img%'
               ORDER BY r.type, r.title, cn.id
               """
           ).fetchall()
 
-          print(f"Found {len(rows)} Display/Preview nodes to update.")
+          print(f"Found {len(rows)} Display/Preview nodes without images to update.")
 
           for row in rows:
               type_label = labels[row["record_type"]]
@@ -80,6 +81,7 @@ jobs:
               JOIN records AS r ON r.id = cn.record_id
               WHERE lower(cn.type) IN ('display', 'preview')
                 AND r.type IN ('rosetta-stone', 'lab-exploration', 'general-project')
+                AND lower(COALESCE(cn.content, '')) NOT LIKE '%<img%'
                 AND content NOT LIKE '%preview-placeholder-note%Preview coming soon%'
               """
           ).fetchone()[0]
