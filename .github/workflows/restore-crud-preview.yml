@@ -1,4 +1,4 @@
-name: Restore CRUD preview
+name: Apply preview placeholder structure
 
 on:
   push:
@@ -11,83 +11,149 @@ permissions:
   contents: write
 
 jobs:
-  restore-crud-preview:
+  apply-preview-placeholders:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository history
+      - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Restore original CRUD Display/Preview content
+      - name: Replace only image-free project Display/Preview content
         run: |
-          git show d14262a3401e026137c234a582377c71f92feb91:data/sandbox.db > /tmp/original-sandbox.db
-
           python3 - <<'PY'
+          import html
           import sqlite3
 
-          node_id = "node-rosetta-014-typescript-display"
+          db_path = "data/sandbox.db"
 
-          old = sqlite3.connect("/tmp/original-sandbox.db")
-          old.row_factory = sqlite3.Row
-          original = old.execute(
-              "SELECT id, type, content FROM content_nodes WHERE id = ?",
-              (node_id,),
-          ).fetchone()
-          old.close()
+          classification_labels = {
+              "rosetta-stone": "Rosetta Stone",
+              "lab-exploration": "LAB",
+              "general-project": "Project",
+          }
 
-          if original is None:
-              raise SystemExit("Original CRUD preview node was not found in baseline database.")
-
-          if (original["type"] or "").lower() not in ("display", "preview"):
-              raise SystemExit(f"Refusing restore: original node type is {original['type']!r}.")
-
-          current = sqlite3.connect("data/sandbox.db")
-          current.row_factory = sqlite3.Row
-          now = current.execute(
-              "SELECT id, type, content FROM content_nodes WHERE id = ?",
-              (node_id,),
-          ).fetchone()
-
-          if now is None:
-              current.close()
-              raise SystemExit("Current CRUD preview node was not found.")
-
-          if (now["type"] or "").lower() not in ("display", "preview"):
-              current.close()
-              raise SystemExit(f"Refusing restore: current node type is {now['type']!r}.")
-
-          current.execute(
-              "UPDATE content_nodes SET content = ? WHERE id = ?",
-              (original["content"], node_id),
+          image_markers = (
+              "<img",
+              "<picture",
+              "<svg",
+              "background-image",
+              "url(",
           )
-          current.commit()
 
-          restored = current.execute(
-              "SELECT content FROM content_nodes WHERE id = ?",
-              (node_id,),
+          conn = sqlite3.connect(db_path)
+          conn.row_factory = sqlite3.Row
+
+          rows = conn.execute(
+              """
+              SELECT
+                  cn.id AS node_id,
+                  cn.record_id,
+                  cn.type AS node_type,
+                  cn.content,
+                  r.title,
+                  r.type AS record_type
+              FROM content_nodes AS cn
+              JOIN records AS r ON r.id = cn.record_id
+              WHERE lower(cn.type) IN ('display', 'preview')
+                AND r.type IN ('rosetta-stone', 'lab-exploration', 'general-project')
+              ORDER BY r.type, r.title, cn.id
+              """
+          ).fetchall()
+
+          updated = 0
+          preserved = 0
+
+          for row in rows:
+              existing = (row["content"] or "").lower()
+
+              # Do not alter previews that already contain visual/image content.
+              if any(marker in existing for marker in image_markers):
+                  preserved += 1
+                  print(f'PRESERVED IMAGE: {row["record_type"]} | {row["title"]} | {row["node_id"]}')
+                  continue
+
+              classification = classification_labels[row["record_type"]]
+              title_text = row["title"] or ""
+              title = html.escape(title_text, quote=False)
+              aria_title = html.escape(title_text, quote=True)
+
+              content = (
+                  f'<div class="preview-placeholder" role="img" aria-label="{aria_title} preview not yet available">\n'
+                  '  <span class="preview-placeholder-mark" aria-hidden="true">TS</span>\n'
+                  f'  <span class="preview-placeholder-type">{classification}</span>\n'
+                  f'  <strong class="preview-placeholder-title">{title}</strong>\n'
+                  '  <span class="preview-placeholder-note">Preview coming soon</span>\n'
+                  '</div>'
+              )
+
+              conn.execute(
+                  "UPDATE content_nodes SET content = ? WHERE id = ?",
+                  (content, row["node_id"]),
+              )
+              updated += 1
+              print(f'UPDATED: {classification} | {row["title"]} | {row["node_id"]}')
+
+          conn.commit()
+
+          # Guardrail: reference guides/documentation and every other record type are excluded.
+          bad_reference_changes = conn.execute(
+              """
+              SELECT COUNT(*)
+              FROM content_nodes AS cn
+              JOIN records AS r ON r.id = cn.record_id
+              WHERE lower(cn.type) IN ('display', 'preview')
+                AND r.type NOT IN ('rosetta-stone', 'lab-exploration', 'general-project')
+                AND cn.content LIKE '%preview-placeholder-note%Preview coming soon%'
+              """
           ).fetchone()[0]
-          current.close()
 
-          if restored != original["content"]:
-              raise SystemExit("CRUD preview verification failed.")
+          if bad_reference_changes:
+              raise SystemExit(
+                  f"Verification failed: {bad_reference_changes} excluded preview nodes contain this placeholder."
+              )
 
-          print("RESTORED CRUD PREVIEW CONTENT START")
-          print(original["content"] or "")
-          print("RESTORED CRUD PREVIEW CONTENT END")
-          print("Only node-rosetta-014-typescript-display was updated.")
+          # Verify CRUD matches the user's exact intended structure apart from its title-derived aria label.
+          crud = conn.execute(
+              """
+              SELECT cn.content
+              FROM content_nodes AS cn
+              JOIN records AS r ON r.id = cn.record_id
+              WHERE lower(cn.type) IN ('display', 'preview')
+                AND r.type = 'rosetta-stone'
+                AND lower(r.title) = 'crud'
+              LIMIT 1
+              """
+          ).fetchone()
+
+          expected_crud = (
+              '<div class="preview-placeholder" role="img" aria-label="CRUD preview not yet available">\n'
+              '  <span class="preview-placeholder-mark" aria-hidden="true">TS</span>\n'
+              '  <span class="preview-placeholder-type">Rosetta Stone</span>\n'
+              '  <strong class="preview-placeholder-title">CRUD</strong>\n'
+              '  <span class="preview-placeholder-note">Preview coming soon</span>\n'
+              '</div>'
+          )
+
+          if crud is None or crud["content"] != expected_crud:
+              raise SystemExit("Verification failed: CRUD preview does not match the requested example exactly.")
+
+          conn.close()
+
+          print(f"Updated {updated} image-free project preview nodes.")
+          print(f"Preserved {preserved} preview nodes that already contain images.")
+          print("Reference guides/documentation were excluded.")
+          print("Only Display/Preview node content was changed.")
           PY
 
-      - name: Commit restored database
+      - name: Commit updated database
         run: |
           if git diff --quiet -- data/sandbox.db; then
-            echo "CRUD preview already matched the original content."
+            echo "No database changes were needed."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/sandbox.db
-          git commit -m "Restore original CRUD preview content"
+          git commit -m "Style image-free project previews like CRUD"
           git push
