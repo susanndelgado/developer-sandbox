@@ -25,6 +25,40 @@
   }
 
   /* ==================================================
+     HOME FEATURED SLIDER
+     Every featured slide already exists in generated HTML.
+     JavaScript only switches which existing slide is visible.
+     ================================================== */
+
+  document.querySelectorAll("[data-featured-slider]").forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll("[data-featured-slide]"))
+    const previous = slider.querySelector("[data-featured-prev]")
+    const next = slider.querySelector("[data-featured-next]")
+
+    if (slides.length < 2) return
+
+    let currentFeatured = Math.max(
+      0,
+      slides.findIndex((slide) => !slide.hidden),
+    )
+
+    const showFeatured = (index) => {
+      currentFeatured = (index + slides.length) % slides.length
+
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === currentFeatured
+        slide.hidden = !active
+        slide.setAttribute("aria-hidden", String(!active))
+      })
+    }
+
+    previous?.addEventListener("click", () => showFeatured(currentFeatured - 1))
+    next?.addEventListener("click", () => showFeatured(currentFeatured + 1))
+
+    showFeatured(currentFeatured)
+  })
+
+  /* ==================================================
      REFERENCE GUIDE CATALOG SEARCH
      ================================================== */
 
