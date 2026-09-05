@@ -1,0 +1,50 @@
+name: Rosetta status colors cleanup
+
+on:
+  push:
+    branches:
+      - work/rosetta-status-colors
+    paths:
+      - .github/workflows/rosetta-status-colors-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/rosetta-status-colors
+
+      - name: Apply shared Rosetta status colors
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('assets/inner.css')
+          s = p.read_text()
+          replacements = {
+            '.rosetta-project--planned {\n  --rs-project-accent: #8297ad;\n}': '.rosetta-project--planned {\n  --rs-project-accent: var(--blue);\n}',
+            '.rosetta-project--in-progress {\n  --rs-project-accent: #69dcff;\n}': '.rosetta-project--in-progress {\n  --rs-project-accent: var(--violet);\n}',
+            '.rosetta-project--complete {\n  --rs-project-accent: #82dda0;\n}': '.rosetta-project--complete {\n  --rs-project-accent: var(--green);\n}',
+            '.rs-stage-card.rs-planned {\n  --rs-state: #8297ad;\n}': '.rs-stage-card.rs-planned {\n  --rs-state: var(--blue);\n}',
+            '.rs-stage-card.rs-started {\n  --rs-state: #f0add7;\n}': '.rs-stage-card.rs-started {\n  --rs-state: var(--violet);\n}',
+            '.rs-stage-card.rs-complete {\n  --rs-state: #82dda0;\n}': '.rs-stage-card.rs-complete {\n  --rs-state: var(--green);\n}',
+          }
+          for old, new in replacements.items():
+            if old not in s:
+              raise SystemExit(f'Missing expected Rosetta color block: {old.splitlines()[0]}')
+            s = s.replace(old, new, 1)
+          p.write_text(s)
+          PY
+
+      - name: Commit source change
+        shell: bash
+        run: |
+          git config user.name "Susan Delgado"
+          git config user.email "susanndelgado@gmail.com"
+          git add assets/inner.css
+          git commit -m "Use green purple blue Rosetta status colors"
+          git push origin HEAD:work/rosetta-status-colors
