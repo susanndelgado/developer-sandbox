@@ -1,0 +1,263 @@
+name: Deduplicate Rosetta technologies
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/dedupe-rosetta-technologies.yml
+
+permissions:
+  contents: write
+
+jobs:
+  dedupe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove duplicate technologies from rs-status nodes
+        run: |
+          python3 - <<'PY'
+          import html
+          import re
+          import sqlite3
+
+          DB = 'data/sandbox.db'
+          conn = sqlite3.connect(DB)
+          conn.row_factory = sqlite3.Row
+
+          # Explicit aliases. A technology is considered duplicated only when its
+          # name is explicitly present in both titles. We do not infer implicit
+          # relationships (for example React does not automatically count as JavaScript).
+          FAMILY_PATTERNS = [
+              ('javascript', [r'\bjavascript\b', r'\becmascript\b', r'\bjs\b']),
+              ('typescript', [r'\btypescript\b', r'\bts\b']),
+              ('angular', [r'\bangular\b']),
+              ('python', [r'\bpython\b']),
+              ('java', [r'(?<!script)\bjava\b']),
+              ('csharp', [r'c\s*#', r'\bcsharp\b', r'\bc\s+sharp\b']),
+              ('php', [r'\bphp\b']),
+              ('react', [r'\breact\b']),
+              ('fastapi', [r'\bfastapi\b']),
+              ('spring-boot', [r'\bspring\s+boot\b']),
+              ('aspnet', [r'\basp\s*\.\s*net\b', r'\baspnet\b']),
+              ('dotnet', [r'(?<!asp)\b\.net\b', r'\bdotnet\b']),
+              ('nodejs', [r'\bnode(?:\.js|js)?\b']),
+              ('express', [r'\bexpress(?:\.js|js)?\b']),
+              ('django', [r'\bdjango\b']),
+              ('laravel', [r'\blaravel\b']),
+          ]
+
+          def families(title):
+              text = str(title or '').lower()
+              found = set()
+              for family, patterns in FAMILY_PATTERNS:
+                  if any(re.search(p, text, flags=re.I) for p in patterns):
+                      found.add(family)
+              return found
+
+          def richness(row):
+              # Content is the main tie-breaker requested by the user; title length
+              # then preserves the more descriptive label when content is tied.
+              content_score = sum(len(str(row[k] or '')) for k in ('subtitle','description','content','metadata'))
+              title_score = len(str(row['title'] or ''))
+              return (content_score, title_score, -int(row['sort_order'] or 999999))
+
+          preview_before = {
+              row['id']: row['content']
+              for row in conn.execute("""
+                  SELECT cn.id, cn.content
+                  FROM content_nodes cn
+                  JOIN records r ON r.id=cn.record_id
+                  WHERE r.type='rosetta-stone'
+                    AND lower(coalesce(cn.type,'')) IN ('display','preview')
+              """)
+          }
+          classes_before = {
+              row['id']: row['class_name']
+              for row in conn.execute("""
+                  SELECT cn.id, cn.class_name
+                  FROM content_nodes cn
+                  JOIN records r ON r.id=cn.record_id
+                  WHERE r.type='rosetta-stone'
+              """)
+          }
+
+          deleted = []
+          status_nodes = conn.execute("""
+              SELECT cn.id, cn.record_id, r.title AS record_title
+              FROM content_nodes cn
+              JOIN records r ON r.id=cn.record_id
+              WHERE r.type='rosetta-stone'
+                AND instr(lower(' ' || coalesce(cn.class_name,'') || ' '), ' rs-status ') > 0
+              ORDER BY r.title, coalesce(cn.sort_order,999999), cn.id
+          """).fetchall()
+
+          for status in status_nodes:
+              children = conn.execute("""
+                  SELECT * FROM content_nodes
+                  WHERE parent_id=?
+                  ORDER BY coalesce(sort_order,999999), id
+              """, (status['id'],)).fetchall()
+
+              info = []
+              for row in children:
+                  fam = families(row['title'])
+                  info.append({'row': row, 'families': fam})
+
+              remove_ids = set()
+
+              # Pass 1: if a more specific combined entry explicitly includes all
+              # technology families of a simpler entry, keep the combined entry.
+              for i, a in enumerate(info):
+                  if not a['families']:
+                      continue
+                  for j, b in enumerate(info):
+                      if i == j or not b['families']:
+                          continue
+                      if a['families'] < b['families']:
+                          remove_ids.add(a['row']['id'])
+
+              # Pass 2: aliases/equivalent labels with identical family coverage
+              # (e.g. JavaScript vs ECMAScript) keep the entry with more content.
+              by_coverage = {}
+              for item in info:
+                  if item['row']['id'] in remove_ids or not item['families']:
+                      continue
+                  key = tuple(sorted(item['families']))
+                  by_coverage.setdefault(key, []).append(item['row'])
+
+              for key, group in by_coverage.items():
+                  if len(group) <= 1:
+                      continue
+                  keeper = max(group, key=richness)
+                  for row in group:
+                      if row['id'] != keeper['id']:
+                          remove_ids.add(row['id'])
+
+              # Safety: technology children are expected to be leaves. Abort rather
+              # than accidentally discarding nested content if that ever changes.
+              for node_id in sorted(remove_ids):
+                  descendants = conn.execute(
+                      'SELECT COUNT(*) FROM content_nodes WHERE parent_id=?',
+                      (node_id,),
+                  ).fetchone()[0]
+                  if descendants:
+                      raise SystemExit(f'Refusing to delete technology node {node_id}: it has {descendants} child nodes.')
+
+              for item in info:
+                  row = item['row']
+                  if row['id'] in remove_ids:
+                      deleted.append((status['record_title'], row['title'], row['id']))
+                      conn.execute('DELETE FROM content_nodes WHERE id=?', (row['id'],))
+
+              # Re-read the surviving authoritative order and synchronize only the
+              # language-summary nodes that were previously defined by rs-status order.
+              survivors = conn.execute("""
+                  SELECT title
+                  FROM content_nodes
+                  WHERE parent_id=?
+                  ORDER BY coalesce(sort_order,999999), id
+              """, (status['id'],)).fetchall()
+              order = [str(r['title']).strip() for r in survivors if r['title'] and str(r['title']).strip()]
+              if not order:
+                  raise SystemExit(f'No technologies remain for {status["record_title"]}')
+
+              expected_list = '<ul>' + ''.join(f'<li>{html.escape(name)}</li>' for name in order) + '</ul>'
+              conn.execute("""
+                  UPDATE content_nodes
+                  SET content=?
+                  WHERE record_id=?
+                    AND lower(trim(coalesce(title,'')))='comparison languages'
+                    AND lower(coalesce(type,'')) NOT IN ('display','preview')
+              """, (expected_list, status['record_id']))
+
+              initial = html.escape(order[0])
+              init_rows = conn.execute("""
+                  SELECT id, content
+                  FROM content_nodes
+                  WHERE record_id=?
+                    AND lower(trim(coalesce(title,'')))='initial implementation'
+                    AND lower(coalesce(type,'')) NOT IN ('display','preview')
+              """, (status['record_id'],)).fetchall()
+              for init in init_rows:
+                  content = str(init['content'] or '')
+                  if '<ul' in content.lower():
+                      lis = re.findall(r'<li>.*?</li>', content, flags=re.I|re.S)
+                      if lis:
+                          content = content.replace(lis[0], f'<li>{initial}</li>', 1)
+                      else:
+                          content = re.sub(r'(<ul[^>]*>)', r'\1<li>' + initial + '</li>', content, count=1, flags=re.I)
+                  else:
+                      content = f'<ul><li>{initial}</li></ul>'
+                  conn.execute('UPDATE content_nodes SET content=? WHERE id=?', (content, init['id']))
+
+          conn.commit()
+
+          # Verify no obvious duplicate survives: a technology family may not have
+          # both a standalone/subset entry and a richer superset entry, and equal
+          # family coverage may occur only once.
+          for status in status_nodes:
+              children = conn.execute("SELECT * FROM content_nodes WHERE parent_id=?", (status['id'],)).fetchall()
+              entries = [(row, families(row['title'])) for row in children]
+              for i, (a, af) in enumerate(entries):
+                  if not af:
+                      continue
+                  for j, (b, bf) in enumerate(entries):
+                      if i >= j or not bf:
+                          continue
+                      if af == bf or af < bf or bf < af:
+                          raise SystemExit(
+                              f'Duplicate technology coverage remains in {status["record_title"]}: {a["title"]!r} vs {b["title"]!r}'
+                          )
+
+          preview_after = {
+              row['id']: row['content']
+              for row in conn.execute("""
+                  SELECT cn.id, cn.content
+                  FROM content_nodes cn
+                  JOIN records r ON r.id=cn.record_id
+                  WHERE r.type='rosetta-stone'
+                    AND lower(coalesce(cn.type,'')) IN ('display','preview')
+              """)
+          }
+          if preview_after != preview_before:
+              raise SystemExit('Verification failed: Display/Preview content changed.')
+
+          classes_after = {
+              row['id']: row['class_name']
+              for row in conn.execute("""
+                  SELECT cn.id, cn.class_name
+                  FROM content_nodes cn
+                  JOIN records r ON r.id=cn.record_id
+                  WHERE r.type='rosetta-stone'
+              """)
+          }
+          # Deleted duplicate nodes are allowed to disappear; every survivor must
+          # retain its original custom class exactly.
+          for node_id, class_name in classes_after.items():
+              if node_id in classes_before and class_name != classes_before[node_id]:
+                  raise SystemExit(f'Verification failed: custom class changed on {node_id}.')
+
+          conn.close()
+
+          print(f'Removed {len(deleted)} duplicate rs-status technology nodes:')
+          for record_title, title, node_id in deleted:
+              print(f'  {record_title}: removed {title!r} ({node_id})')
+          print('Kept combined/more-specific entries when they covered the same technology.')
+          print('For equivalent aliases, kept the node with more content.')
+          print('Display/Preview content and surviving custom class names were unchanged.')
+          PY
+
+      - name: Commit updated database
+        run: |
+          if git diff --quiet -- data/sandbox.db; then
+            echo "No database changes were needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/sandbox.db
+          git commit -m "Deduplicate Rosetta technology entries"
+          git push
