@@ -1,0 +1,377 @@
+name: Normalize Rosetta Stone language
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/update-rosetta-general-language.yml
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generalize Rosetta Stone wording in database
+        run: |
+          python3 - <<'PY'
+          import html
+          import re
+          import sqlite3
+
+          DB = 'data/sandbox.db'
+          conn = sqlite3.connect(DB)
+          conn.row_factory = sqlite3.Row
+
+          # The generated Rosetta Stone records are the set whose framework text
+          # was originally written around a TypeScript-first template.  The
+          # separate Modern Agenda Rosetta Stone already has genuine per-language
+          # phases, so its implementation-specific wording is intentionally kept.
+          record_ids = [
+              row['id'] for row in conn.execute(
+                  "SELECT id FROM records WHERE type='rosetta-stone' AND id LIKE 'rec-rosetta-%'"
+              )
+          ]
+          if not record_ids:
+              raise SystemExit('No generated Rosetta Stone records found.')
+
+          qs = ','.join('?' for _ in record_ids)
+
+          # Protect every rs-status node and its complete descendant subtree.
+          protected = set(
+              row['id'] for row in conn.execute(
+                  f"""
+                  SELECT id FROM content_nodes
+                  WHERE record_id IN ({qs})
+                    AND instr(lower(' ' || coalesce(class_name,'') || ' '), ' rs-status ') > 0
+                  """,
+                  record_ids,
+              )
+          )
+          changed = True
+          while changed and protected:
+              changed = False
+              pqs = ','.join('?' for _ in protected)
+              for row in conn.execute(
+                  f"SELECT id FROM content_nodes WHERE parent_id IN ({pqs})",
+                  tuple(protected),
+              ):
+                  if row['id'] not in protected:
+                      protected.add(row['id'])
+                      changed = True
+
+          def row_tuple(row):
+              return tuple(row[k] for k in row.keys())
+
+          protected_before = {
+              row['id']: row_tuple(row)
+              for row in conn.execute(
+                  f"SELECT * FROM content_nodes WHERE id IN ({','.join('?' for _ in protected)}) ORDER BY id",
+                  tuple(protected),
+              )
+          } if protected else {}
+
+          preview_before = {
+              row['id']: row['content']
+              for row in conn.execute(
+                  f"""
+                  SELECT id, content FROM content_nodes
+                  WHERE record_id IN ({qs})
+                    AND lower(coalesce(type,'')) IN ('display','preview')
+                  """,
+                  record_ids,
+              )
+          }
+
+          class_before = {
+              row['id']: row['class_name']
+              for row in conn.execute(
+                  f"SELECT id, class_name FROM content_nodes WHERE record_id IN ({qs})",
+                  record_ids,
+              )
+          }
+
+          # Read the authoritative implementation order from each rs-status box.
+          implementation_order = {}
+          for record_id in record_ids:
+              status = conn.execute(
+                  """
+                  SELECT id FROM content_nodes
+                  WHERE record_id=?
+                    AND instr(lower(' ' || coalesce(class_name,'') || ' '), ' rs-status ') > 0
+                  ORDER BY coalesce(sort_order,999999), id
+                  LIMIT 1
+                  """,
+                  (record_id,),
+              ).fetchone()
+              if not status:
+                  raise SystemExit(f'Missing rs-status Technologies node for {record_id}')
+              children = conn.execute(
+                  """
+                  SELECT title FROM content_nodes
+                  WHERE parent_id=?
+                  ORDER BY coalesce(sort_order,999999), id
+                  """,
+                  (status['id'],),
+              ).fetchall()
+              titles = [str(row['title']).strip() for row in children if row['title'] and str(row['title']).strip()]
+              if not titles:
+                  raise SystemExit(f'No Technologies children found for {record_id}')
+              implementation_order[record_id] = titles
+
+          # Record-level text: remove the mistaken TypeScript-only framing.
+          for row in conn.execute(
+              f"SELECT id, subtitle, nav_label FROM records WHERE id IN ({qs})",
+              record_ids,
+          ).fetchall():
+              subtitle = row['subtitle']
+              nav_label = row['nav_label']
+
+              if subtitle:
+                  subtitle = re.sub(
+                      r'\bTypeScript\s+Implementation\b',
+                      'Implementation Comparison',
+                      str(subtitle),
+                      flags=re.IGNORECASE,
+                  )
+              if nav_label:
+                  nav_label = re.sub(
+                      r'\s*:\s*TypeScript\s*$',
+                      '',
+                      str(nav_label),
+                      flags=re.IGNORECASE,
+                  )
+
+              conn.execute(
+                  'UPDATE records SET subtitle=?, nav_label=? WHERE id=?',
+                  (subtitle, nav_label, row['id']),
+              )
+
+          nodes = conn.execute(
+              f"SELECT * FROM content_nodes WHERE record_id IN ({qs}) ORDER BY record_id, coalesce(sort_order,999999), id",
+              record_ids,
+          ).fetchall()
+
+          updated_nodes = 0
+          for node in nodes:
+              if node['id'] in protected:
+                  continue
+
+              record_id = node['record_id']
+              order = implementation_order[record_id]
+              initial = order[0]
+              node_type = (node['type'] or '').lower()
+
+              title = node['title']
+              subtitle = node['subtitle']
+              description = node['description']
+              nav_label = node['nav_label']
+              content = node['content']
+
+              old_values = (title, subtitle, description, nav_label, content)
+
+              # Required label change everywhere outside the protected Technologies subtree.
+              def replace_current(value):
+                  if value is None:
+                      return None
+                  return re.sub(
+                      r'\bCurrent Implementation\b',
+                      'Initial Implementation',
+                      str(value),
+                      flags=re.IGNORECASE,
+                  )
+
+              title = replace_current(title)
+              subtitle = replace_current(subtitle)
+              description = replace_current(description)
+              nav_label = replace_current(nav_label)
+              if node_type not in ('display','preview'):
+                  content = replace_current(content)
+
+              # General structural labels that were incorrectly TypeScript-only.
+              if title and re.fullmatch(r'Build\s+TypeScript', str(title).strip(), flags=re.IGNORECASE):
+                  title = 'Build Initial Implementation'
+              if title and re.fullmatch(r'TypeScript\s+Reference', str(title).strip(), flags=re.IGNORECASE):
+                  title = 'TypeScript Implementation Reference'
+              if title and re.fullmatch(r'TypeScript\s+Configuration', str(title).strip(), flags=re.IGNORECASE):
+                  title = 'TypeScript Implementation Configuration'
+
+              if description:
+                  description = re.sub(
+                      r'Build the TypeScript implementation without changing the shared behavior or visual target\.',
+                      'Build each implementation without changing the shared behavior or visual target.',
+                      str(description),
+                      flags=re.IGNORECASE,
+                  )
+                  description = re.sub(
+                      r'Create the TypeScript reference implementation before reproducing it in another language\.',
+                      'Start with the first technology listed under Technologies, then reproduce the same behavior in each following implementation.',
+                      description,
+                      flags=re.IGNORECASE,
+                  )
+                  description = re.sub(
+                      r'Keep the TypeScript implementation independently buildable\.',
+                      'Keep the TypeScript implementation independently buildable; each implementation should keep its own required setup.',
+                      description,
+                      flags=re.IGNORECASE,
+                  )
+
+              # Never alter the content field of a Display/Preview node.
+              if node_type not in ('display','preview') and content:
+                  content = re.sub(
+                      r'Compile with TypeScript, run the project, and save the visible expected result\.',
+                      'Build and run the initial implementation, then save the visible expected result.',
+                      str(content),
+                      flags=re.IGNORECASE,
+                  )
+
+                  # Make source-project wording clear that TypeScript is the source implementation,
+                  # not the identity of the whole Rosetta Stone.
+                  content = re.sub(
+                      r'<p>TypeScript\s+(Lab|Project):\s*([^<]+)</p>',
+                      lambda m: f'<p>Source Learning Project — TypeScript {m.group(1)}: {m.group(2)}</p>',
+                      content,
+                      flags=re.IGNORECASE,
+                  )
+
+                  # The comparison list is governed strictly by rs-status child order.
+                  if title and str(title).strip().lower() == 'comparison languages':
+                      content = '<ul>' + ''.join(f'<li>{html.escape(name)}</li>' for name in order) + '</ul>'
+
+                  # Initial Implementation must point at the first rs-status child.
+                  if title and str(title).strip().lower() == 'initial implementation':
+                      escaped_initial = html.escape(initial)
+                      if re.search(r'<li>\s*TypeScript\s*</li>', content, flags=re.IGNORECASE):
+                          content = re.sub(
+                              r'<li>\s*TypeScript\s*</li>',
+                              f'<li>{escaped_initial}</li>',
+                              content,
+                              count=1,
+                              flags=re.IGNORECASE,
+                          )
+                      elif '<ul' in content.lower():
+                          content = re.sub(
+                              r'(<ul[^>]*>)',
+                              r'\1<li>' + escaped_initial + '</li>',
+                              content,
+                              count=1,
+                              flags=re.IGNORECASE,
+                          )
+                      else:
+                          content = f'<ul><li>{escaped_initial}</li></ul>'
+
+              new_values = (title, subtitle, description, nav_label, content)
+              if new_values != old_values:
+                  conn.execute(
+                      """
+                      UPDATE content_nodes
+                      SET title=?, subtitle=?, description=?, nav_label=?, content=?
+                      WHERE id=?
+                      """,
+                      (*new_values, node['id']),
+                  )
+                  updated_nodes += 1
+
+          conn.commit()
+
+          # Hard guardrails requested by the user.
+          if protected:
+              protected_after = {
+                  row['id']: row_tuple(row)
+                  for row in conn.execute(
+                      f"SELECT * FROM content_nodes WHERE id IN ({','.join('?' for _ in protected)}) ORDER BY id",
+                      tuple(protected),
+                  )
+              }
+              if protected_after != protected_before:
+                  raise SystemExit('Verification failed: rs-status node or child was modified.')
+
+          preview_after = {
+              row['id']: row['content']
+              for row in conn.execute(
+                  f"""
+                  SELECT id, content FROM content_nodes
+                  WHERE record_id IN ({qs})
+                    AND lower(coalesce(type,'')) IN ('display','preview')
+                  """,
+                  record_ids,
+              )
+          }
+          if preview_after != preview_before:
+              raise SystemExit('Verification failed: a Display/Preview content field changed.')
+
+          class_after = {
+              row['id']: row['class_name']
+              for row in conn.execute(
+                  f"SELECT id, class_name FROM content_nodes WHERE record_id IN ({qs})",
+                  record_ids,
+              )
+          }
+          if class_after != class_before:
+              raise SystemExit('Verification failed: a custom class name changed.')
+
+          # Verify Initial Implementation and Comparison Languages follow the rs-status order.
+          for record_id in record_ids:
+              order = implementation_order[record_id]
+              initial = order[0]
+              init_nodes = conn.execute(
+                  "SELECT content FROM content_nodes WHERE record_id=? AND lower(trim(coalesce(title,'')))='initial implementation'",
+                  (record_id,),
+              ).fetchall()
+              for row in init_nodes:
+                  if not row['content'] or html.escape(initial) not in row['content']:
+                      raise SystemExit(f'Initial Implementation does not follow rs-status order for {record_id}')
+
+              comparison_nodes = conn.execute(
+                  "SELECT content FROM content_nodes WHERE record_id=? AND lower(trim(coalesce(title,'')))='comparison languages'",
+                  (record_id,),
+              ).fetchall()
+              expected = '<ul>' + ''.join(f'<li>{html.escape(name)}</li>' for name in order) + '</ul>'
+              for row in comparison_nodes:
+                  if row['content'] != expected:
+                      raise SystemExit(f'Comparison Languages order mismatch for {record_id}')
+
+          # Ensure the old generic framework language is gone from the generated Rosetta records.
+          old_current = conn.execute(
+              f"""
+              SELECT COUNT(*) FROM content_nodes
+              WHERE record_id IN ({qs})
+                AND id NOT IN ({','.join('?' for _ in protected) if protected else "''"})
+                AND (
+                  lower(coalesce(title,'')) LIKE '%current implementation%'
+                  OR lower(coalesce(subtitle,'')) LIKE '%current implementation%'
+                  OR lower(coalesce(description,'')) LIKE '%current implementation%'
+                  OR lower(coalesce(nav_label,'')) LIKE '%current implementation%'
+                  OR (lower(coalesce(type,'')) NOT IN ('display','preview') AND lower(coalesce(content,'')) LIKE '%current implementation%')
+                )
+              """,
+              (*record_ids, *tuple(protected)) if protected else tuple(record_ids),
+          ).fetchone()[0]
+          if old_current:
+              raise SystemExit(f'Verification failed: {old_current} old Current Implementation references remain.')
+
+          conn.close()
+          print(f'Updated {len(record_ids)} generated Rosetta Stone records.')
+          print(f'Updated {updated_nodes} non-protected content nodes.')
+          print('Implementation order was read from each rs-status Technologies node.')
+          print('rs-status nodes and descendants: unchanged.')
+          print('Display/Preview content fields: unchanged.')
+          print('Custom class names: unchanged.')
+          print('Modern Agenda implementation-specific phase content: unchanged.')
+          PY
+
+      - name: Commit updated database
+        run: |
+          if git diff --quiet -- data/sandbox.db; then
+            echo "No database changes were needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/sandbox.db
+          git commit -m "Generalize Rosetta Stone implementation language"
+          git push
