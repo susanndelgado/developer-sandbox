@@ -91,7 +91,9 @@ if (containerStart !== -1) {
     const slideByUrl = new Map<string, string>();
 
     for (const match of matches) {
-      const block = match[0];
+      const block = match[0] ?? "";
+      if (!block) continue;
+
       const href = block.match(/href="(pg\/[^"]+\.html)"/)?.[1];
       if (href) slideByUrl.set(href, block);
     }
@@ -103,12 +105,16 @@ if (containerStart !== -1) {
 
     if (selected.length) {
       const firstMatch = matches[0];
-      const lastMatch = matches[matches.length - 1];
+      const lastMatch = matches.at(-1);
+      const lastBlock = lastMatch?.[0];
 
-      if (firstMatch?.index !== undefined && lastMatch?.index !== undefined) {
+      if (
+        firstMatch?.index !== undefined &&
+        lastMatch?.index !== undefined &&
+        lastBlock
+      ) {
         const slidesStart = contentStart + firstMatch.index;
-        const slidesEnd =
-          contentStart + lastMatch.index + lastMatch[0].length;
+        const slidesEnd = contentStart + lastMatch.index + lastBlock.length;
         const renderedSlides = selected
           .map((block, index) => normalizeSlide(block, index, selected.length))
           .join("\n\n");
