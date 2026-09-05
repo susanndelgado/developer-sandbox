@@ -1,0 +1,70 @@
+name: Inspect Rosetta node schema
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/inspect-rosetta-node-schema.yml
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inspect SQLite node schema and samples
+        run: |
+          python3 - <<'PY'
+          import sqlite3
+          from pathlib import Path
+
+          conn = sqlite3.connect('data/sandbox.db')
+          conn.row_factory = sqlite3.Row
+          out = []
+
+          out.append('CONTENT_NODES CREATE SQL')
+          row = conn.execute("SELECT sql FROM sqlite_master WHERE type='table' AND name='content_nodes'").fetchone()
+          out.append(row['sql'] if row else 'MISSING')
+          out.append('')
+          out.append('CONTENT_NODES COLUMNS')
+          for r in conn.execute('PRAGMA table_info(content_nodes)'):
+              out.append(repr(dict(r)))
+
+          out.append('')
+          out.append('RECORDS COLUMNS')
+          for r in conn.execute('PRAGMA table_info(records)'):
+              out.append(repr(dict(r)))
+
+          out.append('')
+          out.append('ROSETTA RECORDS')
+          for r in conn.execute("SELECT * FROM records WHERE type='rosetta-stone' ORDER BY title"):
+              out.append(repr(dict(r)))
+
+          out.append('')
+          out.append('ROSETTA NODE SAMPLES')
+          rows = conn.execute("""
+              SELECT cn.*
+              FROM content_nodes cn
+              JOIN records r ON r.id=cn.record_id
+              WHERE r.type='rosetta-stone'
+              ORDER BY cn.record_id, cn.rowid
+              LIMIT 120
+          """).fetchall()
+          for r in rows:
+              out.append(repr(dict(r)))
+
+          conn.close()
+          Path('tmp-rosetta-inspection.txt').write_text('\n'.join(out), encoding='utf-8')
+          PY
+
+      - name: Commit inspection output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp-rosetta-inspection.txt
+          git commit -m "Add temporary Rosetta schema inspection output"
+          git push
