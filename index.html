@@ -11,18 +11,34 @@
     <link rel="stylesheet" href="assets/styles.css" />
     <link rel="stylesheet" href="assets/media.css" />
     <style>
+      .featured-body {
+        align-items: center;
+      }
+
       .featured-panel .preview-frame {
         align-self: center;
+        justify-self: center;
         width: 100%;
         max-height: 180px;
         aspect-ratio: 16 / 9;
+        margin: 0;
       }
 
       .featured-panel .preview-frame img {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: contain;
         object-position: center;
+      }
+
+      .featured-copy .panel-copy {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        text-overflow: ellipsis;
       }
     </style>
   </head>
@@ -129,31 +145,8 @@
 <section
   class="featured-slide"
   data-featured-slide
-  aria-label="Featured project 1 of 5"
+  aria-label="Featured project 1 of 3"
   aria-hidden="false"
->
-  <div class="featured-body">
-    <figure class="preview-frame"><img src="assets/img/Arrays-CollectionsPreview.png"></figure>
-    <div class="featured-copy">
-      <small>Rosetta Stone</small>
-      <h2>Arrays and Collections</h2>
-      <p class="panel-copy">Compare typed collections and iteration across languages.</p>
-      <div class="tag-row" aria-label="Arrays and Collections technologies">
-        <span class="tag">TypeScript</span>
-<span class="tag">HTML</span>
-<span class="tag">CSS</span>
-<span class="tag">JSON</span>
-      </div>
-      <a class="home-panel-link" href="pg/rosetta-stone-arrays-and-collections-typescript.html">View Project →</a>
-    </div>
-  </div>
-</section>
-
-<section
-  class="featured-slide"
-  data-featured-slide
-  aria-label="Featured project 2 of 5"
-  aria-hidden="true" hidden
 >
   <div class="featured-body">
     <figure class="preview-frame"><img src="assets/img/sandboxPreview2.png"></figure>
@@ -176,31 +169,7 @@
 <section
   class="featured-slide"
   data-featured-slide
-  aria-label="Featured project 3 of 5"
-  aria-hidden="true" hidden
->
-  <div class="featured-body">
-    <figure class="preview-frame"><img src="assets/img/agenda-preview.png"></figure>
-    <div class="featured-copy">
-      <small>Rosetta Stone</small>
-      <h2>Modern Agenda</h2>
-      <p class="panel-copy">One conference agenda application rebuilt across modern technologies to understand the difference in the technologies and implementation.</p>
-      <div class="tag-row" aria-label="Modern Agenda technologies">
-        <span class="tag">Angular</span>
-<span class="tag">C#</span>
-<span class="tag">Java</span>
-<span class="tag">PHP</span>
-<span class="tag">+23</span>
-      </div>
-      <a class="home-panel-link" href="pg/modern-agenda.html">View Project →</a>
-    </div>
-  </div>
-</section>
-
-<section
-  class="featured-slide"
-  data-featured-slide
-  aria-label="Featured project 4 of 5"
+  aria-label="Featured project 2 of 3"
   aria-hidden="true" hidden
 >
   <div class="featured-body">
@@ -220,23 +189,23 @@
 <section
   class="featured-slide"
   data-featured-slide
-  aria-label="Featured project 5 of 5"
+  aria-label="Featured project 3 of 3"
   aria-hidden="true" hidden
 >
   <div class="featured-body">
-    <figure class="preview-frame"><img src="assets/img/conceptsandbox-preview.png" alt="Developer Sandbox interface showing the project library, reference guides, Rosetta Stones, and featured project areas" /></figure>
+    <figure class="preview-frame"><img src="assets/img/agenda-preview.png"></figure>
     <div class="featured-copy">
-      <small>General Project</small>
-      <h2>Developer Sandbox</h2>
-      <p class="panel-copy">Personal development environment for projects, references, experiments, learning, and technical knowledge.</p>
-      <div class="tag-row" aria-label="Developer Sandbox technologies">
-        <span class="tag">HTML</span>
-<span class="tag">CSS</span>
-<span class="tag">JavaScript</span>
-<span class="tag">TypeScript</span>
-<span class="tag">+9</span>
+      <small>Rosetta Stone</small>
+      <h2>Modern Agenda</h2>
+      <p class="panel-copy">One conference agenda application rebuilt across modern technologies to understand the difference in the technologies and implementation.</p>
+      <div class="tag-row" aria-label="Modern Agenda technologies">
+        <span class="tag">Angular</span>
+<span class="tag">C#</span>
+<span class="tag">Java</span>
+<span class="tag">PHP</span>
+<span class="tag">+23</span>
       </div>
-      <a class="home-panel-link" href="pg/developer-sandbox.html">View Project →</a>
+      <a class="home-panel-link" href="pg/modern-agenda.html">View Project →</a>
     </div>
   </div>
 </section>
