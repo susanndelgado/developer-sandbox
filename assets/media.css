@@ -722,11 +722,27 @@
     margin-top: 7px;
   }
 
-  /* Inner application content. */
+  /* Inner application content.
+     Individual entries use their full width on mobile. The desktop
+     related-project/reference sidebar remains available above this breakpoint. */
 
   .view-all-page {
-    grid-template-columns: minmax(145px, 0.28fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 7px;
+  }
+
+  .view-all-page > .app-sidebar {
+    display: none;
+  }
+
+  .view-all-page > .app-content {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .view-all-page .project-preview img {
+    max-width: 100%;
   }
 
   .app-sidebar {
